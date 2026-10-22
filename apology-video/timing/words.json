@@ -1,0 +1,1500 @@
+{
+ "source": "placeholder-tts",
+ "words": [
+  {
+   "text": "You",
+   "start": 0.5,
+   "end": 0.684
+  },
+  {
+   "text": "were",
+   "start": 0.684,
+   "end": 0.905
+  },
+  {
+   "text": "wrong.",
+   "start": 0.905,
+   "end": 1.272
+  },
+  {
+   "text": "You",
+   "start": 1.652,
+   "end": 1.818
+  },
+  {
+   "text": "know",
+   "start": 1.818,
+   "end": 2.017
+  },
+  {
+   "text": "you",
+   "start": 2.017,
+   "end": 2.183
+  },
+  {
+   "text": "were",
+   "start": 2.183,
+   "end": 2.381
+  },
+  {
+   "text": "wrong.",
+   "start": 2.381,
+   "end": 2.713
+  },
+  {
+   "text": "But",
+   "start": 3.093,
+   "end": 3.288
+  },
+  {
+   "text": "the",
+   "start": 3.288,
+   "end": 3.484
+  },
+  {
+   "text": "word",
+   "start": 3.484,
+   "end": 3.719
+  },
+  {
+   "text": "just",
+   "start": 3.719,
+   "end": 3.954
+  },
+  {
+   "text": "won't",
+   "start": 3.954,
+   "end": 4.228
+  },
+  {
+   "text": "come",
+   "start": 4.228,
+   "end": 4.462
+  },
+  {
+   "text": "out.",
+   "start": 4.462,
+   "end": 4.775
+  },
+  {
+   "text": "Sorry.",
+   "start": 5.155,
+   "end": 5.738
+  },
+  {
+   "text": "Why",
+   "start": 6.118,
+   "end": 6.362
+  },
+  {
+   "text": "is",
+   "start": 6.362,
+   "end": 6.557
+  },
+  {
+   "text": "one",
+   "start": 6.557,
+   "end": 6.801
+  },
+  {
+   "text": "tiny",
+   "start": 6.801,
+   "end": 7.094
+  },
+  {
+   "text": "word",
+   "start": 7.094,
+   "end": 7.387
+  },
+  {
+   "text": "so",
+   "start": 7.387,
+   "end": 7.582
+  },
+  {
+   "text": "hard",
+   "start": 7.582,
+   "end": 7.875
+  },
+  {
+   "text": "to",
+   "start": 7.875,
+   "end": 8.07
+  },
+  {
+   "text": "say?",
+   "start": 8.07,
+   "end": 8.46
+  },
+  {
+   "text": "Reason",
+   "start": 9.56,
+   "end": 9.973
+  },
+  {
+   "text": "one.",
+   "start": 9.973,
+   "end": 10.386
+  },
+  {
+   "text": "It",
+   "start": 10.386,
+   "end": 10.592
+  },
+  {
+   "text": "feels",
+   "start": 10.592,
+   "end": 10.953
+  },
+  {
+   "text": "like",
+   "start": 10.953,
+   "end": 11.263
+  },
+  {
+   "text": "an",
+   "start": 11.263,
+   "end": 11.469
+  },
+  {
+   "text": "attack",
+   "start": 11.469,
+   "end": 11.882
+  },
+  {
+   "text": "on",
+   "start": 11.882,
+   "end": 12.088
+  },
+  {
+   "text": "who",
+   "start": 12.088,
+   "end": 12.346
+  },
+  {
+   "text": "you",
+   "start": 12.346,
+   "end": 12.604
+  },
+  {
+   "text": "are.",
+   "start": 12.604,
+   "end": 13.017
+  },
+  {
+   "text": "Most",
+   "start": 13.397,
+   "end": 13.691
+  },
+  {
+   "text": "of",
+   "start": 13.691,
+   "end": 13.887
+  },
+  {
+   "text": "us",
+   "start": 13.887,
+   "end": 14.083
+  },
+  {
+   "text": "believe",
+   "start": 14.083,
+   "end": 14.523
+  },
+  {
+   "text": "we're",
+   "start": 14.523,
+   "end": 14.866
+  },
+  {
+   "text": "good",
+   "start": 14.866,
+   "end": 15.16
+  },
+  {
+   "text": "people.",
+   "start": 15.16,
+   "end": 15.699
+  },
+  {
+   "text": "So",
+   "start": 16.079,
+   "end": 16.267
+  },
+  {
+   "text": "admitting",
+   "start": 16.267,
+   "end": 16.784
+  },
+  {
+   "text": "a",
+   "start": 16.784,
+   "end": 16.925
+  },
+  {
+   "text": "mistake",
+   "start": 16.925,
+   "end": 17.348
+  },
+  {
+   "text": "doesn't",
+   "start": 17.348,
+   "end": 17.771
+  },
+  {
+   "text": "feel",
+   "start": 17.771,
+   "end": 18.053
+  },
+  {
+   "text": "like,",
+   "start": 18.053,
+   "end": 18.476
+  },
+  {
+   "text": "I",
+   "start": 18.476,
+   "end": 18.617
+  },
+  {
+   "text": "did",
+   "start": 18.617,
+   "end": 18.852
+  },
+  {
+   "text": "a",
+   "start": 18.852,
+   "end": 18.993
+  },
+  {
+   "text": "bad",
+   "start": 18.993,
+   "end": 19.228
+  },
+  {
+   "text": "thing.",
+   "start": 19.228,
+   "end": 19.698
+  },
+  {
+   "text": "It",
+   "start": 20.078,
+   "end": 20.268
+  },
+  {
+   "text": "feels",
+   "start": 20.268,
+   "end": 20.602
+  },
+  {
+   "text": "like,",
+   "start": 20.602,
+   "end": 21.031
+  },
+  {
+   "text": "I",
+   "start": 21.031,
+   "end": 21.174
+  },
+  {
+   "text": "am",
+   "start": 21.174,
+   "end": 21.365
+  },
+  {
+   "text": "a",
+   "start": 21.365,
+   "end": 21.507
+  },
+  {
+   "text": "bad",
+   "start": 21.507,
+   "end": 21.746
+  },
+  {
+   "text": "person.",
+   "start": 21.746,
+   "end": 22.27
+  },
+  {
+   "text": "Psychologists",
+   "start": 22.65,
+   "end": 23.469
+  },
+  {
+   "text": "call",
+   "start": 23.469,
+   "end": 23.797
+  },
+  {
+   "text": "this",
+   "start": 23.797,
+   "end": 24.124
+  },
+  {
+   "text": "tension",
+   "start": 24.124,
+   "end": 24.616
+  },
+  {
+   "text": "cognitive",
+   "start": 24.616,
+   "end": 25.216
+  },
+  {
+   "text": "dissonance.",
+   "start": 25.216,
+   "end": 26.035
+  },
+  {
+   "text": "And",
+   "start": 26.415,
+   "end": 26.646
+  },
+  {
+   "text": "the",
+   "start": 26.646,
+   "end": 26.876
+  },
+  {
+   "text": "fastest",
+   "start": 26.876,
+   "end": 27.291
+  },
+  {
+   "text": "way",
+   "start": 27.291,
+   "end": 27.522
+  },
+  {
+   "text": "to",
+   "start": 27.522,
+   "end": 27.706
+  },
+  {
+   "text": "end",
+   "start": 27.706,
+   "end": 27.937
+  },
+  {
+   "text": "it,",
+   "start": 27.937,
+   "end": 28.259
+  },
+  {
+   "text": "is",
+   "start": 28.259,
+   "end": 28.444
+  },
+  {
+   "text": "to",
+   "start": 28.444,
+   "end": 28.628
+  },
+  {
+   "text": "decide",
+   "start": 28.628,
+   "end": 28.997
+  },
+  {
+   "text": "you",
+   "start": 28.997,
+   "end": 29.227
+  },
+  {
+   "text": "weren't",
+   "start": 29.227,
+   "end": 29.642
+  },
+  {
+   "text": "wrong.",
+   "start": 29.642,
+   "end": 30.103
+  },
+  {
+   "text": "Reason",
+   "start": 31.203,
+   "end": 31.687
+  },
+  {
+   "text": "two.",
+   "start": 31.687,
+   "end": 32.171
+  },
+  {
+   "text": "Not",
+   "start": 32.171,
+   "end": 32.473
+  },
+  {
+   "text": "apologizing",
+   "start": 32.473,
+   "end": 33.259
+  },
+  {
+   "text": "feels",
+   "start": 33.259,
+   "end": 33.682
+  },
+  {
+   "text": "good.",
+   "start": 33.682,
+   "end": 34.227
+  },
+  {
+   "text": "In",
+   "start": 34.607,
+   "end": 34.831
+  },
+  {
+   "text": "a",
+   "start": 34.831,
+   "end": 35
+  },
+  {
+   "text": "twenty",
+   "start": 35,
+   "end": 35.45
+  },
+  {
+   "text": "thirteen",
+   "start": 35.45,
+   "end": 36.013
+  },
+  {
+   "text": "study,",
+   "start": 36.013,
+   "end": 36.575
+  },
+  {
+   "text": "people",
+   "start": 36.575,
+   "end": 37.025
+  },
+  {
+   "text": "who",
+   "start": 37.025,
+   "end": 37.306
+  },
+  {
+   "text": "refused",
+   "start": 37.306,
+   "end": 37.812
+  },
+  {
+   "text": "to",
+   "start": 37.812,
+   "end": 38.037
+  },
+  {
+   "text": "apologize",
+   "start": 38.037,
+   "end": 38.656
+  },
+  {
+   "text": "reported",
+   "start": 38.776,
+   "end": 39.258
+  },
+  {
+   "text": "higher",
+   "start": 39.258,
+   "end": 39.644
+  },
+  {
+   "text": "self",
+   "start": 39.644,
+   "end": 39.934
+  },
+  {
+   "text": "esteem,",
+   "start": 39.934,
+   "end": 40.465
+  },
+  {
+   "text": "and",
+   "start": 40.585,
+   "end": 40.794
+  },
+  {
+   "text": "a",
+   "start": 40.794,
+   "end": 40.919
+  },
+  {
+   "text": "greater",
+   "start": 40.919,
+   "end": 41.295
+  },
+  {
+   "text": "sense",
+   "start": 41.295,
+   "end": 41.588
+  },
+  {
+   "text": "of",
+   "start": 41.588,
+   "end": 41.755
+  },
+  {
+   "text": "power",
+   "start": 41.755,
+   "end": 42.048
+  },
+  {
+   "text": "and",
+   "start": 42.048,
+   "end": 42.257
+  },
+  {
+   "text": "control,",
+   "start": 42.257,
+   "end": 42.758
+  },
+  {
+   "text": "than",
+   "start": 42.878,
+   "end": 43.198
+  },
+  {
+   "text": "people",
+   "start": 43.198,
+   "end": 43.624
+  },
+  {
+   "text": "who",
+   "start": 43.624,
+   "end": 43.891
+  },
+  {
+   "text": "did",
+   "start": 43.891,
+   "end": 44.157
+  },
+  {
+   "text": "apologize.",
+   "start": 44.157,
+   "end": 44.903
+  },
+  {
+   "text": "Refusing",
+   "start": 45.283,
+   "end": 45.796
+  },
+  {
+   "text": "feels",
+   "start": 45.796,
+   "end": 46.155
+  },
+  {
+   "text": "like",
+   "start": 46.155,
+   "end": 46.463
+  },
+  {
+   "text": "winning.",
+   "start": 46.463,
+   "end": 47.079
+  },
+  {
+   "text": "In",
+   "start": 47.459,
+   "end": 47.633
+  },
+  {
+   "text": "the",
+   "start": 47.633,
+   "end": 47.849
+  },
+  {
+   "text": "moment.",
+   "start": 47.849,
+   "end": 48.326
+  },
+  {
+   "text": "Reason",
+   "start": 49.426,
+   "end": 49.806
+  },
+  {
+   "text": "three.",
+   "start": 49.806,
+   "end": 50.282
+  },
+  {
+   "text": "You",
+   "start": 50.282,
+   "end": 50.52
+  },
+  {
+   "text": "think",
+   "start": 50.52,
+   "end": 50.853
+  },
+  {
+   "text": "people",
+   "start": 50.853,
+   "end": 51.234
+  },
+  {
+   "text": "can't",
+   "start": 51.234,
+   "end": 51.567
+  },
+  {
+   "text": "change.",
+   "start": 51.567,
+   "end": 52.091
+  },
+  {
+   "text": "If",
+   "start": 52.471,
+   "end": 52.65
+  },
+  {
+   "text": "you",
+   "start": 52.65,
+   "end": 52.873
+  },
+  {
+   "text": "believe",
+   "start": 52.873,
+   "end": 53.276
+  },
+  {
+   "text": "personality",
+   "start": 53.276,
+   "end": 53.858
+  },
+  {
+   "text": "is",
+   "start": 53.858,
+   "end": 54.037
+  },
+  {
+   "text": "set",
+   "start": 54.037,
+   "end": 54.261
+  },
+  {
+   "text": "in",
+   "start": 54.261,
+   "end": 54.44
+  },
+  {
+   "text": "stone,",
+   "start": 54.44,
+   "end": 54.888
+  },
+  {
+   "text": "a",
+   "start": 55.008,
+   "end": 55.14
+  },
+  {
+   "text": "mistake",
+   "start": 55.14,
+   "end": 55.536
+  },
+  {
+   "text": "becomes",
+   "start": 55.536,
+   "end": 55.933
+  },
+  {
+   "text": "permanent",
+   "start": 55.933,
+   "end": 56.417
+  },
+  {
+   "text": "proof",
+   "start": 56.417,
+   "end": 56.726
+  },
+  {
+   "text": "of",
+   "start": 56.726,
+   "end": 56.902
+  },
+  {
+   "text": "who",
+   "start": 56.902,
+   "end": 57.122
+  },
+  {
+   "text": "you",
+   "start": 57.122,
+   "end": 57.343
+  },
+  {
+   "text": "are.",
+   "start": 57.343,
+   "end": 57.695
+  },
+  {
+   "text": "Studies",
+   "start": 58.075,
+   "end": 58.559
+  },
+  {
+   "text": "by",
+   "start": 58.559,
+   "end": 58.774
+  },
+  {
+   "text": "Karina",
+   "start": 58.774,
+   "end": 59.204
+  },
+  {
+   "text": "Schumann",
+   "start": 59.204,
+   "end": 59.742
+  },
+  {
+   "text": "and",
+   "start": 59.742,
+   "end": 60.011
+  },
+  {
+   "text": "Carol",
+   "start": 60.011,
+   "end": 60.387
+  },
+  {
+   "text": "Dweck",
+   "start": 60.387,
+   "end": 60.764
+  },
+  {
+   "text": "found",
+   "start": 60.764,
+   "end": 61.14
+  },
+  {
+   "text": "that",
+   "start": 61.14,
+   "end": 61.463
+  },
+  {
+   "text": "people",
+   "start": 61.463,
+   "end": 61.893
+  },
+  {
+   "text": "who",
+   "start": 61.893,
+   "end": 62.162
+  },
+  {
+   "text": "think",
+   "start": 62.162,
+   "end": 62.538
+  },
+  {
+   "text": "this",
+   "start": 62.538,
+   "end": 62.861
+  },
+  {
+   "text": "way",
+   "start": 62.861,
+   "end": 63.13
+  },
+  {
+   "text": "take",
+   "start": 63.13,
+   "end": 63.452
+  },
+  {
+   "text": "less",
+   "start": 63.452,
+   "end": 63.775
+  },
+  {
+   "text": "responsibility.",
+   "start": 63.775,
+   "end": 64.797
+  },
+  {
+   "text": "But",
+   "start": 65.177,
+   "end": 65.408
+  },
+  {
+   "text": "when",
+   "start": 65.408,
+   "end": 65.686
+  },
+  {
+   "text": "people",
+   "start": 65.686,
+   "end": 66.057
+  },
+  {
+   "text": "first",
+   "start": 66.057,
+   "end": 66.382
+  },
+  {
+   "text": "reminded",
+   "start": 66.382,
+   "end": 66.845
+  },
+  {
+   "text": "themselves",
+   "start": 66.845,
+   "end": 67.401
+  },
+  {
+   "text": "of",
+   "start": 67.401,
+   "end": 67.587
+  },
+  {
+   "text": "what",
+   "start": 67.587,
+   "end": 67.865
+  },
+  {
+   "text": "they",
+   "start": 67.865,
+   "end": 68.143
+  },
+  {
+   "text": "value,",
+   "start": 68.143,
+   "end": 68.606
+  },
+  {
+   "text": "they",
+   "start": 68.726,
+   "end": 69.025
+  },
+  {
+   "text": "gave",
+   "start": 69.025,
+   "end": 69.324
+  },
+  {
+   "text": "fuller,",
+   "start": 69.324,
+   "end": 69.872
+  },
+  {
+   "text": "better",
+   "start": 69.872,
+   "end": 70.27
+  },
+  {
+   "text": "apologies.",
+   "start": 70.27,
+   "end": 70.967
+  },
+  {
+   "text": "Reason",
+   "start": 72.067,
+   "end": 72.428
+  },
+  {
+   "text": "four.",
+   "start": 72.428,
+   "end": 72.834
+  },
+  {
+   "text": "You",
+   "start": 72.834,
+   "end": 73.06
+  },
+  {
+   "text": "might",
+   "start": 73.06,
+   "end": 73.375
+  },
+  {
+   "text": "not",
+   "start": 73.375,
+   "end": 73.601
+  },
+  {
+   "text": "think",
+   "start": 73.601,
+   "end": 73.917
+  },
+  {
+   "text": "you",
+   "start": 73.917,
+   "end": 74.142
+  },
+  {
+   "text": "did",
+   "start": 74.142,
+   "end": 74.368
+  },
+  {
+   "text": "anything",
+   "start": 74.368,
+   "end": 74.819
+  },
+  {
+   "text": "wrong.",
+   "start": 74.819,
+   "end": 75.27
+  },
+  {
+   "text": "In",
+   "start": 75.65,
+   "end": 75.864
+  },
+  {
+   "text": "one",
+   "start": 75.864,
+   "end": 76.131
+  },
+  {
+   "text": "study,",
+   "start": 76.131,
+   "end": 76.666
+  },
+  {
+   "text": "men",
+   "start": 76.666,
+   "end": 76.933
+  },
+  {
+   "text": "apologized",
+   "start": 76.933,
+   "end": 77.574
+  },
+  {
+   "text": "less",
+   "start": 77.574,
+   "end": 77.895
+  },
+  {
+   "text": "than",
+   "start": 77.895,
+   "end": 78.216
+  },
+  {
+   "text": "women.",
+   "start": 78.216,
+   "end": 78.75
+  },
+  {
+   "text": "Not",
+   "start": 79.13,
+   "end": 79.369
+  },
+  {
+   "text": "because",
+   "start": 79.369,
+   "end": 79.798
+  },
+  {
+   "text": "they",
+   "start": 79.798,
+   "end": 80.084
+  },
+  {
+   "text": "refused",
+   "start": 80.084,
+   "end": 80.513
+  },
+  {
+   "text": "more,",
+   "start": 80.513,
+   "end": 80.943
+  },
+  {
+   "text": "but",
+   "start": 81.063,
+   "end": 81.284
+  },
+  {
+   "text": "because",
+   "start": 81.284,
+   "end": 81.682
+  },
+  {
+   "text": "they",
+   "start": 81.682,
+   "end": 81.947
+  },
+  {
+   "text": "rated",
+   "start": 81.947,
+   "end": 82.257
+  },
+  {
+   "text": "fewer",
+   "start": 82.257,
+   "end": 82.567
+  },
+  {
+   "text": "of",
+   "start": 82.567,
+   "end": 82.744
+  },
+  {
+   "text": "their",
+   "start": 82.744,
+   "end": 83.053
+  },
+  {
+   "text": "own",
+   "start": 83.053,
+   "end": 83.275
+  },
+  {
+   "text": "actions",
+   "start": 83.275,
+   "end": 83.673
+  },
+  {
+   "text": "as",
+   "start": 83.673,
+   "end": 83.85
+  },
+  {
+   "text": "offensive.",
+   "start": 83.85,
+   "end": 84.469
+  },
+  {
+   "text": "When",
+   "start": 84.849,
+   "end": 85.142
+  },
+  {
+   "text": "they",
+   "start": 85.142,
+   "end": 85.434
+  },
+  {
+   "text": "did",
+   "start": 85.434,
+   "end": 85.678
+  },
+  {
+   "text": "think",
+   "start": 85.678,
+   "end": 86.019
+  },
+  {
+   "text": "they'd",
+   "start": 86.019,
+   "end": 86.409
+  },
+  {
+   "text": "hurt",
+   "start": 86.409,
+   "end": 86.701
+  },
+  {
+   "text": "someone,",
+   "start": 86.701,
+   "end": 87.286
+  },
+  {
+   "text": "they",
+   "start": 87.286,
+   "end": 87.579
+  },
+  {
+   "text": "apologized",
+   "start": 87.579,
+   "end": 88.164
+  },
+  {
+   "text": "just",
+   "start": 88.164,
+   "end": 88.456
+  },
+  {
+   "text": "as",
+   "start": 88.456,
+   "end": 88.651
+  },
+  {
+   "text": "often.",
+   "start": 88.651,
+   "end": 89.139
+  },
+  {
+   "text": "Different",
+   "start": 89.519,
+   "end": 90.044
+  },
+  {
+   "text": "line.",
+   "start": 90.044,
+   "end": 90.474
+  },
+  {
+   "text": "Different",
+   "start": 90.474,
+   "end": 91
+  },
+  {
+   "text": "apology.",
+   "start": 91,
+   "end": 91.573
+  },
+  {
+   "text": "Here's",
+   "start": 92.673,
+   "end": 93.022
+  },
+  {
+   "text": "the",
+   "start": 93.022,
+   "end": 93.239
+  },
+  {
+   "text": "twist.",
+   "start": 93.239,
+   "end": 93.675
+  },
+  {
+   "text": "Apologizing",
+   "start": 94.055,
+   "end": 94.794
+  },
+  {
+   "text": "feels",
+   "start": 94.794,
+   "end": 95.192
+  },
+  {
+   "text": "like",
+   "start": 95.192,
+   "end": 95.533
+  },
+  {
+   "text": "losing.",
+   "start": 95.533,
+   "end": 96.158
+  },
+  {
+   "text": "But",
+   "start": 96.538,
+   "end": 96.78
+  },
+  {
+   "text": "to",
+   "start": 96.78,
+   "end": 96.974
+  },
+  {
+   "text": "the",
+   "start": 96.974,
+   "end": 97.216
+  },
+  {
+   "text": "other",
+   "start": 97.216,
+   "end": 97.555
+  },
+  {
+   "text": "person,",
+   "start": 97.555,
+   "end": 98.087
+  },
+  {
+   "text": "it",
+   "start": 98.087,
+   "end": 98.281
+  },
+  {
+   "text": "usually",
+   "start": 98.281,
+   "end": 98.717
+  },
+  {
+   "text": "signals",
+   "start": 98.717,
+   "end": 99.153
+  },
+  {
+   "text": "strength,",
+   "start": 99.153,
+   "end": 99.782
+  },
+  {
+   "text": "not",
+   "start": 99.782,
+   "end": 100.025
+  },
+  {
+   "text": "weakness.",
+   "start": 100.025,
+   "end": 100.654
+  },
+  {
+   "text": "A",
+   "start": 101.034,
+   "end": 101.19
+  },
+  {
+   "text": "real",
+   "start": 101.19,
+   "end": 101.501
+  },
+  {
+   "text": "apology",
+   "start": 101.501,
+   "end": 101.968
+  },
+  {
+   "text": "has",
+   "start": 101.968,
+   "end": 102.227
+  },
+  {
+   "text": "three",
+   "start": 102.227,
+   "end": 102.59
+  },
+  {
+   "text": "parts.",
+   "start": 102.59,
+   "end": 103.109
+  },
+  {
+   "text": "Name",
+   "start": 103.489,
+   "end": 103.748
+  },
+  {
+   "text": "what",
+   "start": 103.748,
+   "end": 104.007
+  },
+  {
+   "text": "you",
+   "start": 104.007,
+   "end": 104.222
+  },
+  {
+   "text": "did.",
+   "start": 104.222,
+   "end": 104.568
+  },
+  {
+   "text": "Own",
+   "start": 104.948,
+   "end": 105.186
+  },
+  {
+   "text": "the",
+   "start": 105.186,
+   "end": 105.425
+  },
+  {
+   "text": "impact.",
+   "start": 105.425,
+   "end": 105.95
+  },
+  {
+   "text": "And",
+   "start": 106.33,
+   "end": 106.557
+  },
+  {
+   "text": "say",
+   "start": 106.557,
+   "end": 106.783
+  },
+  {
+   "text": "what",
+   "start": 106.783,
+   "end": 107.055
+  },
+  {
+   "text": "changes.",
+   "start": 107.055,
+   "end": 107.598
+  },
+  {
+   "text": "No",
+   "start": 107.978,
+   "end": 108.159
+  },
+  {
+   "text": "but.",
+   "start": 108.159,
+   "end": 108.521
+  },
+  {
+   "text": "No,",
+   "start": 108.521,
+   "end": 108.838
+  },
+  {
+   "text": "if",
+   "start": 108.838,
+   "end": 109.019
+  },
+  {
+   "text": "you",
+   "start": 109.019,
+   "end": 109.245
+  },
+  {
+   "text": "were",
+   "start": 109.245,
+   "end": 109.517
+  },
+  {
+   "text": "offended.",
+   "start": 109.517,
+   "end": 110.105
+  },
+  {
+   "text": "The",
+   "start": 111.205,
+   "end": 111.429
+  },
+  {
+   "text": "person",
+   "start": 111.429,
+   "end": 111.787
+  },
+  {
+   "text": "who",
+   "start": 111.787,
+   "end": 112.011
+  },
+  {
+   "text": "says",
+   "start": 112.011,
+   "end": 112.279
+  },
+  {
+   "text": "sorry",
+   "start": 112.279,
+   "end": 112.593
+  },
+  {
+   "text": "first",
+   "start": 112.593,
+   "end": 112.906
+  },
+  {
+   "text": "isn't",
+   "start": 112.906,
+   "end": 113.22
+  },
+  {
+   "text": "the",
+   "start": 113.22,
+   "end": 113.443
+  },
+  {
+   "text": "loser.",
+   "start": 113.443,
+   "end": 113.891
+  },
+  {
+   "text": "They're",
+   "start": 114.271,
+   "end": 114.666
+  },
+  {
+   "text": "the",
+   "start": 114.666,
+   "end": 114.886
+  },
+  {
+   "text": "one",
+   "start": 114.886,
+   "end": 115.105
+  },
+  {
+   "text": "strong",
+   "start": 115.105,
+   "end": 115.457
+  },
+  {
+   "text": "enough",
+   "start": 115.457,
+   "end": 115.808
+  },
+  {
+   "text": "to",
+   "start": 115.808,
+   "end": 115.984
+  },
+  {
+   "text": "lose",
+   "start": 115.984,
+   "end": 116.247
+  },
+  {
+   "text": "the",
+   "start": 116.247,
+   "end": 116.467
+  },
+  {
+   "text": "argument,",
+   "start": 116.467,
+   "end": 117.038
+  },
+  {
+   "text": "and",
+   "start": 117.038,
+   "end": 117.257
+  },
+  {
+   "text": "keep",
+   "start": 117.257,
+   "end": 117.521
+  },
+  {
+   "text": "the",
+   "start": 117.521,
+   "end": 117.741
+  },
+  {
+   "text": "person.",
+   "start": 117.741,
+   "end": 118.224
+  },
+  {
+   "text": "Follow",
+   "start": 118.604,
+   "end": 118.97
+  },
+  {
+   "text": "for",
+   "start": 118.97,
+   "end": 119.2
+  },
+  {
+   "text": "more",
+   "start": 119.2,
+   "end": 119.475
+  },
+  {
+   "text": "of",
+   "start": 119.475,
+   "end": 119.658
+  },
+  {
+   "text": "the",
+   "start": 119.658,
+   "end": 119.887
+  },
+  {
+   "text": "real",
+   "start": 119.887,
+   "end": 120.163
+  },
+  {
+   "text": "why.",
+   "start": 120.163,
+   "end": 120.529
+  }
+ ]
+}

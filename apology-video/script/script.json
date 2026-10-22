@@ -1,0 +1,1381 @@
+{
+ "title": "Why Most People Don't Say Sorry",
+ "_notes": [
+  "Each beat = one spoken phrase ('say'). Each element is cued to a word in its beat ('at'),",
+  "and enters LEAD seconds (theme.json) before that word is spoken.",
+  "'out' = id of the beat whose first word makes this element leave (default: end of scene).",
+  "Text: *word* = accent colour. perWord:true = each word pops on its own spoken word.",
+  "from: left | right | top | bottom | pop | slam | blur | draw"
+ ],
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "h1",
+     "say": "You were wrong."
+    },
+    {
+     "id": "h2",
+     "say": "You know you were wrong."
+    },
+    {
+     "id": "h3",
+     "say": "But the word just won't come out."
+    },
+    {
+     "id": "h4",
+     "say": "Sorry."
+    },
+    {
+     "id": "h5",
+     "say": "Why is one tiny word so hard to say?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 560,
+     "y": 600,
+     "from": "none",
+     "at": "h1:start",
+     "startAtZero": true,
+     "poses": [
+      [
+       "idle",
+       "h1:start"
+      ],
+      [
+       "headDown",
+       "h1:wrong"
+      ],
+      [
+       "point",
+       "h2:know"
+      ],
+      [
+       "strain",
+       "h3:word"
+      ],
+      [
+       "sorry",
+       "h4:sorry"
+      ],
+      [
+       "shrug",
+       "h5:hard"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "h1:start"
+      ],
+      [
+       "frown",
+       "h1:wrong"
+      ],
+      [
+       "tight",
+       "h3:word"
+      ],
+      [
+       "o",
+       "h5:why"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "You were *wrong*.",
+     "x": 1260,
+     "y": 400,
+     "size": 120,
+     "from": "right",
+     "perWord": true,
+     "at": "h1:you",
+     "out": "h3"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "you *know* it.",
+     "x": 1260,
+     "y": 560,
+     "size": 64,
+     "weight": 600,
+     "color": "muted",
+     "from": "bottom",
+     "at": "h2:know",
+     "out": "h3"
+    },
+    {
+     "t": "bubble",
+     "id": "b1",
+     "text": "s… s…",
+     "x": 830,
+     "y": 320,
+     "size": 220,
+     "from": "pop",
+     "at": "h3:word",
+     "out": "h4"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "won't *come out*.",
+     "x": 1330,
+     "y": 620,
+     "size": 64,
+     "weight": 600,
+     "from": "right",
+     "at": "h3:word",
+     "out": "h4"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "SORRY",
+     "x": 1280,
+     "y": 520,
+     "size": 250,
+     "color": "accent",
+     "from": "slam",
+     "at": "h4:sorry",
+     "out": "h5"
+    },
+    {
+     "t": "icon",
+     "id": "q1",
+     "name": "question",
+     "x": 560,
+     "y": 250,
+     "size": 170,
+     "from": "pop",
+     "at": "h5:why"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "Why is *one tiny word*",
+     "x": 1280,
+     "y": 470,
+     "size": 80,
+     "from": "left",
+     "perWord": true,
+     "at": "h5:why"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "so hard to say?",
+     "x": 1280,
+     "y": 580,
+     "size": 80,
+     "from": "left",
+     "perWord": true,
+     "at": "h5:so"
+    }
+   ]
+  },
+  {
+   "id": "self",
+   "beats": [
+    {
+     "id": "r1",
+     "say": "Reason one. It feels like an attack on who you are."
+    },
+    {
+     "id": "r2",
+     "say": "Most of us believe we're good people."
+    },
+    {
+     "id": "r3",
+     "say": "So admitting a mistake doesn't feel like, I did a bad thing."
+    },
+    {
+     "id": "r4",
+     "say": "It feels like, I am a bad person."
+    },
+    {
+     "id": "r5",
+     "say": "Psychologists call this tension cognitive dissonance."
+    },
+    {
+     "id": "r6",
+     "say": "And the fastest way to end it, is to decide you weren't wrong."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "c1",
+     "num": "01",
+     "text": "An attack on *who you are*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "r1:reason",
+     "out": "r2",
+     "perWord": true
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 600,
+     "y": 620,
+     "from": "bottom",
+     "at": "r2:most",
+     "poses": [
+      [
+       "happy",
+       "r2:most"
+      ],
+      [
+       "idle",
+       "r3:so"
+      ],
+      [
+       "headDown",
+       "r4:bad"
+      ],
+      [
+       "holdHead",
+       "r5:tension"
+      ],
+      [
+       "armsCrossed",
+       "r6:decide"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "r2:most"
+      ],
+      [
+       "neutral",
+       "r3:so"
+      ],
+      [
+       "frown",
+       "r4:bad"
+      ],
+      [
+       "o",
+       "r5:tension"
+      ],
+      [
+       "tight",
+       "r6:decide"
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "halo",
+     "name": "halo",
+     "x": 600,
+     "y": 300,
+     "size": 200,
+     "from": "top",
+     "at": "r2:good",
+     "out": "r4:am",
+     "exit": "bottom"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "We're *good people*.",
+     "x": 1300,
+     "y": 340,
+     "size": 76,
+     "from": "right",
+     "at": "r2:good",
+     "out": "r5"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "“I *did* a bad thing.”",
+     "x": 1300,
+     "y": 520,
+     "size": 76,
+     "weight": 600,
+     "from": "right",
+     "perWord": true,
+     "at": "r3:i",
+     "out": "r5"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 1300,
+     "y": 520,
+     "w": 760,
+     "at": "r4:am",
+     "out": "r5",
+     "exit": "right"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "“I *am* a bad person.”",
+     "x": 1300,
+     "y": 700,
+     "size": 76,
+     "from": "bottom",
+     "perWord": true,
+     "at": "r4:i",
+     "out": "r5"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "COGNITIVE",
+     "x": 1300,
+     "y": 450,
+     "size": 96,
+     "from": "top",
+     "at": "r5:cognitive",
+     "out": "r6"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "*DISSONANCE*",
+     "x": 1300,
+     "y": 570,
+     "size": 96,
+     "from": "bottom",
+     "at": "r5:dissonance",
+     "out": "r6"
+    },
+    {
+     "t": "icon",
+     "id": "split",
+     "name": "split",
+     "x": 1300,
+     "y": 720,
+     "size": 220,
+     "from": "draw",
+     "at": "r5:tension",
+     "out": "r6"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "the fastest way out:",
+     "x": 1300,
+     "y": 430,
+     "size": 56,
+     "weight": 600,
+     "color": "muted",
+     "from": "right",
+     "at": "r6:fastest"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "“I *wasn't* wrong.”",
+     "x": 1300,
+     "y": 560,
+     "size": 100,
+     "from": "left",
+     "perWord": true,
+     "at": "r6:decide"
+    }
+   ]
+  },
+  {
+   "id": "power",
+   "beats": [
+    {
+     "id": "p1",
+     "say": "Reason two. Not apologizing feels good."
+    },
+    {
+     "id": "p2",
+     "say": "In a twenty thirteen study, people who refused to apologize"
+    },
+    {
+     "id": "p3",
+     "say": "reported higher self esteem,"
+    },
+    {
+     "id": "p4",
+     "say": "and a greater sense of power and control,"
+    },
+    {
+     "id": "p5",
+     "say": "than people who did apologize."
+    },
+    {
+     "id": "p6",
+     "say": "Refusing feels like winning."
+    },
+    {
+     "id": "p7",
+     "say": "In the moment."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "c1",
+     "num": "02",
+     "text": "Refusing *feels good*",
+     "x": 960,
+     "y": 540,
+     "from": "right",
+     "at": "p1:reason",
+     "out": "p2",
+     "perWord": true
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 470,
+     "y": 620,
+     "from": "left",
+     "at": "p2:refused",
+     "poses": [
+      [
+       "armsCrossed",
+       "p2:refused"
+      ],
+      [
+       "proud",
+       "p3:higher"
+      ],
+      [
+       "victory",
+       "p6:winning"
+      ],
+      [
+       "shrug",
+       "p7:moment"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "p2:refused"
+      ],
+      [
+       "smile",
+       "p3:higher"
+      ],
+      [
+       "o",
+       "p7:moment"
+      ]
+     ]
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2013",
+     "text": "Refusing to apologize",
+     "sub": "Okimoto, Wenzel & Hedrick",
+     "x": 1330,
+     "y": 230,
+     "from": "right",
+     "at": "p2:study",
+     "out": "p6"
+    },
+    {
+     "t": "bar",
+     "id": "b1",
+     "x": 1110,
+     "y": 830,
+     "w": 120,
+     "h": 330,
+     "color": "accent",
+     "label": "self-esteem",
+     "from": "draw",
+     "at": "p3:higher",
+     "out": "p6"
+    },
+    {
+     "t": "bar",
+     "id": "b2",
+     "x": 1550,
+     "y": 830,
+     "w": 120,
+     "h": 370,
+     "color": "accent",
+     "label": "power",
+     "from": "draw",
+     "at": "p4:power",
+     "out": "p6"
+    },
+    {
+     "t": "bar",
+     "id": "g1",
+     "x": 1240,
+     "y": 830,
+     "w": 120,
+     "h": 190,
+     "color": "muted",
+     "from": "draw",
+     "at": "p5:did",
+     "out": "p6"
+    },
+    {
+     "t": "bar",
+     "id": "g2",
+     "x": 1680,
+     "y": 830,
+     "w": 120,
+     "h": 200,
+     "color": "muted",
+     "from": "draw",
+     "at": "p5:did",
+     "out": "p6"
+    },
+    {
+     "t": "text",
+     "id": "key",
+     "text": "*■ refused*   ■ apologized   · illustrative",
+     "x": 1400,
+     "y": 930,
+     "size": 36,
+     "weight": 600,
+     "color": "muted",
+     "from": "bottom",
+     "at": "p5:people",
+     "out": "p6"
+    },
+    {
+     "t": "icon",
+     "id": "crown",
+     "name": "crown",
+     "x": 470,
+     "y": 280,
+     "size": 150,
+     "from": "top",
+     "at": "p4:power",
+     "out": "p7",
+     "exit": "top"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "*WINNING*",
+     "x": 1250,
+     "y": 480,
+     "size": 210,
+     "from": "slam",
+     "at": "p6:winning"
+    },
+    {
+     "t": "icon",
+     "id": "glass",
+     "name": "hourglass",
+     "x": 1250,
+     "y": 720,
+     "size": 120,
+     "from": "pop",
+     "at": "p7:moment"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "…in the moment.",
+     "x": 1250,
+     "y": 850,
+     "size": 60,
+     "weight": 600,
+     "color": "muted",
+     "from": "bottom",
+     "at": "p7:in"
+    }
+   ]
+  },
+  {
+   "id": "fixed",
+   "beats": [
+    {
+     "id": "f1",
+     "say": "Reason three. You think people can't change."
+    },
+    {
+     "id": "f2",
+     "say": "If you believe personality is set in stone,"
+    },
+    {
+     "id": "f3",
+     "say": "a mistake becomes permanent proof of who you are."
+    },
+    {
+     "id": "f4",
+     "say": "Studies by Karina Schumann and Carol Dweck found that people who think this way take less responsibility."
+    },
+    {
+     "id": "f5",
+     "say": "But when people first reminded themselves of what they value,"
+    },
+    {
+     "id": "f6",
+     "say": "they gave fuller, better apologies."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "c1",
+     "num": "03",
+     "text": "People *can't change*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "f1:reason",
+     "out": "f2",
+     "perWord": true
+    },
+    {
+     "t": "icon",
+     "id": "stone",
+     "name": "stone",
+     "x": 620,
+     "y": 560,
+     "size": 400,
+     "from": "top",
+     "at": "f2:stone",
+     "out": "f4"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "personality =",
+     "x": 1320,
+     "y": 400,
+     "size": 64,
+     "weight": 600,
+     "color": "muted",
+     "from": "right",
+     "at": "f2:personality",
+     "out": "f4"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "set in *stone*",
+     "x": 1320,
+     "y": 520,
+     "size": 96,
+     "from": "right",
+     "perWord": true,
+     "at": "f2:set",
+     "out": "f4"
+    },
+    {
+     "t": "stamp",
+     "id": "s1",
+     "text": "PERMANENT",
+     "x": 620,
+     "y": 600,
+     "size": 72,
+     "from": "slam",
+     "at": "f3:permanent",
+     "out": "f4"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "a mistake = *proof*",
+     "x": 1320,
+     "y": 680,
+     "size": 72,
+     "from": "bottom",
+     "at": "f3:proof",
+     "out": "f4"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2014",
+     "text": "Schumann & Dweck",
+     "sub": "fixed beliefs about personality",
+     "x": 960,
+     "y": 290,
+     "from": "right",
+     "at": "f4:studies",
+     "out": "f5"
+    },
+    {
+     "t": "text",
+     "id": "tm",
+     "text": "“people don't *change*”",
+     "x": 960,
+     "y": 500,
+     "size": 56,
+     "weight": 600,
+     "color": "muted",
+     "from": "left",
+     "perWord": true,
+     "at": "f4:people",
+     "out": "f5"
+    },
+    {
+     "t": "icon",
+     "id": "down",
+     "name": "arrowDown",
+     "x": 540,
+     "y": 660,
+     "size": 150,
+     "color": "accent",
+     "from": "top",
+     "at": "f4:less",
+     "out": "f5"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "less *responsibility*",
+     "x": 1060,
+     "y": 660,
+     "size": 84,
+     "from": "right",
+     "perWord": true,
+     "at": "f4:less",
+     "out": "f5"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 560,
+     "y": 620,
+     "from": "left",
+     "at": "f5:reminded",
+     "poses": [
+      [
+       "sorry",
+       "f5:reminded"
+      ],
+      [
+       "proud",
+       "f6:fuller"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "f5:reminded"
+      ],
+      [
+       "smile",
+       "f6:fuller"
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "list",
+     "name": "checklist",
+     "x": 1300,
+     "y": 400,
+     "size": 220,
+     "from": "draw",
+     "at": "f5:value"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "what you *value*",
+     "x": 1300,
+     "y": 600,
+     "size": 72,
+     "from": "right",
+     "at": "f5:value"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "→ *better* apologies",
+     "x": 1300,
+     "y": 740,
+     "size": 72,
+     "from": "bottom",
+     "perWord": true,
+     "at": "f6:fuller"
+    }
+   ]
+  },
+  {
+   "id": "line",
+   "beats": [
+    {
+     "id": "l1",
+     "say": "Reason four. You might not think you did anything wrong."
+    },
+    {
+     "id": "l2",
+     "say": "In one study, men apologized less than women."
+    },
+    {
+     "id": "l3",
+     "say": "Not because they refused more,"
+    },
+    {
+     "id": "l4",
+     "say": "but because they rated fewer of their own actions as offensive."
+    },
+    {
+     "id": "l5",
+     "say": "When they did think they'd hurt someone, they apologized just as often."
+    },
+    {
+     "id": "l6",
+     "say": "Different line. Different apology."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "c1",
+     "num": "04",
+     "text": "“I did *nothing wrong*”",
+     "x": 960,
+     "y": 540,
+     "from": "right",
+     "at": "l1:reason",
+     "out": "l2",
+     "perWord": true
+    },
+    {
+     "t": "stick",
+     "id": "m",
+     "x": 560,
+     "y": 640,
+     "from": "left",
+     "at": "l2:men",
+     "poses": [
+      [
+       "idle",
+       "l2:men"
+      ],
+      [
+       "shrug",
+       "l3:refused"
+      ],
+      [
+       "armsCrossed",
+       "l4:fewer"
+      ],
+      [
+       "sorry",
+       "l5:apologized"
+      ],
+      [
+       "idle",
+       "l6:different"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "l2:men"
+      ],
+      [
+       "frown",
+       "l5:hurt"
+      ],
+      [
+       "neutral",
+       "l6:different"
+      ]
+     ]
+    },
+    {
+     "t": "stick",
+     "id": "w",
+     "variant": "bow",
+     "flip": true,
+     "x": 1360,
+     "y": 640,
+     "from": "right",
+     "at": "l2:women",
+     "poses": [
+      [
+       "idle",
+       "l2:women"
+      ],
+      [
+       "sorry",
+       "l5:apologized"
+      ],
+      [
+       "idle",
+       "l6:different"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "l2:women"
+      ],
+      [
+       "frown",
+       "l5:hurt"
+      ],
+      [
+       "neutral",
+       "l6:different"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "men apologized *less*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "l2:apologized",
+     "out": "l3"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "refused more?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "weight": 600,
+     "from": "top",
+     "at": "l3:not",
+     "out": "l4"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 960,
+     "y": 170,
+     "w": 480,
+     "at": "l3:refused",
+     "delay": 0.3,
+     "out": "l4",
+     "exit": "top"
+    },
+    {
+     "t": "meter",
+     "id": "mm",
+     "x": 790,
+     "y": 640,
+     "h": 420,
+     "mark": 0.78,
+     "from": "bottom",
+     "at": "l4:rated",
+     "out": "l6"
+    },
+    {
+     "t": "meter",
+     "id": "mw",
+     "x": 1590,
+     "y": 640,
+     "h": 420,
+     "mark": 0.42,
+     "from": "bottom",
+     "at": "l4:rated",
+     "out": "l6"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "what counts as *offensive*",
+     "x": 960,
+     "y": 170,
+     "size": 60,
+     "from": "top",
+     "at": "l4:offensive",
+     "out": "l5:just"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "same *sorry* rate",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "l5:just",
+     "out": "l6",
+     "delay": 0.15
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "Different *line*.",
+     "x": 960,
+     "y": 150,
+     "size": 72,
+     "from": "left",
+     "at": "l6:different"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "Different *apology*.",
+     "x": 960,
+     "y": 245,
+     "size": 72,
+     "from": "right",
+     "at": "l6:apology"
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "beats": [
+    {
+     "id": "w1",
+     "say": "Here's the twist."
+    },
+    {
+     "id": "w2",
+     "say": "Apologizing feels like losing."
+    },
+    {
+     "id": "w3",
+     "say": "But to the other person, it usually signals strength, not weakness."
+    },
+    {
+     "id": "w4",
+     "say": "A real apology has three parts."
+    },
+    {
+     "id": "w5",
+     "say": "Name what you did."
+    },
+    {
+     "id": "w6",
+     "say": "Own the impact."
+    },
+    {
+     "id": "w7",
+     "say": "And say what changes."
+    },
+    {
+     "id": "w8",
+     "say": "No but. No, if you were offended."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the *twist*",
+     "x": 960,
+     "y": 520,
+     "size": 170,
+     "from": "slam",
+     "at": "w1:start",
+     "out": "w2",
+     "perWord": true
+    },
+    {
+     "t": "balance",
+     "id": "bal",
+     "x": 960,
+     "y": 610,
+     "size": 620,
+     "from": "bottom",
+     "at": "w2:apologizing",
+     "out": "w4",
+     "tilt": [
+      [
+       0,
+       "w2:apologizing"
+      ],
+      [
+       -14,
+       "w2:losing"
+      ],
+      [
+       14,
+       "w3:strength"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "feels like *losing*",
+     "x": 960,
+     "y": 190,
+     "size": 80,
+     "from": "top",
+     "at": "w2:feels",
+     "out": "w3"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "*strength*, not weakness",
+     "x": 960,
+     "y": 190,
+     "size": 80,
+     "from": "top",
+     "perWord": true,
+     "at": "w3:strength",
+     "out": "w4"
+    },
+    {
+     "t": "text",
+     "id": "h",
+     "text": "A real apology",
+     "x": 960,
+     "y": 230,
+     "size": 80,
+     "from": "left",
+     "at": "w4:real"
+    },
+    {
+     "t": "slot",
+     "id": "s1",
+     "n": "1",
+     "text": "Name *what you did*",
+     "x": 450,
+     "y": 520,
+     "from": "left",
+     "at": "w4:three",
+     "fill": "w5:name"
+    },
+    {
+     "t": "slot",
+     "id": "s2",
+     "n": "2",
+     "text": "Own *the impact*",
+     "x": 960,
+     "y": 520,
+     "from": "bottom",
+     "at": "w4:three",
+     "delay": 0.08,
+     "fill": "w6:own"
+    },
+    {
+     "t": "slot",
+     "id": "s3",
+     "n": "3",
+     "text": "Say *what changes*",
+     "x": 1470,
+     "y": 520,
+     "from": "right",
+     "at": "w4:three",
+     "delay": 0.16,
+     "fill": "w7:say"
+    },
+    {
+     "t": "text",
+     "id": "n1",
+     "text": "“but…”",
+     "x": 640,
+     "y": 830,
+     "size": 64,
+     "weight": 600,
+     "color": "muted",
+     "from": "bottom",
+     "at": "w8:but"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 640,
+     "y": 830,
+     "w": 260,
+     "at": "w8:but",
+     "delay": 0.3
+    },
+    {
+     "t": "text",
+     "id": "n2",
+     "text": "“if you were offended”",
+     "x": 1240,
+     "y": 830,
+     "size": 64,
+     "weight": 600,
+     "color": "muted",
+     "from": "bottom",
+     "at": "w8:if"
+    },
+    {
+     "t": "strike",
+     "id": "k2",
+     "x": 1240,
+     "y": 830,
+     "w": 700,
+     "at": "w8:offended",
+     "delay": 0.25
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "e1",
+     "say": "The person who says sorry first isn't the loser."
+    },
+    {
+     "id": "e2",
+     "say": "They're the one strong enough to lose the argument, and keep the person."
+    },
+    {
+     "id": "e3",
+     "say": "Follow for more of the real why."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 620,
+     "y": 650,
+     "from": "left",
+     "at": "e1:person",
+     "poses": [
+      [
+       "idle",
+       "e1:person"
+      ],
+      [
+       "give",
+       "e1:sorry"
+      ],
+      [
+       "happy",
+       "e2:keep"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "e1:person"
+      ],
+      [
+       "smile",
+       "e2:keep"
+      ]
+     ],
+     "out": "e3"
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "flip": true,
+     "variant": "bow",
+     "x": 1300,
+     "y": 650,
+     "from": "right",
+     "at": "e1:person",
+     "poses": [
+      [
+       "armsCrossed",
+       "e1:person"
+      ],
+      [
+       "idle",
+       "e1:loser"
+      ],
+      [
+       "happy",
+       "e2:keep"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "e1:person"
+      ],
+      [
+       "neutral",
+       "e1:loser"
+      ],
+      [
+       "smile",
+       "e2:keep"
+      ]
+     ],
+     "out": "e3"
+    },
+    {
+     "t": "icon",
+     "id": "heart",
+     "name": "heart",
+     "x": 850,
+     "y": 560,
+     "size": 130,
+     "color": "accent",
+     "from": "left",
+     "at": "e1:sorry",
+     "out": "e3"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "isn't the *loser*",
+     "x": 960,
+     "y": 190,
+     "size": 80,
+     "from": "top",
+     "at": "e1:isn't",
+     "out": "e2"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "lose *the argument*",
+     "x": 960,
+     "y": 160,
+     "size": 72,
+     "from": "left",
+     "perWord": true,
+     "at": "e2:lose",
+     "out": "e3"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "keep *the person*.",
+     "x": 960,
+     "y": 260,
+     "size": 72,
+     "from": "right",
+     "perWord": true,
+     "at": "e2:keep",
+     "out": "e3"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "the *real* why",
+     "x": 960,
+     "y": 500,
+     "size": 150,
+     "from": "blur",
+     "perWord": true,
+     "at": "e3:real"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 640,
+     "size": 52,
+     "weight": 600,
+     "color": "muted",
+     "from": "bottom",
+     "at": "e3:real",
+     "delay": 0.35
+    }
+   ]
+  }
+ ]
+}
