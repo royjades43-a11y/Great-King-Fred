@@ -2,7 +2,6 @@
   <style>
     @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
     @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
-    @font-face { font-family: "Anton"; font-weight: 400; font-style: normal; src: url("assets/fonts/anton-400.woff2") format("woff2"); }
     #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
     .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
     .in { position: relative; display: flex; align-items: center; justify-content: center; }
@@ -12,9 +11,9 @@
     .alm { color: var(--alarm); }
     .tail { color: var(--ink); }
     .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
-    .chap-num { font-family: "Anton", sans-serif; font-size: 260px; font-weight: 400; letter-spacing: 0; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
     .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
-    .hero { font-family: "Anton", sans-serif; font-weight: 400 !important; letter-spacing: 0.01em; text-transform: uppercase; word-spacing: 0.12em; }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
     .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
     .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
     .ico .f { fill: currentColor; stroke: none; }
@@ -30,7 +29,7 @@
     .card .txt, .card div { text-shadow: none; }
     .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
     .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
-    .card-s { font-size: 36px; font-weight: 600; color: #4E5F51; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
     .barw { position: relative; width: 1px; }
     .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
     .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
@@ -48,7 +47,7 @@
     .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
     .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
     .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
-    .stick .face { fill: var(--card); }
+    .stick .face { fill: var(--paper); }
     .stick .ground { fill: var(--shadow); stroke: none; }
     .stick .f { fill: var(--ink); }
     .stick .bow { fill: var(--accent); stroke: none; }
@@ -95,7 +94,7 @@
   </div>
   <script>
     (function () {
-      const ELS = [{"id":"choice-ch","t":"chapter","from":"left","exit":null,"in":0.2,"out":2.8200000000000003,"outDur":0.3,"words":[0.74,1.1,1.46,1.56,1.64]},{"id":"choice-b","t":"stick","from":"right","exit":null,"in":3.06,"out":20.525000000000002,"outDur":0.3,"poses":[["idle",3.06],["armsCrossed",9.7],["holdHead",15.9],["headDown",17.76]],"mouth":[["neutral",3.06],["tight",9.7],["o",15.9],["frown",17.76]]},{"id":"choice-t1","t":"text","from":"left","exit":null,"in":3.06,"out":8.2,"outDur":0.3,"words":null},{"id":"choice-t2","t":"text","from":"left","exit":null,"in":4.92,"out":8.2,"outDur":0.3,"words":[5.02,5.12,4.92]},{"id":"choice-t3","t":"text","from":"bottom","exit":null,"in":7.38,"out":8.2,"outDur":0.3,"words":null},{"id":"choice-a","t":"stick","from":"left","exit":null,"in":8.58,"out":11.32,"outDur":0.3,"poses":[["idle",8.58],["point",9.7]],"mouth":[["frown",8.58]]},{"id":"choice-wall","t":"icon","from":"top","exit":"top","in":9.7,"out":11.32,"outDur":0.3},{"id":"choice-t4","t":"text","from":"top","exit":null,"in":9.7,"out":11.32,"outDur":0.3,"words":null},{"id":"choice-t5","t":"text","from":"slam","exit":null,"in":13.88,"out":14.799999999999999,"outDur":0.25,"words":null},{"id":"choice-bolt","t":"icon","from":"pop","exit":null,"in":13.88,"out":14.799999999999999,"outDur":0.25},{"id":"choice-wall2","t":"icon","from":"left","exit":null,"in":15.9,"out":20.75,"outDur":0.3},{"id":"choice-t6","t":"text","from":"top","exit":null,"in":16.66,"out":20.775000000000002,"outDur":0.3,"words":null}];
+      const ELS = [{"id":"choice-ch","t":"chapter","from":"left","exit":null,"in":0.2,"out":2.8200000000000003,"outDur":0.3,"words":[0.74,1.1,1.46,1.56,1.64]},{"id":"choice-b","t":"stick","from":"right","exit":null,"in":3.06,"out":20.525000000000002,"outDur":0.3,"poses":[["idle",3.06],["armsCrossed",9.7],["holdHead",15.9],["headDown",17.76]],"mouth":[["neutral",3.06],["tight",9.7],["o",15.9],["frown",17.76]]},{"id":"choice-t1","t":"text","from":"left","exit":null,"in":3.06,"out":8.2,"outDur":0.3,"words":[3.06,3.36]},{"id":"choice-t2","t":"text","from":"left","exit":null,"in":4.92,"out":8.2,"outDur":0.3,"words":[3.82,4.76,4.92]},{"id":"choice-t3","t":"text","from":"bottom","exit":null,"in":7.38,"out":8.2,"outDur":0.3,"words":[7.04,7.26,7.38]},{"id":"choice-a","t":"stick","from":"left","exit":null,"in":8.58,"out":11.32,"outDur":0.3,"poses":[["idle",8.58],["point",9.7]],"mouth":[["frown",8.58]]},{"id":"choice-wall","t":"icon","from":"top","exit":"top","in":9.7,"out":11.32,"outDur":0.3},{"id":"choice-t4","t":"text","from":"top","exit":null,"in":9.7,"out":11.32,"outDur":0.3,"words":[9.7,9.92,10.1,10.28,10.52]},{"id":"choice-t5","t":"text","from":"slam","exit":null,"in":13.88,"out":14.799999999999999,"outDur":0.25,"words":[12.12,13.88]},{"id":"choice-bolt","t":"icon","from":"pop","exit":null,"in":13.88,"out":14.799999999999999,"outDur":0.25},{"id":"choice-wall2","t":"icon","from":"left","exit":null,"in":15.9,"out":20.75,"outDur":0.3},{"id":"choice-t6","t":"text","from":"top","exit":null,"in":16.66,"out":20.775000000000002,"outDur":0.3,"words":[16.66,17.52,17.76]}];
       const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
       const MOUTHS = ["neutral","smile","frown","o","tight"];
 

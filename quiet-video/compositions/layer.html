@@ -2,7 +2,6 @@
   <style>
     @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
     @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
-    @font-face { font-family: "Anton"; font-weight: 400; font-style: normal; src: url("assets/fonts/anton-400.woff2") format("woff2"); }
     #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
     .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
     .in { position: relative; display: flex; align-items: center; justify-content: center; }
@@ -12,9 +11,9 @@
     .alm { color: var(--alarm); }
     .tail { color: var(--ink); }
     .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
-    .chap-num { font-family: "Anton", sans-serif; font-size: 260px; font-weight: 400; letter-spacing: 0; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
     .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
-    .hero { font-family: "Anton", sans-serif; font-weight: 400 !important; letter-spacing: 0.01em; text-transform: uppercase; word-spacing: 0.12em; }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
     .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
     .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
     .ico .f { fill: currentColor; stroke: none; }
@@ -30,7 +29,7 @@
     .card .txt, .card div { text-shadow: none; }
     .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
     .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
-    .card-s { font-size: 36px; font-weight: 600; color: #4E5F51; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
     .barw { position: relative; width: 1px; }
     .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
     .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
@@ -48,7 +47,7 @@
     .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
     .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
     .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
-    .stick .face { fill: var(--card); }
+    .stick .face { fill: var(--paper); }
     .stick .ground { fill: var(--shadow); stroke: none; }
     .stick .f { fill: var(--ink); }
     .stick .bow { fill: var(--accent); stroke: none; }
@@ -84,7 +83,7 @@
   </div>
   <script>
     (function () {
-      const ELS = [{"id":"layer-ch","t":"chapter","from":"right","exit":null,"in":0.2,"out":1.78,"outDur":0.3,"words":[0.6,0.84,1.12]},{"id":"layer-b","t":"stick","from":"left","exit":null,"in":2.02,"out":18.700000000000003,"outDur":0.3,"poses":[["idle",2.02],["sorry",3.7],["armsCrossed",15.02]],"mouth":[["neutral",2.02],["tight",3.7]]},{"id":"layer-t1","t":"text","from":"right","exit":null,"in":3.7,"out":6.26,"outDur":0.3,"words":null},{"id":"layer-t2","t":"text","from":"right","exit":null,"in":6.5,"out":12.94,"outDur":0.3,"words":null},{"id":"layer-t3","t":"text","from":"bottom","exit":null,"in":11.18,"out":12.94,"outDur":0.3,"words":null},{"id":"layer-heat","t":"icon","from":"pop","exit":null,"in":9.96,"out":12.94,"outDur":0.25},{"id":"layer-t4","t":"text","from":"slam","exit":null,"in":15.02,"out":19.900000000000002,"outDur":0.25,"words":null},{"id":"layer-t5","t":"text","from":"bottom","exit":null,"in":17.94,"out":19.900000000000002,"outDur":0.3,"words":null},{"id":"layer-l1","t":"text","from":"top","exit":null,"in":19.28,"out":24.69,"outDur":0.3,"words":null},{"id":"layer-l2","t":"text","from":"left","exit":null,"in":20.54,"out":24.715,"outDur":0.3,"words":null},{"id":"layer-door","t":"icon","from":"draw","exit":null,"in":20.54,"out":24.74,"outDur":0.25},{"id":"layer-r1","t":"text","from":"top","exit":null,"in":22.36,"out":24.765,"outDur":0.3,"words":null},{"id":"layer-r2","t":"text","from":"right","exit":null,"in":23.94,"out":24.79,"outDur":0.3,"words":null},{"id":"layer-shield","t":"icon","from":"pop","exit":null,"in":24.32,"out":24.92,"outDur":0.25}];
+      const ELS = [{"id":"layer-ch","t":"chapter","from":"right","exit":null,"in":0.2,"out":1.78,"outDur":0.3,"words":[0.6,0.84,1.12]},{"id":"layer-b","t":"stick","from":"left","exit":null,"in":2.02,"out":18.700000000000003,"outDur":0.3,"poses":[["idle",2.02],["sorry",3.7],["armsCrossed",15.02]],"mouth":[["neutral",2.02],["tight",3.7]]},{"id":"layer-t1","t":"text","from":"right","exit":null,"in":3.7,"out":6.26,"outDur":0.3,"words":[3.7,4.04,4.28,4.4,4.62]},{"id":"layer-t2","t":"text","from":"right","exit":null,"in":6.5,"out":12.94,"outDur":0.3,"words":[6.5,6.7,6.92,7.12,7.32]},{"id":"layer-t3","t":"text","from":"bottom","exit":null,"in":11.18,"out":12.94,"outDur":0.3,"words":[11.18,11.58,11.84,11.98,12.18]},{"id":"layer-heat","t":"icon","from":"pop","exit":null,"in":9.96,"out":12.94,"outDur":0.25},{"id":"layer-t4","t":"text","from":"slam","exit":null,"in":15.02,"out":19.900000000000002,"outDur":0.25,"words":[13.44,13.54,15.02]},{"id":"layer-t5","t":"text","from":"bottom","exit":null,"in":17.94,"out":19.900000000000002,"outDur":0.3,"words":[16.62,16.88,16.98,17.64,17.94]},{"id":"layer-l1","t":"text","from":"top","exit":null,"in":19.28,"out":24.69,"outDur":0.3,"words":[19.28]},{"id":"layer-l2","t":"text","from":"left","exit":null,"in":20.54,"out":24.715,"outDur":0.3,"words":[20.54,20.64,21.28]},{"id":"layer-door","t":"icon","from":"draw","exit":null,"in":20.54,"out":24.74,"outDur":0.25},{"id":"layer-r1","t":"text","from":"top","exit":null,"in":22.36,"out":24.765,"outDur":0.3,"words":[22.36]},{"id":"layer-r2","t":"text","from":"right","exit":null,"in":23.94,"out":24.79,"outDur":0.3,"words":[23.94,24.32]},{"id":"layer-shield","t":"icon","from":"pop","exit":null,"in":24.32,"out":24.92,"outDur":0.25}];
       const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
       const MOUTHS = ["neutral","smile","frown","o","tight"];
 

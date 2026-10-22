@@ -2,7 +2,6 @@
   <style>
     @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
     @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
-    @font-face { font-family: "Anton"; font-weight: 400; font-style: normal; src: url("assets/fonts/anton-400.woff2") format("woff2"); }
     #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
     .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
     .in { position: relative; display: flex; align-items: center; justify-content: center; }
@@ -12,9 +11,9 @@
     .alm { color: var(--alarm); }
     .tail { color: var(--ink); }
     .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
-    .chap-num { font-family: "Anton", sans-serif; font-size: 260px; font-weight: 400; letter-spacing: 0; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
     .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
-    .hero { font-family: "Anton", sans-serif; font-weight: 400 !important; letter-spacing: 0.01em; text-transform: uppercase; word-spacing: 0.12em; }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
     .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
     .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
     .ico .f { fill: currentColor; stroke: none; }
@@ -30,7 +29,7 @@
     .card .txt, .card div { text-shadow: none; }
     .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
     .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
-    .card-s { font-size: 36px; font-weight: 600; color: #4E5F51; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
     .barw { position: relative; width: 1px; }
     .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
     .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
@@ -48,7 +47,7 @@
     .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
     .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
     .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
-    .stick .face { fill: var(--card); }
+    .stick .face { fill: var(--paper); }
     .stick .ground { fill: var(--shadow); stroke: none; }
     .stick .f { fill: var(--ink); }
     .stick .bow { fill: var(--accent); stroke: none; }
@@ -91,7 +90,7 @@
   </div>
   <script>
     (function () {
-      const ELS = [{"id":"flood-t0","t":"text","from":"top","exit":null,"in":1.02,"out":2.8600000000000003,"outDur":0.3,"words":null},{"id":"flood-t1","t":"text","from":"slam","exit":null,"in":4.08,"out":4.9399999999999995,"outDur":0.25,"words":null},{"id":"flood-t2","t":"text","from":"top","exit":null,"in":3.1,"out":4.9399999999999995,"outDur":0.3,"words":null},{"id":"flood-t2b","t":"text","from":"bottom","exit":null,"in":4.18,"out":4.9399999999999995,"outDur":0.3,"words":null},{"id":"flood-wave","t":"icon","from":"bottom","exit":null,"in":4.08,"out":4.9399999999999995,"outDur":0.3},{"id":"flood-b","t":"stick","from":"left","exit":null,"in":5.42,"out":27.32,"outDur":0.3,"poses":[["idle",5.42],["holdHead",10.76],["headDown",13.32],["holdHead",18.12],["sorry",23.48],["idle",26.98]],"mouth":[["o",5.42],["frown",13.32],["tight",18.12],["neutral",23.48]]},{"id":"flood-hb","t":"icon","from":"draw","exit":null,"in":5.42,"out":11.68,"outDur":0.25},{"id":"flood-r1","t":"text","from":"right","exit":null,"in":5.42,"out":11.68,"outDur":0.3,"words":null},{"id":"flood-brain","t":"icon","from":"pop","exit":null,"in":6.82,"out":11.68,"outDur":0.25},{"id":"flood-r2","t":"text","from":"right","exit":null,"in":6.82,"out":11.68,"outDur":0.3,"words":null},{"id":"flood-al","t":"icon","from":"pop","exit":null,"in":10.76,"out":11.68,"outDur":0.25},{"id":"flood-r3","t":"text","from":"right","exit":null,"in":10.76,"out":11.68,"outDur":0.3,"words":null},{"id":"flood-t3","t":"text","from":"right","exit":null,"in":13.32,"out":16.28,"outDur":0.3,"words":null},{"id":"flood-k3","t":"strike","from":"pop","exit":"right","in":15.38,"out":16.28,"outDur":0.3},{"id":"flood-t4","t":"text","from":"bottom","exit":null,"in":15.28,"out":16.28,"outDur":0.3,"words":null},{"id":"flood-bub","t":"bubble","from":"pop","exit":null,"in":16.7,"out":20.42,"outDur":0.25},{"id":"flood-t5","t":"text","from":"bottom","exit":null,"in":18.12,"out":20.42,"outDur":0.3,"words":null},{"id":"flood-t6","t":"text","from":"right","exit":null,"in":22.96,"out":24.040000000000003,"outDur":0.3,"words":null},{"id":"flood-t7","t":"text","from":"right","exit":null,"in":23.32,"out":24.6,"outDur":0.3,"words":null},{"id":"flood-k7","t":"strike","from":"pop","exit":"right","in":23.73,"out":24.6,"outDur":0.3},{"id":"flood-menu","t":"card","from":"right","exit":null,"in":26.98,"out":27.695,"outDur":0.3}];
+      const ELS = [{"id":"flood-t0","t":"text","from":"top","exit":null,"in":1.02,"out":2.8600000000000003,"outDur":0.3,"words":[0.2,0.88,1.02,1.26,3.9]},{"id":"flood-t1","t":"text","from":"slam","exit":null,"in":4.08,"out":4.9399999999999995,"outDur":0.25,"words":[4.08]},{"id":"flood-t2","t":"text","from":"top","exit":null,"in":3.1,"out":4.9399999999999995,"outDur":0.3,"words":[3.1,3.5,3.9]},{"id":"flood-t2b","t":"text","from":"bottom","exit":null,"in":4.18,"out":4.9399999999999995,"outDur":0.3,"words":[4.18,4.28,4.38]},{"id":"flood-wave","t":"icon","from":"bottom","exit":null,"in":4.08,"out":4.9399999999999995,"outDur":0.3},{"id":"flood-b","t":"stick","from":"left","exit":null,"in":5.42,"out":27.32,"outDur":0.3,"poses":[["idle",5.42],["holdHead",10.76],["headDown",13.32],["holdHead",18.12],["sorry",23.48],["idle",26.98]],"mouth":[["o",5.42],["frown",13.32],["tight",18.12],["neutral",23.48]]},{"id":"flood-hb","t":"icon","from":"draw","exit":null,"in":5.42,"out":11.68,"outDur":0.25},{"id":"flood-r1","t":"text","from":"right","exit":null,"in":5.42,"out":11.68,"outDur":0.3,"words":[5.42,5.66,5.86]},{"id":"flood-brain","t":"icon","from":"pop","exit":null,"in":6.82,"out":11.68,"outDur":0.25},{"id":"flood-r2","t":"text","from":"right","exit":null,"in":6.82,"out":11.68,"outDur":0.3,"words":[6.82,7.16]},{"id":"flood-al","t":"icon","from":"pop","exit":null,"in":10.76,"out":11.68,"outDur":0.25},{"id":"flood-r3","t":"text","from":"right","exit":null,"in":10.76,"out":11.68,"outDur":0.3,"words":[9.46,9.56,10.76]},{"id":"flood-t3","t":"text","from":"right","exit":null,"in":13.32,"out":16.28,"outDur":0.3,"words":[13.32,13.54]},{"id":"flood-k3","t":"strike","from":"pop","exit":"right","in":15.38,"out":16.28,"outDur":0.3},{"id":"flood-t4","t":"text","from":"bottom","exit":null,"in":15.28,"out":16.28,"outDur":0.3,"words":[15.38,15.18,15.28]},{"id":"flood-bub","t":"bubble","from":"pop","exit":null,"in":16.7,"out":20.42,"outDur":0.25},{"id":"flood-t5","t":"text","from":"bottom","exit":null,"in":18.12,"out":20.42,"outDur":0.3,"words":[17.16,17.36,17.94,18.12]},{"id":"flood-t6","t":"text","from":"right","exit":null,"in":22.96,"out":24.040000000000003,"outDur":0.3,"words":[22.44,22.96]},{"id":"flood-t7","t":"text","from":"right","exit":null,"in":23.32,"out":24.6,"outDur":0.3,"words":[23.14,23.32,23.48]},{"id":"flood-k7","t":"strike","from":"pop","exit":"right","in":23.73,"out":24.6,"outDur":0.3},{"id":"flood-menu","t":"card","from":"right","exit":null,"in":26.98,"out":27.695,"outDur":0.3}];
       const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
       const MOUTHS = ["neutral","smile","frown","o","tight"];
 

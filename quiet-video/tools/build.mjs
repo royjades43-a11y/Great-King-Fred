@@ -138,11 +138,14 @@ function markup(el, pid) {
 function wordTimes(el, sceneStart) {
   const ws = parseWords(el.text);
   const base = cueToken(el.at);
-  let idx = base.index ?? beats.get(el.at.split(":")[0]).first;
+  const beat = beats.get(el.at.split(":")[0]);
+  // search the cue's own sentence (words said before the cue land with it), never far past it
+  let idx = beat.first;
+  const stop = Math.min(beat.last + 6, tokens.length);
   let prev = base.start;
   return ws.map((w) => {
     const n = norm(w.w);
-    for (let k = idx; k < Math.min(idx + 12, tokens.length); k++)
+    for (let k = idx; k < stop; k++)
       if (n && similar(tokens[k].n, n)) { idx = k + 1; prev = tokens[k].start; return +(prev - LEAD - sceneStart).toFixed(3); }
     prev += 0.1; // a word the voice doesn't say lands just after the one before it
     return +(prev - LEAD - sceneStart).toFixed(3);
@@ -167,7 +170,7 @@ function buildScene(s, si) {
     const end = Math.min(sceneLen, tOut + outDur + 0.04);
     cueSheet.push(`${s.id.padEnd(6)} ${el.id.padEnd(6)} ${el.t.padEnd(8)} cue ${el.at.padEnd(18)} spoken ${(local(spoken(el.at)) + s.start).toFixed(2).padStart(7)}s  in ${(tIn + s.start).toFixed(2).padStart(7)}s  out ${(tOut + s.start).toFixed(2).padStart(7)}s`);
     const a = { id: pid, t: el.t, from: el.from ?? "pop", exit: el.exit ?? null, in: tIn, out: tOut, outDur };
-    if (el.t === "text" || el.t === "chapter") a.words = el.perWord ? wordTimes(el, s.start) : null;
+    if (el.t === "text" || el.t === "chapter") a.words = el.perWord ?? theme.perWord ? wordTimes(el, s.start) : null;
     if (el.t === "slot") a.fill = local(spoken(el.fill) - LEAD);
     if (el.t === "stick") {
       a.poses = el.poses.map(([p, c]) => [p, Math.max(tIn, local(spoken(c) - LEAD))]);
@@ -214,9 +217,9 @@ function sceneCss() {
     .alm { color: var(--alarm); }
     .tail { color: var(--ink); }
     .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
-    .chap-num { font-family: ${display}sans-serif; font-size: 260px; font-weight: 400; letter-spacing: 0; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-num { font-family: ${display}sans-serif; font-size: 240px; font-weight: ${theme.displayWeight ?? 400}; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
     .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
-    .hero { font-family: ${display}sans-serif; font-weight: 400 !important; letter-spacing: 0.01em; text-transform: uppercase; word-spacing: 0.12em; }
+    .hero { font-family: ${display}sans-serif; font-weight: ${theme.displayWeight ?? 400} !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
     .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
     .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
     .ico .f { fill: currentColor; stroke: none; }
@@ -232,7 +235,7 @@ function sceneCss() {
     .card .txt, .card div { text-shadow: none; }
     .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
     .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
-    .card-s { font-size: 36px; font-weight: 600; color: #4E5F51; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
     .barw { position: relative; width: 1px; }
     .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
     .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
@@ -250,7 +253,7 @@ function sceneCss() {
     .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
     .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
     .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
-    .stick .face { fill: var(--card); }
+    .stick .face { fill: var(--paper); }
     .stick .ground { fill: var(--shadow); stroke: none; }
     .stick .f { fill: var(--ink); }
     .stick .bow { fill: var(--accent); stroke: none; }`;

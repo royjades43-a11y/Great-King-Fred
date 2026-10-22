@@ -1,10 +1,10 @@
 {
   "paper": "#A8BDA2",
-  "ink": "#15241A",
-  "muted": "#3F5243",
-  "accent": "#0F5A2B",
-  "accent2": "#0F5A2B",
-  "alarm": "#A61B14",
+  "ink": "#000000",
+  "muted": "#2E3A2C",
+  "accent": "#B00E1B",
+  "accent2": "#000000",
+  "alarm": "#B00E1B",
   "card": "#F1F5EF",
   "font": "Montserrat",
   "fontFiles": [
@@ -17,16 +17,13 @@
       "src": "assets/fonts/montserrat-800.woff2"
     }
   ],
-  "display": "Anton",
-  "displayFiles": [
-    {
-      "weight": 400,
-      "src": "assets/fonts/anton-400.woff2"
-    }
-  ],
+  "display": "Montserrat",
+  "displayFiles": [],
   "lead": 0.25,
   "handle": "@darealwhy",
   "voiceover": "assets/voiceover.mp3",
-  "shadow": "rgba(21, 36, 26, 0.30)",
-  "shadowSoft": "rgba(21, 36, 26, 0.18)"
+  "shadow": "rgba(0, 0, 0, 0.28)",
+  "shadowSoft": "rgba(0, 0, 0, 0.16)",
+  "displayWeight": 800,
+  "perWord": true
 }
