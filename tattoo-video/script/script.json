@@ -1,0 +1,1608 @@
+{
+ "title": "The Psychology of People Who Don't Get Tattoos",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "Almost a third of adults now have a tattoo."
+    },
+    {
+     "id": "b01",
+     "say": "So if you don't have one, you've probably been asked, \"Why not?\""
+    },
+    {
+     "id": "b02",
+     "say": "And you might not have a great answer."
+    },
+    {
+     "id": "b03",
+     "say": "\"I just…"
+    },
+    {
+     "id": "b04",
+     "say": "never did.\""
+    },
+    {
+     "id": "b05",
+     "say": "But that \"never did\" usually isn't random."
+    },
+    {
+     "id": "b06",
+     "say": "It says something real about how your mind works."
+    },
+    {
+     "id": "b07",
+     "say": "And it's not what people assume."
+    },
+    {
+     "id": "b08",
+     "say": "Let's get into it."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "p0",
+     "x": 300,
+     "y": 680,
+     "from": "none",
+     "at": "b00:start",
+     "poses": [
+      [
+       "idle",
+       "b00:start"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:start"
+      ]
+     ],
+     "out": "b01",
+     "scale": 0.62,
+     "tattoo": false,
+     "flip": false,
+     "startAtZero": true,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "p1",
+     "x": 564,
+     "y": 680,
+     "from": "bottom",
+     "at": "b00:adults",
+     "poses": [
+      [
+       "idle",
+       "b00:start"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:start"
+      ]
+     ],
+     "out": "b01",
+     "scale": 0.62,
+     "tattoo": true,
+     "flip": true,
+     "startAtZero": false,
+     "delay": 0.07
+    },
+    {
+     "t": "stick",
+     "id": "p2",
+     "x": 828,
+     "y": 680,
+     "from": "bottom",
+     "at": "b00:adults",
+     "poses": [
+      [
+       "idle",
+       "b00:start"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:start"
+      ]
+     ],
+     "out": "b01",
+     "scale": 0.62,
+     "tattoo": false,
+     "flip": false,
+     "startAtZero": false,
+     "delay": 0.14
+    },
+    {
+     "t": "stick",
+     "id": "p3",
+     "x": 1092,
+     "y": 680,
+     "from": "bottom",
+     "at": "b00:adults",
+     "poses": [
+      [
+       "idle",
+       "b00:start"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:start"
+      ]
+     ],
+     "out": "b01",
+     "scale": 0.62,
+     "tattoo": false,
+     "flip": true,
+     "startAtZero": false,
+     "delay": 0.21000000000000002
+    },
+    {
+     "t": "stick",
+     "id": "p4",
+     "x": 1356,
+     "y": 680,
+     "from": "bottom",
+     "at": "b00:adults",
+     "poses": [
+      [
+       "idle",
+       "b00:start"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:start"
+      ]
+     ],
+     "out": "b01",
+     "scale": 0.62,
+     "tattoo": true,
+     "flip": false,
+     "startAtZero": false,
+     "delay": 0.28
+    },
+    {
+     "t": "stick",
+     "id": "p5",
+     "x": 1620,
+     "y": 680,
+     "from": "none",
+     "at": "b00:start",
+     "poses": [
+      [
+       "idle",
+       "b00:start"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:start"
+      ]
+     ],
+     "out": "b01",
+     "scale": 0.62,
+     "tattoo": false,
+     "flip": true,
+     "startAtZero": true,
+     "delay": 0.35000000000000003
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "almost !1 in 3! have one",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b00:third",
+     "out": "b01"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 560,
+     "y": 620,
+     "from": "left",
+     "at": "b01:so",
+     "poses": [
+      [
+       "idle",
+       "b01:so"
+      ],
+      [
+       "shrug",
+       "b02:great"
+      ],
+      [
+       "idle",
+       "b05:but"
+      ],
+      [
+       "point",
+       "b06:mind"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b01:so"
+      ],
+      [
+       "o",
+       "b01:why"
+      ],
+      [
+       "tight",
+       "b03:i"
+      ],
+      [
+       "smile",
+       "b06:mind"
+      ]
+     ]
+    },
+    {
+     "t": "bubble",
+     "id": "bub",
+     "text": "why not?",
+     "x": 980,
+     "y": 300,
+     "size": 340,
+     "from": "pop",
+     "at": "b01:why",
+     "out": "b03"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "“I just… never did.”",
+     "x": 1300,
+     "y": 470,
+     "size": 84,
+     "from": "right",
+     "at": "b03:i",
+     "out": "b05",
+     "perWord": true
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "not !random!",
+     "x": 1300,
+     "y": 420,
+     "size": 140,
+     "from": "slam",
+     "at": "b05:random",
+     "out": "b07",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "brain",
+     "name": "brain",
+     "x": 1300,
+     "y": 640,
+     "size": 170,
+     "from": "pop",
+     "at": "b06:mind",
+     "out": "b07"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "not what people *assume*",
+     "x": 1300,
+     "y": 500,
+     "size": 72,
+     "from": "right",
+     "at": "b07:assume"
+    }
+   ]
+  },
+  {
+   "id": "forever",
+   "beats": [
+    {
+     "id": "b09",
+     "say": "Here's the first thing."
+    },
+    {
+     "id": "b10",
+     "say": "A tattoo isn't really a decision about today."
+    },
+    {
+     "id": "b11",
+     "say": "It's a decision about every version of you that comes after today."
+    },
+    {
+     "id": "b12",
+     "say": "And psychologists have found something strange about how we see those future versions."
+    },
+    {
+     "id": "b13",
+     "say": "In a 2013 study, people of every age said they'd changed a lot over the past ten years…"
+    },
+    {
+     "id": "b14",
+     "say": "but expected to change very little over the next ten."
+    },
+    {
+     "id": "b15",
+     "say": "Researchers called it the \"end of history illusion.\""
+    },
+    {
+     "id": "b16",
+     "say": "Most of us believe who we are right now is who we'll always be."
+    },
+    {
+     "id": "b17",
+     "say": "People who don't get tattoos often have a quiet suspicion that this isn't true."
+    },
+    {
+     "id": "b18",
+     "say": "They can feel that their future self might not agree."
+    },
+    {
+     "id": "b19",
+     "say": "So they don't sign a contract on that person's behalf."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "01",
+     "text": "Forever is a *long time*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b09:start",
+     "out": "b10:decision"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 380,
+     "y": 640,
+     "from": "left",
+     "at": "b10:tattoo",
+     "poses": [
+      [
+       "idle",
+       "b10:tattoo"
+      ],
+      [
+       "point",
+       "b11:every"
+      ],
+      [
+       "idle",
+       "b13:study"
+      ],
+      [
+       "armsCrossed",
+       "b17:suspicion"
+      ],
+      [
+       "proud",
+       "b19:sign"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b10:tattoo"
+      ],
+      [
+       "o",
+       "b12:strange"
+      ],
+      [
+       "neutral",
+       "b16:most"
+      ],
+      [
+       "smile",
+       "b19:sign"
+      ]
+     ],
+     "out": "b13"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "not a decision about *today*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b10:decision",
+     "out": "b11"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "about every *future you*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b11:every",
+     "out": "b13"
+    },
+    {
+     "t": "stick",
+     "id": "f1",
+     "x": 820,
+     "y": 660,
+     "from": "right",
+     "at": "b11:version",
+     "poses": [
+      [
+       "idle",
+       "b11:version"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b11:version"
+      ]
+     ],
+     "out": "b13",
+     "scale": 0.9
+    },
+    {
+     "t": "stick",
+     "id": "f2",
+     "x": 1180,
+     "y": 660,
+     "from": "right",
+     "at": "b11:comes",
+     "poses": [
+      [
+       "shrug",
+       "b11:comes"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b11:comes"
+      ]
+     ],
+     "out": "b13",
+     "scale": 0.9
+    },
+    {
+     "t": "stick",
+     "id": "f3",
+     "x": 1540,
+     "y": 660,
+     "from": "right",
+     "at": "b11:today",
+     "poses": [
+      [
+       "armsCrossed",
+       "b11:today"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b11:today"
+      ]
+     ],
+     "out": "b13",
+     "scale": 0.9,
+     "delay": 0.1
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2013",
+     "text": "End of history illusion",
+     "sub": "Quoidbach, Gilbert & Wilson",
+     "x": 960,
+     "y": 210,
+     "from": "top",
+     "at": "b13:study",
+     "out": "b16"
+    },
+    {
+     "t": "bar",
+     "id": "b1",
+     "x": 760,
+     "y": 860,
+     "w": 150,
+     "h": 360,
+     "color": "accent",
+     "label": "last 10 years",
+     "from": "draw",
+     "at": "b13:changed",
+     "out": "b16"
+    },
+    {
+     "t": "bar",
+     "id": "b2",
+     "x": 1160,
+     "y": 860,
+     "w": 150,
+     "h": 110,
+     "color": "muted",
+     "label": "next 10 years",
+     "from": "draw",
+     "at": "b14:little",
+     "out": "b16"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "how much people !changed! vs !expect to!",
+     "x": 960,
+     "y": 420,
+     "size": 44,
+     "from": "bottom",
+     "at": "b14:expected",
+     "out": "b15",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t3b",
+     "text": "the *end of history* illusion",
+     "x": 960,
+     "y": 420,
+     "size": 56,
+     "from": "bottom",
+     "at": "b15:researchers",
+     "out": "b16"
+    },
+    {
+     "t": "stick",
+     "id": "now",
+     "x": 560,
+     "y": 640,
+     "from": "left",
+     "at": "b16:believe",
+     "poses": [
+      [
+       "proud",
+       "b16:most"
+      ],
+      [
+       "idle",
+       "b17:people"
+      ],
+      [
+       "armsCrossed",
+       "b18:future"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b16:most"
+      ],
+      [
+       "neutral",
+       "b17:people"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "“this is me *forever*”",
+     "x": 1250,
+     "y": 300,
+     "size": 72,
+     "from": "right",
+     "at": "b16:always",
+     "out": "b17:suspicion"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 1250,
+     "y": 420,
+     "size": 150,
+     "from": "pop",
+     "at": "b17:suspicion",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "future you might !disagree!",
+     "x": 1250,
+     "y": 720,
+     "size": 64,
+     "from": "bottom",
+     "at": "b18:agree",
+     "out": "b19:sign"
+    },
+    {
+     "t": "icon",
+     "id": "doc",
+     "name": "contract",
+     "x": 1250,
+     "y": 470,
+     "size": 300,
+     "from": "draw",
+     "at": "b19:contract"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 1250,
+     "y": 470,
+     "w": 330,
+     "at": "b19:behalf",
+     "delay": 0.1
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "won't sign for *future you*",
+     "x": 1250,
+     "y": 720,
+     "size": 64,
+     "from": "bottom",
+     "at": "b19:sign"
+    }
+   ]
+  },
+  {
+   "id": "reverse",
+   "beats": [
+    {
+     "id": "b20",
+     "say": "People sometimes call that fear of commitment."
+    },
+    {
+     "id": "b21",
+     "say": "But most people without tattoos commit to plenty."
+    },
+    {
+     "id": "b22",
+     "say": "Jobs."
+    },
+    {
+     "id": "b23",
+     "say": "Relationships."
+    },
+    {
+     "id": "b24",
+     "say": "Big decisions."
+    },
+    {
+     "id": "b25",
+     "say": "The difference is reversibility."
+    },
+    {
+     "id": "b26",
+     "say": "A relationship can grow and change."
+    },
+    {
+     "id": "b27",
+     "say": "A job can be left."
+    },
+    {
+     "id": "b28",
+     "say": "A tattoo just stays exactly the same, while you don't."
+    },
+    {
+     "id": "b29",
+     "say": "And the worry isn't made up."
+    },
+    {
+     "id": "b30",
+     "say": "In one large survey, about a quarter of people with tattoos said they'd regretted at least one."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "02",
+     "text": "Not fear. *Reversibility.*",
+     "x": 960,
+     "y": 540,
+     "from": "right",
+     "at": "b20:start",
+     "out": "b21"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "they commit to *plenty*",
+     "x": 960,
+     "y": 190,
+     "size": 72,
+     "from": "top",
+     "at": "b21:commit",
+     "out": "b25"
+    },
+    {
+     "t": "icon",
+     "id": "job",
+     "name": "briefcase",
+     "x": 520,
+     "y": 520,
+     "size": 200,
+     "from": "pop",
+     "at": "b22:jobs",
+     "out": "b25"
+    },
+    {
+     "t": "icon",
+     "id": "rel",
+     "name": "rings",
+     "x": 960,
+     "y": 520,
+     "size": 220,
+     "from": "pop",
+     "at": "b23:relationships",
+     "out": "b25"
+    },
+    {
+     "t": "icon",
+     "id": "big",
+     "name": "checklist",
+     "x": 1400,
+     "y": 520,
+     "size": 200,
+     "from": "pop",
+     "at": "b24:big",
+     "out": "b25"
+    },
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "jobs",
+     "x": 520,
+     "y": 680,
+     "size": 48,
+     "from": "bottom",
+     "at": "b22:jobs",
+     "out": "b25"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "relationships",
+     "x": 960,
+     "y": 680,
+     "size": 48,
+     "from": "bottom",
+     "at": "b23:relationships",
+     "out": "b25"
+    },
+    {
+     "t": "text",
+     "id": "l3",
+     "text": "big decisions",
+     "x": 1400,
+     "y": 680,
+     "size": 48,
+     "from": "bottom",
+     "at": "b24:big",
+     "out": "b25"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "*REVERSIBILITY*",
+     "x": 960,
+     "y": 470,
+     "size": 150,
+     "from": "slam",
+     "at": "b25:reversibility",
+     "out": "b26",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "r1",
+     "name": "rings",
+     "x": 520,
+     "y": 470,
+     "size": 200,
+     "from": "left",
+     "at": "b26:relationship",
+     "out": "b29"
+    },
+    {
+     "t": "icon",
+     "id": "r1b",
+     "name": "loop",
+     "x": 520,
+     "y": 470,
+     "size": 280,
+     "from": "draw",
+     "at": "b26:grow",
+     "out": "b29"
+    },
+    {
+     "t": "text",
+     "id": "c1",
+     "text": "can *grow*",
+     "x": 520,
+     "y": 680,
+     "size": 52,
+     "from": "bottom",
+     "at": "b26:grow",
+     "out": "b29"
+    },
+    {
+     "t": "icon",
+     "id": "j1",
+     "name": "briefcase",
+     "x": 960,
+     "y": 470,
+     "size": 200,
+     "from": "top",
+     "at": "b27:job",
+     "out": "b29"
+    },
+    {
+     "t": "icon",
+     "id": "j1b",
+     "name": "door",
+     "x": 1060,
+     "y": 470,
+     "size": 160,
+     "from": "pop",
+     "at": "b27:left",
+     "out": "b29"
+    },
+    {
+     "t": "text",
+     "id": "c2",
+     "text": "can be *left*",
+     "x": 960,
+     "y": 680,
+     "size": 52,
+     "from": "bottom",
+     "at": "b27:left",
+     "out": "b29"
+    },
+    {
+     "t": "icon",
+     "id": "n1",
+     "name": "needle",
+     "x": 1400,
+     "y": 470,
+     "size": 200,
+     "from": "right",
+     "at": "b28:tattoo",
+     "out": "b29"
+    },
+    {
+     "t": "icon",
+     "id": "n1b",
+     "name": "lock",
+     "x": 1480,
+     "y": 560,
+     "size": 110,
+     "from": "pop",
+     "at": "b28:same",
+     "out": "b29"
+    },
+    {
+     "t": "text",
+     "id": "c3",
+     "text": "stays !the same!",
+     "x": 1400,
+     "y": 680,
+     "size": 52,
+     "from": "bottom",
+     "at": "b28:same",
+     "out": "b29"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "the worry is *real*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b29:worry",
+     "out": "b30"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "SURVEY · PEW RESEARCH 2023",
+     "text": "Tattoo regret",
+     "sub": "people who have a tattoo",
+     "x": 960,
+     "y": 230,
+     "from": "top",
+     "at": "b30:survey"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "!1 in 4! regret one",
+     "x": 960,
+     "y": 560,
+     "size": 130,
+     "from": "slam",
+     "at": "b30:quarter",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "inside",
+   "beats": [
+    {
+     "id": "b31",
+     "say": "Here's the second piece."
+    },
+    {
+     "id": "b32",
+     "say": "Research comparing people with and without tattoos found small but consistent differences."
+    },
+    {
+     "id": "b33",
+     "say": "People with tattoos, on average, scored higher on a \"need for uniqueness\"…"
+    },
+    {
+     "id": "b34",
+     "say": "and on seeking out new, intense experiences."
+    },
+    {
+     "id": "b35",
+     "say": "That doesn't make people without tattoos dull."
+    },
+    {
+     "id": "b36",
+     "say": "It often means their sense of who they are doesn't need to be worn on the outside."
+    },
+    {
+     "id": "b37",
+     "say": "Their identity lives in what they do, what they value, who they're loyal to."
+    },
+    {
+     "id": "b38",
+     "say": "Things nobody can see at a glance."
+    },
+    {
+     "id": "b39",
+     "say": "And for some people, it's simpler than personality."
+    },
+    {
+     "id": "b40",
+     "say": "It's a job, a family, a faith, a culture, or skin that heals badly."
+    },
+    {
+     "id": "b41",
+     "say": "Not every \"no\" is a statement."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "03",
+     "text": "It lives on the *inside*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b31:start",
+     "out": "b32"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · SWAMI ET AL. 2012",
+     "text": "With vs. without tattoos",
+     "sub": "small differences, on average",
+     "x": 960,
+     "y": 230,
+     "from": "top",
+     "at": "b32:research",
+     "out": "b35"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "small but *consistent* differences",
+     "x": 960,
+     "y": 420,
+     "size": 52,
+     "from": "bottom",
+     "at": "b32:small",
+     "out": "b33:need",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "need for *uniqueness*",
+     "x": 960,
+     "y": 520,
+     "size": 72,
+     "from": "left",
+     "at": "b33:people",
+     "out": "b35",
+     "perWord": true
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "seeking *new experiences*",
+     "x": 960,
+     "y": 640,
+     "size": 72,
+     "from": "right",
+     "at": "b34:seeking",
+     "out": "b35"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 520,
+     "y": 640,
+     "from": "left",
+     "at": "b35:that",
+     "poses": [
+      [
+       "idle",
+       "b35:that"
+      ],
+      [
+       "proud",
+       "b36:sense"
+      ],
+      [
+       "happy",
+       "b37:value"
+      ],
+      [
+       "shrug",
+       "b39:simpler"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b35:that"
+      ],
+      [
+       "smile",
+       "b36:outside"
+      ],
+      [
+       "neutral",
+       "b39:simpler"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "not !dull!",
+     "x": 1280,
+     "y": 300,
+     "size": 110,
+     "from": "slam",
+     "at": "b35:dull",
+     "out": "b36",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "hrt",
+     "name": "heart",
+     "x": 520,
+     "y": 595,
+     "size": 70,
+     "from": "pop",
+     "at": "b36:sense",
+     "out": "b39",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "doesn't need to be *worn*",
+     "x": 1280,
+     "y": 300,
+     "size": 64,
+     "from": "right",
+     "at": "b36:worn",
+     "out": "b37"
+    },
+    {
+     "t": "text",
+     "id": "v1",
+     "text": "what they *do*",
+     "x": 1280,
+     "y": 260,
+     "size": 64,
+     "from": "right",
+     "at": "b37:do",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "v2",
+     "text": "what they *value*",
+     "x": 1280,
+     "y": 370,
+     "size": 64,
+     "from": "right",
+     "at": "b37:value",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "v3",
+     "text": "who they're *loyal* to",
+     "x": 1280,
+     "y": 480,
+     "size": 64,
+     "from": "right",
+     "at": "b37:loyal",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "v4",
+     "text": "invisible at a *glance*",
+     "x": 1280,
+     "y": 620,
+     "size": 52,
+     "from": "bottom",
+     "at": "b38:glance",
+     "out": "b39:simpler",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "sometimes it's !simpler!",
+     "x": 1280,
+     "y": 260,
+     "size": 72,
+     "from": "top",
+     "at": "b39:simpler",
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "job · family · faith · culture · skin",
+     "x": 1280,
+     "y": 420,
+     "size": 46,
+     "from": "right",
+     "at": "b40:job",
+     "out": "b41",
+     "perWord": true
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "not every *no* is a statement",
+     "x": 1280,
+     "y": 470,
+     "size": 64,
+     "from": "bottom",
+     "at": "b41:not"
+    }
+   ]
+  },
+  {
+   "id": "twist",
+   "beats": [
+    {
+     "id": "b42",
+     "say": "But here's the part people miss."
+    },
+    {
+     "id": "b43",
+     "say": "None of this means tattoos are impulsive, or that people without them are wiser."
+    },
+    {
+     "id": "b44",
+     "say": "Someone with a sleeve might be making a very thoughtful choice: \"I want to carry this moment with me, even when I change.\""
+    },
+    {
+     "id": "b45",
+     "say": "And someone with bare skin might be saying: \"I want to stay free to change, even if I lose this moment.\""
+    },
+    {
+     "id": "b46",
+     "say": "Same question."
+    },
+    {
+     "id": "b47",
+     "say": "Opposite answers."
+    },
+    {
+     "id": "b48",
+     "say": "How much of today do you want to keep, forever?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the part people !miss!",
+     "x": 960,
+     "y": 480,
+     "size": 130,
+     "from": "slam",
+     "at": "b42:part",
+     "out": "b43",
+     "hero": true
+    },
+    {
+     "t": "balance",
+     "id": "bal",
+     "x": 960,
+     "y": 600,
+     "size": 600,
+     "from": "bottom",
+     "at": "b43:none",
+     "out": "b44",
+     "labels": [
+      "INK",
+      "NONE"
+     ],
+     "tilt": [
+      [
+       0,
+       "b43:none"
+      ],
+      [
+       8,
+       "b43:impulsive"
+      ],
+      [
+       -8,
+       "b43:wiser"
+      ],
+      [
+       0,
+       "b43:wiser"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "not impulsive. not wiser.",
+     "x": 960,
+     "y": 190,
+     "size": 64,
+     "from": "top",
+     "at": "b43:impulsive",
+     "out": "b44"
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 470,
+     "y": 640,
+     "from": "left",
+     "at": "b44:someone",
+     "poses": [
+      [
+       "give",
+       "b44:someone"
+      ],
+      [
+       "sorry",
+       "b44:carry"
+      ],
+      [
+       "happy",
+       "b46:same"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b44:someone"
+      ]
+     ],
+     "tattoo": true
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 1450,
+     "y": 640,
+     "from": "right",
+     "at": "b45:someone",
+     "poses": [
+      [
+       "idle",
+       "b45:someone"
+      ],
+      [
+       "victory",
+       "b45:free"
+      ],
+      [
+       "happy",
+       "b46:same"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b45:someone"
+      ]
+     ],
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "q1",
+     "text": "“carry this *moment*”",
+     "x": 600,
+     "y": 250,
+     "size": 60,
+     "from": "left",
+     "at": "b44:carry",
+     "out": "b46"
+    },
+    {
+     "t": "text",
+     "id": "q2",
+     "text": "“stay *free* to change”",
+     "x": 1320,
+     "y": 250,
+     "size": 60,
+     "from": "right",
+     "at": "b45:free",
+     "out": "b46"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "same question.",
+     "x": 960,
+     "y": 230,
+     "size": 72,
+     "from": "top",
+     "at": "b46:same",
+     "out": "b48"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "*opposite* answers.",
+     "x": 960,
+     "y": 330,
+     "size": 72,
+     "from": "bottom",
+     "at": "b47:opposite",
+     "out": "b48"
+    },
+    {
+     "t": "icon",
+     "id": "glass",
+     "name": "hourglass",
+     "x": 960,
+     "y": 480,
+     "size": 180,
+     "from": "pop",
+     "at": "b48:keep"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "how much of today do you *keep*?",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b48:how"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b49",
+     "say": "So if you don't have a tattoo, it's probably not because you're boring."
+    },
+    {
+     "id": "b50",
+     "say": "It might be because you take your future self seriously."
+    },
+    {
+     "id": "b51",
+     "say": "And if you do have one, you probably take your past self seriously."
+    },
+    {
+     "id": "b52",
+     "say": "Both are ways of being honest about time."
+    },
+    {
+     "id": "b53",
+     "say": "If this made you think, hit like, and tell me in the comments: do you have a tattoo, or have you always said no?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 560,
+     "y": 640,
+     "from": "left",
+     "at": "b49:so",
+     "poses": [
+      [
+       "idle",
+       "b49:so"
+      ],
+      [
+       "proud",
+       "b50:future"
+      ],
+      [
+       "give",
+       "b52:both"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b49:so"
+      ]
+     ],
+     "out": "b53"
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 1360,
+     "y": 640,
+     "from": "right",
+     "at": "b51:and",
+     "poses": [
+      [
+       "idle",
+       "b51:and"
+      ],
+      [
+       "proud",
+       "b51:past"
+      ],
+      [
+       "give",
+       "b52:both"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b51:and"
+      ]
+     ],
+     "out": "b53",
+     "flip": true,
+     "tattoo": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "not !boring!",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "top",
+     "at": "b49:boring",
+     "out": "b50",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "takes the *future* seriously",
+     "x": 560,
+     "y": 250,
+     "size": 44,
+     "from": "top",
+     "at": "b50:future",
+     "out": "b52"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "takes the *past* seriously",
+     "x": 1360,
+     "y": 250,
+     "size": 44,
+     "from": "top",
+     "at": "b51:past",
+     "out": "b52"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "honest about *time*",
+     "x": 960,
+     "y": 200,
+     "size": 96,
+     "from": "slam",
+     "at": "b52:honest",
+     "out": "b53",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "hrt",
+     "name": "heart",
+     "x": 960,
+     "y": 520,
+     "size": 120,
+     "from": "pop",
+     "at": "b52:both",
+     "out": "b53",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "like",
+     "name": "thumbsUp",
+     "x": 960,
+     "y": 430,
+     "size": 220,
+     "from": "pop",
+     "at": "b53:like"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "tattoo or *no*?",
+     "x": 960,
+     "y": 680,
+     "size": 96,
+     "from": "bottom",
+     "at": "b53:tattoo",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 820,
+     "size": 48,
+     "from": "bottom",
+     "at": "b53:no",
+     "weight": 600,
+     "color": "muted",
+     "delay": 0.4
+    }
+   ]
+  }
+ ]
+}

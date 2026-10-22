@@ -1,0 +1,15 @@
+  14.59s  impact-bass-1     -19 dB  pitch +0.0
+  22.59s  whoosh-cinematic  -16 dB  pitch +0.0
+  38.00s  click-soft        -16 dB  pitch +0.0
+  58.24s  pop               -20 dB  pitch +0.0
+  66.01s  whoosh-short      -24 dB  pitch +3.0
+  67.37s  whoosh-cinematic  -16 dB  pitch +1.0
+  78.41s  impact-bass-2     -20 dB  pitch -1.0
+  90.77s  click-soft        -16 dB  pitch +0.0
+  91.79s  impact-bass-1     -22 dB  pitch +0.5
+  96.37s  whoosh-cinematic  -16 dB  pitch -0.5
+  98.23s  click-soft        -16 dB  pitch +0.0
+ 114.81s  impact-bass-2     -19 dB  pitch +0.0
+ 140.15s  impact-bass-1     -20 dB  pitch -1.0
+ 183.01s  impact-bass-2     -22 dB  pitch +0.5
+ 186.47s  pop               -22 dB  pitch +1.0

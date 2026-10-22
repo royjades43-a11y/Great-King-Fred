@@ -1,0 +1,2510 @@
+{
+"source": "kokoro sentence timing + whisper word timing",
+"words": [
+{
+"text": "Almost",
+"start": 0.3,
+"end": 0.66
+},
+{
+"text": "a",
+"start": 0.66,
+"end": 0.86
+},
+{
+"text": "third",
+"start": 0.86,
+"end": 1.1
+},
+{
+"text": "of",
+"start": 1.1,
+"end": 1.24
+},
+{
+"text": "adults",
+"start": 1.24,
+"end": 1.52
+},
+{
+"text": "now",
+"start": 1.52,
+"end": 1.84
+},
+{
+"text": "have",
+"start": 1.84,
+"end": 2.08
+},
+{
+"text": "a",
+"start": 2.08,
+"end": 2.16
+},
+{
+"text": "tattoo.",
+"start": 2.16,
+"end": 2.52
+},
+{
+"text": "So",
+"start": 3.06,
+"end": 3.74
+},
+{
+"text": "if",
+"start": 3.74,
+"end": 3.9
+},
+{
+"text": "you",
+"start": 3.9,
+"end": 4
+},
+{
+"text": "don't",
+"start": 4,
+"end": 4.14
+},
+{
+"text": "have",
+"start": 4.14,
+"end": 4.4
+},
+{
+"text": "one,",
+"start": 4.4,
+"end": 4.7
+},
+{
+"text": "you've",
+"start": 4.84,
+"end": 4.96
+},
+{
+"text": "probably",
+"start": 4.96,
+"end": 5.36
+},
+{
+"text": "been",
+"start": 5.36,
+"end": 5.6
+},
+{
+"text": "asked,",
+"start": 5.6,
+"end": 6.04
+},
+{
+"text": "\"Why",
+"start": 6.04,
+"end": 6.58
+},
+{
+"text": "not?\"",
+"start": 6.58,
+"end": 6.9
+},
+{
+"text": "And",
+"start": 7.46,
+"end": 7.58
+},
+{
+"text": "you",
+"start": 7.58,
+"end": 7.7
+},
+{
+"text": "might",
+"start": 7.7,
+"end": 7.88
+},
+{
+"text": "not",
+"start": 7.88,
+"end": 8.12
+},
+{
+"text": "have",
+"start": 8.12,
+"end": 8.32
+},
+{
+"text": "a",
+"start": 8.32,
+"end": 8.42
+},
+{
+"text": "great",
+"start": 8.42,
+"end": 8.62
+},
+{
+"text": "answer.",
+"start": 8.62,
+"end": 9.1
+},
+{
+"text": "\"I",
+"start": 9.74,
+"end": 9.86
+},
+{
+"text": "just\u2026",
+"start": 9.86,
+"end": 10.3
+},
+{
+"text": "never",
+"start": 10.3,
+"end": 11.22
+},
+{
+"text": "did.\"",
+"start": 11.22,
+"end": 11.58
+},
+{
+"text": "But",
+"start": 12.3,
+"end": 12.7
+},
+{
+"text": "that",
+"start": 12.7,
+"end": 12.9
+},
+{
+"text": "\"never",
+"start": 12.9,
+"end": 13.24
+},
+{
+"text": "did\"",
+"start": 13.24,
+"end": 13.56
+},
+{
+"text": "usually",
+"start": 13.56,
+"end": 14.32
+},
+{
+"text": "isn't",
+"start": 14.32,
+"end": 14.72
+},
+{
+"text": "random.",
+"start": 14.72,
+"end": 15.08
+},
+{
+"text": "It",
+"start": 15.56,
+"end": 15.7
+},
+{
+"text": "says",
+"start": 15.7,
+"end": 15.88
+},
+{
+"text": "something",
+"start": 15.88,
+"end": 16.24
+},
+{
+"text": "real",
+"start": 16.24,
+"end": 16.64
+},
+{
+"text": "about",
+"start": 16.64,
+"end": 16.98
+},
+{
+"text": "how",
+"start": 16.98,
+"end": 17.2
+},
+{
+"text": "your",
+"start": 17.2,
+"end": 17.38
+},
+{
+"text": "mind",
+"start": 17.38,
+"end": 17.7
+},
+{
+"text": "works.",
+"start": 17.7,
+"end": 18.18
+},
+{
+"text": "And",
+"start": 18.66,
+"end": 18.76
+},
+{
+"text": "it's",
+"start": 18.76,
+"end": 18.98
+},
+{
+"text": "not",
+"start": 18.98,
+"end": 19.12
+},
+{
+"text": "what",
+"start": 19.12,
+"end": 19.3
+},
+{
+"text": "people",
+"start": 19.3,
+"end": 19.64
+},
+{
+"text": "assume.",
+"start": 19.64,
+"end": 20.16
+},
+{
+"text": "Let's",
+"start": 20.68,
+"end": 21
+},
+{
+"text": "get",
+"start": 21,
+"end": 21.12
+},
+{
+"text": "into",
+"start": 21.254,
+"end": 21.577
+},
+{
+"text": "it.",
+"start": 21.577,
+"end": 21.792
+},
+{
+"text": "Here's",
+"start": 22.542,
+"end": 22.881
+},
+{
+"text": "the",
+"start": 22.881,
+"end": 23.123
+},
+{
+"text": "first",
+"start": 23.123,
+"end": 23.462
+},
+{
+"text": "thing.",
+"start": 23.462,
+"end": 23.801
+},
+{
+"text": "A",
+"start": 24.121,
+"end": 24.275
+},
+{
+"text": "tattoo",
+"start": 24.275,
+"end": 24.685
+},
+{
+"text": "isn't",
+"start": 24.685,
+"end": 24.992
+},
+{
+"text": "really",
+"start": 24.992,
+"end": 25.403
+},
+{
+"text": "a",
+"start": 25.403,
+"end": 25.557
+},
+{
+"text": "decision",
+"start": 25.557,
+"end": 26.069
+},
+{
+"text": "about",
+"start": 26.069,
+"end": 26.428
+},
+{
+"text": "today.",
+"start": 26.428,
+"end": 26.787
+},
+{
+"text": "It's",
+"start": 27.107,
+"end": 27.368
+},
+{
+"text": "a",
+"start": 27.368,
+"end": 27.524
+},
+{
+"text": "decision",
+"start": 27.524,
+"end": 28.045
+},
+{
+"text": "about",
+"start": 28.045,
+"end": 28.409
+},
+{
+"text": "every",
+"start": 28.409,
+"end": 28.774
+},
+{
+"text": "version",
+"start": 28.774,
+"end": 29.243
+},
+{
+"text": "of",
+"start": 29.243,
+"end": 29.451
+},
+{
+"text": "you",
+"start": 29.451,
+"end": 29.712
+},
+{
+"text": "that",
+"start": 29.712,
+"end": 30.024
+},
+{
+"text": "comes",
+"start": 30.024,
+"end": 30.389
+},
+{
+"text": "after",
+"start": 30.389,
+"end": 30.753
+},
+{
+"text": "today.",
+"start": 30.753,
+"end": 31.118
+},
+{
+"text": "And",
+"start": 31.868,
+"end": 32.117
+},
+{
+"text": "psychologists",
+"start": 32.117,
+"end": 32.864
+},
+{
+"text": "have",
+"start": 32.864,
+"end": 33.162
+},
+{
+"text": "found",
+"start": 33.162,
+"end": 33.511
+},
+{
+"text": "something",
+"start": 33.511,
+"end": 34.058
+},
+{
+"text": "strange",
+"start": 34.058,
+"end": 34.506
+},
+{
+"text": "about",
+"start": 34.506,
+"end": 34.855
+},
+{
+"text": "how",
+"start": 34.855,
+"end": 35.104
+},
+{
+"text": "we",
+"start": 35.104,
+"end": 35.303
+},
+{
+"text": "see",
+"start": 35.303,
+"end": 35.552
+},
+{
+"text": "those",
+"start": 35.552,
+"end": 35.9
+},
+{
+"text": "future",
+"start": 35.9,
+"end": 36.298
+},
+{
+"text": "versions.",
+"start": 36.298,
+"end": 36.796
+},
+{
+"text": "In",
+"start": 37.116,
+"end": 37.372
+},
+{
+"text": "a",
+"start": 37.372,
+"end": 37.564
+},
+{
+"text": "2013",
+"start": 37.564,
+"end": 37.948
+},
+{
+"text": "study,",
+"start": 37.948,
+"end": 38.396
+},
+{
+"text": "people",
+"start": 38.396,
+"end": 38.908
+},
+{
+"text": "of",
+"start": 38.908,
+"end": 39.164
+},
+{
+"text": "every",
+"start": 39.164,
+"end": 39.612
+},
+{
+"text": "age",
+"start": 40.14,
+"end": 40.56
+},
+{
+"text": "said",
+"start": 40.56,
+"end": 40.86
+},
+{
+"text": "they'd",
+"start": 40.86,
+"end": 41.22
+},
+{
+"text": "changed",
+"start": 41.22,
+"end": 41.58
+},
+{
+"text": "a",
+"start": 41.58,
+"end": 41.74
+},
+{
+"text": "lot",
+"start": 41.74,
+"end": 41.98
+},
+{
+"text": "over",
+"start": 41.98,
+"end": 42.28
+},
+{
+"text": "the",
+"start": 42.28,
+"end": 42.4
+},
+{
+"text": "past",
+"start": 42.4,
+"end": 42.66
+},
+{
+"text": "ten",
+"start": 42.94,
+"end": 43.26
+},
+{
+"text": "years\u2026",
+"start": 43.08,
+"end": 43.54
+},
+{
+"text": "but",
+"start": 44.02,
+"end": 44.3
+},
+{
+"text": "expected",
+"start": 44.3,
+"end": 44.78
+},
+{
+"text": "to",
+"start": 44.78,
+"end": 44.96
+},
+{
+"text": "change",
+"start": 44.96,
+"end": 45.4
+},
+{
+"text": "very",
+"start": 45.4,
+"end": 45.84
+},
+{
+"text": "little",
+"start": 45.84,
+"end": 46.2
+},
+{
+"text": "over",
+"start": 46.2,
+"end": 46.46
+},
+{
+"text": "the",
+"start": 46.46,
+"end": 46.58
+},
+{
+"text": "next",
+"start": 46.58,
+"end": 46.78
+},
+{
+"text": "ten.",
+"start": 47.154,
+"end": 47.408
+},
+{
+"text": "Researchers",
+"start": 47.78,
+"end": 48.16
+},
+{
+"text": "called",
+"start": 48.16,
+"end": 48.52
+},
+{
+"text": "it",
+"start": 48.52,
+"end": 48.7
+},
+{
+"text": "the",
+"start": 48.7,
+"end": 48.84
+},
+{
+"text": "\"end",
+"start": 48.84,
+"end": 49.14
+},
+{
+"text": "of",
+"start": 49.14,
+"end": 49.34
+},
+{
+"text": "history",
+"start": 49.34,
+"end": 49.66
+},
+{
+"text": "illusion.\"",
+"start": 49.66,
+"end": 50.18
+},
+{
+"text": "Most",
+"start": 51.24,
+"end": 51.42
+},
+{
+"text": "of",
+"start": 51.42,
+"end": 51.58
+},
+{
+"text": "us",
+"start": 51.58,
+"end": 51.7
+},
+{
+"text": "believe",
+"start": 51.7,
+"end": 52.04
+},
+{
+"text": "who",
+"start": 52.04,
+"end": 52.34
+},
+{
+"text": "we",
+"start": 52.34,
+"end": 52.58
+},
+{
+"text": "are",
+"start": 52.58,
+"end": 52.68
+},
+{
+"text": "right",
+"start": 52.68,
+"end": 52.94
+},
+{
+"text": "now",
+"start": 52.94,
+"end": 53.34
+},
+{
+"text": "is",
+"start": 53.34,
+"end": 53.76
+},
+{
+"text": "who",
+"start": 53.76,
+"end": 53.98
+},
+{
+"text": "we'll",
+"start": 54.194,
+"end": 54.507
+},
+{
+"text": "always",
+"start": 54.14,
+"end": 54.58
+},
+{
+"text": "be.",
+"start": 54.58,
+"end": 54.9
+},
+{
+"text": "People",
+"start": 55.4,
+"end": 55.7
+},
+{
+"text": "who",
+"start": 55.7,
+"end": 55.92
+},
+{
+"text": "don't",
+"start": 55.92,
+"end": 56.14
+},
+{
+"text": "get",
+"start": 56.14,
+"end": 56.34
+},
+{
+"text": "tattoos",
+"start": 56.34,
+"end": 56.82
+},
+{
+"text": "often",
+"start": 56.82,
+"end": 57.58
+},
+{
+"text": "have",
+"start": 57.58,
+"end": 57.86
+},
+{
+"text": "a",
+"start": 57.86,
+"end": 57.94
+},
+{
+"text": "quiet",
+"start": 57.94,
+"end": 58.34
+},
+{
+"text": "suspicion",
+"start": 58.34,
+"end": 58.92
+},
+{
+"text": "that",
+"start": 58.92,
+"end": 59.18
+},
+{
+"text": "this",
+"start": 59.18,
+"end": 59.38
+},
+{
+"text": "isn't",
+"start": 59.38,
+"end": 59.66
+},
+{
+"text": "true.",
+"start": 59.66,
+"end": 60.02
+},
+{
+"text": "They",
+"start": 60.5,
+"end": 60.64
+},
+{
+"text": "can",
+"start": 60.64,
+"end": 60.8
+},
+{
+"text": "feel",
+"start": 60.8,
+"end": 61.1
+},
+{
+"text": "that",
+"start": 61.1,
+"end": 61.34
+},
+{
+"text": "their",
+"start": 61.34,
+"end": 61.56
+},
+{
+"text": "future",
+"start": 61.56,
+"end": 61.92
+},
+{
+"text": "self",
+"start": 61.92,
+"end": 62.44
+},
+{
+"text": "might",
+"start": 62.44,
+"end": 62.68
+},
+{
+"text": "not",
+"start": 62.68,
+"end": 62.94
+},
+{
+"text": "agree.",
+"start": 62.94,
+"end": 63.32
+},
+{
+"text": "So",
+"start": 63.74,
+"end": 63.96
+},
+{
+"text": "they",
+"start": 63.96,
+"end": 64.08
+},
+{
+"text": "don't",
+"start": 64.08,
+"end": 64.24
+},
+{
+"text": "sign",
+"start": 64.24,
+"end": 64.5
+},
+{
+"text": "a",
+"start": 64.5,
+"end": 64.62
+},
+{
+"text": "contract",
+"start": 64.62,
+"end": 65.06
+},
+{
+"text": "on",
+"start": 65.06,
+"end": 65.3
+},
+{
+"text": "that",
+"start": 65.3,
+"end": 65.44
+},
+{
+"text": "person's",
+"start": 65.44,
+"end": 65.98
+},
+{
+"text": "behalf.",
+"start": 65.98,
+"end": 66.4
+},
+{
+"text": "People",
+"start": 67.32,
+"end": 67.62
+},
+{
+"text": "sometimes",
+"start": 67.62,
+"end": 68.16
+},
+{
+"text": "call",
+"start": 68.16,
+"end": 68.48
+},
+{
+"text": "that",
+"start": 68.48,
+"end": 68.74
+},
+{
+"text": "fear",
+"start": 68.74,
+"end": 69.04
+},
+{
+"text": "of",
+"start": 69.04,
+"end": 69.24
+},
+{
+"text": "commitment.",
+"start": 69.24,
+"end": 69.7
+},
+{
+"text": "But",
+"start": 70.06,
+"end": 70.34
+},
+{
+"text": "most",
+"start": 70.34,
+"end": 70.56
+},
+{
+"text": "people",
+"start": 70.56,
+"end": 70.86
+},
+{
+"text": "without",
+"start": 70.86,
+"end": 71.18
+},
+{
+"text": "tattoos",
+"start": 71.18,
+"end": 71.68
+},
+{
+"text": "commit",
+"start": 71.68,
+"end": 72.26
+},
+{
+"text": "to",
+"start": 72.26,
+"end": 72.46
+},
+{
+"text": "plenty.",
+"start": 72.46,
+"end": 72.86
+},
+{
+"text": "Jobs.",
+"start": 73.52,
+"end": 73.9
+},
+{
+"text": "Relationships.",
+"start": 74.64,
+"end": 75.22
+},
+{
+"text": "Big",
+"start": 75.86,
+"end": 76.1
+},
+{
+"text": "decisions.",
+"start": 76.1,
+"end": 76.8
+},
+{
+"text": "The",
+"start": 77.12,
+"end": 77.84
+},
+{
+"text": "difference",
+"start": 77.84,
+"end": 78.16
+},
+{
+"text": "is",
+"start": 78.16,
+"end": 78.54
+},
+{
+"text": "reversibility.",
+"start": 78.54,
+"end": 79.56
+},
+{
+"text": "A",
+"start": 80.02,
+"end": 80.12
+},
+{
+"text": "relationship",
+"start": 80.12,
+"end": 80.6
+},
+{
+"text": "can",
+"start": 80.6,
+"end": 80.94
+},
+{
+"text": "grow",
+"start": 80.94,
+"end": 81.24
+},
+{
+"text": "and",
+"start": 81.24,
+"end": 81.46
+},
+{
+"text": "change.",
+"start": 81.46,
+"end": 82.02
+},
+{
+"text": "A",
+"start": 82.42,
+"end": 82.54
+},
+{
+"text": "job",
+"start": 82.54,
+"end": 82.86
+},
+{
+"text": "can",
+"start": 82.86,
+"end": 83.08
+},
+{
+"text": "be",
+"start": 83.08,
+"end": 83.2
+},
+{
+"text": "left.",
+"start": 83.2,
+"end": 83.56
+},
+{
+"text": "A",
+"start": 84.1,
+"end": 84.18
+},
+{
+"text": "tattoo",
+"start": 84.18,
+"end": 84.58
+},
+{
+"text": "just",
+"start": 84.58,
+"end": 84.86
+},
+{
+"text": "stays",
+"start": 84.84,
+"end": 85.08
+},
+{
+"text": "exactly",
+"start": 85.08,
+"end": 85.7
+},
+{
+"text": "the",
+"start": 85.7,
+"end": 85.88
+},
+{
+"text": "same,",
+"start": 85.88,
+"end": 86.22
+},
+{
+"text": "while",
+"start": 86.22,
+"end": 86.62
+},
+{
+"text": "you",
+"start": 86.62,
+"end": 86.8
+},
+{
+"text": "don't.",
+"start": 86.8,
+"end": 87.24
+},
+{
+"text": "And",
+"start": 87.9,
+"end": 88.16
+},
+{
+"text": "the",
+"start": 88.16,
+"end": 88.26
+},
+{
+"text": "worry",
+"start": 88.26,
+"end": 88.54
+},
+{
+"text": "isn't",
+"start": 88.54,
+"end": 88.92
+},
+{
+"text": "made",
+"start": 88.92,
+"end": 89.06
+},
+{
+"text": "up.",
+"start": 89.06,
+"end": 89.38
+},
+{
+"text": "In",
+"start": 89.86,
+"end": 89.96
+},
+{
+"text": "one",
+"start": 89.96,
+"end": 90.18
+},
+{
+"text": "large",
+"start": 90.18,
+"end": 90.72
+},
+{
+"text": "survey,",
+"start": 90.72,
+"end": 91.18
+},
+{
+"text": "about",
+"start": 91.18,
+"end": 91.78
+},
+{
+"text": "a",
+"start": 91.78,
+"end": 91.92
+},
+{
+"text": "quarter",
+"start": 91.92,
+"end": 92.24
+},
+{
+"text": "of",
+"start": 92.24,
+"end": 92.44
+},
+{
+"text": "people",
+"start": 92.44,
+"end": 92.72
+},
+{
+"text": "with",
+"start": 92.72,
+"end": 92.98
+},
+{
+"text": "tattoos",
+"start": 92.98,
+"end": 93.44
+},
+{
+"text": "said",
+"start": 93.44,
+"end": 94
+},
+{
+"text": "they'd",
+"start": 94,
+"end": 94.36
+},
+{
+"text": "regretted",
+"start": 94.36,
+"end": 94.86
+},
+{
+"text": "at",
+"start": 94.86,
+"end": 95.02
+},
+{
+"text": "least",
+"start": 95.02,
+"end": 95.2
+},
+{
+"text": "one.",
+"start": 95.2,
+"end": 95.58
+},
+{
+"text": "Here's",
+"start": 96.32,
+"end": 96.8
+},
+{
+"text": "the",
+"start": 96.8,
+"end": 96.9
+},
+{
+"text": "second",
+"start": 96.9,
+"end": 97.2
+},
+{
+"text": "piece.",
+"start": 97.2,
+"end": 97.68
+},
+{
+"text": "Research",
+"start": 98.18,
+"end": 98.5
+},
+{
+"text": "comparing",
+"start": 98.5,
+"end": 99.14
+},
+{
+"text": "people",
+"start": 99.14,
+"end": 99.52
+},
+{
+"text": "with",
+"start": 99.52,
+"end": 99.82
+},
+{
+"text": "and",
+"start": 99.82,
+"end": 100.26
+},
+{
+"text": "without",
+"start": 100.26,
+"end": 100.54
+},
+{
+"text": "tattoos",
+"start": 100.54,
+"end": 101.08
+},
+{
+"text": "found",
+"start": 101.08,
+"end": 101.58
+},
+{
+"text": "small",
+"start": 101.58,
+"end": 102.18
+},
+{
+"text": "but",
+"start": 102.18,
+"end": 102.4
+},
+{
+"text": "consistent",
+"start": 102.4,
+"end": 103
+},
+{
+"text": "differences.",
+"start": 103,
+"end": 103.56
+},
+{
+"text": "People",
+"start": 104.06,
+"end": 104.4
+},
+{
+"text": "with",
+"start": 104.4,
+"end": 104.6
+},
+{
+"text": "tattoos,",
+"start": 104.6,
+"end": 105.04
+},
+{
+"text": "on",
+"start": 105.04,
+"end": 105.48
+},
+{
+"text": "average,",
+"start": 105.48,
+"end": 105.9
+},
+{
+"text": "scored",
+"start": 105.9,
+"end": 106.64
+},
+{
+"text": "higher",
+"start": 106.64,
+"end": 107.2
+},
+{
+"text": "on",
+"start": 107.2,
+"end": 107.44
+},
+{
+"text": "a",
+"start": 107.44,
+"end": 107.62
+},
+{
+"text": "\"need",
+"start": 107.62,
+"end": 107.9
+},
+{
+"text": "for",
+"start": 107.9,
+"end": 108.12
+},
+{
+"text": "uniqueness\"\u2026",
+"start": 108.12,
+"end": 108.56
+},
+{
+"text": "and",
+"start": 109.429,
+"end": 109.725
+},
+{
+"text": "on",
+"start": 109.56,
+"end": 109.68
+},
+{
+"text": "seeking",
+"start": 109.68,
+"end": 110
+},
+{
+"text": "out",
+"start": 110,
+"end": 110.28
+},
+{
+"text": "new,",
+"start": 110.28,
+"end": 110.6
+},
+{
+"text": "intense",
+"start": 110.96,
+"end": 111.18
+},
+{
+"text": "experiences.",
+"start": 111.18,
+"end": 112.16
+},
+{
+"text": "That",
+"start": 112.76,
+"end": 113.26
+},
+{
+"text": "doesn't",
+"start": 113.26,
+"end": 113.6
+},
+{
+"text": "make",
+"start": 113.6,
+"end": 113.74
+},
+{
+"text": "people",
+"start": 113.74,
+"end": 114.12
+},
+{
+"text": "without",
+"start": 114.12,
+"end": 114.46
+},
+{
+"text": "tattoos",
+"start": 114.46,
+"end": 114.94
+},
+{
+"text": "dull.",
+"start": 114.94,
+"end": 115.36
+},
+{
+"text": "It",
+"start": 115.94,
+"end": 116.04
+},
+{
+"text": "often",
+"start": 116.04,
+"end": 116.4
+},
+{
+"text": "means",
+"start": 116.4,
+"end": 116.68
+},
+{
+"text": "their",
+"start": 116.68,
+"end": 117
+},
+{
+"text": "sense",
+"start": 117,
+"end": 117.3
+},
+{
+"text": "of",
+"start": 117.3,
+"end": 117.58
+},
+{
+"text": "who",
+"start": 117.58,
+"end": 117.78
+},
+{
+"text": "they",
+"start": 117.78,
+"end": 118.1
+},
+{
+"text": "are",
+"start": 118.1,
+"end": 118.26
+},
+{
+"text": "doesn't",
+"start": 118.26,
+"end": 118.64
+},
+{
+"text": "need",
+"start": 118.64,
+"end": 118.84
+},
+{
+"text": "to",
+"start": 118.84,
+"end": 119.04
+},
+{
+"text": "be",
+"start": 119.04,
+"end": 119.16
+},
+{
+"text": "worn",
+"start": 119.16,
+"end": 119.54
+},
+{
+"text": "on",
+"start": 119.54,
+"end": 119.78
+},
+{
+"text": "the",
+"start": 119.78,
+"end": 119.92
+},
+{
+"text": "outside.",
+"start": 119.92,
+"end": 120.5
+},
+{
+"text": "Their",
+"start": 120.98,
+"end": 121.18
+},
+{
+"text": "identity",
+"start": 121.18,
+"end": 121.7
+},
+{
+"text": "lives",
+"start": 121.7,
+"end": 122.18
+},
+{
+"text": "in",
+"start": 122.18,
+"end": 122.46
+},
+{
+"text": "what",
+"start": 122.46,
+"end": 122.64
+},
+{
+"text": "they",
+"start": 122.64,
+"end": 122.86
+},
+{
+"text": "do,",
+"start": 122.86,
+"end": 123.18
+},
+{
+"text": "what",
+"start": 123.48,
+"end": 123.72
+},
+{
+"text": "they",
+"start": 123.72,
+"end": 123.92
+},
+{
+"text": "value,",
+"start": 123.92,
+"end": 124.4
+},
+{
+"text": "who",
+"start": 124.58,
+"end": 124.72
+},
+{
+"text": "they're",
+"start": 124.72,
+"end": 124.94
+},
+{
+"text": "loyal",
+"start": 124.96,
+"end": 125.28
+},
+{
+"text": "to.",
+"start": 125.28,
+"end": 125.64
+},
+{
+"text": "Things",
+"start": 126.14,
+"end": 126.4
+},
+{
+"text": "nobody",
+"start": 126.4,
+"end": 126.82
+},
+{
+"text": "can",
+"start": 126.82,
+"end": 127.08
+},
+{
+"text": "see",
+"start": 127.08,
+"end": 127.32
+},
+{
+"text": "at",
+"start": 127.32,
+"end": 127.44
+},
+{
+"text": "a",
+"start": 127.44,
+"end": 127.48
+},
+{
+"text": "glance.",
+"start": 127.48,
+"end": 127.86
+},
+{
+"text": "And",
+"start": 128.76,
+"end": 128.98
+},
+{
+"text": "for",
+"start": 128.98,
+"end": 129.1
+},
+{
+"text": "some",
+"start": 129.1,
+"end": 129.34
+},
+{
+"text": "people,",
+"start": 129.34,
+"end": 129.76
+},
+{
+"text": "it's",
+"start": 130.1,
+"end": 130.26
+},
+{
+"text": "simpler",
+"start": 130.26,
+"end": 130.64
+},
+{
+"text": "than",
+"start": 130.64,
+"end": 130.82
+},
+{
+"text": "personality.",
+"start": 130.82,
+"end": 131.6
+},
+{
+"text": "It's",
+"start": 132.16,
+"end": 132.34
+},
+{
+"text": "a",
+"start": 132.34,
+"end": 132.4
+},
+{
+"text": "job,",
+"start": 132.4,
+"end": 132.82
+},
+{
+"text": "a",
+"start": 133.72,
+"end": 133.78
+},
+{
+"text": "family,",
+"start": 133.143,
+"end": 133.637
+},
+{
+"text": "a",
+"start": 133.637,
+"end": 133.823
+},
+{
+"text": "faith,",
+"start": 133.78,
+"end": 134.22
+},
+{
+"text": "a",
+"start": 134.46,
+"end": 134.56
+},
+{
+"text": "culture,",
+"start": 134.56,
+"end": 134.96
+},
+{
+"text": "or",
+"start": 134.96,
+"end": 135.2
+},
+{
+"text": "skin",
+"start": 135.2,
+"end": 135.54
+},
+{
+"text": "that",
+"start": 135.54,
+"end": 135.82
+},
+{
+"text": "heals",
+"start": 135.82,
+"end": 136.12
+},
+{
+"text": "badly.",
+"start": 136.12,
+"end": 136.68
+},
+{
+"text": "Not",
+"start": 137.22,
+"end": 137.34
+},
+{
+"text": "every",
+"start": 137.34,
+"end": 137.68
+},
+{
+"text": "\"no\"",
+"start": 137.809,
+"end": 138.022
+},
+{
+"text": "is",
+"start": 137.94,
+"end": 138.26
+},
+{
+"text": "a",
+"start": 138.26,
+"end": 138.34
+},
+{
+"text": "statement.",
+"start": 138.34,
+"end": 138.76
+},
+{
+"text": "But",
+"start": 139.62,
+"end": 139.84
+},
+{
+"text": "here's",
+"start": 139.84,
+"end": 140.2
+},
+{
+"text": "the",
+"start": 140.2,
+"end": 140.28
+},
+{
+"text": "part",
+"start": 140.28,
+"end": 140.48
+},
+{
+"text": "people",
+"start": 140.48,
+"end": 140.86
+},
+{
+"text": "miss.",
+"start": 140.86,
+"end": 141.3
+},
+{
+"text": "None",
+"start": 141.8,
+"end": 141.92
+},
+{
+"text": "of",
+"start": 141.92,
+"end": 142.04
+},
+{
+"text": "this",
+"start": 142.04,
+"end": 142.26
+},
+{
+"text": "means",
+"start": 142.26,
+"end": 142.52
+},
+{
+"text": "tattoos",
+"start": 142.52,
+"end": 143.02
+},
+{
+"text": "are",
+"start": 143.477,
+"end": 143.749
+},
+{
+"text": "impulsive,",
+"start": 143.749,
+"end": 144.347
+},
+{
+"text": "or",
+"start": 144.347,
+"end": 144.564
+},
+{
+"text": "that",
+"start": 144.564,
+"end": 144.891
+},
+{
+"text": "people",
+"start": 144.891,
+"end": 145.325
+},
+{
+"text": "without",
+"start": 145.325,
+"end": 145.815
+},
+{
+"text": "them",
+"start": 145.815,
+"end": 146.141
+},
+{
+"text": "are",
+"start": 146.141,
+"end": 146.413
+},
+{
+"text": "wiser.",
+"start": 146.413,
+"end": 146.793
+},
+{
+"text": "Someone",
+"start": 147.543,
+"end": 148.032
+},
+{
+"text": "with",
+"start": 148.032,
+"end": 148.358
+},
+{
+"text": "a",
+"start": 148.358,
+"end": 148.521
+},
+{
+"text": "sleeve",
+"start": 148.521,
+"end": 148.956
+},
+{
+"text": "might",
+"start": 148.956,
+"end": 149.336
+},
+{
+"text": "be",
+"start": 149.336,
+"end": 149.553
+},
+{
+"text": "making",
+"start": 149.553,
+"end": 149.988
+},
+{
+"text": "a",
+"start": 149.988,
+"end": 150.151
+},
+{
+"text": "very",
+"start": 150.151,
+"end": 150.476
+},
+{
+"text": "thoughtful",
+"start": 150.476,
+"end": 151.128
+},
+{
+"text": "choice:",
+"start": 151.128,
+"end": 151.563
+},
+{
+"text": "\"I",
+"start": 151.563,
+"end": 151.726
+},
+{
+"text": "want",
+"start": 151.726,
+"end": 152.052
+},
+{
+"text": "to",
+"start": 152.052,
+"end": 152.269
+},
+{
+"text": "carry",
+"start": 152.269,
+"end": 152.649
+},
+{
+"text": "this",
+"start": 152.649,
+"end": 152.975
+},
+{
+"text": "moment",
+"start": 152.975,
+"end": 153.41
+},
+{
+"text": "with",
+"start": 153.41,
+"end": 153.735
+},
+{
+"text": "me,",
+"start": 153.735,
+"end": 153.953
+},
+{
+"text": "even",
+"start": 153.953,
+"end": 154.279
+},
+{
+"text": "when",
+"start": 154.279,
+"end": 154.605
+},
+{
+"text": "I",
+"start": 154.605,
+"end": 154.767
+},
+{
+"text": "change.\"",
+"start": 154.767,
+"end": 155.202
+},
+{
+"text": "And",
+"start": 155.522,
+"end": 155.797
+},
+{
+"text": "someone",
+"start": 155.797,
+"end": 156.292
+},
+{
+"text": "with",
+"start": 156.292,
+"end": 156.622
+},
+{
+"text": "bare",
+"start": 156.622,
+"end": 156.952
+},
+{
+"text": "skin",
+"start": 156.952,
+"end": 157.282
+},
+{
+"text": "might",
+"start": 157.282,
+"end": 157.667
+},
+{
+"text": "be",
+"start": 157.667,
+"end": 157.887
+},
+{
+"text": "saying:",
+"start": 157.887,
+"end": 158.327
+},
+{
+"text": "\"I",
+"start": 158.327,
+"end": 158.492
+},
+{
+"text": "want",
+"start": 158.492,
+"end": 158.822
+},
+{
+"text": "to",
+"start": 158.822,
+"end": 159.043
+},
+{
+"text": "stay",
+"start": 159.043,
+"end": 159.373
+},
+{
+"text": "free",
+"start": 159.373,
+"end": 159.703
+},
+{
+"text": "to",
+"start": 159.703,
+"end": 159.923
+},
+{
+"text": "change,",
+"start": 159.923,
+"end": 160.363
+},
+{
+"text": "even",
+"start": 160.363,
+"end": 160.693
+},
+{
+"text": "if",
+"start": 160.693,
+"end": 160.913
+},
+{
+"text": "I",
+"start": 160.913,
+"end": 161.078
+},
+{
+"text": "lose",
+"start": 161.078,
+"end": 161.408
+},
+{
+"text": "this",
+"start": 161.408,
+"end": 161.738
+},
+{
+"text": "moment.\"",
+"start": 161.738,
+"end": 162.178
+},
+{
+"text": "Same",
+"start": 162.928,
+"end": 163.336
+},
+{
+"text": "question.",
+"start": 163.336,
+"end": 164.016
+},
+{
+"text": "Opposite",
+"start": 164.336,
+"end": 164.92
+},
+{
+"text": "answers.",
+"start": 164.92,
+"end": 165.445
+},
+{
+"text": "How",
+"start": 165.765,
+"end": 165.986
+},
+{
+"text": "much",
+"start": 165.986,
+"end": 166.251
+},
+{
+"text": "of",
+"start": 166.251,
+"end": 166.428
+},
+{
+"text": "today",
+"start": 166.428,
+"end": 166.738
+},
+{
+"text": "do",
+"start": 166.738,
+"end": 166.914
+},
+{
+"text": "you",
+"start": 166.914,
+"end": 167.135
+},
+{
+"text": "want",
+"start": 167.135,
+"end": 167.4
+},
+{
+"text": "to",
+"start": 167.4,
+"end": 167.577
+},
+{
+"text": "keep,",
+"start": 167.577,
+"end": 167.842
+},
+{
+"text": "forever?",
+"start": 167.842,
+"end": 168.24
+},
+{
+"text": "So",
+"start": 168.99,
+"end": 169.199
+},
+{
+"text": "if",
+"start": 169.199,
+"end": 169.408
+},
+{
+"text": "you",
+"start": 169.408,
+"end": 169.669
+},
+{
+"text": "don't",
+"start": 169.669,
+"end": 169.983
+},
+{
+"text": "have",
+"start": 169.983,
+"end": 170.297
+},
+{
+"text": "a",
+"start": 170.297,
+"end": 170.453
+},
+{
+"text": "tattoo,",
+"start": 170.453,
+"end": 170.872
+},
+{
+"text": "it's",
+"start": 170.872,
+"end": 171.133
+},
+{
+"text": "probably",
+"start": 171.133,
+"end": 171.656
+},
+{
+"text": "not",
+"start": 171.656,
+"end": 171.917
+},
+{
+"text": "because",
+"start": 171.917,
+"end": 172.387
+},
+{
+"text": "you're",
+"start": 172.387,
+"end": 172.753
+},
+{
+"text": "boring.",
+"start": 172.753,
+"end": 173.171
+},
+{
+"text": "It",
+"start": 173.491,
+"end": 173.685
+},
+{
+"text": "might",
+"start": 173.685,
+"end": 174.025
+},
+{
+"text": "be",
+"start": 174.025,
+"end": 174.219
+},
+{
+"text": "because",
+"start": 174.219,
+"end": 174.655
+},
+{
+"text": "you",
+"start": 174.655,
+"end": 174.897
+},
+{
+"text": "take",
+"start": 174.897,
+"end": 175.188
+},
+{
+"text": "your",
+"start": 175.188,
+"end": 175.479
+},
+{
+"text": "future",
+"start": 175.479,
+"end": 175.867
+},
+{
+"text": "self",
+"start": 175.867,
+"end": 176.158
+},
+{
+"text": "seriously.",
+"start": 176.158,
+"end": 176.691
+},
+{
+"text": "And",
+"start": 177.011,
+"end": 177.262
+},
+{
+"text": "if",
+"start": 177.262,
+"end": 177.463
+},
+{
+"text": "you",
+"start": 177.463,
+"end": 177.715
+},
+{
+"text": "do",
+"start": 177.715,
+"end": 177.915
+},
+{
+"text": "have",
+"start": 177.915,
+"end": 178.217
+},
+{
+"text": "one,",
+"start": 178.217,
+"end": 178.468
+},
+{
+"text": "you",
+"start": 178.468,
+"end": 178.719
+},
+{
+"text": "probably",
+"start": 178.719,
+"end": 179.221
+},
+{
+"text": "take",
+"start": 179.221,
+"end": 179.523
+},
+{
+"text": "your",
+"start": 179.523,
+"end": 179.824
+},
+{
+"text": "past",
+"start": 179.824,
+"end": 180.125
+},
+{
+"text": "self",
+"start": 180.125,
+"end": 180.427
+},
+{
+"text": "seriously.",
+"start": 180.427,
+"end": 180.979
+},
+{
+"text": "Both",
+"start": 181.729,
+"end": 182.032
+},
+{
+"text": "are",
+"start": 182.032,
+"end": 182.285
+},
+{
+"text": "ways",
+"start": 182.285,
+"end": 182.588
+},
+{
+"text": "of",
+"start": 182.588,
+"end": 182.79
+},
+{
+"text": "being",
+"start": 182.79,
+"end": 183.143
+},
+{
+"text": "honest",
+"start": 183.143,
+"end": 183.547
+},
+{
+"text": "about",
+"start": 183.547,
+"end": 183.901
+},
+{
+"text": "time.",
+"start": 183.901,
+"end": 184.204
+},
+{
+"text": "If",
+"start": 184.954,
+"end": 185.149
+},
+{
+"text": "this",
+"start": 185.149,
+"end": 185.442
+},
+{
+"text": "made",
+"start": 185.442,
+"end": 185.735
+},
+{
+"text": "you",
+"start": 185.735,
+"end": 185.979
+},
+{
+"text": "think,",
+"start": 185.979,
+"end": 186.321
+},
+{
+"text": "hit",
+"start": 186.321,
+"end": 186.565
+},
+{
+"text": "like,",
+"start": 186.565,
+"end": 186.858
+},
+{
+"text": "and",
+"start": 186.858,
+"end": 187.102
+},
+{
+"text": "tell",
+"start": 187.102,
+"end": 187.394
+},
+{
+"text": "me",
+"start": 187.394,
+"end": 187.59
+},
+{
+"text": "in",
+"start": 187.59,
+"end": 187.785
+},
+{
+"text": "the",
+"start": 187.785,
+"end": 188.029
+},
+{
+"text": "comments:",
+"start": 188.029,
+"end": 188.517
+},
+{
+"text": "do",
+"start": 188.517,
+"end": 188.712
+},
+{
+"text": "you",
+"start": 188.712,
+"end": 188.956
+},
+{
+"text": "have",
+"start": 188.956,
+"end": 189.249
+},
+{
+"text": "a",
+"start": 189.249,
+"end": 189.396
+},
+{
+"text": "tattoo,",
+"start": 189.396,
+"end": 189.786
+},
+{
+"text": "or",
+"start": 189.786,
+"end": 189.981
+},
+{
+"text": "have",
+"start": 189.981,
+"end": 190.274
+},
+{
+"text": "you",
+"start": 190.274,
+"end": 190.518
+},
+{
+"text": "always",
+"start": 190.518,
+"end": 190.909
+},
+{
+"text": "said",
+"start": 190.909,
+"end": 191.201
+},
+{
+"text": "no?",
+"start": 191.201,
+"end": 191.397
+}
+]
+}
