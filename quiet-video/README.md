@@ -24,3 +24,12 @@ npm run build && npm run check
 npm run dev                                  # Studio preview
 npm run render                               # → renders/people-who-go-quiet-in-a-fight.mp4
 ```
+
+## Soundtrack (music + sound effects)
+
+```
+python3 tools/music.py   # original piano score, one section per scene, downbeat on every scene change
+python3 tools/mix.py     # voice + piano bed (ducked under speech) + 30 quiet SFX → -14 LUFS / -1.5 dBTP
+npm run build            # index.html now plays assets/soundtrack.m4a
+```
+Needs `pip install numpy scipy`. Credits: `assets/sfx/CREDITS.md`. SFX placement: `timing/sfx.txt`.

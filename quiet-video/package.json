@@ -12,13 +12,16 @@
     "render": "hyperframes render -o renders/people-who-go-quiet-in-a-fight.mp4"
   },
   "dependencies": {
-    "gsap": "3.14.2",
+    "@fontsource/anton": "5.3.0",
     "@fontsource/montserrat": "5.3.0",
-    "@fontsource/anton": "5.3.0"
+    "gsap": "3.14.2"
   },
   "devDependencies": {
-    "hyperframes": "0.8.185",
+    "@audio-samples/piano-mp3-velocity10": "^1.0.5",
+    "@audio-samples/piano-mp3-velocity6": "^1.0.5",
+    "@audio-samples/piano-mp3-velocity8": "^1.0.5",
     "@huggingface/transformers": "3.8.1",
+    "hyperframes": "0.8.185",
     "sts-whisper-base": "1.0.0"
   }
 }
