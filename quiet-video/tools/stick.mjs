@@ -33,6 +33,7 @@ export function stickSvg(pid, el) {
     ? `<path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>`
     : "";
   return `<svg class="stick" id="${pid}-svg" width="${300 * s}" height="${520 * s}" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
   <g${flip}>
     <path class="s" d="M150 140 L150 300"/>
     <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>

@@ -208,16 +208,16 @@ function sceneCss() {
     #root { position: absolute; inset: 0; font-family: "${theme.font}", sans-serif; }
     .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
     .in { position: relative; display: flex; align-items: center; justify-content: center; }
-    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
     .txt .w { display: inline-block; }
     .acc { color: var(--accent); }
     .alm { color: var(--alarm); }
     .tail { color: var(--ink); }
     .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
-    .chap-num { font-family: ${display}sans-serif; font-size: 260px; font-weight: 400; letter-spacing: 0; line-height: 0.9; color: var(--ink); }
-    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); }
+    .chap-num { font-family: ${display}sans-serif; font-size: 260px; font-weight: 400; letter-spacing: 0; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
     .hero { font-family: ${display}sans-serif; font-weight: 400 !important; letter-spacing: 0.01em; text-transform: uppercase; word-spacing: 0.12em; }
-    .ico svg { width: 100%; height: 100%; overflow: visible; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
     .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
     .ico .f { fill: currentColor; stroke: none; }
     .ico .a2 { stroke: var(--accent2); }
@@ -228,15 +228,16 @@ function sceneCss() {
     .ico .t { font-family: "${theme.font}", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
     .bub { position: relative; color: var(--ink); }
     .bub-t { position: absolute; inset: 0 0 18% 0; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
-    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
     .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
     .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
-    .card-s { font-size: 36px; font-weight: 600; color: #6B665E; }
+    .card-s { font-size: 36px; font-weight: 600; color: #4E5F51; }
     .barw { position: relative; width: 1px; }
     .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
     .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
-    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; }
-    .stamp { border: 10px solid var(--alarm); color: var(--alarm); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
     .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
     .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
     .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
@@ -247,9 +248,10 @@ function sceneCss() {
     .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
     .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
     .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
-    .stick { overflow: visible; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
     .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
-    .stick .face { fill: var(--paper); }
+    .stick .face { fill: var(--card); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
     .stick .f { fill: var(--ink); }
     .stick .bow { fill: var(--accent); stroke: none; }`;
 }
@@ -357,6 +359,7 @@ mkdirSync(join(root, "compositions"), { recursive: true });
 const built = scenes.map(buildScene);
 
 const vars = ["paper", "ink", "muted", "accent", "accent2", "alarm", "card"];
+const shadowVars = `--shadow: ${theme.shadow ?? "rgba(0,0,0,0.3)"}; --shadow-soft: ${theme.shadowSoft ?? "rgba(0,0,0,0.18)"};`;
 const index = `<!doctype html>
 <html lang="en" data-composition-variables='${JSON.stringify(vars.map((v) => ({ id: v, type: "color", label: v, default: theme[v] })))}'>
   <head>
@@ -365,7 +368,7 @@ const index = `<!doctype html>
     <title>${esc(script.title)}</title>
     <script src="assets/vendor/gsap.min.js"></script>
     <style>
-      :root { ${vars.map((v) => `--${v}: ${theme[v]};`).join(" ")} }
+      :root { ${vars.map((v) => `--${v}: ${theme[v]};`).join(" ")} ${shadowVars} }
       * { margin: 0; padding: 0; box-sizing: border-box; }
       html, body { width: ${W}px; height: ${H}px; overflow: hidden; background: var(--paper); }
       #paper { position: absolute; inset: 0; background: var(--paper); }

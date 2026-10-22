@@ -6,16 +6,16 @@
     #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
     .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
     .in { position: relative; display: flex; align-items: center; justify-content: center; }
-    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
     .txt .w { display: inline-block; }
     .acc { color: var(--accent); }
     .alm { color: var(--alarm); }
     .tail { color: var(--ink); }
     .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
-    .chap-num { font-family: "Anton", sans-serif; font-size: 260px; font-weight: 400; letter-spacing: 0; line-height: 0.9; color: var(--ink); }
-    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); }
+    .chap-num { font-family: "Anton", sans-serif; font-size: 260px; font-weight: 400; letter-spacing: 0; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
     .hero { font-family: "Anton", sans-serif; font-weight: 400 !important; letter-spacing: 0.01em; text-transform: uppercase; word-spacing: 0.12em; }
-    .ico svg { width: 100%; height: 100%; overflow: visible; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
     .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
     .ico .f { fill: currentColor; stroke: none; }
     .ico .a2 { stroke: var(--accent2); }
@@ -26,15 +26,16 @@
     .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
     .bub { position: relative; color: var(--ink); }
     .bub-t { position: absolute; inset: 0 0 18% 0; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
-    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
     .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
     .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
-    .card-s { font-size: 36px; font-weight: 600; color: #6B665E; }
+    .card-s { font-size: 36px; font-weight: 600; color: #4E5F51; }
     .barw { position: relative; width: 1px; }
     .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
     .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
-    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; }
-    .stamp { border: 10px solid var(--alarm); color: var(--alarm); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
     .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
     .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
     .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
@@ -45,9 +46,10 @@
     .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
     .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
     .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
-    .stick { overflow: visible; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
     .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
-    .stick .face { fill: var(--paper); }
+    .stick .face { fill: var(--card); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
     .stick .f { fill: var(--ink); }
     .stick .bow { fill: var(--accent); stroke: none; }
   </style>
@@ -55,6 +57,7 @@
     <div id="child-t0" class="clip el" data-start="0.42" data-duration="2.36" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:2"><div id="child-t0-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="child-t0-w0" class="w">where</span> <span id="child-t0-w1" class="w">does</span> <span id="child-t0-w2" class="w">it</span> <span id="child-t0-w3" class="w acc">come</span> <span id="child-t0-w4" class="w acc">from<span class="tail">?</span></span></div></div></div>
     <div id="child-house" class="clip el" data-start="4.74" data-duration="14.9" data-track-index="2" style="position:absolute;left:0px;top:40px;width:1400px;height:1040px;z-index:3" data-layout-allow-overlap><div id="child-house-in" class="in"><div class="ico" style="width:380px;height:380px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 96 L100 30 L176 96 M44 80 L44 178 L156 178 L156 80"/></svg></div></div></div>
     <div id="child-c" class="clip el" data-start="4.74" data-duration="14.85" data-track-index="3" style="position:absolute;left:0px;top:256px;width:1400px;height:824px;z-index:4"><div id="child-c-in" class="in"><svg class="stick" id="child-c-svg" width="108" height="187.2" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
   <g>
     <path class="s" d="M150 140 L150 300"/>
     <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
@@ -81,6 +84,7 @@
     <div id="child-t2" class="clip el" data-start="17.78" data-duration="1.86" data-track-index="15" style="position:absolute;left:920px;top:0px;width:1000px;height:1000px;z-index:16"><div id="child-t2-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="child-t2-w0" class="w">it</span> <span id="child-t2-w1" class="w">kept</span> <span id="child-t2-w2" class="w">you</span> <span id="child-t2-w3" class="w acc">safe</span></div></div></div>
     <div id="child-t3" class="clip el" data-start="20.92" data-duration="2.24" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:380px;z-index:17"><div id="child-t3-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="child-t3-w0" class="w">it</span> <span id="child-t3-w1" class="w">doesn't</span> <span id="child-t3-w2" class="w alm">switch</span> <span id="child-t3-w3" class="w alm">off</span></div></div></div>
     <div id="child-d" class="clip el" data-start="22.22" data-duration="10" data-track-index="17" style="position:absolute;left:0px;top:200px;width:1400px;height:880px;z-index:18"><div id="child-d-in" class="in"><svg class="stick" id="child-d-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
   <g>
     <path class="s" d="M150 140 L150 300"/>
     <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
