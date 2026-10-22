@@ -14,7 +14,7 @@ Post one a day, best first: 01 → 06 → 03 → 02 → 07 → 04 → 05.
 | 04 | `04-scared-of-what-theyll-say.mp4` | 0:24 | Their silence might be protecting you #relationships | Ever stayed quiet because you knew you'd say something you'd regret? |
 | 05 | `05-the-hidden-cost.mp4` | 0:28 | The hidden cost of going quiet #relationships | Does silence in a fight feel like rejection to you? Yes or no 👇 |
 | 06 | `06-say-this.mp4` | 0:25 | Say this before you shut down #relationships | Would you actually say this mid-argument? Be honest 👇 |
-| 07 | `07-when-they-go-quiet-on-you.mp4` | 0:21 | When someone goes quiet on you #relationships | Do you give space, or chase for an answer? 👇 |
+| 07 | `07-when-they-go-quiet-on-you.mp4` | 0:21 | When they go quiet on you #relationships | Do you give space, or chase for an answer? 👇 |
 
 ## Description (same for all, swap the first line)
 

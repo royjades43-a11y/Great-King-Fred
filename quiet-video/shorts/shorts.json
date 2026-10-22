@@ -5,5 +5,5 @@
   { "id": "04-scared-of-what-theyll-say", "from": "b35", "to": "b39", "title": ["Their silence might", "be !protecting! you"] },
   { "id": "05-the-hidden-cost",       "from": "b40", "to": "b44", "title": ["The !hidden cost!", "of going quiet"] },
   { "id": "06-say-this",              "from": "b45", "to": "b51", "title": ["Say !this! before", "you shut down"] },
-  { "id": "07-when-they-go-quiet-on-you", "from": "b52", "to": "b56", "title": ["When someone goes", "quiet !on you!"] }
+  { "id": "07-when-they-go-quiet-on-you", "from": "b52", "to": "b56", "title": ["When they go", "quiet !on you!"] }
 ]
