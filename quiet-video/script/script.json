@@ -1,0 +1,2433 @@
+{
+ "title": "The Psychology of People Who Go Quiet in a Fight",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "You know the type, an argument starts, things get a little heated, and then..."
+    },
+    {
+     "id": "b01",
+     "say": "nothing."
+    },
+    {
+     "id": "b02",
+     "say": "One person just stops talking."
+    },
+    {
+     "id": "b03",
+     "say": "Not storming off, not slamming a door, just..."
+    },
+    {
+     "id": "b04",
+     "say": "quiet."
+    },
+    {
+     "id": "b05",
+     "say": "Arms crossed, maybe a nod here and there, but completely gone from the conversation."
+    },
+    {
+     "id": "b06",
+     "say": "And honestly, it can feel worse than yelling."
+    },
+    {
+     "id": "b07",
+     "say": "So what's actually going on there?"
+    },
+    {
+     "id": "b08",
+     "say": "Is it stubbornness?"
+    },
+    {
+     "id": "b09",
+     "say": "Is it a power move?"
+    },
+    {
+     "id": "b10",
+     "say": "Let's dig into it."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 520,
+     "y": 620,
+     "from": "none",
+     "at": "b00:start",
+     "poses": [
+      [
+       "idle",
+       "b00:start"
+      ],
+      [
+       "point",
+       "b00:argument"
+      ],
+      [
+       "strain",
+       "b00:heated"
+      ],
+      [
+       "idle",
+       "b01:nothing"
+      ],
+      [
+       "shrug",
+       "b06:feel"
+      ],
+      [
+       "idle",
+       "b07:what's"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:start"
+      ],
+      [
+       "o",
+       "b00:argument"
+      ],
+      [
+       "frown",
+       "b02:stops"
+      ],
+      [
+       "o",
+       "b07:what's"
+      ]
+     ],
+     "startAtZero": true
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 1400,
+     "y": 620,
+     "from": "none",
+     "at": "b00:start",
+     "poses": [
+      [
+       "idle",
+       "b00:start"
+      ],
+      [
+       "point",
+       "b00:heated"
+      ],
+      [
+       "idle",
+       "b01:nothing"
+      ],
+      [
+       "armsCrossed",
+       "b05:arms"
+      ],
+      [
+       "headDown",
+       "b05:nod"
+      ],
+      [
+       "armsCrossed",
+       "b05:gone"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:start"
+      ],
+      [
+       "frown",
+       "b00:heated"
+      ],
+      [
+       "neutral",
+       "b02:stops"
+      ],
+      [
+       "tight",
+       "b04:quiet"
+      ]
+     ],
+     "flip": true,
+     "variant": "bow",
+     "startAtZero": true
+    },
+    {
+     "t": "icon",
+     "id": "scrib",
+     "name": "scribble",
+     "x": 960,
+     "y": 330,
+     "size": 170,
+     "from": "pop",
+     "at": "b00:argument",
+     "out": "b01"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "things get !heated!",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "top",
+     "at": "b00:heated",
+     "out": "b01"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "…nothing.",
+     "x": 960,
+     "y": 190,
+     "size": 120,
+     "from": "blur",
+     "at": "b01:nothing",
+     "out": "b02",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "one person stops *talking*",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "top",
+     "at": "b02:stops",
+     "out": "b03"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "not storming off",
+     "x": 960,
+     "y": 150,
+     "size": 56,
+     "from": "left",
+     "at": "b03:storming",
+     "out": "b04",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "strike",
+     "id": "k4",
+     "x": 960,
+     "y": 150,
+     "w": 470,
+     "at": "b03:off",
+     "out": "b04",
+     "delay": 0.15,
+     "exit": "left"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "not slamming a door",
+     "x": 960,
+     "y": 240,
+     "size": 56,
+     "from": "right",
+     "at": "b03:slamming",
+     "out": "b04",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "strike",
+     "id": "k5",
+     "x": 960,
+     "y": 240,
+     "w": 580,
+     "at": "b03:door",
+     "out": "b04",
+     "delay": 0.15,
+     "exit": "right"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "*QUIET*",
+     "x": 960,
+     "y": 190,
+     "size": 170,
+     "from": "slam",
+     "at": "b04:quiet",
+     "out": "b05:completely",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "qb",
+     "name": "quiet",
+     "x": 1400,
+     "y": 250,
+     "size": 150,
+     "from": "pop",
+     "at": "b05:nod",
+     "out": "b06"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "completely *gone*",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "top",
+     "at": "b05:completely",
+     "out": "b06"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "feels !worse! than yelling",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "top",
+     "at": "b06:feel",
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 330,
+     "size": 170,
+     "from": "pop",
+     "at": "b07:what's",
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "stubbornness?",
+     "x": 960,
+     "y": 160,
+     "size": 64,
+     "from": "left",
+     "at": "b08:stubbornness",
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "a *power move*?",
+     "x": 960,
+     "y": 160,
+     "size": 64,
+     "from": "right",
+     "at": "b09:power",
+     "out": "b10"
+    },
+    {
+     "t": "icon",
+     "id": "crown",
+     "name": "crown",
+     "x": 1400,
+     "y": 250,
+     "size": 140,
+     "from": "top",
+     "at": "b09:power",
+     "out": "b10",
+     "exit": "top"
+    }
+   ]
+  },
+  {
+   "id": "choice",
+   "beats": [
+    {
+     "id": "b11",
+     "say": "Here's the thing most people get wrong first."
+    },
+    {
+     "id": "b12",
+     "say": "Going quiet isn't really a choice."
+    },
+    {
+     "id": "b13",
+     "say": "At least not the way it looks from the outside."
+    },
+    {
+     "id": "b14",
+     "say": "It feels like someone's shutting you out on purpose."
+    },
+    {
+     "id": "b15",
+     "say": "But for a lot of people, it's more like a reflex."
+    },
+    {
+     "id": "b16",
+     "say": "Their body hits a wall and talking just gets hard."
+    },
+    {
+     "id": "b17",
+     "say": "Not unappealing, hard."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "01",
+     "text": "Most people get this *wrong*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b11:start",
+     "out": "b12",
+     "perWord": true
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 1350,
+     "y": 620,
+     "from": "right",
+     "at": "b12:going",
+     "poses": [
+      [
+       "idle",
+       "b12:going"
+      ],
+      [
+       "armsCrossed",
+       "b14:shutting"
+      ],
+      [
+       "holdHead",
+       "b16:wall"
+      ],
+      [
+       "headDown",
+       "b16:hard"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b12:going"
+      ],
+      [
+       "tight",
+       "b14:shutting"
+      ],
+      [
+       "o",
+       "b16:wall"
+      ],
+      [
+       "frown",
+       "b16:hard"
+      ]
+     ],
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "going quiet",
+     "x": 640,
+     "y": 380,
+     "size": 64,
+     "from": "left",
+     "at": "b12:going",
+     "out": "b14",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "isn't a *choice*",
+     "x": 640,
+     "y": 490,
+     "size": 96,
+     "from": "left",
+     "at": "b12:choice",
+     "out": "b14",
+     "perWord": true
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "from the outside…",
+     "x": 640,
+     "y": 640,
+     "size": 56,
+     "from": "bottom",
+     "at": "b13:outside",
+     "out": "b14",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 420,
+     "y": 620,
+     "from": "left",
+     "at": "b14:feels",
+     "poses": [
+      [
+       "idle",
+       "b14:feels"
+      ],
+      [
+       "point",
+       "b14:shutting"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b14:feels"
+      ]
+     ],
+     "out": "b15"
+    },
+    {
+     "t": "icon",
+     "id": "wall",
+     "name": "wall",
+     "x": 880,
+     "y": 600,
+     "size": 240,
+     "from": "top",
+     "at": "b14:shutting",
+     "out": "b15",
+     "exit": "top"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "shutting you out !on purpose?!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b14:shutting",
+     "out": "b15"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "a *reflex*",
+     "x": 640,
+     "y": 440,
+     "size": 150,
+     "from": "slam",
+     "at": "b15:reflex",
+     "out": "b16",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "bolt",
+     "name": "bolt",
+     "x": 640,
+     "y": 660,
+     "size": 150,
+     "from": "pop",
+     "at": "b15:reflex",
+     "out": "b16"
+    },
+    {
+     "t": "icon",
+     "id": "wall2",
+     "name": "wall",
+     "x": 980,
+     "y": 600,
+     "size": 240,
+     "from": "left",
+     "at": "b16:wall"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "talking gets !hard!",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "top",
+     "at": "b16:talking"
+    }
+   ]
+  },
+  {
+   "id": "flood",
+   "beats": [
+    {
+     "id": "b18",
+     "say": "There's actually a name for what's happening physically."
+    },
+    {
+     "id": "b19",
+     "say": "Researchers call it flooding."
+    },
+    {
+     "id": "b20",
+     "say": "Your heart rate spikes, your thinking narrows, and your body starts treating the argument like an actual threat."
+    },
+    {
+     "id": "b21",
+     "say": "Once you're flooded, calm conversation isn't really on the table anymore."
+    },
+    {
+     "id": "b22",
+     "say": "Your brain's too busy dealing with stress to form a thoughtful sentence."
+    },
+    {
+     "id": "b23",
+     "say": "So no, the silence doesn't mean they don't care."
+    },
+    {
+     "id": "b24",
+     "say": "It means their system just took talking off the menu for a minute."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "there's a *name* for it",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b18:name",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "*FLOODING*",
+     "x": 960,
+     "y": 280,
+     "size": 190,
+     "from": "slam",
+     "at": "b19:flooding",
+     "out": "b20",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "researchers call it",
+     "x": 960,
+     "y": 130,
+     "size": 44,
+     "from": "top",
+     "at": "b19:researchers",
+     "out": "b20",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t2b",
+     "text": "(John Gottman's term)",
+     "x": 960,
+     "y": 440,
+     "size": 36,
+     "from": "bottom",
+     "at": "b19:flooding",
+     "out": "b20",
+     "weight": 600,
+     "color": "muted",
+     "delay": 0.1
+    },
+    {
+     "t": "icon",
+     "id": "wave",
+     "name": "wave",
+     "x": 960,
+     "y": 680,
+     "size": 300,
+     "from": "bottom",
+     "at": "b19:flooding",
+     "out": "b20"
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 470,
+     "y": 620,
+     "from": "left",
+     "at": "b20:heart",
+     "poses": [
+      [
+       "idle",
+       "b20:heart"
+      ],
+      [
+       "holdHead",
+       "b20:threat"
+      ],
+      [
+       "headDown",
+       "b21:calm"
+      ],
+      [
+       "holdHead",
+       "b22:stress"
+      ],
+      [
+       "sorry",
+       "b23:care"
+      ],
+      [
+       "idle",
+       "b24:menu"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b20:heart"
+      ],
+      [
+       "frown",
+       "b21:calm"
+      ],
+      [
+       "tight",
+       "b22:stress"
+      ],
+      [
+       "neutral",
+       "b23:care"
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "hb",
+     "name": "heartbeat",
+     "x": 960,
+     "y": 300,
+     "size": 170,
+     "from": "draw",
+     "at": "b20:heart",
+     "out": "b21"
+    },
+    {
+     "t": "text",
+     "id": "r1",
+     "text": "heart rate !spikes!",
+     "x": 1380,
+     "y": 300,
+     "size": 56,
+     "from": "right",
+     "at": "b20:heart",
+     "out": "b21"
+    },
+    {
+     "t": "icon",
+     "id": "brain",
+     "name": "brain",
+     "x": 960,
+     "y": 520,
+     "size": 160,
+     "from": "pop",
+     "at": "b20:thinking",
+     "out": "b21"
+    },
+    {
+     "t": "text",
+     "id": "r2",
+     "text": "thinking !narrows!",
+     "x": 1380,
+     "y": 520,
+     "size": 56,
+     "from": "right",
+     "at": "b20:thinking",
+     "out": "b21"
+    },
+    {
+     "t": "icon",
+     "id": "al",
+     "name": "alarm",
+     "x": 960,
+     "y": 740,
+     "size": 160,
+     "from": "pop",
+     "at": "b20:threat",
+     "out": "b21"
+    },
+    {
+     "t": "text",
+     "id": "r3",
+     "text": "argument = !threat!",
+     "x": 1380,
+     "y": 740,
+     "size": 56,
+     "from": "right",
+     "at": "b20:threat",
+     "out": "b21"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "calm conversation",
+     "x": 1280,
+     "y": 420,
+     "size": 76,
+     "from": "right",
+     "at": "b21:calm",
+     "out": "b22"
+    },
+    {
+     "t": "strike",
+     "id": "k3",
+     "x": 1280,
+     "y": 420,
+     "w": 640,
+     "at": "b21:table",
+     "out": "b22",
+     "delay": 0.1,
+     "exit": "right"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "off the table",
+     "x": 1280,
+     "y": 540,
+     "size": 56,
+     "from": "bottom",
+     "at": "b21:table",
+     "out": "b22",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "bubble",
+     "id": "bub",
+     "text": "…",
+     "x": 1280,
+     "y": 400,
+     "size": 200,
+     "from": "pop",
+     "at": "b22:brain's",
+     "out": "b23"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "too busy with !stress!",
+     "x": 1280,
+     "y": 640,
+     "size": 64,
+     "from": "bottom",
+     "at": "b22:stress",
+     "out": "b23"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "doesn't mean",
+     "x": 1280,
+     "y": 370,
+     "size": 56,
+     "from": "right",
+     "at": "b23:mean",
+     "out": "b24",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "they don't care",
+     "x": 1280,
+     "y": 480,
+     "size": 84,
+     "from": "right",
+     "at": "b23:don't",
+     "out": "b24:system"
+    },
+    {
+     "t": "strike",
+     "id": "k7",
+     "x": 1280,
+     "y": 480,
+     "w": 640,
+     "at": "b23:care",
+     "out": "b24:system",
+     "delay": 0.25,
+     "exit": "right"
+    },
+    {
+     "t": "card",
+     "id": "menu",
+     "kicker": "MENU",
+     "text": "talking",
+     "sub": "off for a minute",
+     "x": 1280,
+     "y": 470,
+     "from": "right",
+     "at": "b24:menu"
+    }
+   ]
+  },
+  {
+   "id": "child",
+   "beats": [
+    {
+     "id": "b25",
+     "say": "But where does this even come from?"
+    },
+    {
+     "id": "b26",
+     "say": "For a lot of people, it traces back to childhood."
+    },
+    {
+     "id": "b27",
+     "say": "If raised voices in your house used to mean real danger or unpredictability or getting in trouble, you learn fast."
+    },
+    {
+     "id": "b28",
+     "say": "Go still."
+    },
+    {
+     "id": "b29",
+     "say": "Don't add fuel."
+    },
+    {
+     "id": "b30",
+     "say": "Disappear a little."
+    },
+    {
+     "id": "b31",
+     "say": "That move kept you safe once."
+    },
+    {
+     "id": "b32",
+     "say": "The problem is, it doesn't switch off just because you grew up."
+    },
+    {
+     "id": "b33",
+     "say": "It shows up years later in completely different relationships with completely different stakes and the old alarm still goes off exactly the same."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "where does it *come from*?",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b25:where",
+     "out": "b26"
+    },
+    {
+     "t": "icon",
+     "id": "house",
+     "name": "house",
+     "x": 700,
+     "y": 560,
+     "size": 380,
+     "from": "bottom",
+     "at": "b26:childhood",
+     "out": "b32"
+    },
+    {
+     "t": "stick",
+     "id": "c",
+     "x": 700,
+     "y": 668,
+     "from": "pop",
+     "at": "b26:childhood",
+     "poses": [
+      [
+       "idle",
+       "b26:childhood"
+      ],
+      [
+       "holdHead",
+       "b27:raised"
+      ],
+      [
+       "headDown",
+       "b28:still"
+      ],
+      [
+       "sorry",
+       "b30:disappear"
+      ],
+      [
+       "idle",
+       "b31:kept"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b26:childhood"
+      ],
+      [
+       "frown",
+       "b27:raised"
+      ],
+      [
+       "tight",
+       "b28:still"
+      ],
+      [
+       "neutral",
+       "b31:kept"
+      ]
+     ],
+     "out": "b32",
+     "scale": 0.36
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "*childhood*",
+     "x": 700,
+     "y": 250,
+     "size": 72,
+     "from": "top",
+     "at": "b26:childhood",
+     "out": "b27"
+    },
+    {
+     "t": "icon",
+     "id": "s1",
+     "name": "scribble",
+     "x": 540,
+     "y": 280,
+     "size": 130,
+     "from": "pop",
+     "at": "b27:raised",
+     "out": "b28"
+    },
+    {
+     "t": "icon",
+     "id": "s2",
+     "name": "scribble",
+     "x": 860,
+     "y": 280,
+     "size": 130,
+     "from": "pop",
+     "at": "b27:voices",
+     "out": "b28"
+    },
+    {
+     "t": "text",
+     "id": "r1",
+     "text": "!danger!",
+     "x": 1420,
+     "y": 330,
+     "size": 64,
+     "from": "right",
+     "at": "b27:danger",
+     "out": "b28"
+    },
+    {
+     "t": "text",
+     "id": "r2",
+     "text": "unpredictability",
+     "x": 1420,
+     "y": 440,
+     "size": 64,
+     "from": "right",
+     "at": "b27:unpredictability",
+     "out": "b28"
+    },
+    {
+     "t": "text",
+     "id": "r3",
+     "text": "trouble",
+     "x": 1420,
+     "y": 550,
+     "size": 64,
+     "from": "right",
+     "at": "b27:trouble",
+     "out": "b28"
+    },
+    {
+     "t": "text",
+     "id": "r4",
+     "text": "you learn *fast*",
+     "x": 1420,
+     "y": 700,
+     "size": 72,
+     "from": "bottom",
+     "at": "b27:fast",
+     "out": "b28"
+    },
+    {
+     "t": "text",
+     "id": "g1",
+     "text": "go *still*.",
+     "x": 1420,
+     "y": 380,
+     "size": 72,
+     "from": "right",
+     "at": "b28:go",
+     "out": "b31"
+    },
+    {
+     "t": "text",
+     "id": "g2",
+     "text": "don't add fuel.",
+     "x": 1420,
+     "y": 500,
+     "size": 72,
+     "from": "left",
+     "at": "b29:don't",
+     "out": "b31"
+    },
+    {
+     "t": "text",
+     "id": "g3",
+     "text": "disappear a little.",
+     "x": 1420,
+     "y": 620,
+     "size": 72,
+     "from": "blur",
+     "at": "b30:disappear",
+     "out": "b31",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "shield",
+     "name": "shield",
+     "x": 700,
+     "y": 560,
+     "size": 300,
+     "from": "pop",
+     "at": "b31:safe",
+     "out": "b32"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "it kept you *safe*",
+     "x": 1420,
+     "y": 500,
+     "size": 80,
+     "from": "right",
+     "at": "b31:kept",
+     "out": "b32"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "it doesn't !switch off!",
+     "x": 960,
+     "y": 190,
+     "size": 80,
+     "from": "top",
+     "at": "b32:switch",
+     "out": "b33"
+    },
+    {
+     "t": "stick",
+     "id": "d",
+     "x": 700,
+     "y": 640,
+     "from": "pop",
+     "at": "b32:grew",
+     "poses": [
+      [
+       "idle",
+       "b32:grew"
+      ],
+      [
+       "holdHead",
+       "b33:alarm"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:grew"
+      ],
+      [
+       "o",
+       "b33:alarm"
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "al",
+     "name": "alarm",
+     "x": 700,
+     "y": 250,
+     "size": 140,
+     "from": "top",
+     "at": "b33:alarm"
+    },
+    {
+     "t": "text",
+     "id": "u1",
+     "text": "years later",
+     "x": 1400,
+     "y": 320,
+     "size": 56,
+     "from": "right",
+     "at": "b33:years",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "u1b",
+     "text": "new *relationships*",
+     "x": 1400,
+     "y": 420,
+     "size": 64,
+     "from": "right",
+     "at": "b33:relationships"
+    },
+    {
+     "t": "text",
+     "id": "u2",
+     "text": "different stakes",
+     "x": 1400,
+     "y": 520,
+     "size": 64,
+     "from": "right",
+     "at": "b33:stakes"
+    },
+    {
+     "t": "text",
+     "id": "u3",
+     "text": "same old !alarm!",
+     "x": 1400,
+     "y": 640,
+     "size": 84,
+     "from": "bottom",
+     "at": "b33:alarm"
+    }
+   ]
+  },
+  {
+   "id": "layer",
+   "beats": [
+    {
+     "id": "b34",
+     "say": "And there's one more layer."
+    },
+    {
+     "id": "b35",
+     "say": "Some people go quiet because they're scared of what they'll say if they keep going."
+    },
+    {
+     "id": "b36",
+     "say": "Not because they don't care, but because they know what comes out in the heat of the moment can be sharper than they mean it to be."
+    },
+    {
+     "id": "b37",
+     "say": "So silence becomes a kind of control, a way of not saying the thing they'd regret."
+    },
+    {
+     "id": "b38",
+     "say": "From the outside, it looks like shutting someone out."
+    },
+    {
+     "id": "b39",
+     "say": "From the inside, it can feel like damage control."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "02",
+     "text": "One more *layer*",
+     "x": 960,
+     "y": 540,
+     "from": "right",
+     "at": "b34:start",
+     "out": "b35",
+     "perWord": true
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 560,
+     "y": 620,
+     "from": "left",
+     "at": "b35:some",
+     "poses": [
+      [
+       "idle",
+       "b35:some"
+      ],
+      [
+       "sorry",
+       "b35:scared"
+      ],
+      [
+       "armsCrossed",
+       "b37:control"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b35:some"
+      ],
+      [
+       "tight",
+       "b35:scared"
+      ]
+     ],
+     "out": "b38"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "scared of what they'll *say*",
+     "x": 1300,
+     "y": 420,
+     "size": 64,
+     "from": "right",
+     "at": "b35:scared",
+     "out": "b36"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "not because they don't care",
+     "x": 1300,
+     "y": 380,
+     "size": 52,
+     "from": "right",
+     "at": "b36:not",
+     "out": "b37",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "!sharper! than they mean it",
+     "x": 1300,
+     "y": 520,
+     "size": 68,
+     "from": "bottom",
+     "at": "b36:sharper",
+     "out": "b37"
+    },
+    {
+     "t": "icon",
+     "id": "heat",
+     "name": "bolt",
+     "x": 1300,
+     "y": 700,
+     "size": 130,
+     "from": "pop",
+     "at": "b36:heat",
+     "out": "b37"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "silence = *control*",
+     "x": 1300,
+     "y": 430,
+     "size": 110,
+     "from": "slam",
+     "at": "b37:control",
+     "out": "b38:looks",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "not saying what they'd !regret!",
+     "x": 1300,
+     "y": 570,
+     "size": 48,
+     "from": "bottom",
+     "at": "b37:regret",
+     "out": "b38:looks",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "OUTSIDE",
+     "x": 480,
+     "y": 250,
+     "size": 48,
+     "from": "top",
+     "at": "b38:outside",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "!shutting you out!",
+     "x": 480,
+     "y": 350,
+     "size": 64,
+     "from": "left",
+     "at": "b38:shutting"
+    },
+    {
+     "t": "icon",
+     "id": "door",
+     "name": "door",
+     "x": 480,
+     "y": 650,
+     "size": 300,
+     "from": "draw",
+     "at": "b38:shutting"
+    },
+    {
+     "t": "text",
+     "id": "r1",
+     "text": "INSIDE",
+     "x": 1440,
+     "y": 250,
+     "size": 48,
+     "from": "top",
+     "at": "b39:inside",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "r2",
+     "text": "*damage control*",
+     "x": 1440,
+     "y": 350,
+     "size": 64,
+     "from": "right",
+     "at": "b39:damage"
+    },
+    {
+     "t": "icon",
+     "id": "shield",
+     "name": "shield",
+     "x": 1440,
+     "y": 650,
+     "size": 300,
+     "from": "pop",
+     "at": "b39:control"
+    }
+   ]
+  },
+  {
+   "id": "miss",
+   "beats": [
+    {
+     "id": "b40",
+     "say": "But here's the part people miss."
+    },
+    {
+     "id": "b41",
+     "say": "Even when silence starts as self -protection, it still lands on the other person."
+    },
+    {
+     "id": "b42",
+     "say": "It often reads as rejection, even when that's not the intention at all."
+    },
+    {
+     "id": "b43",
+     "say": "And when someone consistently shuts down during disagreements, that pattern is one of the ones most linked to real strain in relationships over time."
+    },
+    {
+     "id": "b44",
+     "say": "So even well -maned silence can wear something down if it keeps happening the same way over and over."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the part people !miss!",
+     "x": 960,
+     "y": 480,
+     "size": 130,
+     "from": "slam",
+     "at": "b40:part",
+     "out": "b41",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 1400,
+     "y": 620,
+     "from": "right",
+     "at": "b41:silence",
+     "poses": [
+      [
+       "sorry",
+       "b41:silence"
+      ],
+      [
+       "armsCrossed",
+       "b43:shuts"
+      ],
+      [
+       "headDown",
+       "b44:wear"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b41:silence"
+      ]
+     ],
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "sh",
+     "name": "shield",
+     "x": 1400,
+     "y": 250,
+     "size": 120,
+     "from": "pop",
+     "at": "b41:self",
+     "out": "b43:shuts"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 520,
+     "y": 620,
+     "from": "left",
+     "at": "b41:lands",
+     "poses": [
+      [
+       "idle",
+       "b41:lands"
+      ],
+      [
+       "headDown",
+       "b42:rejection"
+      ],
+      [
+       "shrug",
+       "b44:wear"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b41:lands"
+      ],
+      [
+       "frown",
+       "b42:rejection"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "*self-protection*…",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b41:self",
+     "out": "b41:lands"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "…still lands on *them*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b41:lands",
+     "out": "b42"
+    },
+    {
+     "t": "stamp",
+     "id": "rej",
+     "text": "REJECTION",
+     "x": 470,
+     "y": 250,
+     "size": 48,
+     "from": "slam",
+     "at": "b42:rejection",
+     "out": "b43"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "even when it's not the intention",
+     "x": 1090,
+     "y": 170,
+     "size": 44,
+     "from": "top",
+     "at": "b42:intention",
+     "out": "b43:consistently",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "RESEARCH · GOTTMAN",
+     "text": "Stonewalling",
+     "sub": "one of the strongest strain signals",
+     "x": 960,
+     "y": 230,
+     "from": "top",
+     "at": "b43:consistently",
+     "delay": 0.3,
+     "out": "b44"
+    },
+    {
+     "t": "text",
+     "id": "t4b",
+     "text": "consistently *shuts down*",
+     "x": 960,
+     "y": 400,
+     "size": 48,
+     "from": "bottom",
+     "at": "b43:shuts",
+     "out": "b44",
+     "weight": 600
+    },
+    {
+     "t": "icon",
+     "id": "pat",
+     "name": "loop",
+     "x": 960,
+     "y": 690,
+     "size": 150,
+     "from": "draw",
+     "at": "b43:pattern",
+     "out": "b44"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "real !strain!, over time",
+     "x": 960,
+     "y": 490,
+     "size": 56,
+     "from": "bottom",
+     "at": "b43:strain",
+     "out": "b44"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "even *well-meant* silence",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b44:even"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "!wears it down!",
+     "x": 960,
+     "y": 280,
+     "size": 72,
+     "from": "top",
+     "at": "b44:wear"
+    },
+    {
+     "t": "icon",
+     "id": "loop",
+     "name": "loop",
+     "x": 960,
+     "y": 560,
+     "size": 200,
+     "from": "draw",
+     "at": "b44:over"
+    }
+   ]
+  },
+  {
+   "id": "try",
+   "beats": [
+    {
+     "id": "b45",
+     "say": "So if this is you, here's something worth trying."
+    },
+    {
+     "id": "b46",
+     "say": "You don't have to push yourself through the flood and keep arguing, but you can say one sentence before you check out."
+    },
+    {
+     "id": "b47",
+     "say": "I need a few minutes before I can keep talking about this."
+    },
+    {
+     "id": "b48",
+     "say": "That one line changes everything."
+    },
+    {
+     "id": "b49",
+     "say": "Suddenly, silence isn't abandonment."
+    },
+    {
+     "id": "b50",
+     "say": "It's a pause."
+    },
+    {
+     "id": "b51",
+     "say": "The other person knows what's happening instead of guessing."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "03",
+     "text": "Something worth *trying*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b45:start",
+     "out": "b46",
+     "perWord": true
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 500,
+     "y": 620,
+     "from": "left",
+     "at": "b46:push",
+     "poses": [
+      [
+       "strain",
+       "b46:push"
+      ],
+      [
+       "idle",
+       "b46:sentence"
+      ],
+      [
+       "sorry",
+       "b47:need"
+      ],
+      [
+       "happy",
+       "b48:changes"
+      ],
+      [
+       "idle",
+       "b51:other"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b46:push"
+      ],
+      [
+       "neutral",
+       "b46:sentence"
+      ],
+      [
+       "o",
+       "b47:need"
+      ],
+      [
+       "smile",
+       "b48:changes"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "no need to !push through!",
+     "x": 1300,
+     "y": 380,
+     "size": 60,
+     "from": "right",
+     "at": "b46:push",
+     "out": "b47"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "say *one sentence*",
+     "x": 1300,
+     "y": 500,
+     "size": 84,
+     "from": "bottom",
+     "at": "b46:sentence",
+     "out": "b47",
+     "perWord": true
+    },
+    {
+     "t": "text",
+     "id": "q1",
+     "text": "“I need a *few minutes*",
+     "x": 1300,
+     "y": 380,
+     "size": 80,
+     "from": "left",
+     "at": "b47:i",
+     "out": "b49",
+     "perWord": true
+    },
+    {
+     "t": "text",
+     "id": "q2",
+     "text": "before I can keep talking.”",
+     "x": 1300,
+     "y": 490,
+     "size": 52,
+     "from": "left",
+     "at": "b47:before",
+     "out": "b49",
+     "perWord": true,
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "one line changes *everything*",
+     "x": 1300,
+     "y": 660,
+     "size": 60,
+     "from": "bottom",
+     "at": "b48:changes",
+     "out": "b49"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "!abandonment!",
+     "x": 1300,
+     "y": 380,
+     "size": 96,
+     "from": "right",
+     "at": "b49:abandonment",
+     "out": "b51",
+     "hero": true
+    },
+    {
+     "t": "strike",
+     "id": "k4",
+     "x": 1300,
+     "y": 380,
+     "w": 560,
+     "at": "b50:pause",
+     "out": "b51",
+     "exit": "right"
+    },
+    {
+     "t": "icon",
+     "id": "pause",
+     "name": "pause",
+     "x": 1300,
+     "y": 580,
+     "size": 150,
+     "from": "pop",
+     "at": "b50:pause",
+     "out": "b51"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "*it's a pause*",
+     "x": 1300,
+     "y": 760,
+     "size": 84,
+     "from": "bottom",
+     "at": "b50:it's",
+     "out": "b51",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 1400,
+     "y": 620,
+     "from": "right",
+     "at": "b51:other",
+     "poses": [
+      [
+       "happy",
+       "b51:knows"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b51:knows"
+      ]
+     ],
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "they know what's *happening*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b51:knows"
+    }
+   ]
+  },
+  {
+   "id": "watch",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b52",
+     "say": "And if you're the one watching someone go quiet, it helps to remember something."
+    },
+    {
+     "id": "b53",
+     "say": "That silence probably isn't a verdict on the relationship."
+    },
+    {
+     "id": "b54",
+     "say": "More often, it's just a nervous system trying to catch up."
+    },
+    {
+     "id": "b55",
+     "say": "Giving space instead of chasing a response might actually get you back to the conversation faster."
+    },
+    {
+     "id": "b56",
+     "say": "Neither reaction is wrong on its own."
+    },
+    {
+     "id": "b57",
+     "say": "Needing quiet or needing to talk it out right away both makes sense."
+    },
+    {
+     "id": "b58",
+     "say": "The real trouble starts when neither person understands what's happening for the other and the silence just gets mistaken for something broken."
+    },
+    {
+     "id": "b59",
+     "say": "So next time you're mid -argument and someone goes quiet or you feel yourself pulling away, hold off on the conclusion."
+    },
+    {
+     "id": "b60",
+     "say": "It might not be a wall going up."
+    },
+    {
+     "id": "b61",
+     "say": "It might just be someone trying to catch their breath."
+    },
+    {
+     "id": "b62",
+     "say": "If this helped you understand yourself or someone you love a little better, hit like."
+    },
+    {
+     "id": "b63",
+     "say": "It actually helps this channel reach more people who need to hear it."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "04",
+     "text": "If you're the one *watching*",
+     "x": 960,
+     "y": 540,
+     "from": "right",
+     "at": "b52:start",
+     "out": "b53",
+     "perWord": true
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 500,
+     "y": 620,
+     "from": "left",
+     "at": "b53:silence",
+     "poses": [
+      [
+       "idle",
+       "b53:silence"
+      ],
+      [
+       "shrug",
+       "b53:verdict"
+      ],
+      [
+       "idle",
+       "b54:nervous"
+      ],
+      [
+       "proud",
+       "b55:space"
+      ],
+      [
+       "idle",
+       "b56:neither"
+      ],
+      [
+       "happy",
+       "b57:talk"
+      ],
+      [
+       "shrug",
+       "b58:trouble"
+      ],
+      [
+       "idle",
+       "b59:hold"
+      ],
+      [
+       "happy",
+       "b61:breath"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b53:silence"
+      ],
+      [
+       "neutral",
+       "b54:nervous"
+      ],
+      [
+       "smile",
+       "b55:space"
+      ],
+      [
+       "neutral",
+       "b56:neither"
+      ],
+      [
+       "smile",
+       "b57:talk"
+      ],
+      [
+       "o",
+       "b58:trouble"
+      ],
+      [
+       "neutral",
+       "b59:hold"
+      ],
+      [
+       "smile",
+       "b61:breath"
+      ]
+     ],
+     "out": "b62"
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 1420,
+     "y": 620,
+     "from": "right",
+     "at": "b53:silence",
+     "poses": [
+      [
+       "headDown",
+       "b53:silence"
+      ],
+      [
+       "idle",
+       "b54:catch"
+      ],
+      [
+       "headDown",
+       "b57:quiet"
+      ],
+      [
+       "shrug",
+       "b58:trouble"
+      ],
+      [
+       "armsCrossed",
+       "b60:wall"
+      ],
+      [
+       "happy",
+       "b61:breath"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b53:silence"
+      ],
+      [
+       "neutral",
+       "b54:catch"
+      ],
+      [
+       "tight",
+       "b57:quiet"
+      ],
+      [
+       "o",
+       "b58:trouble"
+      ],
+      [
+       "smile",
+       "b61:breath"
+      ]
+     ],
+     "out": "b62",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "stamp",
+     "id": "verdict",
+     "text": "VERDICT",
+     "x": 960,
+     "y": 360,
+     "size": 64,
+     "from": "slam",
+     "at": "b53:verdict",
+     "out": "b54"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 960,
+     "y": 360,
+     "w": 420,
+     "at": "b53:relationship",
+     "out": "b54",
+     "delay": 0.1
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "not a verdict",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b53:verdict",
+     "out": "b54"
+    },
+    {
+     "t": "icon",
+     "id": "hb",
+     "name": "heartbeat",
+     "x": 960,
+     "y": 380,
+     "size": 220,
+     "from": "draw",
+     "at": "b54:nervous",
+     "out": "b54:catch"
+    },
+    {
+     "t": "icon",
+     "id": "calm",
+     "name": "calm",
+     "x": 960,
+     "y": 380,
+     "size": 220,
+     "from": "draw",
+     "at": "b54:catch",
+     "out": "b55"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "a nervous system *catching up*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b54:nervous",
+     "out": "b55"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "give *space*",
+     "x": 960,
+     "y": 300,
+     "size": 130,
+     "from": "slam",
+     "at": "b55:space",
+     "out": "b56",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "don't chase",
+     "x": 960,
+     "y": 440,
+     "size": 56,
+     "from": "bottom",
+     "at": "b55:chasing",
+     "out": "b56",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "strike",
+     "id": "k4",
+     "x": 960,
+     "y": 440,
+     "w": 340,
+     "at": "b55:response",
+     "out": "b56",
+     "delay": 0.1
+    },
+    {
+     "t": "text",
+     "id": "e_t1",
+     "text": "neither is *wrong*",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "top",
+     "at": "b56:wrong",
+     "out": "b57"
+    },
+    {
+     "t": "text",
+     "id": "e_l1",
+     "text": "needs to *talk*",
+     "x": 520,
+     "y": 250,
+     "size": 48,
+     "from": "top",
+     "at": "b57:talk",
+     "out": "b58"
+    },
+    {
+     "t": "text",
+     "id": "e_l2",
+     "text": "needs *quiet*",
+     "x": 1400,
+     "y": 250,
+     "size": 48,
+     "from": "top",
+     "at": "b57:quiet",
+     "out": "b58"
+    },
+    {
+     "t": "icon",
+     "id": "e_c1",
+     "name": "check",
+     "x": 960,
+     "y": 420,
+     "size": 140,
+     "from": "draw",
+     "at": "b57:sense",
+     "out": "b58"
+    },
+    {
+     "t": "icon",
+     "id": "e_q1",
+     "name": "question",
+     "x": 520,
+     "y": 250,
+     "size": 120,
+     "from": "pop",
+     "at": "b58:understands",
+     "out": "b59"
+    },
+    {
+     "t": "icon",
+     "id": "e_q2",
+     "name": "question",
+     "x": 1400,
+     "y": 250,
+     "size": 120,
+     "from": "pop",
+     "at": "b58:understands",
+     "out": "b59",
+     "delay": 0.12
+    },
+    {
+     "t": "text",
+     "id": "e_t2a",
+     "text": "neither *understands*",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "top",
+     "at": "b58:understands",
+     "out": "b58:silence"
+    },
+    {
+     "t": "text",
+     "id": "e_t2",
+     "text": "mistaken for !broken!",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "top",
+     "at": "b58:silence",
+     "out": "b59"
+    },
+    {
+     "t": "text",
+     "id": "e_t3a",
+     "text": "they go quiet…",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "left",
+     "at": "b59:goes",
+     "out": "b59:pulling"
+    },
+    {
+     "t": "text",
+     "id": "e_t3b",
+     "text": "…or you pull away",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "right",
+     "at": "b59:pulling",
+     "out": "b59:hold"
+    },
+    {
+     "t": "text",
+     "id": "e_t3",
+     "text": "hold off on the *conclusion*",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "top",
+     "at": "b59:hold",
+     "out": "b60"
+    },
+    {
+     "t": "icon",
+     "id": "e_wall",
+     "name": "wall",
+     "x": 960,
+     "y": 600,
+     "size": 240,
+     "from": "top",
+     "at": "b60:wall",
+     "out": "b61",
+     "exit": "top"
+    },
+    {
+     "t": "text",
+     "id": "e_t4",
+     "text": "not a wall going up",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "top",
+     "at": "b60:wall",
+     "out": "b61:catch"
+    },
+    {
+     "t": "icon",
+     "id": "e_br",
+     "name": "breath",
+     "x": 1180,
+     "y": 440,
+     "size": 150,
+     "from": "draw",
+     "at": "b61:breath",
+     "out": "b62"
+    },
+    {
+     "t": "text",
+     "id": "e_t5",
+     "text": "just catching their *breath*",
+     "x": 960,
+     "y": 170,
+     "size": 72,
+     "from": "top",
+     "at": "b61:catch",
+     "out": "b62"
+    },
+    {
+     "t": "text",
+     "id": "e_t5b",
+     "text": "if this *helped*",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "top",
+     "at": "b62:helped",
+     "out": "b63"
+    },
+    {
+     "t": "icon",
+     "id": "e_like",
+     "name": "thumbsUp",
+     "x": 960,
+     "y": 430,
+     "size": 230,
+     "from": "pop",
+     "at": "b62:like",
+     "out": "b63"
+    },
+    {
+     "t": "text",
+     "id": "e_t6",
+     "text": "*hit like*",
+     "x": 960,
+     "y": 700,
+     "size": 110,
+     "from": "bottom",
+     "at": "b62:hit",
+     "out": "b63",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "e_t7",
+     "text": "the *real* why",
+     "x": 960,
+     "y": 470,
+     "size": 170,
+     "from": "blur",
+     "at": "b63:channel",
+     "hero": true,
+     "perWord": true
+    },
+    {
+     "t": "text",
+     "id": "e_t8",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 630,
+     "size": 52,
+     "from": "bottom",
+     "at": "b63:people",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}

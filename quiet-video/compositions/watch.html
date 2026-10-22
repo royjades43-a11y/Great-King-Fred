@@ -1,0 +1,216 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    @font-face { font-family: "Anton"; font-weight: 400; font-style: normal; src: url("assets/fonts/anton-400.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Anton", sans-serif; font-size: 260px; font-weight: 400; letter-spacing: 0; line-height: 0.9; color: var(--ink); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); }
+    .hero { font-family: "Anton", sans-serif; font-weight: 400 !important; letter-spacing: 0.01em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: #6B665E; }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="watch" data-width="1920" data-height="1080">
+    <div id="watch-ch" class="clip el" data-start="0.2" data-duration="4.66" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:2"><div id="watch-ch-in" class="in"><div class="chap"><div class="chap-num">04</div><div class="chap-rule"></div><div class="txt" style="font-size:76px;font-weight:800;color:var(--ink)"><span id="watch-ch-w0" class="w">If</span> <span id="watch-ch-w1" class="w">you're</span> <span id="watch-ch-w2" class="w">the</span> <span id="watch-ch-w3" class="w">one</span> <span id="watch-ch-w4" class="w acc">watching</span></div></div></div></div>
+    <div id="watch-a" class="clip el" data-start="4.98" data-duration="41.32" data-track-index="2" style="position:absolute;left:0px;top:160px;width:1000px;height:920px;z-index:3"><div id="watch-a-in" class="in"><svg class="stick" id="watch-a-svg" width="300" height="520" viewBox="0 0 300 520">
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="watch-a-aLu"><path class="s" d="M150 160 L150 255"/><g id="watch-a-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="watch-a-aRu"><path class="s" d="M150 160 L150 255"/><g id="watch-a-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="watch-a-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="watch-a-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="watch-a-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="watch-a-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="watch-a-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="watch-a-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="watch-b" class="clip el" data-start="4.98" data-duration="41.32" data-track-index="3" style="position:absolute;left:920px;top:160px;width:1000px;height:920px;z-index:4"><div id="watch-b-in" class="in"><svg class="stick" id="watch-b-svg" width="300" height="520" viewBox="0 0 300 520">
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="watch-b-aLu"><path class="s" d="M150 160 L150 255"/><g id="watch-b-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="watch-b-aRu"><path class="s" d="M150 160 L150 255"/><g id="watch-b-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="watch-b-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="watch-b-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="watch-b-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="watch-b-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="watch-b-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="watch-b-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="watch-verdict" class="clip el" data-start="6.82" data-duration="1.93" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:720px;z-index:5" data-layout-allow-overlap><div id="watch-verdict-in" class="in"><div class="stamp" style="font-size:64px">VERDICT</div></div></div>
+    <div id="watch-k1" class="clip el" data-start="7.54" data-duration="1.26" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:720px;z-index:50" data-layout-allow-overlap data-layout-allow-occlusion><div id="watch-k1-in" class="in"><div class="strike" style="width:420px"></div></div></div>
+    <div id="watch-t1" class="clip el" data-start="6.82" data-duration="1.98" data-track-index="6" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:7"><div id="watch-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="watch-t1-w0" class="w">not</span> <span id="watch-t1-w1" class="w">a</span> <span id="watch-t1-w2" class="w">verdict</span></div></div></div>
+    <div id="watch-hb" class="clip el" data-start="10.06" data-duration="1.27" data-track-index="7" style="position:absolute;left:0px;top:0px;width:1920px;height:760px;z-index:8" data-layout-allow-overlap><div id="watch-hb-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M10 110 L60 110 L76 70 L96 160 L116 40 L134 130 L146 110 L190 110"/></svg></div></div></div>
+    <div id="watch-calm" class="clip el" data-start="11.28" data-duration="1.03" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:760px;z-index:9" data-layout-allow-overlap><div id="watch-calm-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M10 110 L60 110 Q80 96 100 110 Q120 124 140 110 L190 110"/></svg></div></div></div>
+    <div id="watch-t2" class="clip el" data-start="10.06" data-duration="2.3" data-track-index="9" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:10"><div id="watch-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="watch-t2-w0" class="w">a</span> <span id="watch-t2-w1" class="w">nervous</span> <span id="watch-t2-w2" class="w">system</span> <span id="watch-t2-w3" class="w acc">catching</span> <span id="watch-t2-w4" class="w acc">up</span></div></div></div>
+    <div id="watch-t3" class="clip el" data-start="12.46" data-duration="5.91" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:600px;z-index:11"><div id="watch-t3-in" class="in"><div class="txt hero" style="font-size:130px;font-weight:800;color:var(--ink)"><span id="watch-t3-w0" class="w">give</span> <span id="watch-t3-w1" class="w acc">space</span></div></div></div>
+    <div id="watch-t4" class="clip el" data-start="13.66" data-duration="4.76" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:880px;z-index:12"><div id="watch-t4-in" class="in"><div class="txt" style="font-size:56px;font-weight:600;color:var(--muted)"><span id="watch-t4-w0" class="w">don't</span> <span id="watch-t4-w1" class="w">chase</span></div></div></div>
+    <div id="watch-k4" class="clip el" data-start="14.26" data-duration="4.16" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:880px;z-index:50" data-layout-allow-overlap data-layout-allow-occlusion><div id="watch-k4-in" class="in"><div class="strike" style="width:340px"></div></div></div>
+    <div id="watch-e_t1" class="clip el" data-start="19.26" data-duration="1.7" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:14"><div id="watch-e_t1-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="watch-e_t1-w0" class="w">neither</span> <span id="watch-e_t1-w1" class="w">is</span> <span id="watch-e_t1-w2" class="w acc">wrong</span></div></div></div>
+    <div id="watch-e_l1" class="clip el" data-start="22.6" data-duration="3.04" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1040px;height:500px;z-index:15"><div id="watch-e_l1-in" class="in"><div class="txt" style="font-size:48px;font-weight:800;color:var(--ink)"><span id="watch-e_l1-w0" class="w">needs</span> <span id="watch-e_l1-w1" class="w">to</span> <span id="watch-e_l1-w2" class="w acc">talk</span></div></div></div>
+    <div id="watch-e_l2" class="clip el" data-start="21.06" data-duration="4.58" data-track-index="15" style="position:absolute;left:880px;top:0px;width:1040px;height:500px;z-index:16"><div id="watch-e_l2-in" class="in"><div class="txt" style="font-size:48px;font-weight:800;color:var(--ink)"><span id="watch-e_l2-w0" class="w">needs</span> <span id="watch-e_l2-w1" class="w acc">quiet</span></div></div></div>
+    <div id="watch-e_c1" class="clip el" data-start="24.52" data-duration="1.07" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:840px;z-index:17" data-layout-allow-overlap><div id="watch-e_c1-in" class="in"><div class="ico" style="width:140px;height:140px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M30 104 L80 154 L172 50"/></svg></div></div></div>
+    <div id="watch-e_q1" class="clip el" data-start="27.76" data-duration="5.89" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1040px;height:500px;z-index:18" data-layout-allow-overlap><div id="watch-e_q1-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="watch-e_q2" class="clip el" data-start="27.88" data-duration="5.77" data-track-index="18" style="position:absolute;left:880px;top:0px;width:1040px;height:500px;z-index:19" data-layout-allow-overlap><div id="watch-e_q2-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="watch-e_t2a" class="clip el" data-start="27.76" data-duration="2.72" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="watch-e_t2a-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="watch-e_t2a-w0" class="w">neither</span> <span id="watch-e_t2a-w1" class="w acc">understands</span></div></div></div>
+    <div id="watch-e_t2" class="clip el" data-start="30.38" data-duration="3.32" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:21"><div id="watch-e_t2-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="watch-e_t2-w0" class="w">mistaken</span> <span id="watch-e_t2-w1" class="w">for</span> <span id="watch-e_t2-w2" class="w alm">broken</span></div></div></div>
+    <div id="watch-e_t3a" class="clip el" data-start="35.96" data-duration="2.2" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:22"><div id="watch-e_t3a-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="watch-e_t3a-w0" class="w">they</span> <span id="watch-e_t3a-w1" class="w">go</span> <span id="watch-e_t3a-w2" class="w">quiet…</span></div></div></div>
+    <div id="watch-e_t3b" class="clip el" data-start="38.06" data-duration="1.42" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:23"><div id="watch-e_t3b-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="watch-e_t3b-w0" class="w">…or</span> <span id="watch-e_t3b-w1" class="w">you</span> <span id="watch-e_t3b-w2" class="w">pull</span> <span id="watch-e_t3b-w3" class="w">away</span></div></div></div>
+    <div id="watch-e_t3" class="clip el" data-start="39.38" data-duration="1.88" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:24"><div id="watch-e_t3-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="watch-e_t3-w0" class="w">hold</span> <span id="watch-e_t3-w1" class="w">off</span> <span id="watch-e_t3-w2" class="w">on</span> <span id="watch-e_t3-w3" class="w">the</span> <span id="watch-e_t3-w4" class="w acc">conclusion</span></div></div></div>
+    <div id="watch-e_wall" class="clip el" data-start="42.18" data-duration="1.34" data-track-index="24" style="position:absolute;left:0px;top:120px;width:1920px;height:960px;z-index:25" data-layout-allow-overlap><div id="watch-e_wall-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M14 40 L186 40 L186 180 L14 180 Z"/><path class="s" pathLength="1" d="M14 87 L186 87 M14 134 L186 134 M70 40 L70 87 M130 40 L130 87 M44 87 L44 134 M100 87 L100 134 M156 87 L156 134 M70 134 L70 180 M130 134 L130 180"/></svg></div></div></div>
+    <div id="watch-e_t4" class="clip el" data-start="42.18" data-duration="2.74" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:26"><div id="watch-e_t4-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="watch-e_t4-w0" class="w">not</span> <span id="watch-e_t4-w1" class="w">a</span> <span id="watch-e_t4-w2" class="w">wall</span> <span id="watch-e_t4-w3" class="w">going</span> <span id="watch-e_t4-w4" class="w">up</span></div></div></div>
+    <div id="watch-e_br" class="clip el" data-start="45.26" data-duration="0.99" data-track-index="26" style="position:absolute;left:440px;top:0px;width:1480px;height:880px;z-index:27" data-layout-allow-overlap><div id="watch-e_br-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 70 L120 70 Q150 70 150 46 Q150 26 130 26 Q112 26 112 44"/><path class="s" pathLength="1" d="M20 110 L160 110 Q186 110 186 136 Q186 160 162 160 Q140 160 140 140"/><path class="s" pathLength="1" d="M20 150 L90 150"/></svg></div></div></div>
+    <div id="watch-e_t5" class="clip el" data-start="44.82" data-duration="1.48" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:28"><div id="watch-e_t5-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="watch-e_t5-w0" class="w">just</span> <span id="watch-e_t5-w1" class="w">catching</span> <span id="watch-e_t5-w2" class="w">their</span> <span id="watch-e_t5-w3" class="w acc">breath</span></div></div></div>
+    <div id="watch-e_t5b" class="clip el" data-start="46.54" data-duration="4.8" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:360px;z-index:29"><div id="watch-e_t5b-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="watch-e_t5b-w0" class="w">if</span> <span id="watch-e_t5b-w1" class="w">this</span> <span id="watch-e_t5b-w2" class="w acc">helped</span></div></div></div>
+    <div id="watch-e_like" class="clip el" data-start="50.48" data-duration="0.89" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:860px;z-index:30" data-layout-allow-overlap><div id="watch-e_like-in" class="in"><div class="ico" style="width:230px;height:230px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M56 92 L56 180 L22 180 L22 92 Z"/><path class="s acc-s" pathLength="1" d="M56 92 L92 30 Q112 30 110 56 L104 84 L164 84 Q184 86 178 108 L164 164 Q158 180 140 180 L56 180"/></svg></div></div></div>
+    <div id="watch-e_t6" class="clip el" data-start="50.38" data-duration="0.96" data-track-index="30" style="position:absolute;left:0px;top:320px;width:1920px;height:760px;z-index:31"><div id="watch-e_t6-in" class="in"><div class="txt hero" style="font-size:110px;font-weight:800;color:var(--ink)"><span id="watch-e_t6-w0" class="w acc">hit</span> <span id="watch-e_t6-w1" class="w acc">like</span></div></div></div>
+    <div id="watch-e_t7" class="clip el" data-start="52.34" data-duration="5.21" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:940px;z-index:32"><div id="watch-e_t7-in" class="in"><div class="txt hero" style="font-size:170px;font-weight:800;color:var(--ink)"><span id="watch-e_t7-w0" class="w">the</span> <span id="watch-e_t7-w1" class="w acc">real</span> <span id="watch-e_t7-w2" class="w">why</span></div></div></div>
+    <div id="watch-e_t8" class="clip el" data-start="53.26" data-duration="4.365" data-track-index="32" style="position:absolute;left:0px;top:180px;width:1920px;height:900px;z-index:33"><div id="watch-e_t8-in" class="in"><div class="txt" style="font-size:52px;font-weight:600;color:var(--muted)"><span id="watch-e_t8-w0" class="w">@darealwhy</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"watch-ch","t":"chapter","from":"right","exit":null,"in":0.2,"out":4.52,"outDur":0.3,"words":[0.44,0.74,1.02,1.14,1.3]},{"id":"watch-a","t":"stick","from":"left","exit":null,"in":4.98,"out":45.96,"outDur":0.3,"poses":[["idle",4.98],["shrug",6.82],["idle",10.06],["proud",12.46],["idle",18.32],["happy",22.6],["shrug",25.96],["idle",39.38],["happy",45.26]],"mouth":[["frown",4.98],["neutral",10.06],["smile",12.46],["neutral",18.32],["smile",22.6],["o",25.96],["neutral",39.38],["smile",45.26]]},{"id":"watch-b","t":"stick","from":"right","exit":null,"in":4.98,"out":45.96,"outDur":0.3,"poses":[["headDown",4.98],["idle",11.28],["headDown",21.06],["shrug",25.96],["armsCrossed",42.18],["happy",45.26]],"mouth":[["tight",4.98],["neutral",11.28],["tight",21.06],["o",25.96],["smile",45.26]]},{"id":"watch-verdict","t":"stamp","from":"slam","exit":null,"in":6.82,"out":8.459999999999999,"outDur":0.25},{"id":"watch-k1","t":"strike","from":"pop","exit":null,"in":7.54,"out":8.459999999999999,"outDur":0.3},{"id":"watch-t1","t":"text","from":"top","exit":null,"in":6.82,"out":8.459999999999999,"outDur":0.3,"words":null},{"id":"watch-hb","t":"icon","from":"draw","exit":null,"in":10.06,"out":11.04,"outDur":0.25},{"id":"watch-calm","t":"icon","from":"draw","exit":null,"in":11.28,"out":12.02,"outDur":0.25},{"id":"watch-t2","t":"text","from":"top","exit":null,"in":10.06,"out":12.02,"outDur":0.3,"words":null},{"id":"watch-t3","t":"text","from":"slam","exit":null,"in":12.46,"out":18.080000000000002,"outDur":0.25,"words":null},{"id":"watch-t4","t":"text","from":"bottom","exit":null,"in":13.66,"out":18.080000000000002,"outDur":0.3,"words":null},{"id":"watch-k4","t":"strike","from":"pop","exit":null,"in":14.26,"out":18.080000000000002,"outDur":0.3},{"id":"watch-e_t1","t":"text","from":"top","exit":null,"in":19.26,"out":20.62,"outDur":0.3,"words":null},{"id":"watch-e_l1","t":"text","from":"top","exit":null,"in":22.6,"out":25.3,"outDur":0.3,"words":null},{"id":"watch-e_l2","t":"text","from":"top","exit":null,"in":21.06,"out":25.3,"outDur":0.3,"words":null},{"id":"watch-e_c1","t":"icon","from":"draw","exit":null,"in":24.52,"out":25.3,"outDur":0.25},{"id":"watch-e_q1","t":"icon","from":"pop","exit":null,"in":27.76,"out":33.36,"outDur":0.25},{"id":"watch-e_q2","t":"icon","from":"pop","exit":null,"in":27.88,"out":33.36,"outDur":0.25},{"id":"watch-e_t2a","t":"text","from":"top","exit":null,"in":27.76,"out":30.14,"outDur":0.3,"words":null},{"id":"watch-e_t2","t":"text","from":"top","exit":null,"in":30.38,"out":33.36,"outDur":0.3,"words":null},{"id":"watch-e_t3a","t":"text","from":"left","exit":null,"in":35.96,"out":37.82,"outDur":0.3,"words":null},{"id":"watch-e_t3b","t":"text","from":"right","exit":null,"in":38.06,"out":39.14,"outDur":0.3,"words":null},{"id":"watch-e_t3","t":"text","from":"top","exit":null,"in":39.38,"out":40.919999999999995,"outDur":0.3,"words":null},{"id":"watch-e_wall","t":"icon","from":"top","exit":"top","in":42.18,"out":43.18,"outDur":0.3},{"id":"watch-e_t4","t":"text","from":"top","exit":null,"in":42.18,"out":44.58,"outDur":0.3,"words":null},{"id":"watch-e_br","t":"icon","from":"draw","exit":null,"in":45.26,"out":45.96,"outDur":0.25},{"id":"watch-e_t5","t":"text","from":"top","exit":null,"in":44.82,"out":45.96,"outDur":0.3,"words":null},{"id":"watch-e_t5b","t":"text","from":"top","exit":null,"in":46.54,"out":51,"outDur":0.3,"words":null},{"id":"watch-e_like","t":"icon","from":"pop","exit":null,"in":50.48,"out":51.08,"outDur":0.25},{"id":"watch-e_t6","t":"text","from":"bottom","exit":null,"in":50.38,"out":51,"outDur":0.3,"words":null},{"id":"watch-e_t7","t":"text","from":"blur","exit":null,"in":52.34,"out":57.26,"outDur":0.25,"words":[52.44,52.54,52.64]},{"id":"watch-e_t8","t":"text","from":"bottom","exit":null,"in":53.26,"out":57.285,"outDur":0.3,"words":null}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["watch"] = tl;
+    })();
+  </script>
+</template>

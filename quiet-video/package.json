@@ -1,0 +1,24 @@
+{
+  "name": "quiet-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "node tools/vendor.mjs",
+    "transcribe": "node tools/transcribe.mjs",
+    "build": "node tools/build.mjs",
+    "cues": "node tools/build.mjs --cues",
+    "dev": "hyperframes preview",
+    "check": "hyperframes check",
+    "render": "hyperframes render -o renders/people-who-go-quiet-in-a-fight.mp4"
+  },
+  "dependencies": {
+    "gsap": "3.14.2",
+    "@fontsource/montserrat": "5.3.0",
+    "@fontsource/anton": "5.3.0"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.185",
+    "@huggingface/transformers": "3.8.1",
+    "sts-whisper-base": "1.0.0"
+  }
+}
