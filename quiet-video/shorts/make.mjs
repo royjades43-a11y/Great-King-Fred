@@ -1,6 +1,12 @@
 // Cuts the long video into vertical Shorts (1080x1920): hook title on top, the landscape frame
-// in the middle on the same sage ground (so it reads as one canvas), word-by-word captions below,
-// all clear of YouTube's Shorts UI (top bar, right-hand buttons, bottom caption area).
+// in the middle on the same sage ground (so it reads as one canvas), word-by-word captions below.
+//
+// YouTube Shorts safe zone (measured from the Shorts player on a phone, in video pixels):
+//   top bar ........................ y 0-125      keep clear
+//   right buttons (Ask/like/comment)  x 924-1080 from y 744 down
+//   channel / title / Promote ........ y 1363 down  keep clear
+// So everything that matters lives in x 20-900, y 170-1300 (the title may use the full width above
+// y 744, where there are no buttons).
 //   node shorts/make.mjs   -> shorts/build/<id>/ (one HyperFrames project per short)
 import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync } from "node:fs";
 import { execFileSync } from "node:child_process";
@@ -27,7 +33,7 @@ for (const sc of script.scenes)
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 const em = (s) => esc(s).replace(/!([^!]+)!/g, '<span class="r">$1</span>');
-const VIDEO = { top: 600, w: 1080, h: 699 }; // 4K frame scaled to 1242 wide, centre 1080 kept (title-safe area fits)
+const VIDEO = { left: 20, top: 450, w: 880, h: 528 }; // title-safe area of the 4K frame (x 480-3360, y 216-1944), clear of the button column
 
 for (const sh of shorts) {
   const w0 = beats[sh.from].first, w1 = beats[sh.to].last;
@@ -42,7 +48,7 @@ for (const sh of shorts) {
   const seg = join(dir, "assets/seg.mp4");
   if (!existsSync(seg))
     execFileSync("ffmpeg", ["-v", "error", "-y", "-ss", String(start), "-i", MASTER, "-t", String(dur),
-      "-vf", `scale=1242:-2:flags=lanczos:in_color_matrix=bt709:out_color_matrix=bt709,crop=1080:${VIDEO.h}:81:0`, "-c:v", "libx264", "-crf", "12", "-preset", "medium", "-pix_fmt", "yuv420p",
+      "-vf", `crop=2880:1728:480:216,scale=${VIDEO.w}:${VIDEO.h}:flags=lanczos:in_color_matrix=bt709:out_color_matrix=bt709`, "-c:v", "libx264", "-crf", "12", "-preset", "medium", "-pix_fmt", "yuv420p",
       "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-color_range", "tv",
       "-af", `afade=t=in:d=0.12,afade=t=out:st=${(dur - 0.25).toFixed(2)}:d=0.25`, "-c:a", "aac", "-b:a", "320k", seg]);
 
@@ -76,13 +82,13 @@ for (const sh of shorts) {
       html, body { width: 1080px; height: 1920px; overflow: hidden; background: ${theme.paper}; }
       #ground { position: absolute; inset: 0; background: ${theme.paper}; }
       #root { font-family: "Montserrat", sans-serif; }
-      .title { position: absolute; left: 60px; right: 60px; top: 250px; text-align: center; font-weight: 800; font-size: 92px;
+      .title { position: absolute; left: 50px; right: 50px; top: 185px; text-align: center; font-weight: 800; font-size: 96px;
         line-height: 1.0; letter-spacing: -0.04em; color: #000; text-shadow: 0 6px 0 rgba(0,0,0,0.14), 0 14px 24px rgba(0,0,0,0.2); }
       .r { color: ${theme.accent}; }
       .handle { position: absolute; left: 0; right: 0; top: 488px; text-align: center; font-weight: 800; font-size: 36px; color: ${theme.muted}; }
-      #v { position: absolute; left: 0; top: ${VIDEO.top}px; width: ${VIDEO.w}px; height: ${VIDEO.h}px; }
-      .cap { position: absolute; left: 70px; width: 820px; top: 1360px; height: 230px; display: flex; align-items: center; justify-content: center; }
-      .cap-in { text-align: center; font-weight: 800; font-size: 82px; line-height: 1.05; letter-spacing: -0.03em; color: #000;
+      #v { position: absolute; left: ${VIDEO.left}px; top: ${VIDEO.top}px; width: ${VIDEO.w}px; height: ${VIDEO.h}px; }
+      .cap { position: absolute; left: 40px; width: 840px; top: 1010px; height: 250px; display: flex; align-items: center; justify-content: center; }
+      .cap-in { text-align: center; font-weight: 800; font-size: 86px; line-height: 1.05; letter-spacing: -0.03em; color: #000;
         text-shadow: 0 5px 0 rgba(0,0,0,0.12), 0 12px 20px rgba(0,0,0,0.18); }
       .cw { display: inline-block; }
     </style>
@@ -91,7 +97,6 @@ for (const sh of shorts) {
     <div id="root" data-composition-id="main" data-start="0" data-duration="${dur}" data-width="1080" data-height="1920">
       <div id="ground"></div>
       <div id="title" class="clip title" data-start="0" data-duration="${dur}" data-track-index="1"><div id="title-in">${sh.title.map(em).join("<br>")}</div></div>
-      <div id="handle" class="clip handle" data-start="0" data-duration="${dur}" data-track-index="1">${esc(theme.handle)}</div>
       <video id="v" class="clip" src="assets/seg.mp4" data-start="0" data-duration="${dur}" data-track-index="2" data-has-audio="true" data-volume="1" playsinline></video>
       ${capHtml}
     </div>

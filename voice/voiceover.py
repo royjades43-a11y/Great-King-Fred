@@ -79,8 +79,11 @@ def kokoro_engine(voice, speed):
         style = voice
     lang = "en-gb" if voice.startswith("bm_") else "en-us"
 
-    def say(sentence):
-        audio, sr = k.create(sentence, voice=style, speed=speed, lang=lang)
+    def say(text):
+        # a whole paragraph in one continuous take: intonation carries across sentences instead of
+        # resetting every full stop, with short natural pauses at sentence and clause boundaries
+        audio, sr = k.create(text, voice=style, speed=speed, lang=lang,
+                             sentence_pause=0.3, clause_pause=0.12)
         assert sr == SR
         return audio.astype(np.float32)
     return say
@@ -145,16 +148,25 @@ def main():
     ap.add_argument("--speed", type=float, default=None)
     ap.add_argument("--style", default="Read this like a calm, warm, engaging storyteller explaining psychology to a friend",
                     help="gemini only: how to say it")
-    ap.add_argument("--words", default=None, help="also write word timestamps (kokoro: per sentence, estimated within)")
+    ap.add_argument("--words", default=None, help="also write word timestamps (estimated within each take; refine with the video pipeline's aligner)")
+    ap.add_argument("--flow", choices=["paragraph", "sentence"], default="paragraph",
+                    help="paragraph (default): one take per paragraph, natural flow; sentence: one take per sentence, exact sentence timing")
     a = ap.parse_args()
 
     if a.engine == "kokoro":
-        say = kokoro_engine(a.voice or "am_michael:0.6,am_fenrir:0.4", a.speed or 0.96)
+        say = kokoro_engine(a.voice or "am_michael:0.6,am_fenrir:0.4", a.speed or (1.0 if a.flow == "paragraph" else 0.96))
     else:
         say = gemini_engine(a.voice or "Charon", a.speed or 1.0, a.style)
 
     paras = read_script(a.script)
     out, words, t = [np.zeros(int(0.4 * SR), np.float32)], [], 0.4
+    if a.flow == "paragraph":
+        # one take per paragraph; paragraph gaps vary a little (seeded) so the rhythm doesn't feel metered
+        rng = np.random.default_rng(11)
+        takes = [[" ".join(p)] for p in paras]
+    else:
+        takes = paras
+    paras = takes
     n = sum(len(p) for p in paras)
     done = 0
     for p in paras:
@@ -166,13 +178,14 @@ def main():
             wts = [len(re.sub(r"\W", "", w)) + 2 for w in toks]
             acc = 0
             for w, wt in zip(toks, wts):
-                words.append({"text": w, "start": round(t + dur * acc / sum(wts), 3), "end": round(t + dur * (acc + wt) / sum(wts), 3)})
+                words.append({"text": w, "start": round(t + dur * acc / sum(wts), 3), "end": round(t + dur * (acc + wt) / sum(wts), 3),
+                              "take": done, "take_start": round(t, 3), "take_end": round(t + dur, 3)})
                 acc += wt
-            gap = pause_after(s, i == len(p) - 1)
+            gap = pause_after(s, i == len(p) - 1) if a.flow == "sentence" else float(rng.uniform(0.55, 0.9))
             out += [audio, np.zeros(int(gap * SR), np.float32)]
             t += dur + gap
             done += 1
-            print(f"\r{done}/{n} sentences", end="", file=sys.stderr)
+            print(f"\r{done}/{n} takes", end="", file=sys.stderr)
     print(file=sys.stderr)
     audio = np.concatenate(out)
 
@@ -184,7 +197,7 @@ def main():
     raw.unlink()
     if a.words:
         Path(a.words).write_text(json.dumps({"source": f"{a.engine} tts", "words": words}, indent=0))
-    print(f"{a.out}: {t:.1f}s, {n} sentences, engine {a.engine}")
+    print(f"{a.out}: {t:.1f}s, {n} takes ({a.flow}), engine {a.engine}")
 
 
 if __name__ == "__main__":
