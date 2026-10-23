@@ -51,6 +51,12 @@ Keep these descriptors **word-for-word** in every prompt so the character stays 
 
 | Character | Prompt descriptor |
 |---|---|
+| **Qin Shi Huang** | `a stick-figure emperor with a round white stern face, long black beard, black and red silk imperial robes with gold dragon embroidery, a tall flat-topped mianguan crown with hanging bead strings` |
+| **Zheng He** | `a tall stick-figure admiral with a round white confident face, red and gold Ming court robe with a square embroidered rank badge and black winged official hat` |
+| **Qianlong Emperor** | `an elderly stick-figure man with a round white face, thin white moustache, bright yellow dragon robe and imperial winter hat with a red tassel` |
+| **Lin Zexu** | `a stick-figure Qing official with a round white determined face, black moustache, long queue braid, embroidered blue silk robe with rank badge and round hat with red finial` |
+| **Hong Xiuquan** | `a stick-figure man with a round white wide-eyed visionary face, long queue braid, plain scholar's robe` |
+| **Puyi (child)** | `a tiny six-year-old stick-figure boy emperor with a round white confused face, oversized bright yellow dragon robe and imperial hat too big for him` |
 | **Narrator figure** (optional host) | `a stick-figure scholar with a round white face, small round glasses, dark blue scholar robe` |
 | **Mao Zedong** | `a stick-figure man with a round white face, high receding black hairline, small mole on the chin, grey buttoned Zhongshan (Mao) suit with four pockets` |
 | **Deng Xiaoping** | `a short stick-figure man with a round white face, short thinning black hair, calm determined smile, dark grey Zhongshan suit` |

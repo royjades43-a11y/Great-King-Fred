@@ -13,15 +13,17 @@ Production workspace for a faceless history YouTube channel in a minimalist 2D v
 
 ## Current episode: The Rise of China
 
-- Script: [`scripts/china_rise_script.md`](scripts/china_rise_script.md) (19 scenes, ≈8 min)
+- Script: [`scripts/china_rise_script.md`](scripts/china_rise_script.md) (24 scenes, 12 min, written to the channel script prompt)
 - Sources: [`sources/china_rise_sources.md`](sources/china_rise_sources.md)
 - Style bible: [`prompts/style_guide.md`](prompts/style_guide.md)
+- Script-writing prompt: [`prompts/script_writing_prompt.md`](prompts/script_writing_prompt.md)
 - Prompt exports: `prompts/china_rise_scene_prompts.json` / `.csv`
 
 ## Workflow
 
 1. Research: add facts to `sources/<episode>_sources.md` with a status tag.
-2. Write: draft `scripts/<episode>_script.md` using the scene format (`### Scene NN — Title`, `**Timestamp:**`, `**Voiceover:**`, `**Visual:**`, `**Image prompt:**`, `**Motion prompt:**`).
-3. Build: `python3 tools/build_prompts.py scripts/<episode>_script.md --retime` recalculates timestamps from word count and exports every prompt.
-4. Generate: feed the CSV to your image tool (filenames like `s07_image_a`), then animate each still with its motion prompt.
-5. Fact-check: re-verify every 🔄 figure before upload.
+2. Write: draft `scripts/<episode>_script.md` with `prompts/script_writing_prompt.md`, using `## [m:ss–m:ss] SECTION` headers and the scene format (`### Scene NN — Title`, `**Timestamp:**`, `**Voiceover:**`, `**Visual:**`, `**Image prompt:**`, `**Motion prompt:**`).
+3. Check: `python3 tools/check_script.py scripts/<episode>_script.md --minutes <N>` tests sentence length, banned words, word count, question spacing, cliffhanger and CTA.
+4. Build: `python3 tools/build_prompts.py scripts/<episode>_script.md --retime` fits scene timestamps inside each section by word count and exports every prompt.
+5. Generate: feed the CSV to your image tool (filenames like `s07_image_a`), then animate each still with its motion prompt.
+6. Fact-check: re-verify every 🔄 figure before upload.

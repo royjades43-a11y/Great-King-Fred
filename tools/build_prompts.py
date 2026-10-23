@@ -9,7 +9,10 @@ Usage:
   python3 tools/build_prompts.py                       # default script
   python3 tools/build_prompts.py scripts/other.md      # another script
   python3 tools/build_prompts.py --retime              # also rewrite timestamps
-  python3 tools/build_prompts.py --wpm 140             # narration speed
+  python3 tools/build_prompts.py --wpm 150             # narration speed
+
+Scene times come from word count. If the script has "## [m:ss–m:ss]" section
+headers, scenes are fitted inside their section's range instead.
 """
 
 import argparse
@@ -26,6 +29,7 @@ SCENE_RE = re.compile(r"^### Scene (\d+) — (.+)$", re.M)
 TIMESTAMP_RE = re.compile(r"^\*\*Timestamp:\*\* .*$", re.M)
 VOICEOVER_RE = re.compile(r"\*\*Voiceover:\*\*\s*\n((?:>.*\n?)+)")
 VISUAL_RE = re.compile(r"^\*\*Visual:\*\* (.+)$", re.M)
+SECTION_RE = re.compile(r"^## \[(\d+):(\d\d)[–-](\d+):(\d\d)\]", re.M)
 PROMPT_RE = re.compile(r"^\*\*(Image prompt|Motion prompt)(?: \(([^)]+)\))?:\*\*\s*\n```\n(.*?)\n```", re.M | re.S)
 
 MIN_SCENE_SECONDS = 4
@@ -54,7 +58,7 @@ def parse(text, wpm):
         visual = VISUAL_RE.search(body)
         prompts = [
             {"type": kind.split()[0].lower(), "shot": shot[0] if shot else "A",
-             "label": shot.split(",", 1)[-1].strip() if shot else "", "prompt": prompt.strip()}
+             "label": re.sub(r"^[A-Z](?:-shot)?[,:]\s*", "", shot), "prompt": prompt.strip()}
             for kind, shot, prompt in PROMPT_RE.findall(body)
         ]
 
@@ -68,9 +72,31 @@ def parse(text, wpm):
             "voiceover": voiceover,
             "visual": visual.group(1).strip() if visual else "",
             "prompts": prompts,
+            "_pos": m.start(),
         })
         clock += seconds
+    fit_sections(text, scenes)
+    for scene in scenes:
+        del scene["_pos"]
     return scenes
+
+
+def fit_sections(text, scenes):
+    """Stretch scene times to fill "## [m:ss–m:ss]" section headers, split by word count."""
+    sections = list(SECTION_RE.finditer(text))
+    for i, sec in enumerate(sections):
+        stop = sections[i + 1].start() if i + 1 < len(sections) else len(text)
+        group = [s for s in scenes if sec.start() < s["_pos"] < stop]
+        if not group:
+            continue
+        a, b = int(sec[1]) * 60 + int(sec[2]), int(sec[3]) * 60 + int(sec[4])
+        total_words = sum(s["word_count"] for s in group) or len(group)
+        words_so_far = 0
+        for s in group:
+            start = a + round((b - a) * words_so_far / total_words)
+            words_so_far += s["word_count"] or 1
+            end = a + round((b - a) * words_so_far / total_words)
+            s.update(start=fmt(start), end=fmt(end), duration_seconds=end - start)
 
 
 def retime(text, scenes):
@@ -90,7 +116,7 @@ def retime(text, scenes):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("script", nargs="?", type=Path, default=DEFAULT_SCRIPT)
-    ap.add_argument("--wpm", type=int, default=150, help="narration words per minute (default 150)")
+    ap.add_argument("--wpm", type=int, default=140, help="narration words per minute (default 140)")
     ap.add_argument("--retime", action="store_true", help="rewrite timestamps in the script file")
     args = ap.parse_args()
 

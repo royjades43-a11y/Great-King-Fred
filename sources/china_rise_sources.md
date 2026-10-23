@@ -119,4 +119,54 @@ The channel's credibility depends on telling the full story. The script must:
 - Frank Dikötter — *Mao's Great Famine* (2010)
 - *Selected Works of Deng Xiaoping*, Vols. II–III
 
+---
+
+## 6. Facts Added for the Genius History Script (v2)
+
+| Claim in script | Detail | Status | Source |
+|---|---|---|---|
+| In 1820 China produced ~⅓ of world output, more than Western Europe combined | ≈33% of world GDP (PPP) vs. ≈23% for Western Europe | ⚠️ | Angus Maddison, *The World Economy: A Millennial Perspective* (OECD, 2001) / Maddison Project. These are reconstructions, so say "about". |
+| Qin conquers six kingdoms, 221 BC; First Emperor standardizes script, coins, weights and axle widths | | ✅ | Sima Qian, *Shiji*; standard histories |
+| Early Great Wall | Linked existing state walls; most of today's visible wall is Ming-era | ✅ | |
+| Name "China" may come from "Qin" | Most widely accepted etymology but not certain | ⚠️ | Keep "may". |
+| Terracotta Army | ≈8,000 figures estimated | ✅ | |
+| First Emperor died 210 BC aged 49; sought elixir of immortality | | ✅ | *Shiji* |
+| Mercury pills may have contributed to his death | Plausible, widely discussed, unproven | ⚠️ | Keep "some historians suspect". |
+| Dynasty meant to last "ten thousand generations", lasted 15 years (221–206 BC) | | ✅ | *Shiji* |
+| Han dynasty ruled ~400 years (206 BC–220 AD) | Including the short Xin interruption (9–23 AD) | ✅ | |
+| Han war over "heavenly horses" | War of the Heavenly Horses against Dayuan (Ferghana), 104–101 BC | ✅ | *Shiji* / *Book of Han* |
+| Cai Lun credited with improving paper, 105 AD | Earlier paper existed, so say "improving" | ✅ | *Book of the Later Han* |
+| Chang'an had perhaps a million people | Estimates for the Tang capital vary | ⚠️ | Keep "may have". London passed 1 million c. 1800. |
+| Song: world's first government-issued paper money | Jiaozi, made official in Sichuan 1023–24 | ✅ | |
+| Song compass navigation; Kaifeng night markets | Compass at sea recorded by Zhu Yu (1119); night markets described in *Dongjing Meng Hua Lu* | ✅ | |
+| Bi Sheng's movable type, ~1040s, ≈400 years before Gutenberg (~1440) | | ✅ | Recorded by Shen Kuo, *Dream Pool Essays* |
+| Gunpowder found by alchemists seeking elixirs | 9th-century Tang Taoist texts | ✅ | |
+| Zheng He: Muslim from Yunnan, captured as a boy; 7 voyages 1405–1433; ~27,000 men | | ✅ | *Ming Shi* |
+| Treasure ships "more than a hundred metres" | Ming records imply ~120 m; many historians think that is exaggerated | ⚠️ | Keep "some records describe". |
+| Santa María under 20 m | Commonly estimated at ~18–19 m | ✅ | |
+| Giraffe at the Ming court, 1414, hailed as a qilin | Gift from the Sultan of Bengal | ✅ | |
+| Voyages stopped after 1433; officials criticized the cost | Exact reasons debated | ⚠️ | |
+| Macartney mission, 1793; gifts included a planetarium, telescopes and clocks; Qianlong's edict to George III | "We possess all things… no need of your country's manufactures" | ✅ | Edict text, 1793 |
+| Lin Zexu destroyed opium at Humen, 1839 | ≈20,000 chests, about 1,000+ tonnes | ✅ | |
+| Lin's letter to Queen Victoria | No evidence she received or read it | ✅ | Phrase as "no evidence she ever read it". |
+| Steam gunboats in the First Opium War | e.g. the iron steamer *Nemesis* | ✅ | |
+| Treaty of Nanjing, 1842: Hong Kong ceded, five ports opened | | ✅ | |
+| Summer Palace looted and burned, 1860 | Burning took about two to three days | ✅ | |
+| Hong Xiuquan failed the imperial exams repeatedly and believed he was Jesus's younger brother | Taiping Rebellion 1850–1864 | ✅ | |
+| Taiping death toll 20–30 million | | ⚠️ | Use the range. |
+| Puyi abdicated Feb 1912, aged 6; lived in the Forbidden City until 1924; imprisoned 1950–1959; later a gardener at the Beijing Botanical Garden | | ✅ | |
+| Great Leap: officials inflated harvest reports; state procurement based on them | | ✅ | Dikötter; Yang Jisheng, *Tombstone* |
+| Red Guards attacked teachers | | ✅ | |
+| Deng ~4 ft 11 in (≈1.50 m), heavy smoker, purged twice | Height figures vary slightly | ⚠️ | Keep "about". |
+| Deng worked in a tractor repair plant in Jiangxi, 1969–1973 | | ✅ | Ezra Vogel, *Deng Xiaoping* |
+| Time Man of the Year 1978 (issue of 1 Jan 1979) | | ✅ | |
+| Cowboy hat at a rodeo in Simonton, Texas, Feb 1979 | | ✅ | |
+| Hong Kong returned 1997, 155 years after the 1842 treaty | | ✅ | |
+| Yang Liwei, 2003; Tiangong completed 2022 | | ✅ | |
+| Evergrande collapse | Default 2021; Hong Kong court ordered liquidation Jan 2024 | ✅ | |
+| US chip restrictions | Major export controls Oct 2022, tightened 2023–2024 | ✅ | |
+| Xiaogang families had gone begging in famine years | The village was known locally as a "begging village" | ✅ | |
+| Xiaogang thumbprint contract in the National Museum of China | | ✅ | |
+| Deng praised household contracting | Talk of 31 May 1980 | ✅ | *Selected Works of Deng Xiaoping*, Vol. II |
+
 _Last compiled: 2026-10-23. Figures marked 🔄 must be re-checked before publishing._
