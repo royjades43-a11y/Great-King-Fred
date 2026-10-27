@@ -1,0 +1,226 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="origins" data-width="1920" data-height="1080">
+    <div id="origins-ch" class="clip el" data-start="0.2" data-duration="1.58" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:2"><div id="origins-ch-in" class="in"><div class="chap"><div class="chap-num">01</div><div class="chap-rule"></div><div class="txt" style="font-size:76px;font-weight:800;color:var(--ink)"><span id="origins-ch-w0" class="w">Bonding</span> <span id="origins-ch-w1" class="w">through</span> <span id="origins-ch-w2" class="w acc">words</span></div></div></div></div>
+    <div id="origins-palm" class="clip el" data-start="1.28" data-duration="23.713" data-track-index="2" style="position:absolute;left:840px;top:40px;width:1080px;height:1040px;z-index:3" data-layout-allow-overlap><div id="origins-palm-in" class="in"><div class="ico" style="width:320px;height:320px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M96 186 Q90 130 104 72"/><path class="s acc-s" pathLength="1" d="M104 72 Q70 50 30 70 M104 72 Q92 34 60 22 M104 72 Q122 36 156 30 M104 72 Q150 60 176 88"/><path class="s" pathLength="1" d="M20 186 Q100 162 180 186"/></svg></div></div></div>
+    <div id="origins-m" class="clip el" data-start="2.54" data-duration="24.353" data-track-index="3" style="position:absolute;left:0px;top:200px;width:1200px;height:880px;z-index:4"><div id="origins-m-in" class="in"><svg class="stick" id="origins-m-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="origins-m-aLu"><path class="s" d="M150 160 L150 255"/><g id="origins-m-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="origins-m-aRu"><path class="s" d="M150 160 L150 255"/><g id="origins-m-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="origins-m-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="origins-m-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="origins-m-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="origins-m-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="origins-m-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="origins-m-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="origins-card" class="clip el" data-start="5.22" data-duration="3.757" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:5"><div id="origins-card-in" class="in"><div class="card"><div class="card-k">ANTHROPOLOGIST · POLAND</div><div class="card-t">Bronisław Malinowski</div><div class="card-s">1884–1942</div></div></div></div>
+    <div id="origins-t1" class="clip el" data-start="9.277" data-duration="4.76" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:6"><div id="origins-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="origins-t1-w0" class="w">WWI</span> <span id="origins-t1-w1" class="w">·</span> <span id="origins-t1-w2" class="w acc">Austro-Hungarian</span> <span id="origins-t1-w3" class="w">papers</span></div></div></div>
+    <div id="origins-st" class="clip el" data-start="15.017" data-duration="1.37" data-track-index="6" style="position:absolute;left:680px;top:0px;width:1240px;height:600px;z-index:7" data-layout-allow-overlap><div id="origins-st-in" class="in"><div class="stamp" style="font-size:72px">ENEMY ALIEN</div></div></div>
+    <div id="origins-t2" class="clip el" data-start="18.313000000000002" data-duration="2.04" data-track-index="7" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:8"><div id="origins-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="origins-t2-w0" class="w">free</span> <span id="origins-t2-w1" class="w">to</span> <span id="origins-t2-w2" class="w">keep</span> <span id="origins-t2-w3" class="w acc">working</span></div></div></div>
+    <div id="origins-nb" class="clip el" data-start="22.613" data-duration="4.23" data-track-index="8" style="position:absolute;left:80px;top:40px;width:1840px;height:1040px;z-index:9" data-layout-allow-overlap><div id="origins-nb-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 20 L156 20 L156 184 L44 184 Z"/><path class="s" pathLength="1" d="M44 20 L44 184 M60 20 L60 184"/><path class="s acc-s" pathLength="1" d="M76 60 L140 60 M76 90 L140 90 M76 120 L124 120"/></svg></div></div></div>
+    <div id="origins-t3" class="clip el" data-start="21.473" data-duration="3.52" data-track-index="9" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:10"><div id="origins-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="origins-t3-w0" class="w">the</span> <span id="origins-t3-w1" class="w acc">Trobriand</span> <span id="origins-t3-w2" class="w acc">Islands</span></div></div></div>
+    <div id="origins-t4" class="clip el" data-start="25.453" data-duration="1.44" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:11"><div id="origins-t4-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="origins-t4-w0" class="w">something</span> <span id="origins-t4-w1" class="w acc">odd</span></div></div></div>
+    <div id="origins-t5" class="clip el" data-start="28.413" data-duration="4.671" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:600px;z-index:12"><div id="origins-t5-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="origins-t5-w0" class="w">talk</span> <span id="origins-t5-w1" class="w">with</span> <span id="origins-t5-w2" class="w">no</span> <span id="origins-t5-w3" class="w">real</span> <span id="origins-t5-w4" class="w alm">information</span></div></div></div>
+    <div id="origins-q1" class="clip el" data-start="29.954" data-duration="3.08" data-track-index="12" style="position:absolute;left:0px;top:160px;width:960px;height:920px;z-index:13" data-layout-allow-overlap><div id="origins-q1-in" class="in"><div class="ico bub" style="width:364px;height:260px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:44px">How are you?</div></div></div></div>
+    <div id="origins-q2" class="clip el" data-start="30.804" data-duration="2.23" data-track-index="13" style="position:absolute;left:0px;top:440px;width:1920px;height:640px;z-index:14" data-layout-allow-overlap><div id="origins-q2-in" class="in"><div class="ico bub" style="width:364px;height:260px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:44px">Nice weather.</div></div></div></div>
+    <div id="origins-q3" class="clip el" data-start="31.844" data-duration="1.19" data-track-index="14" style="position:absolute;left:960px;top:160px;width:960px;height:920px;z-index:15" data-layout-allow-overlap><div id="origins-q3-in" class="in"><div class="ico bub" style="width:420px;height:300px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:40px">Where are you going?</div></div></div></div>
+    <div id="origins-t6" class="clip el" data-start="34.824" data-duration="4.005" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:880px;z-index:16"><div id="origins-t6-in" class="in"><div class="txt hero" style="font-size:130px;font-weight:800;color:var(--ink)"><span id="origins-t6-w0" class="w">PHATIC</span> <span id="origins-t6-w1" class="w">COMMUNION</span></div></div></div>
+    <div id="origins-t7" class="clip el" data-start="33.044" data-duration="3.08" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:600px;z-index:17"><div id="origins-t7-in" class="in"><div class="txt" style="font-size:48px;font-weight:600;color:var(--muted)"><span id="origins-t7-w0" class="w">Malinowski,</span> <span id="origins-t7-w1" class="w">1923</span></div></div></div>
+    <div id="origins-t8" class="clip el" data-start="36.364" data-duration="2.515" data-track-index="17" style="position:absolute;left:0px;top:140px;width:1920px;height:940px;z-index:18"><div id="origins-t8-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="origins-t8-w0" class="w">bonding</span> <span id="origins-t8-w1" class="w">through</span> <span id="origins-t8-w2" class="w acc">words</span></div></div></div>
+    <div id="origins-t9" class="clip el" data-start="39.97899999999999" data-duration="2.04" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:800px;z-index:19"><div id="origins-t9-in" class="in"><div class="txt" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="origins-t9-w0" class="w">not</span> <span id="origins-t9-w1" class="w acc">what</span> <span id="origins-t9-w2" class="w">you</span> <span id="origins-t9-w3" class="w">say</span></div></div></div>
+    <div id="origins-t10" class="clip el" data-start="41.919" data-duration="1.98" data-track-index="19" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:20"><div id="origins-t10-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="origins-t10-w0" class="w">but</span> <span id="origins-t10-w1" class="w acc">that</span> <span id="origins-t10-w2" class="w">you</span> <span id="origins-t10-w3" class="w">said</span> <span id="origins-t10-w4" class="w">something</span></div></div></div>
+    <div id="origins-s1" class="clip el" data-start="45.479" data-duration="10.614" data-track-index="20" style="position:absolute;left:0px;top:200px;width:1280px;height:880px;z-index:21"><div id="origins-s1-in" class="in"><svg class="stick" id="origins-s1-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="origins-s1-aLu"><path class="s" d="M150 160 L150 255"/><g id="origins-s1-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="origins-s1-aRu"><path class="s" d="M150 160 L150 255"/><g id="origins-s1-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="origins-s1-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="origins-s1-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="origins-s1-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="origins-s1-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="origins-s1-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="origins-s1-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="origins-s2" class="clip el" data-start="45.899" data-duration="10.194" data-track-index="21" style="position:absolute;left:640px;top:200px;width:1280px;height:880px;z-index:22"><div id="origins-s2-in" class="in"><svg class="stick" id="origins-s2-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="origins-s2-aLu"><path class="s" d="M150 160 L150 255"/><g id="origins-s2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="origins-s2-aRu"><path class="s" d="M150 160 L150 255"/><g id="origins-s2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="origins-s2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="origins-s2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="origins-s2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="origins-s2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="origins-s2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="origins-s2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="origins-t11" class="clip el" data-start="48.984" data-duration="1.96" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:23"><div id="origins-t11-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="origins-t11-w0" class="w">a</span> <span id="origins-t11-w1" class="w">stranger's</span> <span id="origins-t11-w2" class="w alm">silence</span></div></div></div>
+    <div id="origins-al" class="clip el" data-start="51.024" data-duration="0.95" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:24" data-layout-allow-overlap><div id="origins-al-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M100 30 Q150 30 150 96 L150 136 L168 156 L32 156 L50 136 L50 96 Q50 30 100 30 Z"/><path class="s alm-s" pathLength="1" d="M84 172 Q100 188 116 172"/><path class="s alm-s" pathLength="1" d="M24 46 L10 34 M176 46 L190 34 M16 92 L2 92 M184 92 L198 92"/></svg></div></div></div>
+    <div id="origins-t12" class="clip el" data-start="50.844" data-duration="1.18" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:25"><div id="origins-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="origins-t12-w0" class="w">isn't</span> <span id="origins-t12-w1" class="w">reassuring.</span> <span id="origins-t12-w2" class="w">it's</span> <span id="origins-t12-w3" class="w alm">alarming</span></div></div></div>
+    <div id="origins-q4" class="clip el" data-start="54.584" data-duration="1.434" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:720px;z-index:26" data-layout-allow-overlap><div id="origins-q4-in" class="in"><div class="ico bub" style="width:420px;height:300px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:50px">I'm not a threat.</div></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"origins-ch","t":"chapter","from":"left","exit":null,"in":0.2,"out":1.44,"outDur":0.3,"words":[0.3,0.4,0.5]},{"id":"origins-palm","t":"icon","from":"right","exit":null,"in":1.28,"out":24.653000000000002,"outDur":0.3},{"id":"origins-m","t":"stick","from":"left","exit":null,"in":2.54,"out":26.553,"outDur":0.3,"poses":[["idle",2.54],["proud",5.22],["shrug",15.017],["happy",18.797],["point",25.393]],"mouth":[["neutral",2.54],["smile",5.22],["o",15.017],["smile",18.797]]},{"id":"origins-card","t":"card","from":"top","exit":null,"in":5.22,"out":8.637,"outDur":0.3},{"id":"origins-t1","t":"text","from":"top","exit":null,"in":9.277,"out":13.697,"outDur":0.3,"words":[12.457,12.457,12.457,13.477]},{"id":"origins-st","t":"stamp","from":"slam","exit":null,"in":15.017,"out":16.097,"outDur":0.25},{"id":"origins-t2","t":"text","from":"top","exit":null,"in":18.313000000000002,"out":20.013,"outDur":0.3,"words":[18.597,18.597,18.597,18.797]},{"id":"origins-nb","t":"icon","from":"pop","exit":null,"in":22.613,"out":26.553,"outDur":0.25},{"id":"origins-t3","t":"text","from":"top","exit":null,"in":21.473,"out":24.653000000000002,"outDur":0.3,"words":[21.354,21.473,21.954]},{"id":"origins-t4","t":"text","from":"top","exit":null,"in":25.453,"out":26.553,"outDur":0.3,"words":[25.613,26.073]},{"id":"origins-t5","t":"text","from":"top","exit":null,"in":28.413,"out":32.744,"outDur":0.3,"words":[27.174,27.833,27.833,28.073,28.413]},{"id":"origins-q1","t":"bubble","from":"pop","exit":null,"in":29.954,"out":32.744,"outDur":0.25},{"id":"origins-q2","t":"bubble","from":"pop","exit":null,"in":30.804,"out":32.744,"outDur":0.25},{"id":"origins-q3","t":"bubble","from":"pop","exit":null,"in":31.844,"out":32.744,"outDur":0.25},{"id":"origins-t6","t":"text","from":"slam","exit":null,"in":34.824,"out":38.539,"outDur":0.25,"words":[34.824,35.204]},{"id":"origins-t7","t":"text","from":"bottom","exit":null,"in":33.044,"out":35.784,"outDur":0.3,"words":[33.144,33.244]},{"id":"origins-t8","t":"text","from":"bottom","exit":null,"in":36.364,"out":38.539,"outDur":0.3,"words":[36.364,36.904,37.124]},{"id":"origins-t9","t":"text","from":"top","exit":null,"in":39.97899999999999,"out":41.678999999999995,"outDur":0.3,"words":[41.039,41.039,41.219,41.379]},{"id":"origins-t10","t":"text","from":"bottom","exit":null,"in":41.919,"out":43.559,"outDur":0.3,"words":[42.099,42.099,42.219,42.359,42.599]},{"id":"origins-s1","t":"stick","from":"left","exit":null,"in":45.479,"out":56.053,"outDur":0.3,"poses":[["armsCrossed",45.479]],"mouth":[["tight",45.479]]},{"id":"origins-s2","t":"stick","from":"right","exit":null,"in":45.899,"out":56.053,"outDur":0.3,"poses":[["armsCrossed",45.899],["happy",54.584]],"mouth":[["tight",45.899],["smile",54.584]]},{"id":"origins-t11","t":"text","from":"top","exit":null,"in":48.984,"out":50.604,"outDur":0.3,"words":[48.184,48.224,48.984]},{"id":"origins-al","t":"icon","from":"pop","exit":null,"in":51.024,"out":51.684,"outDur":0.25},{"id":"origins-t12","t":"text","from":"top","exit":null,"in":50.844,"out":51.684,"outDur":0.3,"words":[50.844,50.844,50.844,51.024]},{"id":"origins-q4","t":"bubble","from":"pop","exit":null,"in":54.584,"out":55.728,"outDur":0.25}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["origins"] = tl;
+    })();
+  </script>
+</template>

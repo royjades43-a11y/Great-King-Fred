@@ -1,0 +1,217 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="ties" data-width="1920" data-height="1080">
+    <div id="ties-card" class="clip el" data-start="1.76" data-duration="5.76" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:2"><div id="ties-card-in" class="in"><div class="card"><div class="card-k">STUDY · 2014 · VANCOUVER</div><div class="card-t">The Starbucks study</div><div class="card-s">Sandstrom &amp; Dunn</div></div></div></div>
+    <div id="ties-cup" class="clip el" data-start="1.76" data-duration="8.876" data-track-index="2" style="position:absolute;left:0px;top:120px;width:1920px;height:960px;z-index:3" data-layout-allow-overlap><div id="ties-cup-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 72 L150 72 L140 172 Q138 182 128 182 L62 182 Q52 182 50 172 Z"/><path class="s" pathLength="1" d="M148 92 Q182 92 178 122 Q174 146 144 142"/><path class="s acc-s" pathLength="1" d="M78 54 Q66 38 78 22 M110 54 Q98 38 110 22"/></svg></div></div></div>
+    <div id="ties-fast" class="clip el" data-start="8.22" data-duration="13.464" data-track-index="3" style="position:absolute;left:0px;top:220px;width:1040px;height:860px;z-index:4"><div id="ties-fast-in" class="in"><svg class="stick" id="ties-fast-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="ties-fast-aLu"><path class="s" d="M150 160 L150 255"/><g id="ties-fast-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="ties-fast-aRu"><path class="s" d="M150 160 L150 255"/><g id="ties-fast-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="ties-fast-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="ties-fast-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="ties-fast-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="ties-fast-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="ties-fast-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="ties-fast-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="ties-e1" class="clip el" data-start="8.22" data-duration="6.626" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1040px;height:440px;z-index:5"><div id="ties-e1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="ties-e1-w0" class="w">be</span> <span id="ties-e1-w1" class="w acc">efficient</span></div></div></div>
+    <div id="ties-e2" class="clip el" data-start="9.54" data-duration="5.306" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1040px;height:600px;z-index:6"><div id="ties-e2-in" class="in"><div class="txt" style="font-size:48px;font-weight:600;color:var(--muted)"><span id="ties-e2-w0" class="w">get</span> <span id="ties-e2-w1" class="w">in,</span> <span id="ties-e2-w2" class="w">pay,</span> <span id="ties-e2-w3" class="w">get</span> <span id="ties-e2-w4" class="w">out</span></div></div></div>
+    <div id="ties-chat" class="clip el" data-start="10.706" data-duration="10.978" data-track-index="6" style="position:absolute;left:880px;top:220px;width:1040px;height:860px;z-index:7"><div id="ties-chat-in" class="in"><svg class="stick" id="ties-chat-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="ties-chat-aLu"><path class="s" d="M150 160 L150 255"/><g id="ties-chat-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="ties-chat-aRu"><path class="s" d="M150 160 L150 255"/><g id="ties-chat-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="ties-chat-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="ties-chat-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="ties-chat-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="ties-chat-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="ties-chat-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="ties-chat-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="ties-e3" class="clip el" data-start="11.446" data-duration="3.4" data-track-index="7" style="position:absolute;left:880px;top:0px;width:1040px;height:440px;z-index:8"><div id="ties-e3-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="ties-e3-w0" class="w">smile</span> <span id="ties-e3-w1" class="w">·</span> <span id="ties-e3-w2" class="w">eye</span> <span id="ties-e3-w3" class="w">contact</span> <span id="ties-e3-w4" class="w">·</span> <span id="ties-e3-w5" class="w acc">chat</span></div></div></div>
+    <div id="ties-t1" class="clip el" data-start="15.046000000000001" data-duration="1.74" data-track-index="8" style="position:absolute;left:880px;top:0px;width:1040px;height:440px;z-index:9"><div id="ties-t1-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="ties-t1-w0" class="w">a</span> <span id="ties-t1-w1" class="w">better</span> <span id="ties-t1-w2" class="w acc">mood</span></div></div></div>
+    <div id="ties-t2" class="clip el" data-start="17.366" data-duration="1.44" data-track-index="9" style="position:absolute;left:880px;top:0px;width:1040px;height:440px;z-index:10"><div id="ties-t2-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="ties-t2-w0" class="w">more</span> <span id="ties-t2-w1" class="w acc">belonging</span></div></div></div>
+    <div id="ties-t3" class="clip el" data-start="18.744" data-duration="2.94" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:11"><div id="ties-t3-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="ties-t3-w0" class="w">from</span> <span id="ties-t3-w1" class="w">a</span> <span id="ties-t3-w2" class="w acc">few</span> <span id="ties-t3-w3" class="w acc">seconds</span> <span id="ties-t3-w4" class="w">with</span> <span id="ties-t3-w5" class="w">a</span> <span id="ties-t3-w6" class="w">stranger</span></div></div></div>
+    <div id="ties-t4" class="clip el" data-start="22.084000000000003" data-duration="2.34" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:12"><div id="ties-t4-in" class="in"><div class="txt" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="ties-t4-w0" class="w">more</span> <span id="ties-t4-w1" class="w">than</span> <span id="ties-t4-w2" class="w">a</span> <span id="ties-t4-w3" class="w">good</span> <span id="ties-t4-w4" class="w acc">mood</span></div></div></div>
+    <div id="ties-card2" class="clip el" data-start="25.464" data-duration="9.39" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:13"><div id="ties-card2-in" class="in"><div class="card"><div class="card-k">SOCIOLOGY · 1973</div><div class="card-t">Mark Granovetter</div><div class="card-s">people who had just changed jobs</div></div></div></div>
+    <div id="ties-bc" class="clip el" data-start="29.584" data-duration="3.72" data-track-index="13" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:14" data-layout-allow-overlap><div id="ties-bc-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 70 L176 70 L176 172 L24 172 Z"/><path class="s" pathLength="1" d="M74 70 L74 46 L126 46 L126 70"/><path class="s" pathLength="1" d="M24 112 L176 112"/></svg></div></div></div>
+    <div id="ties-t5" class="clip el" data-start="30.713999999999995" data-duration="2.64" data-track-index="14" style="position:absolute;left:0px;top:560px;width:1920px;height:520px;z-index:15"><div id="ties-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="ties-t5-w0" class="w acc">more</span> <span id="ties-t5-w1" class="w acc">than</span> <span id="ties-t5-w2" class="w acc">half<span class="tail">:</span></span> <span id="ties-t5-w3" class="w">through</span> <span id="ties-t5-w4" class="w">a</span> <span id="ties-t5-w5" class="w">contact</span></div></div></div>
+    <div id="ties-t6" class="clip el" data-start="33.254" data-duration="1.6" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:16"><div id="ties-t6-in" class="in"><div class="txt" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="ties-t6-w0" class="w">the</span> <span id="ties-t6-w1" class="w">strange</span> <span id="ties-t6-w2" class="w acc">part</span></div></div></div>
+    <div id="ties-t7" class="clip el" data-start="35.314" data-duration="3.63" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:800px;z-index:17"><div id="ties-t7-in" class="in"><div class="txt hero" style="font-size:220px;font-weight:800;color:var(--ink)"><span id="ties-t7-w0" class="w alm">84%</span></div></div></div>
+    <div id="ties-t8" class="clip el" data-start="36.354" data-duration="2.64" data-track-index="17" style="position:absolute;left:0px;top:200px;width:1920px;height:880px;z-index:18"><div id="ties-t8-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="ties-t8-w0" class="w">saw</span> <span id="ties-t8-w1" class="w">them</span> <span id="ties-t8-w2" class="w">only</span> <span id="ties-t8-w3" class="w acc">occasionally</span> <span id="ties-t8-w4" class="w">or</span> <span id="ties-t8-w5" class="w acc">rarely</span></div></div></div>
+    <div id="ties-t9" class="clip el" data-start="38.894" data-duration="1.22" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:19"><div id="ties-t9-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="ties-t9-w0" class="w">not</span> <span id="ties-t9-w1" class="w">their</span> <span id="ties-t9-w2" class="w">best</span> <span id="ties-t9-w3" class="w alm">friends</span></div></div></div>
+    <div id="ties-net" class="clip el" data-start="40.014" data-duration="3.365" data-track-index="19" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:20" data-layout-allow-overlap><div id="ties-net-in" class="in"><div class="ico" style="width:320px;height:320px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 L40 50 M100 100 L160 46 M100 100 L170 140 M100 100 L44 156 M100 100 L100 180"/><path class="s acc-s" pathLength="1" d="M100 100 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0"/><path class="s" pathLength="1" d="M40 50 m-14 0 a14 14 0 1 0 28 0 a14 14 0 1 0 -28 0 M160 46 m-14 0 a14 14 0 1 0 28 0 a14 14 0 1 0 -28 0 M170 140 m-14 0 a14 14 0 1 0 28 0 a14 14 0 1 0 -28 0 M44 156 m-14 0 a14 14 0 1 0 28 0 a14 14 0 1 0 -28 0 M100 180 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"/></svg></div></div></div>
+    <div id="ties-t10" class="clip el" data-start="40.014" data-duration="3.365" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:21"><div id="ties-t10-in" class="in"><div class="txt hero" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="ties-t10-w0" class="w acc">acquaintances</span></div></div></div>
+    <div id="ties-t11" class="clip el" data-start="40.789" data-duration="2.64" data-track-index="21" style="position:absolute;left:0px;top:640px;width:1920px;height:440px;z-index:22"><div id="ties-t11-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="ties-t11-w0" class="w">people</span> <span id="ties-t11-w1" class="w">you</span> <span id="ties-t11-w2" class="w">know</span> <span id="ties-t11-w3" class="w">through</span> <span id="ties-t11-w4" class="w acc">small</span> <span id="ties-t11-w5" class="w acc">talk</span></div></div></div>
+    <div id="ties-q" class="clip el" data-start="43.329" data-duration="0.95" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:1040px;z-index:23" data-layout-allow-overlap><div id="ties-q-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="ties-t12" class="clip el" data-start="44.229" data-duration="3" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:800px;z-index:24"><div id="ties-t12-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="ties-t12-w0" class="w">close</span> <span id="ties-t12-w1" class="w">friends</span> <span id="ties-t12-w2" class="w">know</span> <span id="ties-t12-w3" class="w">what</span> <span id="ties-t12-w4" class="w acc">you</span> <span id="ties-t12-w5" class="w">know</span></div></div></div>
+    <div id="ties-t13" class="clip el" data-start="45.709" data-duration="1.52" data-track-index="24" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:25"><div id="ties-t13-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="ties-t13-w0" class="w">acquaintances</span> <span id="ties-t13-w1" class="w">know</span> <span id="ties-t13-w2" class="w">what</span> <span id="ties-t13-w3" class="w">you</span> <span id="ties-t13-w4" class="w acc">don't</span></div></div></div>
+    <div id="ties-card3" class="clip el" data-start="48.249" data-duration="6.273" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:520px;z-index:26"><div id="ties-card3-in" class="in"><div class="card"><div class="card-k">2022 · SCIENCE</div><div class="card-t">~20 million LinkedIn users</div><div class="card-s">Rajkumar et al.</div></div></div></div>
+    <div id="ties-t14" class="clip el" data-start="51.922" data-duration="2.6" data-track-index="26" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:27"><div id="ties-t14-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="ties-t14-w0" class="w">moderately</span> <span id="ties-t14-w1" class="w acc">weak</span> <span id="ties-t14-w2" class="w acc">ties</span> <span id="ties-t14-w3" class="w">win</span></div></div></div>
+    <div id="ties-sun" class="clip el" data-start="55.302" data-duration="2.03" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:1040px;z-index:28" data-layout-allow-overlap><div id="ties-sun-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M100 100 m-38 0 a38 38 0 1 0 76 0 a38 38 0 1 0 -76 0"/><path class="s" pathLength="1" d="M100 18 L100 40 M100 160 L100 182 M18 100 L40 100 M160 100 L182 100 M42 42 L58 58 M142 142 L158 158 M158 42 L142 58 M58 142 L42 158"/></svg></div></div></div>
+    <div id="ties-t15" class="clip el" data-start="54.44199999999999" data-duration="2.94" data-track-index="28" style="position:absolute;left:0px;top:560px;width:1920px;height:520px;z-index:29"><div id="ties-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="ties-t15-w0" class="w">the</span> <span id="ties-t15-w1" class="w">weather</span> <span id="ties-t15-w2" class="w">chat</span> <span id="ties-t15-w3" class="w">→</span> <span id="ties-t15-w4" class="w">your</span> <span id="ties-t15-w5" class="w acc">next</span> <span id="ties-t15-w6" class="w acc">career</span></div></div></div>
+    <div id="ties-t16" class="clip el" data-start="59.683" data-duration="2.89" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:30"><div id="ties-t16-in" class="in"><div class="txt hero" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="ties-t16-w0" class="w">so</span> <span id="ties-t16-w1" class="w">why</span> <span id="ties-t16-w2" class="w">does</span> <span id="ties-t16-w3" class="w">it</span> <span id="ties-t16-w4" class="w">feel</span> <span id="ties-t16-w5" class="w">so</span> <span id="ties-t16-w6" class="w alm">awful<span class="tail">?</span></span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"ties-card","t":"card","from":"top","exit":null,"in":1.76,"out":7.18,"outDur":0.3},{"id":"ties-cup","t":"icon","from":"pop","exit":null,"in":1.76,"out":10.346,"outDur":0.25},{"id":"ties-fast","t":"stick","from":"left","exit":null,"in":8.22,"out":21.344,"outDur":0.3,"poses":[["point",8.22],["idle",16.086]],"mouth":[["tight",8.22]]},{"id":"ties-e1","t":"text","from":"left","exit":null,"in":8.22,"out":14.506,"outDur":0.3,"words":[8.02,8.22]},{"id":"ties-e2","t":"text","from":"left","exit":null,"in":9.54,"out":14.506,"outDur":0.3,"words":[9.54,9.64,9.74,10.04,10.18]},{"id":"ties-chat","t":"stick","from":"right","exit":null,"in":10.706,"out":21.344,"outDur":0.3,"poses":[["happy",11.446],["give",13.266],["victory",15.886]],"mouth":[["smile",11.446]]},{"id":"ties-e3","t":"text","from":"right","exit":null,"in":11.446,"out":14.506,"outDur":0.3,"words":[11.446,12.026,12.026,12.186,13.266,13.266]},{"id":"ties-t1","t":"text","from":"top","exit":null,"in":15.046000000000001,"out":16.446,"outDur":0.3,"words":[15.826,15.886,16.086]},{"id":"ties-t2","t":"text","from":"top","exit":null,"in":17.366,"out":18.466,"outDur":0.3,"words":[17.986,17.986]},{"id":"ties-t3","t":"text","from":"top","exit":null,"in":18.744,"out":21.344,"outDur":0.3,"words":[18.706,18.786,18.866,19.006,19.326,19.426,19.526]},{"id":"ties-t4","t":"text","from":"top","exit":null,"in":22.084000000000003,"out":24.084000000000003,"outDur":0.3,"words":[23.044,23.204,23.344,23.424,23.544]},{"id":"ties-card2","t":"card","from":"top","exit":null,"in":25.464,"out":34.513999999999996,"outDur":0.3},{"id":"ties-bc","t":"icon","from":"pop","exit":null,"in":29.584,"out":33.013999999999996,"outDur":0.25},{"id":"ties-t5","t":"text","from":"bottom","exit":null,"in":30.713999999999995,"out":33.013999999999996,"outDur":0.3,"words":[30.534,30.694,30.794,31.854,32.134,32.514]},{"id":"ties-t6","t":"text","from":"top","exit":null,"in":33.254,"out":34.513999999999996,"outDur":0.3,"words":[33.614,33.694,33.974]},{"id":"ties-t7","t":"text","from":"slam","exit":null,"in":35.314,"out":38.653999999999996,"outDur":0.25,"words":[35.414]},{"id":"ties-t8","t":"text","from":"bottom","exit":null,"in":36.354,"out":38.653999999999996,"outDur":0.3,"words":[36.914,37.094,37.094,37.354,37.874,38.194]},{"id":"ties-t9","t":"text","from":"top","exit":null,"in":38.894,"out":39.774,"outDur":0.3,"words":[38.894,39.014,39.154,39.374]},{"id":"ties-net","t":"icon","from":"pop","exit":null,"in":40.014,"out":43.089,"outDur":0.25},{"id":"ties-t10","t":"text","from":"slam","exit":null,"in":40.014,"out":43.089,"outDur":0.25,"words":[40.014]},{"id":"ties-t11","t":"text","from":"bottom","exit":null,"in":40.789,"out":43.089,"outDur":0.3,"words":[40.789,41.709,41.709,41.709,41.949,42.269]},{"id":"ties-q","t":"icon","from":"pop","exit":null,"in":43.329,"out":43.989,"outDur":0.25},{"id":"ties-t12","t":"text","from":"left","exit":null,"in":44.229,"out":46.888999999999996,"outDur":0.3,"words":[44.229,44.369,44.649,44.849,45.009,45.169]},{"id":"ties-t13","t":"text","from":"right","exit":null,"in":45.709,"out":46.888999999999996,"outDur":0.3,"words":[45.709,46.109,46.589,46.589,46.809]},{"id":"ties-card3","t":"card","from":"top","exit":null,"in":48.249,"out":54.181999999999995,"outDur":0.3},{"id":"ties-t14","t":"text","from":"bottom","exit":null,"in":51.922,"out":54.181999999999995,"outDur":0.3,"words":[51.482,51.922,52.162,52.262]},{"id":"ties-sun","t":"icon","from":"pop","exit":null,"in":55.302,"out":57.041999999999994,"outDur":0.25},{"id":"ties-t15","t":"text","from":"bottom","exit":null,"in":54.44199999999999,"out":57.041999999999994,"outDur":0.3,"words":[55.162,55.302,56.302,56.302,56.302,56.402,56.562]},{"id":"ties-t16","t":"text","from":"slam","exit":null,"in":59.683,"out":62.283,"outDur":0.25,"words":[61.402,61.642,61.642,61.642,61.642,61.642,61.642]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["ties"] = tl;
+    })();
+  </script>
+</template>

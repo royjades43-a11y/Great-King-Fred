@@ -1,0 +1,374 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="glue" data-width="1920" data-height="1080">
+    <div id="glue-ch" class="clip el" data-start="0.2" data-duration="1.6" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:2"><div id="glue-ch-in" class="in"><div class="chap"><div class="chap-num">02</div><div class="chap-rule"></div><div class="txt" style="font-size:76px;font-weight:800;color:var(--ink)"><span id="glue-ch-w0" class="w">The</span> <span id="glue-ch-w1" class="w">original</span> <span id="glue-ch-w2" class="w acc">social</span> <span id="glue-ch-w3" class="w acc">glue</span></div></div></div></div>
+    <div id="glue-a" class="clip el" data-start="3.8" data-duration="8.15" data-track-index="2" style="position:absolute;left:0px;top:240px;width:1520px;height:840px;z-index:3"><div id="glue-a-in" class="in"><svg class="stick" id="glue-a-svg" width="240" height="416" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-a-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-a-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-a-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-a-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-a-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-a-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-a-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-a-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-a-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-a-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-b" class="clip el" data-start="5.4" data-duration="6.55" data-track-index="3" style="position:absolute;left:400px;top:240px;width:1520px;height:840px;z-index:4"><div id="glue-b-in" class="in"><svg class="stick" id="glue-b-svg" width="240" height="416" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-b-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-b-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-b-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-b-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-b-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-b-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-b-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-b-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-b-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-b-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-t1" class="clip el" data-start="4.72" data-duration="2.04" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:5"><div id="glue-t1-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="glue-t1-w0" class="w">primates</span> <span id="glue-t1-w1" class="w">bond</span> <span id="glue-t1-w2" class="w">by</span> <span id="glue-t1-w3" class="w acc">grooming</span></div></div></div>
+    <div id="glue-t2" class="clip el" data-start="6.66" data-duration="2.85" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:6"><div id="glue-t2-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="glue-t2-w0" class="w">up</span> <span id="glue-t2-w1" class="w">to</span> <span id="glue-t2-w2" class="w acc">a</span> <span id="glue-t2-w3" class="w acc">fifth</span> <span id="glue-t2-w4" class="w">of</span> <span id="glue-t2-w5" class="w">the</span> <span id="glue-t2-w6" class="w">day</span></div></div></div>
+    <div id="glue-t3" class="clip el" data-start="9.61" data-duration="2.34" data-track-index="6" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:7"><div id="glue-t3-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="glue-t3-w0" class="w">slow</span> <span id="glue-t3-w1" class="w">·</span> <span id="glue-t3-w2" class="w">quiet</span> <span id="glue-t3-w3" class="w">·</span> <span id="glue-t3-w4" class="w acc">one-on-one</span></div></div></div>
+    <div id="glue-card" class="clip el" data-start="13.09" data-duration="3.38" data-track-index="7" style="position:absolute;left:0px;top:0px;width:1920px;height:460px;z-index:8"><div id="glue-card-in" class="in"><div class="card"><div class="card-k">PSYCHOLOGY · ROBIN DUNBAR</div><div class="card-t">Grooming, gossip &amp; language</div><div class="card-s">the grooming hypothesis</div></div></div></div>
+    <div id="glue-g0" class="clip el" data-start="16.73" data-duration="4.994" data-track-index="8" style="position:absolute;left:0px;top:40px;width:660px;height:1040px;z-index:9"><div id="glue-g0-in" class="in"><svg class="stick" id="glue-g0-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g0-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g0-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g0-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g0-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g0-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g0-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g0-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g0-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g0-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g0-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-g1" class="clip el" data-start="16.76" data-duration="4.964" data-track-index="9" style="position:absolute;left:0px;top:40px;width:1164px;height:1040px;z-index:10"><div id="glue-g1-in" class="in"><svg class="stick" id="glue-g1-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g1-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g1-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g1-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g1-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g1-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g1-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g1-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g1-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g1-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g1-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-g2" class="clip el" data-start="16.79" data-duration="4.934" data-track-index="10" style="position:absolute;left:0px;top:40px;width:1668px;height:1040px;z-index:11"><div id="glue-g2-in" class="in"><svg class="stick" id="glue-g2-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g2-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g2-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-g3" class="clip el" data-start="16.82" data-duration="4.904" data-track-index="11" style="position:absolute;left:252px;top:40px;width:1668px;height:1040px;z-index:12"><div id="glue-g3-in" class="in"><svg class="stick" id="glue-g3-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g3-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g3-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g3-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g3-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g3-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g3-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g3-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g3-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g3-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g3-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-g4" class="clip el" data-start="16.85" data-duration="4.874" data-track-index="12" style="position:absolute;left:756px;top:40px;width:1164px;height:1040px;z-index:13"><div id="glue-g4-in" class="in"><svg class="stick" id="glue-g4-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g4-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g4-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g4-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g4-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g4-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g4-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g4-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g4-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g4-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g4-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-g5" class="clip el" data-start="16.88" data-duration="4.844" data-track-index="13" style="position:absolute;left:1260px;top:40px;width:660px;height:1040px;z-index:14"><div id="glue-g5-in" class="in"><svg class="stick" id="glue-g5-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g5-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g5-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g5-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g5-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g5-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g5-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g5-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g5-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g5-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g5-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-g6" class="clip el" data-start="16.91" data-duration="4.814" data-track-index="14" style="position:absolute;left:0px;top:540px;width:660px;height:540px;z-index:15"><div id="glue-g6-in" class="in"><svg class="stick" id="glue-g6-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g6-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g6-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g6-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g6-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g6-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g6-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g6-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g6-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g6-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g6-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-g7" class="clip el" data-start="16.94" data-duration="4.784" data-track-index="15" style="position:absolute;left:0px;top:540px;width:1164px;height:540px;z-index:16"><div id="glue-g7-in" class="in"><svg class="stick" id="glue-g7-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g7-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g7-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g7-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g7-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g7-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g7-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g7-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g7-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g7-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g7-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-g8" class="clip el" data-start="16.97" data-duration="4.754" data-track-index="16" style="position:absolute;left:0px;top:540px;width:1668px;height:540px;z-index:17"><div id="glue-g8-in" class="in"><svg class="stick" id="glue-g8-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g8-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g8-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g8-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g8-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g8-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g8-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g8-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g8-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g8-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g8-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-g9" class="clip el" data-start="17" data-duration="4.724" data-track-index="17" style="position:absolute;left:252px;top:540px;width:1668px;height:540px;z-index:18"><div id="glue-g9-in" class="in"><svg class="stick" id="glue-g9-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g9-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g9-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g9-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g9-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g9-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g9-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g9-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g9-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g9-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g9-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-g10" class="clip el" data-start="17.03" data-duration="4.694" data-track-index="18" style="position:absolute;left:756px;top:540px;width:1164px;height:540px;z-index:19"><div id="glue-g10-in" class="in"><svg class="stick" id="glue-g10-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g10-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g10-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g10-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g10-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g10-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g10-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g10-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g10-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g10-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g10-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-g11" class="clip el" data-start="17.06" data-duration="4.664" data-track-index="19" style="position:absolute;left:1260px;top:540px;width:660px;height:540px;z-index:20"><div id="glue-g11-in" class="in"><svg class="stick" id="glue-g11-svg" width="114" height="197.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="glue-g11-aLu"><path class="s" d="M150 160 L150 255"/><g id="glue-g11-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g11-aRu"><path class="s" d="M150 160 L150 255"/><g id="glue-g11-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="glue-g11-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="glue-g11-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="glue-g11-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="glue-g11-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="glue-g11-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="glue-g11-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="glue-t4" class="clip el" data-start="16.704" data-duration="2.34" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:21"><div id="glue-t4-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="glue-t4-w0" class="w">you</span> <span id="glue-t4-w1" class="w">can't</span> <span id="glue-t4-w2" class="w">groom</span> <span id="glue-t4-w3" class="w acc">50</span> <span id="glue-t4-w4" class="w acc">friends</span></div></div></div>
+    <div id="glue-chat" class="clip el" data-start="19.384" data-duration="2.29" data-track-index="21" style="position:absolute;left:0px;top:720px;width:1920px;height:360px;z-index:22" data-layout-allow-overlap><div id="glue-chat-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 30 L120 30 Q134 30 134 44 L134 96 Q134 110 120 110 L60 110 L36 132 L40 110 L34 110 Q20 110 20 96 L20 44 Q20 30 34 30 Z"/><path class="s acc-s" pathLength="1" d="M80 128 L80 120 Q80 106 94 106 L166 106 Q180 106 180 120 L180 160 Q180 174 166 174 L160 174 L164 194 L140 174 L94 174 Q80 174 80 160 Z"/></svg></div></div></div>
+    <div id="glue-t5" class="clip el" data-start="19.084" data-duration="2.64" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:23"><div id="glue-t5-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="glue-t5-w0" class="w">but</span> <span id="glue-t5-w1" class="w">you</span> <span id="glue-t5-w2" class="w">can</span> <span id="glue-t5-w3" class="w acc">talk</span> <span id="glue-t5-w4" class="w">to</span> <span id="glue-t5-w5" class="w">several</span></div></div></div>
+    <div id="glue-t6" class="clip el" data-start="22.658" data-duration="1.99" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:940px;z-index:24"><div id="glue-t6-in" class="in"><div class="txt" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="glue-t6-w0" class="w">talk</span> <span id="glue-t6-w1" class="w">took</span> <span id="glue-t6-w2" class="w">grooming's</span> <span id="glue-t6-w3" class="w acc">job</span></div></div></div>
+    <div id="glue-bar1" class="clip el" data-start="29.698" data-duration="4.739" data-track-index="24" style="position:absolute;left:0px;top:640px;width:1520px;height:440px;z-index:25"><div id="glue-bar1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:360px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">social topics</div></div></div></div>
+    <div id="glue-bar2" class="clip el" data-start="30.078" data-duration="4.359" data-track-index="25" style="position:absolute;left:400px;top:640px;width:1520px;height:440px;z-index:26"><div id="glue-bar2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:180px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">everything else</div></div></div></div>
+    <div id="glue-t7" class="clip el" data-start="28.098" data-duration="3.1" data-track-index="26" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:27"><div id="glue-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="glue-t7-w0" class="w">about</span> <span id="glue-t7-w1" class="w acc">two-thirds</span> <span id="glue-t7-w2" class="w">of</span> <span id="glue-t7-w3" class="w">conversation</span></div></div></div>
+    <div id="glue-w1" class="clip el" data-start="31.318" data-duration="3.169" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:28"><div id="glue-w1-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="glue-w1-w0" class="w">who</span> <span id="glue-w1-w1" class="w">did</span> <span id="glue-w1-w2" class="w acc">what</span></div></div></div>
+    <div id="glue-w2" class="clip el" data-start="32.298" data-duration="2.189" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:560px;z-index:29"><div id="glue-w2-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="glue-w2-w0" class="w">who</span> <span id="glue-w2-w1" class="w">said</span> <span id="glue-w2-w2" class="w acc">what</span></div></div></div>
+    <div id="glue-w3" class="clip el" data-start="33.038" data-duration="1.449" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:720px;z-index:30"><div id="glue-w3-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="glue-w3-w0" class="w">how</span> <span id="glue-w3-w1" class="w">everyone's</span> <span id="glue-w3-w2" class="w acc">doing</span></div></div></div>
+    <div id="glue-t8" class="clip el" data-start="35.267" data-duration="2.618" data-track-index="30" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:31"><div id="glue-t8-in" class="in"><div class="txt hero" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="glue-t8-w0" class="w">the</span> <span id="glue-t8-w1" class="w">pointless</span> <span id="glue-t8-w2" class="w">talk</span> <span id="glue-t8-w3" class="w alm">was</span> <span id="glue-t8-w4" class="w alm">the</span> <span id="glue-t8-w5" class="w alm">point</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"glue-ch","t":"chapter","from":"right","exit":null,"in":0.2,"out":1.46,"outDur":0.3,"words":[0.3,0.4,0.5,0.6]},{"id":"glue-a","t":"stick","from":"left","exit":null,"in":3.8,"out":11.61,"outDur":0.3,"poses":[["give",3.8]],"mouth":[["smile",3.8]]},{"id":"glue-b","t":"stick","from":"right","exit":null,"in":5.4,"out":11.61,"outDur":0.3,"poses":[["headDown",5.4]],"mouth":[["smile",5.4]]},{"id":"glue-t1","t":"text","from":"top","exit":null,"in":4.72,"out":6.42,"outDur":0.3,"words":[4.74,4.74,5.1,5.4]},{"id":"glue-t2","t":"text","from":"top","exit":null,"in":6.66,"out":9.17,"outDur":0.3,"words":[7.54,7.74,7.9,8.02,8.24,8.58,8.58]},{"id":"glue-t3","t":"text","from":"top","exit":null,"in":9.61,"out":11.61,"outDur":0.3,"words":[9.67,10.35,10.35,10.87,10.87]},{"id":"glue-card","t":"card","from":"top","exit":null,"in":13.09,"out":16.130000000000003,"outDur":0.3},{"id":"glue-g0","t":"stick","from":"bottom","exit":null,"in":16.73,"out":21.384,"outDur":0.3,"poses":[["idle",16.73]],"mouth":[["neutral",16.73]]},{"id":"glue-g1","t":"stick","from":"bottom","exit":null,"in":16.76,"out":21.384,"outDur":0.3,"poses":[["idle",16.76]],"mouth":[["neutral",16.76]]},{"id":"glue-g2","t":"stick","from":"bottom","exit":null,"in":16.79,"out":21.384,"outDur":0.3,"poses":[["idle",16.79]],"mouth":[["neutral",16.79]]},{"id":"glue-g3","t":"stick","from":"bottom","exit":null,"in":16.82,"out":21.384,"outDur":0.3,"poses":[["idle",16.82]],"mouth":[["neutral",16.82]]},{"id":"glue-g4","t":"stick","from":"bottom","exit":null,"in":16.85,"out":21.384,"outDur":0.3,"poses":[["idle",16.85]],"mouth":[["neutral",16.85]]},{"id":"glue-g5","t":"stick","from":"bottom","exit":null,"in":16.88,"out":21.384,"outDur":0.3,"poses":[["idle",16.88]],"mouth":[["neutral",16.88]]},{"id":"glue-g6","t":"stick","from":"bottom","exit":null,"in":16.91,"out":21.384,"outDur":0.3,"poses":[["idle",16.91]],"mouth":[["neutral",16.91]]},{"id":"glue-g7","t":"stick","from":"bottom","exit":null,"in":16.94,"out":21.384,"outDur":0.3,"poses":[["idle",16.94]],"mouth":[["neutral",16.94]]},{"id":"glue-g8","t":"stick","from":"bottom","exit":null,"in":16.97,"out":21.384,"outDur":0.3,"poses":[["idle",16.97]],"mouth":[["neutral",16.97]]},{"id":"glue-g9","t":"stick","from":"bottom","exit":null,"in":17,"out":21.384,"outDur":0.3,"poses":[["idle",17]],"mouth":[["neutral",17]]},{"id":"glue-g10","t":"stick","from":"bottom","exit":null,"in":17.03,"out":21.384,"outDur":0.3,"poses":[["idle",17.03]],"mouth":[["neutral",17.03]]},{"id":"glue-g11","t":"stick","from":"bottom","exit":null,"in":17.06,"out":21.384,"outDur":0.3,"poses":[["idle",17.06]],"mouth":[["neutral",17.06]]},{"id":"glue-t4","t":"text","from":"top","exit":null,"in":16.704,"out":18.704,"outDur":0.3,"words":[16.37,16.45,16.73,17.31,17.31]},{"id":"glue-chat","t":"icon","from":"pop","exit":null,"in":19.384,"out":21.384,"outDur":0.25},{"id":"glue-t5","t":"text","from":"top","exit":null,"in":19.084,"out":21.384,"outDur":0.3,"words":[18.944,19.104,19.244,19.384,19.664,19.884]},{"id":"glue-t6","t":"text","from":"slam","exit":null,"in":22.658,"out":24.358,"outDur":0.25,"words":[23.164,23.164,23.698,24.278]},{"id":"glue-bar1","t":"bar","from":"draw","exit":null,"in":29.698,"out":34.147,"outDur":0.25},{"id":"glue-bar2","t":"bar","from":"draw","exit":null,"in":30.078,"out":34.147,"outDur":0.25},{"id":"glue-t7","t":"text","from":"top","exit":null,"in":28.098,"out":30.858,"outDur":0.3,"words":[27.638,28.098,28.698,28.798]},{"id":"glue-w1","t":"text","from":"left","exit":null,"in":31.318,"out":34.147,"outDur":0.3,"words":[31.098,31.318,31.478]},{"id":"glue-w2","t":"text","from":"right","exit":null,"in":32.298,"out":34.147,"outDur":0.3,"words":[32.118,32.298,32.498]},{"id":"glue-w3","t":"text","from":"left","exit":null,"in":33.038,"out":34.147,"outDur":0.3,"words":[33.038,33.198,33.798]},{"id":"glue-t8","t":"text","from":"slam","exit":null,"in":35.267,"out":37.595,"outDur":0.25,"words":[35.247,35.267,35.687,36.087,36.327,36.467]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["glue"] = tl;
+    })();
+  </script>
+</template>

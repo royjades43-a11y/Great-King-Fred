@@ -72,7 +72,15 @@ PROG.update({
     "timeline":  ["F", "C", "G", "Am"],
     "mirror":    ["F", "C", "G", "Am", "F", "C", "G", "C"],
 })
-DYN = {"origins": 0.8, "lucy": 0.85, "exposure": 0.8, "money": 0.85, "crack": 0.75, "wars": 0.85, "answers": 0.8, "nostalgia": 0.8,
+PROG.update({
+    "glue":   ["F", "C", "G", "Am"],
+    "ties":   ["C", "G", "Am", "F"],
+    "breaks": ["Dm", "Am", "E", "Am", "F", "C", "E", "E"],
+    "gap":    ["Am", "F", "C", "G"],
+    "deep":   ["F", "C", "Dm", "Am"],
+    "follow": ["C", "G", "Am", "F"],
+})
+DYN = {"glue": 0.85, "ties": 0.85, "breaks": 0.8, "gap": 0.8, "deep": 0.85, "follow": 0.9, "origins": 0.8, "lucy": 0.85, "exposure": 0.8, "money": 0.85, "crack": 0.75, "wars": 0.85, "answers": 0.8, "nostalgia": 0.8,
        "timeline": 0.9, "mirror": 1.0, "forever": 0.8, "reverse": 0.8, "inside": 0.8, "twist": 0.85, "end": 1.0, "hook": 0.9, "choice": 0.8, "flood": 0.75, "child": 0.8, "layer": 0.75, "miss": 0.8, "try": 0.9, "watch": 1.0}
 
 def scenes():

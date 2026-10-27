@@ -142,13 +142,22 @@ function wordTimes(el, sceneStart) {
   // search the cue's own sentence (words said before the cue land with it), never far past it
   let idx = beat.first;
   const stop = Math.min(beat.last + 1, tokens.length); // only the cue's own sentence
-  let prev = base.start;
-  return ws.map((w) => {
+  // words the voice says land on their own word; a word it doesn't say ("57", "→") lands with the next
+  // spoken word in the line, or just after the last one at the end of the line
+  const hit = ws.map((w) => {
     const n = norm(w.w);
     for (let k = idx; k < stop; k++)
-      if (n && similar(tokens[k].n, n)) { idx = k + 1; prev = tokens[k].start; return +(prev - LEAD - sceneStart).toFixed(3); }
-    prev += 0.1; // a word the voice doesn't say lands just after the one before it
-    return +(prev - LEAD - sceneStart).toFixed(3);
+      if (n && similar(tokens[k].n, n)) { idx = k + 1; return tokens[k].start; }
+    return null;
+  });
+  let prev = base.start;
+  return hit.map((t, i) => {
+    if (t == null) {
+      const next = hit.slice(i + 1).find((x) => x != null);
+      t = next ?? prev + 0.1;
+    }
+    prev = t;
+    return +(t - LEAD - sceneStart).toFixed(3);
   });
 }
 
@@ -237,7 +246,7 @@ function sceneCss() {
     .ico .card-f { fill: var(--card); }
     .ico .t { font-family: "${theme.font}", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
     .bub { position: relative; color: var(--ink); }
-    .bub-t { position: absolute; inset: 0 0 18% 0; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
     .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
     .card .txt, .card div { text-shadow: none; }
     .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }

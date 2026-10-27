@@ -1,0 +1,3797 @@
+{
+ "title": "The Psychology of People Who Hate Small Talk",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "In twenty fourteen, psychologists in Chicago asked train commuters to do something most people would rather avoid."
+    },
+    {
+     "id": "b01",
+     "say": "Talk to the stranger sitting next to them."
+    },
+    {
+     "id": "b02",
+     "say": "Before they did it, people predicted it would make their ride worse."
+    },
+    {
+     "id": "b03",
+     "say": "They were wrong."
+    },
+    {
+     "id": "b04",
+     "say": "The talkers had a happier commute than the people who sat in silence."
+    },
+    {
+     "id": "b05",
+     "say": "So why do so many of us hate small talk, when it keeps making us happier?"
+    },
+    {
+     "id": "b06",
+     "say": "By the end of this video, you'll know exactly what your brain is getting wrong."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "train",
+     "name": "train",
+     "x": 960,
+     "y": 600,
+     "size": 360,
+     "from": "none",
+     "at": "b00:start",
+     "out": "b00:commuters",
+     "startAtZero": true
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "*Chicago* · 2014",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b00:chicago",
+     "out": "b01"
+    },
+    {
+     "t": "stick",
+     "id": "r0",
+     "x": 420,
+     "y": 700,
+     "from": "bottom",
+     "at": "b00:commuters",
+     "poses": [
+      [
+       "headDown",
+       "b00:commuters"
+      ],
+      [
+       "happy",
+       "b04:talkers"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:commuters"
+      ],
+      [
+       "smile",
+       "b04:talkers"
+      ]
+     ],
+     "out": "b05",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "r1",
+     "x": 690,
+     "y": 700,
+     "from": "bottom",
+     "at": "b00:commuters",
+     "poses": [
+      [
+       "headDown",
+       "b00:commuters"
+      ],
+      [
+       "happy",
+       "b04:talkers"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:commuters"
+      ],
+      [
+       "smile",
+       "b04:talkers"
+      ]
+     ],
+     "out": "b05",
+     "scale": 0.55,
+     "flip": true,
+     "delay": 0.06
+    },
+    {
+     "t": "stick",
+     "id": "r2",
+     "x": 960,
+     "y": 700,
+     "from": "bottom",
+     "at": "b00:commuters",
+     "poses": [
+      [
+       "headDown",
+       "b00:commuters"
+      ],
+      [
+       "happy",
+       "b04:talkers"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:commuters"
+      ],
+      [
+       "smile",
+       "b04:talkers"
+      ]
+     ],
+     "out": "b05",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.12
+    },
+    {
+     "t": "stick",
+     "id": "r3",
+     "x": 1230,
+     "y": 700,
+     "from": "bottom",
+     "at": "b00:commuters",
+     "poses": [
+      [
+       "headDown",
+       "b00:commuters"
+      ],
+      [
+       "happy",
+       "b04:talkers"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:commuters"
+      ],
+      [
+       "smile",
+       "b04:talkers"
+      ]
+     ],
+     "out": "b05",
+     "scale": 0.55,
+     "flip": true,
+     "delay": 0.18
+    },
+    {
+     "t": "stick",
+     "id": "r4",
+     "x": 1500,
+     "y": 700,
+     "from": "bottom",
+     "at": "b00:commuters",
+     "poses": [
+      [
+       "headDown",
+       "b00:commuters"
+      ],
+      [
+       "happy",
+       "b04:talkers"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:commuters"
+      ],
+      [
+       "smile",
+       "b04:talkers"
+      ]
+     ],
+     "out": "b05",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.24
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "talk to the *stranger* next to you",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b01:stranger",
+     "out": "b02"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "prediction: a !worse! ride",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b02:worse",
+     "out": "b03"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "they were !wrong!",
+     "x": 960,
+     "y": 220,
+     "size": 96,
+     "from": "slam",
+     "at": "b03:wrong",
+     "out": "b04",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "talkers: a *happier* commute",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b04:happier",
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "so why do we *hate* small talk?",
+     "x": 960,
+     "y": 400,
+     "size": 80,
+     "from": "slam",
+     "at": "b05:hate",
+     "out": "b06"
+    },
+    {
+     "t": "icon",
+     "id": "brain",
+     "name": "brain",
+     "x": 960,
+     "y": 520,
+     "size": 260,
+     "from": "pop",
+     "at": "b06:brain"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "what your brain gets !wrong!",
+     "x": 960,
+     "y": 820,
+     "size": 72,
+     "from": "bottom",
+     "at": "b06:wrong"
+    }
+   ]
+  },
+  {
+   "id": "origins",
+   "beats": [
+    {
+     "id": "b07",
+     "say": "The story starts on a tropical island, with a man who was technically an enemy of the state."
+    },
+    {
+     "id": "b08",
+     "say": "His name was Bronisław Malinowski, a Polish anthropologist."
+    },
+    {
+     "id": "b09",
+     "say": "When World War One broke out, he was in Australian territory, holding Austro-Hungarian papers."
+    },
+    {
+     "id": "b10",
+     "say": "That made him an \"enemy alien.\""
+    },
+    {
+     "id": "b11",
+     "say": "Instead of locking him up, the authorities let him keep working."
+    },
+    {
+     "id": "b12",
+     "say": "So he spent years in the Trobriand Islands, recording everything people did and said."
+    },
+    {
+     "id": "b13",
+     "say": "And he noticed something odd."
+    },
+    {
+     "id": "b14",
+     "say": "A lot of talk carried no real information at all."
+    },
+    {
+     "id": "b15",
+     "say": "\"How are you?\""
+    },
+    {
+     "id": "b16",
+     "say": "\"Nice weather.\""
+    },
+    {
+     "id": "b17",
+     "say": "\"Where are you going?\""
+    },
+    {
+     "id": "b18",
+     "say": "In nineteen twenty-three, he gave it a name: phatic communion."
+    },
+    {
+     "id": "b19",
+     "say": "It means bonding through words."
+    },
+    {
+     "id": "b20",
+     "say": "The point of small talk, he argued, isn't what you say."
+    },
+    {
+     "id": "b21",
+     "say": "It's that you said something at all."
+    },
+    {
+     "id": "b22",
+     "say": "He also noticed what happened when nobody spoke."
+    },
+    {
+     "id": "b23",
+     "say": "To most people, he wrote, a stranger's silence isn't reassuring."
+    },
+    {
+     "id": "b24",
+     "say": "It's alarming."
+    },
+    {
+     "id": "b25",
+     "say": "Small talk is how two people say, \"I'm not a threat.\""
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "01",
+     "text": "Bonding through *words*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b07:start",
+     "out": "b07:island"
+    },
+    {
+     "t": "icon",
+     "id": "palm",
+     "name": "palm",
+     "x": 1380,
+     "y": 560,
+     "size": 320,
+     "from": "right",
+     "at": "b07:tropical",
+     "out": "b13"
+    },
+    {
+     "t": "stick",
+     "id": "m",
+     "x": 600,
+     "y": 640,
+     "from": "left",
+     "at": "b07:man",
+     "poses": [
+      [
+       "idle",
+       "b07:man"
+      ],
+      [
+       "proud",
+       "b08:name"
+      ],
+      [
+       "shrug",
+       "b10:enemy"
+      ],
+      [
+       "happy",
+       "b11:working"
+      ],
+      [
+       "point",
+       "b13:noticed"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b07:man"
+      ],
+      [
+       "smile",
+       "b08:name"
+      ],
+      [
+       "o",
+       "b10:enemy"
+      ],
+      [
+       "smile",
+       "b11:working"
+      ]
+     ],
+     "out": "b14"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "ANTHROPOLOGIST · POLAND",
+     "text": "Bronisław Malinowski",
+     "sub": "1884–1942",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b08:name",
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "WWI · *Austro-Hungarian* papers",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b09:war",
+     "out": "b10"
+    },
+    {
+     "t": "stamp",
+     "id": "st",
+     "text": "ENEMY ALIEN",
+     "x": 1300,
+     "y": 300,
+     "size": 72,
+     "from": "slam",
+     "at": "b10:enemy",
+     "out": "b11"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "free to keep *working*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b11:working",
+     "out": "b12"
+    },
+    {
+     "t": "icon",
+     "id": "nb",
+     "name": "notebook",
+     "x": 1000,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b12:recording",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "the *Trobriand Islands*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b12:trobriand",
+     "out": "b13"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "something *odd*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b13:odd",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "talk with no real !information!",
+     "x": 960,
+     "y": 300,
+     "size": 72,
+     "from": "top",
+     "at": "b14:information",
+     "out": "b18"
+    },
+    {
+     "t": "bubble",
+     "id": "q1",
+     "text": "How are you?",
+     "x": 480,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b15:how",
+     "fontSize": 44,
+     "out": "b18"
+    },
+    {
+     "t": "bubble",
+     "id": "q2",
+     "text": "Nice weather.",
+     "x": 960,
+     "y": 760,
+     "size": 260,
+     "from": "pop",
+     "at": "b16:nice",
+     "fontSize": 44,
+     "out": "b18"
+    },
+    {
+     "t": "bubble",
+     "id": "q3",
+     "text": "Where are you going?",
+     "x": 1440,
+     "y": 620,
+     "size": 300,
+     "from": "pop",
+     "at": "b17:where",
+     "fontSize": 40,
+     "out": "b18"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "PHATIC COMMUNION",
+     "x": 960,
+     "y": 440,
+     "size": 130,
+     "from": "slam",
+     "at": "b18:phatic",
+     "out": "b20",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "Malinowski, 1923",
+     "x": 960,
+     "y": 300,
+     "size": 48,
+     "from": "bottom",
+     "at": "b18:nineteen",
+     "out": "b19",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "bonding through *words*",
+     "x": 960,
+     "y": 610,
+     "size": 72,
+     "from": "bottom",
+     "at": "b19:bonding",
+     "out": "b20"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "not *what* you say",
+     "x": 960,
+     "y": 400,
+     "size": 90,
+     "from": "top",
+     "at": "b20:say",
+     "out": "b21"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "but *that* you said something",
+     "x": 960,
+     "y": 560,
+     "size": 80,
+     "from": "bottom",
+     "at": "b21:something",
+     "out": "b22"
+    },
+    {
+     "t": "stick",
+     "id": "s1",
+     "x": 640,
+     "y": 640,
+     "from": "left",
+     "at": "b22:nobody",
+     "poses": [
+      [
+       "armsCrossed",
+       "b22:nobody"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b22:nobody"
+      ]
+     ],
+     "out": "b26"
+    },
+    {
+     "t": "stick",
+     "id": "s2",
+     "x": 1280,
+     "y": 640,
+     "from": "right",
+     "at": "b22:spoke",
+     "poses": [
+      [
+       "armsCrossed",
+       "b22:spoke"
+      ],
+      [
+       "happy",
+       "b25:threat"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b22:spoke"
+      ],
+      [
+       "smile",
+       "b25:threat"
+      ]
+     ],
+     "out": "b26",
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "a stranger's !silence!",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b23:silence",
+     "out": "b24"
+    },
+    {
+     "t": "icon",
+     "id": "al",
+     "name": "alarm",
+     "x": 960,
+     "y": 500,
+     "size": 200,
+     "from": "pop",
+     "at": "b24:alarming",
+     "out": "b25"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "isn't reassuring. it's !alarming!",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b24:alarming",
+     "out": "b25"
+    },
+    {
+     "t": "bubble",
+     "id": "q4",
+     "text": "I'm not a threat.",
+     "x": 960,
+     "y": 360,
+     "size": 300,
+     "from": "pop",
+     "at": "b25:threat",
+     "fontSize": 50
+    }
+   ]
+  },
+  {
+   "id": "glue",
+   "beats": [
+    {
+     "id": "b26",
+     "say": "Why would humans need that?"
+    },
+    {
+     "id": "b27",
+     "say": "Look at our closest relatives."
+    },
+    {
+     "id": "b28",
+     "say": "Monkeys and apes bond by grooming each other."
+    },
+    {
+     "id": "b29",
+     "say": "Some species spend up to a fifth of their day doing it."
+    },
+    {
+     "id": "b30",
+     "say": "It's slow, quiet and one-on-one."
+    },
+    {
+     "id": "b31",
+     "say": "The psychologist Robin Dunbar argued that human groups got too big for that."
+    },
+    {
+     "id": "b32",
+     "say": "You can't groom fifty friends."
+    },
+    {
+     "id": "b33",
+     "say": "But you can talk to several of them at once."
+    },
+    {
+     "id": "b34",
+     "say": "So, he suggested, conversation took grooming's job."
+    },
+    {
+     "id": "b35",
+     "say": "And when his team listened in on real conversations, about two-thirds of the time went on social topics."
+    },
+    {
+     "id": "b36",
+     "say": "Who did what."
+    },
+    {
+     "id": "b37",
+     "say": "Who said what."
+    },
+    {
+     "id": "b38",
+     "say": "How everyone's doing."
+    },
+    {
+     "id": "b39",
+     "say": "In other words, the \"pointless\" talk was the point."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "02",
+     "text": "The original *social glue*",
+     "x": 960,
+     "y": 540,
+     "from": "right",
+     "at": "b26:start",
+     "out": "b27:look"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 760,
+     "y": 660,
+     "from": "left",
+     "at": "b28:monkeys",
+     "poses": [
+      [
+       "give",
+       "b28:monkeys"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b28:monkeys"
+      ]
+     ],
+     "out": "b31",
+     "scale": 0.8
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 1160,
+     "y": 660,
+     "from": "right",
+     "at": "b28:grooming",
+     "poses": [
+      [
+       "headDown",
+       "b28:grooming"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b28:grooming"
+      ]
+     ],
+     "out": "b31",
+     "scale": 0.8,
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "primates bond by *grooming*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b28:grooming",
+     "out": "b29"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "up to *a fifth* of the day",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b29:fifth",
+     "out": "b30"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "slow · quiet · *one-on-one*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b30:slow",
+     "out": "b31"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "PSYCHOLOGY · ROBIN DUNBAR",
+     "text": "Grooming, gossip & language",
+     "sub": "the grooming hypothesis",
+     "x": 960,
+     "y": 230,
+     "from": "top",
+     "at": "b31:dunbar",
+     "out": "b32"
+    },
+    {
+     "t": "stick",
+     "id": "g0",
+     "x": 330,
+     "y": 560,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "g1",
+     "x": 582,
+     "y": 560,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.03
+    },
+    {
+     "t": "stick",
+     "id": "g2",
+     "x": 834,
+     "y": 560,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.06
+    },
+    {
+     "t": "stick",
+     "id": "g3",
+     "x": 1086,
+     "y": 560,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.09
+    },
+    {
+     "t": "stick",
+     "id": "g4",
+     "x": 1338,
+     "y": 560,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.12
+    },
+    {
+     "t": "stick",
+     "id": "g5",
+     "x": 1590,
+     "y": 560,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.15
+    },
+    {
+     "t": "stick",
+     "id": "g6",
+     "x": 330,
+     "y": 810,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.18
+    },
+    {
+     "t": "stick",
+     "id": "g7",
+     "x": 582,
+     "y": 810,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.21
+    },
+    {
+     "t": "stick",
+     "id": "g8",
+     "x": 834,
+     "y": 810,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.24
+    },
+    {
+     "t": "stick",
+     "id": "g9",
+     "x": 1086,
+     "y": 810,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.27
+    },
+    {
+     "t": "stick",
+     "id": "g10",
+     "x": 1338,
+     "y": 810,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.3
+    },
+    {
+     "t": "stick",
+     "id": "g11",
+     "x": 1590,
+     "y": 810,
+     "from": "bottom",
+     "at": "b32:groom",
+     "poses": [
+      [
+       "idle",
+       "b32:groom"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b32:groom"
+      ]
+     ],
+     "out": "b34",
+     "scale": 0.38,
+     "delay": 0.32999999999999996
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "you can't groom *50 friends*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b32:fifty",
+     "out": "b33"
+    },
+    {
+     "t": "icon",
+     "id": "chat",
+     "name": "chat",
+     "x": 960,
+     "y": 900,
+     "size": 160,
+     "from": "pop",
+     "at": "b33:talk",
+     "out": "b34"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "but you can *talk* to several",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b33:talk",
+     "out": "b34"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "talk took grooming's *job*",
+     "x": 960,
+     "y": 470,
+     "size": 90,
+     "from": "slam",
+     "at": "b34:job",
+     "out": "b35"
+    },
+    {
+     "t": "bar",
+     "id": "bar1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 360,
+     "color": "accent",
+     "label": "social topics",
+     "from": "draw",
+     "at": "b35:social",
+     "out": "b39"
+    },
+    {
+     "t": "bar",
+     "id": "bar2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 180,
+     "color": "muted",
+     "label": "everything else",
+     "from": "draw",
+     "at": "b35:topics",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "about *two-thirds* of conversation",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b35:twothirds",
+     "out": "b36"
+    },
+    {
+     "t": "text",
+     "id": "w1",
+     "text": "who did *what*",
+     "x": 960,
+     "y": 200,
+     "size": 56,
+     "from": "left",
+     "at": "b36:did",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "w2",
+     "text": "who said *what*",
+     "x": 960,
+     "y": 280,
+     "size": 56,
+     "from": "right",
+     "at": "b37:said",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "w3",
+     "text": "how everyone's *doing*",
+     "x": 960,
+     "y": 360,
+     "size": 56,
+     "from": "left",
+     "at": "b38:doing",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "the pointless talk !was the point!",
+     "x": 960,
+     "y": 500,
+     "size": 80,
+     "from": "slam",
+     "at": "b39:point",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "ties",
+   "beats": [
+    {
+     "id": "b40",
+     "say": "Now jump to twenty fourteen, and a coffee shop in Vancouver."
+    },
+    {
+     "id": "b41",
+     "say": "Researchers stood outside a Starbucks and gave customers one of two instructions."
+    },
+    {
+     "id": "b42",
+     "say": "Half were told to be as efficient as possible."
+    },
+    {
+     "id": "b43",
+     "say": "Get in, pay, get out."
+    },
+    {
+     "id": "b44",
+     "say": "The other half were told to smile, make eye contact, and have a short chat with the barista."
+    },
+    {
+     "id": "b45",
+     "say": "The ones who chatted left in a better mood."
+    },
+    {
+     "id": "b46",
+     "say": "And they felt a stronger sense of belonging."
+    },
+    {
+     "id": "b47",
+     "say": "From a few seconds with someone whose name they didn't know."
+    },
+    {
+     "id": "b48",
+     "say": "And those small chats add up to more than a good mood."
+    },
+    {
+     "id": "b49",
+     "say": "In nineteen seventy-three, sociologist Mark Granovetter interviewed people in a Boston suburb who had recently changed jobs."
+    },
+    {
+     "id": "b50",
+     "say": "More than half had found their new job through a personal contact."
+    },
+    {
+     "id": "b51",
+     "say": "But here's the strange part."
+    },
+    {
+     "id": "b52",
+     "say": "Of those, about eighty-four percent got it through someone they saw only occasionally, or rarely."
+    },
+    {
+     "id": "b53",
+     "say": "Not their best friends."
+    },
+    {
+     "id": "b54",
+     "say": "Acquaintances."
+    },
+    {
+     "id": "b55",
+     "say": "People they knew mostly through small talk."
+    },
+    {
+     "id": "b56",
+     "say": "Why would that be?"
+    },
+    {
+     "id": "b57",
+     "say": "Close friends know what you know."
+    },
+    {
+     "id": "b58",
+     "say": "Acquaintances know things you don't."
+    },
+    {
+     "id": "b59",
+     "say": "Fifty years later, a study of about twenty million LinkedIn users pointed the same way."
+    },
+    {
+     "id": "b60",
+     "say": "Moderately weak ties were the most useful for landing a new job."
+    },
+    {
+     "id": "b61",
+     "say": "So that chat about the weather might be the start of your next career."
+    },
+    {
+     "id": "b62",
+     "say": "So here's the question."
+    },
+    {
+     "id": "b63",
+     "say": "If small talk is this old, and this good for us, why does it feel so awful?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2014 · VANCOUVER",
+     "text": "The Starbucks study",
+     "sub": "Sandstrom & Dunn",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b40:coffee",
+     "out": "b42"
+    },
+    {
+     "t": "icon",
+     "id": "cup",
+     "name": "coffee",
+     "x": 960,
+     "y": 600,
+     "size": 240,
+     "from": "pop",
+     "at": "b40:coffee",
+     "out": "b44"
+    },
+    {
+     "t": "stick",
+     "id": "fast",
+     "x": 520,
+     "y": 650,
+     "from": "left",
+     "at": "b42:efficient",
+     "poses": [
+      [
+       "point",
+       "b42:efficient"
+      ],
+      [
+       "idle",
+       "b45:mood"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b42:efficient"
+      ]
+     ],
+     "out": "b48"
+    },
+    {
+     "t": "text",
+     "id": "e1",
+     "text": "be *efficient*",
+     "x": 520,
+     "y": 220,
+     "size": 64,
+     "from": "left",
+     "at": "b42:efficient",
+     "out": "b45"
+    },
+    {
+     "t": "text",
+     "id": "e2",
+     "text": "get in, pay, get out",
+     "x": 520,
+     "y": 300,
+     "size": 48,
+     "from": "left",
+     "at": "b43:get",
+     "out": "b45",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "stick",
+     "id": "chat",
+     "x": 1400,
+     "y": 650,
+     "from": "right",
+     "at": "b44:other",
+     "poses": [
+      [
+       "happy",
+       "b44:smile"
+      ],
+      [
+       "give",
+       "b44:chat"
+      ],
+      [
+       "victory",
+       "b45:better"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b44:smile"
+      ]
+     ],
+     "out": "b48",
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "e3",
+     "text": "smile · eye contact · *chat*",
+     "x": 1400,
+     "y": 220,
+     "size": 56,
+     "from": "right",
+     "at": "b44:smile",
+     "out": "b45"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "a better *mood*",
+     "x": 1400,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b45:mood",
+     "out": "b46"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "more *belonging*",
+     "x": 1400,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b46:belonging",
+     "out": "b47"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "from a *few seconds* with a stranger",
+     "x": 960,
+     "y": 220,
+     "size": 60,
+     "from": "top",
+     "at": "b47:seconds",
+     "out": "b48"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "more than a good *mood*",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b48:mood",
+     "out": "b49"
+    },
+    {
+     "t": "card",
+     "id": "card2",
+     "kicker": "SOCIOLOGY · 1973",
+     "text": "Mark Granovetter",
+     "sub": "people who had just changed jobs",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b49:sociologist",
+     "out": "b52"
+    },
+    {
+     "t": "icon",
+     "id": "bc",
+     "name": "briefcase",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b49:jobs",
+     "out": "b51"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "*more than half*: through a contact",
+     "x": 960,
+     "y": 820,
+     "size": 64,
+     "from": "bottom",
+     "at": "b50:half",
+     "out": "b51"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "the strange *part*",
+     "x": 960,
+     "y": 500,
+     "size": 90,
+     "from": "top",
+     "at": "b51:strange",
+     "out": "b52"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "!84%!",
+     "x": 960,
+     "y": 400,
+     "size": 220,
+     "from": "slam",
+     "at": "b52:eighty",
+     "out": "b53",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "saw them only *occasionally* or *rarely*",
+     "x": 960,
+     "y": 640,
+     "size": 60,
+     "from": "bottom",
+     "at": "b52:occasionally",
+     "out": "b53"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "not their best !friends!",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b53:friends",
+     "out": "b54"
+    },
+    {
+     "t": "icon",
+     "id": "net",
+     "name": "network",
+     "x": 960,
+     "y": 560,
+     "size": 320,
+     "from": "pop",
+     "at": "b54:acquaintances",
+     "out": "b56"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "*acquaintances*",
+     "x": 960,
+     "y": 220,
+     "size": 90,
+     "from": "slam",
+     "at": "b54:acquaintances",
+     "out": "b56",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "people you know through *small talk*",
+     "x": 960,
+     "y": 860,
+     "size": 56,
+     "from": "bottom",
+     "at": "b55:small",
+     "out": "b56"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 520,
+     "size": 220,
+     "from": "pop",
+     "at": "b56:why",
+     "out": "b57"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "close friends know what *you* know",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "left",
+     "at": "b57:close",
+     "out": "b59"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "acquaintances know what you *don't*",
+     "x": 960,
+     "y": 560,
+     "size": 72,
+     "from": "right",
+     "at": "b58:don't",
+     "out": "b59"
+    },
+    {
+     "t": "card",
+     "id": "card3",
+     "kicker": "2022 · SCIENCE",
+     "text": "~20 million LinkedIn users",
+     "sub": "Rajkumar et al.",
+     "x": 960,
+     "y": 260,
+     "from": "top",
+     "at": "b59:study",
+     "out": "b61"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "moderately *weak ties* win",
+     "x": 960,
+     "y": 560,
+     "size": 80,
+     "from": "bottom",
+     "at": "b60:weak",
+     "out": "b61"
+    },
+    {
+     "t": "icon",
+     "id": "sun",
+     "name": "sun",
+     "x": 960,
+     "y": 520,
+     "size": 240,
+     "from": "pop",
+     "at": "b61:weather",
+     "out": "b62"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "the weather chat → your *next career*",
+     "x": 960,
+     "y": 820,
+     "size": 64,
+     "from": "bottom",
+     "at": "b61:career",
+     "out": "b62"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "so why does it feel so !awful!?",
+     "x": 960,
+     "y": 500,
+     "size": 90,
+     "from": "slam",
+     "at": "b63:awful",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "breaks",
+   "beats": [
+    {
+     "id": "b64",
+     "say": "Part of it is real."
+    },
+    {
+     "id": "b65",
+     "say": "In twenty ten, psychologist Matthias Mehl had seventy-nine students wear a small recorder for four days."
+    },
+    {
+     "id": "b66",
+     "say": "Every twelve and a half minutes, it secretly recorded thirty seconds of their lives."
+    },
+    {
+     "id": "b67",
+     "say": "Over those four days, it captured more than twenty thousand snippets of ordinary life."
+    },
+    {
+     "id": "b68",
+     "say": "Then researchers sorted every conversation into small talk or something deeper."
+    },
+    {
+     "id": "b69",
+     "say": "The happiest people had about twice as many deep conversations as the unhappiest."
+    },
+    {
+     "id": "b70",
+     "say": "And only a third as much small talk."
+    },
+    {
+     "id": "b71",
+     "say": "So the people who hate small talk are onto something."
+    },
+    {
+     "id": "b72",
+     "say": "Depth seems to matter."
+    },
+    {
+     "id": "b73",
+     "say": "But here's where the brain starts lying."
+    },
+    {
+     "id": "b74",
+     "say": "Back on those Chicago trains, commuters were asked a simple question."
+    },
+    {
+     "id": "b75",
+     "say": "How many of the people around you would want to talk?"
+    },
+    {
+     "id": "b76",
+     "say": "They guessed fewer than half."
+    },
+    {
+     "id": "b77",
+     "say": "In reality, the strangers were happy to talk."
+    },
+    {
+     "id": "b78",
+     "say": "In one account, not a single person reported being snubbed."
+    },
+    {
+     "id": "b79",
+     "say": "We assume everyone else wants to be left alone."
+    },
+    {
+     "id": "b80",
+     "say": "Everyone else is assuming the same thing about us."
+    },
+    {
+     "id": "b81",
+     "say": "So the whole carriage sits in silence, each person sure they're respecting everyone else's wishes."
+    },
+    {
+     "id": "b82",
+     "say": "Part of the problem is that we think we're being watched more than we are."
+    },
+    {
+     "id": "b83",
+     "say": "In one famous experiment, students were asked to walk into a room wearing a T-shirt."
+    },
+    {
+     "id": "b84",
+     "say": "The shirt had a huge picture of the singer Barry Manilow on it."
+    },
+    {
+     "id": "b85",
+     "say": "The researchers picked him because, to these students, he was deeply uncool."
+    },
+    {
+     "id": "b86",
+     "say": "The wearers guessed that about half the room had noticed the shirt."
+    },
+    {
+     "id": "b87",
+     "say": "In reality, fewer than a quarter had."
+    },
+    {
+     "id": "b88",
+     "say": "Psychologists call it the spotlight effect."
+    },
+    {
+     "id": "b89",
+     "say": "In small talk, it makes every pause feel huge, and every clumsy line feel unforgettable."
+    },
+    {
+     "id": "b90",
+     "say": "Most people don't notice."
+    },
+    {
+     "id": "b91",
+     "say": "They're too busy worrying about their own shirt."
+    },
+    {
+     "id": "b92",
+     "say": "And then there's the silence itself."
+    },
+    {
+     "id": "b93",
+     "say": "In twenty eleven, Dutch researchers looked at what a short pause does to people in a conversation."
+    },
+    {
+     "id": "b94",
+     "say": "A silence of about four seconds was enough to make people feel rejected."
+    },
+    {
+     "id": "b95",
+     "say": "Four seconds."
+    },
+    {
+     "id": "b96",
+     "say": "That's why small talk can feel like a test you're failing."
+    },
+    {
+     "id": "b97",
+     "say": "Every pause feels like proof that the other person is bored of you."
+    },
+    {
+     "id": "b98",
+     "say": "But they're probably feeling the exact same thing."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "03",
+     "text": "Where it *breaks*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b64:start",
+     "out": "b65:twenty"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2010",
+     "text": "79 students, 4 days",
+     "sub": "Mehl, Vazire et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b65:psychologist",
+     "out": "b67"
+    },
+    {
+     "t": "icon",
+     "id": "mic",
+     "name": "mic",
+     "x": 960,
+     "y": 580,
+     "size": 240,
+     "from": "pop",
+     "at": "b65:recorder",
+     "out": "b68"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "every *12.5 min*: 30 seconds",
+     "x": 960,
+     "y": 830,
+     "size": 64,
+     "from": "bottom",
+     "at": "b66:twelve",
+     "out": "b67"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "*20,000+* snippets of life",
+     "x": 960,
+     "y": 830,
+     "size": 64,
+     "from": "bottom",
+     "at": "b67:twenty",
+     "out": "b68"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "*small talk* or something *deeper*",
+     "x": 960,
+     "y": 500,
+     "size": 72,
+     "from": "top",
+     "at": "b68:small",
+     "out": "b69"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "the happiest people",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b69:happiest",
+     "out": "b72"
+    },
+    {
+     "t": "bar",
+     "id": "bar1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 360,
+     "color": "accent",
+     "label": "deep talk: 2×",
+     "from": "draw",
+     "at": "b69:twice",
+     "out": "b72"
+    },
+    {
+     "t": "bar",
+     "id": "bar2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 110,
+     "color": "muted",
+     "label": "small talk: ⅓",
+     "from": "draw",
+     "at": "b70:third",
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "onto *something*",
+     "x": 960,
+     "y": 320,
+     "size": 60,
+     "from": "bottom",
+     "at": "b71:something",
+     "out": "b72",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "DEPTH MATTERS",
+     "x": 960,
+     "y": 480,
+     "size": 140,
+     "from": "slam",
+     "at": "b72:depth",
+     "out": "b73",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "brain",
+     "x": 960,
+     "y": 540,
+     "size": 260,
+     "from": "pop",
+     "at": "b73:brain",
+     "out": "b74"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "the brain starts !lying!",
+     "x": 960,
+     "y": 830,
+     "size": 72,
+     "from": "bottom",
+     "at": "b73:lying",
+     "out": "b74"
+    },
+    {
+     "t": "icon",
+     "id": "train",
+     "name": "train",
+     "x": 960,
+     "y": 620,
+     "size": 300,
+     "from": "bottom",
+     "at": "b74:trains",
+     "out": "b79"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "how many would *want* to talk?",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b75:want",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "guess: !fewer than half!",
+     "x": 960,
+     "y": 220,
+     "size": 80,
+     "from": "slam",
+     "at": "b76:fewer",
+     "out": "b77"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "reality: happy to *talk*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b77:happy",
+     "out": "b78"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "not a single *snub*",
+     "x": 960,
+     "y": 900,
+     "size": 60,
+     "from": "bottom",
+     "at": "b78:snubbed",
+     "out": "b79"
+    },
+    {
+     "t": "stick",
+     "id": "r0",
+     "x": 420,
+     "y": 680,
+     "from": "bottom",
+     "at": "b79:assume",
+     "poses": [
+      [
+       "headDown",
+       "b79:assume"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b79:assume"
+      ]
+     ],
+     "out": "b82",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "r1",
+     "x": 690,
+     "y": 680,
+     "from": "bottom",
+     "at": "b79:assume",
+     "poses": [
+      [
+       "headDown",
+       "b79:assume"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b79:assume"
+      ]
+     ],
+     "out": "b82",
+     "scale": 0.55,
+     "flip": true,
+     "delay": 0.06
+    },
+    {
+     "t": "stick",
+     "id": "r2",
+     "x": 960,
+     "y": 680,
+     "from": "bottom",
+     "at": "b79:assume",
+     "poses": [
+      [
+       "headDown",
+       "b79:assume"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b79:assume"
+      ]
+     ],
+     "out": "b82",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.12
+    },
+    {
+     "t": "stick",
+     "id": "r3",
+     "x": 1230,
+     "y": 680,
+     "from": "bottom",
+     "at": "b79:assume",
+     "poses": [
+      [
+       "headDown",
+       "b79:assume"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b79:assume"
+      ]
+     ],
+     "out": "b82",
+     "scale": 0.55,
+     "flip": true,
+     "delay": 0.18
+    },
+    {
+     "t": "stick",
+     "id": "r4",
+     "x": 1500,
+     "y": 680,
+     "from": "bottom",
+     "at": "b79:assume",
+     "poses": [
+      [
+       "headDown",
+       "b79:assume"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b79:assume"
+      ]
+     ],
+     "out": "b82",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.24
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "we assume they want *silence*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b79:alone",
+     "out": "b80"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "they assume the *same* about us",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b80:same",
+     "out": "b81"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "a whole carriage, in !silence!",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b81:silence",
+     "out": "b82"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "we think we're *being watched*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b82:watched",
+     "out": "b83"
+    },
+    {
+     "t": "stick",
+     "id": "w",
+     "x": 760,
+     "y": 660,
+     "from": "left",
+     "at": "b83:students",
+     "poses": [
+      [
+       "proud",
+       "b83:students"
+      ],
+      [
+       "shrug",
+       "b86:guessed"
+      ],
+      [
+       "happy",
+       "b87:quarter"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b83:students"
+      ],
+      [
+       "o",
+       "b86:guessed"
+      ],
+      [
+       "smile",
+       "b87:quarter"
+      ]
+     ],
+     "out": "b88"
+    },
+    {
+     "t": "icon",
+     "id": "sh",
+     "name": "shirt",
+     "x": 1240,
+     "y": 560,
+     "size": 260,
+     "from": "right",
+     "at": "b83:tshirt",
+     "out": "b86"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "a *Barry Manilow* T-shirt",
+     "x": 1240,
+     "y": 820,
+     "size": 60,
+     "from": "bottom",
+     "at": "b84:barry",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "chosen to be !uncool!",
+     "x": 1240,
+     "y": 820,
+     "size": 60,
+     "from": "bottom",
+     "at": "b85:uncool",
+     "out": "b86"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "how many *noticed*?",
+     "x": 1240,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b86:noticed",
+     "out": "b88"
+    },
+    {
+     "t": "bar",
+     "id": "bar3",
+     "x": 1080,
+     "y": 860,
+     "w": 170,
+     "h": 300,
+     "color": "muted",
+     "label": "guessed ~50%",
+     "from": "draw",
+     "at": "b86:half",
+     "out": "b88"
+    },
+    {
+     "t": "bar",
+     "id": "bar4",
+     "x": 1400,
+     "y": 860,
+     "w": 170,
+     "h": 140,
+     "color": "accent",
+     "label": "actually <25%",
+     "from": "draw",
+     "at": "b87:quarter",
+     "out": "b88"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "THE SPOTLIGHT EFFECT",
+     "x": 960,
+     "y": 480,
+     "size": 120,
+     "from": "slam",
+     "at": "b88:spotlight",
+     "out": "b89",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "every pause feels *huge*",
+     "x": 960,
+     "y": 400,
+     "size": 80,
+     "from": "left",
+     "at": "b89:huge",
+     "out": "b90"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "every clumsy line, *unforgettable*",
+     "x": 960,
+     "y": 540,
+     "size": 64,
+     "from": "right",
+     "at": "b89:unforgettable",
+     "out": "b90"
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "most people don't *notice*",
+     "x": 960,
+     "y": 400,
+     "size": 80,
+     "from": "top",
+     "at": "b90:notice",
+     "out": "b92"
+    },
+    {
+     "t": "icon",
+     "id": "sh2",
+     "name": "shirt",
+     "x": 960,
+     "y": 640,
+     "size": 200,
+     "from": "pop",
+     "at": "b91:shirt",
+     "out": "b92"
+    },
+    {
+     "t": "card",
+     "id": "card2",
+     "kicker": "STUDY · 2011 · NETHERLANDS",
+     "text": "Brief silences",
+     "sub": "Koudenburg, Postmes & Gordijn",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b93:dutch",
+     "out": "b94"
+    },
+    {
+     "t": "bubble",
+     "id": "bb",
+     "text": "…",
+     "x": 960,
+     "y": 560,
+     "size": 300,
+     "from": "pop",
+     "at": "b93:pause",
+     "fontSize": 90,
+     "out": "b95"
+    },
+    {
+     "t": "text",
+     "id": "t23",
+     "text": "enough to feel !rejected!",
+     "x": 960,
+     "y": 860,
+     "size": 72,
+     "from": "bottom",
+     "at": "b94:rejected",
+     "out": "b95"
+    },
+    {
+     "t": "text",
+     "id": "t24",
+     "text": "4 SECONDS",
+     "x": 960,
+     "y": 480,
+     "size": 200,
+     "from": "slam",
+     "at": "b95:four",
+     "out": "b96",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t25",
+     "text": "a test you're *failing*",
+     "x": 960,
+     "y": 400,
+     "size": 80,
+     "from": "top",
+     "at": "b96:failing",
+     "out": "b98"
+    },
+    {
+     "t": "text",
+     "id": "t26",
+     "text": "every pause = “they're *bored*”",
+     "x": 960,
+     "y": 560,
+     "size": 64,
+     "from": "bottom",
+     "at": "b97:bored",
+     "out": "b98"
+    },
+    {
+     "t": "text",
+     "id": "t27",
+     "text": "they feel the *exact same*",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "slam",
+     "at": "b98:same"
+    }
+   ]
+  },
+  {
+   "id": "gap",
+   "beats": [
+    {
+     "id": "b99",
+     "say": "And it gets worse after the conversation ends."
+    },
+    {
+     "id": "b100",
+     "say": "In twenty eighteen, researchers paired up strangers for a five-minute chat, then asked them a question."
+    },
+    {
+     "id": "b101",
+     "say": "How much do you think your partner liked you?"
+    },
+    {
+     "id": "b102",
+     "say": "People consistently guessed too low."
+    },
+    {
+     "id": "b103",
+     "say": "Their partners had liked them more, and enjoyed the chat more, than they realized."
+    },
+    {
+     "id": "b104",
+     "say": "The researchers called it the liking gap."
+    },
+    {
+     "id": "b105",
+     "say": "And it didn't vanish after one meeting."
+    },
+    {
+     "id": "b106",
+     "say": "Among new college roommates, it lasted for months."
+    },
+    {
+     "id": "b107",
+     "say": "The shyer the person, the bigger the gap."
+    },
+    {
+     "id": "b108",
+     "say": "So when you walk away from small talk thinking \"that was awkward,\" that feeling is often wrong."
+    },
+    {
+     "id": "b109",
+     "say": "You just can't see it from the inside."
+    },
+    {
+     "id": "b110",
+     "say": "But it wasn't over yet."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "it gets !worse!",
+     "x": 960,
+     "y": 480,
+     "size": 110,
+     "from": "slam",
+     "at": "b99:worse",
+     "out": "b100"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2018",
+     "text": "Five-minute chats",
+     "sub": "Boothby, Cooney, Sandstrom & Clark",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b100:researchers",
+     "out": "b101"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 640,
+     "y": 660,
+     "from": "left",
+     "at": "b100:strangers",
+     "poses": [
+      [
+       "idle",
+       "b100:strangers"
+      ],
+      [
+       "shrug",
+       "b101:liked"
+      ],
+      [
+       "headDown",
+       "b102:low"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b100:strangers"
+      ],
+      [
+       "o",
+       "b101:liked"
+      ],
+      [
+       "frown",
+       "b102:low"
+      ]
+     ],
+     "out": "b104"
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 1280,
+     "y": 660,
+     "from": "right",
+     "at": "b100:paired",
+     "poses": [
+      [
+       "idle",
+       "b100:paired"
+      ],
+      [
+       "happy",
+       "b103:partners"
+      ],
+      [
+       "victory",
+       "b103:more"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b100:paired"
+      ]
+     ],
+     "out": "b104",
+     "flip": true
+    },
+    {
+     "t": "bubble",
+     "id": "q",
+     "text": "how much did they like me?",
+     "x": 640,
+     "y": 220,
+     "size": 360,
+     "from": "pop",
+     "at": "b101:liked",
+     "fontSize": 40,
+     "out": "b103"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "guess: too !low!",
+     "x": 640,
+     "y": 990,
+     "size": 60,
+     "from": "bottom",
+     "at": "b102:low",
+     "out": "b104"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "reality: liked you *more*",
+     "x": 1280,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b103:liked",
+     "out": "b104"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "THE LIKING GAP",
+     "x": 960,
+     "y": 480,
+     "size": 140,
+     "from": "slam",
+     "at": "b104:liking",
+     "out": "b105",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t3b",
+     "text": "it didn't *vanish*",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b105:vanish",
+     "out": "b106"
+    },
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b106:roommates",
+     "out": "b107"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "roommates: lasted for *months*",
+     "x": 960,
+     "y": 830,
+     "size": 64,
+     "from": "bottom",
+     "at": "b106:months",
+     "out": "b107"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "shyer → *bigger gap*",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b107:bigger",
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "“that was awkward”",
+     "x": 960,
+     "y": 420,
+     "size": 90,
+     "from": "top",
+     "at": "b108:awkward",
+     "out": "b110"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 960,
+     "y": 420,
+     "w": 760,
+     "at": "b108:wrong",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "often !wrong!",
+     "x": 960,
+     "y": 580,
+     "size": 90,
+     "from": "bottom",
+     "at": "b108:wrong",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "you can't see it from the *inside*",
+     "x": 960,
+     "y": 760,
+     "size": 56,
+     "from": "bottom",
+     "at": "b109:inside",
+     "out": "b110",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "but it wasn't over yet",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b110:over",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "deep",
+   "beats": [
+    {
+     "id": "b111",
+     "say": "So what happens if you skip the small talk completely?"
+    },
+    {
+     "id": "b112",
+     "say": "In twenty twenty-one, three researchers ran twelve experiments with more than eighteen hundred people."
+    },
+    {
+     "id": "b113",
+     "say": "They paired strangers and gave them deep questions."
+    },
+    {
+     "id": "b114",
+     "say": "Things like, \"When did you last cry in front of another person?\""
+    },
+    {
+     "id": "b115",
+     "say": "Before talking, people expected it to be awkward."
+    },
+    {
+     "id": "b116",
+     "say": "They expected the other person not to care."
+    },
+    {
+     "id": "b117",
+     "say": "Then they talked."
+    },
+    {
+     "id": "b118",
+     "say": "The conversations were far less awkward than predicted, and people felt more connected."
+    },
+    {
+     "id": "b119",
+     "say": "They had also underestimated something else: how much the other person wanted to listen."
+    },
+    {
+     "id": "b120",
+     "say": "When they tried both a shallow chat and a deep one, most preferred the deep one."
+    },
+    {
+     "id": "b121",
+     "say": "The people who hate small talk were right about what they wanted."
+    },
+    {
+     "id": "b122",
+     "say": "They were wrong about what other people wanted."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "04",
+     "text": "The *deep* end",
+     "x": 960,
+     "y": 540,
+     "from": "right",
+     "at": "b111:start",
+     "out": "b111:skip"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "skip the small talk *completely*?",
+     "x": 960,
+     "y": 480,
+     "size": 80,
+     "from": "top",
+     "at": "b111:completely",
+     "out": "b112"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "2021 · 12 EXPERIMENTS",
+     "text": "1,800+ people",
+     "sub": "Kardas, Kumar & Epley",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b112:researchers",
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "strangers + *deep questions*",
+     "x": 960,
+     "y": 600,
+     "size": 72,
+     "from": "bottom",
+     "at": "b113:deep",
+     "out": "b114"
+    },
+    {
+     "t": "bubble",
+     "id": "q",
+     "text": "When did you last cry in front of someone?",
+     "x": 960,
+     "y": 300,
+     "size": 420,
+     "from": "pop",
+     "at": "b114:things",
+     "fontSize": 44,
+     "out": "b115"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 640,
+     "y": 680,
+     "from": "left",
+     "at": "b114:things",
+     "poses": [
+      [
+       "shrug",
+       "b115:awkward"
+      ],
+      [
+       "armsCrossed",
+       "b116:care"
+      ],
+      [
+       "happy",
+       "b118:connected"
+      ],
+      [
+       "give",
+       "b119:listen"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b115:awkward"
+      ],
+      [
+       "frown",
+       "b116:care"
+      ],
+      [
+       "smile",
+       "b118:connected"
+      ]
+     ],
+     "out": "b121",
+     "scale": 0.85
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 1280,
+     "y": 680,
+     "from": "right",
+     "at": "b114:person",
+     "poses": [
+      [
+       "shrug",
+       "b115:awkward"
+      ],
+      [
+       "armsCrossed",
+       "b116:care"
+      ],
+      [
+       "happy",
+       "b118:connected"
+      ],
+      [
+       "victory",
+       "b120:deep"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b115:awkward"
+      ],
+      [
+       "frown",
+       "b116:care"
+      ],
+      [
+       "smile",
+       "b118:connected"
+      ]
+     ],
+     "out": "b121",
+     "scale": 0.85,
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "expected: *awkward*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b115:awkward",
+     "out": "b116"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "expected: they won't *care*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b116:care",
+     "out": "b117"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "then they *talked*",
+     "x": 960,
+     "y": 220,
+     "size": 80,
+     "from": "top",
+     "at": "b117:talked",
+     "out": "b118"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "less awkward · more *connected*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b118:connected",
+     "out": "b119"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "they *wanted* to listen",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b119:listen",
+     "out": "b120"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "most preferred the *deep* one",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b120:preferred",
+     "out": "b121"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "right about what they *wanted*",
+     "x": 960,
+     "y": 420,
+     "size": 80,
+     "from": "left",
+     "at": "b121:right",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "wrong about !other people!",
+     "x": 960,
+     "y": 560,
+     "size": 80,
+     "from": "right",
+     "at": "b122:wrong"
+    }
+   ]
+  },
+  {
+   "id": "follow",
+   "beats": [
+    {
+     "id": "b123",
+     "say": "So how do you get from \"nice weather\" to something real?"
+    },
+    {
+     "id": "b124",
+     "say": "In twenty seventeen, Harvard researchers studied hundreds of live conversations between strangers."
+    },
+    {
+     "id": "b125",
+     "say": "People who asked more questions were liked more."
+    },
+    {
+     "id": "b126",
+     "say": "And one kind of question worked best: the follow-up question."
+    },
+    {
+     "id": "b127",
+     "say": "\"Wait, why did you move here?\""
+    },
+    {
+     "id": "b128",
+     "say": "\"What was that like?\""
+    },
+    {
+     "id": "b129",
+     "say": "A follow-up shows you were actually listening."
+    },
+    {
+     "id": "b130",
+     "say": "The people in the study didn't expect questions to make them more likeable."
+    },
+    {
+     "id": "b131",
+     "say": "They did anyway."
+    },
+    {
+     "id": "b132",
+     "say": "If you hate small talk, that's the shortcut."
+    },
+    {
+     "id": "b133",
+     "say": "You don't need clever lines."
+    },
+    {
+     "id": "b134",
+     "say": "You need one good follow-up."
+    },
+    {
+     "id": "b135",
+     "say": "So here's what the research adds up to."
+    },
+    {
+     "id": "b136",
+     "say": "Assume people want to talk."
+    },
+    {
+     "id": "b137",
+     "say": "Most of them do."
+    },
+    {
+     "id": "b138",
+     "say": "Assume they like you more than you think."
+    },
+    {
+     "id": "b139",
+     "say": "They usually do."
+    },
+    {
+     "id": "b140",
+     "say": "And when there's a pause, ask one follow-up question instead of panicking."
+    },
+    {
+     "id": "b141",
+     "say": "And next time someone asks \"How are you?\""
+    },
+    {
+     "id": "b142",
+     "say": ", try answering with one true thing."
+    },
+    {
+     "id": "b143",
+     "say": "\"Honestly?"
+    },
+    {
+     "id": "b144",
+     "say": "Tired, but good."
+    },
+    {
+     "id": "b145",
+     "say": "I just started learning guitar.\""
+    },
+    {
+     "id": "b146",
+     "say": "You've just handed them a follow-up question."
+    }
+   ],
+   "elements": [
+    {
+     "t": "bubble",
+     "id": "nw",
+     "text": "Nice weather.",
+     "x": 600,
+     "y": 480,
+     "size": 300,
+     "from": "pop",
+     "at": "b123:nice",
+     "fontSize": 46,
+     "out": "b124"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "→ something *real*?",
+     "x": 1300,
+     "y": 480,
+     "size": 80,
+     "from": "right",
+     "at": "b123:real",
+     "out": "b124"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "HARVARD · 2017",
+     "text": "Live conversations",
+     "sub": "Huang, Yeomans, Brooks, Minson & Gino",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b124:harvard",
+     "out": "b125"
+    },
+    {
+     "t": "icon",
+     "id": "q1",
+     "name": "question",
+     "x": 640,
+     "y": 600,
+     "size": 180,
+     "from": "left",
+     "at": "b125:questions",
+     "out": "b126"
+    },
+    {
+     "t": "icon",
+     "id": "q2",
+     "name": "question",
+     "x": 960,
+     "y": 600,
+     "size": 200,
+     "from": "pop",
+     "at": "b125:asked",
+     "out": "b126"
+    },
+    {
+     "t": "icon",
+     "id": "q3",
+     "name": "question",
+     "x": 1280,
+     "y": 600,
+     "size": 180,
+     "from": "right",
+     "at": "b125:liked",
+     "out": "b126"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "more questions = *liked more*",
+     "x": 960,
+     "y": 860,
+     "size": 64,
+     "from": "bottom",
+     "at": "b125:liked",
+     "out": "b126"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "THE FOLLOW-UP QUESTION",
+     "x": 960,
+     "y": 420,
+     "size": 110,
+     "from": "slam",
+     "at": "b126:followup",
+     "out": "b127",
+     "hero": true
+    },
+    {
+     "t": "bubble",
+     "id": "f1",
+     "text": "Wait, why did you move here?",
+     "x": 640,
+     "y": 680,
+     "size": 360,
+     "from": "pop",
+     "at": "b127:why",
+     "fontSize": 40,
+     "out": "b130"
+    },
+    {
+     "t": "bubble",
+     "id": "f2",
+     "text": "What was that like?",
+     "x": 1300,
+     "y": 680,
+     "size": 300,
+     "from": "pop",
+     "at": "b128:like",
+     "fontSize": 42,
+     "out": "b130"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "proof you were *listening*",
+     "x": 960,
+     "y": 220,
+     "size": 80,
+     "from": "top",
+     "at": "b129:listening",
+     "out": "b130"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "they didn't *expect* it to work",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "left",
+     "at": "b130:expect",
+     "out": "b131"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "it *did*",
+     "x": 960,
+     "y": 560,
+     "size": 110,
+     "from": "slam",
+     "at": "b131:did",
+     "out": "b132"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "the *shortcut*",
+     "x": 960,
+     "y": 300,
+     "size": 90,
+     "from": "top",
+     "at": "b132:shortcut",
+     "out": "b135"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "no clever lines",
+     "x": 960,
+     "y": 500,
+     "size": 72,
+     "from": "left",
+     "at": "b133:clever",
+     "out": "b135"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 960,
+     "y": 500,
+     "w": 560,
+     "at": "b133:lines",
+     "out": "b135"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "one good *follow-up*",
+     "x": 960,
+     "y": 660,
+     "size": 90,
+     "from": "right",
+     "at": "b134:good",
+     "out": "b135"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "what it adds up to",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b135:adds",
+     "out": "b141",
+     "weight": 600
+    },
+    {
+     "t": "slot",
+     "id": "s1",
+     "n": "1",
+     "text": "assume they *want to talk*",
+     "x": 440,
+     "y": 560,
+     "from": "draw",
+     "at": "b136:assume",
+     "fill": "b136:talk",
+     "out": "b141"
+    },
+    {
+     "t": "slot",
+     "id": "s2",
+     "n": "2",
+     "text": "assume they *like you*",
+     "x": 960,
+     "y": 560,
+     "from": "draw",
+     "at": "b138:assume",
+     "fill": "b138:like",
+     "out": "b141"
+    },
+    {
+     "t": "slot",
+     "id": "s3",
+     "n": "3",
+     "text": "pause? ask a *follow-up*",
+     "x": 1480,
+     "y": 560,
+     "from": "draw",
+     "at": "b140:pause",
+     "fill": "b140:followup",
+     "out": "b141"
+    },
+    {
+     "t": "bubble",
+     "id": "h1",
+     "text": "How are you?",
+     "x": 560,
+     "y": 380,
+     "size": 280,
+     "from": "pop",
+     "at": "b141:how",
+     "fontSize": 46,
+     "out": "b146"
+    },
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 1300,
+     "y": 680,
+     "from": "right",
+     "at": "b142:try",
+     "poses": [
+      [
+       "give",
+       "b142:try"
+      ],
+      [
+       "happy",
+       "b146:handed"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b142:try"
+      ]
+     ],
+     "out": "b147",
+     "flip": true,
+     "scale": 0.85
+    },
+    {
+     "t": "bubble",
+     "id": "h2",
+     "text": "Honestly? Tired, but good.",
+     "x": 1240,
+     "y": 260,
+     "size": 420,
+     "from": "pop",
+     "at": "b143:honestly",
+     "fontSize": 44,
+     "out": "b146"
+    },
+    {
+     "t": "icon",
+     "id": "gt",
+     "name": "note",
+     "x": 560,
+     "y": 720,
+     "size": 180,
+     "from": "pop",
+     "at": "b145:guitar",
+     "out": "b146"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "“I just started learning *guitar*.”",
+     "x": 960,
+     "y": 900,
+     "size": 56,
+     "from": "bottom",
+     "at": "b145:guitar",
+     "out": "b146"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "you just handed them a *follow-up*",
+     "x": 760,
+     "y": 300,
+     "size": 64,
+     "from": "top",
+     "at": "b146:handed"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b147",
+     "say": "One last surprise."
+    },
+    {
+     "id": "b148",
+     "say": "In twenty eighteen, a larger study of four hundred and eighty-six people looked at small talk again."
+    },
+    {
+     "id": "b149",
+     "say": "Deep conversations were still linked to happiness."
+    },
+    {
+     "id": "b150",
+     "say": "But small talk itself wasn't linked to being unhappy."
+    },
+    {
+     "id": "b151",
+     "say": "It didn't help or hurt."
+    },
+    {
+     "id": "b152",
+     "say": "So small talk was never the enemy."
+    },
+    {
+     "id": "b153",
+     "say": "It's the doorway."
+    },
+    {
+     "id": "b154",
+     "say": "\"Nice weather\" is how two strangers check it's safe to say something real."
+    },
+    {
+     "id": "b155",
+     "say": "The people who hate small talk don't hate people."
+    },
+    {
+     "id": "b156",
+     "say": "They just want to skip the door."
+    },
+    {
+     "id": "b157",
+     "say": "But you can't get into the room without walking through it."
+    },
+    {
+     "id": "b158",
+     "say": "So, do you hate small talk, or are you secretly good at it?"
+    },
+    {
+     "id": "b159",
+     "say": "Tell me in the comments."
+    },
+    {
+     "id": "b160",
+     "say": "Which habit should we cover next?"
+    },
+    {
+     "id": "b161",
+     "say": "Drop it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "one last *surprise*",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b147:surprise",
+     "out": "b148"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "2018 · 486 PEOPLE",
+     "text": "Small talk, revisited",
+     "sub": "Milek et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b148:study",
+     "out": "b151"
+    },
+    {
+     "t": "bar",
+     "id": "bar1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 340,
+     "color": "accent",
+     "label": "deep talk: happier",
+     "from": "draw",
+     "at": "b149:deep",
+     "out": "b152"
+    },
+    {
+     "t": "bar",
+     "id": "bar2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 20,
+     "color": "muted",
+     "label": "small talk: no effect",
+     "from": "draw",
+     "at": "b150:unhappy",
+     "out": "b152"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "didn't help · didn't *hurt*",
+     "x": 960,
+     "y": 340,
+     "size": 60,
+     "from": "bottom",
+     "at": "b151:hurt",
+     "out": "b152",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "never the !enemy!",
+     "x": 960,
+     "y": 480,
+     "size": 130,
+     "from": "slam",
+     "at": "b152:enemy",
+     "out": "b153",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "door",
+     "name": "door",
+     "x": 1100,
+     "y": 560,
+     "size": 300,
+     "from": "pop",
+     "at": "b153:doorway",
+     "out": "b158"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "it's the *doorway*",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "slam",
+     "at": "b153:doorway",
+     "out": "b155",
+     "hero": true
+    },
+    {
+     "t": "bubble",
+     "id": "nw",
+     "text": "Nice weather.",
+     "x": 1560,
+     "y": 360,
+     "size": 260,
+     "from": "pop",
+     "at": "b154:nice",
+     "fontSize": 42,
+     "out": "b155"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "a check: *safe to be real*?",
+     "x": 960,
+     "y": 880,
+     "size": 64,
+     "from": "bottom",
+     "at": "b154:safe",
+     "out": "b155"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "they don't hate *people*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b155:people",
+     "out": "b156"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "they want to skip the *door*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b156:skip",
+     "out": "b157"
+    },
+    {
+     "t": "stick",
+     "id": "w",
+     "x": 600,
+     "y": 600,
+     "from": "left",
+     "at": "b157:walking",
+     "poses": [
+      [
+       "happy",
+       "b157:walking"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b157:walking"
+      ]
+     ],
+     "out": "b158"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "but you have to *walk through* it",
+     "x": 960,
+     "y": 940,
+     "size": 60,
+     "from": "bottom",
+     "at": "b157:walking",
+     "out": "b158"
+    },
+    {
+     "t": "icon",
+     "id": "chat",
+     "name": "chat",
+     "x": 960,
+     "y": 470,
+     "size": 260,
+     "from": "pop",
+     "at": "b158:hate"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "do you *hate* small talk?",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b158:hate"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "which habit *next*?",
+     "x": 960,
+     "y": 750,
+     "size": 80,
+     "from": "bottom",
+     "at": "b160:habit",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 880,
+     "size": 48,
+     "from": "bottom",
+     "at": "b161:comments",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}
