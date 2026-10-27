@@ -128,7 +128,7 @@ Half a billion dollars. For a show about selling paper.
 In 2021, the *Friends* cast came back for a reunion special, sitting on a copy of the original set.
 No new story. No new jokes. Just six older people in a familiar room, remembering.
 Millions tuned in to watch people rewatch their own show.
-That same year, *The Office* became America's most-streamed show, at about 57 billion minutes.
+Back in 2020, *The Office* was America's most-streamed show, at about 57 billion minutes.
 
 So what are we actually buying? Psychology gives three answers.
 
