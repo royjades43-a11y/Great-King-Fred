@@ -70,7 +70,7 @@ for (const sc of script.scenes)
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 const em = (s) => esc(s).replace(/!([^!]+)!/g, '<span class="r">$1</span>');
-const VIDEO = { left: 20, top: 450, w: 880, h: 528 }; // title-safe area of the 4K frame (x 480-3360, y 216-1944), clear of the button column
+const VIDEO = { left: 20, top: 450, w: 880, h: 528 }; // 4K frame x 240-3600, y 72-2088: wide enough for this video's widest headlines, clear of the button column
 
 for (const sh of shorts) {
   const w0 = beats[sh.from].first, w1 = beats[sh.to].last;
@@ -85,7 +85,7 @@ for (const sh of shorts) {
   const seg = join(dir, "assets/seg.mp4");
   if (!existsSync(seg))
     execFileSync("ffmpeg", ["-v", "error", "-y", "-ss", String(start), "-i", MASTER, "-t", String(dur),
-      "-vf", `crop=2880:1728:480:216,scale=${VIDEO.w}:${VIDEO.h}:flags=lanczos:in_color_matrix=bt709:out_color_matrix=bt709`, "-c:v", "libx264", "-crf", "12", "-preset", "medium", "-pix_fmt", "yuv420p",
+      "-vf", `crop=3360:2016:240:72,scale=${VIDEO.w}:${VIDEO.h}:flags=lanczos:in_color_matrix=bt709:out_color_matrix=bt709`, "-c:v", "libx264", "-crf", "12", "-preset", "medium", "-pix_fmt", "yuv420p",
       "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-color_range", "tv",
       "-af", `afade=t=in:d=0.12,afade=t=out:st=${(dur - 0.25).toFixed(2)}:d=0.25`, "-c:a", "aac", "-b:a", "320k", seg]);
 
