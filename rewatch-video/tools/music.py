@@ -60,7 +60,20 @@ PROG.update({
     "twist":   ["Dm", "F", "E", "Am"],
     "end":     ["F", "C", "G", "Am", "F", "C", "G", "C"],
 })
-DYN = {"forever": 0.8, "reverse": 0.8, "inside": 0.8, "twist": 0.85, "end": 1.0, "hook": 0.9, "choice": 0.8, "flood": 0.75, "child": 0.8, "layer": 0.75, "miss": 0.8, "try": 0.9, "watch": 1.0}
+PROG.update({
+    "origins":   ["Am", "Em", "F", "C", "Dm", "Am", "E", "E"],
+    "lucy":      ["C", "G", "Am", "F"],
+    "exposure":  ["F", "C", "G", "Am"],
+    "money":     ["C", "G", "Am", "F"],
+    "crack":     ["Dm", "Am", "E", "Am"],
+    "wars":      ["Am", "F", "C", "G"],
+    "answers":   ["F", "C", "Dm", "Am"],
+    "nostalgia": ["Dm", "F", "E", "Am"],
+    "timeline":  ["F", "C", "G", "Am"],
+    "mirror":    ["F", "C", "G", "Am", "F", "C", "G", "C"],
+})
+DYN = {"origins": 0.8, "lucy": 0.85, "exposure": 0.8, "money": 0.85, "crack": 0.75, "wars": 0.85, "answers": 0.8, "nostalgia": 0.8,
+       "timeline": 0.9, "mirror": 1.0, "forever": 0.8, "reverse": 0.8, "inside": 0.8, "twist": 0.85, "end": 1.0, "hook": 0.9, "choice": 0.8, "flood": 0.75, "child": 0.8, "layer": 0.75, "miss": 0.8, "try": 0.9, "watch": 1.0}
 
 def scenes():
     html = (ROOT / "index.html").read_text()

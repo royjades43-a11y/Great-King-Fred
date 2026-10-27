@@ -1,0 +1,213 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="mirror" data-width="1920" data-height="1080">
+    <div id="mirror-t0" class="clip el" data-start="0.2200000000000002" data-duration="1.74" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:2"><div id="mirror-t0-in" class="in"><div class="txt" style="font-size:100px;font-weight:800;color:var(--ink)"><span id="mirror-t0-w0" class="w">the</span> <span id="mirror-t0-w1" class="w">last</span> <span id="mirror-t0-w2" class="w acc">piece</span></div></div></div>
+    <div id="mirror-card" class="clip el" data-start="3.36" data-duration="7.015" data-track-index="2" style="position:absolute;left:0px;top:0px;width:1920px;height:460px;z-index:3"><div id="mirror-card-in" class="in"><div class="card"><div class="card-k">STUDY · 2012</div><div class="card-t">Why we go back</div><div class="card-s">Russell &amp; Levy</div></div></div></div>
+    <div id="mirror-i1" class="clip el" data-start="5.02" data-duration="5.355" data-track-index="3" style="position:absolute;left:0px;top:160px;width:1040px;height:920px;z-index:4" data-layout-allow-overlap><div id="mirror-i1-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 52 Q60 32 18 46 L18 168 Q60 154 100 174 Q140 154 182 168 L182 46 Q140 32 100 52 Z"/><path class="s" pathLength="1" d="M100 52 L100 174"/><path class="s acc-s" pathLength="1" d="M40 80 L80 86 M40 108 L80 114 M120 86 L160 80 M120 114 L160 108"/></svg></div></div></div>
+    <div id="mirror-i2" class="clip el" data-start="5.84" data-duration="4.535" data-track-index="4" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:5" data-layout-allow-overlap><div id="mirror-i2-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-80 0 a80 80 0 1 0 160 0 a80 80 0 1 0 -160 0"/><path class="s acc-s" pathLength="1" d="M100 100 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"/><path class="s" pathLength="1" d="M100 52 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M100 148 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M52 100 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M148 100 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0"/></svg></div></div></div>
+    <div id="mirror-i3" class="clip el" data-start="6.96" data-duration="3.415" data-track-index="5" style="position:absolute;left:880px;top:160px;width:1040px;height:920px;z-index:6" data-layout-allow-overlap><div id="mirror-i3-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 96 L100 30 L176 96 M44 80 L44 178 L156 178 L156 80"/></svg></div></div></div>
+    <div id="mirror-t1" class="clip el" data-start="8.06" data-duration="2.315" data-track-index="6" style="position:absolute;left:0px;top:640px;width:1920px;height:440px;z-index:7"><div id="mirror-t1-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="mirror-t1-w0" class="w">one</span> <span id="mirror-t1-w1" class="w">reason,</span> <span id="mirror-t1-w2" class="w acc">again</span> <span id="mirror-t1-w3" class="w acc">and</span> <span id="mirror-t1-w4" class="w acc">again</span></div></div></div>
+    <div id="mirror-t2" class="clip el" data-start="10.434999999999999" data-duration="2.64" data-track-index="7" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:8"><div id="mirror-t2-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="mirror-t2-w0" class="w">to</span> <span id="mirror-t2-w1" class="w">see</span> <span id="mirror-t2-w2" class="w">how</span> <span id="mirror-t2-w3" class="w acc">they</span> <span id="mirror-t2-w4" class="w">had</span> <span id="mirror-t2-w5" class="w">changed</span></div></div></div>
+    <div id="mirror-tv" class="clip el" data-start="13.035" data-duration="1.93" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:9" data-layout-allow-overlap><div id="mirror-tv-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 50 L176 50 Q186 50 186 60 L186 146 Q186 156 176 156 L24 156 Q14 156 14 146 L14 60 Q14 50 24 50 Z"/><path class="s" pathLength="1" d="M70 14 L100 46 L130 14"/><path class="s" pathLength="1" d="M60 156 L48 184 M140 156 L152 184"/></svg></div></div></div>
+    <div id="mirror-t3" class="clip el" data-start="12.975" data-duration="2.04" data-track-index="9" style="position:absolute;left:0px;top:600px;width:1920px;height:480px;z-index:10"><div id="mirror-t3-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="mirror-t3-w0" class="w">the</span> <span id="mirror-t3-w1" class="w">show</span> <span id="mirror-t3-w2" class="w">stays</span> <span id="mirror-t3-w3" class="w">the</span> <span id="mirror-t3-w4" class="w acc">same</span></div></div></div>
+    <div id="mirror-mi" class="clip el" data-start="15.835" data-duration="15.52" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:11" data-layout-allow-overlap><div id="mirror-mi-in" class="in"><div class="ico" style="width:340px;height:340px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 98 A60 78 0 1 0 160 98 A60 78 0 1 0 40 98"/><path class="s acc-s" pathLength="1" d="M70 64 Q80 48 98 42"/><path class="s" pathLength="1" d="M100 176 L100 194 M68 196 L132 196"/></svg></div></div></div>
+    <div id="mirror-t4" class="clip el" data-start="14.915" data-duration="1.82" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:12"><div id="mirror-t4-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="mirror-t4-w0" class="w">so</span> <span id="mirror-t4-w1" class="w">it's</span> <span id="mirror-t4-w2" class="w">a</span> <span id="mirror-t4-w3" class="w alm">mirror</span></div></div></div>
+    <div id="mirror-y" class="clip el" data-start="16.715" data-duration="14.69" data-track-index="12" style="position:absolute;left:0px;top:240px;width:1040px;height:840px;z-index:13"><div id="mirror-y-in" class="in"><svg class="stick" id="mirror-y-svg" width="225" height="390" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="mirror-y-aLu"><path class="s" d="M150 160 L150 255"/><g id="mirror-y-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="mirror-y-aRu"><path class="s" d="M150 160 L150 255"/><g id="mirror-y-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="mirror-y-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="mirror-y-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="mirror-y-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="mirror-y-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="mirror-y-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="mirror-y-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="mirror-o" class="clip el" data-start="18.555" data-duration="12.85" data-track-index="13" style="position:absolute;left:880px;top:200px;width:1040px;height:880px;z-index:14"><div id="mirror-o-in" class="in"><svg class="stick" id="mirror-o-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="mirror-o-aLu"><path class="s" d="M150 160 L150 255"/><g id="mirror-o-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="mirror-o-aRu"><path class="s" d="M150 160 L150 255"/><g id="mirror-o-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="mirror-o-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="mirror-o-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="mirror-o-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="mirror-o-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="mirror-o-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="mirror-o-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="mirror-t5" class="clip el" data-start="17.453" data-duration="2.94" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:15"><div id="mirror-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="mirror-t5-w0" class="w">the</span> <span id="mirror-t5-w1" class="w">joke</span> <span id="mirror-t5-w2" class="w">at</span> <span id="mirror-t5-w3" class="w acc">15</span> <span id="mirror-t5-w4" class="w">lands</span> <span id="mirror-t5-w5" class="w">at</span> <span id="mirror-t5-w6" class="w acc">25</span></div></div></div>
+    <div id="mirror-t6" class="clip el" data-start="20.433" data-duration="2.94" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:16"><div id="mirror-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="mirror-t6-w0" class="w">the</span> <span id="mirror-t6-w1" class="w">boss</span> <span id="mirror-t6-w2" class="w">looks</span> <span id="mirror-t6-w3" class="w">a</span> <span id="mirror-t6-w4" class="w">little</span> <span id="mirror-t6-w5" class="w">like</span> <span id="mirror-t6-w6" class="w acc">you</span></div></div></div>
+    <div id="mirror-t7" class="clip el" data-start="24.873" data-duration="2.94" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:17"><div id="mirror-t7-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="mirror-t7-w0" class="w">the</span> <span id="mirror-t7-w1" class="w">annoying</span> <span id="mirror-t7-w2" class="w">one</span> <span id="mirror-t7-w3" class="w">was</span> <span id="mirror-t7-w4" class="w">the</span> <span id="mirror-t7-w5" class="w">most</span> <span id="mirror-t7-w6" class="w acc">honest</span></div></div></div>
+    <div id="mirror-t8" class="clip el" data-start="28.765" data-duration="2.64" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:18"><div id="mirror-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="mirror-t8-w0" class="w">a</span> <span id="mirror-t8-w1" class="w">sad</span> <span id="mirror-t8-w2" class="w">moment</span> <span id="mirror-t8-w3" class="w">you've</span> <span id="mirror-t8-w4" class="w">now</span> <span id="mirror-t8-w5" class="w acc">lived</span></div></div></div>
+    <div id="mirror-t9" class="clip el" data-start="31.305" data-duration="1.51" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:19"><div id="mirror-t9-in" class="in"><div class="txt hero" style="font-size:130px;font-weight:800;color:var(--ink)"><span id="mirror-t9-w0" class="w">here's</span> <span id="mirror-t9-w1" class="w">the</span> <span id="mirror-t9-w2" class="w alm">twist</span></div></div></div>
+    <div id="mirror-t10" class="clip el" data-start="32.765" data-duration="2.41" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:20"><div id="mirror-t10-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="mirror-t10-w0" class="w">you've</span> <span id="mirror-t10-w1" class="w">never</span> <span id="mirror-t10-w2" class="w">watched</span> <span id="mirror-t10-w3" class="w">the</span> <span id="mirror-t10-w4" class="w">same</span> <span id="mirror-t10-w5" class="w">show</span> <span id="mirror-t10-w6" class="w acc">twice</span></div></div></div>
+    <div id="mirror-t11" class="clip el" data-start="35.205" data-duration="4.555" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:840px;z-index:21"><div id="mirror-t11-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="mirror-t11-w0" class="w">the</span> <span id="mirror-t11-w1" class="w">episode</span> <span id="mirror-t11-w2" class="w">didn't</span> <span id="mirror-t11-w3" class="w">change.</span></div></div></div>
+    <div id="mirror-t12" class="clip el" data-start="37.065" data-duration="2.645" data-track-index="21" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:22"><div id="mirror-t12-in" class="in"><div class="txt hero" style="font-size:150px;font-weight:800;color:var(--ink)"><span id="mirror-t12-w0" class="w acc">you</span> <span id="mirror-t12-w1" class="w">did.</span></div></div></div>
+    <div id="mirror-rep" class="clip el" data-start="41.88" data-duration="8.94" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:940px;z-index:23" data-layout-allow-overlap><div id="mirror-rep-in" class="in"><div class="ico" style="width:280px;height:280px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 50 L176 50 Q186 50 186 60 L186 146 Q186 156 176 156 L24 156 Q14 156 14 146 L14 60 Q14 50 24 50 Z"/><path class="s" pathLength="1" d="M70 14 L100 46 L130 14"/><path class="s" pathLength="1" d="M60 156 L48 184 M140 156 L152 184"/><path class="s alm-s" pathLength="1" d="M128 84 A30 30 0 1 0 130 120"/><path class="s alm-s" pathLength="1" d="M110 80 L130 84 L128 64"/></svg></div></div></div>
+    <div id="mirror-t13" class="clip el" data-start="42.52" data-duration="8.375" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:24"><div id="mirror-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="mirror-t13-w0" class="w">which</span> <span id="mirror-t13-w1" class="w">show</span> <span id="mirror-t13-w2" class="w">have</span> <span id="mirror-t13-w3" class="w">you</span> <span id="mirror-t13-w4" class="w acc">rewatched</span> <span id="mirror-t13-w5" class="w acc">most<span class="tail">?</span></span></div></div></div>
+    <div id="mirror-t14" class="clip el" data-start="45.36" data-duration="5.56" data-track-index="24" style="position:absolute;left:0px;top:420px;width:1920px;height:660px;z-index:25"><div id="mirror-t14-in" class="in"><div class="txt hero" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="mirror-t14-w0" class="w">which</span> <span id="mirror-t14-w1" class="w">habit</span> <span id="mirror-t14-w2" class="w acc">next<span class="tail">?</span></span></div></div></div>
+    <div id="mirror-t15" class="clip el" data-start="47.7" data-duration="3.245" data-track-index="25" style="position:absolute;left:0px;top:680px;width:1920px;height:400px;z-index:26"><div id="mirror-t15-in" class="in"><div class="txt" style="font-size:48px;font-weight:600;color:var(--muted)"><span id="mirror-t15-w0" class="w">@darealwhy</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"mirror-t0","t":"text","from":"top","exit":null,"in":0.2200000000000002,"out":1.62,"outDur":0.3,"words":[0.54,0.64,0.98]},{"id":"mirror-card","t":"card","from":"top","exit":null,"in":3.36,"out":10.035,"outDur":0.3},{"id":"mirror-i1","t":"icon","from":"left","exit":null,"in":5.02,"out":10.035,"outDur":0.3},{"id":"mirror-i2","t":"icon","from":"bottom","exit":null,"in":5.84,"out":10.035,"outDur":0.3},{"id":"mirror-i3","t":"icon","from":"right","exit":null,"in":6.96,"out":10.035,"outDur":0.3},{"id":"mirror-t1","t":"text","from":"bottom","exit":null,"in":8.06,"out":10.035,"outDur":0.3,"words":[8.06,8.26,9.1,9.4,9.6]},{"id":"mirror-t2","t":"text","from":"top","exit":null,"in":10.434999999999999,"out":12.735,"outDur":0.3,"words":[11.015,11.235,11.435,11.655,11.855,12.015]},{"id":"mirror-tv","t":"icon","from":"pop","exit":null,"in":13.035,"out":14.674999999999999,"outDur":0.25},{"id":"mirror-t3","t":"text","from":"bottom","exit":null,"in":12.975,"out":14.674999999999999,"outDur":0.3,"words":[12.975,13.035,13.255,14.215,14.435]},{"id":"mirror-mi","t":"icon","from":"pop","exit":null,"in":15.835,"out":31.065,"outDur":0.25},{"id":"mirror-t4","t":"text","from":"top","exit":null,"in":14.915,"out":16.395000000000003,"outDur":0.3,"words":[14.915,15.015,15.695,15.835]},{"id":"mirror-y","t":"stick","from":"left","exit":null,"in":16.715,"out":31.065,"outDur":0.3,"poses":[["shrug",16.715],["happy",17.995]],"mouth":[["o",16.715],["smile",17.995]]},{"id":"mirror-o","t":"stick","from":"right","exit":null,"in":18.555,"out":31.065,"outDur":0.3,"poses":[["happy",18.555],["point",20.693],["proud",26.513],["headDown",28.233]],"mouth":[["smile",18.555],["o",20.693],["smile",26.513],["neutral",28.233]]},{"id":"mirror-t5","t":"text","from":"top","exit":null,"in":17.453,"out":20.053,"outDur":0.3,"words":[16.635,16.715,17.535,17.635,17.995,18.335,18.435]},{"id":"mirror-t6","t":"text","from":"top","exit":null,"in":20.433,"out":23.033,"outDur":0.3,"words":[20.293,20.433,22.033,22.173,22.273,22.393,22.613]},{"id":"mirror-t7","t":"text","from":"top","exit":null,"in":24.873,"out":27.473000000000003,"outDur":0.3,"words":[23.273,23.373,26.933,27.033,27.133,27.233,27.333]},{"id":"mirror-t8","t":"text","from":"top","exit":null,"in":28.765,"out":31.065,"outDur":0.3,"words":[28.033,28.233,28.553,30.413,30.513,30.813]},{"id":"mirror-t9","t":"text","from":"slam","exit":null,"in":31.305,"out":32.525,"outDur":0.25,"words":[31.545,31.925,32.045]},{"id":"mirror-t10","t":"text","from":"blur","exit":null,"in":32.765,"out":34.885,"outDur":0.25,"words":[34.365,32.945,33.125,33.545,33.745,33.965,34.265]},{"id":"mirror-t11","t":"text","from":"top","exit":null,"in":35.205,"out":39.419999999999995,"outDur":0.3,"words":[35.125,35.205,35.565,35.965]},{"id":"mirror-t12","t":"text","from":"slam","exit":null,"in":37.065,"out":39.419999999999995,"outDur":0.25,"words":[37.165,38.045]},{"id":"mirror-rep","t":"icon","from":"pop","exit":null,"in":41.88,"out":50.529999999999994,"outDur":0.25},{"id":"mirror-t13","t":"text","from":"top","exit":null,"in":42.52,"out":50.55499999999999,"outDur":0.3,"words":[41.68,41.88,41.98,42.08,42.52,43.14]},{"id":"mirror-t14","t":"text","from":"bottom","exit":null,"in":45.36,"out":50.58,"outDur":0.3,"words":[45.16,45.36,46.24]},{"id":"mirror-t15","t":"text","from":"bottom","exit":null,"in":47.7,"out":50.605,"outDur":0.3,"words":[47.8]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["mirror"] = tl;
+    })();
+  </script>
+</template>

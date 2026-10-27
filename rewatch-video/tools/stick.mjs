@@ -32,15 +32,16 @@ export function stickSvg(pid, el) {
   const bow = el.variant === "bow"
     ? `<path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>`
     : "";
+  const hat = el.hat ? `<path class="f" d="M92 38 Q150 2 208 38 L214 52 L86 52 Z"/><path class="s" d="M84 54 L216 54"/>` : "";
   return `<svg class="stick" id="${pid}-svg" width="${300 * s}" height="${520 * s}" viewBox="0 0 300 520">
-  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  ${el.sit ? "" : `<ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>`}
   <g${flip}>
     <path class="s" d="M150 140 L150 300"/>
-    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    ${el.sit ? `<path class="s" d="M150 300 L104 332 L100 424"/><path class="s" d="M150 300 L196 332 L200 424"/>` : `<path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>`}
     <g id="${pid}-aLu"><path class="s" d="M150 160 L150 255"/><g id="${pid}-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
     <g id="${pid}-aRu"><path class="s" d="M150 160 L150 255"/>${el.tattoo ? `<path class="tat" d="M150 196 C138 182 124 196 150 222 C176 196 162 182 150 196 Z"/>` : ""}<g id="${pid}-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
     <g id="${pid}-hd">
-      <circle class="s face" cx="150" cy="80" r="56"/>${bow}
+      <circle class="s face" cx="150" cy="80" r="56"/>${bow}${hat}
       <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
       ${MOUTHS.map((m) => `<g id="${pid}-m-${m}">${mouthPaths[m]}</g>`).join("")}
     </g>

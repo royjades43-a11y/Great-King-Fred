@@ -1,0 +1,5656 @@
+{
+ "title": "The Psychology of People Who Rewatch the Same Shows",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "In twenty twenty, Americans spent fifty-seven billion minutes watching one show."
+    },
+    {
+     "id": "b01",
+     "say": "It wasn't new."
+    },
+    {
+     "id": "b02",
+     "say": "It was The Office, a sitcom that had ended seven years earlier."
+    },
+    {
+     "id": "b03",
+     "say": "It's a show about a paper company."
+    },
+    {
+     "id": "b04",
+     "say": "About people who are bored at work."
+    },
+    {
+     "id": "b05",
+     "say": "And millions of people picked it, again and again, over everything new on the planet."
+    },
+    {
+     "id": "b06",
+     "say": "By the end of this video, you'll know exactly why your brain keeps pressing replay."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "tv",
+     "name": "tv",
+     "x": 960,
+     "y": 640,
+     "size": 380,
+     "from": "none",
+     "at": "b00:start",
+     "out": "b03",
+     "startAtZero": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "!57 billion! minutes",
+     "x": 960,
+     "y": 230,
+     "size": 110,
+     "from": "slam",
+     "at": "b00:fifty",
+     "out": "b01",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "not *new*",
+     "x": 960,
+     "y": 230,
+     "size": 90,
+     "from": "top",
+     "at": "b01:new",
+     "out": "b02"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "*The Office* · ended 7 years earlier",
+     "x": 960,
+     "y": 230,
+     "size": 64,
+     "from": "top",
+     "at": "b02:office",
+     "out": "b03"
+    },
+    {
+     "t": "icon",
+     "id": "paper",
+     "name": "paper",
+     "x": 560,
+     "y": 620,
+     "size": 260,
+     "from": "left",
+     "at": "b03:paper",
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "a show about *paper*",
+     "x": 960,
+     "y": 210,
+     "size": 72,
+     "from": "top",
+     "at": "b03:paper",
+     "out": "b04"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 1340,
+     "y": 640,
+     "from": "right",
+     "at": "b04:people",
+     "poses": [
+      [
+       "headDown",
+       "b04:people"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b04:people"
+      ],
+      [
+       "frown",
+       "b04:bored"
+      ]
+     ],
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "people *bored* at work",
+     "x": 960,
+     "y": 210,
+     "size": 72,
+     "from": "top",
+     "at": "b04:bored",
+     "out": "b05"
+    },
+    {
+     "t": "stick",
+     "id": "p0",
+     "x": 360,
+     "y": 680,
+     "from": "bottom",
+     "at": "b05:millions",
+     "poses": [
+      [
+       "idle",
+       "b05:millions"
+      ],
+      [
+       "happy",
+       "b05:again"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b05:millions"
+      ]
+     ],
+     "out": "b06",
+     "scale": 0.6,
+     "flip": false,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "p1",
+     "x": 660,
+     "y": 680,
+     "from": "bottom",
+     "at": "b05:millions",
+     "poses": [
+      [
+       "idle",
+       "b05:millions"
+      ],
+      [
+       "happy",
+       "b05:again"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b05:millions"
+      ]
+     ],
+     "out": "b06",
+     "scale": 0.6,
+     "flip": true,
+     "delay": 0.06
+    },
+    {
+     "t": "stick",
+     "id": "p2",
+     "x": 960,
+     "y": 680,
+     "from": "bottom",
+     "at": "b05:millions",
+     "poses": [
+      [
+       "idle",
+       "b05:millions"
+      ],
+      [
+       "happy",
+       "b05:again"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b05:millions"
+      ]
+     ],
+     "out": "b06",
+     "scale": 0.6,
+     "flip": false,
+     "delay": 0.12
+    },
+    {
+     "t": "stick",
+     "id": "p3",
+     "x": 1260,
+     "y": 680,
+     "from": "bottom",
+     "at": "b05:millions",
+     "poses": [
+      [
+       "idle",
+       "b05:millions"
+      ],
+      [
+       "happy",
+       "b05:again"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b05:millions"
+      ]
+     ],
+     "out": "b06",
+     "scale": 0.6,
+     "flip": true,
+     "delay": 0.18
+    },
+    {
+     "t": "stick",
+     "id": "p4",
+     "x": 1560,
+     "y": 680,
+     "from": "bottom",
+     "at": "b05:millions",
+     "poses": [
+      [
+       "idle",
+       "b05:millions"
+      ],
+      [
+       "happy",
+       "b05:again"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b05:millions"
+      ]
+     ],
+     "out": "b06",
+     "scale": 0.6,
+     "flip": false,
+     "delay": 0.24
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "again and *again*",
+     "x": 960,
+     "y": 230,
+     "size": 90,
+     "from": "top",
+     "at": "b05:again",
+     "out": "b06"
+    },
+    {
+     "t": "icon",
+     "id": "rep",
+     "name": "tvReplay",
+     "x": 960,
+     "y": 560,
+     "size": 360,
+     "from": "pop",
+     "at": "b06:brain"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "why your brain hits *replay*",
+     "x": 960,
+     "y": 860,
+     "size": 72,
+     "from": "bottom",
+     "at": "b06:replay"
+    }
+   ]
+  },
+  {
+   "id": "origins",
+   "beats": [
+    {
+     "id": "b07",
+     "say": "This story doesn't start with TV."
+    },
+    {
+     "id": "b08",
+     "say": "It starts in sixteen eighty-eight, with homesick soldiers."
+    },
+    {
+     "id": "b09",
+     "say": "A Swiss medical student named Yo-hahn-ess Hoffer noticed something strange about Swiss soldiers serving abroad."
+    },
+    {
+     "id": "b10",
+     "say": "They stopped eating."
+    },
+    {
+     "id": "b11",
+     "say": "They couldn't sleep."
+    },
+    {
+     "id": "b12",
+     "say": "Some grew so weak that doctors feared for their lives."
+    },
+    {
+     "id": "b13",
+     "say": "Hoffer gave the condition a name: nostalgia."
+    },
+    {
+     "id": "b14",
+     "say": "It comes from two Greek words, \"homecoming\" and \"pain.\""
+    },
+    {
+     "id": "b15",
+     "say": "He believed it was a disease of the brain."
+    },
+    {
+     "id": "b16",
+     "say": "Other doctors had their own theories."
+    },
+    {
+     "id": "b17",
+     "say": "Some blamed the endless clanging of cowbells in the Alps, which supposedly damaged the brain."
+    },
+    {
+     "id": "b18",
+     "say": "Others blamed the change in air pressure when people came down from the mountains."
+    },
+    {
+     "id": "b19",
+     "say": "The cures were rough."
+    },
+    {
+     "id": "b20",
+     "say": "Leeches."
+    },
+    {
+     "id": "b21",
+     "say": "Opium."
+    },
+    {
+     "id": "b22",
+     "say": "Or a ticket back to the Swiss mountains."
+    },
+    {
+     "id": "b23",
+     "say": "Legend says one Swiss folk song was banned in the army because it made soldiers want to desert."
+    },
+    {
+     "id": "b24",
+     "say": "So for about two hundred years, missing the past was treated like an illness."
+    },
+    {
+     "id": "b25",
+     "say": "During the American Civil War, army doctors recorded thousands of soldiers with nostalgia as their diagnosis."
+    },
+    {
+     "id": "b26",
+     "say": "Some even listed it as a cause of death."
+    },
+    {
+     "id": "b27",
+     "say": "Remember that."
+    },
+    {
+     "id": "b28",
+     "say": "Because today, it's one of the most valuable feelings on Earth."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "01",
+     "text": "It starts with *soldiers*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b07:start",
+     "out": "b08:sixteen"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "!1688!",
+     "x": 960,
+     "y": 470,
+     "size": 220,
+     "from": "slam",
+     "at": "b08:sixteen",
+     "out": "b08:soldiers",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "mt",
+     "name": "mountain",
+     "x": 1460,
+     "y": 330,
+     "size": 260,
+     "from": "right",
+     "at": "b08:homesick",
+     "out": "b13"
+    },
+    {
+     "t": "stick",
+     "id": "s0",
+     "x": 360,
+     "y": 650,
+     "from": "left",
+     "at": "b08:soldiers",
+     "poses": [
+      [
+       "idle",
+       "b08:soldiers"
+      ],
+      [
+       "headDown",
+       "b10:stopped"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b08:soldiers"
+      ],
+      [
+       "frown",
+       "b10:stopped"
+      ]
+     ],
+     "out": "b13",
+     "scale": 0.82,
+     "hat": true,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "s1",
+     "x": 590,
+     "y": 650,
+     "from": "left",
+     "at": "b08:soldiers",
+     "poses": [
+      [
+       "idle",
+       "b08:soldiers"
+      ],
+      [
+       "headDown",
+       "b10:stopped"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b08:soldiers"
+      ],
+      [
+       "frown",
+       "b10:stopped"
+      ]
+     ],
+     "out": "b13",
+     "scale": 0.82,
+     "hat": true,
+     "delay": 0.08
+    },
+    {
+     "t": "stick",
+     "id": "s2",
+     "x": 820,
+     "y": 650,
+     "from": "left",
+     "at": "b08:soldiers",
+     "poses": [
+      [
+       "idle",
+       "b08:soldiers"
+      ],
+      [
+       "headDown",
+       "b10:stopped"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b08:soldiers"
+      ],
+      [
+       "frown",
+       "b10:stopped"
+      ]
+     ],
+     "out": "b13",
+     "scale": 0.82,
+     "hat": true,
+     "delay": 0.16
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "SWITZERLAND · 1688",
+     "text": "Johannes Hofer",
+     "sub": "a medical student",
+     "x": 1400,
+     "y": 640,
+     "from": "top",
+     "at": "b09:student",
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "e1",
+     "text": "stopped *eating*",
+     "x": 1400,
+     "y": 600,
+     "size": 64,
+     "from": "right",
+     "at": "b10:eating",
+     "out": "b13"
+    },
+    {
+     "t": "text",
+     "id": "e2",
+     "text": "couldn't *sleep*",
+     "x": 1400,
+     "y": 700,
+     "size": 64,
+     "from": "right",
+     "at": "b11:sleep",
+     "out": "b13"
+    },
+    {
+     "t": "text",
+     "id": "e3",
+     "text": "so !weak! doctors feared",
+     "x": 1400,
+     "y": 800,
+     "size": 52,
+     "from": "bottom",
+     "at": "b12:weak",
+     "out": "b13",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "NOSTALGIA",
+     "x": 960,
+     "y": 330,
+     "size": 170,
+     "from": "slam",
+     "at": "b13:nostalgia",
+     "out": "b15",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "g1",
+     "text": "nostos · *homecoming*",
+     "x": 600,
+     "y": 600,
+     "size": 60,
+     "from": "left",
+     "at": "b14:homecoming",
+     "out": "b15"
+    },
+    {
+     "t": "text",
+     "id": "g2",
+     "text": "algos · !pain!",
+     "x": 1320,
+     "y": 600,
+     "size": 60,
+     "from": "right",
+     "at": "b14:pain",
+     "out": "b15"
+    },
+    {
+     "t": "icon",
+     "id": "brain",
+     "name": "brain",
+     "x": 960,
+     "y": 560,
+     "size": 300,
+     "from": "pop",
+     "at": "b15:disease",
+     "out": "b16"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "a disease of the !brain!",
+     "x": 960,
+     "y": 860,
+     "size": 72,
+     "from": "bottom",
+     "at": "b15:brain",
+     "out": "b16"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "other *theories*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b16:theories",
+     "out": "b19"
+    },
+    {
+     "t": "icon",
+     "id": "bell",
+     "name": "bell",
+     "x": 600,
+     "y": 540,
+     "size": 260,
+     "from": "left",
+     "at": "b17:cowbells",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "*cowbells*",
+     "x": 600,
+     "y": 800,
+     "size": 60,
+     "from": "bottom",
+     "at": "b17:cowbells",
+     "out": "b19"
+    },
+    {
+     "t": "icon",
+     "id": "mt2",
+     "name": "mountain",
+     "x": 1320,
+     "y": 540,
+     "size": 280,
+     "from": "right",
+     "at": "b18:pressure",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "*air pressure*",
+     "x": 1320,
+     "y": 800,
+     "size": 60,
+     "from": "bottom",
+     "at": "b18:pressure",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "the *cures*",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b19:cures",
+     "out": "b23"
+    },
+    {
+     "t": "icon",
+     "id": "c1",
+     "name": "leech",
+     "x": 460,
+     "y": 540,
+     "size": 240,
+     "from": "left",
+     "at": "b20:leeches",
+     "out": "b23"
+    },
+    {
+     "t": "icon",
+     "id": "c2",
+     "name": "bottle",
+     "x": 960,
+     "y": 540,
+     "size": 240,
+     "from": "top",
+     "at": "b21:opium",
+     "out": "b23"
+    },
+    {
+     "t": "icon",
+     "id": "c3",
+     "name": "ticket",
+     "x": 1460,
+     "y": 540,
+     "size": 260,
+     "from": "right",
+     "at": "b22:ticket",
+     "out": "b23"
+    },
+    {
+     "t": "text",
+     "id": "c1l",
+     "text": "leeches",
+     "x": 460,
+     "y": 780,
+     "size": 56,
+     "from": "bottom",
+     "at": "b20:leeches",
+     "out": "b23"
+    },
+    {
+     "t": "text",
+     "id": "c2l",
+     "text": "opium",
+     "x": 960,
+     "y": 780,
+     "size": 56,
+     "from": "bottom",
+     "at": "b21:opium",
+     "out": "b23"
+    },
+    {
+     "t": "text",
+     "id": "c3l",
+     "text": "a trip *home*",
+     "x": 1460,
+     "y": 780,
+     "size": 56,
+     "from": "bottom",
+     "at": "b22:ticket",
+     "out": "b23"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "legend says…",
+     "x": 960,
+     "y": 200,
+     "size": 60,
+     "from": "top",
+     "at": "b23:legend",
+     "out": "b24",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "note",
+     "name": "note",
+     "x": 960,
+     "y": 520,
+     "size": 280,
+     "from": "pop",
+     "at": "b23:song",
+     "out": "b24"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 960,
+     "y": 520,
+     "w": 330,
+     "at": "b23:banned",
+     "out": "b24"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "a song, !banned!",
+     "x": 960,
+     "y": 800,
+     "size": 72,
+     "from": "bottom",
+     "at": "b23:banned",
+     "out": "b24"
+    },
+    {
+     "t": "icon",
+     "id": "glass",
+     "name": "hourglass",
+     "x": 960,
+     "y": 520,
+     "size": 240,
+     "from": "pop",
+     "at": "b24:years",
+     "out": "b25"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "*200 years* as an illness",
+     "x": 960,
+     "y": 820,
+     "size": 72,
+     "from": "bottom",
+     "at": "b24:hundred",
+     "out": "b25"
+    },
+    {
+     "t": "card",
+     "id": "card2",
+     "kicker": "AMERICAN CIVIL WAR",
+     "text": "Diagnosis: nostalgia",
+     "sub": "thousands of soldiers",
+     "x": 960,
+     "y": 300,
+     "from": "top",
+     "at": "b25:civil",
+     "out": "b27"
+    },
+    {
+     "t": "stick",
+     "id": "cw0",
+     "x": 560,
+     "y": 760,
+     "from": "bottom",
+     "at": "b25:soldiers",
+     "poses": [
+      [
+       "headDown",
+       "b25:soldiers"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b25:soldiers"
+      ]
+     ],
+     "out": "b26",
+     "scale": 0.5,
+     "hat": true,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "cw1",
+     "x": 960,
+     "y": 760,
+     "from": "bottom",
+     "at": "b25:soldiers",
+     "poses": [
+      [
+       "headDown",
+       "b25:soldiers"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b25:soldiers"
+      ]
+     ],
+     "out": "b26",
+     "scale": 0.5,
+     "hat": true,
+     "delay": 0.08
+    },
+    {
+     "t": "stick",
+     "id": "cw2",
+     "x": 1360,
+     "y": 760,
+     "from": "bottom",
+     "at": "b25:soldiers",
+     "poses": [
+      [
+       "headDown",
+       "b25:soldiers"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b25:soldiers"
+      ]
+     ],
+     "out": "b26",
+     "scale": 0.5,
+     "hat": true,
+     "delay": 0.16
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "even a cause of !death!",
+     "x": 960,
+     "y": 660,
+     "size": 72,
+     "from": "bottom",
+     "at": "b26:death",
+     "out": "b27"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "remember that",
+     "x": 960,
+     "y": 330,
+     "size": 80,
+     "from": "top",
+     "at": "b27:remember"
+    },
+    {
+     "t": "icon",
+     "id": "money",
+     "name": "money",
+     "x": 960,
+     "y": 600,
+     "size": 260,
+     "from": "pop",
+     "at": "b28:valuable"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "today: one of the most *valuable* feelings",
+     "x": 960,
+     "y": 860,
+     "size": 60,
+     "from": "bottom",
+     "at": "b28:valuable"
+    }
+   ]
+  },
+  {
+   "id": "lucy",
+   "beats": [
+    {
+     "id": "b29",
+     "say": "Jump to nineteen fifty-one, Hollywood."
+    },
+    {
+     "id": "b30",
+     "say": "A married couple is about to change television forever."
+    },
+    {
+     "id": "b31",
+     "say": "Lucille Ball and Dezzy Arnaz wanted to make a sitcom together."
+    },
+    {
+     "id": "b32",
+     "say": "The network, CBS, wanted it performed live in New York."
+    },
+    {
+     "id": "b33",
+     "say": "Dezzy said no."
+    },
+    {
+     "id": "b34",
+     "say": "They would film it in Los Angeles, on real film, with three cameras."
+    },
+    {
+     "id": "b35",
+     "say": "That cost more money."
+    },
+    {
+     "id": "b36",
+     "say": "So Dezzy made a deal."
+    },
+    {
+     "id": "b37",
+     "say": "His company, Dessy-loo, would cover the extra cost."
+    },
+    {
+     "id": "b38",
+     "say": "In return, Dessy-loo would own the films."
+    },
+    {
+     "id": "b39",
+     "say": "CBS agreed."
+    },
+    {
+     "id": "b40",
+     "say": "For CBS, it may be one of the worst deals in TV history."
+    },
+    {
+     "id": "b41",
+     "say": "Because film can be shown again."
+    },
+    {
+     "id": "b42",
+     "say": "And again."
+    },
+    {
+     "id": "b43",
+     "say": "And again."
+    },
+    {
+     "id": "b44",
+     "say": "I Love Lucy became the blueprint for the ree-run."
+    },
+    {
+     "id": "b45",
+     "say": "And here's a human detail."
+    },
+    {
+     "id": "b46",
+     "say": "When Lucille got pregnant, the network wouldn't let anyone say \"pregnant\" on air."
+    },
+    {
+     "id": "b47",
+     "say": "The scripts had to say \"expecting\" instead."
+    },
+    {
+     "id": "b48",
+     "say": "Then their real son was born on the same day the TV baby arrived on screen."
+    },
+    {
+     "id": "b49",
+     "say": "That night, about forty-four million Americans watched Lucy's TV baby arrive, more than watched Eisenhower's inauguration the next day."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "02",
+     "text": "The birth of the *rerun*",
+     "x": 960,
+     "y": 540,
+     "from": "right",
+     "at": "b29:start",
+     "out": "b30:married"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "!1951! · Hollywood",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b30:couple",
+     "out": "b31"
+    },
+    {
+     "t": "stick",
+     "id": "lu",
+     "x": 760,
+     "y": 650,
+     "from": "left",
+     "at": "b30:couple",
+     "poses": [
+      [
+       "idle",
+       "b30:couple"
+      ],
+      [
+       "happy",
+       "b31:sitcom"
+      ],
+      [
+       "idle",
+       "b32:network"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b30:couple"
+      ]
+     ],
+     "out": "b34",
+     "variant": "bow"
+    },
+    {
+     "t": "stick",
+     "id": "de",
+     "x": 1160,
+     "y": 650,
+     "from": "right",
+     "at": "b30:couple",
+     "poses": [
+      [
+       "idle",
+       "b30:couple"
+      ],
+      [
+       "happy",
+       "b31:sitcom"
+      ],
+      [
+       "armsCrossed",
+       "b33:said"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b30:couple"
+      ],
+      [
+       "tight",
+       "b33:said"
+      ]
+     ],
+     "out": "b34",
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "*Lucille Ball* & *Desi Arnaz*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b31:lucille",
+     "out": "b32"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "CBS: perform it *live*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b32:live",
+     "out": "b33"
+    },
+    {
+     "t": "text",
+     "id": "no",
+     "text": "!NO!",
+     "x": 1500,
+     "y": 300,
+     "size": 150,
+     "from": "slam",
+     "at": "b33:no",
+     "out": "b34",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "real *film*, *three cameras*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b34:film",
+     "out": "b35"
+    },
+    {
+     "t": "icon",
+     "id": "cam1",
+     "name": "camera",
+     "x": 520,
+     "y": 560,
+     "size": 240,
+     "from": "left",
+     "at": "b34:real",
+     "out": "b35"
+    },
+    {
+     "t": "icon",
+     "id": "cam2",
+     "name": "camera",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "bottom",
+     "at": "b34:three",
+     "out": "b35"
+    },
+    {
+     "t": "icon",
+     "id": "cam3",
+     "name": "camera",
+     "x": 1400,
+     "y": 560,
+     "size": 240,
+     "from": "right",
+     "at": "b34:cameras",
+     "out": "b35"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "costs !more!",
+     "x": 960,
+     "y": 470,
+     "size": 130,
+     "from": "slam",
+     "at": "b35:money",
+     "out": "b36",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "the *deal*",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b36:deal",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "d1",
+     "text": "Desilu pays the *extra*",
+     "x": 960,
+     "y": 450,
+     "size": 72,
+     "from": "left",
+     "at": "b37:cover",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "d2",
+     "text": "Desilu *owns the films*",
+     "x": 960,
+     "y": 580,
+     "size": 72,
+     "from": "right",
+     "at": "b38:own",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "reel0",
+     "name": "reel",
+     "x": 960,
+     "y": 790,
+     "size": 160,
+     "from": "pop",
+     "at": "b38:films",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "CBS: *agreed*",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b39:agreed",
+     "out": "b40"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "worst deal in TV !history!",
+     "x": 960,
+     "y": 500,
+     "size": 96,
+     "from": "slam",
+     "at": "b40:worst",
+     "out": "b41",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "r1",
+     "name": "reel",
+     "x": 480,
+     "y": 520,
+     "size": 240,
+     "from": "left",
+     "at": "b41:shown",
+     "out": "b44"
+    },
+    {
+     "t": "icon",
+     "id": "r2",
+     "name": "reel",
+     "x": 960,
+     "y": 520,
+     "size": 240,
+     "from": "top",
+     "at": "b42:again",
+     "out": "b44"
+    },
+    {
+     "t": "icon",
+     "id": "r3",
+     "name": "reel",
+     "x": 1440,
+     "y": 520,
+     "size": 240,
+     "from": "right",
+     "at": "b43:again",
+     "out": "b44"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "shown *again*",
+     "x": 960,
+     "y": 820,
+     "size": 72,
+     "from": "bottom",
+     "at": "b41:again",
+     "out": "b44"
+    },
+    {
+     "t": "icon",
+     "id": "rep",
+     "name": "tvReplay",
+     "x": 960,
+     "y": 560,
+     "size": 320,
+     "from": "pop",
+     "at": "b44:love",
+     "out": "b45"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "the blueprint for the *rerun*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b44:blueprint",
+     "out": "b45"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "a *human* detail",
+     "x": 960,
+     "y": 220,
+     "size": 80,
+     "from": "top",
+     "at": "b45:human",
+     "out": "b46"
+    },
+    {
+     "t": "stick",
+     "id": "lu2",
+     "x": 560,
+     "y": 650,
+     "from": "left",
+     "at": "b46:lucille",
+     "poses": [
+      [
+       "idle",
+       "b46:lucille"
+      ],
+      [
+       "shrug",
+       "b46:say"
+      ],
+      [
+       "happy",
+       "b48:son"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b46:lucille"
+      ],
+      [
+       "o",
+       "b46:say"
+      ],
+      [
+       "smile",
+       "b48:son"
+      ]
+     ],
+     "out": "b49",
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "w1",
+     "text": "!“pregnant”!",
+     "x": 1260,
+     "y": 420,
+     "size": 110,
+     "from": "right",
+     "at": "b46:pregnant#2",
+     "out": "b48"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 1260,
+     "y": 420,
+     "w": 560,
+     "at": "b46:air",
+     "out": "b48"
+    },
+    {
+     "t": "text",
+     "id": "w2",
+     "text": "*“expecting”*",
+     "x": 1260,
+     "y": 600,
+     "size": 110,
+     "from": "bottom",
+     "at": "b47:expecting",
+     "out": "b48"
+    },
+    {
+     "t": "icon",
+     "id": "baby",
+     "name": "baby",
+     "x": 1080,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b48:son",
+     "out": "b49"
+    },
+    {
+     "t": "icon",
+     "id": "tvb",
+     "name": "tv",
+     "x": 1500,
+     "y": 560,
+     "size": 260,
+     "from": "right",
+     "at": "b48:baby",
+     "out": "b49"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "real son · TV baby · *same day*",
+     "x": 1200,
+     "y": 840,
+     "size": 56,
+     "from": "bottom",
+     "at": "b48:same",
+     "out": "b49"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "!44 million! watched",
+     "x": 960,
+     "y": 420,
+     "size": 110,
+     "from": "slam",
+     "at": "b49:forty",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "more than *Eisenhower's inauguration*",
+     "x": 960,
+     "y": 640,
+     "size": 64,
+     "from": "bottom",
+     "at": "b49:eisenhower"
+    }
+   ]
+  },
+  {
+   "id": "exposure",
+   "beats": [
+    {
+     "id": "b50",
+     "say": "So why did people happily watch the same episodes twice?"
+    },
+    {
+     "id": "b51",
+     "say": "In nineteen sixty-eight, a psychologist named Robert Zye-onts found a clue."
+    },
+    {
+     "id": "b52",
+     "say": "He showed people made-up words and strange symbols."
+    },
+    {
+     "id": "b53",
+     "say": "Some appeared once."
+    },
+    {
+     "id": "b54",
+     "say": "Some appeared up to twenty-five times."
+    },
+    {
+     "id": "b55",
+     "say": "The more often people saw something, the more they liked it."
+    },
+    {
+     "id": "b56",
+     "say": "Even pure nonsense."
+    },
+    {
+     "id": "b57",
+     "say": "He called it the mere exposure effect."
+    },
+    {
+     "id": "b58",
+     "say": "Familiar feels safe."
+    },
+    {
+     "id": "b59",
+     "say": "And safe feels good."
+    },
+    {
+     "id": "b60",
+     "say": "Now, what happens if you build an entire show around repetition?"
+    },
+    {
+     "id": "b61",
+     "say": "In nineteen ninety-six, a kids' show called Blue's Clues tried exactly that."
+    },
+    {
+     "id": "b62",
+     "say": "It aired the same episode five days in a row."
+    },
+    {
+     "id": "b63",
+     "say": "Monday to Friday."
+    },
+    {
+     "id": "b64",
+     "say": "Same dog."
+    },
+    {
+     "id": "b65",
+     "say": "Same clues."
+    },
+    {
+     "id": "b66",
+     "say": "Same answers."
+    },
+    {
+     "id": "b67",
+     "say": "Adults assumed kids would get bored."
+    },
+    {
+     "id": "b68",
+     "say": "They didn't."
+    },
+    {
+     "id": "b69",
+     "say": "Researchers found that children understood more with each viewing, and joined in more by the end of the week."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 520,
+     "size": 260,
+     "from": "pop",
+     "at": "b50:why",
+     "out": "b51"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "why watch it *twice*?",
+     "x": 960,
+     "y": 820,
+     "size": 80,
+     "from": "bottom",
+     "at": "b50:twice",
+     "out": "b51"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "PSYCHOLOGY · 1968",
+     "text": "Robert Zajonc",
+     "sub": "made-up words & symbols",
+     "x": 960,
+     "y": 230,
+     "from": "top",
+     "at": "b51:psychologist",
+     "out": "b53"
+    },
+    {
+     "t": "text",
+     "id": "m1",
+     "text": "IKTITAF",
+     "x": 520,
+     "y": 600,
+     "size": 72,
+     "from": "left",
+     "at": "b52:made",
+     "out": "b53",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "m2",
+     "text": "AFWORBU",
+     "x": 960,
+     "y": 700,
+     "size": 72,
+     "from": "bottom",
+     "at": "b52:words",
+     "out": "b53",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "m3",
+     "text": "CIVADRA",
+     "x": 1400,
+     "y": 600,
+     "size": 72,
+     "from": "right",
+     "at": "b52:symbols",
+     "out": "b53",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "lk",
+     "text": "how much people *liked* it",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b53:once",
+     "out": "b57"
+    },
+    {
+     "t": "bar",
+     "id": "bar1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 90,
+     "color": "muted",
+     "label": "seen once",
+     "from": "draw",
+     "at": "b53:once",
+     "out": "b57"
+    },
+    {
+     "t": "bar",
+     "id": "bar2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 380,
+     "color": "accent",
+     "label": "seen 25 times",
+     "from": "draw",
+     "at": "b54:twenty",
+     "out": "b57"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "liked it *more*",
+     "x": 960,
+     "y": 300,
+     "size": 64,
+     "from": "bottom",
+     "at": "b55:liked",
+     "out": "b56",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "even !nonsense!",
+     "x": 960,
+     "y": 300,
+     "size": 64,
+     "from": "bottom",
+     "at": "b56:nonsense",
+     "out": "b57"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "the *mere exposure* effect",
+     "x": 960,
+     "y": 470,
+     "size": 96,
+     "from": "slam",
+     "at": "b57:mere",
+     "out": "b58",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "sh",
+     "name": "shield",
+     "x": 680,
+     "y": 520,
+     "size": 260,
+     "from": "left",
+     "at": "b58:familiar",
+     "out": "b60"
+    },
+    {
+     "t": "text",
+     "id": "f1",
+     "text": "familiar = *safe*",
+     "x": 680,
+     "y": 790,
+     "size": 64,
+     "from": "bottom",
+     "at": "b58:safe",
+     "out": "b60"
+    },
+    {
+     "t": "icon",
+     "id": "hr",
+     "name": "heart",
+     "x": 1240,
+     "y": 520,
+     "size": 220,
+     "from": "right",
+     "at": "b59:good",
+     "out": "b60",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "f2",
+     "text": "safe = *good*",
+     "x": 1240,
+     "y": 790,
+     "size": 64,
+     "from": "bottom",
+     "at": "b59:good",
+     "out": "b60"
+    },
+    {
+     "t": "icon",
+     "id": "loop",
+     "name": "loop",
+     "x": 960,
+     "y": 540,
+     "size": 260,
+     "from": "pop",
+     "at": "b60:repetition",
+     "out": "b61"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "a show built on *repetition*?",
+     "x": 960,
+     "y": 820,
+     "size": 72,
+     "from": "bottom",
+     "at": "b60:repetition",
+     "out": "b61"
+    },
+    {
+     "t": "card",
+     "id": "card2",
+     "kicker": "KIDS' TV · 1996",
+     "text": "Blue's Clues",
+     "sub": "the same episode, 5 days in a row",
+     "x": 960,
+     "y": 300,
+     "from": "top",
+     "at": "b61:called",
+     "out": "b63"
+    },
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 960,
+     "y": 640,
+     "size": 240,
+     "from": "bottom",
+     "at": "b62:five",
+     "out": "b64"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "MON → FRI",
+     "x": 960,
+     "y": 870,
+     "size": 72,
+     "from": "bottom",
+     "at": "b63:monday",
+     "out": "b64"
+    },
+    {
+     "t": "icon",
+     "id": "x1",
+     "name": "paw",
+     "x": 480,
+     "y": 520,
+     "size": 220,
+     "from": "left",
+     "at": "b64:dog",
+     "out": "b67"
+    },
+    {
+     "t": "icon",
+     "id": "x2",
+     "name": "question",
+     "x": 960,
+     "y": 520,
+     "size": 220,
+     "from": "top",
+     "at": "b65:clues",
+     "out": "b67"
+    },
+    {
+     "t": "icon",
+     "id": "x3",
+     "name": "check",
+     "x": 1440,
+     "y": 520,
+     "size": 220,
+     "from": "right",
+     "at": "b66:answers",
+     "out": "b67"
+    },
+    {
+     "t": "text",
+     "id": "x1l",
+     "text": "same *dog*",
+     "x": 480,
+     "y": 760,
+     "size": 56,
+     "from": "bottom",
+     "at": "b64:dog",
+     "out": "b67"
+    },
+    {
+     "t": "text",
+     "id": "x2l",
+     "text": "same *clues*",
+     "x": 960,
+     "y": 760,
+     "size": 56,
+     "from": "bottom",
+     "at": "b65:clues",
+     "out": "b67"
+    },
+    {
+     "t": "text",
+     "id": "x3l",
+     "text": "same *answers*",
+     "x": 1440,
+     "y": 760,
+     "size": 56,
+     "from": "bottom",
+     "at": "b66:answers",
+     "out": "b67"
+    },
+    {
+     "t": "stick",
+     "id": "ad",
+     "x": 460,
+     "y": 640,
+     "from": "left",
+     "at": "b67:adults",
+     "poses": [
+      [
+       "armsCrossed",
+       "b67:adults"
+      ],
+      [
+       "shrug",
+       "b68:didn't"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b67:adults"
+      ],
+      [
+       "o",
+       "b68:didn't"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "“kids will get *bored*”",
+     "x": 1180,
+     "y": 220,
+     "size": 64,
+     "from": "right",
+     "at": "b67:bored",
+     "out": "b68"
+    },
+    {
+     "t": "stick",
+     "id": "k0",
+     "x": 980,
+     "y": 700,
+     "from": "bottom",
+     "at": "b68:didn't",
+     "poses": [
+      [
+       "victory",
+       "b68:didn't"
+      ],
+      [
+       "happy",
+       "b69:understood"
+      ],
+      [
+       "victory",
+       "b69:joined"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b68:didn't"
+      ]
+     ],
+     "scale": 0.55,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "k1",
+     "x": 1240,
+     "y": 700,
+     "from": "bottom",
+     "at": "b68:didn't",
+     "poses": [
+      [
+       "victory",
+       "b68:didn't"
+      ],
+      [
+       "happy",
+       "b69:understood"
+      ],
+      [
+       "victory",
+       "b69:joined"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b68:didn't"
+      ]
+     ],
+     "scale": 0.55,
+     "delay": 0.07
+    },
+    {
+     "t": "stick",
+     "id": "k2",
+     "x": 1500,
+     "y": 700,
+     "from": "bottom",
+     "at": "b68:didn't",
+     "poses": [
+      [
+       "victory",
+       "b68:didn't"
+      ],
+      [
+       "happy",
+       "b69:understood"
+      ],
+      [
+       "victory",
+       "b69:joined"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b68:didn't"
+      ]
+     ],
+     "scale": 0.55,
+     "delay": 0.14
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "!they didn't!",
+     "x": 1240,
+     "y": 220,
+     "size": 96,
+     "from": "slam",
+     "at": "b68:didn't",
+     "out": "b69",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "understood *more* each time",
+     "x": 1240,
+     "y": 200,
+     "size": 60,
+     "from": "top",
+     "at": "b69:understood"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "joined in *more*",
+     "x": 1240,
+     "y": 300,
+     "size": 60,
+     "from": "top",
+     "at": "b69:joined"
+    }
+   ]
+  },
+  {
+   "id": "money",
+   "beats": [
+    {
+     "id": "b70",
+     "say": "Then came the money."
+    },
+    {
+     "id": "b71",
+     "say": "Friends ended in two thousand and four, and about fifty-two million Americans watched the final episode."
+    },
+    {
+     "id": "b72",
+     "say": "By then each of the six main actors earned about a million dollars per episode."
+    },
+    {
+     "id": "b73",
+     "say": "That's a lot to pay for one goodbye."
+    },
+    {
+     "id": "b74",
+     "say": "But the goodbye never really happened."
+    },
+    {
+     "id": "b75",
+     "say": "Thanks to ree-runs, the six friends stayed in the same coffee shop for decades."
+    },
+    {
+     "id": "b76",
+     "say": "Sine-feld, a show famously \"about nothing,\" has earned more than three billion dollars from ree-runs, by most estimates."
+    },
+    {
+     "id": "b77",
+     "say": "A show about nothing became one of the biggest money machines in TV."
+    },
+    {
+     "id": "b78",
+     "say": "So are we really paying for the jokes?"
+    },
+    {
+     "id": "b79",
+     "say": "Or for something deeper?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "mo",
+     "name": "money",
+     "x": 960,
+     "y": 560,
+     "size": 300,
+     "from": "pop",
+     "at": "b70:money",
+     "out": "b71"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "then came the *money*",
+     "x": 960,
+     "y": 830,
+     "size": 80,
+     "from": "bottom",
+     "at": "b70:money",
+     "out": "b71"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "!52 million! watched the finale",
+     "x": 960,
+     "y": 230,
+     "size": 80,
+     "from": "slam",
+     "at": "b71:fifty",
+     "out": "b72",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "tv",
+     "name": "tv",
+     "x": 960,
+     "y": 600,
+     "size": 300,
+     "from": "bottom",
+     "at": "b71:final",
+     "out": "b72"
+    },
+    {
+     "t": "stick",
+     "id": "f0",
+     "x": 330,
+     "y": 680,
+     "from": "bottom",
+     "at": "b72:six",
+     "poses": [
+      [
+       "idle",
+       "b72:six"
+      ],
+      [
+       "happy",
+       "b75:friends"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b72:six"
+      ]
+     ],
+     "out": "b76",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "f1",
+     "x": 582,
+     "y": 680,
+     "from": "bottom",
+     "at": "b72:six",
+     "poses": [
+      [
+       "idle",
+       "b72:six"
+      ],
+      [
+       "happy",
+       "b75:friends"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b72:six"
+      ]
+     ],
+     "out": "b76",
+     "scale": 0.55,
+     "flip": true,
+     "delay": 0.05
+    },
+    {
+     "t": "stick",
+     "id": "f2",
+     "x": 834,
+     "y": 680,
+     "from": "bottom",
+     "at": "b72:six",
+     "poses": [
+      [
+       "idle",
+       "b72:six"
+      ],
+      [
+       "happy",
+       "b75:friends"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b72:six"
+      ]
+     ],
+     "out": "b76",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.1
+    },
+    {
+     "t": "stick",
+     "id": "f3",
+     "x": 1086,
+     "y": 680,
+     "from": "bottom",
+     "at": "b72:six",
+     "poses": [
+      [
+       "idle",
+       "b72:six"
+      ],
+      [
+       "happy",
+       "b75:friends"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b72:six"
+      ]
+     ],
+     "out": "b76",
+     "scale": 0.55,
+     "flip": true,
+     "delay": 0.15000000000000002
+    },
+    {
+     "t": "stick",
+     "id": "f4",
+     "x": 1338,
+     "y": 680,
+     "from": "bottom",
+     "at": "b72:six",
+     "poses": [
+      [
+       "idle",
+       "b72:six"
+      ],
+      [
+       "happy",
+       "b75:friends"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b72:six"
+      ]
+     ],
+     "out": "b76",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.2
+    },
+    {
+     "t": "stick",
+     "id": "f5",
+     "x": 1590,
+     "y": 680,
+     "from": "bottom",
+     "at": "b72:six",
+     "poses": [
+      [
+       "idle",
+       "b72:six"
+      ],
+      [
+       "happy",
+       "b75:friends"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b72:six"
+      ]
+     ],
+     "out": "b76",
+     "scale": 0.55,
+     "flip": true,
+     "delay": 0.25
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "*$1 million* each, per episode",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b72:million",
+     "out": "b73"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "a lot for one *goodbye*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b73:goodbye",
+     "out": "b74"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "it never !happened!",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b74:never",
+     "out": "b75"
+    },
+    {
+     "t": "icon",
+     "id": "cup",
+     "name": "coffee",
+     "x": 960,
+     "y": 330,
+     "size": 200,
+     "from": "pop",
+     "at": "b75:coffee",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "same coffee shop, for *decades*",
+     "x": 960,
+     "y": 900,
+     "size": 64,
+     "from": "bottom",
+     "at": "b75:decades",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "!$3 billion!",
+     "x": 960,
+     "y": 380,
+     "size": 190,
+     "from": "slam",
+     "at": "b76:three",
+     "out": "b78",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "*Seinfeld*: a show about nothing",
+     "x": 960,
+     "y": 640,
+     "size": 64,
+     "from": "bottom",
+     "at": "b76:nothing",
+     "out": "b77"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "one of TV's biggest *money machines*",
+     "x": 960,
+     "y": 640,
+     "size": 64,
+     "from": "bottom",
+     "at": "b77:money",
+     "out": "b78"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "paying for the *jokes*?",
+     "x": 960,
+     "y": 300,
+     "size": 80,
+     "from": "top",
+     "at": "b78:jokes"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "heart",
+     "x": 960,
+     "y": 580,
+     "size": 200,
+     "from": "pop",
+     "at": "b79:deeper",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "or something !deeper!?",
+     "x": 960,
+     "y": 830,
+     "size": 80,
+     "from": "bottom",
+     "at": "b79:deeper"
+    }
+   ]
+  },
+  {
+   "id": "choice",
+   "beats": [
+    {
+     "id": "b80",
+     "say": "To answer that, look at what changed in our lives."
+    },
+    {
+     "id": "b81",
+     "say": "In the year two thousand, two researchers set up a jam-tasting table in a grocery store."
+    },
+    {
+     "id": "b82",
+     "say": "Some days the table offered twenty-four flavours."
+    },
+    {
+     "id": "b83",
+     "say": "Other days, just six."
+    },
+    {
+     "id": "b84",
+     "say": "The big table drew more shoppers."
+    },
+    {
+     "id": "b85",
+     "say": "But only about three percent of them bought a jar."
+    },
+    {
+     "id": "b86",
+     "say": "At the small table, about thirty percent bought one."
+    },
+    {
+     "id": "b87",
+     "say": "When there were too many options, people froze."
+    },
+    {
+     "id": "b88",
+     "say": "Later studies found the effect isn't always that strong."
+    },
+    {
+     "id": "b89",
+     "say": "But you've probably felt it."
+    },
+    {
+     "id": "b90",
+     "say": "Think about your streaming app."
+    },
+    {
+     "id": "b91",
+     "say": "Thousands of titles."
+    },
+    {
+     "id": "b92",
+     "say": "Endless rows of thumbnails."
+    },
+    {
+     "id": "b93",
+     "say": "How many nights have you scrolled for twenty minutes, then put on something you've seen ten times?"
+    },
+    {
+     "id": "b94",
+     "say": "Netflix even interrupts you with a question: \"Are you still watching?\""
+    },
+    {
+     "id": "b95",
+     "say": "The honest answer is usually yes."
+    },
+    {
+     "id": "b96",
+     "say": "For the fourth time this year."
+    },
+    {
+     "id": "b97",
+     "say": "Then there's loneliness."
+    },
+    {
+     "id": "b98",
+     "say": "In twenty twenty-three, the U. S. Surgeon General called loneliness an epidemic."
+    },
+    {
+     "id": "b99",
+     "say": "His report said about one in two American adults had experienced it."
+    },
+    {
+     "id": "b100",
+     "say": "And psychologists had already found a strange kind of relief."
+    },
+    {
+     "id": "b101",
+     "say": "In two thousand and nine, Jaye Derrick and her colleagues asked people to write about their favourite TV show."
+    },
+    {
+     "id": "b102",
+     "say": "Afterwards, people felt less lonely."
+    },
+    {
+     "id": "b103",
+     "say": "When people felt rejected, thinking about their favourite characters helped them recover."
+    },
+    {
+     "id": "b104",
+     "say": "The researchers called it social surrogacy."
+    },
+    {
+     "id": "b105",
+     "say": "Familiar characters work like stand-in friends."
+    },
+    {
+     "id": "b106",
+     "say": "Your brain knows the characters aren't real."
+    },
+    {
+     "id": "b107",
+     "say": "It just doesn't seem to care very much."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "03",
+     "text": "Too many *choices*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b80:start",
+     "out": "b81:year"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2000",
+     "text": "The jam experiment",
+     "sub": "Iyengar & Lepper",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b81:researchers",
+     "out": "b84"
+    },
+    {
+     "t": "icon",
+     "id": "j0",
+     "name": "jar",
+     "x": 960,
+     "y": 620,
+     "size": 220,
+     "from": "pop",
+     "at": "b81:jamtasting",
+     "out": "b82"
+    },
+    {
+     "t": "text",
+     "id": "j0l",
+     "text": "a *jam-tasting* table",
+     "x": 960,
+     "y": 860,
+     "size": 56,
+     "from": "bottom",
+     "at": "b81:table",
+     "out": "b82"
+    },
+    {
+     "t": "icon",
+     "id": "j1",
+     "name": "jar",
+     "x": 600,
+     "y": 600,
+     "size": 240,
+     "from": "left",
+     "at": "b82:twenty",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "j1l",
+     "text": "*24* jams",
+     "x": 600,
+     "y": 830,
+     "size": 64,
+     "from": "bottom",
+     "at": "b82:flavours",
+     "out": "b84"
+    },
+    {
+     "t": "icon",
+     "id": "j2",
+     "name": "jar",
+     "x": 1320,
+     "y": 600,
+     "size": 200,
+     "from": "right",
+     "at": "b83:six",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "j2l",
+     "text": "*6* jams",
+     "x": 1320,
+     "y": 830,
+     "size": 64,
+     "from": "bottom",
+     "at": "b83:six",
+     "out": "b84"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "the big table: more *shoppers*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b84:shoppers",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "t1b",
+     "text": "how many *bought* a jar",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b85:bought",
+     "out": "b87"
+    },
+    {
+     "t": "bar",
+     "id": "bar1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 36,
+     "color": "muted",
+     "label": "3% bought",
+     "from": "draw",
+     "at": "b85:three",
+     "out": "b87"
+    },
+    {
+     "t": "bar",
+     "id": "bar2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 360,
+     "color": "accent",
+     "label": "30% bought",
+     "from": "draw",
+     "at": "b86:thirty",
+     "out": "b87"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "too many options: people !froze!",
+     "x": 960,
+     "y": 500,
+     "size": 80,
+     "from": "slam",
+     "at": "b87:froze",
+     "out": "b89",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "later studies: not always this strong",
+     "x": 960,
+     "y": 680,
+     "size": 44,
+     "from": "bottom",
+     "at": "b88:later",
+     "out": "b89",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "but you've *felt it*",
+     "x": 960,
+     "y": 500,
+     "size": 90,
+     "from": "top",
+     "at": "b89:felt",
+     "out": "b90"
+    },
+    {
+     "t": "icon",
+     "id": "grid",
+     "name": "grid",
+     "x": 960,
+     "y": 560,
+     "size": 340,
+     "from": "pop",
+     "at": "b90:streaming",
+     "out": "b93"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "thousands of *titles*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b91:thousands",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "endless *rows*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b92:endless",
+     "out": "b93"
+    },
+    {
+     "t": "stick",
+     "id": "sc",
+     "x": 520,
+     "y": 650,
+     "from": "left",
+     "at": "b93:nights",
+     "poses": [
+      [
+       "headDown",
+       "b93:nights"
+      ],
+      [
+       "point",
+       "b93:seen"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b93:nights"
+      ],
+      [
+       "smile",
+       "b93:seen"
+      ]
+     ],
+     "out": "b97"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "20 minutes of *scrolling*",
+     "x": 1260,
+     "y": 220,
+     "size": 60,
+     "from": "top",
+     "at": "b93:scrolled",
+     "out": "b94"
+    },
+    {
+     "t": "icon",
+     "id": "rep",
+     "name": "tvReplay",
+     "x": 1300,
+     "y": 560,
+     "size": 320,
+     "from": "right",
+     "at": "b93:seen",
+     "out": "b97"
+    },
+    {
+     "t": "bubble",
+     "id": "bub",
+     "text": "still watching?",
+     "x": 1300,
+     "y": 240,
+     "size": 380,
+     "from": "pop",
+     "at": "b94:still",
+     "fontSize": 46,
+     "out": "b95"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "*yes*",
+     "x": 1300,
+     "y": 880,
+     "size": 90,
+     "from": "bottom",
+     "at": "b95:yes",
+     "out": "b97"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "for the !4th! time this year",
+     "x": 1260,
+     "y": 220,
+     "size": 60,
+     "from": "top",
+     "at": "b96:fourth",
+     "out": "b97"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "LONELINESS",
+     "x": 960,
+     "y": 500,
+     "size": 160,
+     "from": "slam",
+     "at": "b97:loneliness",
+     "out": "b98",
+     "hero": true
+    },
+    {
+     "t": "card",
+     "id": "card2",
+     "kicker": "U.S. SURGEON GENERAL · 2023",
+     "text": "Loneliness: an epidemic",
+     "sub": "national advisory",
+     "x": 960,
+     "y": 280,
+     "from": "top",
+     "at": "b98:surgeon",
+     "out": "b100"
+    },
+    {
+     "t": "stick",
+     "id": "pp0",
+     "x": 600,
+     "y": 770,
+     "from": "bottom",
+     "at": "b99:one",
+     "poses": [
+      [
+       "headDown",
+       "b99:one"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b99:one"
+      ]
+     ],
+     "out": "b100",
+     "scale": 0.5,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "pp1",
+     "x": 840,
+     "y": 770,
+     "from": "bottom",
+     "at": "b99:one",
+     "poses": [
+      [
+       "idle",
+       "b99:one"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b99:one"
+      ]
+     ],
+     "out": "b100",
+     "scale": 0.5,
+     "delay": 0.05
+    },
+    {
+     "t": "stick",
+     "id": "pp2",
+     "x": 1080,
+     "y": 770,
+     "from": "bottom",
+     "at": "b99:one",
+     "poses": [
+      [
+       "headDown",
+       "b99:one"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b99:one"
+      ]
+     ],
+     "out": "b100",
+     "scale": 0.5,
+     "delay": 0.1
+    },
+    {
+     "t": "stick",
+     "id": "pp3",
+     "x": 1320,
+     "y": 770,
+     "from": "bottom",
+     "at": "b99:one",
+     "poses": [
+      [
+       "idle",
+       "b99:one"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b99:one"
+      ]
+     ],
+     "out": "b100",
+     "scale": 0.5,
+     "delay": 0.15000000000000002
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "!1 in 2! adults",
+     "x": 960,
+     "y": 470,
+     "size": 100,
+     "from": "slam",
+     "at": "b99:one",
+     "out": "b100",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "a strange kind of *relief*",
+     "x": 960,
+     "y": 500,
+     "size": 80,
+     "from": "top",
+     "at": "b100:relief",
+     "out": "b101"
+    },
+    {
+     "t": "card",
+     "id": "card3",
+     "kicker": "STUDY · 2009",
+     "text": "Your favourite show",
+     "sub": "Derrick, Gabriel & Hugenberg",
+     "x": 960,
+     "y": 230,
+     "from": "top",
+     "at": "b101:derrick",
+     "out": "b104"
+    },
+    {
+     "t": "stick",
+     "id": "v",
+     "x": 560,
+     "y": 660,
+     "from": "left",
+     "at": "b101:write",
+     "poses": [
+      [
+       "idle",
+       "b101:write"
+      ],
+      [
+       "happy",
+       "b102:less"
+      ],
+      [
+       "headDown",
+       "b103:rejected"
+      ],
+      [
+       "happy",
+       "b103:recover"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b101:write"
+      ],
+      [
+       "smile",
+       "b102:less"
+      ],
+      [
+       "frown",
+       "b103:rejected"
+      ],
+      [
+       "smile",
+       "b103:recover"
+      ]
+     ],
+     "out": "b108"
+    },
+    {
+     "t": "icon",
+     "id": "tv",
+     "name": "tv",
+     "x": 1320,
+     "y": 600,
+     "size": 300,
+     "from": "right",
+     "at": "b101:show",
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "felt *less lonely*",
+     "x": 1320,
+     "y": 860,
+     "size": 64,
+     "from": "bottom",
+     "at": "b102:less",
+     "out": "b103"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "felt *better* after rejection",
+     "x": 1320,
+     "y": 860,
+     "size": 56,
+     "from": "bottom",
+     "at": "b103:recover",
+     "out": "b104"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "SOCIAL SURROGACY",
+     "x": 960,
+     "y": 230,
+     "size": 110,
+     "from": "slam",
+     "at": "b104:surrogacy",
+     "out": "b105",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "stand-in *friends*",
+     "x": 1320,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b105:stand",
+     "out": "b108"
+    },
+    {
+     "t": "stick",
+     "id": "c1",
+     "x": 1090,
+     "y": 690,
+     "from": "bottom",
+     "at": "b105:characters",
+     "poses": [
+      [
+       "happy",
+       "b105:characters"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b105:characters"
+      ]
+     ],
+     "out": "b108",
+     "scale": 0.42
+    },
+    {
+     "t": "stick",
+     "id": "c2",
+     "x": 1550,
+     "y": 690,
+     "from": "bottom",
+     "at": "b105:friends",
+     "poses": [
+      [
+       "proud",
+       "b105:friends"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b105:friends"
+      ]
+     ],
+     "out": "b108",
+     "scale": 0.42,
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "not real…",
+     "x": 1320,
+     "y": 930,
+     "size": 56,
+     "from": "bottom",
+     "at": "b106:real",
+     "out": "b107",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "your brain doesn't !care!",
+     "x": 1320,
+     "y": 930,
+     "size": 64,
+     "from": "bottom",
+     "at": "b107:care",
+     "out": "b108"
+    }
+   ]
+  },
+  {
+   "id": "crack",
+   "beats": [
+    {
+     "id": "b108",
+     "say": "So the comfort show became a shelter."
+    },
+    {
+     "id": "b109",
+     "say": "Then the shelter began to crack."
+    },
+    {
+     "id": "b110",
+     "say": "In December twenty eighteen, fans learned Friends might leave Netflix."
+    },
+    {
+     "id": "b111",
+     "say": "Netflix reportedly paid around a hundred million dollars to keep it for one more year."
+    },
+    {
+     "id": "b112",
+     "say": "For a show that had ended in two thousand and four."
+    },
+    {
+     "id": "b113",
+     "say": "Then, on January first, twenty twenty, Friends left Netflix in the U. S. anyway."
+    },
+    {
+     "id": "b114",
+     "say": "A few months later, the world shut down."
+    },
+    {
+     "id": "b115",
+     "say": "Lockdowns."
+    },
+    {
+     "id": "b116",
+     "say": "Fear."
+    },
+    {
+     "id": "b117",
+     "say": "Nonstop news."
+    },
+    {
+     "id": "b118",
+     "say": "People needed their comfort shows more than ever."
+    },
+    {
+     "id": "b119",
+     "say": "And those shows were scattering across new apps, each with a new monthly price."
+    },
+    {
+     "id": "b120",
+     "say": "Comfort had become a product."
+    },
+    {
+     "id": "b121",
+     "say": "And the product was getting expensive."
+    },
+    {
+     "id": "b122",
+     "say": "So what do you do when the world feels out of control?"
+    },
+    {
+     "id": "b123",
+     "say": "You reach for the one thing that never changes."
+    },
+    {
+     "id": "b124",
+     "say": "Many people spent lockdown on the couch with characters they'd known for twenty years."
+    },
+    {
+     "id": "b125",
+     "say": "Not because they had nothing new to watch."
+    },
+    {
+     "id": "b126",
+     "say": "Because new felt like too much."
+    },
+    {
+     "id": "b127",
+     "say": "But it wasn't over yet."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "home",
+     "name": "house",
+     "x": 960,
+     "y": 560,
+     "size": 320,
+     "from": "pop",
+     "at": "b108:shelter",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "a *shelter*",
+     "x": 960,
+     "y": 220,
+     "size": 80,
+     "from": "top",
+     "at": "b108:shelter",
+     "out": "b109"
+    },
+    {
+     "t": "icon",
+     "id": "bolt",
+     "name": "bolt",
+     "x": 960,
+     "y": 560,
+     "size": 220,
+     "from": "pop",
+     "at": "b109:crack",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "then it began to !crack!",
+     "x": 960,
+     "y": 220,
+     "size": 80,
+     "from": "top",
+     "at": "b109:crack",
+     "out": "b110"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "DECEMBER 2018",
+     "text": "Friends might leave Netflix",
+     "sub": "fans found out",
+     "x": 960,
+     "y": 300,
+     "from": "top",
+     "at": "b110:learned",
+     "out": "b111"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "!$100 million!",
+     "x": 960,
+     "y": 420,
+     "size": 160,
+     "from": "slam",
+     "at": "b111:hundred",
+     "out": "b113",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "for *one more year*",
+     "x": 960,
+     "y": 620,
+     "size": 72,
+     "from": "bottom",
+     "at": "b111:year",
+     "out": "b112"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "for a show that ended in *2004*",
+     "x": 960,
+     "y": 620,
+     "size": 64,
+     "from": "bottom",
+     "at": "b112:ended",
+     "out": "b113"
+    },
+    {
+     "t": "icon",
+     "id": "off",
+     "name": "tvOff",
+     "x": 960,
+     "y": 540,
+     "size": 300,
+     "from": "pop",
+     "at": "b113:left",
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "Jan 1, 2020: *gone*",
+     "x": 960,
+     "y": 830,
+     "size": 72,
+     "from": "bottom",
+     "at": "b113:left",
+     "out": "b114"
+    },
+    {
+     "t": "icon",
+     "id": "gl",
+     "name": "globe",
+     "x": 960,
+     "y": 540,
+     "size": 300,
+     "from": "pop",
+     "at": "b114:world",
+     "out": "b115"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "the world !shut down!",
+     "x": 960,
+     "y": 830,
+     "size": 80,
+     "from": "bottom",
+     "at": "b114:shut",
+     "out": "b115"
+    },
+    {
+     "t": "icon",
+     "id": "n1",
+     "name": "lock",
+     "x": 480,
+     "y": 540,
+     "size": 220,
+     "from": "left",
+     "at": "b115:lockdowns",
+     "out": "b118"
+    },
+    {
+     "t": "icon",
+     "id": "n2",
+     "name": "alarm",
+     "x": 960,
+     "y": 540,
+     "size": 220,
+     "from": "top",
+     "at": "b116:fear",
+     "out": "b118"
+    },
+    {
+     "t": "icon",
+     "id": "n3",
+     "name": "news",
+     "x": 1440,
+     "y": 540,
+     "size": 220,
+     "from": "right",
+     "at": "b117:news",
+     "out": "b118"
+    },
+    {
+     "t": "text",
+     "id": "n1l",
+     "text": "lockdowns",
+     "x": 480,
+     "y": 780,
+     "size": 56,
+     "from": "bottom",
+     "at": "b115:lockdowns",
+     "out": "b118"
+    },
+    {
+     "t": "text",
+     "id": "n2l",
+     "text": "fear",
+     "x": 960,
+     "y": 780,
+     "size": 56,
+     "from": "bottom",
+     "at": "b116:fear",
+     "out": "b118"
+    },
+    {
+     "t": "text",
+     "id": "n3l",
+     "text": "nonstop news",
+     "x": 1440,
+     "y": 780,
+     "size": 56,
+     "from": "bottom",
+     "at": "b117:news",
+     "out": "b118"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "comfort, needed *more than ever*",
+     "x": 960,
+     "y": 500,
+     "size": 80,
+     "from": "top",
+     "at": "b118:needed",
+     "out": "b119"
+    },
+    {
+     "t": "icon",
+     "id": "g1",
+     "name": "grid",
+     "x": 520,
+     "y": 520,
+     "size": 220,
+     "from": "left",
+     "at": "b119:scattering",
+     "out": "b122"
+    },
+    {
+     "t": "icon",
+     "id": "g2",
+     "name": "grid",
+     "x": 960,
+     "y": 520,
+     "size": 220,
+     "from": "top",
+     "at": "b119:apps",
+     "out": "b122"
+    },
+    {
+     "t": "icon",
+     "id": "g3",
+     "name": "grid",
+     "x": 1400,
+     "y": 520,
+     "size": 220,
+     "from": "right",
+     "at": "b119:monthly",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "new apps, new *monthly price*",
+     "x": 960,
+     "y": 230,
+     "size": 64,
+     "from": "top",
+     "at": "b119:apps",
+     "out": "b120"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "comfort became a *product*",
+     "x": 960,
+     "y": 230,
+     "size": 64,
+     "from": "top",
+     "at": "b120:product",
+     "out": "b121"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "and it got !expensive!",
+     "x": 960,
+     "y": 800,
+     "size": 72,
+     "from": "bottom",
+     "at": "b121:expensive",
+     "out": "b122"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 520,
+     "size": 240,
+     "from": "pop",
+     "at": "b122:control",
+     "out": "b123"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "the world out of *control*?",
+     "x": 960,
+     "y": 820,
+     "size": 72,
+     "from": "bottom",
+     "at": "b122:control",
+     "out": "b123"
+    },
+    {
+     "t": "icon",
+     "id": "rep",
+     "name": "tvReplay",
+     "x": 960,
+     "y": 540,
+     "size": 300,
+     "from": "pop",
+     "at": "b123:reach",
+     "out": "b124"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "reach for what never *changes*",
+     "x": 960,
+     "y": 830,
+     "size": 72,
+     "from": "bottom",
+     "at": "b123:changes",
+     "out": "b124"
+    },
+    {
+     "t": "icon",
+     "id": "couch",
+     "name": "couch",
+     "x": 960,
+     "y": 690,
+     "size": 520,
+     "from": "bottom",
+     "at": "b124:couch",
+     "out": "b127"
+    },
+    {
+     "t": "stick",
+     "id": "v",
+     "x": 960,
+     "y": 668,
+     "from": "top",
+     "at": "b124:people",
+     "poses": [
+      [
+       "idle",
+       "b124:people"
+      ],
+      [
+       "shrug",
+       "b125:not"
+      ],
+      [
+       "headDown",
+       "b126:much"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b124:people"
+      ],
+      [
+       "neutral",
+       "b125:not"
+      ],
+      [
+       "tight",
+       "b126:much"
+      ]
+     ],
+     "out": "b127",
+     "scale": 0.8,
+     "sit": true
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "characters known for *20 years*",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b124:twenty",
+     "out": "b125"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "not *nothing* to watch",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b125:nothing",
+     "out": "b126"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "new felt like !too much!",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b126:much",
+     "out": "b127"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "but it wasn't over yet",
+     "x": 960,
+     "y": 520,
+     "size": 100,
+     "from": "slam",
+     "at": "b127:over",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "wars",
+   "beats": [
+    {
+     "id": "b128",
+     "say": "The streaming wars had begun."
+    },
+    {
+     "id": "b129",
+     "say": "And the main weapons were old sitcoms."
+    },
+    {
+     "id": "b130",
+     "say": "WarnerMedia reportedly paid about four hundred and twenty-five million dollars for five years of Friends."
+    },
+    {
+     "id": "b131",
+     "say": "NBCUniversal paid around five hundred million to bring The Office to its own app."
+    },
+    {
+     "id": "b132",
+     "say": "Half a billion dollars."
+    },
+    {
+     "id": "b133",
+     "say": "For a show about selling paper."
+    },
+    {
+     "id": "b134",
+     "say": "In twenty twenty-one, the Friends cast came back for a reunion special, sitting on a copy of the original set."
+    },
+    {
+     "id": "b135",
+     "say": "No new story."
+    },
+    {
+     "id": "b136",
+     "say": "No new jokes."
+    },
+    {
+     "id": "b137",
+     "say": "Just six older people in a familiar room, remembering."
+    },
+    {
+     "id": "b138",
+     "say": "Millions tuned in to watch people rewatch their own show."
+    },
+    {
+     "id": "b139",
+     "say": "Back in twenty twenty, The Office was America's most-streamed show, at about fifty-seven billion minutes."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "04",
+     "text": "The streaming *wars*",
+     "x": 960,
+     "y": 540,
+     "from": "right",
+     "at": "b128:start",
+     "out": "b129:main"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the weapons: *old sitcoms*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b129:weapons",
+     "out": "b130"
+    },
+    {
+     "t": "icon",
+     "id": "tv1",
+     "name": "tv",
+     "x": 960,
+     "y": 580,
+     "size": 300,
+     "from": "pop",
+     "at": "b129:sitcoms",
+     "out": "b130"
+    },
+    {
+     "t": "text",
+     "id": "a1",
+     "text": "!$425 million!",
+     "x": 500,
+     "y": 460,
+     "size": 84,
+     "from": "slam",
+     "at": "b130:four",
+     "out": "b132",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "a1l",
+     "text": "*Friends* · 5 years",
+     "x": 500,
+     "y": 600,
+     "size": 56,
+     "from": "bottom",
+     "at": "b130:friends",
+     "out": "b132"
+    },
+    {
+     "t": "text",
+     "id": "a2",
+     "text": "!$500 million!",
+     "x": 1420,
+     "y": 460,
+     "size": 84,
+     "from": "slam",
+     "at": "b131:five",
+     "out": "b132",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "a2l",
+     "text": "*The Office*",
+     "x": 1420,
+     "y": 600,
+     "size": 56,
+     "from": "bottom",
+     "at": "b131:office",
+     "out": "b132"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "half a billion dollars",
+     "x": 960,
+     "y": 380,
+     "size": 110,
+     "from": "slam",
+     "at": "b132:half",
+     "out": "b134",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "pap",
+     "name": "paper",
+     "x": 960,
+     "y": 640,
+     "size": 220,
+     "from": "pop",
+     "at": "b133:paper",
+     "out": "b134"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "for a show about *paper*",
+     "x": 960,
+     "y": 880,
+     "size": 64,
+     "from": "bottom",
+     "at": "b133:paper",
+     "out": "b134"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "2021",
+     "text": "The reunion special",
+     "sub": "on a copy of the original set",
+     "x": 960,
+     "y": 240,
+     "from": "top",
+     "at": "b134:reunion",
+     "out": "b137"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "no new *story*",
+     "x": 600,
+     "y": 520,
+     "size": 72,
+     "from": "left",
+     "at": "b135:story",
+     "out": "b137"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "no new *jokes*",
+     "x": 1320,
+     "y": 520,
+     "size": 72,
+     "from": "right",
+     "at": "b136:jokes",
+     "out": "b137"
+    },
+    {
+     "t": "stick",
+     "id": "f0",
+     "x": 330,
+     "y": 680,
+     "from": "bottom",
+     "at": "b137:six",
+     "poses": [
+      [
+       "idle",
+       "b137:six"
+      ],
+      [
+       "happy",
+       "b138:millions"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b137:six"
+      ]
+     ],
+     "out": "b139",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "f1",
+     "x": 582,
+     "y": 680,
+     "from": "bottom",
+     "at": "b137:six",
+     "poses": [
+      [
+       "idle",
+       "b137:six"
+      ],
+      [
+       "happy",
+       "b138:millions"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b137:six"
+      ]
+     ],
+     "out": "b139",
+     "scale": 0.55,
+     "flip": true,
+     "delay": 0.05
+    },
+    {
+     "t": "stick",
+     "id": "f2",
+     "x": 834,
+     "y": 680,
+     "from": "bottom",
+     "at": "b137:six",
+     "poses": [
+      [
+       "idle",
+       "b137:six"
+      ],
+      [
+       "happy",
+       "b138:millions"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b137:six"
+      ]
+     ],
+     "out": "b139",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.1
+    },
+    {
+     "t": "stick",
+     "id": "f3",
+     "x": 1086,
+     "y": 680,
+     "from": "bottom",
+     "at": "b137:six",
+     "poses": [
+      [
+       "idle",
+       "b137:six"
+      ],
+      [
+       "happy",
+       "b138:millions"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b137:six"
+      ]
+     ],
+     "out": "b139",
+     "scale": 0.55,
+     "flip": true,
+     "delay": 0.15000000000000002
+    },
+    {
+     "t": "stick",
+     "id": "f4",
+     "x": 1338,
+     "y": 680,
+     "from": "bottom",
+     "at": "b137:six",
+     "poses": [
+      [
+       "idle",
+       "b137:six"
+      ],
+      [
+       "happy",
+       "b138:millions"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b137:six"
+      ]
+     ],
+     "out": "b139",
+     "scale": 0.55,
+     "flip": false,
+     "delay": 0.2
+    },
+    {
+     "t": "stick",
+     "id": "f5",
+     "x": 1590,
+     "y": 680,
+     "from": "bottom",
+     "at": "b137:six",
+     "poses": [
+      [
+       "idle",
+       "b137:six"
+      ],
+      [
+       "happy",
+       "b138:millions"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b137:six"
+      ]
+     ],
+     "out": "b139",
+     "scale": 0.55,
+     "flip": true,
+     "delay": 0.25
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "six older people, *remembering*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b137:remembering",
+     "out": "b138"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "millions watched them *rewatch*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b138:rewatch",
+     "out": "b139"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "2020: !57 billion! minutes",
+     "x": 960,
+     "y": 380,
+     "size": 100,
+     "from": "slam",
+     "at": "b139:fifty",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "*The Office*, the most-streamed show",
+     "x": 960,
+     "y": 600,
+     "size": 60,
+     "from": "bottom",
+     "at": "b139:show"
+    }
+   ]
+  },
+  {
+   "id": "answers",
+   "beats": [
+    {
+     "id": "b140",
+     "say": "So what are we actually buying?"
+    },
+    {
+     "id": "b141",
+     "say": "Psychology gives three answers."
+    },
+    {
+     "id": "b142",
+     "say": "The first is effort."
+    },
+    {
+     "id": "b143",
+     "say": "A new show asks a lot."
+    },
+    {
+     "id": "b144",
+     "say": "New names, new faces, a story you have to care about from scratch."
+    },
+    {
+     "id": "b145",
+     "say": "A show you know asks for almost nothing."
+    },
+    {
+     "id": "b146",
+     "say": "Psychologists call this processing fluency."
+    },
+    {
+     "id": "b147",
+     "say": "Things that are easy to take in feel good."
+    },
+    {
+     "id": "b148",
+     "say": "It's the same reason your favourite song feels better than a song you heard once."
+    },
+    {
+     "id": "b149",
+     "say": "After a long shift, your brain doesn't want a puzzle."
+    },
+    {
+     "id": "b150",
+     "say": "It wants something it can follow with its eyes half closed."
+    },
+    {
+     "id": "b151",
+     "say": "The second is control."
+    },
+    {
+     "id": "b152",
+     "say": "When life feels uncertain, a story with a known ending is a small safe room."
+    },
+    {
+     "id": "b153",
+     "say": "And knowing the ending doesn't spoil it."
+    },
+    {
+     "id": "b154",
+     "say": "In twenty eleven, researchers at U. C. San Diego gave people a dozen short stories."
+    },
+    {
+     "id": "b155",
+     "say": "Some readers were told the ending first."
+    },
+    {
+     "id": "b156",
+     "say": "They enjoyed the stories more, not less."
+    },
+    {
+     "id": "b157",
+     "say": "So the thing we all fear online, the spoiler, can make a story better."
+    },
+    {
+     "id": "b158",
+     "say": "Think about a kid asking for the same bedtime story every night."
+    },
+    {
+     "id": "b159",
+     "say": "They know how it ends."
+    },
+    {
+     "id": "b160",
+     "say": "That's the point."
+    },
+    {
+     "id": "b161",
+     "say": "Knowing what comes next lets you relax and enjoy the ride, instead of bracing for it."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "what are we *buying*?",
+     "x": 960,
+     "y": 400,
+     "size": 90,
+     "from": "top",
+     "at": "b140:buying",
+     "out": "b141"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "3 answers",
+     "x": 960,
+     "y": 520,
+     "size": 160,
+     "from": "slam",
+     "at": "b141:three",
+     "out": "b142",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "a1",
+     "text": "1 · *effort*",
+     "x": 960,
+     "y": 500,
+     "size": 150,
+     "from": "slam",
+     "at": "b142:effort",
+     "out": "b143",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "a new show asks a *lot*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b143:lot",
+     "out": "b145"
+    },
+    {
+     "t": "icon",
+     "id": "q1",
+     "name": "question",
+     "x": 560,
+     "y": 560,
+     "size": 200,
+     "from": "left",
+     "at": "b144:names",
+     "out": "b145"
+    },
+    {
+     "t": "icon",
+     "id": "q2",
+     "name": "question",
+     "x": 960,
+     "y": 560,
+     "size": 200,
+     "from": "top",
+     "at": "b144:faces",
+     "out": "b145"
+    },
+    {
+     "t": "icon",
+     "id": "q3",
+     "name": "question",
+     "x": 1360,
+     "y": 560,
+     "size": 200,
+     "from": "right",
+     "at": "b144:story",
+     "out": "b145"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "new names · new faces · new story",
+     "x": 960,
+     "y": 820,
+     "size": 56,
+     "from": "bottom",
+     "at": "b144:names",
+     "out": "b145"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "a known show asks *nothing*",
+     "x": 960,
+     "y": 500,
+     "size": 90,
+     "from": "top",
+     "at": "b145:nothing",
+     "out": "b146"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "PROCESSING FLUENCY",
+     "x": 960,
+     "y": 440,
+     "size": 110,
+     "from": "slam",
+     "at": "b146:fluency",
+     "out": "b148",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "easy to take in = *feels good*",
+     "x": 960,
+     "y": 640,
+     "size": 64,
+     "from": "bottom",
+     "at": "b147:good",
+     "out": "b148"
+    },
+    {
+     "t": "icon",
+     "id": "nt",
+     "name": "note",
+     "x": 960,
+     "y": 540,
+     "size": 260,
+     "from": "pop",
+     "at": "b148:song",
+     "out": "b149"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "like your *favourite song*",
+     "x": 960,
+     "y": 830,
+     "size": 72,
+     "from": "bottom",
+     "at": "b148:favourite",
+     "out": "b149"
+    },
+    {
+     "t": "icon",
+     "id": "pz",
+     "name": "puzzle",
+     "x": 600,
+     "y": 560,
+     "size": 240,
+     "from": "left",
+     "at": "b149:puzzle",
+     "out": "b151"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 600,
+     "y": 560,
+     "w": 300,
+     "at": "b149:puzzle",
+     "out": "b151",
+     "delay": 0.3
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "no *puzzle*",
+     "x": 600,
+     "y": 820,
+     "size": 64,
+     "from": "bottom",
+     "at": "b149:puzzle",
+     "out": "b151"
+    },
+    {
+     "t": "stick",
+     "id": "tired",
+     "x": 1320,
+     "y": 650,
+     "from": "right",
+     "at": "b150:wants",
+     "poses": [
+      [
+       "headDown",
+       "b150:wants"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b150:wants"
+      ]
+     ],
+     "out": "b151"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "eyes *half closed*",
+     "x": 1320,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b150:half",
+     "out": "b151"
+    },
+    {
+     "t": "text",
+     "id": "a2",
+     "text": "2 · *control*",
+     "x": 960,
+     "y": 500,
+     "size": 150,
+     "from": "slam",
+     "at": "b151:control",
+     "out": "b152",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "hs",
+     "name": "house",
+     "x": 960,
+     "y": 540,
+     "size": 280,
+     "from": "pop",
+     "at": "b152:story",
+     "out": "b153"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "a known ending: a small *safe room*",
+     "x": 960,
+     "y": 830,
+     "size": 64,
+     "from": "bottom",
+     "at": "b152:safe",
+     "out": "b153"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "knowing the ending doesn't !spoil! it",
+     "x": 960,
+     "y": 500,
+     "size": 72,
+     "from": "top",
+     "at": "b153:spoil",
+     "out": "b154"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2011 · UC SAN DIEGO",
+     "text": "Spoilers don't spoil stories",
+     "sub": "Leavitt & Christenfeld",
+     "x": 960,
+     "y": 230,
+     "from": "top",
+     "at": "b154:researchers",
+     "out": "b155"
+    },
+    {
+     "t": "icon",
+     "id": "bk",
+     "name": "book",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "bottom",
+     "at": "b154:dozen",
+     "out": "b155"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "how much they *enjoyed* it",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b155:readers",
+     "out": "b158"
+    },
+    {
+     "t": "bar",
+     "id": "bar1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 220,
+     "color": "muted",
+     "label": "no spoiler",
+     "from": "draw",
+     "at": "b155:told",
+     "out": "b158"
+    },
+    {
+     "t": "bar",
+     "id": "bar2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 300,
+     "color": "accent",
+     "label": "spoiler first",
+     "from": "draw",
+     "at": "b156:more",
+     "out": "b158"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "enjoyed it *more*",
+     "x": 960,
+     "y": 310,
+     "size": 60,
+     "from": "bottom",
+     "at": "b156:more",
+     "out": "b157",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "the spoiler made it *better*",
+     "x": 960,
+     "y": 310,
+     "size": 60,
+     "from": "bottom",
+     "at": "b157:better",
+     "out": "b158",
+     "weight": 600
+    },
+    {
+     "t": "icon",
+     "id": "moon",
+     "name": "moon",
+     "x": 1400,
+     "y": 300,
+     "size": 180,
+     "from": "pop",
+     "at": "b158:bedtime",
+     "out": "b161"
+    },
+    {
+     "t": "icon",
+     "id": "bk2",
+     "name": "book",
+     "x": 1180,
+     "y": 640,
+     "size": 220,
+     "from": "right",
+     "at": "b158:story",
+     "out": "b161"
+    },
+    {
+     "t": "stick",
+     "id": "kid",
+     "x": 640,
+     "y": 680,
+     "from": "left",
+     "at": "b158:kid",
+     "poses": [
+      [
+       "happy",
+       "b158:kid"
+      ],
+      [
+       "point",
+       "b159:ends"
+      ],
+      [
+       "victory",
+       "b160:point"
+      ],
+      [
+       "happy",
+       "b161:relax"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b158:kid"
+      ]
+     ],
+     "scale": 0.7
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "the same *bedtime story*",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "top",
+     "at": "b158:bedtime",
+     "out": "b159"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "they know how it *ends*",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "top",
+     "at": "b159:ends",
+     "out": "b160"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "!that's the point!",
+     "x": 960,
+     "y": 180,
+     "size": 72,
+     "from": "top",
+     "at": "b160:point",
+     "out": "b161"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "*relax*, don't brace",
+     "x": 960,
+     "y": 180,
+     "size": 72,
+     "from": "top",
+     "at": "b161:relax"
+    }
+   ]
+  },
+  {
+   "id": "nostalgia",
+   "beats": [
+    {
+     "id": "b162",
+     "say": "The third answer is nostalgia."
+    },
+    {
+     "id": "b163",
+     "say": "Yes, Hoffer's old disease."
+    },
+    {
+     "id": "b164",
+     "say": "Modern researchers like Constantine Seh-dick-ih-deez and Tim Wild-shoot studied it properly."
+    },
+    {
+     "id": "b165",
+     "say": "Most people in their studies said they felt nostalgic at least once a week."
+    },
+    {
+     "id": "b166",
+     "say": "And it didn't make them sick."
+    },
+    {
+     "id": "b167",
+     "say": "Nostalgia made them feel more connected to others, and more sure their life had meaning."
+    },
+    {
+     "id": "b168",
+     "say": "A feeling once treated with leeches turned out to be emotional first aid."
+    },
+    {
+     "id": "b169",
+     "say": "Which raises a fair question."
+    },
+    {
+     "id": "b170",
+     "say": "If nostalgia helps, why does it sometimes hurt?"
+    },
+    {
+     "id": "b171",
+     "say": "Because it's bittersweet by design."
+    },
+    {
+     "id": "b172",
+     "say": "It reminds you something good happened, and that it's gone."
+    },
+    {
+     "id": "b173",
+     "say": "The comfort show lets you feel the sweet part, without staying too long in the bitter part."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "a3",
+     "text": "3 · *nostalgia*",
+     "x": 960,
+     "y": 500,
+     "size": 150,
+     "from": "slam",
+     "at": "b162:nostalgia",
+     "out": "b163",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "le",
+     "name": "leech",
+     "x": 960,
+     "y": 540,
+     "size": 260,
+     "from": "pop",
+     "at": "b163:disease",
+     "out": "b164"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "yes, the old *disease*",
+     "x": 960,
+     "y": 820,
+     "size": 72,
+     "from": "bottom",
+     "at": "b163:disease",
+     "out": "b164"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "RESEARCH · 2006",
+     "text": "Nostalgia, studied properly",
+     "sub": "Sedikides, Wildschut et al.",
+     "x": 960,
+     "y": 230,
+     "from": "top",
+     "at": "b164:researchers",
+     "out": "b166"
+    },
+    {
+     "t": "icon",
+     "id": "pp0",
+     "name": "people",
+     "x": 960,
+     "y": 600,
+     "size": 220,
+     "from": "bottom",
+     "at": "b164:studied",
+     "out": "b165"
+    },
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 960,
+     "y": 580,
+     "size": 240,
+     "from": "bottom",
+     "at": "b165:week",
+     "out": "b166"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "at least *once a week*",
+     "x": 960,
+     "y": 840,
+     "size": 72,
+     "from": "bottom",
+     "at": "b165:once",
+     "out": "b166"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "and not *sick*",
+     "x": 960,
+     "y": 500,
+     "size": 100,
+     "from": "top",
+     "at": "b166:sick",
+     "out": "b167"
+    },
+    {
+     "t": "icon",
+     "id": "pp",
+     "name": "people",
+     "x": 600,
+     "y": 520,
+     "size": 240,
+     "from": "left",
+     "at": "b167:connected",
+     "out": "b168"
+    },
+    {
+     "t": "text",
+     "id": "c1",
+     "text": "more *connected*",
+     "x": 600,
+     "y": 780,
+     "size": 64,
+     "from": "bottom",
+     "at": "b167:connected",
+     "out": "b168"
+    },
+    {
+     "t": "icon",
+     "id": "hr",
+     "name": "heart",
+     "x": 1320,
+     "y": 520,
+     "size": 200,
+     "from": "right",
+     "at": "b167:meaning",
+     "out": "b168",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "c2",
+     "text": "more *meaning*",
+     "x": 1320,
+     "y": 780,
+     "size": 64,
+     "from": "bottom",
+     "at": "b167:meaning",
+     "out": "b168"
+    },
+    {
+     "t": "icon",
+     "id": "le2",
+     "name": "leech",
+     "x": 600,
+     "y": 540,
+     "size": 240,
+     "from": "left",
+     "at": "b168:leeches",
+     "out": "b169"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 600,
+     "y": 540,
+     "w": 280,
+     "at": "b168:turned",
+     "out": "b169"
+    },
+    {
+     "t": "icon",
+     "id": "hr2",
+     "name": "heart",
+     "x": 1320,
+     "y": 540,
+     "size": 220,
+     "from": "right",
+     "at": "b168:emotional",
+     "out": "b169",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "*emotional first aid*",
+     "x": 1320,
+     "y": 800,
+     "size": 64,
+     "from": "bottom",
+     "at": "b168:first",
+     "out": "b169"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "a fair *question*",
+     "x": 960,
+     "y": 500,
+     "size": 90,
+     "from": "top",
+     "at": "b169:question",
+     "out": "b170"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "if it helps, why does it !hurt!?",
+     "x": 960,
+     "y": 500,
+     "size": 90,
+     "from": "slam",
+     "at": "b170:hurt",
+     "out": "b171"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "BITTERSWEET",
+     "x": 960,
+     "y": 500,
+     "size": 170,
+     "from": "slam",
+     "at": "b171:bittersweet",
+     "out": "b172",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "something good *happened*",
+     "x": 960,
+     "y": 440,
+     "size": 80,
+     "from": "left",
+     "at": "b172:happened",
+     "out": "b173"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "and it's !gone!",
+     "x": 960,
+     "y": 580,
+     "size": 80,
+     "from": "right",
+     "at": "b172:gone",
+     "out": "b173"
+    },
+    {
+     "t": "icon",
+     "id": "couch",
+     "name": "couch",
+     "x": 960,
+     "y": 690,
+     "size": 480,
+     "from": "bottom",
+     "at": "b173:comfort"
+    },
+    {
+     "t": "stick",
+     "id": "v",
+     "x": 960,
+     "y": 675,
+     "from": "top",
+     "at": "b173:comfort",
+     "poses": [
+      [
+       "happy",
+       "b173:comfort"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b173:comfort"
+      ]
+     ],
+     "scale": 0.75,
+     "sit": true
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "the *sweet* part, not the bitter",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b173:sweet"
+    }
+   ]
+  },
+  {
+   "id": "timeline",
+   "beats": [
+    {
+     "id": "b174",
+     "say": "So does rewatching mean you're stuck in the past?"
+    },
+    {
+     "id": "b175",
+     "say": "Look at how fast the story moved."
+    },
+    {
+     "id": "b176",
+     "say": "In sixteen eighty-eight, it was a disease."
+    },
+    {
+     "id": "b177",
+     "say": "In nineteen fifty-one, it became a ree-run."
+    },
+    {
+     "id": "b178",
+     "say": "In nineteen sixty-eight, it became a lab result."
+    },
+    {
+     "id": "b179",
+     "say": "In nineteen ninety-six, it became a teaching tool."
+    },
+    {
+     "id": "b180",
+     "say": "In twenty twenty, it became a half-billion-dollar asset."
+    },
+    {
+     "id": "b181",
+     "say": "And on a random Tuesday night, it became your couch, your blanket, and an episode you could recite."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 520,
+     "size": 240,
+     "from": "pop",
+     "at": "b174:stuck",
+     "out": "b175"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "stuck in the *past*?",
+     "x": 960,
+     "y": 820,
+     "size": 80,
+     "from": "bottom",
+     "at": "b174:past",
+     "out": "b175"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "look how *fast* it moved",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b175:fast",
+     "out": "b181"
+    },
+    {
+     "t": "icon",
+     "id": "i0",
+     "name": "leech",
+     "x": 300,
+     "y": 470,
+     "size": 180,
+     "from": "bottom",
+     "at": "b176:disease",
+     "out": "b181"
+    },
+    {
+     "t": "text",
+     "id": "y0",
+     "text": "1688",
+     "x": 300,
+     "y": 650,
+     "size": 72,
+     "from": "top",
+     "at": "b176:sixteen",
+     "out": "b181",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "w0",
+     "text": "a disease",
+     "x": 300,
+     "y": 740,
+     "size": 40,
+     "from": "bottom",
+     "at": "b176:disease",
+     "out": "b181",
+     "weight": 600
+    },
+    {
+     "t": "icon",
+     "id": "i1",
+     "name": "camera",
+     "x": 630,
+     "y": 470,
+     "size": 180,
+     "from": "bottom",
+     "at": "b177:reerun",
+     "out": "b181"
+    },
+    {
+     "t": "text",
+     "id": "y1",
+     "text": "1951",
+     "x": 630,
+     "y": 650,
+     "size": 72,
+     "from": "top",
+     "at": "b177:nineteen",
+     "out": "b181",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "w1",
+     "text": "a rerun",
+     "x": 630,
+     "y": 740,
+     "size": 40,
+     "from": "bottom",
+     "at": "b177:reerun",
+     "out": "b181",
+     "weight": 600
+    },
+    {
+     "t": "icon",
+     "id": "i2",
+     "name": "flask",
+     "x": 960,
+     "y": 470,
+     "size": 180,
+     "from": "bottom",
+     "at": "b178:lab",
+     "out": "b181"
+    },
+    {
+     "t": "text",
+     "id": "y2",
+     "text": "1968",
+     "x": 960,
+     "y": 650,
+     "size": 72,
+     "from": "top",
+     "at": "b178:nineteen",
+     "out": "b181",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "w2",
+     "text": "a lab result",
+     "x": 960,
+     "y": 740,
+     "size": 40,
+     "from": "bottom",
+     "at": "b178:lab",
+     "out": "b181",
+     "weight": 600
+    },
+    {
+     "t": "icon",
+     "id": "i3",
+     "name": "book",
+     "x": 1290,
+     "y": 470,
+     "size": 180,
+     "from": "bottom",
+     "at": "b179:teaching",
+     "out": "b181"
+    },
+    {
+     "t": "text",
+     "id": "y3",
+     "text": "1996",
+     "x": 1290,
+     "y": 650,
+     "size": 72,
+     "from": "top",
+     "at": "b179:nineteen",
+     "out": "b181",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "w3",
+     "text": "a teaching tool",
+     "x": 1290,
+     "y": 740,
+     "size": 40,
+     "from": "bottom",
+     "at": "b179:teaching",
+     "out": "b181",
+     "weight": 600
+    },
+    {
+     "t": "icon",
+     "id": "i4",
+     "name": "money",
+     "x": 1620,
+     "y": 470,
+     "size": 180,
+     "from": "bottom",
+     "at": "b180:asset",
+     "out": "b181"
+    },
+    {
+     "t": "text",
+     "id": "y4",
+     "text": "2020",
+     "x": 1620,
+     "y": 650,
+     "size": 72,
+     "from": "top",
+     "at": "b180:twenty",
+     "out": "b181",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "w4",
+     "text": "a $500M asset",
+     "x": 1620,
+     "y": 740,
+     "size": 40,
+     "from": "bottom",
+     "at": "b180:asset",
+     "out": "b181",
+     "weight": 600
+    },
+    {
+     "t": "icon",
+     "id": "couch",
+     "name": "couch",
+     "x": 960,
+     "y": 690,
+     "size": 520,
+     "from": "bottom",
+     "at": "b181:couch"
+    },
+    {
+     "t": "stick",
+     "id": "v",
+     "x": 960,
+     "y": 668,
+     "from": "top",
+     "at": "b181:random",
+     "poses": [
+      [
+       "happy",
+       "b181:random"
+      ],
+      [
+       "proud",
+       "b181:episode"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b181:random"
+      ]
+     ],
+     "scale": 0.8,
+     "sit": true
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "a random *Tuesday night*",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b181:tuesday",
+     "out": "b181:couch"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "your couch · your blanket · *your episode*",
+     "x": 960,
+     "y": 200,
+     "size": 56,
+     "from": "top",
+     "at": "b181:couch"
+    }
+   ]
+  },
+  {
+   "id": "mirror",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b182",
+     "say": "Here's the last piece."
+    },
+    {
+     "id": "b183",
+     "say": "In twenty twelve, two researchers interviewed people who ree-read books, rewatch films and revisit places."
+    },
+    {
+     "id": "b184",
+     "say": "One reason came up again and again."
+    },
+    {
+     "id": "b185",
+     "say": "People went back to see how they had changed."
+    },
+    {
+     "id": "b186",
+     "say": "The show stays exactly the same."
+    },
+    {
+     "id": "b187",
+     "say": "So it works like a mirror."
+    },
+    {
+     "id": "b188",
+     "say": "The joke you didn't get at fifteen lands at twenty-five."
+    },
+    {
+     "id": "b189",
+     "say": "The boss you laughed at starts to look a little like you."
+    },
+    {
+     "id": "b190",
+     "say": "The character who annoyed you at nineteen turns out to be the most honest one."
+    },
+    {
+     "id": "b191",
+     "say": "You notice a sad moment you used to skip, because now you've lived it."
+    },
+    {
+     "id": "b192",
+     "say": "So here's the twist."
+    },
+    {
+     "id": "b193",
+     "say": "You have never watched the same show twice."
+    },
+    {
+     "id": "b194",
+     "say": "The episode didn't change."
+    },
+    {
+     "id": "b195",
+     "say": "The person watching it did."
+    },
+    {
+     "id": "b196",
+     "say": "If this made you feel seen, tell me which show you've rewatched the most, and how many times."
+    },
+    {
+     "id": "b197",
+     "say": "Which habit should we cover next?"
+    },
+    {
+     "id": "b198",
+     "say": "Drop it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the last *piece*",
+     "x": 960,
+     "y": 500,
+     "size": 100,
+     "from": "top",
+     "at": "b182:piece",
+     "out": "b183"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2012",
+     "text": "Why we go back",
+     "sub": "Russell & Levy",
+     "x": 960,
+     "y": 230,
+     "from": "top",
+     "at": "b183:interviewed",
+     "out": "b185"
+    },
+    {
+     "t": "icon",
+     "id": "i1",
+     "name": "book",
+     "x": 520,
+     "y": 620,
+     "size": 200,
+     "from": "left",
+     "at": "b183:books",
+     "out": "b185"
+    },
+    {
+     "t": "icon",
+     "id": "i2",
+     "name": "reel",
+     "x": 960,
+     "y": 620,
+     "size": 200,
+     "from": "bottom",
+     "at": "b183:films",
+     "out": "b185"
+    },
+    {
+     "t": "icon",
+     "id": "i3",
+     "name": "house",
+     "x": 1400,
+     "y": 620,
+     "size": 200,
+     "from": "right",
+     "at": "b183:places",
+     "out": "b185"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "one reason, *again and again*",
+     "x": 960,
+     "y": 860,
+     "size": 56,
+     "from": "bottom",
+     "at": "b184:reason",
+     "out": "b185"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "to see how *they* had changed",
+     "x": 960,
+     "y": 500,
+     "size": 80,
+     "from": "top",
+     "at": "b185:changed",
+     "out": "b186"
+    },
+    {
+     "t": "icon",
+     "id": "tv",
+     "name": "tv",
+     "x": 960,
+     "y": 540,
+     "size": 300,
+     "from": "pop",
+     "at": "b186:show",
+     "out": "b187"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "the show stays the *same*",
+     "x": 960,
+     "y": 840,
+     "size": 72,
+     "from": "bottom",
+     "at": "b186:same",
+     "out": "b187"
+    },
+    {
+     "t": "icon",
+     "id": "mi",
+     "name": "mirror",
+     "x": 960,
+     "y": 540,
+     "size": 340,
+     "from": "pop",
+     "at": "b187:mirror",
+     "out": "b192"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "so it's a !mirror!",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b187:mirror",
+     "out": "b188"
+    },
+    {
+     "t": "stick",
+     "id": "y",
+     "x": 520,
+     "y": 660,
+     "from": "left",
+     "at": "b188:joke",
+     "poses": [
+      [
+       "shrug",
+       "b188:joke"
+      ],
+      [
+       "happy",
+       "b188:lands"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b188:joke"
+      ],
+      [
+       "smile",
+       "b188:lands"
+      ]
+     ],
+     "out": "b192",
+     "scale": 0.75
+    },
+    {
+     "t": "stick",
+     "id": "o",
+     "x": 1400,
+     "y": 640,
+     "from": "right",
+     "at": "b188:twenty",
+     "poses": [
+      [
+       "happy",
+       "b188:twenty"
+      ],
+      [
+       "point",
+       "b189:you"
+      ],
+      [
+       "proud",
+       "b190:honest"
+      ],
+      [
+       "headDown",
+       "b191:sad"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b188:twenty"
+      ],
+      [
+       "o",
+       "b189:you"
+      ],
+      [
+       "smile",
+       "b190:honest"
+      ],
+      [
+       "neutral",
+       "b191:sad"
+      ]
+     ],
+     "out": "b192",
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "the joke at *15* lands at *25*",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b188:lands",
+     "out": "b189"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "the boss looks a little like *you*",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b189:you",
+     "out": "b190"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "the annoying one was the most *honest*",
+     "x": 960,
+     "y": 200,
+     "size": 60,
+     "from": "top",
+     "at": "b190:honest",
+     "out": "b191"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "a sad moment you've now *lived*",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b191:lived",
+     "out": "b192"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "here's the !twist!",
+     "x": 960,
+     "y": 500,
+     "size": 130,
+     "from": "slam",
+     "at": "b192:twist",
+     "out": "b193",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "you've never watched the same show *twice*",
+     "x": 960,
+     "y": 500,
+     "size": 72,
+     "from": "blur",
+     "at": "b193:twice",
+     "out": "b194"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "the episode didn't change.",
+     "x": 960,
+     "y": 420,
+     "size": 80,
+     "from": "top",
+     "at": "b194:episode",
+     "out": "b196"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "*you* did.",
+     "x": 960,
+     "y": 580,
+     "size": 150,
+     "from": "slam",
+     "at": "b195:person",
+     "out": "b196",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "rep",
+     "name": "tvReplay",
+     "x": 960,
+     "y": 470,
+     "size": 280,
+     "from": "pop",
+     "at": "b196:show"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "which show have you *rewatched most*?",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b196:rewatched"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "which habit *next*?",
+     "x": 960,
+     "y": 750,
+     "size": 80,
+     "from": "bottom",
+     "at": "b197:habit",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 880,
+     "size": 48,
+     "from": "bottom",
+     "at": "b198:comments",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}

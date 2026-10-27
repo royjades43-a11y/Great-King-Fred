@@ -1,0 +1,235 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="lucy" data-width="1920" data-height="1080">
+    <div id="lucy-ch" class="clip el" data-start="0.2" data-duration="2.66" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:2"><div id="lucy-ch-in" class="in"><div class="chap"><div class="chap-num">02</div><div class="chap-rule"></div><div class="txt" style="font-size:76px;font-weight:800;color:var(--ink)"><span id="lucy-ch-w0" class="w">The</span> <span id="lucy-ch-w1" class="w">birth</span> <span id="lucy-ch-w2" class="w">of</span> <span id="lucy-ch-w3" class="w">the</span> <span id="lucy-ch-w4" class="w acc">rerun</span></div></div></div></div>
+    <div id="lucy-t0" class="clip el" data-start="3" data-duration="3.02" data-track-index="2" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:3"><div id="lucy-t0-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="lucy-t0-w0" class="w alm">1951</span> <span id="lucy-t0-w1" class="w">·</span> <span id="lucy-t0-w2" class="w">Hollywood</span></div></div></div>
+    <div id="lucy-lu" class="clip el" data-start="3" data-duration="11.269" data-track-index="3" style="position:absolute;left:0px;top:220px;width:1520px;height:860px;z-index:4"><div id="lucy-lu-in" class="in"><svg class="stick" id="lucy-lu-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="lucy-lu-aLu"><path class="s" d="M150 160 L150 255"/><g id="lucy-lu-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="lucy-lu-aRu"><path class="s" d="M150 160 L150 255"/><g id="lucy-lu-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="lucy-lu-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="lucy-lu-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="lucy-lu-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="lucy-lu-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="lucy-lu-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="lucy-lu-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="lucy-de" class="clip el" data-start="3" data-duration="11.269" data-track-index="4" style="position:absolute;left:400px;top:220px;width:1520px;height:860px;z-index:5"><div id="lucy-de-in" class="in"><svg class="stick" id="lucy-de-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="lucy-de-aLu"><path class="s" d="M150 160 L150 255"/><g id="lucy-de-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="lucy-de-aRu"><path class="s" d="M150 160 L150 255"/><g id="lucy-de-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="lucy-de-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="lucy-de-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="lucy-de-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="lucy-de-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="lucy-de-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="lucy-de-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="lucy-t1" class="clip el" data-start="5.92" data-duration="3.569" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:6"><div id="lucy-t1-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lucy-t1-w0" class="w acc">Lucille</span> <span id="lucy-t1-w1" class="w acc">Ball</span> <span id="lucy-t1-w2" class="w">&amp;</span> <span id="lucy-t1-w3" class="w acc">Desi</span> <span id="lucy-t1-w4" class="w acc">Arnaz</span></div></div></div>
+    <div id="lucy-t2" class="clip el" data-start="10.729000000000001" data-duration="2.04" data-track-index="6" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:7"><div id="lucy-t2-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lucy-t2-w0" class="w">CBS:</span> <span id="lucy-t2-w1" class="w">perform</span> <span id="lucy-t2-w2" class="w">it</span> <span id="lucy-t2-w3" class="w acc">live</span></div></div></div>
+    <div id="lucy-no" class="clip el" data-start="13.129" data-duration="1.09" data-track-index="7" style="position:absolute;left:1080px;top:0px;width:840px;height:600px;z-index:8"><div id="lucy-no-in" class="in"><div class="txt hero" style="font-size:150px;font-weight:800;color:var(--ink)"><span id="lucy-no-w0" class="w alm">NO</span></div></div></div>
+    <div id="lucy-t3" class="clip el" data-start="14.469" data-duration="3.34" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:9"><div id="lucy-t3-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lucy-t3-w0" class="w">real</span> <span id="lucy-t3-w1" class="w acc">film<span class="tail">,</span></span> <span id="lucy-t3-w2" class="w acc">three</span> <span id="lucy-t3-w3" class="w acc">cameras</span></div></div></div>
+    <div id="lucy-cam1" class="clip el" data-start="16.089" data-duration="1.72" data-track-index="9" style="position:absolute;left:0px;top:40px;width:1040px;height:1040px;z-index:10" data-layout-allow-overlap><div id="lucy-cam1-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 92 L130 92 L130 162 L24 162 Z"/><path class="s" pathLength="1" d="M56 62 m-26 0 a26 26 0 1 0 52 0 a26 26 0 1 0 -52 0"/><path class="s" pathLength="1" d="M108 62 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s acc-s" pathLength="1" d="M130 112 L178 92 L178 162 L130 142"/></svg></div></div></div>
+    <div id="lucy-cam2" class="clip el" data-start="17.009" data-duration="0.94" data-track-index="10" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:11" data-layout-allow-overlap><div id="lucy-cam2-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 92 L130 92 L130 162 L24 162 Z"/><path class="s" pathLength="1" d="M56 62 m-26 0 a26 26 0 1 0 52 0 a26 26 0 1 0 -52 0"/><path class="s" pathLength="1" d="M108 62 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s acc-s" pathLength="1" d="M130 112 L178 92 L178 162 L130 142"/></svg></div></div></div>
+    <div id="lucy-cam3" class="clip el" data-start="17.269" data-duration="0.94" data-track-index="11" style="position:absolute;left:880px;top:40px;width:1040px;height:1040px;z-index:12" data-layout-allow-overlap><div id="lucy-cam3-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 92 L130 92 L130 162 L24 162 Z"/><path class="s" pathLength="1" d="M56 62 m-26 0 a26 26 0 1 0 52 0 a26 26 0 1 0 -52 0"/><path class="s" pathLength="1" d="M108 62 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s acc-s" pathLength="1" d="M130 112 L178 92 L178 162 L130 142"/></svg></div></div></div>
+    <div id="lucy-t4" class="clip el" data-start="18.729" data-duration="1.472" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:940px;z-index:13"><div id="lucy-t4-in" class="in"><div class="txt hero" style="font-size:130px;font-weight:800;color:var(--ink)"><span id="lucy-t4-w0" class="w">costs</span> <span id="lucy-t4-w1" class="w alm">more</span></div></div></div>
+    <div id="lucy-t5" class="clip el" data-start="21.051" data-duration="6.22" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:14"><div id="lucy-t5-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="lucy-t5-w0" class="w">the</span> <span id="lucy-t5-w1" class="w acc">deal</span></div></div></div>
+    <div id="lucy-d1" class="clip el" data-start="22.951" data-duration="4.32" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:900px;z-index:15"><div id="lucy-d1-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lucy-d1-w0" class="w">Desilu</span> <span id="lucy-d1-w1" class="w">pays</span> <span id="lucy-d1-w2" class="w">the</span> <span id="lucy-d1-w3" class="w acc">extra</span></div></div></div>
+    <div id="lucy-d2" class="clip el" data-start="25.231" data-duration="2.04" data-track-index="15" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:16"><div id="lucy-d2-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lucy-d2-w0" class="w">Desilu</span> <span id="lucy-d2-w1" class="w acc">owns</span> <span id="lucy-d2-w2" class="w acc">the</span> <span id="lucy-d2-w3" class="w acc">films</span></div></div></div>
+    <div id="lucy-reel0" class="clip el" data-start="26.131" data-duration="1.09" data-track-index="16" style="position:absolute;left:0px;top:500px;width:1920px;height:580px;z-index:17" data-layout-allow-overlap><div id="lucy-reel0-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-80 0 a80 80 0 1 0 160 0 a80 80 0 1 0 -160 0"/><path class="s acc-s" pathLength="1" d="M100 100 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"/><path class="s" pathLength="1" d="M100 52 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M100 148 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M52 100 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M148 100 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0"/></svg></div></div></div>
+    <div id="lucy-t6" class="clip el" data-start="27.171" data-duration="1.206" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:18"><div id="lucy-t6-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="lucy-t6-w0" class="w">CBS:</span> <span id="lucy-t6-w1" class="w acc">agreed</span></div></div></div>
+    <div id="lucy-t7" class="clip el" data-start="29.497" data-duration="2.29" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:19"><div id="lucy-t7-in" class="in"><div class="txt hero" style="font-size:96px;font-weight:800;color:var(--ink)"><span id="lucy-t7-w0" class="w">worst</span> <span id="lucy-t7-w1" class="w">deal</span> <span id="lucy-t7-w2" class="w">in</span> <span id="lucy-t7-w3" class="w">TV</span> <span id="lucy-t7-w4" class="w alm">history</span></div></div></div>
+    <div id="lucy-r1" class="clip el" data-start="32.797" data-duration="2.36" data-track-index="19" style="position:absolute;left:0px;top:0px;width:960px;height:1040px;z-index:20" data-layout-allow-overlap><div id="lucy-r1-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-80 0 a80 80 0 1 0 160 0 a80 80 0 1 0 -160 0"/><path class="s acc-s" pathLength="1" d="M100 100 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"/><path class="s" pathLength="1" d="M100 52 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M100 148 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M52 100 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M148 100 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0"/></svg></div></div></div>
+    <div id="lucy-r2" class="clip el" data-start="33.617" data-duration="1.54" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:1040px;z-index:21" data-layout-allow-overlap><div id="lucy-r2-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-80 0 a80 80 0 1 0 160 0 a80 80 0 1 0 -160 0"/><path class="s acc-s" pathLength="1" d="M100 100 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"/><path class="s" pathLength="1" d="M100 52 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M100 148 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M52 100 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M148 100 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0"/></svg></div></div></div>
+    <div id="lucy-r3" class="clip el" data-start="34.337" data-duration="0.94" data-track-index="21" style="position:absolute;left:960px;top:0px;width:960px;height:1040px;z-index:22" data-layout-allow-overlap><div id="lucy-r3-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-80 0 a80 80 0 1 0 160 0 a80 80 0 1 0 -160 0"/><path class="s acc-s" pathLength="1" d="M100 100 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"/><path class="s" pathLength="1" d="M100 52 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M100 148 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M52 100 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M148 100 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0"/></svg></div></div></div>
+    <div id="lucy-t8" class="clip el" data-start="33.017" data-duration="2.14" data-track-index="22" style="position:absolute;left:0px;top:560px;width:1920px;height:520px;z-index:23"><div id="lucy-t8-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lucy-t8-w0" class="w">shown</span> <span id="lucy-t8-w1" class="w acc">again</span></div></div></div>
+    <div id="lucy-rep" class="clip el" data-start="35.337" data-duration="2.23" data-track-index="23" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:24" data-layout-allow-overlap><div id="lucy-rep-in" class="in"><div class="ico" style="width:320px;height:320px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 50 L176 50 Q186 50 186 60 L186 146 Q186 156 176 156 L24 156 Q14 156 14 146 L14 60 Q14 50 24 50 Z"/><path class="s" pathLength="1" d="M70 14 L100 46 L130 14"/><path class="s" pathLength="1" d="M60 156 L48 184 M140 156 L152 184"/><path class="s alm-s" pathLength="1" d="M128 84 A30 30 0 1 0 130 120"/><path class="s alm-s" pathLength="1" d="M110 80 L130 84 L128 64"/></svg></div></div></div>
+    <div id="lucy-t9" class="clip el" data-start="35.277" data-duration="2.34" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:25"><div id="lucy-t9-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lucy-t9-w0" class="w">the</span> <span id="lucy-t9-w1" class="w">blueprint</span> <span id="lucy-t9-w2" class="w">for</span> <span id="lucy-t9-w3" class="w">the</span> <span id="lucy-t9-w4" class="w acc">rerun</span></div></div></div>
+    <div id="lucy-t10" class="clip el" data-start="38.197" data-duration="2.003" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:26"><div id="lucy-t10-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="lucy-t10-w0" class="w">a</span> <span id="lucy-t10-w1" class="w acc">human</span> <span id="lucy-t10-w2" class="w">detail</span></div></div></div>
+    <div id="lucy-lu2" class="clip el" data-start="40.26" data-duration="11.411" data-track-index="26" style="position:absolute;left:0px;top:220px;width:1120px;height:860px;z-index:27"><div id="lucy-lu2-in" class="in"><svg class="stick" id="lucy-lu2-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="lucy-lu2-aLu"><path class="s" d="M150 160 L150 255"/><g id="lucy-lu2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="lucy-lu2-aRu"><path class="s" d="M150 160 L150 255"/><g id="lucy-lu2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="lucy-lu2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="lucy-lu2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="lucy-lu2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="lucy-lu2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="lucy-lu2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="lucy-lu2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="lucy-w1" class="clip el" data-start="42.78" data-duration="4.099" data-track-index="27" style="position:absolute;left:600px;top:0px;width:1320px;height:840px;z-index:28"><div id="lucy-w1-in" class="in"><div class="txt" style="font-size:110px;font-weight:800;color:var(--ink)"><span id="lucy-w1-w0" class="w alm">“pregnant”</span></div></div></div>
+    <div id="lucy-k1" class="clip el" data-start="43.5" data-duration="3.379" data-track-index="28" style="position:absolute;left:600px;top:0px;width:1320px;height:840px;z-index:50" data-layout-allow-overlap data-layout-allow-occlusion><div id="lucy-k1-in" class="in"><div class="strike" style="width:560px"></div></div></div>
+    <div id="lucy-w2" class="clip el" data-start="45.16" data-duration="1.719" data-track-index="29" style="position:absolute;left:600px;top:120px;width:1320px;height:960px;z-index:30"><div id="lucy-w2-in" class="in"><div class="txt" style="font-size:110px;font-weight:800;color:var(--ink)"><span id="lucy-w2-w0" class="w acc">“expecting”</span></div></div></div>
+    <div id="lucy-baby" class="clip el" data-start="47.299" data-duration="4.322" data-track-index="30" style="position:absolute;left:240px;top:40px;width:1680px;height:1040px;z-index:31" data-layout-allow-overlap><div id="lucy-baby-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 62 m-34 0 a34 34 0 1 0 68 0 a34 34 0 1 0 -68 0"/><path class="s" pathLength="1" d="M86 62 L88 62 M112 62 L114 62"/><path class="s" pathLength="1" d="M88 76 Q100 86 112 76"/><path class="s acc-s" pathLength="1" d="M54 116 Q100 92 146 116 L134 184 L66 184 Z"/><path class="s acc-s" pathLength="1" d="M66 140 L134 140"/></svg></div></div></div>
+    <div id="lucy-tvb" class="clip el" data-start="49.499" data-duration="2.172" data-track-index="31" style="position:absolute;left:1080px;top:40px;width:840px;height:1040px;z-index:32" data-layout-allow-overlap><div id="lucy-tvb-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 50 L176 50 Q186 50 186 60 L186 146 Q186 156 176 156 L24 156 Q14 156 14 146 L14 60 Q14 50 24 50 Z"/><path class="s" pathLength="1" d="M70 14 L100 46 L130 14"/><path class="s" pathLength="1" d="M60 156 L48 184 M140 156 L152 184"/></svg></div></div></div>
+    <div id="lucy-t11" class="clip el" data-start="48.459" data-duration="3.212" data-track-index="32" style="position:absolute;left:480px;top:600px;width:1440px;height:480px;z-index:33"><div id="lucy-t11-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="lucy-t11-w0" class="w">real</span> <span id="lucy-t11-w1" class="w">son</span> <span id="lucy-t11-w2" class="w">·</span> <span id="lucy-t11-w3" class="w">TV</span> <span id="lucy-t11-w4" class="w">baby</span> <span id="lucy-t11-w5" class="w">·</span> <span id="lucy-t11-w6" class="w acc">same</span> <span id="lucy-t11-w7" class="w acc">day</span></div></div></div>
+    <div id="lucy-t12" class="clip el" data-start="52.331" data-duration="7.865" data-track-index="33" style="position:absolute;left:0px;top:0px;width:1920px;height:840px;z-index:34"><div id="lucy-t12-in" class="in"><div class="txt hero" style="font-size:110px;font-weight:800;color:var(--ink)"><span id="lucy-t12-w0" class="w alm">44</span> <span id="lucy-t12-w1" class="w alm">million</span> <span id="lucy-t12-w2" class="w">watched</span></div></div></div>
+    <div id="lucy-t13" class="clip el" data-start="56.991" data-duration="3.28" data-track-index="34" style="position:absolute;left:0px;top:200px;width:1920px;height:880px;z-index:35"><div id="lucy-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="lucy-t13-w0" class="w">more</span> <span id="lucy-t13-w1" class="w">than</span> <span id="lucy-t13-w2" class="w acc">Eisenhower's</span> <span id="lucy-t13-w3" class="w acc">inauguration</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"lucy-ch","t":"chapter","from":"right","exit":null,"in":0.2,"out":2.5199999999999996,"outDur":0.3,"words":[0.3,0.4,0.5,0.6,0.7]},{"id":"lucy-t0","t":"text","from":"top","exit":null,"in":3,"out":5.68,"outDur":0.3,"words":[3.1,3.2,3.3]},{"id":"lucy-lu","t":"stick","from":"left","exit":null,"in":3,"out":13.929,"outDur":0.3,"poses":[["idle",3],["happy",8.16],["idle",9.509]],"mouth":[["smile",3]]},{"id":"lucy-de","t":"stick","from":"right","exit":null,"in":3,"out":13.929,"outDur":0.3,"poses":[["idle",3],["happy",8.16],["armsCrossed",13.349]],"mouth":[["smile",3],["tight",13.349]]},{"id":"lucy-t1","t":"text","from":"top","exit":null,"in":5.92,"out":9.149,"outDur":0.3,"words":[5.92,6.18,6.28,6.38,7.1]},{"id":"lucy-t2","t":"text","from":"top","exit":null,"in":10.729000000000001,"out":12.429,"outDur":0.3,"words":[9.809,11.269,11.369,11.629]},{"id":"lucy-no","t":"text","from":"slam","exit":null,"in":13.129,"out":13.929,"outDur":0.25,"words":[13.629]},{"id":"lucy-t3","t":"text","from":"top","exit":null,"in":14.469,"out":17.469,"outDur":0.3,"words":[16.089,16.349,17.009,17.269]},{"id":"lucy-cam1","t":"icon","from":"left","exit":null,"in":16.089,"out":17.469,"outDur":0.3},{"id":"lucy-cam2","t":"icon","from":"bottom","exit":null,"in":17.009,"out":17.609,"outDur":0.3},{"id":"lucy-cam3","t":"icon","from":"right","exit":null,"in":17.269,"out":17.869,"outDur":0.3},{"id":"lucy-t4","t":"text","from":"slam","exit":null,"in":18.729,"out":19.911,"outDur":0.25,"words":[18.169,18.449]},{"id":"lucy-t5","t":"text","from":"top","exit":null,"in":21.051,"out":26.931,"outDur":0.3,"words":[21.151,21.051]},{"id":"lucy-d1","t":"text","from":"left","exit":null,"in":22.951,"out":26.931,"outDur":0.3,"words":[23.051,23.151,23.231,23.431]},{"id":"lucy-d2","t":"text","from":"right","exit":null,"in":25.231,"out":26.931,"outDur":0.3,"words":[25.951,26.051,25.991,26.131]},{"id":"lucy-reel0","t":"icon","from":"pop","exit":null,"in":26.131,"out":26.931,"outDur":0.25},{"id":"lucy-t6","t":"text","from":"top","exit":null,"in":27.171,"out":28.037000000000003,"outDur":0.3,"words":[27.171,27.411]},{"id":"lucy-t7","t":"text","from":"slam","exit":null,"in":29.497,"out":31.497,"outDur":0.25,"words":[29.997,30.257,30.557,30.857,31.157]},{"id":"lucy-r1","t":"icon","from":"left","exit":null,"in":32.797,"out":34.817,"outDur":0.3},{"id":"lucy-r2","t":"icon","from":"top","exit":null,"in":33.617,"out":34.817,"outDur":0.3},{"id":"lucy-r3","t":"icon","from":"right","exit":null,"in":34.337,"out":34.937000000000005,"outDur":0.3},{"id":"lucy-t8","t":"text","from":"bottom","exit":null,"in":33.017,"out":34.817,"outDur":0.3,"words":[32.797,33.017]},{"id":"lucy-rep","t":"icon","from":"pop","exit":null,"in":35.337,"out":37.277,"outDur":0.25},{"id":"lucy-t9","t":"text","from":"top","exit":null,"in":35.277,"out":37.277,"outDur":0.3,"words":[36.177,36.397,36.677,36.957,37.057]},{"id":"lucy-t10","t":"text","from":"top","exit":null,"in":38.197,"out":39.86,"outDur":0.3,"words":[38.117,38.197,38.477]},{"id":"lucy-lu2","t":"stick","from":"left","exit":null,"in":40.26,"out":51.330999999999996,"outDur":0.3,"poses":[["idle",40.26],["shrug",42.5],["happy",47.299]],"mouth":[["smile",40.26],["o",42.5],["smile",47.299]]},{"id":"lucy-w1","t":"text","from":"right","exit":null,"in":42.78,"out":46.539,"outDur":0.3,"words":[40.76]},{"id":"lucy-k1","t":"strike","from":"pop","exit":null,"in":43.5,"out":46.539,"outDur":0.3},{"id":"lucy-w2","t":"text","from":"bottom","exit":null,"in":45.16,"out":46.539,"outDur":0.3,"words":[45.16]},{"id":"lucy-baby","t":"icon","from":"pop","exit":null,"in":47.299,"out":51.330999999999996,"outDur":0.25},{"id":"lucy-tvb","t":"icon","from":"right","exit":null,"in":49.499,"out":51.330999999999996,"outDur":0.3},{"id":"lucy-t11","t":"text","from":"bottom","exit":null,"in":48.459,"out":51.330999999999996,"outDur":0.3,"words":[47.039,47.299,47.399,49.179,49.499,49.599,49.699,49.799]},{"id":"lucy-t12","t":"text","from":"slam","exit":null,"in":52.331,"out":59.906,"outDur":0.25,"words":[52.431,53.011,53.891]},{"id":"lucy-t13","t":"text","from":"bottom","exit":null,"in":56.991,"out":59.931,"outDur":0.3,"words":[56.372,56.472,56.991,57.912]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["lucy"] = tl;
+    })();
+  </script>
+</template>

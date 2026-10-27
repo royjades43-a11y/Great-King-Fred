@@ -1,0 +1,199 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="nostalgia" data-width="1920" data-height="1080">
+    <div id="nostalgia-a3" class="clip el" data-start="0.6999999999999997" data-duration="1.69" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:2"><div id="nostalgia-a3-in" class="in"><div class="txt hero" style="font-size:150px;font-weight:800;color:var(--ink)"><span id="nostalgia-a3-w0" class="w">3</span> <span id="nostalgia-a3-w1" class="w">·</span> <span id="nostalgia-a3-w2" class="w acc">nostalgia</span></div></div></div>
+    <div id="nostalgia-le" class="clip el" data-start="3.38" data-duration="1.23" data-track-index="2" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:3" data-layout-allow-overlap><div id="nostalgia-le-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 128 Q44 84 86 104 Q126 124 156 92 Q182 76 180 110 Q176 144 132 144 Q92 144 62 156 Q24 168 24 128 Z"/><circle class="f" cx="160" cy="104" r="6"/></svg></div></div></div>
+    <div id="nostalgia-t0" class="clip el" data-start="2.619999999999999" data-duration="2.04" data-track-index="3" style="position:absolute;left:0px;top:560px;width:1920px;height:520px;z-index:4"><div id="nostalgia-t0-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="nostalgia-t0-w0" class="w">yes,</span> <span id="nostalgia-t0-w1" class="w">the</span> <span id="nostalgia-t0-w2" class="w">old</span> <span id="nostalgia-t0-w3" class="w acc">disease</span></div></div></div>
+    <div id="nostalgia-card" class="clip el" data-start="4.86" data-duration="9.182" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:460px;z-index:5"><div id="nostalgia-card-in" class="in"><div class="card"><div class="card-k">RESEARCH · 2006</div><div class="card-t">Nostalgia, studied properly</div><div class="card-s">Sedikides, Wildschut et al.</div></div></div></div>
+    <div id="nostalgia-pp0" class="clip el" data-start="8.52" data-duration="1.622" data-track-index="5" style="position:absolute;left:0px;top:120px;width:1920px;height:960px;z-index:6" data-layout-allow-overlap><div id="nostalgia-pp0-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M60 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 M140 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s" pathLength="1" d="M22 176 Q22 112 60 112 Q98 112 98 176 M102 176 Q102 112 140 112 Q178 112 178 176"/></svg></div></div></div>
+    <div id="nostalgia-cal" class="clip el" data-start="13.402" data-duration="0.94" data-track-index="6" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:7" data-layout-allow-overlap><div id="nostalgia-cal-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="nostalgia-t1" class="clip el" data-start="11.702" data-duration="2.34" data-track-index="7" style="position:absolute;left:0px;top:600px;width:1920px;height:480px;z-index:8"><div id="nostalgia-t1-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="nostalgia-t1-w0" class="w">at</span> <span id="nostalgia-t1-w1" class="w">least</span> <span id="nostalgia-t1-w2" class="w acc">once</span> <span id="nostalgia-t1-w3" class="w acc">a</span> <span id="nostalgia-t1-w4" class="w acc">week</span></div></div></div>
+    <div id="nostalgia-t2" class="clip el" data-start="13.942" data-duration="1.74" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:9"><div id="nostalgia-t2-in" class="in"><div class="txt" style="font-size:100px;font-weight:800;color:var(--ink)"><span id="nostalgia-t2-w0" class="w">and</span> <span id="nostalgia-t2-w1" class="w">not</span> <span id="nostalgia-t2-w2" class="w acc">sick</span></div></div></div>
+    <div id="nostalgia-pp" class="clip el" data-start="16.902" data-duration="3.854" data-track-index="9" style="position:absolute;left:0px;top:0px;width:1200px;height:1040px;z-index:10" data-layout-allow-overlap><div id="nostalgia-pp-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M60 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 M140 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s" pathLength="1" d="M22 176 Q22 112 60 112 Q98 112 98 176 M102 176 Q102 112 140 112 Q178 112 178 176"/></svg></div></div></div>
+    <div id="nostalgia-c1" class="clip el" data-start="16.902" data-duration="3.854" data-track-index="10" style="position:absolute;left:0px;top:480px;width:1200px;height:600px;z-index:11"><div id="nostalgia-c1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="nostalgia-c1-w0" class="w">more</span> <span id="nostalgia-c1-w1" class="w acc">connected</span></div></div></div>
+    <div id="nostalgia-hr" class="clip el" data-start="19.242" data-duration="1.514" data-track-index="11" style="position:absolute;left:720px;top:0px;width:1200px;height:1040px;z-index:12" data-layout-allow-overlap><div id="nostalgia-hr-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="nostalgia-c2" class="clip el" data-start="19.242" data-duration="1.514" data-track-index="12" style="position:absolute;left:720px;top:480px;width:1200px;height:600px;z-index:13"><div id="nostalgia-c2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="nostalgia-c2-w0" class="w">more</span> <span id="nostalgia-c2-w1" class="w acc">meaning</span></div></div></div>
+    <div id="nostalgia-le2" class="clip el" data-start="22.056" data-duration="2.98" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1200px;height:1080px;z-index:14" data-layout-allow-overlap><div id="nostalgia-le2-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 128 Q44 84 86 104 Q126 124 156 92 Q182 76 180 110 Q176 144 132 144 Q92 144 62 156 Q24 168 24 128 Z"/><circle class="f" cx="160" cy="104" r="6"/></svg></div></div></div>
+    <div id="nostalgia-k1" class="clip el" data-start="22.356" data-duration="2.68" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1200px;height:1080px;z-index:50" data-layout-allow-overlap data-layout-allow-occlusion><div id="nostalgia-k1-in" class="in"><div class="strike" style="width:280px"></div></div></div>
+    <div id="nostalgia-hr2" class="clip el" data-start="23.296" data-duration="1.74" data-track-index="15" style="position:absolute;left:720px;top:0px;width:1200px;height:1080px;z-index:16" data-layout-allow-overlap><div id="nostalgia-hr2-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="nostalgia-t3" class="clip el" data-start="23.296000000000003" data-duration="1.74" data-track-index="16" style="position:absolute;left:720px;top:520px;width:1200px;height:560px;z-index:17"><div id="nostalgia-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="nostalgia-t3-w0" class="w acc">emotional</span> <span id="nostalgia-t3-w1" class="w acc">first</span> <span id="nostalgia-t3-w2" class="w acc">aid</span></div></div></div>
+    <div id="nostalgia-t4" class="clip el" data-start="25.316000000000003" data-duration="1.74" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:18"><div id="nostalgia-t4-in" class="in"><div class="txt" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="nostalgia-t4-w0" class="w">a</span> <span id="nostalgia-t4-w1" class="w">fair</span> <span id="nostalgia-t4-w2" class="w acc">question</span></div></div></div>
+    <div id="nostalgia-t5" class="clip el" data-start="26.956" data-duration="2.69" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:19"><div id="nostalgia-t5-in" class="in"><div class="txt" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="nostalgia-t5-w0" class="w">if</span> <span id="nostalgia-t5-w1" class="w">it</span> <span id="nostalgia-t5-w2" class="w">helps,</span> <span id="nostalgia-t5-w3" class="w">why</span> <span id="nostalgia-t5-w4" class="w">does</span> <span id="nostalgia-t5-w5" class="w">it</span> <span id="nostalgia-t5-w6" class="w alm">hurt<span class="tail">?</span></span></div></div></div>
+    <div id="nostalgia-t6" class="clip el" data-start="30.036" data-duration="1.757" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:20"><div id="nostalgia-t6-in" class="in"><div class="txt hero" style="font-size:170px;font-weight:800;color:var(--ink)"><span id="nostalgia-t6-w0" class="w">BITTERSWEET</span></div></div></div>
+    <div id="nostalgia-t7" class="clip el" data-start="32.983" data-duration="1.92" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:880px;z-index:21"><div id="nostalgia-t7-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="nostalgia-t7-w0" class="w">something</span> <span id="nostalgia-t7-w1" class="w">good</span> <span id="nostalgia-t7-w2" class="w acc">happened</span></div></div></div>
+    <div id="nostalgia-t8" class="clip el" data-start="33.163" data-duration="1.74" data-track-index="21" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:22"><div id="nostalgia-t8-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="nostalgia-t8-w0" class="w">and</span> <span id="nostalgia-t8-w1" class="w">it's</span> <span id="nostalgia-t8-w2" class="w alm">gone</span></div></div></div>
+    <div id="nostalgia-couch" class="clip el" data-start="35.083" data-duration="5.19" data-track-index="22" style="position:absolute;left:0px;top:300px;width:1920px;height:780px;z-index:23" data-layout-allow-overlap><div id="nostalgia-couch-in" class="in"><div class="ico" style="width:480px;height:480px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 104 L30 78 Q30 64 44 64 L156 64 Q170 64 170 78 L170 104"/><path class="s" pathLength="1" d="M14 112 Q14 96 28 96 Q42 96 42 112 L42 128 L158 128 L158 112 Q158 96 172 96 Q186 96 186 112 L186 160 L14 160 Z"/><path class="s" pathLength="1" d="M30 160 L30 178 M170 160 L170 178"/></svg></div></div></div>
+    <div id="nostalgia-v" class="clip el" data-start="35.083" data-duration="5.215" data-track-index="23" style="position:absolute;left:0px;top:270px;width:1920px;height:810px;z-index:24"><div id="nostalgia-v-in" class="in"><svg class="stick" id="nostalgia-v-svg" width="225" height="390" viewBox="0 0 300 520">
+  
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L104 332 L100 424"/><path class="s" d="M150 300 L196 332 L200 424"/>
+    <g id="nostalgia-v-aLu"><path class="s" d="M150 160 L150 255"/><g id="nostalgia-v-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="nostalgia-v-aRu"><path class="s" d="M150 160 L150 255"/><g id="nostalgia-v-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="nostalgia-v-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="nostalgia-v-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="nostalgia-v-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="nostalgia-v-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="nostalgia-v-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="nostalgia-v-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="nostalgia-t9" class="clip el" data-start="36.623" data-duration="3.7" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:25"><div id="nostalgia-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="nostalgia-t9-w0" class="w">the</span> <span id="nostalgia-t9-w1" class="w acc">sweet</span> <span id="nostalgia-t9-w2" class="w">part,</span> <span id="nostalgia-t9-w3" class="w">not</span> <span id="nostalgia-t9-w4" class="w">the</span> <span id="nostalgia-t9-w5" class="w">bitter</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"nostalgia-a3","t":"text","from":"slam","exit":null,"in":0.6999999999999997,"out":2.0999999999999996,"outDur":0.25,"words":[1.36,1.46,1.26]},{"id":"nostalgia-le","t":"icon","from":"pop","exit":null,"in":3.38,"out":4.319999999999999,"outDur":0.25},{"id":"nostalgia-t0","t":"text","from":"bottom","exit":null,"in":2.619999999999999,"out":4.319999999999999,"outDur":0.3,"words":[2.34,2.44,3.12,3.38]},{"id":"nostalgia-card","t":"card","from":"top","exit":null,"in":4.86,"out":13.702,"outDur":0.3},{"id":"nostalgia-pp0","t":"icon","from":"bottom","exit":null,"in":8.52,"out":9.802,"outDur":0.3},{"id":"nostalgia-cal","t":"icon","from":"bottom","exit":null,"in":13.402,"out":14.001999999999999,"outDur":0.3},{"id":"nostalgia-t1","t":"text","from":"bottom","exit":null,"in":11.702,"out":13.702,"outDur":0.3,"words":[12.442,12.782,12.922,13.282,13.402]},{"id":"nostalgia-t2","t":"text","from":"top","exit":null,"in":13.942,"out":15.342,"outDur":0.3,"words":[13.942,14.042,14.742]},{"id":"nostalgia-pp","t":"icon","from":"left","exit":null,"in":16.902,"out":20.416,"outDur":0.3},{"id":"nostalgia-c1","t":"text","from":"bottom","exit":null,"in":16.902,"out":20.416,"outDur":0.3,"words":[16.642,16.902]},{"id":"nostalgia-hr","t":"icon","from":"right","exit":null,"in":19.242,"out":20.416,"outDur":0.3},{"id":"nostalgia-c2","t":"text","from":"bottom","exit":null,"in":19.242,"out":20.416,"outDur":0.3,"words":[16.642,19.242]},{"id":"nostalgia-le2","t":"icon","from":"left","exit":null,"in":22.056,"out":24.696,"outDur":0.3},{"id":"nostalgia-k1","t":"strike","from":"pop","exit":null,"in":22.356,"out":24.696,"outDur":0.3},{"id":"nostalgia-hr2","t":"icon","from":"right","exit":null,"in":23.296,"out":24.696,"outDur":0.3},{"id":"nostalgia-t3","t":"text","from":"bottom","exit":null,"in":23.296000000000003,"out":24.696,"outDur":0.3,"words":[23.296,23.736,24.236]},{"id":"nostalgia-t4","t":"text","from":"top","exit":null,"in":25.316000000000003,"out":26.716,"outDur":0.3,"words":[25.556,25.756,25.976]},{"id":"nostalgia-t5","t":"text","from":"slam","exit":null,"in":26.956,"out":29.356,"outDur":0.25,"words":[26.956,28.356,28.456,28.556,28.656,28.756,28.876]},{"id":"nostalgia-t6","t":"text","from":"slam","exit":null,"in":30.036,"out":31.503,"outDur":0.25,"words":[30.036]},{"id":"nostalgia-t7","t":"text","from":"left","exit":null,"in":32.983,"out":34.562999999999995,"outDur":0.3,"words":[32.463,32.743,32.983]},{"id":"nostalgia-t8","t":"text","from":"right","exit":null,"in":33.163,"out":34.562999999999995,"outDur":0.3,"words":[33.443,33.863,34.103]},{"id":"nostalgia-couch","t":"icon","from":"bottom","exit":null,"in":35.083,"out":39.93299999999999,"outDur":0.3},{"id":"nostalgia-v","t":"stick","from":"top","exit":null,"in":35.083,"out":39.958,"outDur":0.3,"poses":[["happy",35.083]],"mouth":[["smile",35.083]]},{"id":"nostalgia-t9","t":"text","from":"top","exit":null,"in":36.623,"out":39.983,"outDur":0.3,"words":[34.803,36.623,36.883,36.983,38.723,38.823]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["nostalgia"] = tl;
+    })();
+  </script>
+</template>

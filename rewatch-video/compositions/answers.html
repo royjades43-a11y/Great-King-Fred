@@ -1,0 +1,224 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="answers" data-width="1920" data-height="1080">
+    <div id="answers-t0" class="clip el" data-start="0.2" data-duration="1.88" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:800px;z-index:2"><div id="answers-t0-in" class="in"><div class="txt" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="answers-t0-w0" class="w">what</span> <span id="answers-t0-w1" class="w">are</span> <span id="answers-t0-w2" class="w">we</span> <span id="answers-t0-w3" class="w acc">buying<span class="tail">?</span></span></div></div></div>
+    <div id="answers-t1" class="clip el" data-start="2.82" data-duration="2.109" data-track-index="2" style="position:absolute;left:0px;top:0px;width:1920px;height:1040px;z-index:3"><div id="answers-t1-in" class="in"><div class="txt hero" style="font-size:160px;font-weight:800;color:var(--ink)"><span id="answers-t1-w0" class="w">3</span> <span id="answers-t1-w1" class="w">answers</span></div></div></div>
+    <div id="answers-a1" class="clip el" data-start="4.879" data-duration="1.17" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:4"><div id="answers-a1-in" class="in"><div class="txt hero" style="font-size:150px;font-weight:800;color:var(--ink)"><span id="answers-a1-w0" class="w">1</span> <span id="answers-a1-w1" class="w">·</span> <span id="answers-a1-w2" class="w acc">effort</span></div></div></div>
+    <div id="answers-t2" class="clip el" data-start="6.899" data-duration="3.84" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:5"><div id="answers-t2-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="answers-t2-w0" class="w">a</span> <span id="answers-t2-w1" class="w">new</span> <span id="answers-t2-w2" class="w">show</span> <span id="answers-t2-w3" class="w">asks</span> <span id="answers-t2-w4" class="w">a</span> <span id="answers-t2-w5" class="w acc">lot</span></div></div></div>
+    <div id="answers-q1" class="clip el" data-start="7.719" data-duration="3.02" data-track-index="5" style="position:absolute;left:0px;top:40px;width:1120px;height:1040px;z-index:6" data-layout-allow-overlap><div id="answers-q1-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="answers-q2" class="clip el" data-start="8.219" data-duration="2.52" data-track-index="6" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:7" data-layout-allow-overlap><div id="answers-q2-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="answers-q3" class="clip el" data-start="8.799" data-duration="1.94" data-track-index="7" style="position:absolute;left:800px;top:40px;width:1120px;height:1040px;z-index:8" data-layout-allow-overlap><div id="answers-q3-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="answers-t3" class="clip el" data-start="7.719" data-duration="3.02" data-track-index="8" style="position:absolute;left:0px;top:560px;width:1920px;height:520px;z-index:9"><div id="answers-t3-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="answers-t3-w0" class="w">new</span> <span id="answers-t3-w1" class="w">names</span> <span id="answers-t3-w2" class="w">·</span> <span id="answers-t3-w3" class="w">new</span> <span id="answers-t3-w4" class="w">faces</span> <span id="answers-t3-w5" class="w">·</span> <span id="answers-t3-w6" class="w">new</span> <span id="answers-t3-w7" class="w">story</span></div></div></div>
+    <div id="answers-t4" class="clip el" data-start="10.639" data-duration="2.18" data-track-index="9" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:10"><div id="answers-t4-in" class="in"><div class="txt" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="answers-t4-w0" class="w">a</span> <span id="answers-t4-w1" class="w">known</span> <span id="answers-t4-w2" class="w">show</span> <span id="answers-t4-w3" class="w">asks</span> <span id="answers-t4-w4" class="w acc">nothing</span></div></div></div>
+    <div id="answers-t5" class="clip el" data-start="14.219" data-duration="2.524" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:880px;z-index:11"><div id="answers-t5-in" class="in"><div class="txt hero" style="font-size:110px;font-weight:800;color:var(--ink)"><span id="answers-t5-w0" class="w">PROCESSING</span> <span id="answers-t5-w1" class="w">FLUENCY</span></div></div></div>
+    <div id="answers-t6" class="clip el" data-start="14.913" data-duration="1.88" data-track-index="11" style="position:absolute;left:0px;top:200px;width:1920px;height:880px;z-index:12"><div id="answers-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="answers-t6-w0" class="w">easy</span> <span id="answers-t6-w1" class="w">to</span> <span id="answers-t6-w2" class="w">take</span> <span id="answers-t6-w3" class="w">in</span> <span id="answers-t6-w4" class="w">=</span> <span id="answers-t6-w5" class="w acc">feels</span> <span id="answers-t6-w6" class="w acc">good</span></div></div></div>
+    <div id="answers-nt" class="clip el" data-start="17.913" data-duration="2.55" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:13" data-layout-allow-overlap><div id="answers-nt-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M78 152 m-24 0 a24 18 0 1 0 48 0 a24 18 0 1 0 -48 0"/><path class="s" pathLength="1" d="M102 152 L102 42 L164 28 L164 128"/><path class="s" pathLength="1" d="M140 128 m-24 0 a24 18 0 1 0 48 0 a24 18 0 1 0 -48 0"/><path class="s acc-s" pathLength="1" d="M102 70 L164 56"/></svg></div></div></div>
+    <div id="answers-t7" class="clip el" data-start="17.593" data-duration="2.92" data-track-index="13" style="position:absolute;left:0px;top:580px;width:1920px;height:500px;z-index:14"><div id="answers-t7-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="answers-t7-w0" class="w">like</span> <span id="answers-t7-w1" class="w">your</span> <span id="answers-t7-w2" class="w acc">favourite</span> <span id="answers-t7-w3" class="w acc">song</span></div></div></div>
+    <div id="answers-pz" class="clip el" data-start="22.233" data-duration="4.286" data-track-index="14" style="position:absolute;left:0px;top:40px;width:1200px;height:1040px;z-index:15" data-layout-allow-overlap><div id="answers-pz-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 62 L80 62 Q78 34 100 34 Q122 34 120 62 L160 62 L160 100 Q188 98 188 120 Q188 142 160 140 L160 180 L40 180 L40 140 Q66 142 66 120 Q66 98 40 100 Z"/></svg></div></div></div>
+    <div id="answers-k1" class="clip el" data-start="22.533" data-duration="3.986" data-track-index="15" style="position:absolute;left:0px;top:40px;width:1200px;height:1040px;z-index:50" data-layout-allow-overlap data-layout-allow-occlusion><div id="answers-k1-in" class="in"><div class="strike" style="width:300px"></div></div></div>
+    <div id="answers-t8" class="clip el" data-start="22.233" data-duration="4.286" data-track-index="16" style="position:absolute;left:0px;top:560px;width:1200px;height:520px;z-index:17"><div id="answers-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="answers-t8-w0" class="w">no</span> <span id="answers-t8-w1" class="w acc">puzzle</span></div></div></div>
+    <div id="answers-tired" class="clip el" data-start="22.993" data-duration="3.526" data-track-index="17" style="position:absolute;left:720px;top:220px;width:1200px;height:860px;z-index:18"><div id="answers-tired-in" class="in"><svg class="stick" id="answers-tired-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="answers-tired-aLu"><path class="s" d="M150 160 L150 255"/><g id="answers-tired-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="answers-tired-aRu"><path class="s" d="M150 160 L150 255"/><g id="answers-tired-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="answers-tired-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="answers-tired-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="answers-tired-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="answers-tired-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="answers-tired-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="answers-tired-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="answers-t9" class="clip el" data-start="24.713" data-duration="1.806" data-track-index="18" style="position:absolute;left:720px;top:0px;width:1200px;height:400px;z-index:19"><div id="answers-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="answers-t9-w0" class="w">eyes</span> <span id="answers-t9-w1" class="w acc">half</span> <span id="answers-t9-w2" class="w acc">closed</span></div></div></div>
+    <div id="answers-a2" class="clip el" data-start="26.419" data-duration="1.29" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:20"><div id="answers-a2-in" class="in"><div class="txt hero" style="font-size:150px;font-weight:800;color:var(--ink)"><span id="answers-a2-w0" class="w">2</span> <span id="answers-a2-w1" class="w">·</span> <span id="answers-a2-w2" class="w acc">control</span></div></div></div>
+    <div id="answers-hs" class="clip el" data-start="29.899" data-duration="2.95" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:21" data-layout-allow-overlap><div id="answers-hs-in" class="in"><div class="ico" style="width:280px;height:280px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 96 L100 30 L176 96 M44 80 L44 178 L156 178 L156 80"/></svg></div></div></div>
+    <div id="answers-t10" class="clip el" data-start="29.958999999999996" data-duration="2.94" data-track-index="21" style="position:absolute;left:0px;top:580px;width:1920px;height:500px;z-index:22"><div id="answers-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="answers-t10-w0" class="w">a</span> <span id="answers-t10-w1" class="w">known</span> <span id="answers-t10-w2" class="w">ending:</span> <span id="answers-t10-w3" class="w">a</span> <span id="answers-t10-w4" class="w">small</span> <span id="answers-t10-w5" class="w acc">safe</span> <span id="answers-t10-w6" class="w acc">room</span></div></div></div>
+    <div id="answers-t11" class="clip el" data-start="32.937" data-duration="2.64" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:23"><div id="answers-t11-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="answers-t11-w0" class="w">knowing</span> <span id="answers-t11-w1" class="w">the</span> <span id="answers-t11-w2" class="w">ending</span> <span id="answers-t11-w3" class="w">doesn't</span> <span id="answers-t11-w4" class="w alm">spoil</span> <span id="answers-t11-w5" class="w">it</span></div></div></div>
+    <div id="answers-card" class="clip el" data-start="36.597" data-duration="5.22" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:460px;z-index:24"><div id="answers-card-in" class="in"><div class="card"><div class="card-k">STUDY · 2011 · UC SAN DIEGO</div><div class="card-t">Spoilers don't spoil stories</div><div class="card-s">Leavitt &amp; Christenfeld</div></div></div></div>
+    <div id="answers-bk" class="clip el" data-start="40.057" data-duration="1.76" data-track-index="24" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:25" data-layout-allow-overlap><div id="answers-bk-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 52 Q60 32 18 46 L18 168 Q60 154 100 174 Q140 154 182 168 L182 46 Q140 32 100 52 Z"/><path class="s" pathLength="1" d="M100 52 L100 174"/><path class="s acc-s" pathLength="1" d="M40 80 L80 86 M40 108 L80 114 M120 86 L160 80 M120 114 L160 108"/></svg></div></div></div>
+    <div id="answers-t12" class="clip el" data-start="41.897" data-duration="9.862" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:26"><div id="answers-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="answers-t12-w0" class="w">how</span> <span id="answers-t12-w1" class="w">much</span> <span id="answers-t12-w2" class="w">they</span> <span id="answers-t12-w3" class="w acc">enjoyed</span> <span id="answers-t12-w4" class="w">it</span></div></div></div>
+    <div id="answers-bar1" class="clip el" data-start="42.397" data-duration="9.312" data-track-index="26" style="position:absolute;left:0px;top:640px;width:1520px;height:440px;z-index:27"><div id="answers-bar1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:220px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">no spoiler</div></div></div></div>
+    <div id="answers-bar2" class="clip el" data-start="46.039" data-duration="5.67" data-track-index="27" style="position:absolute;left:400px;top:640px;width:1520px;height:440px;z-index:28"><div id="answers-bar2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:300px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">spoiler first</div></div></div></div>
+    <div id="answers-t13" class="clip el" data-start="46.019" data-duration="1.74" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:620px;z-index:29"><div id="answers-t13-in" class="in"><div class="txt" style="font-size:60px;font-weight:600;color:var(--ink)"><span id="answers-t13-w0" class="w">enjoyed</span> <span id="answers-t13-w1" class="w">it</span> <span id="answers-t13-w2" class="w acc">more</span></div></div></div>
+    <div id="answers-t14" class="clip el" data-start="49.419" data-duration="2.34" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:620px;z-index:30"><div id="answers-t14-in" class="in"><div class="txt" style="font-size:60px;font-weight:600;color:var(--ink)"><span id="answers-t14-w0" class="w">the</span> <span id="answers-t14-w1" class="w">spoiler</span> <span id="answers-t14-w2" class="w">made</span> <span id="answers-t14-w3" class="w">it</span> <span id="answers-t14-w4" class="w acc">better</span></div></div></div>
+    <div id="answers-moon" class="clip el" data-start="53.479" data-duration="4.424" data-track-index="30" style="position:absolute;left:880px;top:0px;width:1040px;height:600px;z-index:31" data-layout-allow-overlap><div id="answers-moon-in" class="in"><div class="ico" style="width:180px;height:180px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M128 26 A78 78 0 1 0 174 142 A62 62 0 1 1 128 26 Z"/><path class="s acc-s" pathLength="1" d="M150 50 L150 66 M142 58 L158 58"/></svg></div></div></div>
+    <div id="answers-bk2" class="clip el" data-start="53.759" data-duration="4.194" data-track-index="31" style="position:absolute;left:440px;top:200px;width:1480px;height:880px;z-index:32" data-layout-allow-overlap><div id="answers-bk2-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 52 Q60 32 18 46 L18 168 Q60 154 100 174 Q140 154 182 168 L182 46 Q140 32 100 52 Z"/><path class="s" pathLength="1" d="M100 52 L100 174"/><path class="s acc-s" pathLength="1" d="M40 80 L80 86 M40 108 L80 114 M120 86 L160 80 M120 114 L160 108"/></svg></div></div></div>
+    <div id="answers-kid" class="clip el" data-start="52.119" data-duration="11.093" data-track-index="32" style="position:absolute;left:0px;top:280px;width:1280px;height:800px;z-index:33"><div id="answers-kid-in" class="in"><svg class="stick" id="answers-kid-svg" width="210" height="364" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="answers-kid-aLu"><path class="s" d="M150 160 L150 255"/><g id="answers-kid-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="answers-kid-aRu"><path class="s" d="M150 160 L150 255"/><g id="answers-kid-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="answers-kid-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="answers-kid-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="answers-kid-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="answers-kid-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="answers-kid-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="answers-kid-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="answers-t15" class="clip el" data-start="53.43299999999999" data-duration="2.04" data-track-index="33" style="position:absolute;left:0px;top:0px;width:1920px;height:360px;z-index:34"><div id="answers-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="answers-t15-w0" class="w">the</span> <span id="answers-t15-w1" class="w">same</span> <span id="answers-t15-w2" class="w acc">bedtime</span> <span id="answers-t15-w3" class="w acc">story</span></div></div></div>
+    <div id="answers-t16" class="clip el" data-start="55.373" data-duration="1.4" data-track-index="34" style="position:absolute;left:0px;top:0px;width:1920px;height:360px;z-index:35"><div id="answers-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="answers-t16-w0" class="w">they</span> <span id="answers-t16-w1" class="w">know</span> <span id="answers-t16-w2" class="w">how</span> <span id="answers-t16-w3" class="w">it</span> <span id="answers-t16-w4" class="w acc">ends</span></div></div></div>
+    <div id="answers-t17" class="clip el" data-start="56.673" data-duration="1.28" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:360px;z-index:36"><div id="answers-t17-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="answers-t17-w0" class="w alm">that's</span> <span id="answers-t17-w1" class="w alm">the</span> <span id="answers-t17-w2" class="w alm">point</span></div></div></div>
+    <div id="answers-t18" class="clip el" data-start="59.213" data-duration="4.099" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:360px;z-index:37"><div id="answers-t18-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="answers-t18-w0" class="w acc">relax<span class="tail">,</span></span> <span id="answers-t18-w1" class="w">don't</span> <span id="answers-t18-w2" class="w">brace</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"answers-t0","t":"text","from":"top","exit":null,"in":0.2,"out":1.74,"outDur":0.3,"words":[0.4,0.58,0.66,1.12]},{"id":"answers-t1","t":"text","from":"slam","exit":null,"in":2.82,"out":4.638999999999999,"outDur":0.25,"words":[2.92,3.18]},{"id":"answers-a1","t":"text","from":"slam","exit":null,"in":4.879,"out":5.7589999999999995,"outDur":0.25,"words":[5.539,5.639,5.439]},{"id":"answers-t2","t":"text","from":"top","exit":null,"in":6.899,"out":10.399,"outDur":0.3,"words":[5.999,6.059,6.199,6.419,6.739,6.899]},{"id":"answers-q1","t":"icon","from":"left","exit":null,"in":7.719,"out":10.399,"outDur":0.3},{"id":"answers-q2","t":"icon","from":"top","exit":null,"in":8.219,"out":10.399,"outDur":0.3},{"id":"answers-q3","t":"icon","from":"right","exit":null,"in":8.799,"out":10.399,"outDur":0.3},{"id":"answers-t3","t":"text","from":"bottom","exit":null,"in":7.719,"out":10.399,"outDur":0.3,"words":[7.619,7.719,7.819,8.139,8.219,8.319,8.419,8.799]},{"id":"answers-t4","t":"text","from":"top","exit":null,"in":10.639,"out":12.479,"outDur":0.3,"words":[10.639,10.999,11.099,11.119,11.839]},{"id":"answers-t5","t":"text","from":"slam","exit":null,"in":14.219,"out":16.453000000000003,"outDur":0.25,"words":[13.699,14.219]},{"id":"answers-t6","t":"text","from":"bottom","exit":null,"in":14.913,"out":16.453000000000003,"outDur":0.3,"words":[15.333,15.553,15.693,15.893,15.993,15.993,16.173]},{"id":"answers-nt","t":"icon","from":"pop","exit":null,"in":17.913,"out":20.173000000000002,"outDur":0.25},{"id":"answers-t7","t":"text","from":"bottom","exit":null,"in":17.593,"out":20.173000000000002,"outDur":0.3,"words":[17.693,17.413,17.593,17.913]},{"id":"answers-pz","t":"icon","from":"left","exit":null,"in":22.233,"out":26.179000000000002,"outDur":0.3},{"id":"answers-k1","t":"strike","from":"pop","exit":null,"in":22.533,"out":26.179000000000002,"outDur":0.3},{"id":"answers-t8","t":"text","from":"bottom","exit":null,"in":22.233,"out":26.179000000000002,"outDur":0.3,"words":[22.333,22.233]},{"id":"answers-tired","t":"stick","from":"right","exit":null,"in":22.993,"out":26.179000000000002,"outDur":0.3,"poses":[["headDown",22.993]],"mouth":[["smile",22.993]]},{"id":"answers-t9","t":"text","from":"top","exit":null,"in":24.713,"out":26.179000000000002,"outDur":0.3,"words":[24.473,24.713,24.993]},{"id":"answers-a2","t":"text","from":"slam","exit":null,"in":26.419,"out":27.419,"outDur":0.25,"words":[27.259,27.359,27.159]},{"id":"answers-hs","t":"icon","from":"pop","exit":null,"in":29.899,"out":32.559,"outDur":0.25},{"id":"answers-t10","t":"text","from":"bottom","exit":null,"in":29.958999999999996,"out":32.559,"outDur":0.3,"words":[29.859,30.679,30.899,31.619,31.719,32.079,32.559]},{"id":"answers-t11","t":"text","from":"top","exit":null,"in":32.937,"out":35.236999999999995,"outDur":0.3,"words":[33.239,33.499,33.739,34.059,34.419,34.759]},{"id":"answers-card","t":"card","from":"top","exit":null,"in":36.597,"out":41.477,"outDur":0.3},{"id":"answers-bk","t":"icon","from":"bottom","exit":null,"in":40.057,"out":41.477,"outDur":0.3},{"id":"answers-t12","t":"text","from":"top","exit":null,"in":41.897,"out":51.419,"outDur":0.3,"words":[41.997,42.097,42.197,42.297,42.397]},{"id":"answers-bar1","t":"bar","from":"draw","exit":null,"in":42.397,"out":51.419,"outDur":0.25},{"id":"answers-bar2","t":"bar","from":"draw","exit":null,"in":46.039,"out":51.419,"outDur":0.25},{"id":"answers-t13","t":"text","from":"bottom","exit":null,"in":46.019,"out":47.419,"outDur":0.3,"words":[45.099,45.199,46.039]},{"id":"answers-t14","t":"text","from":"bottom","exit":null,"in":49.419,"out":51.419,"outDur":0.3,"words":[47.839,49.539,49.639,49.739,50.839]},{"id":"answers-moon","t":"icon","from":"pop","exit":null,"in":53.479,"out":57.613,"outDur":0.25},{"id":"answers-bk2","t":"icon","from":"right","exit":null,"in":53.759,"out":57.613,"outDur":0.3},{"id":"answers-kid","t":"stick","from":"left","exit":null,"in":52.119,"out":62.872,"outDur":0.3,"poses":[["happy",52.119],["point",56.093],["victory",57.033],["happy",59.213]],"mouth":[["smile",52.119]]},{"id":"answers-t15","t":"text","from":"top","exit":null,"in":53.43299999999999,"out":55.132999999999996,"outDur":0.3,"words":[53.079,53.199,53.479,53.759]},{"id":"answers-t16","t":"text","from":"top","exit":null,"in":55.373,"out":56.433,"outDur":0.3,"words":[55.373,55.513,55.653,55.873,56.093]},{"id":"answers-t17","t":"text","from":"top","exit":null,"in":56.673,"out":57.613,"outDur":0.3,"words":[56.673,56.933,57.033]},{"id":"answers-t18","t":"text","from":"top","exit":null,"in":59.213,"out":62.972,"outDur":0.3,"words":[59.213,59.313,59.413]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["answers"] = tl;
+    })();
+  </script>
+</template>

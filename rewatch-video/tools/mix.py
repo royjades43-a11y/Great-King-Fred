@@ -91,7 +91,8 @@ def place(name, t_visual, gain_db, pitch=0.0):
 sfx = np.zeros((n, 2), np.float32)
 placed = []
 rot = {"impact": 0, "whoosh": 0, "pop": 0}
-SOFT_ICONS = {"question", "alarm", "pause", "thumbsUp", "shield"}
+last_impact = -99
+SOFT_ICONS = {"question", "alarm", "thumbsUp", "shield", "tvReplay", "mirror", "money"}
 for s in script["scenes"]:
     for el in s["elements"]:
         t = cues.get((s["id"], el["id"]))
@@ -101,6 +102,10 @@ for s in script["scenes"]:
         if kind == "chapter":
             place("whoosh-cinematic", t + 0.3, -16, pitch=[0, -1, 1, -0.5][rot["whoosh"] % 4]); rot["whoosh"] += 1
         elif kind == "text" and el.get("hero") and frm == "slam":
+            # a long film has many slammed words: hit at most one every 12 s so the bass stays special
+            if t - last_impact < 12:
+                continue
+            last_impact = t
             name = ["impact-bass-1", "impact-bass-2"][rot["impact"] % 2]
             place(name, t + 0.12, -19 + (rot["impact"] % 3) * -1.5, pitch=[0, -1, 0.5][rot["impact"] % 3]); rot["impact"] += 1
         elif kind == "stamp":

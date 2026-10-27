@@ -118,7 +118,7 @@ function markup(el, pid) {
     case "icon":
       return `<div class="ico" style="width:${el.size}px;height:${el.size}px;color:${color(el.color)}">${iconSvg(el.name)}</div>`;
     case "bubble":
-      return `<div class="ico bub" style="width:${el.size * 1.4}px;height:${el.size}px">${iconSvg("bubble")}<div class="bub-t">${esc(el.text)}</div></div>`;
+      return `<div class="ico bub" style="width:${el.size * 1.4}px;height:${el.size}px">${iconSvg("bubble")}<div class="bub-t" style="font-size:${el.fontSize ?? 70}px">${esc(el.text)}</div></div>`;
     case "card":
       return `<div class="card"><div class="card-k">${esc(el.kicker)}</div><div class="card-t">${esc(el.text)}</div><div class="card-s">${esc(el.sub)}</div></div>`;
     case "bar":
@@ -165,6 +165,13 @@ function buildScene(s, si) {
     let tOut = el.out
       ? local(spoken(el.out.includes(":") ? el.out : `${el.out}:start`) - LEAD) - 0.24
       : sceneLen - 0.34 - 0.025 * (s.elements.length - ei);
+    // a line needs time to be read (~0.5 s + 0.3 s a word): if its own cue leaves too little, it
+    // arrives earlier, but never before its sentence starts (words still land as they are spoken)
+    if (el.t === "text") {
+      const need = Math.min(0.5 + 0.3 * parseWords(el.text).length, 2.6);
+      const sentenceIn = local(spoken(`${el.at.split(":")[0]}:start`) - LEAD);
+      if (tOut - tIn < need) tIn = Math.max(0, Math.min(tIn, Math.max(sentenceIn, tOut - need)));
+    }
     tOut = Math.max(tOut, tIn + (el.t === "strike" ? 0.3 : 0.6));
     const outDur = ["slam", "pop", "blur", "draw"].includes(el.from) ? 0.25 : 0.3;
     const end = Math.min(sceneLen, tOut + outDur + 0.04);
