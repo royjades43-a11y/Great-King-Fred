@@ -70,7 +70,7 @@ Then came the money.
 *Friends* ended in 2004, and about 52 million Americans watched the final episode.
 By then each of the six main actors earned about a million dollars per episode.
 That's a lot to pay for one goodbye. But the goodbye never really happened.
-Reruns kept the six friends in the same coffee shop for decades.
+Thanks to reruns, the six friends stayed in the same coffee shop for decades.
 *Seinfeld*, a show famously "about nothing," has earned more than 3 billion dollars from reruns, by most estimates.
 A show about nothing became one of the biggest money machines in TV.
 So are we really paying for the jokes? Or for something deeper?

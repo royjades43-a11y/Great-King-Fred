@@ -1,0 +1,9852 @@
+[
+ {
+  "take": 0,
+  "start": 0.2,
+  "script": "In twenty twenty, Americans spent fifty-seven billion minutes watching one show. It wasn't new. It was The Office, a sitcom that had ended seven years earlier. It's a show about a paper company. About people who are bored at work. And millions of people picked it, again and again, over everything new on the planet. By the end of this video, you'll know exactly why your brain keeps pressing replay.",
+  "heard": "In 2020, Americans spent 57 billion minutes watching one show. It wasn't new. It was the office, a sitcom that had ended seven years earlier. It's a show about a paper company, about people who are bored at work, and millions of people picked it again and again over everything new on the planet. By the end of this video, you'll know exactly why your brain keeps pressing replay.",
+  "words": [
+   {
+    "n": "in",
+    "text": "In",
+    "start": 0.2,
+    "end": 0.52
+   },
+   {
+    "n": "2020",
+    "text": "2020,",
+    "start": 0.52,
+    "end": 1.14
+   },
+   {
+    "n": "americans",
+    "text": "Americans",
+    "start": 1.38,
+    "end": 1.74
+   },
+   {
+    "n": "spent",
+    "text": "spent",
+    "start": 1.74,
+    "end": 2.1
+   },
+   {
+    "n": "57",
+    "text": "57",
+    "start": 2.1,
+    "end": 2.74
+   },
+   {
+    "n": "billion",
+    "text": "billion",
+    "start": 2.74,
+    "end": 3.14
+   },
+   {
+    "n": "minutes",
+    "text": "minutes",
+    "start": 3.14,
+    "end": 3.4400000000000004
+   },
+   {
+    "n": "watching",
+    "text": "watching",
+    "start": 3.4400000000000004,
+    "end": 3.7800000000000002
+   },
+   {
+    "n": "one",
+    "text": "one",
+    "start": 3.7800000000000002,
+    "end": 4.06
+   },
+   {
+    "n": "show",
+    "text": "show.",
+    "start": 4.06,
+    "end": 4.36
+   },
+   {
+    "n": "it",
+    "text": "It",
+    "start": 4.76,
+    "end": 4.86
+   },
+   {
+    "n": "wasn't",
+    "text": "wasn't",
+    "start": 4.86,
+    "end": 5.2
+   },
+   {
+    "n": "new",
+    "text": "new.",
+    "start": 5.2,
+    "end": 5.46
+   },
+   {
+    "n": "it",
+    "text": "It",
+    "start": 5.88,
+    "end": 6.0200000000000005
+   },
+   {
+    "n": "was",
+    "text": "was",
+    "start": 6.0200000000000005,
+    "end": 6.12
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 6.12,
+    "end": 6.26
+   },
+   {
+    "n": "office",
+    "text": "office,",
+    "start": 6.26,
+    "end": 6.640000000000001
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 6.76,
+    "end": 6.84
+   },
+   {
+    "n": "sitcom",
+    "text": "sitcom",
+    "start": 6.84,
+    "end": 7.140000000000001
+   },
+   {
+    "n": "that",
+    "text": "that",
+    "start": 7.140000000000001,
+    "end": 7.42
+   },
+   {
+    "n": "had",
+    "text": "had",
+    "start": 7.42,
+    "end": 7.5200000000000005
+   },
+   {
+    "n": "ended",
+    "text": "ended",
+    "start": 7.5200000000000005,
+    "end": 7.72
+   },
+   {
+    "n": "seven",
+    "text": "seven",
+    "start": 7.72,
+    "end": 8.08
+   },
+   {
+    "n": "years",
+    "text": "years",
+    "start": 8.08,
+    "end": 8.319999999999999
+   },
+   {
+    "n": "earlier",
+    "text": "earlier.",
+    "start": 8.319999999999999,
+    "end": 8.799999999999999
+   },
+   {
+    "n": "it's",
+    "text": "It's",
+    "start": 9.1,
+    "end": 9.28
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 9.28,
+    "end": 9.34
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 9.34,
+    "end": 9.559999999999999
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 9.559999999999999,
+    "end": 9.76
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 9.76,
+    "end": 9.86
+   },
+   {
+    "n": "paper",
+    "text": "paper",
+    "start": 9.86,
+    "end": 10.12
+   },
+   {
+    "n": "company",
+    "text": "company,",
+    "start": 10.12,
+    "end": 10.6
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 10.819999999999999,
+    "end": 10.959999999999999
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 10.959999999999999,
+    "end": 11.28
+   },
+   {
+    "n": "who",
+    "text": "who",
+    "start": 11.28,
+    "end": 11.479999999999999
+   },
+   {
+    "n": "are",
+    "text": "are",
+    "start": 11.479999999999999,
+    "end": 11.54
+   },
+   {
+    "n": "bored",
+    "text": "bored",
+    "start": 11.54,
+    "end": 11.76
+   },
+   {
+    "n": "at",
+    "text": "at",
+    "start": 11.76,
+    "end": 11.92
+   },
+   {
+    "n": "work",
+    "text": "work,",
+    "start": 11.92,
+    "end": 12.18
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 12.44,
+    "end": 12.54
+   },
+   {
+    "n": "millions",
+    "text": "millions",
+    "start": 12.54,
+    "end": 12.76
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 12.76,
+    "end": 13.02
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 13.02,
+    "end": 13.28
+   },
+   {
+    "n": "picked",
+    "text": "picked",
+    "start": 13.28,
+    "end": 13.6
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 13.6,
+    "end": 13.76
+   },
+   {
+    "n": "again",
+    "text": "again",
+    "start": 13.76,
+    "end": 14.059999999999999
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 14.059999999999999,
+    "end": 14.219999999999999
+   },
+   {
+    "n": "again",
+    "text": "again",
+    "start": 14.219999999999999,
+    "end": 14.459999999999999
+   },
+   {
+    "n": "over",
+    "text": "over",
+    "start": 14.459999999999999,
+    "end": 14.78
+   },
+   {
+    "n": "everything",
+    "text": "everything",
+    "start": 14.78,
+    "end": 15.219999999999999
+   },
+   {
+    "n": "new",
+    "text": "new",
+    "start": 15.219999999999999,
+    "end": 15.459999999999999
+   },
+   {
+    "n": "on",
+    "text": "on",
+    "start": 15.459999999999999,
+    "end": 15.62
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 15.62,
+    "end": 15.719999999999999
+   },
+   {
+    "n": "planet",
+    "text": "planet.",
+    "start": 15.719999999999999,
+    "end": 16.080000000000002
+   },
+   {
+    "n": "by",
+    "text": "By",
+    "start": 16.419999999999998,
+    "end": 16.54
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 16.54,
+    "end": 16.64
+   },
+   {
+    "n": "end",
+    "text": "end",
+    "start": 16.64,
+    "end": 16.8
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 16.8,
+    "end": 16.9
+   },
+   {
+    "n": "this",
+    "text": "this",
+    "start": 16.9,
+    "end": 17.06
+   },
+   {
+    "n": "video",
+    "text": "video,",
+    "start": 17.06,
+    "end": 17.38
+   },
+   {
+    "n": "you'll",
+    "text": "you'll",
+    "start": 17.54,
+    "end": 17.62
+   },
+   {
+    "n": "know",
+    "text": "know",
+    "start": 17.62,
+    "end": 17.779999999999998
+   },
+   {
+    "n": "exactly",
+    "text": "exactly",
+    "start": 17.779999999999998,
+    "end": 18.22
+   },
+   {
+    "n": "why",
+    "text": "why",
+    "start": 18.32,
+    "end": 18.599999999999998
+   },
+   {
+    "n": "your",
+    "text": "your",
+    "start": 18.599999999999998,
+    "end": 18.78
+   },
+   {
+    "n": "brain",
+    "text": "brain",
+    "start": 18.78,
+    "end": 18.96
+   },
+   {
+    "n": "keeps",
+    "text": "keeps",
+    "start": 18.96,
+    "end": 19.259999999999998
+   },
+   {
+    "n": "pressing",
+    "text": "pressing",
+    "start": 19.259999999999998,
+    "end": 19.68
+   },
+   {
+    "n": "replay",
+    "text": "replay.",
+    "start": 19.68,
+    "end": 20.18
+   }
+  ]
+ },
+ {
+  "take": 1,
+  "start": 20.763,
+  "script": "This story doesn't start with TV. It starts in sixteen eighty-eight, with homesick soldiers. A Swiss medical student named Yo-hahn-ess Hoffer noticed something strange about Swiss soldiers serving abroad. They stopped eating. They couldn't sleep. Some grew so weak that doctors feared for their lives. Hoffer gave the condition a name: nostalgia. It comes from two Greek words, \"homecoming\" and \"pain.\" He believed it was a disease of the brain. Other doctors had their own theories. Some blamed the endless clanging of cowbells in the Alps, which supposedly damaged the brain. Others blamed the change in air pressure when people came down from the mountains. The cures were rough. Leeches. Opium. Or a ticket back to the Swiss mountains. Legend says one Swiss folk song was banned in the army because it made soldiers want to desert. So for about two hundred years, missing the past was treated like an illness. During the American Civil War, army doctors recorded thousands of soldiers with nostalgia as their diagnosis. Some even listed it as a cause of death. Remember that. Because today, it's one of the most valuable feelings on Earth.",
+  "heard": "This story doesn't start with TV. It starts in 1688 with home six soldiers. A Swiss medical student named Johannes Hofer noticed something strange about Swiss soldiers serving abroad. They stopped eating. They couldn't sleep. Some grew so weak that doctors feared for their lives. Hofer gave the condition a name nostalgia. It comes from two Greek words, homecoming and pain. He believed it was a disease of the brain. Other doctors had their own theories. Some blamed the endless clanging of cowbells in the Alps which supposedly damaged the brain. Others blamed the change in air pressure when people came down from the mountains. The cures were rough, leeches, opium or a ticket back to the Swiss mountains. Legend says one Swiss folk song was banned in the army because it made soldiers want to desert. So for about 200 years missing the past was treated like an illness. During the American Civil War Army doctors recorded thousands of soldiers with nostalgia as their diagnosis. So I'm even listed it as a cause of death. Remember that, because today it's one of the most valuable feelings on Earth.",
+  "words": [
+   {
+    "n": "this",
+    "text": "This",
+    "start": 20.763,
+    "end": 21.123
+   },
+   {
+    "n": "story",
+    "text": "story",
+    "start": 21.123,
+    "end": 21.483
+   },
+   {
+    "n": "doesn't",
+    "text": "doesn't",
+    "start": 21.483,
+    "end": 21.823
+   },
+   {
+    "n": "start",
+    "text": "start",
+    "start": 21.823,
+    "end": 22.103
+   },
+   {
+    "n": "with",
+    "text": "with",
+    "start": 22.103,
+    "end": 22.363000000000003
+   },
+   {
+    "n": "tv",
+    "text": "TV.",
+    "start": 22.363000000000003,
+    "end": 22.743000000000002
+   },
+   {
+    "n": "it",
+    "text": "It",
+    "start": 23.303,
+    "end": 23.363000000000003
+   },
+   {
+    "n": "starts",
+    "text": "starts",
+    "start": 23.363000000000003,
+    "end": 23.623
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 23.623,
+    "end": 23.863000000000003
+   },
+   {
+    "n": "1688",
+    "text": "1688",
+    "start": 23.863000000000003,
+    "end": 24.623
+   },
+   {
+    "n": "with",
+    "text": "with",
+    "start": 24.623,
+    "end": 25.063000000000002
+   },
+   {
+    "n": "home",
+    "text": "home",
+    "start": 25.063000000000002,
+    "end": 25.303
+   },
+   {
+    "n": "six",
+    "text": "six",
+    "start": 25.303,
+    "end": 25.503
+   },
+   {
+    "n": "soldiers",
+    "text": "soldiers.",
+    "start": 25.503,
+    "end": 25.983
+   },
+   {
+    "n": "a",
+    "text": "A",
+    "start": 26.603,
+    "end": 26.703000000000003
+   },
+   {
+    "n": "swiss",
+    "text": "Swiss",
+    "start": 26.703000000000003,
+    "end": 26.923000000000002
+   },
+   {
+    "n": "medical",
+    "text": "medical",
+    "start": 26.923000000000002,
+    "end": 27.283
+   },
+   {
+    "n": "student",
+    "text": "student",
+    "start": 27.283,
+    "end": 27.763
+   },
+   {
+    "n": "named",
+    "text": "named",
+    "start": 27.763,
+    "end": 28.103
+   },
+   {
+    "n": "johannes",
+    "text": "Johannes",
+    "start": 28.103,
+    "end": 28.483
+   },
+   {
+    "n": "hofer",
+    "text": "Hofer",
+    "start": 28.483,
+    "end": 29.083000000000002
+   },
+   {
+    "n": "noticed",
+    "text": "noticed",
+    "start": 29.083000000000002,
+    "end": 29.363
+   },
+   {
+    "n": "something",
+    "text": "something",
+    "start": 29.363,
+    "end": 29.823
+   },
+   {
+    "n": "strange",
+    "text": "strange",
+    "start": 29.823,
+    "end": 30.303
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 30.303,
+    "end": 30.563000000000002
+   },
+   {
+    "n": "swiss",
+    "text": "Swiss",
+    "start": 30.563000000000002,
+    "end": 30.903000000000002
+   },
+   {
+    "n": "soldiers",
+    "text": "soldiers",
+    "start": 30.903000000000002,
+    "end": 31.363
+   },
+   {
+    "n": "serving",
+    "text": "serving",
+    "start": 31.363,
+    "end": 31.803
+   },
+   {
+    "n": "abroad",
+    "text": "abroad.",
+    "start": 31.803,
+    "end": 32.203
+   },
+   {
+    "n": "they",
+    "text": "They",
+    "start": 32.563,
+    "end": 32.643
+   },
+   {
+    "n": "stopped",
+    "text": "stopped",
+    "start": 32.643,
+    "end": 32.883
+   },
+   {
+    "n": "eating",
+    "text": "eating.",
+    "start": 32.883,
+    "end": 33.263000000000005
+   },
+   {
+    "n": "they",
+    "text": "They",
+    "start": 33.683,
+    "end": 33.763000000000005
+   },
+   {
+    "n": "couldn't",
+    "text": "couldn't",
+    "start": 33.763000000000005,
+    "end": 33.963
+   },
+   {
+    "n": "sleep",
+    "text": "sleep.",
+    "start": 33.963,
+    "end": 34.243
+   },
+   {
+    "n": "some",
+    "text": "Some",
+    "start": 34.683,
+    "end": 34.883
+   },
+   {
+    "n": "grew",
+    "text": "grew",
+    "start": 34.883,
+    "end": 35.083
+   },
+   {
+    "n": "so",
+    "text": "so",
+    "start": 35.083,
+    "end": 35.363
+   },
+   {
+    "n": "weak",
+    "text": "weak",
+    "start": 35.363,
+    "end": 35.623000000000005
+   },
+   {
+    "n": "that",
+    "text": "that",
+    "start": 35.623000000000005,
+    "end": 35.863
+   },
+   {
+    "n": "doctors",
+    "text": "doctors",
+    "start": 35.863,
+    "end": 36.303
+   },
+   {
+    "n": "feared",
+    "text": "feared",
+    "start": 36.303,
+    "end": 36.643
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 36.643,
+    "end": 36.903000000000006
+   },
+   {
+    "n": "their",
+    "text": "their",
+    "start": 36.903000000000006,
+    "end": 37.063
+   },
+   {
+    "n": "lives",
+    "text": "lives.",
+    "start": 37.063,
+    "end": 37.503
+   },
+   {
+    "n": "hofer",
+    "text": "Hofer",
+    "start": 38.043000000000006,
+    "end": 38.243
+   },
+   {
+    "n": "gave",
+    "text": "gave",
+    "start": 38.243,
+    "end": 38.423
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 38.423,
+    "end": 38.623000000000005
+   },
+   {
+    "n": "condition",
+    "text": "condition",
+    "start": 38.623000000000005,
+    "end": 39.023
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 39.023,
+    "end": 39.203
+   },
+   {
+    "n": "name",
+    "text": "name",
+    "start": 39.203,
+    "end": 39.50300000000001
+   },
+   {
+    "n": "nostalgia",
+    "text": "nostalgia.",
+    "start": 39.50300000000001,
+    "end": 40.10300000000001
+   },
+   {
+    "n": "it",
+    "text": "It",
+    "start": 41.123000000000005,
+    "end": 41.403000000000006
+   },
+   {
+    "n": "comes",
+    "text": "comes",
+    "start": 41.403000000000006,
+    "end": 41.60300000000001
+   },
+   {
+    "n": "from",
+    "text": "from",
+    "start": 41.60300000000001,
+    "end": 41.82300000000001
+   },
+   {
+    "n": "two",
+    "text": "two",
+    "start": 41.82300000000001,
+    "end": 42.083000000000006
+   },
+   {
+    "n": "greek",
+    "text": "Greek",
+    "start": 42.083000000000006,
+    "end": 42.343
+   },
+   {
+    "n": "words",
+    "text": "words,",
+    "start": 42.343,
+    "end": 42.74300000000001
+   },
+   {
+    "n": "homecoming",
+    "text": "homecoming",
+    "start": 43.023,
+    "end": 43.46300000000001
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 43.46300000000001,
+    "end": 43.723000000000006
+   },
+   {
+    "n": "pain",
+    "text": "pain.",
+    "start": 43.723000000000006,
+    "end": 44.063
+   },
+   {
+    "n": "he",
+    "text": "He",
+    "start": 44.663000000000004,
+    "end": 44.74300000000001
+   },
+   {
+    "n": "believed",
+    "text": "believed",
+    "start": 44.74300000000001,
+    "end": 45.023
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 45.023,
+    "end": 45.223000000000006
+   },
+   {
+    "n": "was",
+    "text": "was",
+    "start": 45.223000000000006,
+    "end": 45.343
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 45.343,
+    "end": 45.443000000000005
+   },
+   {
+    "n": "disease",
+    "text": "disease",
+    "start": 45.443000000000005,
+    "end": 45.723000000000006
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 45.723000000000006,
+    "end": 45.983000000000004
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 45.983000000000004,
+    "end": 46.083000000000006
+   },
+   {
+    "n": "brain",
+    "text": "brain.",
+    "start": 46.083000000000006,
+    "end": 46.343
+   },
+   {
+    "n": "other",
+    "text": "Other",
+    "start": 46.763000000000005,
+    "end": 46.943000000000005
+   },
+   {
+    "n": "doctors",
+    "text": "doctors",
+    "start": 46.943000000000005,
+    "end": 47.403000000000006
+   },
+   {
+    "n": "had",
+    "text": "had",
+    "start": 47.403000000000006,
+    "end": 47.623000000000005
+   },
+   {
+    "n": "their",
+    "text": "their",
+    "start": 47.623000000000005,
+    "end": 47.783
+   },
+   {
+    "n": "own",
+    "text": "own",
+    "start": 47.783,
+    "end": 47.983000000000004
+   },
+   {
+    "n": "theories",
+    "text": "theories.",
+    "start": 47.983000000000004,
+    "end": 48.36300000000001
+   },
+   {
+    "n": "some",
+    "text": "Some",
+    "start": 48.803000000000004,
+    "end": 48.96300000000001
+   },
+   {
+    "n": "blamed",
+    "text": "blamed",
+    "start": 48.96300000000001,
+    "end": 49.24300000000001
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 49.24300000000001,
+    "end": 49.46300000000001
+   },
+   {
+    "n": "endless",
+    "text": "endless",
+    "start": 49.46300000000001,
+    "end": 49.783
+   },
+   {
+    "n": "clanging",
+    "text": "clanging",
+    "start": 49.783,
+    "end": 50.163000000000004
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 50.163000000000004,
+    "end": 50.343
+   },
+   {
+    "n": "cowbells",
+    "text": "cowbells",
+    "start": 50.343,
+    "end": 50.843
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 50.843,
+    "end": 50.923
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 50.923,
+    "end": 51.083000000000006
+   },
+   {
+    "n": "alps",
+    "text": "Alps",
+    "start": 51.083000000000006,
+    "end": 51.36300000000001
+   },
+   {
+    "n": "which",
+    "text": "which",
+    "start": 51.36300000000001,
+    "end": 51.543000000000006
+   },
+   {
+    "n": "supposedly",
+    "text": "supposedly",
+    "start": 51.543000000000006,
+    "end": 52.10300000000001
+   },
+   {
+    "n": "damaged",
+    "text": "damaged",
+    "start": 52.10300000000001,
+    "end": 52.443000000000005
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 52.443000000000005,
+    "end": 52.763000000000005
+   },
+   {
+    "n": "brain",
+    "text": "brain.",
+    "start": 52.763000000000005,
+    "end": 53.10300000000001
+   },
+   {
+    "n": "others",
+    "text": "Others",
+    "start": 53.52300000000001,
+    "end": 53.74300000000001
+   },
+   {
+    "n": "blamed",
+    "text": "blamed",
+    "start": 53.74300000000001,
+    "end": 54.063
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 54.063,
+    "end": 54.24300000000001
+   },
+   {
+    "n": "change",
+    "text": "change",
+    "start": 54.24300000000001,
+    "end": 54.503
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 54.503,
+    "end": 54.74300000000001
+   },
+   {
+    "n": "air",
+    "text": "air",
+    "start": 54.74300000000001,
+    "end": 54.923
+   },
+   {
+    "n": "pressure",
+    "text": "pressure",
+    "start": 54.923,
+    "end": 55.28300000000001
+   },
+   {
+    "n": "when",
+    "text": "when",
+    "start": 55.28300000000001,
+    "end": 55.483000000000004
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 55.483000000000004,
+    "end": 55.743
+   },
+   {
+    "n": "came",
+    "text": "came",
+    "start": 55.743,
+    "end": 56.023
+   },
+   {
+    "n": "down",
+    "text": "down",
+    "start": 56.023,
+    "end": 56.28300000000001
+   },
+   {
+    "n": "from",
+    "text": "from",
+    "start": 56.28300000000001,
+    "end": 56.483000000000004
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 56.483000000000004,
+    "end": 56.623000000000005
+   },
+   {
+    "n": "mountains",
+    "text": "mountains.",
+    "start": 56.623000000000005,
+    "end": 57.023
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 57.443000000000005,
+    "end": 57.46300000000001
+   },
+   {
+    "n": "cures",
+    "text": "cures",
+    "start": 57.46300000000001,
+    "end": 57.74300000000001
+   },
+   {
+    "n": "were",
+    "text": "were",
+    "start": 57.74300000000001,
+    "end": 57.943000000000005
+   },
+   {
+    "n": "rough",
+    "text": "rough,",
+    "start": 57.943000000000005,
+    "end": 58.343
+   },
+   {
+    "n": "leeches",
+    "text": "leeches,",
+    "start": 58.523,
+    "end": 58.783
+   },
+   {
+    "n": "opium",
+    "text": "opium",
+    "start": 59.14300000000001,
+    "end": 59.483000000000004
+   },
+   {
+    "n": "or",
+    "text": "or",
+    "start": 59.483000000000004,
+    "end": 59.763000000000005
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 59.763000000000005,
+    "end": 59.923
+   },
+   {
+    "n": "ticket",
+    "text": "ticket",
+    "start": 59.923,
+    "end": 60.14300000000001
+   },
+   {
+    "n": "back",
+    "text": "back",
+    "start": 60.14300000000001,
+    "end": 60.423
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 60.423,
+    "end": 60.64300000000001
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 60.64300000000001,
+    "end": 60.74300000000001
+   },
+   {
+    "n": "swiss",
+    "text": "Swiss",
+    "start": 60.74300000000001,
+    "end": 60.923
+   },
+   {
+    "n": "mountains",
+    "text": "mountains.",
+    "start": 60.923,
+    "end": 61.423
+   },
+   {
+    "n": "legend",
+    "text": "Legend",
+    "start": 62.443000000000005,
+    "end": 62.723000000000006
+   },
+   {
+    "n": "says",
+    "text": "says",
+    "start": 62.723000000000006,
+    "end": 63.023
+   },
+   {
+    "n": "one",
+    "text": "one",
+    "start": 63.023,
+    "end": 63.263000000000005
+   },
+   {
+    "n": "swiss",
+    "text": "Swiss",
+    "start": 63.263000000000005,
+    "end": 63.60300000000001
+   },
+   {
+    "n": "folk",
+    "text": "folk",
+    "start": 63.60300000000001,
+    "end": 63.923
+   },
+   {
+    "n": "song",
+    "text": "song",
+    "start": 63.923,
+    "end": 64.16300000000001
+   },
+   {
+    "n": "was",
+    "text": "was",
+    "start": 64.16300000000001,
+    "end": 64.403
+   },
+   {
+    "n": "banned",
+    "text": "banned",
+    "start": 64.403,
+    "end": 64.683
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 64.683,
+    "end": 64.863
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 64.863,
+    "end": 64.96300000000001
+   },
+   {
+    "n": "army",
+    "text": "army",
+    "start": 64.96300000000001,
+    "end": 65.22300000000001
+   },
+   {
+    "n": "because",
+    "text": "because",
+    "start": 65.22300000000001,
+    "end": 65.563
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 65.563,
+    "end": 65.683
+   },
+   {
+    "n": "made",
+    "text": "made",
+    "start": 65.683,
+    "end": 65.82300000000001
+   },
+   {
+    "n": "soldiers",
+    "text": "soldiers",
+    "start": 65.82300000000001,
+    "end": 66.283
+   },
+   {
+    "n": "want",
+    "text": "want",
+    "start": 66.283,
+    "end": 66.623
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 66.623,
+    "end": 66.763
+   },
+   {
+    "n": "desert",
+    "text": "desert.",
+    "start": 66.763,
+    "end": 67.083
+   },
+   {
+    "n": "so",
+    "text": "So",
+    "start": 67.583,
+    "end": 67.66300000000001
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 67.66300000000001,
+    "end": 67.803
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 67.803,
+    "end": 68.003
+   },
+   {
+    "n": "200",
+    "text": "200",
+    "start": 68.003,
+    "end": 68.363
+   },
+   {
+    "n": "years",
+    "text": "years",
+    "start": 68.363,
+    "end": 68.803
+   },
+   {
+    "n": "missing",
+    "text": "missing",
+    "start": 68.803,
+    "end": 69.043
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 69.043,
+    "end": 69.283
+   },
+   {
+    "n": "past",
+    "text": "past",
+    "start": 69.283,
+    "end": 69.52300000000001
+   },
+   {
+    "n": "was",
+    "text": "was",
+    "start": 69.52300000000001,
+    "end": 69.763
+   },
+   {
+    "n": "treated",
+    "text": "treated",
+    "start": 69.763,
+    "end": 70.003
+   },
+   {
+    "n": "like",
+    "text": "like",
+    "start": 70.003,
+    "end": 70.22300000000001
+   },
+   {
+    "n": "an",
+    "text": "an",
+    "start": 70.22300000000001,
+    "end": 70.38300000000001
+   },
+   {
+    "n": "illness",
+    "text": "illness.",
+    "start": 70.38300000000001,
+    "end": 70.683
+   },
+   {
+    "n": "during",
+    "text": "During",
+    "start": 71.223,
+    "end": 71.363
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 71.363,
+    "end": 71.52300000000001
+   },
+   {
+    "n": "american",
+    "text": "American",
+    "start": 71.52300000000001,
+    "end": 71.80300000000001
+   },
+   {
+    "n": "civil",
+    "text": "Civil",
+    "start": 71.80300000000001,
+    "end": 72.16300000000001
+   },
+   {
+    "n": "war",
+    "text": "War",
+    "start": 72.16300000000001,
+    "end": 72.46300000000001
+   },
+   {
+    "n": "army",
+    "text": "Army",
+    "start": 72.46300000000001,
+    "end": 72.80300000000001
+   },
+   {
+    "n": "doctors",
+    "text": "doctors",
+    "start": 72.80300000000001,
+    "end": 73.143
+   },
+   {
+    "n": "recorded",
+    "text": "recorded",
+    "start": 73.143,
+    "end": 73.60300000000001
+   },
+   {
+    "n": "thousands",
+    "text": "thousands",
+    "start": 73.60300000000001,
+    "end": 73.94300000000001
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 73.94300000000001,
+    "end": 74.283
+   },
+   {
+    "n": "soldiers",
+    "text": "soldiers",
+    "start": 74.283,
+    "end": 74.643
+   },
+   {
+    "n": "with",
+    "text": "with",
+    "start": 74.643,
+    "end": 74.94300000000001
+   },
+   {
+    "n": "nostalgia",
+    "text": "nostalgia",
+    "start": 74.94300000000001,
+    "end": 75.24300000000001
+   },
+   {
+    "n": "as",
+    "text": "as",
+    "start": 75.24300000000001,
+    "end": 75.66300000000001
+   },
+   {
+    "n": "their",
+    "text": "their",
+    "start": 75.66300000000001,
+    "end": 75.783
+   },
+   {
+    "n": "diagnosis",
+    "text": "diagnosis.",
+    "start": 75.783,
+    "end": 76.363
+   },
+   {
+    "n": "so",
+    "text": "So",
+    "start": 76.94300000000001,
+    "end": 77.063
+   },
+   {
+    "n": "i'm",
+    "text": "I'm",
+    "start": 77.063,
+    "end": 77.123
+   },
+   {
+    "n": "even",
+    "text": "even",
+    "start": 77.123,
+    "end": 77.263
+   },
+   {
+    "n": "listed",
+    "text": "listed",
+    "start": 77.263,
+    "end": 77.543
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 77.543,
+    "end": 77.783
+   },
+   {
+    "n": "as",
+    "text": "as",
+    "start": 77.783,
+    "end": 77.863
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 77.863,
+    "end": 77.96300000000001
+   },
+   {
+    "n": "cause",
+    "text": "cause",
+    "start": 77.96300000000001,
+    "end": 78.143
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 78.143,
+    "end": 78.343
+   },
+   {
+    "n": "death",
+    "text": "death.",
+    "start": 78.343,
+    "end": 78.703
+   },
+   {
+    "n": "remember",
+    "text": "Remember",
+    "start": 78.863,
+    "end": 79.16300000000001
+   },
+   {
+    "n": "that",
+    "text": "that,",
+    "start": 79.16300000000001,
+    "end": 79.44300000000001
+   },
+   {
+    "n": "because",
+    "text": "because",
+    "start": 79.643,
+    "end": 79.88300000000001
+   },
+   {
+    "n": "today",
+    "text": "today",
+    "start": 79.88300000000001,
+    "end": 80.183
+   },
+   {
+    "n": "it's",
+    "text": "it's",
+    "start": 80.183,
+    "end": 80.60300000000001
+   },
+   {
+    "n": "one",
+    "text": "one",
+    "start": 80.60300000000001,
+    "end": 80.74300000000001
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 80.74300000000001,
+    "end": 80.82300000000001
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 80.82300000000001,
+    "end": 80.88300000000001
+   },
+   {
+    "n": "most",
+    "text": "most",
+    "start": 80.88300000000001,
+    "end": 81.123
+   },
+   {
+    "n": "valuable",
+    "text": "valuable",
+    "start": 81.123,
+    "end": 81.543
+   },
+   {
+    "n": "feelings",
+    "text": "feelings",
+    "start": 81.543,
+    "end": 82.02300000000001
+   },
+   {
+    "n": "on",
+    "text": "on",
+    "start": 82.02300000000001,
+    "end": 82.263
+   },
+   {
+    "n": "earth",
+    "text": "Earth.",
+    "start": 82.263,
+    "end": 82.683
+   }
+  ]
+ },
+ {
+  "take": 2,
+  "start": 83.345,
+  "script": "Jump to nineteen fifty-one, Hollywood. A married couple is about to change television forever. Lucille Ball and Dezzy Arnaz wanted to make a sitcom together. The network, CBS, wanted it performed live in New York. Dezzy said no. They would film it in Los Angeles, on real film, with three cameras. That cost more money. So Dezzy made a deal. His company, Dessy-loo, would cover the extra cost. In return, Dessy-loo would own the films. CBS agreed. For CBS, it may be one of the worst deals in TV history. Because film can be shown again. And again. And again. I Love Lucy became the blueprint for the ree-run. And here's a human detail. When Lucille got pregnant, the network wouldn't let anyone say \"pregnant\" on air. The scripts had to say \"expecting\" instead. Then their real son was born on the same day the TV baby arrived on screen. That night, about forty-four million Americans watched Lucy's TV baby arrive, more than watched Eisenhower's inauguration the next day.",
+  "heard": "Jumped to 1951 Hollywood, a married couple is about to change television forever. Lucille Ball and Desi Arnaz wanted to make a sitcom together. The network CBS wanted it performed live in New York. Desi said no, they would film it in Los Angeles on real film with three cameras that cost more money. So Desi made a deal. His company Desi Lou would cover the extra cost in return Desi Lou would own the films. CBS agreed. For CBS it may be one of the worst deals in TV history because film can be shown again and again and again. I love Lucy became the blueprint for the rerun and here's a human detail. When Lucille got pregnant the network wouldn't let anyone say pregnant on air. The scripts had to say expecting instead then their real son was born on the same day the TV baby arrived on screen. That night about 44 million Americans watched Lucy's TV baby arrive more than watched Eisenhower's inauguration the next day.",
+  "words": [
+   {
+    "n": "jumped",
+    "text": "Jumped",
+    "start": 83.445,
+    "end": 83.965
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 83.965,
+    "end": 84.025
+   },
+   {
+    "n": "1951",
+    "text": "1951",
+    "start": 84.025,
+    "end": 85.065
+   },
+   {
+    "n": "hollywood",
+    "text": "Hollywood,",
+    "start": 85.065,
+    "end": 85.66499999999999
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 86.045,
+    "end": 86.105
+   },
+   {
+    "n": "married",
+    "text": "married",
+    "start": 86.105,
+    "end": 86.345
+   },
+   {
+    "n": "couple",
+    "text": "couple",
+    "start": 86.345,
+    "end": 86.705
+   },
+   {
+    "n": "is",
+    "text": "is",
+    "start": 86.705,
+    "end": 86.925
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 86.925,
+    "end": 87.125
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 87.125,
+    "end": 87.325
+   },
+   {
+    "n": "change",
+    "text": "change",
+    "start": 87.325,
+    "end": 87.605
+   },
+   {
+    "n": "television",
+    "text": "television",
+    "start": 87.605,
+    "end": 88.16499999999999
+   },
+   {
+    "n": "forever",
+    "text": "forever.",
+    "start": 88.16499999999999,
+    "end": 88.725
+   },
+   {
+    "n": "lucille",
+    "text": "Lucille",
+    "start": 89.265,
+    "end": 89.505
+   },
+   {
+    "n": "ball",
+    "text": "Ball",
+    "start": 89.505,
+    "end": 89.745
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 89.745,
+    "end": 90.085
+   },
+   {
+    "n": "desi",
+    "text": "Desi",
+    "start": 90.085,
+    "end": 90.405
+   },
+   {
+    "n": "arnaz",
+    "text": "Arnaz",
+    "start": 90.405,
+    "end": 90.905
+   },
+   {
+    "n": "wanted",
+    "text": "wanted",
+    "start": 90.905,
+    "end": 91.085
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 91.085,
+    "end": 91.245
+   },
+   {
+    "n": "make",
+    "text": "make",
+    "start": 91.245,
+    "end": 91.365
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 91.365,
+    "end": 91.505
+   },
+   {
+    "n": "sitcom",
+    "text": "sitcom",
+    "start": 91.505,
+    "end": 91.785
+   },
+   {
+    "n": "together",
+    "text": "together.",
+    "start": 91.785,
+    "end": 92.345
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 92.785,
+    "end": 92.825
+   },
+   {
+    "n": "network",
+    "text": "network",
+    "start": 92.825,
+    "end": 93.125
+   },
+   {
+    "n": "cbs",
+    "text": "CBS",
+    "start": 93.125,
+    "end": 93.745
+   },
+   {
+    "n": "wanted",
+    "text": "wanted",
+    "start": 93.745,
+    "end": 94.465
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 94.465,
+    "end": 94.585
+   },
+   {
+    "n": "performed",
+    "text": "performed",
+    "start": 94.585,
+    "end": 94.945
+   },
+   {
+    "n": "live",
+    "text": "live",
+    "start": 94.945,
+    "end": 95.305
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 95.305,
+    "end": 95.485
+   },
+   {
+    "n": "new",
+    "text": "New",
+    "start": 95.485,
+    "end": 95.66499999999999
+   },
+   {
+    "n": "york",
+    "text": "York.",
+    "start": 95.66499999999999,
+    "end": 95.945
+   },
+   {
+    "n": "desi",
+    "text": "Desi",
+    "start": 96.445,
+    "end": 96.685
+   },
+   {
+    "n": "said",
+    "text": "said",
+    "start": 96.685,
+    "end": 96.965
+   },
+   {
+    "n": "no",
+    "text": "no,",
+    "start": 96.965,
+    "end": 97.225
+   },
+   {
+    "n": "they",
+    "text": "they",
+    "start": 97.485,
+    "end": 97.66499999999999
+   },
+   {
+    "n": "would",
+    "text": "would",
+    "start": 97.66499999999999,
+    "end": 97.805
+   },
+   {
+    "n": "film",
+    "text": "film",
+    "start": 97.805,
+    "end": 98.045
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 98.045,
+    "end": 98.205
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 98.205,
+    "end": 98.345
+   },
+   {
+    "n": "los",
+    "text": "Los",
+    "start": 98.345,
+    "end": 98.505
+   },
+   {
+    "n": "angeles",
+    "text": "Angeles",
+    "start": 98.505,
+    "end": 99.065
+   },
+   {
+    "n": "on",
+    "text": "on",
+    "start": 99.065,
+    "end": 99.405
+   },
+   {
+    "n": "real",
+    "text": "real",
+    "start": 99.405,
+    "end": 99.66499999999999
+   },
+   {
+    "n": "film",
+    "text": "film",
+    "start": 99.66499999999999,
+    "end": 100.205
+   },
+   {
+    "n": "with",
+    "text": "with",
+    "start": 100.205,
+    "end": 100.345
+   },
+   {
+    "n": "three",
+    "text": "three",
+    "start": 100.345,
+    "end": 100.605
+   },
+   {
+    "n": "cameras",
+    "text": "cameras",
+    "start": 100.605,
+    "end": 101.045
+   },
+   {
+    "n": "that",
+    "text": "that",
+    "start": 101.045,
+    "end": 101.485
+   },
+   {
+    "n": "cost",
+    "text": "cost",
+    "start": 101.485,
+    "end": 101.785
+   },
+   {
+    "n": "more",
+    "text": "more",
+    "start": 101.785,
+    "end": 102.065
+   },
+   {
+    "n": "money",
+    "text": "money.",
+    "start": 102.065,
+    "end": 102.425
+   },
+   {
+    "n": "so",
+    "text": "So",
+    "start": 103.485,
+    "end": 103.685
+   },
+   {
+    "n": "desi",
+    "text": "Desi",
+    "start": 103.685,
+    "end": 104.005
+   },
+   {
+    "n": "made",
+    "text": "made",
+    "start": 104.005,
+    "end": 104.205
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 104.205,
+    "end": 104.385
+   },
+   {
+    "n": "deal",
+    "text": "deal.",
+    "start": 104.385,
+    "end": 104.685
+   },
+   {
+    "n": "his",
+    "text": "His",
+    "start": 104.925,
+    "end": 105.005
+   },
+   {
+    "n": "company",
+    "text": "company",
+    "start": 105.005,
+    "end": 105.425
+   },
+   {
+    "n": "desi",
+    "text": "Desi",
+    "start": 105.425,
+    "end": 105.885
+   },
+   {
+    "n": "lou",
+    "text": "Lou",
+    "start": 105.885,
+    "end": 106.065
+   },
+   {
+    "n": "would",
+    "text": "would",
+    "start": 106.065,
+    "end": 106.285
+   },
+   {
+    "n": "cover",
+    "text": "cover",
+    "start": 106.285,
+    "end": 106.565
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 106.565,
+    "end": 106.745
+   },
+   {
+    "n": "extra",
+    "text": "extra",
+    "start": 106.745,
+    "end": 107.105
+   },
+   {
+    "n": "cost",
+    "text": "cost",
+    "start": 107.105,
+    "end": 107.605
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 107.605,
+    "end": 107.965
+   },
+   {
+    "n": "return",
+    "text": "return",
+    "start": 107.965,
+    "end": 108.285
+   },
+   {
+    "n": "desi",
+    "text": "Desi",
+    "start": 108.285,
+    "end": 108.845
+   },
+   {
+    "n": "lou",
+    "text": "Lou",
+    "start": 108.845,
+    "end": 108.985
+   },
+   {
+    "n": "would",
+    "text": "would",
+    "start": 108.985,
+    "end": 109.185
+   },
+   {
+    "n": "own",
+    "text": "own",
+    "start": 109.185,
+    "end": 109.325
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 109.325,
+    "end": 109.465
+   },
+   {
+    "n": "films",
+    "text": "films.",
+    "start": 109.465,
+    "end": 109.965
+   },
+   {
+    "n": "cbs",
+    "text": "CBS",
+    "start": 110.545,
+    "end": 110.705
+   },
+   {
+    "n": "agreed",
+    "text": "agreed.",
+    "start": 110.705,
+    "end": 111.345
+   },
+   {
+    "n": "for",
+    "text": "For",
+    "start": 111.66499999999999,
+    "end": 111.785
+   },
+   {
+    "n": "cbs",
+    "text": "CBS",
+    "start": 111.785,
+    "end": 112.145
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 112.145,
+    "end": 112.685
+   },
+   {
+    "n": "may",
+    "text": "may",
+    "start": 112.685,
+    "end": 112.845
+   },
+   {
+    "n": "be",
+    "text": "be",
+    "start": 112.845,
+    "end": 112.965
+   },
+   {
+    "n": "one",
+    "text": "one",
+    "start": 112.965,
+    "end": 113.125
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 113.125,
+    "end": 113.225
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 113.225,
+    "end": 113.305
+   },
+   {
+    "n": "worst",
+    "text": "worst",
+    "start": 113.305,
+    "end": 113.565
+   },
+   {
+    "n": "deals",
+    "text": "deals",
+    "start": 113.565,
+    "end": 113.905
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 113.905,
+    "end": 114.16499999999999
+   },
+   {
+    "n": "tv",
+    "text": "TV",
+    "start": 114.16499999999999,
+    "end": 114.485
+   },
+   {
+    "n": "history",
+    "text": "history",
+    "start": 114.485,
+    "end": 115.105
+   },
+   {
+    "n": "because",
+    "text": "because",
+    "start": 115.105,
+    "end": 115.505
+   },
+   {
+    "n": "film",
+    "text": "film",
+    "start": 115.505,
+    "end": 115.805
+   },
+   {
+    "n": "can",
+    "text": "can",
+    "start": 115.805,
+    "end": 116.025
+   },
+   {
+    "n": "be",
+    "text": "be",
+    "start": 116.025,
+    "end": 116.125
+   },
+   {
+    "n": "shown",
+    "text": "shown",
+    "start": 116.125,
+    "end": 116.345
+   },
+   {
+    "n": "again",
+    "text": "again",
+    "start": 116.345,
+    "end": 116.66499999999999
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 116.66499999999999,
+    "end": 116.945
+   },
+   {
+    "n": "again",
+    "text": "again",
+    "start": 116.945,
+    "end": 117.225
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 117.225,
+    "end": 117.685
+   },
+   {
+    "n": "again",
+    "text": "again.",
+    "start": 117.66499999999999,
+    "end": 117.985
+   },
+   {
+    "n": "i",
+    "text": "I",
+    "start": 118.545,
+    "end": 118.66499999999999
+   },
+   {
+    "n": "love",
+    "text": "love",
+    "start": 118.66499999999999,
+    "end": 118.885
+   },
+   {
+    "n": "lucy",
+    "text": "Lucy",
+    "start": 118.885,
+    "end": 119.16499999999999
+   },
+   {
+    "n": "became",
+    "text": "became",
+    "start": 119.16499999999999,
+    "end": 119.525
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 119.525,
+    "end": 119.725
+   },
+   {
+    "n": "blueprint",
+    "text": "blueprint",
+    "start": 119.725,
+    "end": 120.025
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 120.025,
+    "end": 120.285
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 120.285,
+    "end": 120.385
+   },
+   {
+    "n": "rerun",
+    "text": "rerun",
+    "start": 120.385,
+    "end": 120.845
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 120.845,
+    "end": 121.145
+   },
+   {
+    "n": "here's",
+    "text": "here's",
+    "start": 121.145,
+    "end": 121.445
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 121.445,
+    "end": 121.505
+   },
+   {
+    "n": "human",
+    "text": "human",
+    "start": 121.505,
+    "end": 121.80499999999999
+   },
+   {
+    "n": "detail",
+    "text": "detail.",
+    "start": 121.80499999999999,
+    "end": 122.365
+   },
+   {
+    "n": "when",
+    "text": "When",
+    "start": 123.245,
+    "end": 123.585
+   },
+   {
+    "n": "lucille",
+    "text": "Lucille",
+    "start": 123.585,
+    "end": 123.88499999999999
+   },
+   {
+    "n": "got",
+    "text": "got",
+    "start": 123.88499999999999,
+    "end": 124.065
+   },
+   {
+    "n": "pregnant",
+    "text": "pregnant",
+    "start": 124.065,
+    "end": 124.465
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 124.465,
+    "end": 124.765
+   },
+   {
+    "n": "network",
+    "text": "network",
+    "start": 124.765,
+    "end": 125.045
+   },
+   {
+    "n": "wouldn't",
+    "text": "wouldn't",
+    "start": 125.045,
+    "end": 125.365
+   },
+   {
+    "n": "let",
+    "text": "let",
+    "start": 125.365,
+    "end": 125.505
+   },
+   {
+    "n": "anyone",
+    "text": "anyone",
+    "start": 125.505,
+    "end": 125.825
+   },
+   {
+    "n": "say",
+    "text": "say",
+    "start": 125.825,
+    "end": 126.105
+   },
+   {
+    "n": "pregnant",
+    "text": "pregnant",
+    "start": 126.105,
+    "end": 126.545
+   },
+   {
+    "n": "on",
+    "text": "on",
+    "start": 126.545,
+    "end": 126.825
+   },
+   {
+    "n": "air",
+    "text": "air.",
+    "start": 126.825,
+    "end": 127.105
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 127.625,
+    "end": 127.685
+   },
+   {
+    "n": "scripts",
+    "text": "scripts",
+    "start": 127.685,
+    "end": 127.905
+   },
+   {
+    "n": "had",
+    "text": "had",
+    "start": 127.905,
+    "end": 128.165
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 128.165,
+    "end": 128.305
+   },
+   {
+    "n": "say",
+    "text": "say",
+    "start": 128.305,
+    "end": 128.485
+   },
+   {
+    "n": "expecting",
+    "text": "expecting",
+    "start": 128.485,
+    "end": 129.085
+   },
+   {
+    "n": "instead",
+    "text": "instead",
+    "start": 129.085,
+    "end": 129.665
+   },
+   {
+    "n": "then",
+    "text": "then",
+    "start": 129.665,
+    "end": 130.225
+   },
+   {
+    "n": "their",
+    "text": "their",
+    "start": 130.225,
+    "end": 130.365
+   },
+   {
+    "n": "real",
+    "text": "real",
+    "start": 130.365,
+    "end": 130.605
+   },
+   {
+    "n": "son",
+    "text": "son",
+    "start": 130.605,
+    "end": 130.925
+   },
+   {
+    "n": "was",
+    "text": "was",
+    "start": 130.925,
+    "end": 131.145
+   },
+   {
+    "n": "born",
+    "text": "born",
+    "start": 131.145,
+    "end": 131.445
+   },
+   {
+    "n": "on",
+    "text": "on",
+    "start": 131.445,
+    "end": 131.665
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 131.665,
+    "end": 131.785
+   },
+   {
+    "n": "same",
+    "text": "same",
+    "start": 131.785,
+    "end": 132.045
+   },
+   {
+    "n": "day",
+    "text": "day",
+    "start": 132.045,
+    "end": 132.285
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 132.285,
+    "end": 132.485
+   },
+   {
+    "n": "tv",
+    "text": "TV",
+    "start": 132.485,
+    "end": 132.825
+   },
+   {
+    "n": "baby",
+    "text": "baby",
+    "start": 132.825,
+    "end": 133.245
+   },
+   {
+    "n": "arrived",
+    "text": "arrived",
+    "start": 133.245,
+    "end": 133.70499999999998
+   },
+   {
+    "n": "on",
+    "text": "on",
+    "start": 133.725,
+    "end": 133.925
+   },
+   {
+    "n": "screen",
+    "text": "screen.",
+    "start": 133.925,
+    "end": 134.305
+   },
+   {
+    "n": "that",
+    "text": "That",
+    "start": 134.725,
+    "end": 135.065
+   },
+   {
+    "n": "night",
+    "text": "night",
+    "start": 135.065,
+    "end": 135.325
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 135.325,
+    "end": 135.645
+   },
+   {
+    "n": "44",
+    "text": "44",
+    "start": 135.645,
+    "end": 136.345
+   },
+   {
+    "n": "million",
+    "text": "million",
+    "start": 136.345,
+    "end": 136.725
+   },
+   {
+    "n": "americans",
+    "text": "Americans",
+    "start": 136.725,
+    "end": 137.285
+   },
+   {
+    "n": "watched",
+    "text": "watched",
+    "start": 137.285,
+    "end": 137.765
+   },
+   {
+    "n": "lucy's",
+    "text": "Lucy's",
+    "start": 137.765,
+    "end": 138.265
+   },
+   {
+    "n": "tv",
+    "text": "TV",
+    "start": 138.265,
+    "end": 138.525
+   },
+   {
+    "n": "baby",
+    "text": "baby",
+    "start": 138.525,
+    "end": 138.965
+   },
+   {
+    "n": "arrive",
+    "text": "arrive",
+    "start": 138.965,
+    "end": 139.465
+   },
+   {
+    "n": "more",
+    "text": "more",
+    "start": 139.465,
+    "end": 139.785
+   },
+   {
+    "n": "than",
+    "text": "than",
+    "start": 139.785,
+    "end": 139.945
+   },
+   {
+    "n": "watched",
+    "text": "watched",
+    "start": 139.945,
+    "end": 140.325
+   },
+   {
+    "n": "eisenhower's",
+    "text": "Eisenhower's",
+    "start": 140.325,
+    "end": 141.20499999999998
+   },
+   {
+    "n": "inauguration",
+    "text": "inauguration",
+    "start": 141.20499999999998,
+    "end": 141.865
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 141.865,
+    "end": 142.065
+   },
+   {
+    "n": "next",
+    "text": "next",
+    "start": 142.065,
+    "end": 142.305
+   },
+   {
+    "n": "day",
+    "text": "day.",
+    "start": 142.305,
+    "end": 142.665
+   }
+  ]
+ },
+ {
+  "take": 3,
+  "start": 143.65900000000002,
+  "script": "So why did people happily watch the same episodes twice? In nineteen sixty-eight, a psychologist named Robert Zye-onts found a clue. He showed people made-up words and strange symbols. Some appeared once. Some appeared up to twenty-five times. The more often people saw something, the more they liked it. Even pure nonsense. He called it the mere exposure effect. Familiar feels safe. And safe feels good.",
+  "heard": "So why did people happily watch the same episodes twice? In 1968, a psychologist named Robert Zionce found a clue. He showed people made up words and strange symbols. Some appeared once, some appeared up to 25 times. The more often people saw something, the more they liked it. Even pure nonsense. He called it the mere exposure effect. Familiar feels safe and safe feels good.",
+  "words": [
+   {
+    "n": "so",
+    "text": "So",
+    "start": 143.65900000000002,
+    "end": 143.99900000000002
+   },
+   {
+    "n": "why",
+    "text": "why",
+    "start": 143.99900000000002,
+    "end": 144.17900000000003
+   },
+   {
+    "n": "did",
+    "text": "did",
+    "start": 144.17900000000003,
+    "end": 144.299
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 144.299,
+    "end": 144.59900000000002
+   },
+   {
+    "n": "happily",
+    "text": "happily",
+    "start": 144.59900000000002,
+    "end": 144.99900000000002
+   },
+   {
+    "n": "watch",
+    "text": "watch",
+    "start": 144.99900000000002,
+    "end": 145.27900000000002
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 145.27900000000002,
+    "end": 145.479
+   },
+   {
+    "n": "same",
+    "text": "same",
+    "start": 145.479,
+    "end": 145.65900000000002
+   },
+   {
+    "n": "episodes",
+    "text": "episodes",
+    "start": 145.65900000000002,
+    "end": 146.09900000000002
+   },
+   {
+    "n": "twice",
+    "text": "twice?",
+    "start": 146.09900000000002,
+    "end": 146.71900000000002
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 147.15900000000002,
+    "end": 147.21900000000002
+   },
+   {
+    "n": "1968",
+    "text": "1968,",
+    "start": 147.21900000000002,
+    "end": 147.859
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 147.95900000000003,
+    "end": 148.25900000000001
+   },
+   {
+    "n": "psychologist",
+    "text": "psychologist",
+    "start": 148.25900000000001,
+    "end": 148.71900000000002
+   },
+   {
+    "n": "named",
+    "text": "named",
+    "start": 148.71900000000002,
+    "end": 149.17900000000003
+   },
+   {
+    "n": "robert",
+    "text": "Robert",
+    "start": 149.17900000000003,
+    "end": 149.49900000000002
+   },
+   {
+    "n": "zionce",
+    "text": "Zionce",
+    "start": 149.49900000000002,
+    "end": 150.05900000000003
+   },
+   {
+    "n": "found",
+    "text": "found",
+    "start": 150.05900000000003,
+    "end": 150.17900000000003
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 150.17900000000003,
+    "end": 150.419
+   },
+   {
+    "n": "clue",
+    "text": "clue.",
+    "start": 150.419,
+    "end": 150.53900000000002
+   },
+   {
+    "n": "he",
+    "text": "He",
+    "start": 150.83900000000003,
+    "end": 150.919
+   },
+   {
+    "n": "showed",
+    "text": "showed",
+    "start": 150.919,
+    "end": 151.09900000000002
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 151.09900000000002,
+    "end": 151.419
+   },
+   {
+    "n": "made",
+    "text": "made",
+    "start": 151.419,
+    "end": 151.61900000000003
+   },
+   {
+    "n": "up",
+    "text": "up",
+    "start": 151.61900000000003,
+    "end": 151.79900000000004
+   },
+   {
+    "n": "words",
+    "text": "words",
+    "start": 151.79900000000004,
+    "end": 151.99900000000002
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 151.99900000000002,
+    "end": 152.23900000000003
+   },
+   {
+    "n": "strange",
+    "text": "strange",
+    "start": 152.23900000000003,
+    "end": 152.55900000000003
+   },
+   {
+    "n": "symbols",
+    "text": "symbols.",
+    "start": 152.55900000000003,
+    "end": 152.979
+   },
+   {
+    "n": "some",
+    "text": "Some",
+    "start": 153.33900000000003,
+    "end": 153.45900000000003
+   },
+   {
+    "n": "appeared",
+    "text": "appeared",
+    "start": 153.45900000000003,
+    "end": 153.73900000000003
+   },
+   {
+    "n": "once",
+    "text": "once,",
+    "start": 153.73900000000003,
+    "end": 154.03900000000002
+   },
+   {
+    "n": "some",
+    "text": "some",
+    "start": 154.15900000000002,
+    "end": 154.27900000000002
+   },
+   {
+    "n": "appeared",
+    "text": "appeared",
+    "start": 154.27900000000002,
+    "end": 154.53900000000002
+   },
+   {
+    "n": "up",
+    "text": "up",
+    "start": 154.53900000000002,
+    "end": 154.67900000000003
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 154.67900000000003,
+    "end": 154.77900000000002
+   },
+   {
+    "n": "25",
+    "text": "25",
+    "start": 154.77900000000002,
+    "end": 155.21900000000002
+   },
+   {
+    "n": "times",
+    "text": "times.",
+    "start": 155.21900000000002,
+    "end": 155.67900000000003
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 155.93900000000002,
+    "end": 155.99900000000002
+   },
+   {
+    "n": "more",
+    "text": "more",
+    "start": 155.99900000000002,
+    "end": 156.09900000000002
+   },
+   {
+    "n": "often",
+    "text": "often",
+    "start": 156.09900000000002,
+    "end": 156.359
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 156.359,
+    "end": 156.61900000000003
+   },
+   {
+    "n": "saw",
+    "text": "saw",
+    "start": 156.61900000000003,
+    "end": 156.95900000000003
+   },
+   {
+    "n": "something",
+    "text": "something,",
+    "start": 156.95900000000003,
+    "end": 157.37900000000002
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 157.519,
+    "end": 157.53900000000002
+   },
+   {
+    "n": "more",
+    "text": "more",
+    "start": 157.53900000000002,
+    "end": 157.67900000000003
+   },
+   {
+    "n": "they",
+    "text": "they",
+    "start": 157.67900000000003,
+    "end": 157.83900000000003
+   },
+   {
+    "n": "liked",
+    "text": "liked",
+    "start": 157.83900000000003,
+    "end": 158.11900000000003
+   },
+   {
+    "n": "it",
+    "text": "it.",
+    "start": 158.11900000000003,
+    "end": 158.25900000000001
+   },
+   {
+    "n": "even",
+    "text": "Even",
+    "start": 158.359,
+    "end": 158.55900000000003
+   },
+   {
+    "n": "pure",
+    "text": "pure",
+    "start": 158.55900000000003,
+    "end": 158.81900000000002
+   },
+   {
+    "n": "nonsense",
+    "text": "nonsense.",
+    "start": 158.81900000000002,
+    "end": 159.199
+   },
+   {
+    "n": "he",
+    "text": "He",
+    "start": 159.49900000000002,
+    "end": 159.579
+   },
+   {
+    "n": "called",
+    "text": "called",
+    "start": 159.579,
+    "end": 159.77900000000002
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 159.77900000000002,
+    "end": 159.95900000000003
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 159.95900000000003,
+    "end": 160.05900000000003
+   },
+   {
+    "n": "mere",
+    "text": "mere",
+    "start": 160.05900000000003,
+    "end": 160.21900000000002
+   },
+   {
+    "n": "exposure",
+    "text": "exposure",
+    "start": 160.21900000000002,
+    "end": 160.699
+   },
+   {
+    "n": "effect",
+    "text": "effect.",
+    "start": 160.699,
+    "end": 161.09900000000002
+   },
+   {
+    "n": "familiar",
+    "text": "Familiar",
+    "start": 161.39900000000003,
+    "end": 161.65900000000002
+   },
+   {
+    "n": "feels",
+    "text": "feels",
+    "start": 161.67900000000003,
+    "end": 161.95900000000003
+   },
+   {
+    "n": "safe",
+    "text": "safe",
+    "start": 161.95900000000003,
+    "end": 162.25900000000001
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 162.25900000000001,
+    "end": 162.65900000000002
+   },
+   {
+    "n": "safe",
+    "text": "safe",
+    "start": 162.65900000000002,
+    "end": 162.919
+   },
+   {
+    "n": "feels",
+    "text": "feels",
+    "start": 162.919,
+    "end": 163.27900000000002
+   },
+   {
+    "n": "good",
+    "text": "good.",
+    "start": 163.27900000000002,
+    "end": 163.53900000000002
+   }
+  ]
+ },
+ {
+  "take": 4,
+  "start": 164.102,
+  "script": "Now, what happens if you build an entire show around repetition? In nineteen ninety-six, a kids' show called Blue's Clues tried exactly that. It aired the same episode five days in a row. Monday to Friday. Same dog. Same clues. Same answers. Adults assumed kids would get bored. They didn't. Researchers found that children understood more with each viewing, and joined in more by the end of the week.",
+  "heard": "Now what happens if you build an entire show around repetition? In 1996, a kid's show called Blues Clues tried exactly that. It aired the same episode five days in a row. Monday to Friday, same dog, same clues, same answers. Adults assumed kids would get bored. They didn't. Researchers found that children understood more with each viewing and joined in more by the end of the week.",
+  "words": [
+   {
+    "n": "now",
+    "text": "Now",
+    "start": 164.102,
+    "end": 164.482
+   },
+   {
+    "n": "what",
+    "text": "what",
+    "start": 164.482,
+    "end": 164.702
+   },
+   {
+    "n": "happens",
+    "text": "happens",
+    "start": 164.702,
+    "end": 165.022
+   },
+   {
+    "n": "if",
+    "text": "if",
+    "start": 165.022,
+    "end": 165.202
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 165.202,
+    "end": 165.282
+   },
+   {
+    "n": "build",
+    "text": "build",
+    "start": 165.282,
+    "end": 165.482
+   },
+   {
+    "n": "an",
+    "text": "an",
+    "start": 165.482,
+    "end": 165.642
+   },
+   {
+    "n": "entire",
+    "text": "entire",
+    "start": 165.642,
+    "end": 165.982
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 165.982,
+    "end": 166.302
+   },
+   {
+    "n": "around",
+    "text": "around",
+    "start": 166.302,
+    "end": 166.622
+   },
+   {
+    "n": "repetition",
+    "text": "repetition?",
+    "start": 166.622,
+    "end": 167.162
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 167.702,
+    "end": 167.762
+   },
+   {
+    "n": "1996",
+    "text": "1996,",
+    "start": 167.762,
+    "end": 168.342
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 168.802,
+    "end": 168.842
+   },
+   {
+    "n": "kid's",
+    "text": "kid's",
+    "start": 168.842,
+    "end": 169.222
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 169.222,
+    "end": 169.322
+   },
+   {
+    "n": "called",
+    "text": "called",
+    "start": 169.322,
+    "end": 169.562
+   },
+   {
+    "n": "blues",
+    "text": "Blues",
+    "start": 169.562,
+    "end": 169.922
+   },
+   {
+    "n": "clues",
+    "text": "Clues",
+    "start": 169.922,
+    "end": 170.242
+   },
+   {
+    "n": "tried",
+    "text": "tried",
+    "start": 170.242,
+    "end": 170.442
+   },
+   {
+    "n": "exactly",
+    "text": "exactly",
+    "start": 170.442,
+    "end": 170.96200000000002
+   },
+   {
+    "n": "that",
+    "text": "that.",
+    "start": 170.96200000000002,
+    "end": 171.242
+   },
+   {
+    "n": "it",
+    "text": "It",
+    "start": 171.502,
+    "end": 171.582
+   },
+   {
+    "n": "aired",
+    "text": "aired",
+    "start": 171.582,
+    "end": 171.742
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 171.742,
+    "end": 171.90200000000002
+   },
+   {
+    "n": "same",
+    "text": "same",
+    "start": 171.90200000000002,
+    "end": 172.082
+   },
+   {
+    "n": "episode",
+    "text": "episode",
+    "start": 172.082,
+    "end": 172.482
+   },
+   {
+    "n": "five",
+    "text": "five",
+    "start": 172.482,
+    "end": 172.90200000000002
+   },
+   {
+    "n": "days",
+    "text": "days",
+    "start": 172.90200000000002,
+    "end": 173.142
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 173.142,
+    "end": 173.322
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 173.322,
+    "end": 173.40200000000002
+   },
+   {
+    "n": "row",
+    "text": "row.",
+    "start": 173.40200000000002,
+    "end": 173.642
+   },
+   {
+    "n": "monday",
+    "text": "Monday",
+    "start": 174.062,
+    "end": 174.282
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 174.282,
+    "end": 174.482
+   },
+   {
+    "n": "friday",
+    "text": "Friday,",
+    "start": 174.482,
+    "end": 174.822
+   },
+   {
+    "n": "same",
+    "text": "same",
+    "start": 175.062,
+    "end": 175.302
+   },
+   {
+    "n": "dog",
+    "text": "dog,",
+    "start": 175.302,
+    "end": 175.642
+   },
+   {
+    "n": "same",
+    "text": "same",
+    "start": 175.802,
+    "end": 176.022
+   },
+   {
+    "n": "clues",
+    "text": "clues,",
+    "start": 176.022,
+    "end": 176.322
+   },
+   {
+    "n": "same",
+    "text": "same",
+    "start": 176.482,
+    "end": 176.722
+   },
+   {
+    "n": "answers",
+    "text": "answers.",
+    "start": 176.722,
+    "end": 177.122
+   },
+   {
+    "n": "adults",
+    "text": "Adults",
+    "start": 177.462,
+    "end": 177.68200000000002
+   },
+   {
+    "n": "assumed",
+    "text": "assumed",
+    "start": 177.68200000000002,
+    "end": 178.002
+   },
+   {
+    "n": "kids",
+    "text": "kids",
+    "start": 178.002,
+    "end": 178.342
+   },
+   {
+    "n": "would",
+    "text": "would",
+    "start": 178.342,
+    "end": 178.562
+   },
+   {
+    "n": "get",
+    "text": "get",
+    "start": 178.562,
+    "end": 178.722
+   },
+   {
+    "n": "bored",
+    "text": "bored.",
+    "start": 178.722,
+    "end": 179.082
+   },
+   {
+    "n": "they",
+    "text": "They",
+    "start": 179.342,
+    "end": 179.442
+   },
+   {
+    "n": "didn't",
+    "text": "didn't.",
+    "start": 179.442,
+    "end": 179.74200000000002
+   },
+   {
+    "n": "researchers",
+    "text": "Researchers",
+    "start": 180.082,
+    "end": 180.382
+   },
+   {
+    "n": "found",
+    "text": "found",
+    "start": 180.382,
+    "end": 180.802
+   },
+   {
+    "n": "that",
+    "text": "that",
+    "start": 180.802,
+    "end": 180.982
+   },
+   {
+    "n": "children",
+    "text": "children",
+    "start": 180.982,
+    "end": 181.302
+   },
+   {
+    "n": "understood",
+    "text": "understood",
+    "start": 181.302,
+    "end": 181.762
+   },
+   {
+    "n": "more",
+    "text": "more",
+    "start": 181.762,
+    "end": 182.042
+   },
+   {
+    "n": "with",
+    "text": "with",
+    "start": 182.042,
+    "end": 182.24200000000002
+   },
+   {
+    "n": "each",
+    "text": "each",
+    "start": 182.242,
+    "end": 182.422
+   },
+   {
+    "n": "viewing",
+    "text": "viewing",
+    "start": 182.422,
+    "end": 182.762
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 182.762,
+    "end": 183.022
+   },
+   {
+    "n": "joined",
+    "text": "joined",
+    "start": 183.022,
+    "end": 183.342
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 183.342,
+    "end": 183.542
+   },
+   {
+    "n": "more",
+    "text": "more",
+    "start": 183.542,
+    "end": 183.742
+   },
+   {
+    "n": "by",
+    "text": "by",
+    "start": 183.742,
+    "end": 183.982
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 183.982,
+    "end": 184.102
+   },
+   {
+    "n": "end",
+    "text": "end",
+    "start": 184.102,
+    "end": 184.282
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 184.282,
+    "end": 184.40200000000002
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 184.40200000000002,
+    "end": 184.46200000000002
+   },
+   {
+    "n": "week",
+    "text": "week.",
+    "start": 184.46200000000002,
+    "end": 184.782
+   }
+  ]
+ },
+ {
+  "take": 5,
+  "start": 185.269,
+  "script": "Then came the money. Friends ended in two thousand and four, and about fifty-two million Americans watched the final episode. By then each of the six main actors earned about a million dollars per episode. That's a lot to pay for one goodbye. But the goodbye never really happened. Thanks to ree-runs, the six friends stayed in the same coffee shop for decades. Sine-feld, a show famously \"about nothing,\" has earned more than three billion dollars from ree-runs, by most estimates. A show about nothing became one of the biggest money machines in TV. So are we really paying for the jokes? Or for something deeper?",
+  "heard": "Then came the money, friends ended in 2004 and about 52 million Americans watched the final episode. By then, each of the six main actors earned about a million dollars per episode. That's a lot to pay for one goodbye, but the goodbye never really happened. Thanks to reruns, the six friends stayed in the same coffee shop for decades. SignFeld, a show famously about nothing, has earned more than $3 billion from reruns by most estimates. A show about nothing became one of the biggest money machines in TV, So are we really paying for the jokes or for something deeper?",
+  "words": [
+   {
+    "n": "then",
+    "text": "Then",
+    "start": 185.269,
+    "end": 185.669
+   },
+   {
+    "n": "came",
+    "text": "came",
+    "start": 185.669,
+    "end": 185.929
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 185.929,
+    "end": 186.169
+   },
+   {
+    "n": "money",
+    "text": "money,",
+    "start": 186.169,
+    "end": 186.489
+   },
+   {
+    "n": "friends",
+    "text": "friends",
+    "start": 186.909,
+    "end": 187.269
+   },
+   {
+    "n": "ended",
+    "text": "ended",
+    "start": 187.269,
+    "end": 187.649
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 187.649,
+    "end": 187.869
+   },
+   {
+    "n": "2004",
+    "text": "2004",
+    "start": 187.869,
+    "end": 189.089
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 189.089,
+    "end": 189.489
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 189.489,
+    "end": 189.689
+   },
+   {
+    "n": "52",
+    "text": "52",
+    "start": 189.689,
+    "end": 190.329
+   },
+   {
+    "n": "million",
+    "text": "million",
+    "start": 190.329,
+    "end": 190.84900000000002
+   },
+   {
+    "n": "americans",
+    "text": "Americans",
+    "start": 190.84900000000002,
+    "end": 191.50900000000001
+   },
+   {
+    "n": "watched",
+    "text": "watched",
+    "start": 191.50900000000001,
+    "end": 191.949
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 191.949,
+    "end": 192.189
+   },
+   {
+    "n": "final",
+    "text": "final",
+    "start": 192.189,
+    "end": 192.56900000000002
+   },
+   {
+    "n": "episode",
+    "text": "episode.",
+    "start": 192.56900000000002,
+    "end": 193.329
+   },
+   {
+    "n": "by",
+    "text": "By",
+    "start": 193.62900000000002,
+    "end": 193.889
+   },
+   {
+    "n": "then",
+    "text": "then,",
+    "start": 193.889,
+    "end": 194.12900000000002
+   },
+   {
+    "n": "each",
+    "text": "each",
+    "start": 194.209,
+    "end": 194.429
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 194.429,
+    "end": 194.529
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 194.529,
+    "end": 194.669
+   },
+   {
+    "n": "six",
+    "text": "six",
+    "start": 194.669,
+    "end": 194.969
+   },
+   {
+    "n": "main",
+    "text": "main",
+    "start": 194.969,
+    "end": 195.209
+   },
+   {
+    "n": "actors",
+    "text": "actors",
+    "start": 195.209,
+    "end": 195.669
+   },
+   {
+    "n": "earned",
+    "text": "earned",
+    "start": 195.669,
+    "end": 196.089
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 196.089,
+    "end": 196.34900000000002
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 196.34900000000002,
+    "end": 196.469
+   },
+   {
+    "n": "million",
+    "text": "million",
+    "start": 196.469,
+    "end": 196.809
+   },
+   {
+    "n": "dollars",
+    "text": "dollars",
+    "start": 196.809,
+    "end": 197.329
+   },
+   {
+    "n": "per",
+    "text": "per",
+    "start": 197.329,
+    "end": 197.56900000000002
+   },
+   {
+    "n": "episode",
+    "text": "episode.",
+    "start": 197.56900000000002,
+    "end": 198.209
+   },
+   {
+    "n": "that's",
+    "text": "That's",
+    "start": 198.62900000000002,
+    "end": 198.909
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 198.909,
+    "end": 198.989
+   },
+   {
+    "n": "lot",
+    "text": "lot",
+    "start": 198.989,
+    "end": 199.169
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 199.169,
+    "end": 199.34900000000002
+   },
+   {
+    "n": "pay",
+    "text": "pay",
+    "start": 199.34900000000002,
+    "end": 199.529
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 199.529,
+    "end": 199.729
+   },
+   {
+    "n": "one",
+    "text": "one",
+    "start": 199.729,
+    "end": 199.929
+   },
+   {
+    "n": "goodbye",
+    "text": "goodbye,",
+    "start": 199.929,
+    "end": 200.389
+   },
+   {
+    "n": "but",
+    "text": "but",
+    "start": 200.809,
+    "end": 200.889
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 200.889,
+    "end": 200.989
+   },
+   {
+    "n": "goodbye",
+    "text": "goodbye",
+    "start": 200.989,
+    "end": 201.349
+   },
+   {
+    "n": "never",
+    "text": "never",
+    "start": 201.349,
+    "end": 201.68900000000002
+   },
+   {
+    "n": "really",
+    "text": "really",
+    "start": 201.68900000000002,
+    "end": 202.049
+   },
+   {
+    "n": "happened",
+    "text": "happened.",
+    "start": 202.049,
+    "end": 202.489
+   },
+   {
+    "n": "thanks",
+    "text": "Thanks",
+    "start": 203.149,
+    "end": 203.949
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 203.929,
+    "end": 204.109
+   },
+   {
+    "n": "reruns",
+    "text": "reruns,",
+    "start": 204.109,
+    "end": 204.609
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 204.809,
+    "end": 204.869
+   },
+   {
+    "n": "six",
+    "text": "six",
+    "start": 204.869,
+    "end": 205.12900000000002
+   },
+   {
+    "n": "friends",
+    "text": "friends",
+    "start": 205.12900000000002,
+    "end": 205.429
+   },
+   {
+    "n": "stayed",
+    "text": "stayed",
+    "start": 205.429,
+    "end": 205.769
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 205.769,
+    "end": 205.949
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 205.949,
+    "end": 206.049
+   },
+   {
+    "n": "same",
+    "text": "same",
+    "start": 206.049,
+    "end": 206.309
+   },
+   {
+    "n": "coffee",
+    "text": "coffee",
+    "start": 206.309,
+    "end": 206.709
+   },
+   {
+    "n": "shop",
+    "text": "shop",
+    "start": 206.709,
+    "end": 207.029
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 207.029,
+    "end": 207.28900000000002
+   },
+   {
+    "n": "decades",
+    "text": "decades.",
+    "start": 207.28900000000002,
+    "end": 207.809
+   },
+   {
+    "n": "signfeld",
+    "text": "SignFeld,",
+    "start": 208.409,
+    "end": 209.12900000000002
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 209.169,
+    "end": 209.369
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 209.369,
+    "end": 209.56900000000002
+   },
+   {
+    "n": "famously",
+    "text": "famously",
+    "start": 209.56900000000002,
+    "end": 210.169
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 210.169,
+    "end": 210.50900000000001
+   },
+   {
+    "n": "nothing",
+    "text": "nothing,",
+    "start": 210.50900000000001,
+    "end": 210.989
+   },
+   {
+    "n": "has",
+    "text": "has",
+    "start": 211.229,
+    "end": 211.389
+   },
+   {
+    "n": "earned",
+    "text": "earned",
+    "start": 211.389,
+    "end": 211.649
+   },
+   {
+    "n": "more",
+    "text": "more",
+    "start": 211.649,
+    "end": 211.889
+   },
+   {
+    "n": "than",
+    "text": "than",
+    "start": 211.889,
+    "end": 212.049
+   },
+   {
+    "n": "3",
+    "text": "$3",
+    "start": 212.049,
+    "end": 212.409
+   },
+   {
+    "n": "billion",
+    "text": "billion",
+    "start": 212.409,
+    "end": 212.809
+   },
+   {
+    "n": "from",
+    "text": "from",
+    "start": 212.809,
+    "end": 213.469
+   },
+   {
+    "n": "reruns",
+    "text": "reruns",
+    "start": 213.469,
+    "end": 214.12900000000002
+   },
+   {
+    "n": "by",
+    "text": "by",
+    "start": 214.12900000000002,
+    "end": 214.329
+   },
+   {
+    "n": "most",
+    "text": "most",
+    "start": 214.329,
+    "end": 214.669
+   },
+   {
+    "n": "estimates",
+    "text": "estimates.",
+    "start": 214.669,
+    "end": 215.169
+   },
+   {
+    "n": "a",
+    "text": "A",
+    "start": 215.78900000000002,
+    "end": 215.889
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 215.889,
+    "end": 216.109
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 216.109,
+    "end": 216.34900000000002
+   },
+   {
+    "n": "nothing",
+    "text": "nothing",
+    "start": 216.34900000000002,
+    "end": 216.669
+   },
+   {
+    "n": "became",
+    "text": "became",
+    "start": 216.669,
+    "end": 217.049
+   },
+   {
+    "n": "one",
+    "text": "one",
+    "start": 217.049,
+    "end": 217.329
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 217.329,
+    "end": 217.429
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 217.429,
+    "end": 217.529
+   },
+   {
+    "n": "biggest",
+    "text": "biggest",
+    "start": 217.529,
+    "end": 217.849
+   },
+   {
+    "n": "money",
+    "text": "money",
+    "start": 217.849,
+    "end": 218.169
+   },
+   {
+    "n": "machines",
+    "text": "machines",
+    "start": 218.169,
+    "end": 218.589
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 218.589,
+    "end": 218.949
+   },
+   {
+    "n": "tv",
+    "text": "TV,",
+    "start": 218.949,
+    "end": 219.349
+   },
+   {
+    "n": "so",
+    "text": "So",
+    "start": 219.909,
+    "end": 219.969
+   },
+   {
+    "n": "are",
+    "text": "are",
+    "start": 219.969,
+    "end": 220.06900000000002
+   },
+   {
+    "n": "we",
+    "text": "we",
+    "start": 220.06900000000002,
+    "end": 220.189
+   },
+   {
+    "n": "really",
+    "text": "really",
+    "start": 220.189,
+    "end": 220.449
+   },
+   {
+    "n": "paying",
+    "text": "paying",
+    "start": 220.449,
+    "end": 220.749
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 220.749,
+    "end": 220.989
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 220.989,
+    "end": 221.109
+   },
+   {
+    "n": "jokes",
+    "text": "jokes",
+    "start": 221.109,
+    "end": 221.369
+   },
+   {
+    "n": "or",
+    "text": "or",
+    "start": 221.369,
+    "end": 221.78900000000002
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 221.78900000000002,
+    "end": 221.989
+   },
+   {
+    "n": "something",
+    "text": "something",
+    "start": 221.989,
+    "end": 222.309
+   },
+   {
+    "n": "deeper",
+    "text": "deeper?",
+    "start": 222.309,
+    "end": 222.709
+   }
+  ]
+ },
+ {
+  "take": 6,
+  "start": 223.96300000000002,
+  "script": "To answer that, look at what changed in our lives. In the year two thousand, two researchers set up a jam-tasting table in a grocery store. Some days the table offered twenty-four flavours. Other days, just six. The big table drew more shoppers. But only about three percent of them bought a jar. At the small table, about thirty percent bought one. When there were too many options, people froze. Later studies found the effect isn't always that strong. But you've probably felt it. Think about your streaming app. Thousands of titles. Endless rows of thumbnails. How many nights have you scrolled for twenty minutes, then put on something you've seen ten times? Netflix even interrupts you with a question: \"Are you still watching?\" The honest answer is usually yes. For the fourth time this year.",
+  "heard": "To answer that, look at what changed in our lives. In the year 2002 researchers set up a jam tasting table in a grocery store. Some days the table offered 24 flavors, other days just 6. The big table drew more shoppers, but only about 3 % of them bought a jar. At the small table about 30 % bought one when there were too many options people froze. Later studies found the effect isn't always that strong but you've probably felt it. Think about your streaming app. Thousands of titles, endless rows of thumbnails. How many nights have you scrolled for 20 minutes then put on something you've seen 10 times? Netflix even interrupts you with a question. Are you still watching? The honest answer is usually yes, for the fourth time this year.",
+  "words": [
+   {
+    "n": "to",
+    "text": "To",
+    "start": 223.96300000000002,
+    "end": 224.26300000000003
+   },
+   {
+    "n": "answer",
+    "text": "answer",
+    "start": 224.26300000000003,
+    "end": 224.52300000000002
+   },
+   {
+    "n": "that",
+    "text": "that,",
+    "start": 224.52300000000002,
+    "end": 224.78300000000002
+   },
+   {
+    "n": "look",
+    "text": "look",
+    "start": 224.90300000000002,
+    "end": 225.00300000000001
+   },
+   {
+    "n": "at",
+    "text": "at",
+    "start": 225.00300000000001,
+    "end": 225.103
+   },
+   {
+    "n": "what",
+    "text": "what",
+    "start": 225.103,
+    "end": 225.24300000000002
+   },
+   {
+    "n": "changed",
+    "text": "changed",
+    "start": 225.24300000000002,
+    "end": 225.54300000000003
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 225.54300000000003,
+    "end": 225.76300000000003
+   },
+   {
+    "n": "our",
+    "text": "our",
+    "start": 225.76300000000003,
+    "end": 225.86300000000003
+   },
+   {
+    "n": "lives",
+    "text": "lives.",
+    "start": 225.86300000000003,
+    "end": 226.26300000000003
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 226.84300000000002,
+    "end": 226.96300000000002
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 226.96300000000002,
+    "end": 227.02300000000002
+   },
+   {
+    "n": "year",
+    "text": "year",
+    "start": 227.02300000000002,
+    "end": 227.12300000000002
+   },
+   {
+    "n": "2002",
+    "text": "2002",
+    "start": 227.12300000000002,
+    "end": 227.663
+   },
+   {
+    "n": "researchers",
+    "text": "researchers",
+    "start": 227.663,
+    "end": 228.42300000000003
+   },
+   {
+    "n": "set",
+    "text": "set",
+    "start": 228.42300000000003,
+    "end": 228.68300000000002
+   },
+   {
+    "n": "up",
+    "text": "up",
+    "start": 228.68300000000002,
+    "end": 228.78300000000002
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 228.78300000000002,
+    "end": 228.883
+   },
+   {
+    "n": "jam",
+    "text": "jam",
+    "start": 228.883,
+    "end": 229.103
+   },
+   {
+    "n": "tasting",
+    "text": "tasting",
+    "start": 229.103,
+    "end": 229.54300000000003
+   },
+   {
+    "n": "table",
+    "text": "table",
+    "start": 229.54300000000003,
+    "end": 229.92300000000003
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 229.92300000000003,
+    "end": 230.12300000000002
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 230.12300000000002,
+    "end": 230.20300000000003
+   },
+   {
+    "n": "grocery",
+    "text": "grocery",
+    "start": 230.20300000000003,
+    "end": 230.42300000000003
+   },
+   {
+    "n": "store",
+    "text": "store.",
+    "start": 230.42300000000003,
+    "end": 230.98300000000003
+   },
+   {
+    "n": "some",
+    "text": "Some",
+    "start": 231.34300000000002,
+    "end": 231.48300000000003
+   },
+   {
+    "n": "days",
+    "text": "days",
+    "start": 231.48300000000003,
+    "end": 231.64300000000003
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 231.64300000000003,
+    "end": 231.86300000000003
+   },
+   {
+    "n": "table",
+    "text": "table",
+    "start": 231.86300000000003,
+    "end": 232.14300000000003
+   },
+   {
+    "n": "offered",
+    "text": "offered",
+    "start": 232.14300000000003,
+    "end": 232.40300000000002
+   },
+   {
+    "n": "24",
+    "text": "24",
+    "start": 232.40300000000002,
+    "end": 232.90300000000002
+   },
+   {
+    "n": "flavors",
+    "text": "flavors,",
+    "start": 232.90300000000002,
+    "end": 233.36300000000003
+   },
+   {
+    "n": "other",
+    "text": "other",
+    "start": 233.64300000000003,
+    "end": 233.80300000000003
+   },
+   {
+    "n": "days",
+    "text": "days",
+    "start": 233.80300000000003,
+    "end": 234.04300000000003
+   },
+   {
+    "n": "just",
+    "text": "just",
+    "start": 234.04300000000003,
+    "end": 234.30300000000003
+   },
+   {
+    "n": "6",
+    "text": "6.",
+    "start": 234.30300000000003,
+    "end": 234.58300000000003
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 235.14300000000003,
+    "end": 235.26300000000003
+   },
+   {
+    "n": "big",
+    "text": "big",
+    "start": 235.26300000000003,
+    "end": 235.40300000000002
+   },
+   {
+    "n": "table",
+    "text": "table",
+    "start": 235.40300000000002,
+    "end": 235.76300000000003
+   },
+   {
+    "n": "drew",
+    "text": "drew",
+    "start": 235.76300000000003,
+    "end": 235.98300000000003
+   },
+   {
+    "n": "more",
+    "text": "more",
+    "start": 235.98300000000003,
+    "end": 236.20300000000003
+   },
+   {
+    "n": "shoppers",
+    "text": "shoppers,",
+    "start": 236.20300000000003,
+    "end": 236.70300000000003
+   },
+   {
+    "n": "but",
+    "text": "but",
+    "start": 236.883,
+    "end": 236.943
+   },
+   {
+    "n": "only",
+    "text": "only",
+    "start": 236.943,
+    "end": 237.14300000000003
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 237.14300000000003,
+    "end": 237.40300000000002
+   },
+   {
+    "n": "3",
+    "text": "3",
+    "start": 237.40300000000002,
+    "end": 237.723
+   },
+   {
+    "n": "",
+    "text": "%",
+    "start": 237.723,
+    "end": 237.74300000000002
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 238.04300000000003,
+    "end": 238.163
+   },
+   {
+    "n": "them",
+    "text": "them",
+    "start": 238.163,
+    "end": 238.32300000000004
+   },
+   {
+    "n": "bought",
+    "text": "bought",
+    "start": 238.32300000000004,
+    "end": 238.52300000000002
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 238.52300000000002,
+    "end": 238.68300000000002
+   },
+   {
+    "n": "jar",
+    "text": "jar.",
+    "start": 238.68300000000002,
+    "end": 238.90300000000002
+   },
+   {
+    "n": "at",
+    "text": "At",
+    "start": 239.223,
+    "end": 239.36300000000003
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 239.36300000000003,
+    "end": 239.48300000000003
+   },
+   {
+    "n": "small",
+    "text": "small",
+    "start": 239.48300000000003,
+    "end": 239.70300000000003
+   },
+   {
+    "n": "table",
+    "text": "table",
+    "start": 239.70300000000003,
+    "end": 240.103
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 240.103,
+    "end": 240.38300000000004
+   },
+   {
+    "n": "30",
+    "text": "30",
+    "start": 240.38300000000004,
+    "end": 240.76300000000003
+   },
+   {
+    "n": "",
+    "text": "%",
+    "start": 240.76300000000003,
+    "end": 240.78300000000002
+   },
+   {
+    "n": "bought",
+    "text": "bought",
+    "start": 241.103,
+    "end": 241.30300000000003
+   },
+   {
+    "n": "one",
+    "text": "one",
+    "start": 241.30300000000003,
+    "end": 241.64300000000003
+   },
+   {
+    "n": "when",
+    "text": "when",
+    "start": 241.64300000000003,
+    "end": 241.98300000000003
+   },
+   {
+    "n": "there",
+    "text": "there",
+    "start": 241.98300000000003,
+    "end": 242.103
+   },
+   {
+    "n": "were",
+    "text": "were",
+    "start": 242.103,
+    "end": 242.223
+   },
+   {
+    "n": "too",
+    "text": "too",
+    "start": 242.223,
+    "end": 242.40300000000002
+   },
+   {
+    "n": "many",
+    "text": "many",
+    "start": 242.40300000000002,
+    "end": 242.603
+   },
+   {
+    "n": "options",
+    "text": "options",
+    "start": 242.603,
+    "end": 242.98300000000003
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 242.98300000000003,
+    "end": 243.50300000000001
+   },
+   {
+    "n": "froze",
+    "text": "froze.",
+    "start": 243.50300000000001,
+    "end": 244.14300000000003
+   },
+   {
+    "n": "later",
+    "text": "Later",
+    "start": 244.80300000000003,
+    "end": 245.08300000000003
+   },
+   {
+    "n": "studies",
+    "text": "studies",
+    "start": 245.08300000000003,
+    "end": 245.48300000000003
+   },
+   {
+    "n": "found",
+    "text": "found",
+    "start": 245.48300000000003,
+    "end": 245.723
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 245.723,
+    "end": 245.883
+   },
+   {
+    "n": "effect",
+    "text": "effect",
+    "start": 245.883,
+    "end": 246.12300000000002
+   },
+   {
+    "n": "isn't",
+    "text": "isn't",
+    "start": 246.12300000000002,
+    "end": 246.443
+   },
+   {
+    "n": "always",
+    "text": "always",
+    "start": 246.443,
+    "end": 246.74300000000002
+   },
+   {
+    "n": "that",
+    "text": "that",
+    "start": 246.74300000000002,
+    "end": 246.98300000000003
+   },
+   {
+    "n": "strong",
+    "text": "strong",
+    "start": 246.98300000000003,
+    "end": 247.42300000000003
+   },
+   {
+    "n": "but",
+    "text": "but",
+    "start": 247.42300000000003,
+    "end": 247.82300000000004
+   },
+   {
+    "n": "you've",
+    "text": "you've",
+    "start": 247.82300000000004,
+    "end": 248.02300000000002
+   },
+   {
+    "n": "probably",
+    "text": "probably",
+    "start": 248.02300000000002,
+    "end": 248.383
+   },
+   {
+    "n": "felt",
+    "text": "felt",
+    "start": 248.383,
+    "end": 248.70300000000003
+   },
+   {
+    "n": "it",
+    "text": "it.",
+    "start": 248.70300000000003,
+    "end": 248.90300000000002
+   },
+   {
+    "n": "think",
+    "text": "Think",
+    "start": 249.02300000000002,
+    "end": 249.12300000000002
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 249.12300000000002,
+    "end": 249.26300000000003
+   },
+   {
+    "n": "your",
+    "text": "your",
+    "start": 249.26300000000003,
+    "end": 249.40300000000002
+   },
+   {
+    "n": "streaming",
+    "text": "streaming",
+    "start": 249.40300000000002,
+    "end": 249.76300000000003
+   },
+   {
+    "n": "app",
+    "text": "app.",
+    "start": 249.76300000000003,
+    "end": 250.14300000000003
+   },
+   {
+    "n": "thousands",
+    "text": "Thousands",
+    "start": 250.36300000000003,
+    "end": 250.603
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 250.603,
+    "end": 250.78300000000002
+   },
+   {
+    "n": "titles",
+    "text": "titles,",
+    "start": 250.78300000000002,
+    "end": 251.14300000000003
+   },
+   {
+    "n": "endless",
+    "text": "endless",
+    "start": 251.40300000000002,
+    "end": 251.58300000000003
+   },
+   {
+    "n": "rows",
+    "text": "rows",
+    "start": 251.58300000000003,
+    "end": 251.86300000000003
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 251.86300000000003,
+    "end": 252.08300000000003
+   },
+   {
+    "n": "thumbnails",
+    "text": "thumbnails.",
+    "start": 252.08300000000003,
+    "end": 252.52300000000002
+   },
+   {
+    "n": "how",
+    "text": "How",
+    "start": 252.76300000000003,
+    "end": 252.84300000000002
+   },
+   {
+    "n": "many",
+    "text": "many",
+    "start": 252.84300000000002,
+    "end": 253.00300000000001
+   },
+   {
+    "n": "nights",
+    "text": "nights",
+    "start": 253.00300000000001,
+    "end": 253.28300000000002
+   },
+   {
+    "n": "have",
+    "text": "have",
+    "start": 253.28300000000002,
+    "end": 253.42300000000003
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 253.42300000000003,
+    "end": 253.54300000000003
+   },
+   {
+    "n": "scrolled",
+    "text": "scrolled",
+    "start": 253.54300000000003,
+    "end": 253.98300000000003
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 253.98300000000003,
+    "end": 254.08300000000003
+   },
+   {
+    "n": "20",
+    "text": "20",
+    "start": 254.08300000000003,
+    "end": 254.34300000000002
+   },
+   {
+    "n": "minutes",
+    "text": "minutes",
+    "start": 254.34300000000002,
+    "end": 254.58300000000003
+   },
+   {
+    "n": "then",
+    "text": "then",
+    "start": 254.58300000000003,
+    "end": 254.76300000000003
+   },
+   {
+    "n": "put",
+    "text": "put",
+    "start": 254.76300000000003,
+    "end": 254.90300000000002
+   },
+   {
+    "n": "on",
+    "text": "on",
+    "start": 254.90300000000002,
+    "end": 255.04300000000003
+   },
+   {
+    "n": "something",
+    "text": "something",
+    "start": 255.04300000000003,
+    "end": 255.32300000000004
+   },
+   {
+    "n": "you've",
+    "text": "you've",
+    "start": 255.32300000000004,
+    "end": 255.54300000000003
+   },
+   {
+    "n": "seen",
+    "text": "seen",
+    "start": 255.54300000000003,
+    "end": 255.663
+   },
+   {
+    "n": "10",
+    "text": "10",
+    "start": 255.663,
+    "end": 255.96300000000002
+   },
+   {
+    "n": "times",
+    "text": "times?",
+    "start": 255.96300000000002,
+    "end": 256.50300000000004
+   },
+   {
+    "n": "netflix",
+    "text": "Netflix",
+    "start": 256.74300000000005,
+    "end": 256.94300000000004
+   },
+   {
+    "n": "even",
+    "text": "even",
+    "start": 256.94300000000004,
+    "end": 257.423
+   },
+   {
+    "n": "interrupts",
+    "text": "interrupts",
+    "start": 257.423,
+    "end": 257.843
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 257.843,
+    "end": 257.903
+   },
+   {
+    "n": "with",
+    "text": "with",
+    "start": 257.903,
+    "end": 258.043
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 258.023,
+    "end": 258.103
+   },
+   {
+    "n": "question",
+    "text": "question.",
+    "start": 258.103,
+    "end": 258.50300000000004
+   },
+   {
+    "n": "are",
+    "text": "Are",
+    "start": 258.88300000000004,
+    "end": 258.963
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 258.963,
+    "end": 259.083
+   },
+   {
+    "n": "still",
+    "text": "still",
+    "start": 259.083,
+    "end": 259.283
+   },
+   {
+    "n": "watching",
+    "text": "watching?",
+    "start": 259.283,
+    "end": 259.76300000000003
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 260.12300000000005,
+    "end": 260.223
+   },
+   {
+    "n": "honest",
+    "text": "honest",
+    "start": 260.223,
+    "end": 260.44300000000004
+   },
+   {
+    "n": "answer",
+    "text": "answer",
+    "start": 260.44300000000004,
+    "end": 260.88300000000004
+   },
+   {
+    "n": "is",
+    "text": "is",
+    "start": 260.88300000000004,
+    "end": 261.103
+   },
+   {
+    "n": "usually",
+    "text": "usually",
+    "start": 261.103,
+    "end": 261.463
+   },
+   {
+    "n": "yes",
+    "text": "yes,",
+    "start": 261.463,
+    "end": 261.76300000000003
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 262.043,
+    "end": 262.223
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 262.223,
+    "end": 262.32300000000004
+   },
+   {
+    "n": "fourth",
+    "text": "fourth",
+    "start": 262.32300000000004,
+    "end": 262.603
+   },
+   {
+    "n": "time",
+    "text": "time",
+    "start": 262.603,
+    "end": 262.863
+   },
+   {
+    "n": "this",
+    "text": "this",
+    "start": 262.863,
+    "end": 263.103
+   },
+   {
+    "n": "year",
+    "text": "year.",
+    "start": 263.103,
+    "end": 263.403
+   }
+  ]
+ },
+ {
+  "take": 7,
+  "start": 263.914,
+  "script": "Then there's loneliness. In twenty twenty-three, the U. S. Surgeon General called loneliness an epidemic. His report said about one in two American adults had experienced it. And psychologists had already found a strange kind of relief. In two thousand and nine, Jaye Derrick and her colleagues asked people to write about their favourite TV show. Afterwards, people felt less lonely. When people felt rejected, thinking about their favourite characters helped them recover. The researchers called it social surrogacy. Familiar characters work like stand-in friends. Your brain knows the characters aren't real. It just doesn't seem to care very much.",
+  "heard": "Then there's loneliness. In 2023, the US Surgeon General called loneliness an epidemic. His report said about one in two American adults had experienced it, and psychologists had already found a strange kind of relief. In 2009, Jay Derrick and her colleagues asked people to write about their favorite TV show. Afterwards, people felt less lonely. When people felt rejected, thinking about their favorite characters helped them recover. The researchers called it social surrogacy. Familiar characters work like stand -in friends. Your brain knows the characters aren't real. It just doesn't seem to care very much.",
+  "words": [
+   {
+    "n": "then",
+    "text": "Then",
+    "start": 263.914,
+    "end": 264.294
+   },
+   {
+    "n": "there's",
+    "text": "there's",
+    "start": 264.294,
+    "end": 264.614
+   },
+   {
+    "n": "loneliness",
+    "text": "loneliness.",
+    "start": 264.614,
+    "end": 264.954
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 265.594,
+    "end": 265.714
+   },
+   {
+    "n": "2023",
+    "text": "2023,",
+    "start": 265.714,
+    "end": 266.414
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 266.75399999999996,
+    "end": 266.81399999999996
+   },
+   {
+    "n": "us",
+    "text": "US",
+    "start": 266.81399999999996,
+    "end": 267.154
+   },
+   {
+    "n": "surgeon",
+    "text": "Surgeon",
+    "start": 267.154,
+    "end": 267.75399999999996
+   },
+   {
+    "n": "general",
+    "text": "General",
+    "start": 267.75399999999996,
+    "end": 268.214
+   },
+   {
+    "n": "called",
+    "text": "called",
+    "start": 268.214,
+    "end": 268.49399999999997
+   },
+   {
+    "n": "loneliness",
+    "text": "loneliness",
+    "start": 268.49399999999997,
+    "end": 269.034
+   },
+   {
+    "n": "an",
+    "text": "an",
+    "start": 269.034,
+    "end": 269.334
+   },
+   {
+    "n": "epidemic",
+    "text": "epidemic.",
+    "start": 269.334,
+    "end": 269.834
+   },
+   {
+    "n": "his",
+    "text": "His",
+    "start": 270.294,
+    "end": 270.43399999999997
+   },
+   {
+    "n": "report",
+    "text": "report",
+    "start": 270.43399999999997,
+    "end": 270.734
+   },
+   {
+    "n": "said",
+    "text": "said",
+    "start": 270.734,
+    "end": 271.054
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 271.054,
+    "end": 271.234
+   },
+   {
+    "n": "one",
+    "text": "one",
+    "start": 271.234,
+    "end": 271.454
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 271.454,
+    "end": 271.614
+   },
+   {
+    "n": "two",
+    "text": "two",
+    "start": 271.614,
+    "end": 271.854
+   },
+   {
+    "n": "american",
+    "text": "American",
+    "start": 271.854,
+    "end": 272.274
+   },
+   {
+    "n": "adults",
+    "text": "adults",
+    "start": 272.274,
+    "end": 272.674
+   },
+   {
+    "n": "had",
+    "text": "had",
+    "start": 272.674,
+    "end": 272.87399999999997
+   },
+   {
+    "n": "experienced",
+    "text": "experienced",
+    "start": 272.87399999999997,
+    "end": 273.454
+   },
+   {
+    "n": "it",
+    "text": "it,",
+    "start": 273.454,
+    "end": 273.774
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 274.014,
+    "end": 274.134
+   },
+   {
+    "n": "psychologists",
+    "text": "psychologists",
+    "start": 274.134,
+    "end": 274.734
+   },
+   {
+    "n": "had",
+    "text": "had",
+    "start": 274.734,
+    "end": 275.114
+   },
+   {
+    "n": "already",
+    "text": "already",
+    "start": 275.114,
+    "end": 275.414
+   },
+   {
+    "n": "found",
+    "text": "found",
+    "start": 275.414,
+    "end": 275.714
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 275.714,
+    "end": 275.87399999999997
+   },
+   {
+    "n": "strange",
+    "text": "strange",
+    "start": 275.87399999999997,
+    "end": 276.25399999999996
+   },
+   {
+    "n": "kind",
+    "text": "kind",
+    "start": 276.25399999999996,
+    "end": 276.574
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 276.574,
+    "end": 276.734
+   },
+   {
+    "n": "relief",
+    "text": "relief.",
+    "start": 276.734,
+    "end": 277.054
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 277.594,
+    "end": 277.734
+   },
+   {
+    "n": "2009",
+    "text": "2009,",
+    "start": 277.734,
+    "end": 278.774
+   },
+   {
+    "n": "jay",
+    "text": "Jay",
+    "start": 279.214,
+    "end": 279.294
+   },
+   {
+    "n": "derrick",
+    "text": "Derrick",
+    "start": 279.294,
+    "end": 279.634
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 279.634,
+    "end": 279.794
+   },
+   {
+    "n": "her",
+    "text": "her",
+    "start": 279.794,
+    "end": 279.894
+   },
+   {
+    "n": "colleagues",
+    "text": "colleagues",
+    "start": 279.894,
+    "end": 280.354
+   },
+   {
+    "n": "asked",
+    "text": "asked",
+    "start": 280.354,
+    "end": 280.734
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 280.734,
+    "end": 281.094
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 281.094,
+    "end": 281.294
+   },
+   {
+    "n": "write",
+    "text": "write",
+    "start": 281.294,
+    "end": 281.474
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 281.474,
+    "end": 281.734
+   },
+   {
+    "n": "their",
+    "text": "their",
+    "start": 281.734,
+    "end": 281.894
+   },
+   {
+    "n": "favorite",
+    "text": "favorite",
+    "start": 281.894,
+    "end": 282.354
+   },
+   {
+    "n": "tv",
+    "text": "TV",
+    "start": 282.334,
+    "end": 282.69399999999996
+   },
+   {
+    "n": "show",
+    "text": "show.",
+    "start": 282.69399999999996,
+    "end": 283.074
+   },
+   {
+    "n": "afterwards",
+    "text": "Afterwards,",
+    "start": 284.074,
+    "end": 284.654
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 284.974,
+    "end": 285.174
+   },
+   {
+    "n": "felt",
+    "text": "felt",
+    "start": 285.174,
+    "end": 285.49399999999997
+   },
+   {
+    "n": "less",
+    "text": "less",
+    "start": 285.49399999999997,
+    "end": 285.75399999999996
+   },
+   {
+    "n": "lonely",
+    "text": "lonely.",
+    "start": 285.75399999999996,
+    "end": 286.274
+   },
+   {
+    "n": "when",
+    "text": "When",
+    "start": 286.75399999999996,
+    "end": 286.854
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 286.854,
+    "end": 287.134
+   },
+   {
+    "n": "felt",
+    "text": "felt",
+    "start": 287.134,
+    "end": 287.534
+   },
+   {
+    "n": "rejected",
+    "text": "rejected,",
+    "start": 287.534,
+    "end": 288.094
+   },
+   {
+    "n": "thinking",
+    "text": "thinking",
+    "start": 288.31399999999996,
+    "end": 288.534
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 288.534,
+    "end": 288.794
+   },
+   {
+    "n": "their",
+    "text": "their",
+    "start": 288.794,
+    "end": 289.014
+   },
+   {
+    "n": "favorite",
+    "text": "favorite",
+    "start": 289.014,
+    "end": 289.49399999999997
+   },
+   {
+    "n": "characters",
+    "text": "characters",
+    "start": 289.49399999999997,
+    "end": 290.054
+   },
+   {
+    "n": "helped",
+    "text": "helped",
+    "start": 290.054,
+    "end": 290.414
+   },
+   {
+    "n": "them",
+    "text": "them",
+    "start": 290.414,
+    "end": 290.674
+   },
+   {
+    "n": "recover",
+    "text": "recover.",
+    "start": 290.674,
+    "end": 291.134
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 291.69399999999996,
+    "end": 291.75399999999996
+   },
+   {
+    "n": "researchers",
+    "text": "researchers",
+    "start": 291.75399999999996,
+    "end": 292.234
+   },
+   {
+    "n": "called",
+    "text": "called",
+    "start": 292.234,
+    "end": 292.654
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 292.654,
+    "end": 292.854
+   },
+   {
+    "n": "social",
+    "text": "social",
+    "start": 292.854,
+    "end": 293.294
+   },
+   {
+    "n": "surrogacy",
+    "text": "surrogacy.",
+    "start": 293.294,
+    "end": 294.054
+   },
+   {
+    "n": "familiar",
+    "text": "Familiar",
+    "start": 294.554,
+    "end": 294.914
+   },
+   {
+    "n": "characters",
+    "text": "characters",
+    "start": 294.914,
+    "end": 295.454
+   },
+   {
+    "n": "work",
+    "text": "work",
+    "start": 295.454,
+    "end": 295.794
+   },
+   {
+    "n": "like",
+    "text": "like",
+    "start": 295.794,
+    "end": 296.074
+   },
+   {
+    "n": "stand",
+    "text": "stand",
+    "start": 296.074,
+    "end": 296.394
+   },
+   {
+    "n": "in",
+    "text": "-in",
+    "start": 296.394,
+    "end": 296.614
+   },
+   {
+    "n": "friends",
+    "text": "friends.",
+    "start": 296.614,
+    "end": 296.954
+   },
+   {
+    "n": "your",
+    "text": "Your",
+    "start": 297.49399999999997,
+    "end": 297.574
+   },
+   {
+    "n": "brain",
+    "text": "brain",
+    "start": 297.574,
+    "end": 297.914
+   },
+   {
+    "n": "knows",
+    "text": "knows",
+    "start": 297.914,
+    "end": 298.214
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 298.214,
+    "end": 298.454
+   },
+   {
+    "n": "characters",
+    "text": "characters",
+    "start": 298.454,
+    "end": 298.87399999999997
+   },
+   {
+    "n": "aren't",
+    "text": "aren't",
+    "start": 298.87399999999997,
+    "end": 299.25399999999996
+   },
+   {
+    "n": "real",
+    "text": "real.",
+    "start": 299.25399999999996,
+    "end": 299.594
+   },
+   {
+    "n": "it",
+    "text": "It",
+    "start": 299.954,
+    "end": 300.034
+   },
+   {
+    "n": "just",
+    "text": "just",
+    "start": 300.034,
+    "end": 300.19399999999996
+   },
+   {
+    "n": "doesn't",
+    "text": "doesn't",
+    "start": 300.19399999999996,
+    "end": 300.554
+   },
+   {
+    "n": "seem",
+    "text": "seem",
+    "start": 300.554,
+    "end": 300.774
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 300.774,
+    "end": 300.93399999999997
+   },
+   {
+    "n": "care",
+    "text": "care",
+    "start": 300.93399999999997,
+    "end": 301.154
+   },
+   {
+    "n": "very",
+    "text": "very",
+    "start": 301.154,
+    "end": 301.454
+   },
+   {
+    "n": "much",
+    "text": "much.",
+    "start": 301.454,
+    "end": 301.99399999999997
+   }
+  ]
+ },
+ {
+  "take": 8,
+  "start": 302.926,
+  "script": "So the comfort show became a shelter. Then the shelter began to crack. In December twenty eighteen, fans learned Friends might leave Netflix. Netflix reportedly paid around a hundred million dollars to keep it for one more year. For a show that had ended in two thousand and four. Then, on January first, twenty twenty, Friends left Netflix in the U. S. anyway. A few months later, the world shut down. Lockdowns. Fear. Nonstop news. People needed their comfort shows more than ever. And those shows were scattering across new apps, each with a new monthly price. Comfort had become a product. And the product was getting expensive. So what do you do when the world feels out of control? You reach for the one thing that never changes. Many people spent lockdown on the couch with characters they'd known for twenty years. Not because they had nothing new to watch. Because new felt like too much. But it wasn't over yet.",
+  "heard": "So the comfort show became a shelter, then the shelter began to crack. In December 2018, fans learned friends might leave Netflix. Netflix reportedly paid around $100 million to keep it for one more year, for a show that had ended in 2004. Then on January 1st, 2020, friends left Netflix in the U .S. Anyway, a few months later the world Many people spent lockdown on the couch with characters they'd known for 20 years, not because they had nothing new to watch, because Newfell felt like too much, but it wasn't over yet.",
+  "words": [
+   {
+    "n": "so",
+    "text": "So",
+    "start": 302.926,
+    "end": 303.26599999999996
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 303.26599999999996,
+    "end": 303.366
+   },
+   {
+    "n": "comfort",
+    "text": "comfort",
+    "start": 303.366,
+    "end": 303.666
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 303.666,
+    "end": 303.94599999999997
+   },
+   {
+    "n": "became",
+    "text": "became",
+    "start": 303.94599999999997,
+    "end": 304.26599999999996
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 304.26599999999996,
+    "end": 304.44599999999997
+   },
+   {
+    "n": "shelter",
+    "text": "shelter,",
+    "start": 304.44599999999997,
+    "end": 304.806
+   },
+   {
+    "n": "then",
+    "text": "then",
+    "start": 305.106,
+    "end": 305.186
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 305.186,
+    "end": 305.286
+   },
+   {
+    "n": "shelter",
+    "text": "shelter",
+    "start": 305.286,
+    "end": 305.606
+   },
+   {
+    "n": "began",
+    "text": "began",
+    "start": 305.606,
+    "end": 305.906
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 305.906,
+    "end": 306.086
+   },
+   {
+    "n": "crack",
+    "text": "crack.",
+    "start": 306.086,
+    "end": 306.306
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 306.76599999999996,
+    "end": 306.786
+   },
+   {
+    "n": "december",
+    "text": "December",
+    "start": 306.786,
+    "end": 307.086
+   },
+   {
+    "n": "2018",
+    "text": "2018,",
+    "start": 307.086,
+    "end": 307.746
+   },
+   {
+    "n": "fans",
+    "text": "fans",
+    "start": 307.906,
+    "end": 308.086
+   },
+   {
+    "n": "learned",
+    "text": "learned",
+    "start": 308.086,
+    "end": 308.32599999999996
+   },
+   {
+    "n": "friends",
+    "text": "friends",
+    "start": 308.32599999999996,
+    "end": 308.606
+   },
+   {
+    "n": "might",
+    "text": "might",
+    "start": 308.606,
+    "end": 308.906
+   },
+   {
+    "n": "leave",
+    "text": "leave",
+    "start": 308.906,
+    "end": 309.186
+   },
+   {
+    "n": "netflix",
+    "text": "Netflix.",
+    "start": 309.186,
+    "end": 309.526
+   },
+   {
+    "n": "netflix",
+    "text": "Netflix",
+    "start": 310.046,
+    "end": 310.246
+   },
+   {
+    "n": "reportedly",
+    "text": "reportedly",
+    "start": 310.246,
+    "end": 310.88599999999997
+   },
+   {
+    "n": "paid",
+    "text": "paid",
+    "start": 310.88599999999997,
+    "end": 311.186
+   },
+   {
+    "n": "around",
+    "text": "around",
+    "start": 311.186,
+    "end": 311.426
+   },
+   {
+    "n": "100",
+    "text": "$100",
+    "start": 311.426,
+    "end": 311.76599999999996
+   },
+   {
+    "n": "million",
+    "text": "million",
+    "start": 311.76599999999996,
+    "end": 312.086
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 312.086,
+    "end": 312.646
+   },
+   {
+    "n": "keep",
+    "text": "keep",
+    "start": 312.646,
+    "end": 312.806
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 312.806,
+    "end": 312.926
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 312.926,
+    "end": 313.046
+   },
+   {
+    "n": "one",
+    "text": "one",
+    "start": 313.046,
+    "end": 313.20599999999996
+   },
+   {
+    "n": "more",
+    "text": "more",
+    "start": 313.20599999999996,
+    "end": 313.406
+   },
+   {
+    "n": "year",
+    "text": "year,",
+    "start": 313.406,
+    "end": 313.646
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 313.82599999999996,
+    "end": 313.906
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 313.906,
+    "end": 314.026
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 314.026,
+    "end": 314.126
+   },
+   {
+    "n": "that",
+    "text": "that",
+    "start": 314.126,
+    "end": 314.286
+   },
+   {
+    "n": "had",
+    "text": "had",
+    "start": 314.286,
+    "end": 314.38599999999997
+   },
+   {
+    "n": "ended",
+    "text": "ended",
+    "start": 314.38599999999997,
+    "end": 314.626
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 314.626,
+    "end": 314.806
+   },
+   {
+    "n": "2004",
+    "text": "2004.",
+    "start": 314.806,
+    "end": 315.746
+   },
+   {
+    "n": "then",
+    "text": "Then",
+    "start": 316.186,
+    "end": 316.32599999999996
+   },
+   {
+    "n": "on",
+    "text": "on",
+    "start": 316.32599999999996,
+    "end": 316.466
+   },
+   {
+    "n": "january",
+    "text": "January",
+    "start": 316.466,
+    "end": 316.786
+   },
+   {
+    "n": "1st",
+    "text": "1st,",
+    "start": 316.786,
+    "end": 317.26599999999996
+   },
+   {
+    "n": "2020",
+    "text": "2020,",
+    "start": 317.26599999999996,
+    "end": 317.686
+   },
+   {
+    "n": "friends",
+    "text": "friends",
+    "start": 317.82599999999996,
+    "end": 318.086
+   },
+   {
+    "n": "left",
+    "text": "left",
+    "start": 318.086,
+    "end": 318.246
+   },
+   {
+    "n": "netflix",
+    "text": "Netflix",
+    "start": 318.246,
+    "end": 318.646
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 318.646,
+    "end": 318.866
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 318.866,
+    "end": 318.966
+   },
+   {
+    "n": "u",
+    "text": "U",
+    "start": 318.966,
+    "end": 319.14599999999996
+   },
+   {
+    "n": "s",
+    "text": ".S.",
+    "start": 319.14599999999996,
+    "end": 319.466
+   },
+   {
+    "n": "anyway",
+    "text": "Anyway,",
+    "start": 319.566,
+    "end": 319.88599999999997
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 320.086,
+    "end": 320.126
+   },
+   {
+    "n": "few",
+    "text": "few",
+    "start": 320.126,
+    "end": 320.246
+   },
+   {
+    "n": "months",
+    "text": "months",
+    "start": 320.246,
+    "end": 320.406
+   },
+   {
+    "n": "later",
+    "text": "later",
+    "start": 320.406,
+    "end": 320.64599999999996
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 320.64599999999996,
+    "end": 320.786
+   },
+   {
+    "n": "world",
+    "text": "world",
+    "start": 320.786,
+    "end": 320.966
+   },
+   {
+    "n": "many",
+    "text": "Many",
+    "start": 337.606,
+    "end": 337.76599999999996
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 337.76599999999996,
+    "end": 338.046
+   },
+   {
+    "n": "spent",
+    "text": "spent",
+    "start": 338.046,
+    "end": 338.26599999999996
+   },
+   {
+    "n": "lockdown",
+    "text": "lockdown",
+    "start": 338.26599999999996,
+    "end": 338.606
+   },
+   {
+    "n": "on",
+    "text": "on",
+    "start": 338.606,
+    "end": 338.82599999999996
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 338.82599999999996,
+    "end": 338.906
+   },
+   {
+    "n": "couch",
+    "text": "couch",
+    "start": 338.906,
+    "end": 339.146
+   },
+   {
+    "n": "with",
+    "text": "with",
+    "start": 339.146,
+    "end": 339.346
+   },
+   {
+    "n": "characters",
+    "text": "characters",
+    "start": 339.346,
+    "end": 339.746
+   },
+   {
+    "n": "they'd",
+    "text": "they'd",
+    "start": 339.746,
+    "end": 340.066
+   },
+   {
+    "n": "known",
+    "text": "known",
+    "start": 340.066,
+    "end": 340.166
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 340.166,
+    "end": 340.32599999999996
+   },
+   {
+    "n": "20",
+    "text": "20",
+    "start": 340.32599999999996,
+    "end": 340.606
+   },
+   {
+    "n": "years",
+    "text": "years,",
+    "start": 340.606,
+    "end": 340.966
+   },
+   {
+    "n": "not",
+    "text": "not",
+    "start": 341.226,
+    "end": 341.306
+   },
+   {
+    "n": "because",
+    "text": "because",
+    "start": 341.306,
+    "end": 341.526
+   },
+   {
+    "n": "they",
+    "text": "they",
+    "start": 341.526,
+    "end": 341.686
+   },
+   {
+    "n": "had",
+    "text": "had",
+    "start": 341.686,
+    "end": 341.806
+   },
+   {
+    "n": "nothing",
+    "text": "nothing",
+    "start": 341.806,
+    "end": 342.066
+   },
+   {
+    "n": "new",
+    "text": "new",
+    "start": 342.066,
+    "end": 342.246
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 342.246,
+    "end": 342.366
+   },
+   {
+    "n": "watch",
+    "text": "watch,",
+    "start": 342.366,
+    "end": 342.726
+   },
+   {
+    "n": "because",
+    "text": "because",
+    "start": 342.906,
+    "end": 343.086
+   },
+   {
+    "n": "newfell",
+    "text": "Newfell",
+    "start": 343.086,
+    "end": 343.44599999999997
+   },
+   {
+    "n": "felt",
+    "text": "felt",
+    "start": 343.44599999999997,
+    "end": 343.566
+   },
+   {
+    "n": "like",
+    "text": "like",
+    "start": 343.566,
+    "end": 343.666
+   },
+   {
+    "n": "too",
+    "text": "too",
+    "start": 343.666,
+    "end": 343.866
+   },
+   {
+    "n": "much",
+    "text": "much,",
+    "start": 343.866,
+    "end": 344.246
+   },
+   {
+    "n": "but",
+    "text": "but",
+    "start": 344.366,
+    "end": 344.506
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 344.506,
+    "end": 344.586
+   },
+   {
+    "n": "wasn't",
+    "text": "wasn't",
+    "start": 344.586,
+    "end": 344.866
+   },
+   {
+    "n": "over",
+    "text": "over",
+    "start": 344.866,
+    "end": 345.066
+   },
+   {
+    "n": "yet",
+    "text": "yet.",
+    "start": 345.066,
+    "end": 345.32599999999996
+   }
+  ]
+ },
+ {
+  "take": 9,
+  "start": 346.15000000000003,
+  "script": "The streaming wars had begun. And the main weapons were old sitcoms. WarnerMedia reportedly paid about four hundred and twenty-five million dollars for five years of Friends. NBCUniversal paid around five hundred million to bring The Office to its own app. Half a billion dollars. For a show about selling paper. In twenty twenty-one, the Friends cast came back for a reunion special, sitting on a copy of the original set. No new story. No new jokes. Just six older people in a familiar room, remembering. Millions tuned in to watch people rewatch their own show. Back in twenty twenty, The Office was America's most-streamed show, at about fifty-seven billion minutes.",
+  "heard": "The streaming wars had begun and the main weapons were old sitcoms. Warner Media reportedly paid about $425 million for five years of friends. NBC Universal paid around $500 million to bring the office to its own app, half a billion dollars, for a show about selling paper. In 2021, the friend's cast came back for a reunion special, sitting on a copy of the original set. No new story, no new jokes, just six older people in a familiar room remembering, millions tuned in to watch people rewatch their own show. Back in 2020, the office was America's most streamed show at about 57 billion minutes.",
+  "words": [
+   {
+    "n": "the",
+    "text": "The",
+    "start": 346.21000000000004,
+    "end": 346.47
+   },
+   {
+    "n": "streaming",
+    "text": "streaming",
+    "start": 346.47,
+    "end": 346.81000000000006
+   },
+   {
+    "n": "wars",
+    "text": "wars",
+    "start": 346.81000000000006,
+    "end": 347.17
+   },
+   {
+    "n": "had",
+    "text": "had",
+    "start": 347.17,
+    "end": 347.37000000000006
+   },
+   {
+    "n": "begun",
+    "text": "begun",
+    "start": 347.37000000000006,
+    "end": 347.71000000000004
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 347.71000000000004,
+    "end": 348.15000000000003
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 348.15000000000003,
+    "end": 348.27000000000004
+   },
+   {
+    "n": "main",
+    "text": "main",
+    "start": 348.27000000000004,
+    "end": 348.47
+   },
+   {
+    "n": "weapons",
+    "text": "weapons",
+    "start": 348.47,
+    "end": 348.83000000000004
+   },
+   {
+    "n": "were",
+    "text": "were",
+    "start": 348.83000000000004,
+    "end": 349.17
+   },
+   {
+    "n": "old",
+    "text": "old",
+    "start": 349.17,
+    "end": 349.47
+   },
+   {
+    "n": "sitcoms",
+    "text": "sitcoms.",
+    "start": 349.47,
+    "end": 350.33000000000004
+   },
+   {
+    "n": "warner",
+    "text": "Warner",
+    "start": 350.71000000000004,
+    "end": 350.87000000000006
+   },
+   {
+    "n": "media",
+    "text": "Media",
+    "start": 350.87000000000006,
+    "end": 351.25000000000006
+   },
+   {
+    "n": "reportedly",
+    "text": "reportedly",
+    "start": 351.25000000000006,
+    "end": 351.79
+   },
+   {
+    "n": "paid",
+    "text": "paid",
+    "start": 351.79,
+    "end": 352.21000000000004
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 352.21000000000004,
+    "end": 352.53000000000003
+   },
+   {
+    "n": "425",
+    "text": "$425",
+    "start": 352.53000000000003,
+    "end": 353.99
+   },
+   {
+    "n": "million",
+    "text": "million",
+    "start": 353.99,
+    "end": 354.43
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 354.43,
+    "end": 355.11
+   },
+   {
+    "n": "five",
+    "text": "five",
+    "start": 355.11,
+    "end": 355.45000000000005
+   },
+   {
+    "n": "years",
+    "text": "years",
+    "start": 355.45000000000005,
+    "end": 355.73
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 355.73,
+    "end": 355.93
+   },
+   {
+    "n": "friends",
+    "text": "friends.",
+    "start": 355.93,
+    "end": 356.27000000000004
+   },
+   {
+    "n": "nbc",
+    "text": "NBC",
+    "start": 357.03000000000003,
+    "end": 357.37000000000006
+   },
+   {
+    "n": "universal",
+    "text": "Universal",
+    "start": 357.37000000000006,
+    "end": 358.07000000000005
+   },
+   {
+    "n": "paid",
+    "text": "paid",
+    "start": 358.07000000000005,
+    "end": 358.53000000000003
+   },
+   {
+    "n": "around",
+    "text": "around",
+    "start": 358.53000000000003,
+    "end": 358.81000000000006
+   },
+   {
+    "n": "500",
+    "text": "$500",
+    "start": 358.81000000000006,
+    "end": 359.43
+   },
+   {
+    "n": "million",
+    "text": "million",
+    "start": 359.43,
+    "end": 359.99
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 359.99,
+    "end": 360.21000000000004
+   },
+   {
+    "n": "bring",
+    "text": "bring",
+    "start": 360.21000000000004,
+    "end": 360.39000000000004
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 360.39000000000004,
+    "end": 360.53000000000003
+   },
+   {
+    "n": "office",
+    "text": "office",
+    "start": 360.53000000000003,
+    "end": 360.81000000000006
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 360.81000000000006,
+    "end": 361.05
+   },
+   {
+    "n": "its",
+    "text": "its",
+    "start": 361.05,
+    "end": 361.25000000000006
+   },
+   {
+    "n": "own",
+    "text": "own",
+    "start": 361.25000000000006,
+    "end": 361.45000000000005
+   },
+   {
+    "n": "app",
+    "text": "app,",
+    "start": 361.45000000000005,
+    "end": 361.77000000000004
+   },
+   {
+    "n": "half",
+    "text": "half",
+    "start": 362.09000000000003,
+    "end": 362.23
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 362.23,
+    "end": 362.37
+   },
+   {
+    "n": "billion",
+    "text": "billion",
+    "start": 362.37,
+    "end": 362.63000000000005
+   },
+   {
+    "n": "dollars",
+    "text": "dollars,",
+    "start": 362.63000000000005,
+    "end": 363.17
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 363.51000000000005,
+    "end": 363.71000000000004
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 363.71000000000004,
+    "end": 363.79
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 363.79,
+    "end": 364.03000000000003
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 364.03000000000003,
+    "end": 364.35
+   },
+   {
+    "n": "selling",
+    "text": "selling",
+    "start": 364.37000000000006,
+    "end": 364.79
+   },
+   {
+    "n": "paper",
+    "text": "paper.",
+    "start": 364.79,
+    "end": 365.29
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 365.81000000000006,
+    "end": 366.45000000000005
+   },
+   {
+    "n": "2021",
+    "text": "2021,",
+    "start": 366.45000000000005,
+    "end": 367.03000000000003
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 367.35,
+    "end": 367.41
+   },
+   {
+    "n": "friend's",
+    "text": "friend's",
+    "start": 367.41,
+    "end": 367.77000000000004
+   },
+   {
+    "n": "cast",
+    "text": "cast",
+    "start": 367.77000000000004,
+    "end": 367.99
+   },
+   {
+    "n": "came",
+    "text": "came",
+    "start": 367.99,
+    "end": 368.25000000000006
+   },
+   {
+    "n": "back",
+    "text": "back",
+    "start": 368.25000000000006,
+    "end": 368.51000000000005
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 368.51000000000005,
+    "end": 368.75000000000006
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 368.75000000000006,
+    "end": 368.85
+   },
+   {
+    "n": "reunion",
+    "text": "reunion",
+    "start": 368.85,
+    "end": 369.15000000000003
+   },
+   {
+    "n": "special",
+    "text": "special,",
+    "start": 369.15000000000003,
+    "end": 369.73
+   },
+   {
+    "n": "sitting",
+    "text": "sitting",
+    "start": 369.99,
+    "end": 370.11
+   },
+   {
+    "n": "on",
+    "text": "on",
+    "start": 370.11,
+    "end": 370.27000000000004
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 370.27000000000004,
+    "end": 370.35
+   },
+   {
+    "n": "copy",
+    "text": "copy",
+    "start": 370.35,
+    "end": 370.67
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 370.67,
+    "end": 370.81000000000006
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 370.81000000000006,
+    "end": 370.91
+   },
+   {
+    "n": "original",
+    "text": "original",
+    "start": 370.91,
+    "end": 371.31000000000006
+   },
+   {
+    "n": "set",
+    "text": "set.",
+    "start": 371.31000000000006,
+    "end": 371.67
+   },
+   {
+    "n": "no",
+    "text": "No",
+    "start": 372.27000000000004,
+    "end": 372.39000000000004
+   },
+   {
+    "n": "new",
+    "text": "new",
+    "start": 372.39000000000004,
+    "end": 372.57000000000005
+   },
+   {
+    "n": "story",
+    "text": "story,",
+    "start": 372.57000000000005,
+    "end": 372.91
+   },
+   {
+    "n": "no",
+    "text": "no",
+    "start": 373.31000000000006,
+    "end": 373.43
+   },
+   {
+    "n": "new",
+    "text": "new",
+    "start": 373.43,
+    "end": 373.65000000000003
+   },
+   {
+    "n": "jokes",
+    "text": "jokes,",
+    "start": 373.65000000000003,
+    "end": 374.01000000000005
+   },
+   {
+    "n": "just",
+    "text": "just",
+    "start": 374.23,
+    "end": 374.31000000000006
+   },
+   {
+    "n": "six",
+    "text": "six",
+    "start": 374.31000000000006,
+    "end": 374.59000000000003
+   },
+   {
+    "n": "older",
+    "text": "older",
+    "start": 374.59000000000003,
+    "end": 374.95000000000005
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 374.95000000000005,
+    "end": 375.29
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 375.29,
+    "end": 375.43
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 375.43,
+    "end": 375.49
+   },
+   {
+    "n": "familiar",
+    "text": "familiar",
+    "start": 375.49,
+    "end": 375.77000000000004
+   },
+   {
+    "n": "room",
+    "text": "room",
+    "start": 375.77000000000004,
+    "end": 376.17
+   },
+   {
+    "n": "remembering",
+    "text": "remembering,",
+    "start": 376.17,
+    "end": 376.75000000000006
+   },
+   {
+    "n": "millions",
+    "text": "millions",
+    "start": 377.27000000000004,
+    "end": 377.49
+   },
+   {
+    "n": "tuned",
+    "text": "tuned",
+    "start": 377.49,
+    "end": 377.87000000000006
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 377.87000000000006,
+    "end": 378.11
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 378.11,
+    "end": 378.25000000000006
+   },
+   {
+    "n": "watch",
+    "text": "watch",
+    "start": 378.25000000000006,
+    "end": 378.49
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 378.49,
+    "end": 378.93000000000006
+   },
+   {
+    "n": "rewatch",
+    "text": "rewatch",
+    "start": 378.93000000000006,
+    "end": 379.31000000000006
+   },
+   {
+    "n": "their",
+    "text": "their",
+    "start": 379.31000000000006,
+    "end": 379.61
+   },
+   {
+    "n": "own",
+    "text": "own",
+    "start": 379.61,
+    "end": 379.83000000000004
+   },
+   {
+    "n": "show",
+    "text": "show.",
+    "start": 379.83000000000004,
+    "end": 380.13000000000005
+   },
+   {
+    "n": "back",
+    "text": "Back",
+    "start": 380.67,
+    "end": 380.79
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 380.79,
+    "end": 380.93
+   },
+   {
+    "n": "2020",
+    "text": "2020,",
+    "start": 380.93,
+    "end": 381.45000000000005
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 381.61,
+    "end": 381.71000000000004
+   },
+   {
+    "n": "office",
+    "text": "office",
+    "start": 381.71000000000004,
+    "end": 381.97
+   },
+   {
+    "n": "was",
+    "text": "was",
+    "start": 381.97,
+    "end": 382.19000000000005
+   },
+   {
+    "n": "america's",
+    "text": "America's",
+    "start": 382.19000000000005,
+    "end": 382.81000000000006
+   },
+   {
+    "n": "most",
+    "text": "most",
+    "start": 382.81000000000006,
+    "end": 382.99
+   },
+   {
+    "n": "streamed",
+    "text": "streamed",
+    "start": 382.99,
+    "end": 383.57000000000005
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 383.57000000000005,
+    "end": 383.79
+   },
+   {
+    "n": "at",
+    "text": "at",
+    "start": 383.79,
+    "end": 384.11
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 384.11,
+    "end": 384.33000000000004
+   },
+   {
+    "n": "57",
+    "text": "57",
+    "start": 384.33000000000004,
+    "end": 384.93
+   },
+   {
+    "n": "billion",
+    "text": "billion",
+    "start": 384.93,
+    "end": 385.37000000000006
+   },
+   {
+    "n": "minutes",
+    "text": "minutes.",
+    "start": 385.37000000000006,
+    "end": 385.87000000000006
+   }
+  ]
+ },
+ {
+  "take": 10,
+  "start": 386.785,
+  "script": "So what are we actually buying? Psychology gives three answers.",
+  "heard": "So what are we actually buying? Psychology gives three answers.",
+  "words": [
+   {
+    "n": "so",
+    "text": "So",
+    "start": 386.785,
+    "end": 387.14500000000004
+   },
+   {
+    "n": "what",
+    "text": "what",
+    "start": 387.14500000000004,
+    "end": 387.32500000000005
+   },
+   {
+    "n": "are",
+    "text": "are",
+    "start": 387.32500000000005,
+    "end": 387.425
+   },
+   {
+    "n": "we",
+    "text": "we",
+    "start": 387.425,
+    "end": 387.52500000000003
+   },
+   {
+    "n": "actually",
+    "text": "actually",
+    "start": 387.52500000000003,
+    "end": 387.865
+   },
+   {
+    "n": "buying",
+    "text": "buying?",
+    "start": 387.865,
+    "end": 388.345
+   },
+   {
+    "n": "psychology",
+    "text": "Psychology",
+    "start": 388.725,
+    "end": 389.26500000000004
+   },
+   {
+    "n": "gives",
+    "text": "gives",
+    "start": 389.26500000000004,
+    "end": 389.565
+   },
+   {
+    "n": "three",
+    "text": "three",
+    "start": 389.565,
+    "end": 389.94500000000005
+   },
+   {
+    "n": "answers",
+    "text": "answers.",
+    "start": 389.94500000000005,
+    "end": 390.425
+   }
+  ]
+ },
+ {
+  "take": 11,
+  "start": 391.454,
+  "script": "The first is effort. A new show asks a lot. New names, new faces, a story you have to care about from scratch. A show you know asks for almost nothing. Psychologists call this processing fluency. Things that are easy to take in feel good. It's the same reason your favourite song feels better than a song you heard once. After a long shift, your brain doesn't want a puzzle. It wants something it can follow with its eyes half closed.",
+  "heard": "The first is effort. A new show asks a lot. New names, new faces, a story you have to care about from scratch. A show you know asks for almost nothing. Psychologists call this processing fluency. Things that are easy to take and feel good. It's the same reason your favorite song feels better than a song you heard once. After a long shift, your brain doesn't want to puzzle. It wants something it can follow with its eyes half closed.",
+  "words": [
+   {
+    "n": "the",
+    "text": "The",
+    "start": 391.454,
+    "end": 391.754
+   },
+   {
+    "n": "first",
+    "text": "first",
+    "start": 391.754,
+    "end": 391.994
+   },
+   {
+    "n": "is",
+    "text": "is",
+    "start": 391.994,
+    "end": 392.17400000000004
+   },
+   {
+    "n": "effort",
+    "text": "effort.",
+    "start": 392.17400000000004,
+    "end": 392.494
+   },
+   {
+    "n": "a",
+    "text": "A",
+    "start": 392.794,
+    "end": 392.814
+   },
+   {
+    "n": "new",
+    "text": "new",
+    "start": 392.814,
+    "end": 392.934
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 392.934,
+    "end": 393.17400000000004
+   },
+   {
+    "n": "asks",
+    "text": "asks",
+    "start": 393.17400000000004,
+    "end": 393.494
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 393.494,
+    "end": 393.654
+   },
+   {
+    "n": "lot",
+    "text": "lot.",
+    "start": 393.654,
+    "end": 393.854
+   },
+   {
+    "n": "new",
+    "text": "New",
+    "start": 394.354,
+    "end": 394.454
+   },
+   {
+    "n": "names",
+    "text": "names,",
+    "start": 394.454,
+    "end": 394.714
+   },
+   {
+    "n": "new",
+    "text": "new",
+    "start": 394.894,
+    "end": 394.974
+   },
+   {
+    "n": "faces",
+    "text": "faces,",
+    "start": 394.974,
+    "end": 395.334
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 395.454,
+    "end": 395.55400000000003
+   },
+   {
+    "n": "story",
+    "text": "story",
+    "start": 395.55400000000003,
+    "end": 395.774
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 395.774,
+    "end": 395.974
+   },
+   {
+    "n": "have",
+    "text": "have",
+    "start": 395.974,
+    "end": 396.094
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 396.094,
+    "end": 396.214
+   },
+   {
+    "n": "care",
+    "text": "care",
+    "start": 396.214,
+    "end": 396.394
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 396.394,
+    "end": 396.594
+   },
+   {
+    "n": "from",
+    "text": "from",
+    "start": 396.594,
+    "end": 396.814
+   },
+   {
+    "n": "scratch",
+    "text": "scratch.",
+    "start": 396.814,
+    "end": 397.154
+   },
+   {
+    "n": "a",
+    "text": "A",
+    "start": 397.414,
+    "end": 397.434
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 397.434,
+    "end": 397.594
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 397.594,
+    "end": 397.754
+   },
+   {
+    "n": "know",
+    "text": "know",
+    "start": 397.754,
+    "end": 397.874
+   },
+   {
+    "n": "asks",
+    "text": "asks",
+    "start": 397.874,
+    "end": 398.17400000000004
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 398.17400000000004,
+    "end": 398.374
+   },
+   {
+    "n": "almost",
+    "text": "almost",
+    "start": 398.374,
+    "end": 398.594
+   },
+   {
+    "n": "nothing",
+    "text": "nothing.",
+    "start": 398.594,
+    "end": 399.05400000000003
+   },
+   {
+    "n": "psychologists",
+    "text": "Psychologists",
+    "start": 399.474,
+    "end": 399.994
+   },
+   {
+    "n": "call",
+    "text": "call",
+    "start": 399.994,
+    "end": 400.294
+   },
+   {
+    "n": "this",
+    "text": "this",
+    "start": 400.294,
+    "end": 400.454
+   },
+   {
+    "n": "processing",
+    "text": "processing",
+    "start": 400.454,
+    "end": 400.974
+   },
+   {
+    "n": "fluency",
+    "text": "fluency.",
+    "start": 400.974,
+    "end": 401.434
+   },
+   {
+    "n": "things",
+    "text": "Things",
+    "start": 401.694,
+    "end": 401.874
+   },
+   {
+    "n": "that",
+    "text": "that",
+    "start": 401.874,
+    "end": 401.994
+   },
+   {
+    "n": "are",
+    "text": "are",
+    "start": 401.994,
+    "end": 402.074
+   },
+   {
+    "n": "easy",
+    "text": "easy",
+    "start": 402.074,
+    "end": 402.294
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 402.294,
+    "end": 402.454
+   },
+   {
+    "n": "take",
+    "text": "take",
+    "start": 402.454,
+    "end": 402.634
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 402.634,
+    "end": 402.754
+   },
+   {
+    "n": "feel",
+    "text": "feel",
+    "start": 402.754,
+    "end": 402.934
+   },
+   {
+    "n": "good",
+    "text": "good.",
+    "start": 402.934,
+    "end": 403.234
+   },
+   {
+    "n": "it's",
+    "text": "It's",
+    "start": 403.474,
+    "end": 403.594
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 403.594,
+    "end": 403.67400000000004
+   },
+   {
+    "n": "same",
+    "text": "same",
+    "start": 403.67400000000004,
+    "end": 403.874
+   },
+   {
+    "n": "reason",
+    "text": "reason",
+    "start": 403.874,
+    "end": 404.17400000000004
+   },
+   {
+    "n": "your",
+    "text": "your",
+    "start": 404.17400000000004,
+    "end": 404.334
+   },
+   {
+    "n": "favorite",
+    "text": "favorite",
+    "start": 404.334,
+    "end": 404.654
+   },
+   {
+    "n": "song",
+    "text": "song",
+    "start": 404.654,
+    "end": 404.954
+   },
+   {
+    "n": "feels",
+    "text": "feels",
+    "start": 404.954,
+    "end": 405.234
+   },
+   {
+    "n": "better",
+    "text": "better",
+    "start": 405.234,
+    "end": 405.574
+   },
+   {
+    "n": "than",
+    "text": "than",
+    "start": 405.574,
+    "end": 405.714
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 405.714,
+    "end": 405.814
+   },
+   {
+    "n": "song",
+    "text": "song",
+    "start": 405.814,
+    "end": 405.994
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 405.994,
+    "end": 406.194
+   },
+   {
+    "n": "heard",
+    "text": "heard",
+    "start": 406.194,
+    "end": 406.394
+   },
+   {
+    "n": "once",
+    "text": "once.",
+    "start": 406.394,
+    "end": 406.734
+   },
+   {
+    "n": "after",
+    "text": "After",
+    "start": 407.154,
+    "end": 407.354
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 407.354,
+    "end": 407.494
+   },
+   {
+    "n": "long",
+    "text": "long",
+    "start": 407.494,
+    "end": 407.61400000000003
+   },
+   {
+    "n": "shift",
+    "text": "shift,",
+    "start": 407.61400000000003,
+    "end": 407.994
+   },
+   {
+    "n": "your",
+    "text": "your",
+    "start": 408.154,
+    "end": 408.194
+   },
+   {
+    "n": "brain",
+    "text": "brain",
+    "start": 408.194,
+    "end": 408.414
+   },
+   {
+    "n": "doesn't",
+    "text": "doesn't",
+    "start": 408.414,
+    "end": 408.714
+   },
+   {
+    "n": "want",
+    "text": "want",
+    "start": 408.714,
+    "end": 408.894
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 408.894,
+    "end": 408.974
+   },
+   {
+    "n": "puzzle",
+    "text": "puzzle.",
+    "start": 408.974,
+    "end": 409.314
+   },
+   {
+    "n": "it",
+    "text": "It",
+    "start": 409.67400000000004,
+    "end": 409.754
+   },
+   {
+    "n": "wants",
+    "text": "wants",
+    "start": 409.754,
+    "end": 409.894
+   },
+   {
+    "n": "something",
+    "text": "something",
+    "start": 409.894,
+    "end": 410.234
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 410.234,
+    "end": 410.354
+   },
+   {
+    "n": "can",
+    "text": "can",
+    "start": 410.354,
+    "end": 410.474
+   },
+   {
+    "n": "follow",
+    "text": "follow",
+    "start": 410.474,
+    "end": 410.814
+   },
+   {
+    "n": "with",
+    "text": "with",
+    "start": 410.814,
+    "end": 411.074
+   },
+   {
+    "n": "its",
+    "text": "its",
+    "start": 411.074,
+    "end": 411.214
+   },
+   {
+    "n": "eyes",
+    "text": "eyes",
+    "start": 411.214,
+    "end": 411.454
+   },
+   {
+    "n": "half",
+    "text": "half",
+    "start": 411.454,
+    "end": 411.754
+   },
+   {
+    "n": "closed",
+    "text": "closed.",
+    "start": 411.754,
+    "end": 412.134
+   }
+  ]
+ },
+ {
+  "take": 12,
+  "start": 412.983,
+  "script": "The second is control. When life feels uncertain, a story with a known ending is a small safe room. And knowing the ending doesn't spoil it. In twenty eleven, researchers at U. C. San Diego gave people a dozen short stories. Some readers were told the ending first. They enjoyed the stories more, not less. So the thing we all fear online, the spoiler, can make a story better. Think about a kid asking for the same bedtime story every night. They know how it ends. That's the point. Knowing what comes next lets you relax and enjoy the ride, instead of bracing for it.",
+  "heard": "The second is control when life feels uncertain. A story with a known ending is a small safe room and knowing the ending doesn't spoil it. In 2011, researchers at U, C, San Diego gave people a dozen short stories. Some readers were told the ending first. They enjoyed the stories more, not less. So the thing we all fear online, the spoiler, can make a story better. Think about a kid asking for the same bedtime story every night. They know how it ends. That's the point. Knowing what comes next lets you relax and enjoy the ride instead of bracing for it.",
+  "words": [
+   {
+    "n": "the",
+    "text": "The",
+    "start": 412.983,
+    "end": 413.323
+   },
+   {
+    "n": "second",
+    "text": "second",
+    "start": 413.323,
+    "end": 413.663
+   },
+   {
+    "n": "is",
+    "text": "is",
+    "start": 413.663,
+    "end": 413.923
+   },
+   {
+    "n": "control",
+    "text": "control",
+    "start": 413.923,
+    "end": 414.423
+   },
+   {
+    "n": "when",
+    "text": "when",
+    "start": 414.423,
+    "end": 415.083
+   },
+   {
+    "n": "life",
+    "text": "life",
+    "start": 415.083,
+    "end": 415.343
+   },
+   {
+    "n": "feels",
+    "text": "feels",
+    "start": 415.343,
+    "end": 415.663
+   },
+   {
+    "n": "uncertain",
+    "text": "uncertain.",
+    "start": 415.663,
+    "end": 416.403
+   },
+   {
+    "n": "a",
+    "text": "A",
+    "start": 416.663,
+    "end": 416.663
+   },
+   {
+    "n": "story",
+    "text": "story",
+    "start": 416.663,
+    "end": 416.983
+   },
+   {
+    "n": "with",
+    "text": "with",
+    "start": 416.983,
+    "end": 417.343
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 417.343,
+    "end": 417.423
+   },
+   {
+    "n": "known",
+    "text": "known",
+    "start": 417.423,
+    "end": 417.663
+   },
+   {
+    "n": "ending",
+    "text": "ending",
+    "start": 417.663,
+    "end": 418.123
+   },
+   {
+    "n": "is",
+    "text": "is",
+    "start": 418.123,
+    "end": 418.363
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 418.363,
+    "end": 418.483
+   },
+   {
+    "n": "small",
+    "text": "small",
+    "start": 418.483,
+    "end": 418.823
+   },
+   {
+    "n": "safe",
+    "text": "safe",
+    "start": 418.823,
+    "end": 419.303
+   },
+   {
+    "n": "room",
+    "text": "room",
+    "start": 419.303,
+    "end": 419.543
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 419.543,
+    "end": 420.003
+   },
+   {
+    "n": "knowing",
+    "text": "knowing",
+    "start": 420.003,
+    "end": 420.263
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 420.263,
+    "end": 420.483
+   },
+   {
+    "n": "ending",
+    "text": "ending",
+    "start": 420.483,
+    "end": 420.803
+   },
+   {
+    "n": "doesn't",
+    "text": "doesn't",
+    "start": 420.803,
+    "end": 421.183
+   },
+   {
+    "n": "spoil",
+    "text": "spoil",
+    "start": 421.183,
+    "end": 421.543
+   },
+   {
+    "n": "it",
+    "text": "it.",
+    "start": 421.543,
+    "end": 421.903
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 422.283,
+    "end": 422.363
+   },
+   {
+    "n": "2011",
+    "text": "2011,",
+    "start": 422.363,
+    "end": 423.023
+   },
+   {
+    "n": "researchers",
+    "text": "researchers",
+    "start": 423.343,
+    "end": 423.763
+   },
+   {
+    "n": "at",
+    "text": "at",
+    "start": 423.763,
+    "end": 424.103
+   },
+   {
+    "n": "u",
+    "text": "U,",
+    "start": 424.103,
+    "end": 424.383
+   },
+   {
+    "n": "c",
+    "text": "C,",
+    "start": 424.763,
+    "end": 424.843
+   },
+   {
+    "n": "san",
+    "text": "San",
+    "start": 425.523,
+    "end": 425.543
+   },
+   {
+    "n": "diego",
+    "text": "Diego",
+    "start": 425.543,
+    "end": 425.803
+   },
+   {
+    "n": "gave",
+    "text": "gave",
+    "start": 425.803,
+    "end": 426.20300000000003
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 426.20300000000003,
+    "end": 426.663
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 426.663,
+    "end": 426.803
+   },
+   {
+    "n": "dozen",
+    "text": "dozen",
+    "start": 426.803,
+    "end": 427.103
+   },
+   {
+    "n": "short",
+    "text": "short",
+    "start": 427.103,
+    "end": 427.483
+   },
+   {
+    "n": "stories",
+    "text": "stories.",
+    "start": 427.483,
+    "end": 428.063
+   },
+   {
+    "n": "some",
+    "text": "Some",
+    "start": 428.443,
+    "end": 428.623
+   },
+   {
+    "n": "readers",
+    "text": "readers",
+    "start": 428.623,
+    "end": 428.923
+   },
+   {
+    "n": "were",
+    "text": "were",
+    "start": 428.923,
+    "end": 429.14300000000003
+   },
+   {
+    "n": "told",
+    "text": "told",
+    "start": 429.14300000000003,
+    "end": 429.343
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 429.343,
+    "end": 429.563
+   },
+   {
+    "n": "ending",
+    "text": "ending",
+    "start": 429.563,
+    "end": 429.783
+   },
+   {
+    "n": "first",
+    "text": "first.",
+    "start": 429.783,
+    "end": 430.163
+   },
+   {
+    "n": "they",
+    "text": "They",
+    "start": 431.563,
+    "end": 431.823
+   },
+   {
+    "n": "enjoyed",
+    "text": "enjoyed",
+    "start": 431.823,
+    "end": 432.223
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 432.223,
+    "end": 432.403
+   },
+   {
+    "n": "stories",
+    "text": "stories",
+    "start": 432.403,
+    "end": 432.783
+   },
+   {
+    "n": "more",
+    "text": "more,",
+    "start": 432.783,
+    "end": 433.163
+   },
+   {
+    "n": "not",
+    "text": "not",
+    "start": 433.363,
+    "end": 433.483
+   },
+   {
+    "n": "less",
+    "text": "less.",
+    "start": 433.483,
+    "end": 433.823
+   },
+   {
+    "n": "so",
+    "text": "So",
+    "start": 434.443,
+    "end": 434.583
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 434.583,
+    "end": 434.683
+   },
+   {
+    "n": "thing",
+    "text": "thing",
+    "start": 434.683,
+    "end": 434.843
+   },
+   {
+    "n": "we",
+    "text": "we",
+    "start": 434.843,
+    "end": 435.023
+   },
+   {
+    "n": "all",
+    "text": "all",
+    "start": 435.023,
+    "end": 435.183
+   },
+   {
+    "n": "fear",
+    "text": "fear",
+    "start": 435.183,
+    "end": 435.483
+   },
+   {
+    "n": "online",
+    "text": "online,",
+    "start": 435.483,
+    "end": 436.063
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 436.20300000000003,
+    "end": 436.283
+   },
+   {
+    "n": "spoiler",
+    "text": "spoiler,",
+    "start": 436.283,
+    "end": 436.743
+   },
+   {
+    "n": "can",
+    "text": "can",
+    "start": 436.903,
+    "end": 436.983
+   },
+   {
+    "n": "make",
+    "text": "make",
+    "start": 436.983,
+    "end": 437.14300000000003
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 437.14300000000003,
+    "end": 437.263
+   },
+   {
+    "n": "story",
+    "text": "story",
+    "start": 437.263,
+    "end": 437.603
+   },
+   {
+    "n": "better",
+    "text": "better.",
+    "start": 437.603,
+    "end": 437.943
+   },
+   {
+    "n": "think",
+    "text": "Think",
+    "start": 438.423,
+    "end": 438.543
+   },
+   {
+    "n": "about",
+    "text": "about",
+    "start": 438.543,
+    "end": 438.743
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 438.743,
+    "end": 438.863
+   },
+   {
+    "n": "kid",
+    "text": "kid",
+    "start": 438.863,
+    "end": 439.123
+   },
+   {
+    "n": "asking",
+    "text": "asking",
+    "start": 439.123,
+    "end": 439.603
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 439.603,
+    "end": 439.843
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 439.843,
+    "end": 439.963
+   },
+   {
+    "n": "same",
+    "text": "same",
+    "start": 439.963,
+    "end": 440.243
+   },
+   {
+    "n": "bedtime",
+    "text": "bedtime",
+    "start": 440.243,
+    "end": 440.523
+   },
+   {
+    "n": "story",
+    "text": "story",
+    "start": 440.523,
+    "end": 441.183
+   },
+   {
+    "n": "every",
+    "text": "every",
+    "start": 441.183,
+    "end": 441.503
+   },
+   {
+    "n": "night",
+    "text": "night.",
+    "start": 441.503,
+    "end": 441.843
+   },
+   {
+    "n": "they",
+    "text": "They",
+    "start": 442.183,
+    "end": 442.263
+   },
+   {
+    "n": "know",
+    "text": "know",
+    "start": 442.263,
+    "end": 442.403
+   },
+   {
+    "n": "how",
+    "text": "how",
+    "start": 442.403,
+    "end": 442.623
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 442.623,
+    "end": 442.823
+   },
+   {
+    "n": "ends",
+    "text": "ends.",
+    "start": 442.823,
+    "end": 443.183
+   },
+   {
+    "n": "that's",
+    "text": "That's",
+    "start": 443.463,
+    "end": 443.683
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 443.683,
+    "end": 443.783
+   },
+   {
+    "n": "point",
+    "text": "point.",
+    "start": 443.783,
+    "end": 444.043
+   },
+   {
+    "n": "knowing",
+    "text": "Knowing",
+    "start": 444.583,
+    "end": 444.783
+   },
+   {
+    "n": "what",
+    "text": "what",
+    "start": 444.783,
+    "end": 445.003
+   },
+   {
+    "n": "comes",
+    "text": "comes",
+    "start": 445.003,
+    "end": 445.26300000000003
+   },
+   {
+    "n": "next",
+    "text": "next",
+    "start": 445.26300000000003,
+    "end": 445.503
+   },
+   {
+    "n": "lets",
+    "text": "lets",
+    "start": 445.503,
+    "end": 445.76300000000003
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 445.76300000000003,
+    "end": 445.963
+   },
+   {
+    "n": "relax",
+    "text": "relax",
+    "start": 445.963,
+    "end": 446.323
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 446.323,
+    "end": 446.64300000000003
+   },
+   {
+    "n": "enjoy",
+    "text": "enjoy",
+    "start": 446.64300000000003,
+    "end": 447.003
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 447.023,
+    "end": 447.283
+   },
+   {
+    "n": "ride",
+    "text": "ride",
+    "start": 447.283,
+    "end": 447.563
+   },
+   {
+    "n": "instead",
+    "text": "instead",
+    "start": 447.563,
+    "end": 448.043
+   },
+   {
+    "n": "of",
+    "text": "of",
+    "start": 448.043,
+    "end": 448.223
+   },
+   {
+    "n": "bracing",
+    "text": "bracing",
+    "start": 448.223,
+    "end": 448.523
+   },
+   {
+    "n": "for",
+    "text": "for",
+    "start": 448.523,
+    "end": 448.823
+   },
+   {
+    "n": "it",
+    "text": "it.",
+    "start": 448.823,
+    "end": 449.063
+   }
+  ]
+ },
+ {
+  "take": 13,
+  "start": 450.112,
+  "script": "The third answer is nostalgia. Yes, Hoffer's old disease. Modern researchers like Constantine Seh-dick-ih-deez and Tim Wild-shoot studied it properly. Most people in their studies said they felt nostalgic at least once a week. And it didn't make them sick. Nostalgia made them feel more connected to others, and more sure their life had meaning. A feeling once treated with leeches turned out to be emotional first aid. Which raises a fair question. If nostalgia helps, why does it sometimes hurt? Because it's bittersweet by design. It reminds you something good happened, and that it's gone. The comfort show lets you feel the sweet part, without staying too long in the bitter part.",
+  "heard": "The third answer is nostalgia. Yes, hoffers old disease. Modern researchers like Constantine Saydek -Aidees and Tim Wildchut studied it properly. Most people in their studies said they felt nostalgic at least once a week, and it didn't make them sick. Nostalgia made them feel more connected to others and more sure their life had meaning. A feeling once treated with leeches turned out to be emotional first aid, which raises a fair question. If nostalgia helps, why does it sometimes hurt? Because it's bittersweet by design, it reminds you something good happened and that it's gone. The comfort show lets you feel the sweet part without staying too long in the bitter part.",
+  "words": [
+   {
+    "n": "the",
+    "text": "The",
+    "start": 450.21200000000005,
+    "end": 450.432
+   },
+   {
+    "n": "third",
+    "text": "third",
+    "start": 450.432,
+    "end": 450.71200000000005
+   },
+   {
+    "n": "answer",
+    "text": "answer",
+    "start": 450.71200000000005,
+    "end": 451.09200000000004
+   },
+   {
+    "n": "is",
+    "text": "is",
+    "start": 451.09200000000004,
+    "end": 451.35200000000003
+   },
+   {
+    "n": "nostalgia",
+    "text": "nostalgia.",
+    "start": 451.35200000000003,
+    "end": 451.752
+   },
+   {
+    "n": "yes",
+    "text": "Yes,",
+    "start": 452.432,
+    "end": 452.612
+   },
+   {
+    "n": "hoffers",
+    "text": "hoffers",
+    "start": 452.83200000000005,
+    "end": 453.21200000000005
+   },
+   {
+    "n": "old",
+    "text": "old",
+    "start": 453.21200000000005,
+    "end": 453.47200000000004
+   },
+   {
+    "n": "disease",
+    "text": "disease.",
+    "start": 453.47200000000004,
+    "end": 453.992
+   },
+   {
+    "n": "modern",
+    "text": "Modern",
+    "start": 454.672,
+    "end": 454.932
+   },
+   {
+    "n": "researchers",
+    "text": "researchers",
+    "start": 454.932,
+    "end": 455.492
+   },
+   {
+    "n": "like",
+    "text": "like",
+    "start": 455.492,
+    "end": 455.85200000000003
+   },
+   {
+    "n": "constantine",
+    "text": "Constantine",
+    "start": 455.85200000000003,
+    "end": 456.552
+   },
+   {
+    "n": "saydek",
+    "text": "Saydek",
+    "start": 456.552,
+    "end": 457.15200000000004
+   },
+   {
+    "n": "aidees",
+    "text": "-Aidees",
+    "start": 457.15200000000004,
+    "end": 457.732
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 457.732,
+    "end": 457.892
+   },
+   {
+    "n": "tim",
+    "text": "Tim",
+    "start": 457.892,
+    "end": 458.052
+   },
+   {
+    "n": "wildchut",
+    "text": "Wildchut",
+    "start": 458.052,
+    "end": 458.612
+   },
+   {
+    "n": "studied",
+    "text": "studied",
+    "start": 458.612,
+    "end": 459.052
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 459.052,
+    "end": 459.21200000000005
+   },
+   {
+    "n": "properly",
+    "text": "properly.",
+    "start": 459.21200000000005,
+    "end": 459.71200000000005
+   },
+   {
+    "n": "most",
+    "text": "Most",
+    "start": 460.21200000000005,
+    "end": 460.372
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 460.372,
+    "end": 460.732
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 460.732,
+    "end": 460.892
+   },
+   {
+    "n": "their",
+    "text": "their",
+    "start": 460.892,
+    "end": 460.992
+   },
+   {
+    "n": "studies",
+    "text": "studies",
+    "start": 460.992,
+    "end": 461.372
+   },
+   {
+    "n": "said",
+    "text": "said",
+    "start": 461.372,
+    "end": 461.632
+   },
+   {
+    "n": "they",
+    "text": "they",
+    "start": 461.632,
+    "end": 461.79200000000003
+   },
+   {
+    "n": "felt",
+    "text": "felt",
+    "start": 461.79200000000003,
+    "end": 462.052
+   },
+   {
+    "n": "nostalgic",
+    "text": "nostalgic",
+    "start": 462.052,
+    "end": 462.552
+   },
+   {
+    "n": "at",
+    "text": "at",
+    "start": 462.552,
+    "end": 462.872
+   },
+   {
+    "n": "least",
+    "text": "least",
+    "start": 462.872,
+    "end": 463.012
+   },
+   {
+    "n": "once",
+    "text": "once",
+    "start": 463.012,
+    "end": 463.33200000000005
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 463.33200000000005,
+    "end": 463.492
+   },
+   {
+    "n": "week",
+    "text": "week,",
+    "start": 463.492,
+    "end": 463.752
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 464.03200000000004,
+    "end": 464.172
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 464.172,
+    "end": 464.252
+   },
+   {
+    "n": "didn't",
+    "text": "didn't",
+    "start": 464.252,
+    "end": 464.452
+   },
+   {
+    "n": "make",
+    "text": "make",
+    "start": 464.452,
+    "end": 464.612
+   },
+   {
+    "n": "them",
+    "text": "them",
+    "start": 464.612,
+    "end": 464.812
+   },
+   {
+    "n": "sick",
+    "text": "sick.",
+    "start": 464.812,
+    "end": 465.132
+   },
+   {
+    "n": "nostalgia",
+    "text": "Nostalgia",
+    "start": 465.65200000000004,
+    "end": 466.072
+   },
+   {
+    "n": "made",
+    "text": "made",
+    "start": 466.072,
+    "end": 466.35200000000003
+   },
+   {
+    "n": "them",
+    "text": "them",
+    "start": 466.35200000000003,
+    "end": 466.512
+   },
+   {
+    "n": "feel",
+    "text": "feel",
+    "start": 466.512,
+    "end": 466.732
+   },
+   {
+    "n": "more",
+    "text": "more",
+    "start": 466.732,
+    "end": 466.992
+   },
+   {
+    "n": "connected",
+    "text": "connected",
+    "start": 466.992,
+    "end": 467.39200000000005
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 467.39200000000005,
+    "end": 467.65200000000004
+   },
+   {
+    "n": "others",
+    "text": "others",
+    "start": 467.65200000000004,
+    "end": 467.91200000000003
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 467.91200000000003,
+    "end": 468.21200000000005
+   },
+   {
+    "n": "more",
+    "text": "more",
+    "start": 468.21200000000005,
+    "end": 468.41200000000003
+   },
+   {
+    "n": "sure",
+    "text": "sure",
+    "start": 468.41200000000003,
+    "end": 468.65200000000004
+   },
+   {
+    "n": "their",
+    "text": "their",
+    "start": 468.65200000000004,
+    "end": 468.83200000000005
+   },
+   {
+    "n": "life",
+    "text": "life",
+    "start": 468.83200000000005,
+    "end": 469.09200000000004
+   },
+   {
+    "n": "had",
+    "text": "had",
+    "start": 469.09200000000004,
+    "end": 469.33200000000005
+   },
+   {
+    "n": "meaning",
+    "text": "meaning.",
+    "start": 469.33200000000005,
+    "end": 469.65200000000004
+   },
+   {
+    "n": "a",
+    "text": "A",
+    "start": 470.692,
+    "end": 470.872
+   },
+   {
+    "n": "feeling",
+    "text": "feeling",
+    "start": 470.872,
+    "end": 471.15200000000004
+   },
+   {
+    "n": "once",
+    "text": "once",
+    "start": 471.15200000000004,
+    "end": 471.492
+   },
+   {
+    "n": "treated",
+    "text": "treated",
+    "start": 471.492,
+    "end": 471.85200000000003
+   },
+   {
+    "n": "with",
+    "text": "with",
+    "start": 471.85200000000003,
+    "end": 472.15200000000004
+   },
+   {
+    "n": "leeches",
+    "text": "leeches",
+    "start": 472.15200000000004,
+    "end": 472.452
+   },
+   {
+    "n": "turned",
+    "text": "turned",
+    "start": 472.452,
+    "end": 472.85200000000003
+   },
+   {
+    "n": "out",
+    "text": "out",
+    "start": 472.85200000000003,
+    "end": 473.09200000000004
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 473.09200000000004,
+    "end": 473.27200000000005
+   },
+   {
+    "n": "be",
+    "text": "be",
+    "start": 473.27200000000005,
+    "end": 473.372
+   },
+   {
+    "n": "emotional",
+    "text": "emotional",
+    "start": 473.372,
+    "end": 473.85200000000003
+   },
+   {
+    "n": "first",
+    "text": "first",
+    "start": 473.85200000000003,
+    "end": 474.252
+   },
+   {
+    "n": "aid",
+    "text": "aid,",
+    "start": 474.252,
+    "end": 474.632
+   },
+   {
+    "n": "which",
+    "text": "which",
+    "start": 474.992,
+    "end": 475.232
+   },
+   {
+    "n": "raises",
+    "text": "raises",
+    "start": 475.232,
+    "end": 475.612
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 475.612,
+    "end": 475.83200000000005
+   },
+   {
+    "n": "fair",
+    "text": "fair",
+    "start": 475.83200000000005,
+    "end": 476.052
+   },
+   {
+    "n": "question",
+    "text": "question.",
+    "start": 476.052,
+    "end": 476.552
+   },
+   {
+    "n": "if",
+    "text": "If",
+    "start": 477.052,
+    "end": 477.192
+   },
+   {
+    "n": "nostalgia",
+    "text": "nostalgia",
+    "start": 477.192,
+    "end": 477.452
+   },
+   {
+    "n": "helps",
+    "text": "helps,",
+    "start": 477.452,
+    "end": 478.052
+   },
+   {
+    "n": "why",
+    "text": "why",
+    "start": 478.052,
+    "end": 478.312
+   },
+   {
+    "n": "does",
+    "text": "does",
+    "start": 478.312,
+    "end": 478.432
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 478.432,
+    "end": 478.53200000000004
+   },
+   {
+    "n": "sometimes",
+    "text": "sometimes",
+    "start": 478.53200000000004,
+    "end": 478.97200000000004
+   },
+   {
+    "n": "hurt",
+    "text": "hurt?",
+    "start": 478.97200000000004,
+    "end": 479.33200000000005
+   },
+   {
+    "n": "because",
+    "text": "Because",
+    "start": 479.692,
+    "end": 479.872
+   },
+   {
+    "n": "it's",
+    "text": "it's",
+    "start": 479.872,
+    "end": 480.112
+   },
+   {
+    "n": "bittersweet",
+    "text": "bittersweet",
+    "start": 480.112,
+    "end": 480.692
+   },
+   {
+    "n": "by",
+    "text": "by",
+    "start": 480.692,
+    "end": 480.97200000000004
+   },
+   {
+    "n": "design",
+    "text": "design,",
+    "start": 480.97200000000004,
+    "end": 481.392
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 481.85200000000003,
+    "end": 481.97200000000004
+   },
+   {
+    "n": "reminds",
+    "text": "reminds",
+    "start": 481.97200000000004,
+    "end": 482.27200000000005
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 482.27200000000005,
+    "end": 482.552
+   },
+   {
+    "n": "something",
+    "text": "something",
+    "start": 482.552,
+    "end": 482.85200000000003
+   },
+   {
+    "n": "good",
+    "text": "good",
+    "start": 482.85200000000003,
+    "end": 483.072
+   },
+   {
+    "n": "happened",
+    "text": "happened",
+    "start": 483.072,
+    "end": 483.53200000000004
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 483.53200000000004,
+    "end": 483.812
+   },
+   {
+    "n": "that",
+    "text": "that",
+    "start": 483.812,
+    "end": 483.952
+   },
+   {
+    "n": "it's",
+    "text": "it's",
+    "start": 483.952,
+    "end": 484.192
+   },
+   {
+    "n": "gone",
+    "text": "gone.",
+    "start": 484.192,
+    "end": 484.512
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 484.992,
+    "end": 485.172
+   },
+   {
+    "n": "comfort",
+    "text": "comfort",
+    "start": 485.172,
+    "end": 485.492
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 485.492,
+    "end": 485.85200000000003
+   },
+   {
+    "n": "lets",
+    "text": "lets",
+    "start": 485.85200000000003,
+    "end": 486.072
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 486.072,
+    "end": 486.27200000000005
+   },
+   {
+    "n": "feel",
+    "text": "feel",
+    "start": 486.27200000000005,
+    "end": 486.512
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 486.512,
+    "end": 486.71200000000005
+   },
+   {
+    "n": "sweet",
+    "text": "sweet",
+    "start": 486.71200000000005,
+    "end": 486.97200000000004
+   },
+   {
+    "n": "part",
+    "text": "part",
+    "start": 486.97200000000004,
+    "end": 487.29200000000003
+   },
+   {
+    "n": "without",
+    "text": "without",
+    "start": 487.29200000000003,
+    "end": 487.612
+   },
+   {
+    "n": "staying",
+    "text": "staying",
+    "start": 487.612,
+    "end": 488.012
+   },
+   {
+    "n": "too",
+    "text": "too",
+    "start": 488.012,
+    "end": 488.312
+   },
+   {
+    "n": "long",
+    "text": "long",
+    "start": 488.312,
+    "end": 488.632
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 488.632,
+    "end": 488.812
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 488.812,
+    "end": 488.91200000000003
+   },
+   {
+    "n": "bitter",
+    "text": "bitter",
+    "start": 488.91200000000003,
+    "end": 489.09200000000004
+   },
+   {
+    "n": "part",
+    "text": "part.",
+    "start": 489.09200000000004,
+    "end": 489.572
+   }
+  ]
+ },
+ {
+  "take": 14,
+  "start": 490.476,
+  "script": "So does rewatching mean you're stuck in the past? Look at how fast the story moved. In sixteen eighty-eight, it was a disease. In nineteen fifty-one, it became a ree-run. In nineteen sixty-eight, it became a lab result. In nineteen ninety-six, it became a teaching tool. In twenty twenty, it became a half-billion-dollar asset. And on a random Tuesday night, it became your couch, your blanket, and an episode you could recite.",
+  "heard": "So does rewatching mean you're stuck in the past? Look at how fast the story moved. In 1688 it was a disease. In 1951 it became a rerun. In 1968 it became a lab result. In 1996 it became a teaching tool. In 2020 it became a half billion dollar asset. And on a random Tuesday night it became your couch, your blanket, and an episode you could recite.",
+  "words": [
+   {
+    "n": "so",
+    "text": "So",
+    "start": 490.476,
+    "end": 490.796
+   },
+   {
+    "n": "does",
+    "text": "does",
+    "start": 490.796,
+    "end": 490.996
+   },
+   {
+    "n": "rewatching",
+    "text": "rewatching",
+    "start": 490.996,
+    "end": 491.596
+   },
+   {
+    "n": "mean",
+    "text": "mean",
+    "start": 491.596,
+    "end": 491.716
+   },
+   {
+    "n": "you're",
+    "text": "you're",
+    "start": 491.716,
+    "end": 491.856
+   },
+   {
+    "n": "stuck",
+    "text": "stuck",
+    "start": 491.856,
+    "end": 492.056
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 492.056,
+    "end": 492.216
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 492.216,
+    "end": 492.296
+   },
+   {
+    "n": "past",
+    "text": "past?",
+    "start": 492.296,
+    "end": 492.736
+   },
+   {
+    "n": "look",
+    "text": "Look",
+    "start": 493.036,
+    "end": 493.116
+   },
+   {
+    "n": "at",
+    "text": "at",
+    "start": 493.116,
+    "end": 493.216
+   },
+   {
+    "n": "how",
+    "text": "how",
+    "start": 493.216,
+    "end": 493.376
+   },
+   {
+    "n": "fast",
+    "text": "fast",
+    "start": 493.376,
+    "end": 493.676
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 493.676,
+    "end": 493.896
+   },
+   {
+    "n": "story",
+    "text": "story",
+    "start": 493.896,
+    "end": 494.116
+   },
+   {
+    "n": "moved",
+    "text": "moved.",
+    "start": 494.116,
+    "end": 494.616
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 494.836,
+    "end": 494.896
+   },
+   {
+    "n": "1688",
+    "text": "1688",
+    "start": 494.896,
+    "end": 495.536
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 495.536,
+    "end": 495.896
+   },
+   {
+    "n": "was",
+    "text": "was",
+    "start": 495.896,
+    "end": 495.996
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 495.996,
+    "end": 496.116
+   },
+   {
+    "n": "disease",
+    "text": "disease.",
+    "start": 496.116,
+    "end": 496.416
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 496.896,
+    "end": 496.956
+   },
+   {
+    "n": "1951",
+    "text": "1951",
+    "start": 496.956,
+    "end": 497.756
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 497.756,
+    "end": 497.876
+   },
+   {
+    "n": "became",
+    "text": "became",
+    "start": 497.876,
+    "end": 498.116
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 498.116,
+    "end": 498.256
+   },
+   {
+    "n": "rerun",
+    "text": "rerun.",
+    "start": 498.256,
+    "end": 498.676
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 498.896,
+    "end": 498.976
+   },
+   {
+    "n": "1968",
+    "text": "1968",
+    "start": 498.976,
+    "end": 499.496
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 499.496,
+    "end": 499.976
+   },
+   {
+    "n": "became",
+    "text": "became",
+    "start": 499.976,
+    "end": 500.216
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 500.216,
+    "end": 500.356
+   },
+   {
+    "n": "lab",
+    "text": "lab",
+    "start": 500.356,
+    "end": 500.516
+   },
+   {
+    "n": "result",
+    "text": "result.",
+    "start": 500.516,
+    "end": 500.896
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 501.176,
+    "end": 501.256
+   },
+   {
+    "n": "1996",
+    "text": "1996",
+    "start": 501.256,
+    "end": 501.696
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 501.696,
+    "end": 502.276
+   },
+   {
+    "n": "became",
+    "text": "became",
+    "start": 502.276,
+    "end": 502.516
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 502.516,
+    "end": 502.656
+   },
+   {
+    "n": "teaching",
+    "text": "teaching",
+    "start": 502.656,
+    "end": 502.936
+   },
+   {
+    "n": "tool",
+    "text": "tool.",
+    "start": 502.936,
+    "end": 503.316
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 503.576,
+    "end": 503.656
+   },
+   {
+    "n": "2020",
+    "text": "2020",
+    "start": 503.656,
+    "end": 504.016
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 504.016,
+    "end": 504.356
+   },
+   {
+    "n": "became",
+    "text": "became",
+    "start": 504.356,
+    "end": 504.576
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 504.576,
+    "end": 504.716
+   },
+   {
+    "n": "half",
+    "text": "half",
+    "start": 504.716,
+    "end": 504.896
+   },
+   {
+    "n": "billion",
+    "text": "billion",
+    "start": 504.896,
+    "end": 505.216
+   },
+   {
+    "n": "dollar",
+    "text": "dollar",
+    "start": 505.216,
+    "end": 505.616
+   },
+   {
+    "n": "asset",
+    "text": "asset.",
+    "start": 505.616,
+    "end": 506.076
+   },
+   {
+    "n": "and",
+    "text": "And",
+    "start": 506.376,
+    "end": 506.436
+   },
+   {
+    "n": "on",
+    "text": "on",
+    "start": 506.436,
+    "end": 506.536
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 506.536,
+    "end": 506.596
+   },
+   {
+    "n": "random",
+    "text": "random",
+    "start": 506.596,
+    "end": 506.896
+   },
+   {
+    "n": "tuesday",
+    "text": "Tuesday",
+    "start": 506.896,
+    "end": 507.316
+   },
+   {
+    "n": "night",
+    "text": "night",
+    "start": 507.316,
+    "end": 507.656
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 507.656,
+    "end": 507.796
+   },
+   {
+    "n": "became",
+    "text": "became",
+    "start": 507.796,
+    "end": 508.076
+   },
+   {
+    "n": "your",
+    "text": "your",
+    "start": 508.076,
+    "end": 508.316
+   },
+   {
+    "n": "couch",
+    "text": "couch,",
+    "start": 508.316,
+    "end": 508.616
+   },
+   {
+    "n": "your",
+    "text": "your",
+    "start": 508.876,
+    "end": 508.936
+   },
+   {
+    "n": "blanket",
+    "text": "blanket,",
+    "start": 508.936,
+    "end": 509.316
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 509.316,
+    "end": 509.556
+   },
+   {
+    "n": "an",
+    "text": "an",
+    "start": 509.556,
+    "end": 509.676
+   },
+   {
+    "n": "episode",
+    "text": "episode",
+    "start": 509.676,
+    "end": 509.976
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 509.976,
+    "end": 510.256
+   },
+   {
+    "n": "could",
+    "text": "could",
+    "start": 510.256,
+    "end": 510.436
+   },
+   {
+    "n": "recite",
+    "text": "recite.",
+    "start": 510.436,
+    "end": 510.816
+   }
+  ]
+ },
+ {
+  "take": 15,
+  "start": 511.40500000000003,
+  "script": "Here's the last piece. In twenty twelve, two researchers interviewed people who ree-read books, rewatch films and revisit places. One reason came up again and again. People went back to see how they had changed. The show stays exactly the same. So it works like a mirror. The joke you didn't get at fifteen lands at twenty-five. The boss you laughed at starts to look a little like you. The character who annoyed you at nineteen turns out to be the most honest one. You notice a sad moment you used to skip, because now you've lived it. So here's the twist. You have never watched the same show twice. The episode didn't change. The person watching it did.",
+  "heard": "Here's the last piece. In 2012, two researchers interviewed people who reread books, rewatch films, and revisit places. One reason came up again and again. People went back to see how they had changed. The show stays exactly the same, so it works like a mirror. The joke you didn't get at 15 lands boss you laughed at starts to look a little like you. The character who annoyed you at 19 turns out to be the most honest one. You notice a sad moment you used to skip because now you've lived it. So here's the twist. You have never watched the same show twice. The episode didn't change. The person watching it did.",
+  "words": [
+   {
+    "n": "here's",
+    "text": "Here's",
+    "start": 511.46500000000003,
+    "end": 511.925
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 511.925,
+    "end": 512.025
+   },
+   {
+    "n": "last",
+    "text": "last",
+    "start": 512.025,
+    "end": 512.3050000000001
+   },
+   {
+    "n": "piece",
+    "text": "piece.",
+    "start": 512.3050000000001,
+    "end": 512.705
+   },
+   {
+    "n": "in",
+    "text": "In",
+    "start": 513.225,
+    "end": 513.2850000000001
+   },
+   {
+    "n": "2012",
+    "text": "2012,",
+    "start": 513.2850000000001,
+    "end": 513.885
+   },
+   {
+    "n": "two",
+    "text": "two",
+    "start": 514.125,
+    "end": 514.225
+   },
+   {
+    "n": "researchers",
+    "text": "researchers",
+    "start": 514.225,
+    "end": 514.745
+   },
+   {
+    "n": "interviewed",
+    "text": "interviewed",
+    "start": 514.745,
+    "end": 515.3050000000001
+   },
+   {
+    "n": "people",
+    "text": "people",
+    "start": 515.3050000000001,
+    "end": 515.6850000000001
+   },
+   {
+    "n": "who",
+    "text": "who",
+    "start": 515.6850000000001,
+    "end": 515.845
+   },
+   {
+    "n": "reread",
+    "text": "reread",
+    "start": 515.845,
+    "end": 516.405
+   },
+   {
+    "n": "books",
+    "text": "books,",
+    "start": 516.405,
+    "end": 516.745
+   },
+   {
+    "n": "rewatch",
+    "text": "rewatch",
+    "start": 516.965,
+    "end": 517.225
+   },
+   {
+    "n": "films",
+    "text": "films,",
+    "start": 517.225,
+    "end": 517.7850000000001
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 517.905,
+    "end": 517.965
+   },
+   {
+    "n": "revisit",
+    "text": "revisit",
+    "start": 517.965,
+    "end": 518.345
+   },
+   {
+    "n": "places",
+    "text": "places.",
+    "start": 518.345,
+    "end": 518.905
+   },
+   {
+    "n": "one",
+    "text": "One",
+    "start": 519.385,
+    "end": 519.625
+   },
+   {
+    "n": "reason",
+    "text": "reason",
+    "start": 519.625,
+    "end": 519.965
+   },
+   {
+    "n": "came",
+    "text": "came",
+    "start": 519.965,
+    "end": 520.245
+   },
+   {
+    "n": "up",
+    "text": "up",
+    "start": 520.245,
+    "end": 520.465
+   },
+   {
+    "n": "again",
+    "text": "again",
+    "start": 520.465,
+    "end": 520.7850000000001
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 520.7850000000001,
+    "end": 520.985
+   },
+   {
+    "n": "again",
+    "text": "again.",
+    "start": 520.985,
+    "end": 521.325
+   },
+   {
+    "n": "people",
+    "text": "People",
+    "start": 521.705,
+    "end": 521.945
+   },
+   {
+    "n": "went",
+    "text": "went",
+    "start": 521.945,
+    "end": 522.145
+   },
+   {
+    "n": "back",
+    "text": "back",
+    "start": 522.145,
+    "end": 522.385
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 522.385,
+    "end": 522.625
+   },
+   {
+    "n": "see",
+    "text": "see",
+    "start": 522.625,
+    "end": 522.8050000000001
+   },
+   {
+    "n": "how",
+    "text": "how",
+    "start": 522.8050000000001,
+    "end": 523.025
+   },
+   {
+    "n": "they",
+    "text": "they",
+    "start": 523.025,
+    "end": 523.225
+   },
+   {
+    "n": "had",
+    "text": "had",
+    "start": 523.225,
+    "end": 523.405
+   },
+   {
+    "n": "changed",
+    "text": "changed.",
+    "start": 523.405,
+    "end": 523.965
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 524.2850000000001,
+    "end": 524.405
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 524.405,
+    "end": 524.645
+   },
+   {
+    "n": "stays",
+    "text": "stays",
+    "start": 524.645,
+    "end": 524.985
+   },
+   {
+    "n": "exactly",
+    "text": "exactly",
+    "start": 524.985,
+    "end": 525.585
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 525.585,
+    "end": 525.8050000000001
+   },
+   {
+    "n": "same",
+    "text": "same,",
+    "start": 525.8050000000001,
+    "end": 526.1850000000001
+   },
+   {
+    "n": "so",
+    "text": "so",
+    "start": 526.3050000000001,
+    "end": 526.485
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 526.485,
+    "end": 526.605
+   },
+   {
+    "n": "works",
+    "text": "works",
+    "start": 526.605,
+    "end": 526.8050000000001
+   },
+   {
+    "n": "like",
+    "text": "like",
+    "start": 526.8050000000001,
+    "end": 527.065
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 527.065,
+    "end": 527.205
+   },
+   {
+    "n": "mirror",
+    "text": "mirror.",
+    "start": 527.205,
+    "end": 527.525
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 528.025,
+    "end": 528.105
+   },
+   {
+    "n": "joke",
+    "text": "joke",
+    "start": 528.105,
+    "end": 528.325
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 528.325,
+    "end": 528.5450000000001
+   },
+   {
+    "n": "didn't",
+    "text": "didn't",
+    "start": 528.5450000000001,
+    "end": 528.745
+   },
+   {
+    "n": "get",
+    "text": "get",
+    "start": 528.745,
+    "end": 528.905
+   },
+   {
+    "n": "at",
+    "text": "at",
+    "start": 528.905,
+    "end": 529.005
+   },
+   {
+    "n": "15",
+    "text": "15",
+    "start": 529.005,
+    "end": 529.325
+   },
+   {
+    "n": "lands",
+    "text": "lands",
+    "start": 529.325,
+    "end": 529.745
+   },
+   {
+    "n": "boss",
+    "text": "boss",
+    "start": 530.805,
+    "end": 532.025
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 532.025,
+    "end": 532.285
+   },
+   {
+    "n": "laughed",
+    "text": "laughed",
+    "start": 532.285,
+    "end": 532.525
+   },
+   {
+    "n": "at",
+    "text": "at",
+    "start": 532.525,
+    "end": 532.765
+   },
+   {
+    "n": "starts",
+    "text": "starts",
+    "start": 532.765,
+    "end": 533.105
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 533.105,
+    "end": 533.405
+   },
+   {
+    "n": "look",
+    "text": "look",
+    "start": 533.405,
+    "end": 533.545
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 533.545,
+    "end": 533.645
+   },
+   {
+    "n": "little",
+    "text": "little",
+    "start": 533.645,
+    "end": 533.785
+   },
+   {
+    "n": "like",
+    "text": "like",
+    "start": 533.785,
+    "end": 534.005
+   },
+   {
+    "n": "you",
+    "text": "you.",
+    "start": 534.005,
+    "end": 534.305
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 534.645,
+    "end": 534.7049999999999
+   },
+   {
+    "n": "character",
+    "text": "character",
+    "start": 534.7049999999999,
+    "end": 535.0849999999999
+   },
+   {
+    "n": "who",
+    "text": "who",
+    "start": 535.0849999999999,
+    "end": 535.345
+   },
+   {
+    "n": "annoyed",
+    "text": "annoyed",
+    "start": 535.345,
+    "end": 535.7049999999999
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 535.7049999999999,
+    "end": 535.9649999999999
+   },
+   {
+    "n": "at",
+    "text": "at",
+    "start": 535.9649999999999,
+    "end": 536.125
+   },
+   {
+    "n": "19",
+    "text": "19",
+    "start": 536.125,
+    "end": 536.525
+   },
+   {
+    "n": "turns",
+    "text": "turns",
+    "start": 536.525,
+    "end": 536.9449999999999
+   },
+   {
+    "n": "out",
+    "text": "out",
+    "start": 536.9449999999999,
+    "end": 537.225
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 537.225,
+    "end": 537.425
+   },
+   {
+    "n": "be",
+    "text": "be",
+    "start": 537.425,
+    "end": 537.525
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 537.525,
+    "end": 537.645
+   },
+   {
+    "n": "most",
+    "text": "most",
+    "start": 537.645,
+    "end": 537.905
+   },
+   {
+    "n": "honest",
+    "text": "honest",
+    "start": 537.905,
+    "end": 538.305
+   },
+   {
+    "n": "one",
+    "text": "one.",
+    "start": 538.305,
+    "end": 538.7049999999999
+   },
+   {
+    "n": "you",
+    "text": "You",
+    "start": 539.0849999999999,
+    "end": 539.165
+   },
+   {
+    "n": "notice",
+    "text": "notice",
+    "start": 539.165,
+    "end": 539.385
+   },
+   {
+    "n": "a",
+    "text": "a",
+    "start": 539.385,
+    "end": 539.605
+   },
+   {
+    "n": "sad",
+    "text": "sad",
+    "start": 539.605,
+    "end": 539.9449999999999
+   },
+   {
+    "n": "moment",
+    "text": "moment",
+    "start": 539.9449999999999,
+    "end": 540.3249999999999
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 540.3249999999999,
+    "end": 540.545
+   },
+   {
+    "n": "used",
+    "text": "used",
+    "start": 540.545,
+    "end": 540.765
+   },
+   {
+    "n": "to",
+    "text": "to",
+    "start": 540.765,
+    "end": 540.905
+   },
+   {
+    "n": "skip",
+    "text": "skip",
+    "start": 540.905,
+    "end": 541.165
+   },
+   {
+    "n": "because",
+    "text": "because",
+    "start": 541.165,
+    "end": 541.525
+   },
+   {
+    "n": "now",
+    "text": "now",
+    "start": 541.525,
+    "end": 541.785
+   },
+   {
+    "n": "you've",
+    "text": "you've",
+    "start": 541.785,
+    "end": 542.185
+   },
+   {
+    "n": "lived",
+    "text": "lived",
+    "start": 542.185,
+    "end": 542.365
+   },
+   {
+    "n": "it",
+    "text": "it.",
+    "start": 542.365,
+    "end": 542.605
+   },
+   {
+    "n": "so",
+    "text": "So",
+    "start": 542.8249999999999,
+    "end": 542.925
+   },
+   {
+    "n": "here's",
+    "text": "here's",
+    "start": 542.925,
+    "end": 543.305
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 543.305,
+    "end": 543.425
+   },
+   {
+    "n": "twist",
+    "text": "twist.",
+    "start": 543.425,
+    "end": 543.745
+   },
+   {
+    "n": "you",
+    "text": "You",
+    "start": 544.145,
+    "end": 544.225
+   },
+   {
+    "n": "have",
+    "text": "have",
+    "start": 544.225,
+    "end": 544.345
+   },
+   {
+    "n": "never",
+    "text": "never",
+    "start": 544.345,
+    "end": 544.525
+   },
+   {
+    "n": "watched",
+    "text": "watched",
+    "start": 544.525,
+    "end": 544.925
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 544.925,
+    "end": 545.125
+   },
+   {
+    "n": "same",
+    "text": "same",
+    "start": 545.125,
+    "end": 545.365
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 545.365,
+    "end": 545.645
+   },
+   {
+    "n": "twice",
+    "text": "twice.",
+    "start": 545.645,
+    "end": 546.145
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 546.525,
+    "end": 546.605
+   },
+   {
+    "n": "episode",
+    "text": "episode",
+    "start": 546.605,
+    "end": 546.9449999999999
+   },
+   {
+    "n": "didn't",
+    "text": "didn't",
+    "start": 546.9449999999999,
+    "end": 547.345
+   },
+   {
+    "n": "change",
+    "text": "change.",
+    "start": 547.345,
+    "end": 547.925
+   },
+   {
+    "n": "the",
+    "text": "The",
+    "start": 548.345,
+    "end": 548.4649999999999
+   },
+   {
+    "n": "person",
+    "text": "person",
+    "start": 548.4649999999999,
+    "end": 548.765
+   },
+   {
+    "n": "watching",
+    "text": "watching",
+    "start": 548.765,
+    "end": 549.225
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 549.225,
+    "end": 549.425
+   },
+   {
+    "n": "did",
+    "text": "did.",
+    "start": 549.425,
+    "end": 549.7049999999999
+   }
+  ]
+ },
+ {
+  "take": 16,
+  "start": 550.861,
+  "script": "If this made you feel seen, tell me which show you've rewatched the most, and how many times. Which habit should we cover next? Drop it in the comments.",
+  "heard": "If this made you feel seen, tell me which show you've rewatched the most and how many times, which habit should we cover next? Drop it in the comments.",
+  "words": [
+   {
+    "n": "if",
+    "text": "If",
+    "start": 550.861,
+    "end": 551.261
+   },
+   {
+    "n": "this",
+    "text": "this",
+    "start": 551.261,
+    "end": 551.4209999999999
+   },
+   {
+    "n": "made",
+    "text": "made",
+    "start": 551.4209999999999,
+    "end": 551.661
+   },
+   {
+    "n": "you",
+    "text": "you",
+    "start": 551.661,
+    "end": 551.821
+   },
+   {
+    "n": "feel",
+    "text": "feel",
+    "start": 551.821,
+    "end": 552.061
+   },
+   {
+    "n": "seen",
+    "text": "seen,",
+    "start": 552.061,
+    "end": 552.4209999999999
+   },
+   {
+    "n": "tell",
+    "text": "tell",
+    "start": 552.761,
+    "end": 552.861
+   },
+   {
+    "n": "me",
+    "text": "me",
+    "start": 552.861,
+    "end": 553.061
+   },
+   {
+    "n": "which",
+    "text": "which",
+    "start": 553.061,
+    "end": 553.261
+   },
+   {
+    "n": "show",
+    "text": "show",
+    "start": 553.261,
+    "end": 553.561
+   },
+   {
+    "n": "you've",
+    "text": "you've",
+    "start": 553.561,
+    "end": 553.901
+   },
+   {
+    "n": "rewatched",
+    "text": "rewatched",
+    "start": 553.901,
+    "end": 554.461
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 554.461,
+    "end": 554.521
+   },
+   {
+    "n": "most",
+    "text": "most",
+    "start": 554.521,
+    "end": 554.901
+   },
+   {
+    "n": "and",
+    "text": "and",
+    "start": 554.901,
+    "end": 555.121
+   },
+   {
+    "n": "how",
+    "text": "how",
+    "start": 555.121,
+    "end": 555.321
+   },
+   {
+    "n": "many",
+    "text": "many",
+    "start": 555.321,
+    "end": 555.581
+   },
+   {
+    "n": "times",
+    "text": "times,",
+    "start": 555.581,
+    "end": 556.161
+   },
+   {
+    "n": "which",
+    "text": "which",
+    "start": 556.521,
+    "end": 556.741
+   },
+   {
+    "n": "habit",
+    "text": "habit",
+    "start": 556.741,
+    "end": 557.001
+   },
+   {
+    "n": "should",
+    "text": "should",
+    "start": 557.001,
+    "end": 557.241
+   },
+   {
+    "n": "we",
+    "text": "we",
+    "start": 557.241,
+    "end": 557.361
+   },
+   {
+    "n": "cover",
+    "text": "cover",
+    "start": 557.361,
+    "end": 557.621
+   },
+   {
+    "n": "next",
+    "text": "next?",
+    "start": 557.621,
+    "end": 558.0409999999999
+   },
+   {
+    "n": "drop",
+    "text": "Drop",
+    "start": 558.401,
+    "end": 558.601
+   },
+   {
+    "n": "it",
+    "text": "it",
+    "start": 558.601,
+    "end": 558.821
+   },
+   {
+    "n": "in",
+    "text": "in",
+    "start": 558.821,
+    "end": 558.981
+   },
+   {
+    "n": "the",
+    "text": "the",
+    "start": 558.981,
+    "end": 559.081
+   },
+   {
+    "n": "comments",
+    "text": "comments.",
+    "start": 559.081,
+    "end": 559.521
+   }
+  ]
+ }
+]

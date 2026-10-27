@@ -68,7 +68,7 @@ def pause_after(sentence, last_in_para):
 
 
 # ---------- engines ----------
-def kokoro_engine(voice, speed):
+def kokoro_engine(voice, speed, sentence_pause=0.3):
     from kokoro_onnx import Kokoro
     k = Kokoro(str(KOKORO_MODEL), str(KOKORO_VOICES))
     if ":" in voice or "," in voice:
@@ -83,7 +83,7 @@ def kokoro_engine(voice, speed):
         # a whole paragraph in one continuous take: intonation carries across sentences instead of
         # resetting every full stop, with short natural pauses at sentence and clause boundaries
         audio, sr = k.create(text, voice=style, speed=speed, lang=lang,
-                             sentence_pause=0.3, clause_pause=0.12)
+                             sentence_pause=sentence_pause, clause_pause=0.12)
         assert sr == SR
         return audio.astype(np.float32)
     return say
@@ -151,10 +151,11 @@ def main():
     ap.add_argument("--words", default=None, help="also write word timestamps (estimated within each take; refine with the video pipeline's aligner)")
     ap.add_argument("--flow", choices=["paragraph", "sentence"], default="paragraph",
                     help="paragraph (default): one take per paragraph, natural flow; sentence: one take per sentence, exact sentence timing")
+    ap.add_argument("--sentence-pause", type=float, default=0.3, help="kokoro paragraph flow: pause between sentences (s)")
     a = ap.parse_args()
 
     if a.engine == "kokoro":
-        say = kokoro_engine(a.voice or "am_michael:0.6,am_fenrir:0.4", a.speed or (1.0 if a.flow == "paragraph" else 0.96))
+        say = kokoro_engine(a.voice or "am_michael:0.6,am_fenrir:0.4", a.speed or (1.0 if a.flow == "paragraph" else 0.96), a.sentence_pause)
     else:
         say = gemini_engine(a.voice or "Charon", a.speed or 1.0, a.style)
 
