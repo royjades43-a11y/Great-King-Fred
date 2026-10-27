@@ -77,8 +77,8 @@ Of those, about 84 percent got it through someone they saw only occasionally, or
 Not their best friends. Acquaintances.
 People they knew mostly through small talk.
 *[label: THE STRENGTH OF WEAK TIES · Granovetter, 1973]*
-Close friends know what you know. Acquaintances know things you don't.
 Why would that be?
+Close friends know what you know. Acquaintances know things you don't.
 Fifty years later, a study of about 20 million LinkedIn users pointed the same way.
 Moderately weak ties were the most useful for landing a new job.
 So that chat about the weather might be the start of your next career.
