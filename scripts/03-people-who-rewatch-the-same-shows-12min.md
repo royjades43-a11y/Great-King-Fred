@@ -78,7 +78,7 @@ So are we really paying for the jokes? Or for something deeper?
 ## [4:00–7:00] CONFLICT & COLLAPSE
 
 To answer that, look at what changed in our lives.
-In 2000, two researchers set up a jam-tasting table in a grocery store.
+In the year 2000, two researchers set up a jam-tasting table in a grocery store.
 Some days the table offered 24 flavours. Other days, just 6.
 *[a table fills with 24 jars, then shrinks to 6]*
 The big table drew more shoppers. But only about 3 percent of them bought a jar.
