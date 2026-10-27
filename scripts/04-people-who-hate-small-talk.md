@@ -30,7 +30,7 @@ His name was Bronisław Malinowski, a Polish anthropologist.
 When World War One broke out, he was in Australian territory, holding Austro-Hungarian papers.
 That made him an "enemy alien."
 Instead of locking him up, the authorities let him keep working.
-So he spent years in the Trobriand Islands, writing down everything people did and said.
+So he spent years in the Trobriand Islands, recording everything people did and said.
 And he noticed something odd.
 A lot of talk carried no real information at all.
 "How are you?" "Nice weather." "Where are you going?"
@@ -167,7 +167,7 @@ And one kind of question worked best: the follow-up question.
 A follow-up shows you were actually listening.
 The people in the study didn't expect questions to make them more likeable.
 They did anyway.
-For a small-talk hater, that's the shortcut. You don't need clever lines. You need one good follow-up.
+If you hate small talk, that's the shortcut. You don't need clever lines. You need one good follow-up.
 
 So here's what the research adds up to.
 Assume people want to talk. Most of them do.
@@ -189,7 +189,7 @@ It's the doorway. "Nice weather" is how two strangers check it's safe to say som
 The people who hate small talk don't hate people. They just want to skip the door.
 But you can't get into the room without walking through it.
 
-So, are you a small-talk hater, or secretly good at it? Tell me in the comments.
+So, do you hate small talk, or are you secretly good at it? Tell me in the comments.
 Which habit should we cover next? Drop it in the comments.
 
 ---
