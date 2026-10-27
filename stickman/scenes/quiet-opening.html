@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>The Quiet One — opening</title>
+<style>
+  @font-face { font-family: 'Patrick Hand'; src: url('../fonts/patrick-hand-latin-400-normal.woff2') format('woff2'); }
+  html, body { margin: 0; background: #111; }
+  #stage { width: 100vw; max-width: 1920px; aspect-ratio: 16 / 9; margin: 0 auto; }
+  #stage svg { width: 100%; height: 100%; display: block; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script src="../engine.js"></script>
+<script>
+// "The Psychology of People Who Go Quiet During Conflict" — beats 1-8 of the storyboard.
+// Voiceover is added in Canva; captions carry the on-screen text from the guide.
+const { C, seg, lerp, win, stickman, caption, drawOn } = Stick;
+
+const BEATS = [
+  [0.0, 2.0, [['THE QUIET ONE.']], { underline: C.red, y: 560, size: 150 }],
+  [2.0, 4.0, [['ARGUMENT STARTS.']]],
+  [4.0, 6.0, [['A LITTLE '], ['HEATED.', C.red]]],
+  [6.0, 8.5, [['AND THEN... '], ['NOTHING.', C.red]]],
+  [8.5, 11.0, [['STOPS TALKING.']]],
+  [11.0, 12.5, [['NOT STORMING OFF.']]],
+  [12.5, 14.5, [['NOT SLAMMING A DOOR.']]],
+  [14.5, 17.0, [['JUST QUIET.', C.blue]]],
+];
+
+Stick.run({
+  duration: 17,
+  draw(t) {
+    const enter = seg(t, 2.0, 3.0);
+    const heat = win(t, 4.0, 6.2, 0.35);
+    const apart = seg(t, 6.0, 7.2);
+    const mute = seg(t, 6.0, 7.5);
+    const zoom = seg(t, 8.5, 9.6);
+    const push = seg(t, 14.5, 17.0);
+
+    const boyX = lerp(lerp(-300, 640, enter), 500, apart);
+    const girlX = lerp(lerp(2220, 1280, enter), 1440, apart);
+    const ground = 960;
+
+    // tense posture during the argument, deflated afterwards
+    const tense = heat;
+    const lookDown = seg(t, 9.0, 9.8);
+    const blink = t > 15.3 && t < 15.5 ? 1 : 0;
+
+    // world = characters (muted with the mood), over = symbols that keep full colour
+    let world = '', over = '';
+
+    // heat lines between them
+    if (heat > 0.01) {
+      const mid = (boyX + girlX) / 2;
+      for (let i = 0; i < 3; i++) {
+        const y = 520 + i * 60, j = (Math.floor(t * 12) + i) % 2 ? 6 : -6;
+        const d = `M ${mid - 120} ${y + j} l 40 -30 l 40 30 l 40 -30 l 40 30 l 40 -30 l 40 30`;
+        over += drawOn(d, seg(t, 4.1 + i * 0.12, 4.6 + i * 0.12), C.red, 9, `opacity="${heat}"`);
+      }
+    }
+
+    world += stickman({
+      x: boyX, y: ground, shirt: '#E3A93B', hair: 'short', seed: 4,
+      lookX: lerp(lerp(1, 1, tense), -0.9, apart) * (1 - lookDown * 0.5),
+      lookY: lookDown * 1.3,
+      angry: tense, mouth: tense > 0.3 ? 'tight' : (apart > 0.5 ? 'flat' : 'flat'),
+      shoulders: -14 * tense, blink,
+      armL: [lerp(0.22, 0.55, tense), lerp(0.08, 1.2, tense)],
+      armR: [lerp(0.22, 0.55, tense), lerp(0.08, 1.2, tense)],
+    });
+    world += `<g opacity="${1 - zoom}">` + stickman({
+      x: girlX, y: ground, shirt: '#6E9E8F', hair: 'long', seed: 9,
+      lookX: lerp(-1, 0.9, apart), angry: tense,
+      mouth: tense > 0.3 ? 'o' : (apart > 0.5 ? 'frown' : 'flat'),
+      shoulders: -14 * tense,
+      armL: [lerp(0.22, 0.6, tense), lerp(0.08, -0.5, tense)],
+      armR: [lerp(0.22, 0.9, tense), lerp(0.08, 1.4, tense)],
+    }) + '</g>';
+
+    // "stops talking": a speech bubble whose scribble retracts until it's blank
+    const bub = win(t, 8.6, 11.0, 0.3);
+    if (bub > 0.01) {
+      const bx = boyX + 250, by = 470;
+      over += `<g opacity="${bub}">
+        <path d="M ${bx - 120} ${by} C ${bx - 120} ${by - 90}, ${bx + 120} ${by - 90}, ${bx + 120} ${by}
+                 C ${bx + 120} ${by + 70}, ${bx - 40} ${by + 70}, ${bx - 70} ${by + 60} L ${bx - 120} ${by + 95} L ${bx - 95} ${by + 45}
+                 C ${bx - 120} ${by + 35}, ${bx - 120} ${by + 15}, ${bx - 120} ${by} Z"
+              fill="#fff" stroke="${C.ink}" stroke-width="7" stroke-linejoin="round"/>
+        ${drawOn(`M ${bx - 80} ${by - 20} c 20 -20 30 20 50 0 s 30 20 50 0 s 30 20 50 0`, 1 - seg(t, 9.2, 10.2), C.ink, 6)}
+        ${drawOn(`M ${bx - 80} ${by + 20} c 20 -20 30 20 50 0 s 30 20 50 0`, 1 - seg(t, 9.0, 9.9), C.ink, 6)}
+      </g>`;
+    }
+
+    // "not storming off": runner icon, crossed out
+    const run = win(t, 11.0, 12.5, 0.2);
+    if (run > 0.01) {
+      const ix = boyX + 360, iy = 600;
+      over += `<g opacity="${run}">
+        <circle cx="${ix}" cy="${iy - 70}" r="20" fill="#fff" stroke="${C.ink}" stroke-width="6"/>
+        <polyline points="${ix - 5},${iy - 48} ${ix - 15},${iy + 10} ${ix - 50},${iy + 50}" fill="none" stroke="${C.ink}" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="${ix - 15},${iy + 10} ${ix + 15},${iy + 30} ${ix + 30},${iy + 70}" fill="none" stroke="${C.ink}" stroke-width="7" stroke-linecap="round"/>
+        <polyline points="${ix - 40},${iy - 20} ${ix - 8},${iy - 30} ${ix + 30},${iy - 10}" fill="none" stroke="${C.ink}" stroke-width="7" stroke-linecap="round"/>
+        ${[0, 1, 2].map((k) => `<line x1="${ix - 120}" y1="${iy - 40 + k * 35}" x2="${ix - 75}" y2="${iy - 40 + k * 35}" stroke="${C.ink}" stroke-width="6" stroke-linecap="round"/>`).join('')}
+        ${drawOn(`M ${ix - 140} ${iy - 110} L ${ix + 70} ${iy + 100}`, seg(t, 11.5, 11.8), C.red, 12)}
+        ${drawOn(`M ${ix + 70} ${iy - 110} L ${ix - 140} ${iy + 100}`, seg(t, 11.75, 12.05), C.red, 12)}
+      </g>`;
+    }
+
+    // "not slamming a door": door + slam burst, crossed out
+    const door = win(t, 12.5, 14.6, 0.2);
+    if (door > 0.01) {
+      const dx = boyX + 330, dy = 440;
+      over += `<g opacity="${door}">
+        <rect x="${dx}" y="${dy}" width="120" height="230" rx="4" fill="#B98A5E" stroke="${C.ink}" stroke-width="7"/>
+        <circle cx="${dx + 98}" cy="${dy + 120}" r="8" fill="${C.ink}"/>
+        ${[[-40, -20], [-50, 40], [-40, 100]].map(([ox, oy], k) =>
+          drawOn(`M ${dx + ox} ${dy + 60 + oy} l -40 ${(k - 1) * 15}`, seg(t, 12.7, 13.0), C.red, 8)).join('')}
+        ${drawOn(`M ${dx - 110} ${dy - 20} L ${dx + 170} ${dy + 260}`, seg(t, 13.3, 13.6), C.red, 12)}
+        ${drawOn(`M ${dx + 170} ${dy - 20} L ${dx - 110} ${dy + 260}`, seg(t, 13.55, 13.85), C.red, 12)}
+      </g>`;
+    }
+
+    // camera: wide shot, then crop in on the quiet one, then a slow push
+    const s = lerp(1, 1.4, zoom) * lerp(1, 1.08, push);
+    const fx = lerp(960, boyX + 180, zoom), fy = lerp(540, 640, zoom);
+    const cam = `translate(960 540) scale(${s}) translate(${-fx} ${-fy})`;
+    const sat = lerp(1, 0.35, mute);
+
+    let caps = '';
+    for (const [a, b, parts, opts] of BEATS) {
+      if (t < a - 0.01 || t > b + 0.01) continue;
+      const p = seg(t, a, a + 0.55);
+      const alpha = 1 - seg(t, b - 0.15, b);
+      caps += caption(parts, p, alpha, { ...(opts || {}), underlineP: seg(t, a + 0.5, a + 0.9) });
+    }
+
+    return `<filter id="mute"><feColorMatrix type="saturate" values="${sat}"/></filter>
+      <g filter="url(#mute)"><g transform="${cam}"><g filter="url(#boil)">${world}</g></g></g>
+      <g transform="${cam}"><g filter="url(#boil)">${over}</g></g>
+      ${caps}`;
+  },
+});
+</script>
+</body>
+</html>
