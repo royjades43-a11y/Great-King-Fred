@@ -40,30 +40,32 @@ const css = `
   .ico .alm-s { stroke: ${theme.accent}; } .ico .acc-s { stroke: ${theme.accent}; } .ico .alm-f { fill: ${theme.accent}; }
   .wave .s { stroke: #1F6FB2; stroke-width: 14; }
   .ico .card-f { fill: #F1F5EF; } .ico .f { fill: #000; }
+  .bubble { position: absolute; background: #F1F5EF; border: 9px solid #000; border-radius: 40px; padding: 26px 44px; font-weight: 800; font-size: 72px;
+    letter-spacing: -0.03em; white-space: nowrap; box-shadow: 0 10px 0 rgba(0,0,0,0.15), 0 24px 34px rgba(0,0,0,0.22); }
+  .bubble::after { content: ""; position: absolute; left: 70px; bottom: -46px; border: 24px solid transparent; border-top: 30px solid #000; }
   .tag { background: ${theme.accent}; color: #fff; font-weight: 800; border-radius: 18px; padding: 10px 30px; letter-spacing: 0.02em;
     box-shadow: 0 10px 0 rgba(0,0,0,0.18), 0 22px 30px rgba(0,0,0,0.25); }
 `;
 
 const variants = {
-  // A: the reframe. Someone sunk into the couch, the replay TV, and the answer in two words.
+  // A: the feeling. An awkward stick figure, the line everyone says, and the question.
   a: `
-    <div class="abs ico" style="left:40px; top:440px; width:600px; height:600px">${iconSvg("couch")}</div>
-    <div class="abs" style="left:175px; top:455px">${stick("a", { pose: "happy", mouth: "smile", scale: 1.1, sit: true })}</div>
-    <div class="abs ico" style="left:590px; top:120px; width:330px; height:330px">${iconSvg("tvReplay")}</div>
-    <div class="abs t" style="left:960px; top:300px; font-size:150px">Not<br>lazy.</div>
-    <div class="abs t r" style="left:960px; top:580px; font-size:112px">Recharging.</div>`,
-  // B: the count. The same episode, again, with the question viewers ask themselves.
+    <div class="abs" style="left:150px; top:400px">${stick("a", { pose: "shrug", mouth: "tight", scale: 1.3 })}</div>
+    <div class="bubble" style="left:300px; top:150px">Nice weather.</div>
+    <div class="abs t" style="left:930px; top:290px; font-size:136px">Why we<br><span class="r">hate</span><br>small talk</div>`,
+  // B: the liking gap. Two people after a chat; one worried, one beaming.
   b: `
-    <div class="abs" style="left:110px; top:330px">${stick("a", { pose: "point", mouth: "o", scale: 1.3 })}</div>
-    <div class="abs ico" style="left:520px; top:300px; width:420px; height:420px">${iconSvg("tvReplay")}</div>
-    <div class="abs tag" style="left:600px; top:760px; font-size:72px">WATCHED 12×</div>
-    <div class="abs t" style="left:1080px; top:270px; font-size:150px">Why the<br><span class="r">same</span><br>show?</div>`,
-  // C: the twist. Young you, the mirror, older you.
+    <div class="abs" style="left:80px; top:360px">${stick("a", { pose: "headDown", mouth: "frown", scale: 1.25 })}</div>
+    <div class="abs" style="left:470px; top:330px">${stick("b", { pose: "victory", mouth: "smile", scale: 1.3, flip: true })}</div>
+    <div class="abs t" style="left:960px; top:250px; font-size:150px">They<br>liked you<br><span class="r">more</span></div>
+    <div class="abs tag" style="left:980px; top:770px; font-size:64px">than you think</div>`,
+  // C: the silence. Two figures, an hourglass between them.
   c: `
-    <div class="abs" style="left:90px; top:420px">${stick("y", { pose: "shrug", mouth: "o", scale: 0.95 })}</div>
-    <div class="abs ico" style="left:390px; top:300px; width:380px; height:380px">${iconSvg("mirror")}</div>
-    <div class="abs" style="left:700px; top:330px">${stick("o", { pose: "proud", mouth: "smile", scale: 1.25, flip: true })}</div>
-    <div class="abs t" style="left:1150px; top:250px; font-size:120px">The show<br>didn't<br>change.<br><span class="r">You did.</span></div>`,
+    <div class="abs" style="left:60px; top:360px">${stick("a", { pose: "armsCrossed", mouth: "tight", scale: 1.25 })}</div>
+    <div class="abs ico" style="left:370px; top:440px; width:230px; height:230px">${iconSvg("hourglass")}</div>
+    <div class="abs" style="left:560px; top:360px">${stick("b", { pose: "armsCrossed", mouth: "tight", scale: 1.25, flip: true })}</div>
+    <div class="abs t" style="left:1010px; top:250px; font-size:150px"><span class="r">4 sec</span><br>of<br>silence</div>
+    <div class="abs tag" style="left:1030px; top:830px; font-size:60px">is all it takes</div>`,
 };
 
 for (const [k, body] of Object.entries(variants)) {
