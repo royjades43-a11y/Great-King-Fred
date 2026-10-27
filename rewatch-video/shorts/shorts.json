@@ -1,0 +1,9 @@
+[
+  { "id": "01-stand-in-friends",      "from": "b98",  "to": "b107", "title": ["Why you rewatch", "the !same! show"] },
+  { "id": "02-the-worst-deal",        "from": "b29",  "to": "b44",  "title": ["The worst deal", "in TV !history!"] },
+  { "id": "03-spoilers",              "from": "b152", "to": "b161", "title": ["Spoilers make", "stories !better!"] },
+  { "id": "04-you-did",               "from": "b183", "to": "b195", "title": ["The show didn't", "change. !You did.!"] },
+  { "id": "05-nostalgia-disease",     "from": "b07",  "to": "b26",  "title": ["Nostalgia used", "to be a !disease!"] },
+  { "id": "06-familiar-feels-safe",   "from": "b50",  "to": "b69",  "title": ["Why familiar", "feels !safe!"] },
+  { "id": "07-too-many-choices",      "from": "b81",  "to": "b96",  "title": ["Scroll for 20 min,", "watch the !same! show"] }
+]
