@@ -10,9 +10,9 @@ const root = join(here, "..");
 const theme = JSON.parse(readFileSync(join(root, "theme.json"), "utf8"));
 
 // a posed, static stickman: joint rotations baked into SVG transforms
-function stick(id, { pose = "idle", mouth = "neutral", flip = false, bow = false, scale = 1, tattoo = false }) {
+function stick(id, { pose = "idle", mouth = "neutral", flip = false, bow = false, scale = 1, tattoo = false, sit = false }) {
   const p = POSES[pose];
-  let svg = stickSvg(id, { flip, variant: bow ? "bow" : undefined, scale, tattoo });
+  let svg = stickSvg(id, { flip, variant: bow ? "bow" : undefined, scale, tattoo, sit });
   for (const j of ["aLu", "aLl", "aRu", "aRl", "hd"]) {
     const [cx, cy] = POSES._org[j].split(" ");
     const extraY = j === "hd" ? ` translate(0 ${p.hy || 0})` : "";
@@ -45,26 +45,25 @@ const css = `
 `;
 
 const variants = {
-  // A: the reveal. Bare arm, the needle waiting, and the reframe in four words.
+  // A: the reframe. Someone sunk into the couch, the replay TV, and the answer in two words.
   a: `
-    <div class="abs" style="left:140px; top:260px">${stick("a", { pose: "armsCrossed", mouth: "tight", scale: 1.45 })}</div>
-    <div class="abs ico" style="left:560px; top:380px; width:300px; height:300px">${iconSvg("needle")}</div>
-    <div class="abs ico" style="left:610px; top:690px; width:90px; height:90px">${iconSvg("ink")}</div>
-    <div class="abs t" style="left:1000px; top:250px; font-size:150px">Not<br>boring.<br><span class="r">Careful.</span></div>`,
-  // B: time. Today's self and three future selves, an hourglass between.
+    <div class="abs ico" style="left:40px; top:440px; width:600px; height:600px">${iconSvg("couch")}</div>
+    <div class="abs" style="left:175px; top:455px">${stick("a", { pose: "happy", mouth: "smile", scale: 1.1, sit: true })}</div>
+    <div class="abs ico" style="left:590px; top:120px; width:330px; height:330px">${iconSvg("tvReplay")}</div>
+    <div class="abs t" style="left:960px; top:300px; font-size:150px">Not<br>lazy.</div>
+    <div class="abs t r" style="left:960px; top:580px; font-size:112px">Recharging.</div>`,
+  // B: the count. The same episode, again, with the question viewers ask themselves.
   b: `
-    <div class="abs" style="left:60px; top:330px">${stick("a", { pose: "point", mouth: "neutral", scale: 1.25 })}</div>
-    <div class="abs ico" style="left:420px; top:300px; width:170px; height:170px">${iconSvg("hourglass")}</div>
-    <div class="abs" style="left:470px; top:500px">${stick("f1", { pose: "idle", mouth: "neutral", scale: 0.8 })}</div>
-    <div class="abs" style="left:660px; top:500px">${stick("f2", { pose: "shrug", mouth: "o", scale: 0.8 })}</div>
-    <div class="abs" style="left:850px; top:500px">${stick("f3", { pose: "armsCrossed", mouth: "tight", scale: 0.8 })}</div>
-    <div class="abs t" style="left:1180px; top:250px; font-size:130px">Forever<br>is a<br><span class="r">long time</span></div>`,
-  // C: the number. A tattooed figure with second thoughts and the stat.
+    <div class="abs" style="left:110px; top:330px">${stick("a", { pose: "point", mouth: "o", scale: 1.3 })}</div>
+    <div class="abs ico" style="left:520px; top:300px; width:420px; height:420px">${iconSvg("tvReplay")}</div>
+    <div class="abs tag" style="left:600px; top:760px; font-size:72px">WATCHED 12×</div>
+    <div class="abs t" style="left:1080px; top:270px; font-size:150px">Why the<br><span class="r">same</span><br>show?</div>`,
+  // C: the twist. Young you, the mirror, older you.
   c: `
-    <div class="abs" style="left:200px; top:260px">${stick("b", { pose: "give", mouth: "frown", scale: 1.45, tattoo: true })}</div>
-    <div class="abs ico" style="left:640px; top:200px; width:180px; height:180px">${iconSvg("question")}</div>
-    <div class="abs t" style="left:900px; top:270px; font-size:170px"><span class="r">1 in 4</span><br>regret it</div>
-    <div class="abs tag" style="left:930px; top:690px; font-size:64px">So why do others say no?</div>`,
+    <div class="abs" style="left:90px; top:420px">${stick("y", { pose: "shrug", mouth: "o", scale: 0.95 })}</div>
+    <div class="abs ico" style="left:390px; top:300px; width:380px; height:380px">${iconSvg("mirror")}</div>
+    <div class="abs" style="left:700px; top:330px">${stick("o", { pose: "proud", mouth: "smile", scale: 1.25, flip: true })}</div>
+    <div class="abs t" style="left:1150px; top:250px; font-size:120px">The show<br>didn't<br>change.<br><span class="r">You did.</span></div>`,
 };
 
 for (const [k, body] of Object.entries(variants)) {
