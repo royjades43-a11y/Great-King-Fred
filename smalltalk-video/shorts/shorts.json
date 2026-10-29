@@ -1,0 +1,9 @@
+[
+  { "id": "01-they-liked-you-more",   "from": "b100", "to": "b109", "title": ["They liked you", "!more! than you think"] },
+  { "id": "02-the-manilow-shirt",     "from": "b82",  "to": "b91",  "title": ["Nobody's looking", "at you (!really!)"] },
+  { "id": "03-four-seconds",          "from": "b92",  "to": "b98",  "title": ["4 seconds of silence", "feels like !rejection!"] },
+  { "id": "04-ask-this-instead",      "from": "b123", "to": "b134", "title": ["Hate small talk?", "Ask !this! instead"] },
+  { "id": "05-acquaintances",         "from": "b49",  "to": "b61",  "title": ["Your next job comes", "from !small talk!"] },
+  { "id": "06-never-the-enemy",       "from": "b147", "to": "b157", "title": ["Small talk is", "a !door!"] },
+  { "id": "07-enemy-alien",           "from": "b07",  "to": "b25",  "title": ["The man who named", "!small talk!"] }
+]
