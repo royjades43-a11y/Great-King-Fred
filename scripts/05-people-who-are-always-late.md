@@ -19,6 +19,7 @@ In 1957, Sydney picked a design for a new opera house.
 The plan said it would be finished in 1963, for about seven million dollars.
 It opened in 1973. Ten years late.
 And it cost about one hundred and two million dollars.
+That's more than fourteen times the original price.
 *[two bars: PLANNED $7M · ACTUAL $102M]*
 A whole city was late, for a decade.
 By the end of this video, you'll know why your brain does the same thing every single morning.
@@ -62,11 +63,11 @@ The economist Bent Flyvbjerg collected data on more than sixteen thousand big pr
 Only about eight and a half percent finished on time and on budget.
 Just half a percent also delivered everything they promised.
 He calls it the iron law: over budget, over time, over and over again.
-Even airlines plan around it.
-Many build extra time into their schedules, so a flight that runs a bit slow can still land "on time."
 Boston's "Big Dig," a highway tunnel project, was first budgeted at about two point eight billion dollars.
 *[a highway tunnel; a price tag growing]*
 It finished years late, in 2007, at about fourteen point six billion.
+Even airlines plan around it.
+Many build extra time into their schedules, so a flight that runs a bit slow can still land "on time."
 
 ## [1:20–3:40] THE THESIS STUDY
 
@@ -85,7 +86,7 @@ About fifty-five days.
 They finished later than their own worst-case scenario.
 Only about thirty percent finished by the day they had predicted.
 And here's the human detail.
-These students knew they were usually late. When asked, they admitted most of their past work ran over.
+Many of these students knew they were usually late. They admitted their past work often ran over.
 They just didn't think it would happen this time.
 *[thought bubble: "this time will be different"]*
 Researchers call that the inside view.
@@ -178,8 +179,8 @@ Then add one "one more thing" on top, because you know it's coming.
 ## [7:30–8:15] PUNCHLINE & CTA
 
 So here's the twist.
-Chronically late people are rarely the ones who don't care.
-Very often, they're optimists.
+Many chronically late people aren't careless at all.
+They're optimists.
 They genuinely believe the best version of the day is the one that's going to happen.
 *[a stick figure smiling at a sunrise, a clock spinning behind them]*
 The Sydney Opera House is now one of the most famous buildings on Earth.
