@@ -62,6 +62,8 @@ The economist Bent Flyvbjerg collected data on more than sixteen thousand big pr
 Only about eight and a half percent finished on time and on budget.
 Just half a percent also delivered everything they promised.
 He calls it the iron law: over budget, over time, over and over again.
+Even airlines plan around it.
+Many build extra time into their schedules, so a flight that runs a bit slow can still land "on time."
 Boston's "Big Dig," a highway tunnel project, was first budgeted at about two point eight billion dollars.
 *[a highway tunnel; a price tag growing]*
 It finished years late, in 2007, at about fourteen point six billion.
@@ -140,6 +142,12 @@ Do the maths.
 Ten minutes late, three times a week, adds up to about twenty-six hours a year.
 *[a counter ticking up: 10 min × 3 × 52 = 26 HOURS]*
 That's a whole day of other people's lives, spent waiting.
+And those minutes don't feel the same on both sides.
+In 1985, service researcher David Maister wrote a famous paper on the psychology of waiting.
+*[a stick figure checking a watch at a restaurant table; the clock hands crawl]*
+One of his rules: empty time feels longer than busy time.
+So while you're rushing around, your ten minutes fly by.
+For the person sitting alone at the table, those same ten minutes crawl.
 But it wasn't over yet.
 
 ## [6:10–7:30] THE FIX
@@ -179,6 +187,7 @@ Nobody remembers that it was ten years late.
 In 1999, the government asked Utzon to come back as a consultant on the building's future.
 In 2007, his opera house became a World Heritage site. He died the following year.
 But your friend at the restaurant will remember the twenty minutes.
+Because your five minutes and their five minutes were never the same five minutes.
 
 So, are you the one who's always late, or the one who's always waiting? Tell me in the comments.
 Which habit should we cover next? Drop it in the comments.
@@ -192,6 +201,8 @@ Which habit should we cover next? Drop it in the comments.
 | Sydney Opera House: design chosen 1957, planned 1963 at ~$7M; opened 1973 at ~$102M | Widely reported ([Macquarie](https://lighthouse.mq.edu.au/article/january-2021/budget-blowouts-and-broken-promises-how-to-avoid-project-failures); [Guinness](https://www.guinnessworldrecords.com/world-records/382062-largest-proportional-increase-in-cost-for-a-building-project)); figures are AUD, not inflation-adjusted |
 | Utzon quit 1966, never saw the finished building; not watching the 1973 opening; consultant from 1999; World Heritage 2007; died 2008 | [The Local](https://www.thelocal.dk/20231020/why-sydney-opera-houses-danish-architect-was-not-present-at-1973-opening); [National Portrait Gallery](https://portrait.gov.au/portraits/2005.116/jrn-utzon) |
 | 16,000+ projects; ~8.5% on time and budget; 0.5% also deliver benefits; "iron law" | Flyvbjerg & Gardner, *How Big Things Get Done* (2023) ([review](https://www.independent.org/tir/2023-fall/how-big-things-get-done/)) |
+| Unoccupied time feels longer than occupied time | Maister (1985), "The Psychology of Waiting Lines" |
+| Airline schedule padding | General industry practice; said without a number |
 | Hofstadter's Law (1979) | Hofstadter, *Gödel, Escher, Bach* (1979) |
 | Big Dig: ~$2.8B first estimate; finished 2007 at ~$14.6B | Widely reported (Massachusetts Turnpike Authority figures; ~$24B including interest) |
 | Planning fallacy named in 1979 | Kahneman & Tversky (1979), "Intuitive prediction: biases and corrective procedures" |
