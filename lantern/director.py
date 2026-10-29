@@ -453,6 +453,7 @@ def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_prev
         if jobs:
             args += ["--jobs", str(jobs)]
         render_main(args)
+        loudnorm(out)
     return total
 
 
@@ -502,6 +503,16 @@ def export_script(ep_dir):
     with open(path, "w") as f:
         f.write("\n".join(out))
     return path
+
+
+def loudnorm(path, lufs=-14):
+    """Bring the mix to YouTube's loudness target (re-encodes audio only)."""
+    import subprocess
+    tmp = path + ".norm.mp4"
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", path, "-c:v", "copy", "-af",
+                    f"loudnorm=I={lufs}:TP=-1.5:LRA=11", "-ar", "48000", "-c:a", "aac", "-b:a", "192k",
+                    "-movflags", "+faststart", tmp], check=True)
+    os.replace(tmp, path)
 
 
 def fmt(t):
