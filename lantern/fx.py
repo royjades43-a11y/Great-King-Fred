@@ -117,3 +117,21 @@ def draw_ink(layer, points, progress, color, width):
         nx, ny = drawn[-1]
         g = width * 2.2
         d.ellipse([nx - g, ny - g, nx + g, ny + g], fill=(255, 220, 150, 120))
+
+
+def draw_smoke(layer, x, y, size, t, seed=0.0, puffs=7, life=5.0):
+    """Soft puffs rising and spreading from (x, y): chimneys, burning thatch, campfires."""
+    pw, ph = int(size * 9), int(size * 12)
+    patch = Image.new("RGBA", (pw, ph), (0, 0, 0, 0))
+    d = ImageDraw.Draw(patch)
+    bx, by = pw / 2, ph - size * 0.8
+    for i in range(puffs):
+        age = (t / life + i / puffs + seed * 0.37) % 1.0
+        drift = math.sin(age * 3 + seed + i) * size * 0.8 + age * size * 2.2
+        cx, cy = bx + drift, by - age * size * 9.5
+        r = size * (0.35 + age * 1.5)
+        a = int(85 * math.sin(math.pi * age) ** 1.2)
+        g = int(105 + 40 * age)
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(g, g - 4, g - 8, a))
+    patch = patch.filter(ImageFilter.GaussianBlur(size * 0.35))
+    layer.alpha_composite(patch, (int(x - bx), int(y - by)))

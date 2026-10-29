@@ -18,11 +18,11 @@ from PIL import Image
 
 from . import audio
 from .anim import ease_in, ease_in_out, ease_out, keyframes, point_along, smooth_noise
-from .fx import draw_flame, draw_ink, duotone, paper_card
-from .stage import Dust, Stage
+from .fx import draw_flame, draw_ink, draw_smoke, duotone, paper_card
+from .stage import Dust, Snow, Stage
 
 DEFAULT_STYLE = {
-    "shadow": "#141833",     # indigo shadows
+    "shadow": "#1c2140",     # indigo shadows
     "mid": "#6b4a32",
     "highlight": "#f2dcb0",  # sepia highlights
     "grade": 0.85,           # how strongly layers are pushed into the duotone
@@ -148,15 +148,27 @@ class Layer:
                 inten = draw_flame(img, x, y, size, t, seed=i + e.get("seed", 0))
                 sx, sy, _ = M @ np.array([x, y - size * 0.6, 1.0])
                 lights.append((sx, sy, e.get("glow", 0.06) * self.W, inten * e.get("light", 0.35)))
+            elif e["type"] == "smoke":
+                draw_smoke(img, x, y, e.get("size", 0.03) * self.W, t, seed=i + e.get("seed", 0))
             elif e["type"] == "ink":
                 pts = [(self.pad + p[0] * self.iw, self.pad + p[1] * self.ih) for p in e["points"]]
                 prog = (t - e.get("start", 0)) / max(1e-6, e.get("end", dur) - e.get("start", 0))
                 draw_ink(img, pts, ease_in_out(prog), e.get("color", "#7a1f1f"), e.get("width", 4) * k)
         ax, ay = self.spec.get("anchor", (0.5, 1.0))
         self.screen_pos = (M @ np.array([self.pad + ax * self.iw, self.pad + 0.5 * self.ih, 1.0]))[:2]
-        inv = np.linalg.inv(M)
-        return img.transform((self.W, self.H), Image.AFFINE, data=tuple(inv[:2].flatten()),
-                             resample=Image.BICUBIC)
+        # only transform the screen rectangle the card actually covers
+        cw, ch = img.size
+        corners = M @ np.array([[0, cw, 0, cw], [0, 0, ch, ch], [1, 1, 1, 1]], np.float64)
+        x0 = max(0, int(math.floor(corners[0].min())) - 2)
+        y0 = max(0, int(math.floor(corners[1].min())) - 2)
+        x1 = min(self.W, int(math.ceil(corners[0].max())) + 2)
+        y1 = min(self.H, int(math.ceil(corners[1].max())) + 2)
+        if x1 <= x0 or y1 <= y0:
+            return None, (0, 0)
+        inv = np.linalg.inv(T(-x0, -y0) @ M)
+        out = img.transform((x1 - x0, y1 - y0), Image.AFFINE, data=tuple(inv[:2].flatten()),
+                            resample=Image.BILINEAR)
+        return out, (x0, y0)
 
 
 class Project:
@@ -177,8 +189,10 @@ class Project:
             if sc.get("title"):
                 ticket = self.stage.ticket(sc["title"]["text"], sc["title"].get("sub"))
             self.scenes.append((sc, layers, ticket))
-        yy, xx = np.mgrid[0:self.H, 0:self.W]
-        self.xx, self.yy = xx.astype(np.float32), yy.astype(np.float32)
+        self.snow = Snow(self.W, self.H, count=int(260 * self.W / 1280))
+        # half-resolution pixel-centre grid for the lighting pass
+        yy, xx = np.mgrid[0:(self.H + 1) // 2, 0:(self.W + 1) // 2]
+        self.xx, self.yy = xx.astype(np.float32) * 2 + 0.5, yy.astype(np.float32) * 2 + 0.5
 
     def timeline(self):
         frames = []
@@ -205,11 +219,14 @@ class Project:
         canvas = Image.new("RGBA", (W, H), tuple(int(st["backdrop"][i:i + 2], 16) for i in (1, 3, 5)) + (255,))
         lights = []
         for layer in layers:
-            canvas.alpha_composite(layer.render(t, dur, cam, lights))
+            piece, at = layer.render(t, dur, cam, lights)
+            if piece is not None:
+                canvas.alpha_composite(piece, at)
 
         rgb = np.asarray(canvas.convert("RGB")).astype(np.float32)
 
-        # --- lighting: dim stage, a warm lantern pool that follows the narration, flame glows
+        # --- lighting: dim stage, a warm lantern pool that follows the narration, flame glows.
+        # Light is smooth, so it is computed at half resolution and scaled up.
         amb = sc.get("ambient", st["ambient"])
         spot = keyframes(sc.get("spotlight"), t)
         track = sc.get("spotlight_follow")  # {"layer": i, "from": s, "to": s, "offset": [dx, dy]}
@@ -219,22 +236,28 @@ class Project:
             spot = (px / W + ox, py / H + oy) + tuple(spot[2:])
         cool = np.array([0.82, 0.88, 1.02], np.float32)
         warm = np.array([1.08, 0.99, 0.86], np.float32)
+        xx, yy = self.xx, self.yy
         if spot:
             sx, sy, sr = spot[0] * W, spot[1] * H, spot[2] * W
             # soft-edged pool with a slightly harder core, like a lens-focused lantern
-            d2 = ((self.xx - sx) ** 2 + ((self.yy - sy) * 1.15) ** 2) / (sr * sr)
+            d2 = ((xx - sx) ** 2 + ((yy - sy) * 1.15) ** 2) / (sr * sr)
             pool = np.exp(-d2 * 1.6) * (spot[3] if len(spot) > 3 else 1.0)
             light = amb + (1 - amb) * pool
-            tint = cool + (warm - cool) * np.clip(pool, 0, 1)[..., None]
+            warmth = np.clip(pool, 0, 1)
         else:
-            light = np.ones((H, W), np.float32)
-            tint = np.ones(3, np.float32) * 0.5 * (cool + warm)
+            light = np.ones(xx.shape, np.float32)
+            warmth = np.full(xx.shape, 0.5, np.float32)
         for lx, ly, lr, li in lights:
-            d2 = ((self.xx - lx) ** 2 + (self.yy - ly) ** 2) / (lr * lr)
+            d2 = ((xx - lx) ** 2 + (yy - ly) ** 2) / (lr * lr)
             light = light + li * np.exp(-d2)
+        light = light.repeat(2, 0).repeat(2, 1)[:H, :W]
+        warmth = warmth.repeat(2, 0).repeat(2, 1)[:H, :W]
+        tint = cool + (warm - cool) * warmth[..., None]
         flicker = 1 + st["flicker"] * smooth_noise(t + si * 17.0, 0.7, 6.0)
         rgb *= (light[..., None] * tint) * flicker
         self.dust.render(rgb, light, t + si * 31.0, st["dust"])
+        if sc.get("weather") == "snow":
+            self.snow.render(rgb, light, t + si * 13.0)
 
         img = Image.fromarray(rgb.clip(0, 255).astype(np.uint8), "RGB").convert("RGBA")
 

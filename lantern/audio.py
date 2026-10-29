@@ -73,8 +73,21 @@ def render(path, events, total, cfg, base_dir):
             _add(mix, _swish(dur, rng), at)
         elif kind == "slide":
             _add(mix, _slide(dur, rng), at)
-    for tr in cfg.get("tracks", []):
-        _add(mix, _load(os.path.join(base_dir, tr["file"])) * tr.get("volume", 1.0), tr.get("at", 0.0))
+    tracks = [(tr, _load(os.path.join(base_dir, tr["file"])) * tr.get("volume", 1.0))
+              for tr in cfg.get("tracks", [])]
+    # speech envelope from voice tracks, so music can dip under the narrator
+    speech = np.zeros(n, np.float32)
+    for tr, sig in tracks:
+        if tr.get("voice"):
+            _add(speech, np.abs(sig), tr.get("at", 0.0))
+    if speech.any():
+        env = _lowpass(_lowpass(np.minimum(speech * 8, 1.0), int(0.25 * SR)), int(0.4 * SR))
+    for tr, sig in tracks:
+        if tr.get("duck") and speech.any():
+            i = int(tr.get("at", 0.0) * SR)
+            seg = env[i:i + len(sig)]
+            sig = sig[:len(seg)] * (1 - tr["duck"] * np.clip(seg * 1.6, 0, 1))
+        _add(mix, sig, tr.get("at", 0.0))
     mix = np.tanh(mix * 1.2) / 1.2
     pcm = (mix.clip(-1, 1) * 32767).astype(np.int16)
     stereo = np.stack([pcm, pcm], 1)

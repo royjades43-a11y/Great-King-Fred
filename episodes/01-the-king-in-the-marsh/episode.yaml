@@ -1,0 +1,204 @@
+# Episode 1 - The King in the Marsh
+#
+# Alfred of Wessex, winter to summer 878. Sources: the Anglo-Saxon Chronicle (entries
+# for 865-878), Asser's Life of King Alfred (893), and the Life of St Neot (the cakes,
+# written down a century or more later - the narration says so).
+#
+# Structure (engagement notes in docs/DIRECTION.md):
+#   cold open  - the hook: a king vanishes; the paradox of "the Great" hiding in a swamp
+#   act I      - the stakes: every other kingdom has already fallen
+#   act II     - the fall and the marsh: the low point, the legend
+#   act III    - the return: the rally, the battle, the twist (baptism, not execution)
+#   epilogue   - the payoff: why he is "the Great"
+
+title: The King in the Marsh
+voice: {name: bm_george, speed: 0.92, lang: en-gb}
+music_volume: 0.16
+seed: 878
+
+scenes:
+  # ------------------------------------------------------------------ cold open
+  - id: cold_open
+    set: {name: void, tone: dark}
+    open: curtain
+    close: lantern
+    mood: mystery
+    cast:
+      crown: {prop: crown, at: [0.5, 0.6], height: 0.2, depth: 0.9}
+    narration: |
+      [spot:crown] In the winter of eight seventy-eight, the King of Wessex vanished.
+      [spot:crown:wide] His army was scattered. [spot:crown:tight] His kingdom was overrun.
+      [exit:crown:bottom] And the man history would one day call "the Great"... was hiding in a swamp.
+
+  - id: the_hut
+    set: {name: marsh, time: night, mist: true}
+    open: lantern
+    close: curtain
+    cast:
+      hut: {prop: hut, at: [0.62, 0.72], height: 0.24, depth: 0.7, fx: [smoke@smoke]}
+      alfred: {prop: king, params: {hooded: true}, at: [0.3, 0.92], height: 0.4}
+    narration: |
+      [spot:hut] In a peasant's hut, in disguise, [enter:alfred] [spot:alfred] being scolded by a farmer's wife for burning her bread.
+      [spot:all:wide] [title:THE KING IN THE MARSH|Alfred of Wessex, 878] This is the story of how England very nearly never happened.
+    tail: 2.6
+
+  # ------------------------------------------------------------------ act I
+  - id: heathen_army
+    set: {name: map, view: heptarchy, places: [york, thetford, repton, winchester]}
+    open: curtain
+    mood: tense
+    cast:
+      ship: {prop: longship, at: [0.87, 0.5], height: 0.11, depth: 1.0, bob: {amp: 0.003, period: 2.8, roll: 2.5}}
+    narration: |
+      [title:ACT I|The Great Heathen Army] [spot:ship] Thirteen years earlier, a Viking force landed in East Anglia.
+      The English called it the Great Heathen Army.
+      [spot:@york] It took York. [spot:@thetford] It killed the king of East Anglia. [spot:@repton] It drove the king of Mercia into exile.
+      [spot:all] One by one, the old kingdoms fell, until only one was left standing. [spot:@winchester:wide] Wessex.
+
+  - id: young_alfred
+    set: {name: hills, time: dawn}
+    mood: mystery
+    cast:
+      alfred: {prop: king, at: [0.3, 0.88], height: 0.42}
+      brothers: {prop: warband, params: {side: saxon, count: 4, rows: 1}, at: [0.66, 0.88], height: 0.3, depth: 0.9}
+      saxons: {prop: warband, params: {side: saxon, count: 7, banner: true}, at: [0.72, 0.9], height: 0.36}
+    narration: |
+      [spot:alfred] Its king was Alfred. [show:brothers] [spot:brothers] The youngest of five brothers,
+      [spot:alfred] a sickly, bookish boy who was never meant to rule.
+      [exit:brothers:bottom] But his brothers died, one after another,
+      [push:alfred] and in eight seventy-one, barely into his twenties, the crown fell to him.
+      [enter:saxons] [spot:saxons] That year he fought nine battles against the Danes.
+      [spot:alfred] He won some. [spot:saxons:tight] He lost more. [spot:all] And in the end, he made peace, and the Danes withdrew. [spot:alfred:tight] For now.
+
+  # ------------------------------------------------------------------ act II
+  - id: twelfth_night
+    set: {name: hills, time: night, snow: true}
+    open: curtain
+    mood: tense
+    cast:
+      tree: {prop: tree, at: [0.88, 0.84], height: 0.5, depth: 0.9}
+      hall: {prop: longhall, at: [0.62, 0.82], height: 0.34, fx: [smoke@smoke]}
+      danes: {prop: warband, params: {side: dane, count: 8, torches: 3, banner: true}, at: [0.24, 0.92], height: 0.34,
+              fx: [flames]}
+    narration: |
+      [title:ACT II|Twelfth Night] [spot:hall] The peace did not last.
+      On Twelfth Night, eight seventy-eight, [push:hall] Alfred was keeping Christmas at his royal estate at Chippenham.
+      [enter:danes] Out of the snow came a Viking army, [spot:danes] led by a warlord named Guthrum.
+      [spot:all] They struck in the dead of winter, when no one fights.
+      [spot:hall:tight] The king escaped into the night with a handful of men.
+
+  - id: the_flight
+    set: {name: map, view: wessex, places: [chippenham, athelney, winchester]}
+    mood: somber
+    routes:
+      flight: [chippenham, [0.42, 0.5], athelney]
+    cast:
+      fugitive: {prop: king, params: {hooded: true}, at: [0.6, 0.38], height: 0.1, depth: 1.0}
+    narration: |
+      [spot:@chippenham] Wessex collapsed almost overnight.
+      Some of its nobles fled across the sea. Others bent the knee to the Danes.
+      [sail:fugitive:flight] [ink:flight] Alfred went south-west, into the flooded wetlands of the Somerset Levels,
+      [spot:@athelney] to a scrap of dry ground called Athelney. The Isle of Princes.
+
+  - id: the_marsh
+    set: {name: marsh, time: dusk, mist: true}
+    cast:
+      hut: {prop: hut, at: [0.62, 0.68], height: 0.2, depth: 0.65, fx: [smoke@smoke]}
+      alfred: {prop: king, params: {hooded: true}, at: [0.28, 0.93], height: 0.42}
+    narration: |
+      [spot:hut] Here, for months, the king lived like an outlaw.
+      [enter:alfred] [spot:alfred] He and his few loyal men hid among the reeds,
+      [spot:all] raiding Danish outposts, and vanishing back into the mist.
+
+  - id: the_cakes
+    set: {name: hut_interior}
+    mood: mystery
+    cast:
+      hearth: {prop: hearth, at: [0.5, 0.88], height: 0.22, fx: [flames, smoke@smoke], flame_size: 0.006}
+      alfred: {prop: king, params: {hooded: true}, at: [0.24, 0.9], height: 0.46}
+      wife: {prop: woman, at: [0.78, 0.9], height: 0.44}
+    narration: |
+      [spot:alfred] And it is here that England's most famous legend takes place.
+      [spot:hearth] Sheltering in a swineherd's cottage, the disguised king was asked to watch the loaves baking by the fire.
+      [spot:alfred] Lost in thought about his ruined kingdom, he let them burn.
+      [enter:wife] [spot:wife] The swineherd's wife, who had no idea who he was, gave the King of Wessex a furious telling-off.
+      [spot:all] The story was first written down a century later. It may never have happened.
+      [spot:alfred:tight] But it remembers something true. Alfred had lost everything.
+
+  # ------------------------------------------------------------------ act III
+  - id: egberts_stone
+    set: {name: hills, time: dawn, trees: true}
+    open: curtain
+    mood: wonder
+    cast:
+      stone: {prop: standing_stone, at: [0.5, 0.86], height: 0.36}
+      alfred: {prop: king, at: [0.36, 0.9], height: 0.42}
+      fyrd: {prop: warband, params: {side: saxon, count: 9, rows: 2, banner: true}, at: [0.74, 0.92], height: 0.36}
+    narration: |
+      [title:ACT III|The Return] [spot:stone] In May, seven weeks after Easter, Alfred rode out of the marsh, to a place called Egbert's Stone.
+      [enter:alfred] [spot:alfred] He had sent word ahead.
+      [enter:fyrd] [spot:fyrd] And they came. The men of Somerset, of Wiltshire, and of Hampshire.
+      [spot:all] A chronicler wrote that they greeted him as if he had come back from the dead.
+
+  - id: edington
+    set: {name: hills, time: storm}
+    mood: battle
+    cast:
+      wall: {prop: shieldwall, params: {side: saxon, count: 6}, at: [0.3, 0.92], height: 0.36}
+      danes: {prop: warband, params: {side: dane, count: 8, banner: true}, at: [0.72, 0.92], height: 0.36}
+    narration: |
+      [spot:wall] Two days later, at Edington, the armies met.
+      [spot:danes] Shield wall against shield wall.
+      [push:wall] [spot:wall] Alfred's men held. [move:wall:0.42] Then they pushed. [exit:danes:right] And the Great Army broke.
+      [spot:all] The Danes fled to their stronghold, and Alfred besieged them there.
+      Fourteen days later, starving, they surrendered.
+
+  - id: the_font
+    set: {name: hall}
+    mood: wonder
+    cast:
+      font: {prop: font, at: [0.5, 0.88], height: 0.26}
+      alfred: {prop: king, at: [0.3, 0.9], height: 0.44}
+      guthrum: {prop: warrior, params: {side: dane, hold: none, shield: false}, at: [0.7, 0.9], height: 0.44}
+      cross: {prop: cross, at: [0.5, 0.52], height: 0.22, depth: 0.7}
+    narration: |
+      [spot:font] And then Alfred did something no one expected.
+      [spot:guthrum] He did not kill Guthrum. [spot:alfred] He became his godfather.
+      [spot:font:wide] Three weeks later, at Aller, the Viking warlord was baptised a Christian, with Alfred lifting him from the font.
+      [show:cross] [spot:guthrum] Guthrum took a new name, Athelstan, and swore to stay out of Wessex.
+      [spot:all] And this time, for the most part, he kept his word.
+
+  # ------------------------------------------------------------------ epilogue
+  - id: two_kingdoms
+    set: {name: map, view: heptarchy, places: [london, winchester], regions: [wessex, danelaw], frontier: true}
+    open: curtain
+    mood: triumph
+    narration: |
+      [title:EPILOGUE|The Kingdom of the English] [spot:@wessex] Wessex survived.
+      [spot:@danelaw:wide] Britain was split in two. The Danes in the north and east,
+      [spot:@wessex:wide] the English in the south and west.
+      [spot:all] And Alfred spent the rest of his reign making sure it would never fall so easily again.
+
+  - id: the_burhs
+    set: {name: hills, time: day}
+    cast:
+      burh: {prop: burh, at: [0.42, 0.84], height: 0.3, depth: 0.85}
+      ship: {prop: longship, params: {shields: false}, at: [0.8, 0.86], height: 0.16, depth: 0.95,
+             bob: {amp: 0.003, period: 3.0, roll: 2.0}}
+      book: {prop: book, at: [0.8, 0.92], height: 0.22, depth: 1.05}
+    narration: |
+      [spot:burh] He built a network of fortified towns, called burhs, so that almost no one in Wessex lived more than a day's march from safety.
+      [spot:burh:wide] He reorganised the army. [enter:ship] [spot:ship] He built ships.
+      [exit:ship:right] [show:book] [spot:book] And he had books translated into English, so that his people could read them in their own language.
+
+  - id: the_great
+    set: {name: void, tone: dark}
+    close: curtain
+    mood: triumph
+    cast:
+      crown: {prop: crown, at: [0.5, 0.62], height: 0.22, depth: 0.9}
+    narration: |
+      [show:crown] [spot:crown] His grandson, Athelstan, would become the first king of all England.
+      [spot:crown:wide] But it began here, [spot:crown:tight] with a hunted king in a swamp, [push:crown] who refused to give up.
+      That is why, of all the kings and queens of England, Alfred is the only one we still call [spot:crown:tight] the Great.
+    tail: 3.0

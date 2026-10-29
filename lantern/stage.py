@@ -264,3 +264,32 @@ class Dust:
                     xs = np.clip(xi[sel] + dx, 0, self.W - 1)
                     ys = np.clip(yi[sel] + dy, 0, self.H - 1)
                     np.add.at(frame, (ys, xs), val[sel] / s)
+
+
+class Snow:
+    """Flakes falling past the flats; lit by the same lantern as everything else."""
+
+    def __init__(self, width, height, count=260, seed=19):
+        rng = np.random.default_rng(seed)
+        k = width / 1280
+        self.W, self.H = width, height
+        self.x0 = rng.uniform(0, width, count)
+        self.y0 = rng.uniform(0, height, count)
+        self.vy = rng.uniform(28, 80, count) * k
+        self.sw = rng.uniform(4, 14, count) * k
+        self.ph = rng.uniform(0, 6.28, count)
+        self.sz = rng.choice([1, 2, 2, 3], count) * max(1, round(k))
+        self.b = rng.uniform(110, 200, count)
+
+    def render(self, frame, light, t):
+        x = (self.x0 + self.sw * np.sin(t * 0.9 + self.ph) + t * 6) % self.W
+        y = (self.y0 + self.vy * t) % self.H
+        xi, yi = x.astype(int), y.astype(int)
+        val = (self.b * (0.45 + 0.55 * np.clip(light[yi, xi], 0, 1.5)))[:, None] * np.array([0.92, 0.95, 1.0])
+        for s in np.unique(self.sz):
+            sel = self.sz == s
+            for dx in range(s):
+                for dy in range(s):
+                    xs = np.clip(xi[sel] + dx, 0, self.W - 1)
+                    ys = np.clip(yi[sel] + dy, 0, self.H - 1)
+                    frame[ys, xs] = frame[ys, xs] * 0.35 + val[sel] * 0.65
