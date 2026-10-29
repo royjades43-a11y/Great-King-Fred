@@ -12,7 +12,11 @@
 #   epilogue   - the payoff: why he is "the Great"
 
 title: The King in the Marsh
-voice: {name: bm_george, speed: 0.92, lang: en-gb}
+voice:
+  name: bm_george
+  speed: 0.92
+  lang: en-gb
+  respell: {Athelstan: Athelston, burhs: burrs, Aller: Alla}   # how the TTS voice should say them
 music_volume: 0.16
 pronounce:
   Wessex: WESS-ex

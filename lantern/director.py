@@ -396,7 +396,7 @@ def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_prev
                              "or a single full.mp3) - see READ_ALONG.md from --export-script - or install "
                              "the Kokoro model with `python -m lantern.voice --fetch`.")
         narrator = Narrator(v.get("name", "bm_george"), v.get("speed", 0.95), lang,
-                            cache_dir=os.path.join(ep_dir, ".voice-cache"))
+                            cache_dir=os.path.join(ep_dir, ".voice-cache"), respell=v.get("respell"))
 
     scenes, start = [], 0.0
     scene_builds = []

@@ -42,8 +42,13 @@ pauses don't throw them off. On test recordings with mid-sentence pauses of up t
 sentence boundaries land within about 0.01 s (`python3 tests/test_align.py`). Read the script as
 written: an added or skipped sentence will shift the timing.
 
-**Other voice sources.** With no recordings present, the director uses Kokoro TTS if the model
-is installed (`python3 -m lantern.voice --fetch`, which needs huggingface.co). `--silent-preview`
+**Generated voice (Kokoro).** With no recordings present, the director narrates with Kokoro, a
+free open-weights TTS model, if it is installed. Use `python3 -m lantern.voice --fetch` (from
+huggingface.co) or, where that host is blocked, `--fetch-npm`. The second option is an unofficial
+npm re-upload of the same quantized model; the download is checked against its published
+sha256. Episode 1 uses `bm_george`, a deep British male voice. Set `voice.respell` in
+`episode.yaml` to fix how the voice says a name without changing the captions
+(`{Athelstan: Athelston}`). `--silent-preview`
 blocks out timing with estimated durations and no voice; its output is labeled `SILENT_PREVIEW`.
 
 ## Writing the script

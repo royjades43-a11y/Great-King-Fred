@@ -48,6 +48,44 @@ def fetch():
     print("voices:", ", ".join(voices))
 
 
+NPM_MODEL_SHA256 = "fbae9257e1e05ffc727e951ef9b9c98418e6d79f1c9b6b13bd59f5c9028a1478"
+
+
+def fetch_npm():
+    """Fallback when huggingface.co is unreachable: the same q8 model re-uploaded to npm as
+    `kokoro-q8-shards` (unofficial redistribution) plus the voice files shipped in `kokoro-js`.
+    `npm pack` only downloads archives; no package code runs. The joined model must match
+    the published checksum, and is a plain ONNX graph (no custom operators or code)."""
+    import glob
+    import hashlib as hl
+    import tarfile
+    import tempfile
+    os.makedirs(os.path.join(MODEL_DIR, "voices"), exist_ok=True)
+    with tempfile.TemporaryDirectory() as tmp:
+        subprocess.run(["npm", "pack", "kokoro-q8-shards@1.0.0", "kokoro-js@1.2.1", "--ignore-scripts"],
+                       cwd=tmp, check=True, capture_output=True)
+        for tgz in glob.glob(os.path.join(tmp, "*.tgz")):
+            with tarfile.open(tgz) as tf:
+                tf.extractall(os.path.join(tmp, os.path.basename(tgz)[:-4]), filter="data")
+        shards = sorted(glob.glob(os.path.join(tmp, "kokoro-q8-shards-1.0.0", "package", "kokoro-q8.part*.bin")))
+        h = hl.sha256()
+        with open(MODEL + ".part", "wb") as out:
+            for p in shards:
+                data = open(p, "rb").read()
+                h.update(data)
+                out.write(data)
+        if h.hexdigest() != NPM_MODEL_SHA256:
+            os.remove(MODEL + ".part")
+            raise SystemExit("model checksum mismatch - refusing to use it")
+        os.replace(MODEL + ".part", MODEL)
+        voices = {}
+        for p in glob.glob(os.path.join(tmp, "kokoro-js-1.2.1", "package", "voices", "*.bin")):
+            name = os.path.basename(p)[:-4]
+            voices[name] = np.fromfile(p, dtype=np.float32).reshape(-1, 1, 256)
+        np.savez(VOICES, **voices)
+    print(f"model ok (sha256 verified), {len(voices)} voices")
+
+
 SENTENCE = re.compile(r"(?<=[.!?…])[\"')\]]?\s+(?=[\"'(\[A-Z0-9])")
 CUE = re.compile(r"\[(\w+)(?::([^\]]*))?\]")
 
@@ -72,7 +110,8 @@ def strip_cues(text):
 
 
 class Narrator:
-    def __init__(self, voice="bm_george", speed=0.95, lang="en-gb", cache_dir=None):
+    def __init__(self, voice="bm_george", speed=0.95, lang="en-gb", cache_dir=None, respell=None):
+        self.respell = [(re.compile(rf"\b{re.escape(k)}\b"), v) for k, v in (respell or {}).items()]
         if not (os.path.exists(MODEL) and os.path.exists(VOICES)):
             raise SystemExit("Kokoro model not found - run `python -m lantern.voice --fetch` "
                              "(needs huggingface.co reachable).")
@@ -87,8 +126,15 @@ class Narrator:
         ph = self.tts.tokenizer.phonemize(text, self.lang)
         return len(self.tts.tokenizer.tokenize(" ".join(ph.split())))
 
+    def say_as(self, text):
+        """The text as the voice should read it (respelled names); captions keep the original."""
+        for pat, rep in self.respell:
+            text = pat.sub(rep, text)
+        return text
+
     def sentence(self, text):
         """Synthesise one sentence -> (audio float32 @24k, [(char offset, seconds)] lookup fn)."""
+        original, text = text, self.say_as(text)
         key = hashlib.sha1(f"{self.voice}|{self.speed}|{self.lang}|{text}".encode()).hexdigest()[:16]
         cache = os.path.join(self.cache_dir, f"{key}.npz") if self.cache_dir else None
         if cache and os.path.exists(cache):
@@ -105,7 +151,7 @@ class Narrator:
 
         def at(char_offset):
             """Seconds into this sentence when the word at `char_offset` begins."""
-            n = self._tokens(text[:char_offset])
+            n = self._tokens(self.say_as(original[:char_offset]))
             if len(starts):
                 return float(starts[min(n, len(starts) - 1)])
             return dur * n / total
@@ -147,7 +193,9 @@ def write_wav(path, audio, sr=SR):
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("--fetch", action="store_true")
+    ap.add_argument("--fetch", action="store_true", help="download Kokoro from huggingface.co")
+    ap.add_argument("--fetch-npm", action="store_true",
+                    help="download the unofficial npm copy of Kokoro (checksum-verified) instead")
     ap.add_argument("--say")
     ap.add_argument("--voice", default="bm_george")
     ap.add_argument("--speed", type=float, default=0.95)
@@ -155,13 +203,15 @@ def main(argv=None):
     a = ap.parse_args(argv)
     if a.fetch:
         fetch()
+    if a.fetch_npm:
+        fetch_npm()
     if a.say:
         n = Narrator(a.voice, a.speed)
         audio, _ = n.sentence(a.say)
         os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
         write_wav(a.out, audio)
         print(f"wrote {a.out} ({len(audio) / SR:.2f}s)")
-    if not (a.fetch or a.say):
+    if not (a.fetch or a.fetch_npm or a.say):
         ap.print_help(sys.stderr)
 
 
