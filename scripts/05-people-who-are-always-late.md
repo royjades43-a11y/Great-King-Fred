@@ -8,185 +8,198 @@ disrespect") or excuse them ("it's just your personality"). This one uses real e
 mechanism: late people aren't lazy, they're optimists with a broken stopwatch, and the fix isn't trying
 harder. It's looking backwards.
 
+**What makes this version engaging:** it opens on the viewer, not a fact; it plants a question in the
+first 20 seconds ("the one question that fixes it") and only answers it at 6:30; every section ends on a
+hook into the next; the friend waiting at the restaurant comes back as a running thread; and the biggest
+names (a Nobel winner, the Sydney Opera House) turn out to be just as late as the viewer.
+
 Lines in *[brackets]* are visual notes for the edit; they are not read out.
 
 ---
 
-## [0:00–0:30] HOOK
+## [0:00–0:35] HOOK
 
+"I'll be there in five minutes."
+*[a phone screen with the text message; a stick figure at a restaurant table, alone]*
+You've sent that text. Maybe today.
+And twenty minutes later, someone is still sitting alone at a table, watching the door.
+Here's the strange part. You weren't lying when you sent it.
+You really believed five minutes.
+So did a Nobel Prize winner. So did an entire country, for ten years.
+By the end of this video, you'll know why your brain gets time wrong.
+And the one question that fixes it.
+
+## [0:35–1:40] A WHOLE COUNTRY, TEN YEARS LATE
+
+Let's start with the country.
 In 1957, Sydney picked a design for a new opera house.
 *[a stick-figure architect holding up a sketch of white sails]*
-The plan said it would be finished in 1963, for about seven million dollars.
-It opened in 1973. Ten years late.
-And it cost about one hundred and two million dollars.
-That's more than fourteen times the original price.
+The plan said it would be finished by 1963, for about seven million dollars.
+It opened in 1973.
+Ten years late.
+And the final bill was about one hundred and two million dollars.
 *[two bars: PLANNED $7M · ACTUAL $102M]*
-A whole city was late, for a decade.
-By the end of this video, you'll know why your brain does the same thing every single morning.
+That's more than fourteen times the original price.
+The architect, Jørn Utzon, never even saw it finished.
+He quit in 1966, after a fight over money, and went home to Denmark.
+*[the architect walks off with a suitcase; the sails are half built]*
+When the Queen opened his building in 1973, he reportedly wasn't even watching on TV.
+You'd think that kind of disaster only happens to giant projects.
+It doesn't.
+Because the man who explained it was making the same mistake at the very same time.
 
-And the architect paid for it.
-Jørn Utzon quit the project in 1966, after a fight over money with the state government.
-*[the architect stick figure walks off with a suitcase; the sails are half built]*
-He went home to Denmark.
-He never saw the finished building in person.
-When the Queen opened it in 1973, he reportedly wasn't even watching on TV.
+## [1:40–3:00] THE NOBEL WINNER WHO WAS LATE
 
-## [0:30–1:20] ORIGINS
-
-In 1979, two psychologists gave this mistake a name.
-Daniel Kahneman and Amos Tversky called it the planning fallacy.
-*[label: THE PLANNING FALLACY · Kahneman & Tversky, 1979]*
-We plan for the best-case version of the future, and then we're surprised by the real one.
-That same year, the writer Douglas Hofstadter published a joke that became famous.
-*[label: HOFSTADTER'S LAW, 1979]*
-"It always takes longer than you expect, even when you take into account Hofstadter's Law."
-It's a joke. It's also the most accurate thing in this video.
-And here's the irony.
-Years earlier, Kahneman had fallen for it himself.
-He was on a team writing a new school textbook in Israel.
+His name was Daniel Kahneman.
+In the early 1970s, he was on a team writing a new school textbook in Israel.
 *[a small team of stick figures around a table, a stack of paper in the middle]*
-After a year of work, he asked everyone how long they thought it would take to finish.
-The answers clustered around two years.
-Then he asked the team's curriculum expert a different question.
+After a year of work, he asked everyone a simple question.
+How long until we're done?
+Everyone wrote down a number. They all said about two years.
+Then Kahneman turned to the team's curriculum expert and asked something different.
 How long did other teams like ours take?
 The expert went quiet.
-Then he admitted that about forty percent of those teams never finished at all.
-And the ones that did took seven to ten years.
-So how did their own team compare? "Below average," the expert said. "But not by much."
+Then he admitted it. About forty percent of those teams never finished at all.
+The rest took seven to ten years.
 *[a timeline: "our guess: 2 years" vs "other teams: 7–10 years"]*
-Kahneman's team took eight years.
-The man who would later win a Nobel Prize for studying bad judgment couldn't predict his own project.
+So how did their own team compare?
+"Below average," he said. "But not by much."
+Nobody quit. Nobody changed the plan.
+The book took eight years.
+In 1979, Kahneman and Amos Tversky gave this mistake its name: the planning fallacy.
+*[label: THE PLANNING FALLACY · Kahneman & Tversky, 1979]*
+We plan for the best-case future. Then the real one shows up.
+That same year, the writer Douglas Hofstadter published a joke about it.
+*[label: HOFSTADTER'S LAW, 1979]*
+"It always takes longer than you expect, even when you take into account Hofstadter's Law."
+It's a joke. It's also painfully accurate.
+And the numbers back it up.
 
-And it isn't one unlucky team.
+## [3:00–3:40] OVER BUDGET, OVER TIME, OVER AND OVER AGAIN
+
 The economist Bent Flyvbjerg collected data on more than sixteen thousand big projects, in over a hundred countries.
 *[a grid of tiny buildings, bridges and trains; most of them flash red]*
 Only about eight and a half percent finished on time and on budget.
 Just half a percent also delivered everything they promised.
 He calls it the iron law: over budget, over time, over and over again.
-Boston's "Big Dig," a highway tunnel project, was first budgeted at about two point eight billion dollars.
-*[a highway tunnel; a price tag growing]*
+Boston's "Big Dig" tunnel was first budgeted at about two point eight billion dollars.
 It finished years late, in 2007, at about fourteen point six billion.
-Even airlines plan around it.
-Many build extra time into their schedules, so a flight that runs a bit slow can still land "on time."
+*[a highway tunnel; a price tag growing]*
+Even airlines plan around it. Many pad their schedules, so a slow flight can still land "on time."
+But maybe you're thinking: that's governments and giant companies. I'm just late for brunch.
+So let's shrink it down. To one student, and one deadline.
 
-## [1:20–3:40] THE THESIS STUDY
+## [3:40–5:00] LATER THAN THE WORST CASE
 
-So is it just big projects? Or does it happen to everyone?
 In 1994, Canadian researchers asked thirty-seven psychology students about their final-year thesis.
 *[a stick-figure student at a desk with a thick document]*
-When do you think you'll finish? Give us your best guess.
+When will you finish? Give us your best guess.
 On average, they said about thirty-four days.
 Then the researchers asked a sneakier question.
 What if everything goes as badly as it possibly could?
 Their worst-case guess was about forty-nine days.
 *[three bars appear one by one: BEST GUESS 34 · WORST CASE 49 · ...]*
-The real answer?
+So, how long did it really take?
 About fifty-five days.
 *[the third bar: ACTUAL 55, taller than the worst case]*
-They finished later than their own worst-case scenario.
-Only about thirty percent finished by the day they had predicted.
-And here's the human detail.
-Many of these students knew they were usually late. They admitted their past work often ran over.
-They just didn't think it would happen this time.
+Later than their own worst-case scenario.
+Think about that. They planned for disaster, and reality was worse than the disaster.
+Only about thirty percent finished by the day they'd predicted.
+And many of them knew they were usually late. They just didn't think it would happen this time.
 *[thought bubble: "this time will be different"]*
 Researchers call that the inside view.
-When you plan, you picture this task, this week, going smoothly.
+You picture this task, this week, going smoothly.
 You don't picture the printer jam, the friend who calls, or the bus that never comes.
-So why can't we learn from the last hundred times?
+So why don't we learn from the last hundred times?
+Because your brain has been quietly lying to you about all of them.
 
-## [3:40–6:10] WHERE TIME GOES MISSING
+## [5:00–6:30] THREE WAYS TIME GOES MISSING
 
-One reason is that your memory is lying to you.
-In 2005, a team of psychologists reviewed the research on how we predict time.
+Lie number one: your memory.
+In 2005, psychologists reviewed the research on how we predict time.
 *[label: MEMORY BIAS · Roy, Christenfeld & McKenzie, 2005]*
-Their argument was simple.
 We base our guesses on how long things took before.
 But we remember those past tasks as shorter than they really were.
-So if your morning routine really takes forty minutes, your memory might say twenty-five.
+Your morning routine might really take forty minutes. Your memory might say twenty-five.
 *[a clock face: 40 minutes; a thought bubble shows a smaller clock: 25 minutes]*
-And you plan the next morning using the wrong number. Every single day.
-Two years later, the same researchers tested it directly.
-The people who remembered past tasks as shortest were the ones who underestimated the next task the most.
+So you plan tomorrow using the wrong number. Every single day.
+Two years later, the same researchers tested it.
+The people who remembered past tasks as shortest underestimated the next one the most.
 
-A second reason is how you feel a minute.
+Lie number two: your sense of a minute.
 Researchers at San Diego State asked people to sit quietly and guess when one minute had passed.
 *[a stopwatch; two stick figures with their eyes closed]*
-Hurried, competitive "Type A" people called time at about fifty-eight seconds.
-More relaxed "Type B" people waited until about seventy-seven seconds.
+Hurried "Type A" people called it at about fifty-eight seconds.
+Relaxed "Type B" people waited until about seventy-seven seconds.
 *[two bars: TYPE A 58 s · TYPE B 77 s]*
-For some people, a minute simply feels longer.
-So "I'll be there in five minutes" really means something different to each of them.
-When one person thinks a minute is up, the other still has almost twenty seconds to go.
+That's almost twenty seconds of difference, in a single minute.
+Try it yourself. Close your eyes, count to what feels like one minute, then check a clock.
+*[a big on-screen stopwatch: "PAUSE AND TRY IT"]*
+Most people are off. And now you know which way you lean.
+So "five minutes" literally doesn't mean the same thing to everyone.
 
-And then there's the trap everyone knows.
-"I'll just do one more thing before I leave."
+Lie number three: "I'll just do one more thing."
 *[a stick figure at the door, turning back to a laptop, then a phone, then a plant]*
 One more email. One more episode. One more look for the keys.
-Each one feels like it takes no time at all, because in your head, it doesn't.
-But each "quick" thing really takes a few minutes.
-Stack three of them, and you're fifteen minutes late before you've even found your shoes.
+Each one feels like it takes no time at all.
+Stack three of them, and you're fifteen minutes late before you've found your shoes.
 
-Where you live matters too.
-In the 1990s, psychologist Robert Levine measured the pace of life in thirty-one countries.
-His team timed people walking in city centres, timed post office clerks, and checked the public clocks.
+And then there's culture.
+Psychologist Robert Levine measured the pace of life in thirty-one countries.
 *[a globe; a walking stick figure; a wall clock]*
+He timed people walking, timed post office clerks, and checked the public clocks.
 Switzerland came out fastest, with Japan and Western Europe close behind.
-In some countries, a public clock that's five minutes off barely matters.
-In others, being five minutes late is an insult.
-So "late" isn't only about you. It's also about the clock your culture runs on.
+In some places, five minutes late is nothing. In others, it's an insult.
+So part of your clock was set before you could even read one.
 
-But here's the uncomfortable part.
-The person waiting for you doesn't see your memory bias or your culture.
-They see someone who didn't show up when they said.
-And over time, that can quietly cost trust.
-Do the maths.
+## [6:30–7:15] THE FRIEND AT THE TABLE
+
+Now go back to that friend at the restaurant.
+*[the stick figure alone at the table again, checking a watch]*
+They don't see your memory bias, your minute, or your culture.
+They see someone who said five minutes.
 Ten minutes late, three times a week, adds up to about twenty-six hours a year.
 *[a counter ticking up: 10 min × 3 × 52 = 26 HOURS]*
-That's a whole day of other people's lives, spent waiting.
-And those minutes don't feel the same on both sides.
-In 1985, service researcher David Maister wrote a famous paper on the psychology of waiting.
-*[a stick figure checking a watch at a restaurant table; the clock hands crawl]*
-One of his rules: empty time feels longer than busy time.
-So while you're rushing around, your ten minutes fly by.
-For the person sitting alone at the table, those same ten minutes crawl.
+A whole day of someone else's life.
+And it feels even longer for them.
+In 1985, researcher David Maister wrote a famous paper on the psychology of waiting.
+His rule: empty time feels longer than busy time.
+Your ten minutes fly by. Theirs crawl.
+So is a late person just doomed to be late forever?
 But it wasn't over yet.
 
-## [6:10–7:30] THE FIX
+## [7:15–8:10] THE FIX
 
-So are late people doomed?
-Not at all. But trying harder doesn't help.
-Kahneman's team heard the expert's warning, kept going, and still took eight years.
-What helps is changing how you plan.
-The first fix is to break it down.
-In 2004, researchers found that when people listed every step of a task, their time estimates got longer.
+Here's what doesn't work: trying harder.
+Kahneman's team heard the warning and still took eight years.
+What works is changing how you plan.
+Fix one: break it down.
+In 2004, a study found that listing every step made people's time estimates longer, and more realistic.
 *[label: "If you don't want to be late, enumerate" · Kruger & Evans, 2004]*
-The title of their paper says it all: "If you don't want to be late, enumerate."
+The paper's title says it all: "If you don't want to be late, enumerate."
 Shower. Get dressed. Find keys. Walk to the car. Find parking.
-Each step you write down is a step your brain had quietly skipped.
 *[a checklist filling up, the total time growing beside it]*
-The second fix is to plan backwards.
-In 2016, a study found that planning from the deadline back to today led to less optimistic, more realistic predictions.
-Start with "I need to be in my seat at nine," and work back from there.
-The third fix is the one Kahneman's expert gave him.
-Don't ask "How long will this take me?"
-Ask "How long did this take last time?"
-And if you don't know, find out.
-Time your morning routine once, with a stopwatch, from alarm to front door.
-Most people are shocked by the number.
-That number, not the hopeful one, is the one to plan with.
-Then add one "one more thing" on top, because you know it's coming.
+Every step you write down is one your brain had skipped.
+Fix two: plan backwards.
+A 2016 study found that working back from the deadline made predictions less optimistic.
+Start with "I need to be in my seat at nine," and walk it back.
+And fix three is the question I promised you. The one Kahneman's expert answered.
+Don't ask, "How long will this take?"
+Ask, "How long did this take last time?"
+Then time your morning once, with a stopwatch, from alarm to front door.
+Most people are shocked by the number. Plan with that one, not the hopeful one.
+And add one "one more thing" on top, because you know it's coming.
 
-## [7:30–8:15] PUNCHLINE & CTA
+## [8:10–8:45] PUNCHLINE & CTA
 
 So here's the twist.
-Many chronically late people aren't careless at all.
-They're optimists.
-They genuinely believe the best version of the day is the one that's going to happen.
+Many chronically late people aren't careless at all. They're optimists.
+They really believe the best version of the day is the one that's coming.
+Honestly, as mistakes go, that's a pretty nice one to make.
 *[a stick figure smiling at a sunrise, a clock spinning behind them]*
-The Sydney Opera House is now one of the most famous buildings on Earth.
-Nobody remembers that it was ten years late.
-In 1999, the government asked Utzon to come back as a consultant on the building's future.
+In 1999, Sydney asked Utzon to come back and help shape the building's future.
 In 2007, his opera house became a World Heritage site. He died the following year.
+Today, nobody remembers it was ten years late.
 But your friend at the restaurant will remember the twenty minutes.
 Because your five minutes and their five minutes were never the same five minutes.
 
