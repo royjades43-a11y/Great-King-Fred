@@ -36,6 +36,16 @@ DEFAULT_STYLE = {
 TRANSITION_LEN = {"curtain": 1.3, "lantern": 0.35, "fade": 0.7, "none": 0.0}
 
 
+def clamp_camera(z, fx, fy, W=1920, H=1080):
+    """Never pan so far that a backdrop's edge slides into the stage opening."""
+    k = W / 1280.0
+    ox, oy = int(58 * k), int(36 * k)  # matches Stage.opening
+    z = max(z, 1.0)
+    lim_x = 0.5 * (1 - 1 / z) + ox / W / z
+    lim_y = 0.5 * (1 - 1 / z) + oy / H / z
+    return z, min(max(fx, 0.5 - lim_x), 0.5 + lim_x), min(max(fy, 0.5 - lim_y), 0.5 + lim_y)
+
+
 def T(x, y):
     return np.array([[1, 0, x], [0, 1, y], [0, 0, 1]], np.float64)
 
@@ -208,13 +218,7 @@ class Project:
         dur = sc["duration"]
 
         cam_keys = sc.get("camera") or [[0, 1.0, 0.5, 0.5], [dur, 1.035, 0.5, 0.5]]
-        z, fx, fy = keyframes(cam_keys, t)
-        # never pan so far that a backdrop's edge slides into the opening
-        ox, oy, _, _ = self.stage.opening
-        z = max(z, 1.0)
-        lim_x = 0.5 * (1 - 1 / z) + ox / W / z
-        lim_y = 0.5 * (1 - 1 / z) + oy / H / z
-        cam = (z, min(max(fx, 0.5 - lim_x), 0.5 + lim_x), min(max(fy, 0.5 - lim_y), 0.5 + lim_y))
+        cam = clamp_camera(*keyframes(cam_keys, t), W, H)
 
         canvas = Image.new("RGBA", (W, H), tuple(int(st["backdrop"][i:i + 2], 16) for i in (1, 3, 5)) + (255,))
         lights = []

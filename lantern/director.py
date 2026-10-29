@@ -25,7 +25,7 @@ from . import music
 from .anim import keyframes
 from .art import SETS
 from .art.props import make_prop
-from .render import TRANSITION_LEN
+from .render import TRANSITION_LEN, clamp_camera
 from .voice import SR, Narrator, SilentEstimator, split_sentences, strip_cues, write_wav
 
 W, H = 1920, 1080
@@ -160,7 +160,7 @@ class SceneBuild:
         return keys
 
     def to_screen(self, x, y, depth, t, cam_keys):
-        z, fx, fy = keyframes(cam_keys, t)
+        z, fx, fy = clamp_camera(*keyframes(cam_keys, t), W, H)
         zl = 1 + (z - 1) * depth
         cx, cy = 0.5 + (fx - 0.5) * depth, 0.5 + (fy - 0.5) * depth
         return 0.5 + (x - cx) * zl, 0.5 + (y - cy) * zl
@@ -286,6 +286,7 @@ class SceneBuild:
             elif name == "sail":
                 c = self.cast[args[0]]
                 pts = self.routes[args[1]]
+                c.layer["pos"] = list(pts[0])  # wait at the start of the route
                 end = min(dur - 0.5, max(t + 2.5, nxt - 0.2))
                 c.layer["follow"] = {"points": pts, "start": t, "end": end}
                 c.layer["anchor"] = [0.5, 0.8]

@@ -78,7 +78,7 @@ scenes:
     cast:
       tree: {prop: tree, at: [0.88, 0.84], height: 0.5, depth: 0.9}
       hall: {prop: longhall, at: [0.62, 0.82], height: 0.34, fx: [smoke@smoke]}
-      danes: {prop: warband, params: {side: dane, count: 8, torches: 3, banner: true}, at: [0.24, 0.92], height: 0.34,
+      danes: {prop: warband, params: {side: dane, count: 6, torches: 3, banner: true}, at: [0.25, 0.92], height: 0.32,
               fx: [flames]}
     narration: |
       [title:ACT II|Twelfth Night] [spot:hall] The peace did not last.
@@ -114,7 +114,7 @@ scenes:
     set: {name: hut_interior}
     mood: mystery
     cast:
-      hearth: {prop: hearth, at: [0.5, 0.88], height: 0.22, fx: [flames, smoke@smoke], flame_size: 0.006}
+      hearth: {prop: hearth, at: [0.5, 0.88], height: 0.22, fx: [flames, smoke@smoke], flame_size: 0.018}
       alfred: {prop: king, params: {hooded: true}, at: [0.24, 0.9], height: 0.46}
       wife: {prop: woman, at: [0.78, 0.9], height: 0.44}
     narration: |
@@ -145,7 +145,7 @@ scenes:
     mood: battle
     cast:
       wall: {prop: shieldwall, params: {side: saxon, count: 6}, at: [0.3, 0.92], height: 0.36}
-      danes: {prop: warband, params: {side: dane, count: 8, banner: true}, at: [0.72, 0.92], height: 0.36}
+      danes: {prop: warband, params: {side: dane, count: 6, banner: true}, at: [0.72, 0.92], height: 0.34}
     narration: |
       [spot:wall] Two days later, at Edington, the armies met.
       [spot:danes] Shield wall against shield wall.
