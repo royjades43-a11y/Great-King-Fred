@@ -30,3 +30,19 @@ python3 voice/voiceover.py SCRIPT --voice "am_michael:0.6,am_fenrir:0.4"     # b
   than many short fragments. Keep the script's full stops for real beats.
 - **Sound:** high-pass, a little chest, less boxiness, presence and air, de-essing and gentle
   compression, then -16 LUFS. The video mix brings the finished film to -14.
+
+## Directed reading (video 5 onwards)
+
+`voice/directed.py` reads a voice-direction script (example: `scripts/05-always-late-voice-direction.md`)
+and turns its marks into delivery: `(brisk)`, `(slower)`, `(land it)`, `(lean in)`, `(warm)`, `(smile)`,
+`(light)`, `(character)` change the pace of a line; `|` is a short beat; `||` is a long beat. Lines at the
+same pace with no long beat between them are read in one take, so the intonation still flows.
+
+```
+python3 voice/directed.py script/direction.md -o .work/vo.wav --words .work/est.json
+python3 voice/directed.py script/direction.md --print     # see the takes, paces and pauses
+```
+
+Compare `samples/direction/hook-before-plain.mp3` with `samples/direction/hook-after-directed.mp3`.
+The same file is a reading guide for a human narrator or for ElevenLabs / AI Studio (use each section's
+**Direction** line as the style prompt).
