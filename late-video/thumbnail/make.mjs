@@ -43,29 +43,33 @@ const css = `
   .bubble { position: absolute; background: #F1F5EF; border: 9px solid #000; border-radius: 40px; padding: 26px 44px; font-weight: 800; font-size: 72px;
     letter-spacing: -0.03em; white-space: nowrap; box-shadow: 0 10px 0 rgba(0,0,0,0.15), 0 24px 34px rgba(0,0,0,0.22); }
   .bubble::after { content: ""; position: absolute; left: 70px; bottom: -46px; border: 24px solid transparent; border-top: 30px solid #000; }
+  .bar { position: absolute; bottom: 230px; width: 130px; border-radius: 16px 16px 0 0; box-shadow: 0 10px 0 rgba(0,0,0,0.15); }
+  .bl { position: absolute; top: 870px; width: 200px; text-align: center; font-weight: 800; font-size: 46px; }
   .tag { background: ${theme.accent}; color: #fff; font-weight: 800; border-radius: 18px; padding: 10px 30px; letter-spacing: 0.02em;
     box-shadow: 0 10px 0 rgba(0,0,0,0.18), 0 22px 30px rgba(0,0,0,0.25); }
 `;
 
 const variants = {
-  // A: the feeling. An awkward stick figure, the line everyone says, and the question.
+  // A: the reframe. A cheerful late runner and a clock, with the twist in two words.
   a: `
-    <div class="abs" style="left:150px; top:400px">${stick("a", { pose: "shrug", mouth: "tight", scale: 1.3 })}</div>
-    <div class="bubble" style="left:300px; top:150px">Nice weather.</div>
-    <div class="abs t" style="left:930px; top:290px; font-size:136px">Why we<br><span class="r">hate</span><br>small talk</div>`,
-  // B: the liking gap. Two people after a chat; one worried, one beaming.
+    <div class="abs ico" style="left:120px; top:120px; width:260px; height:260px">${iconSvg("clock")}</div>
+    <div class="abs" style="left:330px; top:330px">${stick("a", { pose: "victory", mouth: "smile", scale: 1.4 })}</div>
+    <div class="abs t" style="left:900px; top:250px; font-size:150px">Not rude.</div>
+    <div class="abs t r" style="left:900px; top:430px; font-size:118px">Optimistic.</div>
+    <div class="abs tag" style="left:920px; top:650px; font-size:58px; white-space:nowrap">why you're always late</div>`,
+  // B: the text message, and the friend waiting.
   b: `
-    <div class="abs" style="left:80px; top:360px">${stick("a", { pose: "headDown", mouth: "frown", scale: 1.25 })}</div>
-    <div class="abs" style="left:470px; top:330px">${stick("b", { pose: "victory", mouth: "smile", scale: 1.3, flip: true })}</div>
-    <div class="abs t" style="left:960px; top:250px; font-size:150px">They<br>liked you<br><span class="r">more</span></div>
-    <div class="abs tag" style="left:980px; top:770px; font-size:64px">than you think</div>`,
-  // C: the silence. Two figures, an hourglass between them.
+    <div class="bubble" style="left:110px; top:120px">I'll be there in 5 min</div>
+    <div class="abs" style="left:262px; top:430px">${stick("f", { pose: "headDown", mouth: "frown", scale: 1.1, sit: true })}</div>
+    <div class="abs ico" style="left:190px; top:590px; width:480px; height:480px">${iconSvg("table")}</div>
+    <div class="abs t" style="left:930px; top:270px; font-size:136px">Your 5 min<br>≠ their<br><span class="r">5 min</span></div>`,
+  // C: the numbers. Best guess, worst case, reality.
   c: `
-    <div class="abs" style="left:60px; top:360px">${stick("a", { pose: "armsCrossed", mouth: "tight", scale: 1.25 })}</div>
-    <div class="abs ico" style="left:370px; top:440px; width:230px; height:230px">${iconSvg("hourglass")}</div>
-    <div class="abs" style="left:560px; top:360px">${stick("b", { pose: "armsCrossed", mouth: "tight", scale: 1.25, flip: true })}</div>
-    <div class="abs t" style="left:1010px; top:250px; font-size:150px"><span class="r">4 sec</span><br>of<br>silence</div>
-    <div class="abs tag" style="left:1030px; top:830px; font-size:60px">is all it takes</div>`,
+    <div class="bar" style="left:120px; height:300px; background:#2E3A2C"></div>
+    <div class="bar" style="left:330px; height:430px; background:#2E3A2C"></div>
+    <div class="bar" style="left:540px; height:490px; background:${theme.accent}"></div>
+    <div class="bl" style="left:85px">best</div><div class="bl" style="left:295px">worst</div><div class="bl r" style="left:505px">real</div>
+    <div class="abs t" style="left:830px; top:270px; font-size:140px">Later than<br>the <span class="r">worst</span><br><span class="r">case</span></div>`,
 };
 
 for (const [k, body] of Object.entries(variants)) {
