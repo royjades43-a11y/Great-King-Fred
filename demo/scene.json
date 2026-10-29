@@ -1,0 +1,475 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fps": 24,
+  "style": {
+    "shadow": "#141833",
+    "mid": "#6b4a32",
+    "highlight": "#f2dcb0",
+    "accent": "#7a1f1f"
+  },
+  "scenes": [
+    {
+      "name": "The castle at night",
+      "duration": 12,
+      "open": "curtain",
+      "close": "lantern",
+      "camera": [
+        [
+          0,
+          1.0,
+          0.5,
+          0.5
+        ],
+        [
+          12,
+          1.05,
+          0.42,
+          0.55
+        ]
+      ],
+      "spotlight": [
+        [
+          0.0,
+          0.6,
+          0.48,
+          0.34
+        ],
+        [
+          3.0,
+          0.6,
+          0.52,
+          0.3
+        ],
+        [
+          5.0,
+          0.21,
+          0.62,
+          0.15
+        ],
+        [
+          8.0,
+          0.21,
+          0.62,
+          0.15
+        ],
+        [
+          10.5,
+          0.58,
+          0.55,
+          0.26
+        ]
+      ],
+      "title": {
+        "text": "ACT I",
+        "sub": "Wessex, in the year 871",
+        "at": 1.6,
+        "hold": 3.2
+      },
+      "layers": [
+        {
+          "image": "assets/sky.png",
+          "depth": 0.3,
+          "grade": 0.75
+        },
+        {
+          "image": "assets/hills_far.png",
+          "depth": 0.5,
+          "paper": true
+        },
+        {
+          "image": "assets/castle.png",
+          "pos": [
+            0.6,
+            0.74
+          ],
+          "scale": 0.42,
+          "depth": 0.7,
+          "grade": 0.55,
+          "enter": {
+            "from": "bottom",
+            "at": 1.0,
+            "dur": 1.8
+          },
+          "fx": [
+            {
+              "type": "flame",
+              "x": 0.42,
+              "y": 0.72,
+              "size": 0.006,
+              "light": 0.25
+            },
+            {
+              "type": "flame",
+              "x": 0.58,
+              "y": 0.72,
+              "size": 0.006,
+              "light": 0.25,
+              "seed": 4
+            }
+          ]
+        },
+        {
+          "image": "assets/banner.png",
+          "pos": [
+            0.265,
+            0.74
+          ],
+          "scale": 0.06,
+          "pivot": [
+            0.08,
+            1.0
+          ],
+          "sway": {
+            "amp": 3.0,
+            "period": 3.5
+          }
+        },
+        {
+          "image": "assets/hills_near.png",
+          "depth": 1.0,
+          "paper": true
+        },
+        {
+          "image": "assets/king.png",
+          "pos": [
+            0.2,
+            0.745
+          ],
+          "scale": 0.075,
+          "enter": {
+            "from": "left",
+            "at": 3.2,
+            "dur": 1.6
+          }
+        }
+      ]
+    },
+    {
+      "name": "The crossing",
+      "duration": 11,
+      "open": "lantern",
+      "close": "lantern",
+      "ambient": 0.5,
+      "camera": [
+        [
+          0,
+          1.0,
+          0.5,
+          0.45
+        ],
+        [
+          11,
+          1.06,
+          0.6,
+          0.4
+        ]
+      ],
+      "spotlight": [
+        [
+          0.0,
+          0.14,
+          0.3,
+          0.22
+        ],
+        [
+          2.0,
+          0.16,
+          0.26,
+          0.22
+        ],
+        [
+          5.0,
+          0.42,
+          0.16,
+          0.24
+        ],
+        [
+          8.0,
+          0.74,
+          0.24,
+          0.24
+        ],
+        [
+          10.0,
+          0.8,
+          0.48,
+          0.24
+        ]
+      ],
+      "title": {
+        "text": "THE CROSSING",
+        "sub": "Autumn, 875",
+        "at": 0.6,
+        "hold": 2.6
+      },
+      "layers": [
+        {
+          "image": "assets/parchment.png",
+          "grade": 0.45,
+          "fx": [
+            {
+              "type": "ink",
+              "color": "#7a1f1f",
+              "width": 5,
+              "start": 1.6,
+              "end": 9.5,
+              "points": [
+                [
+                  0.1,
+                  0.34
+                ],
+                [
+                  0.2,
+                  0.21
+                ],
+                [
+                  0.38,
+                  0.155
+                ],
+                [
+                  0.56,
+                  0.16
+                ],
+                [
+                  0.72,
+                  0.22
+                ],
+                [
+                  0.81,
+                  0.34
+                ],
+                [
+                  0.8,
+                  0.5
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "image": "assets/ship.png",
+          "pos": [
+            0.1,
+            0.34
+          ],
+          "scale": 0.06,
+          "anchor": [
+            0.5,
+            0.85
+          ],
+          "enter": {
+            "from": "top",
+            "at": 0.4,
+            "dur": 1.0
+          },
+          "bob": {
+            "amp": 0.004,
+            "period": 2.6,
+            "roll": 3.0
+          },
+          "follow": {
+            "start": 1.6,
+            "end": 9.5,
+            "points": [
+              [
+                0.1,
+                0.34
+              ],
+              [
+                0.2,
+                0.21
+              ],
+              [
+                0.38,
+                0.155
+              ],
+              [
+                0.56,
+                0.16
+              ],
+              [
+                0.72,
+                0.22
+              ],
+              [
+                0.81,
+                0.34
+              ],
+              [
+                0.8,
+                0.5
+              ]
+            ]
+          }
+        }
+      ],
+      "spotlight_follow": {
+        "layer": 1,
+        "from": 0.0,
+        "to": 11,
+        "offset": [
+          0,
+          0.02
+        ]
+      }
+    },
+    {
+      "name": "The king's hall",
+      "duration": 11,
+      "open": "lantern",
+      "close": "curtain",
+      "ambient": 0.34,
+      "camera": [
+        [
+          0,
+          1.0,
+          0.5,
+          0.5
+        ],
+        [
+          11,
+          1.06,
+          0.55,
+          0.58
+        ]
+      ],
+      "spotlight": [
+        [
+          0.0,
+          0.22,
+          0.4,
+          0.18
+        ],
+        [
+          2.5,
+          0.22,
+          0.42,
+          0.18
+        ],
+        [
+          4.5,
+          0.5,
+          0.55,
+          0.2
+        ],
+        [
+          7.0,
+          0.62,
+          0.62,
+          0.15
+        ],
+        [
+          9.5,
+          0.58,
+          0.6,
+          0.24
+        ]
+      ],
+      "layers": [
+        {
+          "image": "assets/hall.png",
+          "depth": 0.6
+        },
+        {
+          "image": "assets/throne.png",
+          "pos": [
+            0.5,
+            0.87
+          ],
+          "scale": 0.2,
+          "depth": 0.85,
+          "grade": 0.6
+        },
+        {
+          "image": "assets/candelabra.png",
+          "pos": [
+            0.31,
+            0.87
+          ],
+          "scale": 0.07,
+          "depth": 0.9,
+          "fx": [
+            {
+              "type": "flame",
+              "x": 0.15,
+              "y": 0.104,
+              "size": 0.0065,
+              "light": 0.22,
+              "glow": 0.05
+            },
+            {
+              "type": "flame",
+              "x": 0.5,
+              "y": 0.104,
+              "size": 0.0065,
+              "light": 0.22,
+              "glow": 0.05,
+              "seed": 2
+            },
+            {
+              "type": "flame",
+              "x": 0.85,
+              "y": 0.104,
+              "size": 0.0065,
+              "light": 0.22,
+              "glow": 0.05,
+              "seed": 5
+            }
+          ]
+        },
+        {
+          "image": "assets/candelabra.png",
+          "pos": [
+            0.77,
+            0.87
+          ],
+          "scale": 0.07,
+          "depth": 0.9,
+          "fx": [
+            {
+              "type": "flame",
+              "x": 0.15,
+              "y": 0.104,
+              "size": 0.0065,
+              "light": 0.22,
+              "glow": 0.05,
+              "seed": 7
+            },
+            {
+              "type": "flame",
+              "x": 0.5,
+              "y": 0.104,
+              "size": 0.0065,
+              "light": 0.22,
+              "glow": 0.05,
+              "seed": 9
+            },
+            {
+              "type": "flame",
+              "x": 0.85,
+              "y": 0.104,
+              "size": 0.0065,
+              "light": 0.22,
+              "glow": 0.05,
+              "seed": 11
+            }
+          ]
+        },
+        {
+          "image": "assets/king.png",
+          "pos": [
+            0.63,
+            0.875
+          ],
+          "scale": 0.085,
+          "enter": {
+            "from": "right",
+            "at": 4.8,
+            "dur": 1.6
+          }
+        }
+      ]
+    }
+  ]
+}
