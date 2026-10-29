@@ -41,6 +41,7 @@ same pace with no long beat between them are read in one take, so the intonation
 ```
 python3 voice/directed.py script/direction.md -o .work/vo.wav --words .work/est.json
 python3 voice/directed.py script/direction.md --print     # see the takes, paces and pauses
+python3 voice/directed.py script/direction.md -o vo.wav --pace 1.14 --pauses 0.5   # channel pace (~180 wpm)
 ```
 
 Compare `samples/direction/hook-before-plain.mp3` with `samples/direction/hook-after-directed.mp3`.

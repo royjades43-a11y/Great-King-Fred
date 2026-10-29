@@ -104,8 +104,10 @@ def main():
     ap.add_argument("--voice", default="am_puck:0.6,am_fenrir:0.4")
     ap.add_argument("--words", default=None)
     ap.add_argument("--print", action="store_true", help="only print the takes")
+    ap.add_argument("--pace", type=float, default=1.0, help="multiplies every line's speaking pace (1.1 = 10%% faster)")
+    ap.add_argument("--pauses", type=float, default=1.0, help="multiplies every pause (0.7 = 30%% shorter)")
     a = ap.parse_args()
-    takes = chunks(read_lines(a.script))
+    takes = [(t, sp * a.pace, g * a.pauses) for t, sp, g in chunks(read_lines(a.script))]
     if a.print:
         for t, s, g in takes: print(f"{s:.2f} +{g:.2f}s  {t}")
         return
@@ -118,7 +120,7 @@ def main():
 
     out, words, t = [np.zeros(int(0.4 * SR), np.float32)], [], 0.4
     for i, (text, speed, gap) in enumerate(takes):
-        audio, sr = k.create(text, voice=style, speed=speed, lang="en-us", sentence_pause=0.45, clause_pause=0.16)
+        audio, sr = k.create(text, voice=style, speed=speed, lang="en-us", sentence_pause=0.45 * a.pauses, clause_pause=0.16 * a.pauses)
         audio = audio.astype(np.float32)
         dur = len(audio) / SR
         toks = text.split()
