@@ -28,6 +28,7 @@ You really believed five minutes.
 So did a Nobel Prize winner. So did an entire country, for ten years.
 By the end of this video, you'll know why your brain gets time wrong.
 And the one question that fixes it.
+Let's find out where those missing fifteen minutes actually go.
 
 ## [0:35–1:40] A WHOLE COUNTRY, TEN YEARS LATE
 
@@ -66,6 +67,7 @@ So how did their own team compare?
 "Below average," he said. "But not by much."
 Nobody quit. Nobody changed the plan.
 The book took eight years.
+Kahneman later wrote that they should probably have quit that day.
 In 1979, Kahneman and Amos Tversky gave this mistake its name: the planning fallacy.
 *[label: THE PLANNING FALLACY · Kahneman & Tversky, 1979]*
 We plan for the best-case future. Then the real one shows up.
@@ -133,6 +135,7 @@ Hurried "Type A" people called it at about fifty-eight seconds.
 Relaxed "Type B" people waited until about seventy-seven seconds.
 *[two bars: TYPE A 58 s · TYPE B 77 s]*
 That's almost twenty seconds of difference, in a single minute.
+When one person thinks the minute is up, the other still has twenty seconds to go.
 Try it yourself. Close your eyes, count to what feels like one minute, then check a clock.
 *[a big on-screen stopwatch: "PAUSE AND TRY IT"]*
 Most people are off. And now you know which way you lean.
@@ -165,16 +168,17 @@ And it feels even longer for them.
 In 1985, researcher David Maister wrote a famous paper on the psychology of waiting.
 His rule: empty time feels longer than busy time.
 Your ten minutes fly by. Theirs crawl.
-So is a late person just doomed to be late forever?
+It sounds hopeless.
 But it wasn't over yet.
 
 ## [7:15–8:10] THE FIX
 
-Here's what doesn't work: trying harder.
+So is a late person doomed to be late forever? No.
+But here's what doesn't work: trying harder.
 Kahneman's team heard the warning and still took eight years.
 What works is changing how you plan.
 Fix one: break it down.
-In 2004, a study found that listing every step made people's time estimates longer, and more realistic.
+In 2004, a study found that listing every step made people's time estimates longer and less optimistic.
 *[label: "If you don't want to be late, enumerate" · Kruger & Evans, 2004]*
 The paper's title says it all: "If you don't want to be late, enumerate."
 Shower. Get dressed. Find keys. Walk to the car. Find parking.
@@ -189,6 +193,7 @@ Ask, "How long did this take last time?"
 Then time your morning once, with a stopwatch, from alarm to front door.
 Most people are shocked by the number. Plan with that one, not the hopeful one.
 And add one "one more thing" on top, because you know it's coming.
+Bonus trick: put the time you need to leave in your calendar, not the time you need to arrive.
 
 ## [8:10–8:45] PUNCHLINE & CTA
 
@@ -220,7 +225,7 @@ Which habit should we cover next? Drop it in the comments.
 | Hofstadter's Law (1979) | Hofstadter, *Gödel, Escher, Bach* (1979) |
 | Big Dig: ~$2.8B first estimate; finished 2007 at ~$14.6B | Widely reported (Massachusetts Turnpike Authority figures; ~$24B including interest) |
 | Planning fallacy named in 1979 | Kahneman & Tversky (1979), "Intuitive prediction: biases and corrective procedures" |
-| Curriculum team: guessed ~2 years; ~40% of teams never finished, the rest took 7–10 years; took 8 | Kahneman, *Thinking, Fast and Slow* (2011), ch. 23 ([summary](https://www.litcharts.com/lit/thinking-fast-and-slow/part-3-chapter-23)) |
+| Curriculum team: guessed ~2 years; ~40% of teams never finished, the rest took 7–10 years; took 8 | Kahneman, *Thinking, Fast and Slow* (2011), ch. 23; "should have quit that day" per summaries ([summary](https://www.litcharts.com/lit/thinking-fast-and-slow/part-3-chapter-23)) |
 | 37 students; best guess 33.9 days, worst case 48.6, actual 55.5; ~30% on time | Buehler, Griffin & Ross (1994), *JPSP* ([paper](https://bear.warrington.ufl.edu/brenner/mar7588/Papers/buehler-et-al-1994.pdf)) |
 | Past durations remembered as shorter → future underestimated | Roy, Christenfeld & McKenzie (2005), *Psychological Bulletin* |
 | Memory bias predicts estimation bias (experiments) | Roy & Christenfeld (2007), *Psychonomic Bulletin & Review* |
