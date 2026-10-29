@@ -1,0 +1,213 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="thesis" data-width="1920" data-height="1080">
+    <div id="thesis-ch" class="clip el" data-start="0.2" data-duration="1.52" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:2"><div id="thesis-ch-in" class="in"><div class="chap"><div class="chap-num">02</div><div class="chap-rule"></div><div class="txt" style="font-size:76px;font-weight:800;color:var(--ink)"><span id="thesis-ch-w0" class="w">Later</span> <span id="thesis-ch-w1" class="w">than</span> <span id="thesis-ch-w2" class="w">the</span> <span id="thesis-ch-w3" class="w acc">worst</span> <span id="thesis-ch-w4" class="w acc">case</span></div></div></div></div>
+    <div id="thesis-card" class="clip el" data-start="1.9" data-duration="5.393" data-track-index="2" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:3"><div id="thesis-card-in" class="in"><div class="card"><div class="card-k">STUDY · 1994 · CANADA</div><div class="card-t">37 students, one thesis</div><div class="card-s">Buehler, Griffin &amp; Ross</div></div></div></div>
+    <div id="thesis-s" class="clip el" data-start="4.38" data-duration="30.372" data-track-index="3" style="position:absolute;left:0px;top:240px;width:880px;height:840px;z-index:4"><div id="thesis-s-in" class="in"><svg class="stick" id="thesis-s-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="thesis-s-aLu"><path class="s" d="M150 160 L150 255"/><g id="thesis-s-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="thesis-s-aRu"><path class="s" d="M150 160 L150 255"/><g id="thesis-s-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="thesis-s-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="thesis-s-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="thesis-s-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="thesis-s-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="thesis-s-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="thesis-s-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="thesis-q1" class="clip el" data-start="7.553" data-duration="1.851" data-track-index="4" style="position:absolute;left:560px;top:0px;width:1360px;height:760px;z-index:5" data-layout-allow-overlap><div id="thesis-q1-in" class="in"><div class="ico bub" style="width:420px;height:300px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:44px">When will you finish?</div></div></div></div>
+    <div id="thesis-bar1" class="clip el" data-start="10.454" data-duration="24.248" data-track-index="5" style="position:absolute;left:0px;top:640px;width:1920px;height:440px;z-index:6"><div id="thesis-bar1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:247px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">best guess: 34</div></div></div></div>
+    <div id="thesis-q2" class="clip el" data-start="15.465" data-duration="1.836" data-track-index="6" style="position:absolute;left:560px;top:0px;width:1360px;height:600px;z-index:7" data-layout-allow-overlap><div id="thesis-q2-in" class="in"><div class="ico bub" style="width:503.99999999999994px;height:360px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:40px">What if everything goes badly?</div></div></div></div>
+    <div id="thesis-bar2" class="clip el" data-start="18.631" data-duration="16.071" data-track-index="7" style="position:absolute;left:560px;top:640px;width:1360px;height:440px;z-index:8"><div id="thesis-bar2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:356px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">worst case: 49</div></div></div></div>
+    <div id="thesis-bar3" class="clip el" data-start="22.24" data-duration="12.462" data-track-index="8" style="position:absolute;left:1120px;top:640px;width:800px;height:440px;z-index:9"><div id="thesis-bar3-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:400px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">actual: 55</div></div></div></div>
+    <div id="thesis-t1" class="clip el" data-start="20.138" data-duration="1.962" data-track-index="9" style="position:absolute;left:560px;top:0px;width:1360px;height:440px;z-index:10"><div id="thesis-t1-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="thesis-t1-w0" class="w">how</span> <span id="thesis-t1-w1" class="w">long</span> <span id="thesis-t1-w2" class="w">did</span> <span id="thesis-t1-w3" class="w">it</span> <span id="thesis-t1-w4" class="w acc">really</span> <span id="thesis-t1-w5" class="w">take?</span></div></div></div>
+    <div id="thesis-t2" class="clip el" data-start="23.806" data-duration="3.139" data-track-index="10" style="position:absolute;left:560px;top:0px;width:1360px;height:440px;z-index:11"><div id="thesis-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="thesis-t2-w0" class="w">later</span> <span id="thesis-t2-w1" class="w">than</span> <span id="thesis-t2-w2" class="w">the</span> <span id="thesis-t2-w3" class="w alm">worst</span> <span id="thesis-t2-w4" class="w alm">case</span></div></div></div>
+    <div id="thesis-t3" class="clip el" data-start="28.552" data-duration="2.64" data-track-index="11" style="position:absolute;left:560px;top:0px;width:1360px;height:440px;z-index:12"><div id="thesis-t3-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="thesis-t3-w0" class="w">reality</span> <span id="thesis-t3-w1" class="w">was</span> <span id="thesis-t3-w2" class="w acc">worse</span> <span id="thesis-t3-w3" class="w acc">than</span> <span id="thesis-t3-w4" class="w acc">the</span> <span id="thesis-t3-w5" class="w acc">disaster</span></div></div></div>
+    <div id="thesis-t4" class="clip el" data-start="31.672" data-duration="3.08" data-track-index="12" style="position:absolute;left:560px;top:0px;width:1360px;height:440px;z-index:13"><div id="thesis-t4-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="thesis-t4-w0" class="w">only</span> <span id="thesis-t4-w1" class="w acc">30%</span> <span id="thesis-t4-w2" class="w">on</span> <span id="thesis-t4-w3" class="w">time</span></div></div></div>
+    <div id="thesis-q3" class="clip el" data-start="38.412" data-duration="1.542" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:600px;z-index:14" data-layout-allow-overlap><div id="thesis-q3-in" class="in"><div class="ico bub" style="width:503.99999999999994px;height:360px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:44px">This time will be different.</div></div></div></div>
+    <div id="thesis-s2" class="clip el" data-start="35.432" data-duration="4.572" data-track-index="14" style="position:absolute;left:0px;top:240px;width:1920px;height:840px;z-index:15"><div id="thesis-s2-in" class="in"><svg class="stick" id="thesis-s2-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="thesis-s2-aLu"><path class="s" d="M150 160 L150 255"/><g id="thesis-s2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="thesis-s2-aRu"><path class="s" d="M150 160 L150 255"/><g id="thesis-s2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="thesis-s2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="thesis-s2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="thesis-s2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="thesis-s2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="thesis-s2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="thesis-s2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="thesis-t5" class="clip el" data-start="40.604" data-duration="1.69" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:920px;z-index:16"><div id="thesis-t5-in" class="in"><div class="txt hero" style="font-size:110px;font-weight:800;color:var(--ink)"><span id="thesis-t5-w0" class="w">the</span> <span id="thesis-t5-w1" class="w acc">inside</span> <span id="thesis-t5-w2" class="w acc">view</span></div></div></div>
+    <div id="thesis-t6" class="clip el" data-start="42.551" data-duration="2.64" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:17"><div id="thesis-t6-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="thesis-t6-w0" class="w acc">this</span> <span id="thesis-t6-w1" class="w">task,</span> <span id="thesis-t6-w2" class="w acc">this</span> <span id="thesis-t6-w3" class="w">week,</span> <span id="thesis-t6-w4" class="w">going</span> <span id="thesis-t6-w5" class="w">smoothly</span></div></div></div>
+    <div id="thesis-i1" class="clip el" data-start="45.871" data-duration="3.981" data-track-index="17" style="position:absolute;left:0px;top:40px;width:1040px;height:1040px;z-index:18" data-layout-allow-overlap><div id="thesis-i1-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L150 20 L176 46 L176 168 L64 168 Z"/><path class="s" pathLength="1" d="M150 20 L150 46 L176 46"/><path class="s" pathLength="1" d="M44 40 L44 184 L156 184"/><path class="s" pathLength="1" d="M24 60 L24 198 L136 198"/><path class="s acc-s" pathLength="1" d="M88 76 L152 76 M88 104 L152 104 M88 132 L132 132"/></svg></div></div></div>
+    <div id="thesis-i2" class="clip el" data-start="46.771" data-duration="3.081" data-track-index="18" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:19" data-layout-allow-overlap><div id="thesis-i2-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="thesis-i3" class="clip el" data-start="47.991" data-duration="1.861" data-track-index="19" style="position:absolute;left:880px;top:40px;width:1040px;height:1040px;z-index:20" data-layout-allow-overlap><div id="thesis-i3-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M14 40 L186 40 Q196 40 196 52 L196 150 Q196 162 184 162 L16 162 Q4 162 4 150 L4 52 Q4 40 14 40 Z"/><path class="s" pathLength="1" d="M22 62 L62 62 L62 102 L22 102 Z M80 62 L120 62 L120 102 L80 102 Z M138 62 L178 62 L178 102 L138 102 Z"/><path class="s acc-s" pathLength="1" d="M4 124 L196 124"/><path class="s" pathLength="1" d="M40 162 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 M160 162 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"/><path class="s" pathLength="1" d="M0 186 L200 186"/></svg></div></div></div>
+    <div id="thesis-i1l" class="clip el" data-start="45.871" data-duration="3.981" data-track-index="20" style="position:absolute;left:0px;top:520px;width:1040px;height:560px;z-index:21"><div id="thesis-i1l-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="thesis-i1l-w0" class="w">printer</span> <span id="thesis-i1l-w1" class="w">jam</span></div></div></div>
+    <div id="thesis-i2l" class="clip el" data-start="46.771" data-duration="3.081" data-track-index="21" style="position:absolute;left:0px;top:520px;width:1920px;height:560px;z-index:22"><div id="thesis-i2l-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="thesis-i2l-w0" class="w">a</span> <span id="thesis-i2l-w1" class="w">call</span></div></div></div>
+    <div id="thesis-i3l" class="clip el" data-start="47.991" data-duration="1.861" data-track-index="22" style="position:absolute;left:880px;top:520px;width:1040px;height:560px;z-index:23"><div id="thesis-i3l-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="thesis-i3l-w0" class="w">the</span> <span id="thesis-i3l-w1" class="w">bus</span></div></div></div>
+    <div id="thesis-t7" class="clip el" data-start="50.392" data-duration="2.114" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:24"><div id="thesis-t7-in" class="in"><div class="txt" style="font-size:100px;font-weight:800;color:var(--ink)"><span id="thesis-t7-w0" class="w">why</span> <span id="thesis-t7-w1" class="w">don't</span> <span id="thesis-t7-w2" class="w">we</span> <span id="thesis-t7-w3" class="w acc">learn<span class="tail">?</span></span></div></div></div>
+    <div id="thesis-br" class="clip el" data-start="52.846" data-duration="3.402" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:25" data-layout-allow-overlap><div id="thesis-br-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 40 Q70 18 50 44 Q22 50 28 84 Q12 108 34 130 Q36 162 70 162 Q88 182 100 160 Q112 182 130 162 Q164 162 166 130 Q188 108 172 84 Q178 50 150 44 Q130 18 100 40 Z"/><path class="s" pathLength="1" d="M100 40 L100 160 M60 80 Q80 90 70 110 M140 80 Q120 90 130 110"/></svg></div></div></div>
+    <div id="thesis-t8" class="clip el" data-start="53.683" data-duration="2.64" data-track-index="25" style="position:absolute;left:0px;top:580px;width:1920px;height:500px;z-index:26"><div id="thesis-t8-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="thesis-t8-w0" class="w">your</span> <span id="thesis-t8-w1" class="w">brain</span> <span id="thesis-t8-w2" class="w">is</span> <span id="thesis-t8-w3" class="w alm">lying</span> <span id="thesis-t8-w4" class="w">to</span> <span id="thesis-t8-w5" class="w">you</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"thesis-ch","t":"chapter","from":"right","exit":null,"in":0.2,"out":1.3800000000000001,"outDur":0.3,"words":[0.3,0.4,0.5,0.6,0.7]},{"id":"thesis-card","t":"card","from":"top","exit":null,"in":1.9,"out":6.952999999999999,"outDur":0.3},{"id":"thesis-s","t":"stick","from":"left","exit":null,"in":4.38,"out":34.412,"outDur":0.3,"poses":[["idle",4.38],["point",9.494],["shrug",17.391],["holdHead",22.24]],"mouth":[["neutral",4.38],["smile",9.494],["o",22.24]]},{"id":"thesis-q1","t":"bubble","from":"pop","exit":null,"in":7.553,"out":9.113999999999999,"outDur":0.25},{"id":"thesis-bar1","t":"bar","from":"draw","exit":null,"in":10.454,"out":34.412,"outDur":0.25},{"id":"thesis-q2","t":"bubble","from":"pop","exit":null,"in":15.465,"out":17.011000000000003,"outDur":0.25},{"id":"thesis-bar2","t":"bar","from":"draw","exit":null,"in":18.631,"out":34.412,"outDur":0.25},{"id":"thesis-bar3","t":"bar","from":"draw","exit":null,"in":22.24,"out":34.412,"outDur":0.25},{"id":"thesis-t1","t":"text","from":"top","exit":null,"in":20.138,"out":21.76,"outDur":0.3,"words":[20.318,20.498,20.718,20.838,20.938,21.138]},{"id":"thesis-t2","t":"text","from":"top","exit":null,"in":23.806,"out":26.605,"outDur":0.3,"words":[23.806,24.026,24.466,24.466,24.566]},{"id":"thesis-t3","t":"text","from":"top","exit":null,"in":28.552,"out":30.852,"outDur":0.3,"words":[28.445,28.885,29.185,29.465,29.725,29.825]},{"id":"thesis-t4","t":"text","from":"top","exit":null,"in":31.672,"out":34.412,"outDur":0.3,"words":[31.092,31.192,31.292,31.392]},{"id":"thesis-q3","t":"bubble","from":"pop","exit":null,"in":38.412,"out":39.664,"outDur":0.25},{"id":"thesis-s2","t":"stick","from":"bottom","exit":null,"in":35.432,"out":39.664,"outDur":0.3,"poses":[["happy",35.432]],"mouth":[["smile",35.432]]},{"id":"thesis-t5","t":"text","from":"slam","exit":null,"in":40.604,"out":42.004,"outDur":0.25,"words":[40.924,41.104,41.544]},{"id":"thesis-t6","t":"text","from":"top","exit":null,"in":42.551,"out":44.851,"outDur":0.3,"words":[42.624,42.904,43.164,43.544,43.764,44.064]},{"id":"thesis-i1","t":"icon","from":"left","exit":null,"in":45.871,"out":49.512,"outDur":0.3},{"id":"thesis-i2","t":"icon","from":"top","exit":null,"in":46.771,"out":49.512,"outDur":0.3},{"id":"thesis-i3","t":"icon","from":"right","exit":null,"in":47.991,"out":49.512,"outDur":0.3},{"id":"thesis-i1l","t":"text","from":"bottom","exit":null,"in":45.871,"out":49.512,"outDur":0.3,"words":[45.871,46.111]},{"id":"thesis-i2l","t":"text","from":"bottom","exit":null,"in":46.771,"out":49.512,"outDur":0.3,"words":[47.171,47.171]},{"id":"thesis-i3l","t":"text","from":"bottom","exit":null,"in":47.991,"out":49.512,"outDur":0.3,"words":[45.671,47.991]},{"id":"thesis-t7","t":"text","from":"top","exit":null,"in":50.392,"out":52.166,"outDur":0.3,"words":[49.932,50.112,50.252,50.392]},{"id":"thesis-br","t":"icon","from":"pop","exit":null,"in":52.846,"out":55.958,"outDur":0.25},{"id":"thesis-t8","t":"text","from":"bottom","exit":null,"in":53.683,"out":55.983,"outDur":0.3,"words":[52.646,52.846,54.026,54.026,54.466,54.706]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["thesis"] = tl;
+    })();
+  </script>
+</template>

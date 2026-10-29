@@ -1,0 +1,214 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="lies" data-width="1920" data-height="1080">
+    <div id="lies-l1" class="clip el" data-start="0.2" data-duration="1.481" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:2"><div id="lies-l1-in" class="in"><div class="txt hero" style="font-size:110px;font-weight:800;color:var(--ink)"><span id="lies-l1-w0" class="w">LIE</span> <span id="lies-l1-w1" class="w">#1:</span> <span id="lies-l1-w2" class="w">YOUR</span> <span id="lies-l1-w3" class="w">MEMORY</span></div></div></div>
+    <div id="lies-card" class="clip el" data-start="2.891" data-duration="6.844" data-track-index="2" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:3"><div id="lies-card-in" class="in"><div class="card"><div class="card-k">REVIEW · 2005</div><div class="card-t">Memory bias</div><div class="card-s">Roy, Christenfeld &amp; McKenzie</div></div></div></div>
+    <div id="lies-t1" class="clip el" data-start="11.515" data-duration="2.506" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:4"><div id="lies-t1-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lies-t1-w0" class="w">we</span> <span id="lies-t1-w1" class="w">remember</span> <span id="lies-t1-w2" class="w">tasks</span> <span id="lies-t1-w3" class="w">as</span> <span id="lies-t1-w4" class="w acc">shorter</span></div></div></div>
+    <div id="lies-c1" class="clip el" data-start="8.731" data-duration="14.646" data-track-index="4" style="position:absolute;left:0px;top:40px;width:1200px;height:1040px;z-index:5" data-layout-allow-overlap><div id="lies-c1-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-80 0 a80 80 0 1 0 160 0 a80 80 0 1 0 -160 0"/><path class="s" pathLength="1" d="M100 100 L100 50"/><path class="s alm-s" pathLength="1" d="M100 100 L140 120"/><circle class="f" cx="100" cy="100" r="8"/></svg></div></div></div>
+    <div id="lies-c1l" class="clip el" data-start="15.721" data-duration="7.656" data-track-index="5" style="position:absolute;left:0px;top:560px;width:1200px;height:520px;z-index:6"><div id="lies-c1l-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="lies-c1l-w0" class="w">real:</span> <span id="lies-c1l-w1" class="w acc">40</span> <span id="lies-c1l-w2" class="w acc">min</span></div></div></div>
+    <div id="lies-c2" class="clip el" data-start="16.841" data-duration="6.486" data-track-index="6" style="position:absolute;left:680px;top:0px;width:1240px;height:960px;z-index:7" data-layout-allow-overlap><div id="lies-c2-in" class="in"><div class="ico bub" style="width:364px;height:260px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:60px">25 min</div></div></div></div>
+    <div id="lies-c2l" class="clip el" data-start="16.841" data-duration="6.536" data-track-index="7" style="position:absolute;left:680px;top:560px;width:1240px;height:520px;z-index:8"><div id="lies-c2l-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="lies-c2l-w0" class="w">your</span> <span id="lies-c2l-w1" class="w">memory</span></div></div></div>
+    <div id="lies-t2" class="clip el" data-start="21.041" data-duration="2.336" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:9"><div id="lies-t2-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lies-t2-w0" class="w">every.</span> <span id="lies-t2-w1" class="w">single.</span> <span id="lies-t2-w2" class="w alm">day.</span></div></div></div>
+    <div id="lies-t2b" class="clip el" data-start="24.257" data-duration="2.04" data-track-index="9" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:10"><div id="lies-t2b-in" class="in"><div class="txt" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="lies-t2b-w0" class="w">2007:</span> <span id="lies-t2b-w1" class="w">they</span> <span id="lies-t2b-w2" class="w acc">tested</span> <span id="lies-t2b-w3" class="w">it</span></div></div></div>
+    <div id="lies-t3" class="clip el" data-start="28.377" data-duration="3.756" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:11"><div id="lies-t3-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lies-t3-w0" class="w">shortest</span> <span id="lies-t3-w1" class="w">memories</span> <span id="lies-t3-w2" class="w">→</span> <span id="lies-t3-w3" class="w acc">worst</span> <span id="lies-t3-w4" class="w">guesses</span></div></div></div>
+    <div id="lies-l2" class="clip el" data-start="32.033" data-duration="1.855" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:12"><div id="lies-l2-in" class="in"><div class="txt hero" style="font-size:110px;font-weight:800;color:var(--ink)"><span id="lies-l2-w0" class="w">LIE</span> <span id="lies-l2-w1" class="w">#2:</span> <span id="lies-l2-w2" class="w">A</span> <span id="lies-l2-w3" class="w">MINUTE</span></div></div></div>
+    <div id="lies-sw" class="clip el" data-start="38.278" data-duration="1.35" data-track-index="12" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:13" data-layout-allow-overlap><div id="lies-sw-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 116 m-68 0 a68 68 0 1 0 136 0 a68 68 0 1 0 -136 0"/><path class="s" pathLength="1" d="M84 24 L116 24 M100 24 L100 48 M152 52 L166 38"/><path class="s alm-s" pathLength="1" d="M100 116 L100 74"/><circle class="f" cx="100" cy="116" r="7"/></svg></div></div></div>
+    <div id="lies-t4" class="clip el" data-start="37.038000000000004" data-duration="2.64" data-track-index="13" style="position:absolute;left:0px;top:600px;width:1920px;height:480px;z-index:14"><div id="lies-t4-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="lies-t4-w0" class="w">guess</span> <span id="lies-t4-w1" class="w">when</span> <span id="lies-t4-w2" class="w acc">one</span> <span id="lies-t4-w3" class="w acc">minute</span> <span id="lies-t4-w4" class="w">has</span> <span id="lies-t4-w5" class="w">passed</span></div></div></div>
+    <div id="lies-bar1" class="clip el" data-start="41.598" data-duration="14.708" data-track-index="14" style="position:absolute;left:0px;top:640px;width:1520px;height:440px;z-index:15"><div id="lies-bar1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:290px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">Type A: 58 s</div></div></div></div>
+    <div id="lies-bar2" class="clip el" data-start="45.595" data-duration="10.711" data-track-index="15" style="position:absolute;left:400px;top:640px;width:1520px;height:440px;z-index:16"><div id="lies-bar2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:385px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">Type B: 77 s</div></div></div></div>
+    <div id="lies-t5" class="clip el" data-start="48.475" data-duration="2.8" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:17"><div id="lies-t5-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="lies-t5-w0" class="w acc">~20</span> <span id="lies-t5-w1" class="w acc">seconds</span> <span id="lies-t5-w2" class="w">apart,</span> <span id="lies-t5-w3" class="w">in</span> <span id="lies-t5-w4" class="w">one</span> <span id="lies-t5-w5" class="w">minute</span></div></div></div>
+    <div id="lies-t5b" class="clip el" data-start="52.875" data-duration="3.481" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:18"><div id="lies-t5b-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="lies-t5b-w0" class="w">one</span> <span id="lies-t5b-w1" class="w">says</span> <span id="lies-t5b-w2" class="w">“time!”</span> <span id="lies-t5b-w3" class="w">·</span> <span id="lies-t5b-w4" class="w">the</span> <span id="lies-t5b-w5" class="w">other</span> <span id="lies-t5b-w6" class="w">has</span> <span id="lies-t5b-w7" class="w acc">20</span> <span id="lies-t5b-w8" class="w acc">s</span> <span id="lies-t5b-w9" class="w">left</span></div></div></div>
+    <div id="lies-sw2" class="clip el" data-start="56.256" data-duration="8.383" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:1040px;z-index:19" data-layout-allow-overlap><div id="lies-sw2-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 116 m-68 0 a68 68 0 1 0 136 0 a68 68 0 1 0 -136 0"/><path class="s" pathLength="1" d="M84 24 L116 24 M100 24 L100 48 M152 52 L166 38"/><path class="s alm-s" pathLength="1" d="M100 116 L100 74"/><circle class="f" cx="100" cy="116" r="7"/></svg></div></div></div>
+    <div id="lies-t6" class="clip el" data-start="56.256" data-duration="5.163" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:20"><div id="lies-t6-in" class="in"><div class="txt hero" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="lies-t6-w0" class="w">PAUSE</span> <span id="lies-t6-w1" class="w">AND</span> <span id="lies-t6-w2" class="w">TRY</span> <span id="lies-t6-w3" class="w">IT</span></div></div></div>
+    <div id="lies-t7" class="clip el" data-start="58.236" data-duration="3.233" data-track-index="20" style="position:absolute;left:0px;top:640px;width:1920px;height:440px;z-index:21"><div id="lies-t7-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="lies-t7-w0" class="w">close</span> <span id="lies-t7-w1" class="w">your</span> <span id="lies-t7-w2" class="w">eyes</span> <span id="lies-t7-w3" class="w">·</span> <span id="lies-t7-w4" class="w">count</span> <span id="lies-t7-w5" class="w acc">one</span> <span id="lies-t7-w6" class="w acc">minute</span></div></div></div>
+    <div id="lies-t8" class="clip el" data-start="62.169" data-duration="2.52" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:22"><div id="lies-t8-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="lies-t8-w0" class="w">most</span> <span id="lies-t8-w1" class="w">people</span> <span id="lies-t8-w2" class="w">are</span> <span id="lies-t8-w3" class="w acc">off</span></div></div></div>
+    <div id="lies-t9" class="clip el" data-start="65.429" data-duration="3.328" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:23"><div id="lies-t9-in" class="in"><div class="txt hero" style="font-size:110px;font-weight:800;color:var(--ink)"><span id="lies-t9-w0" class="w">5</span> <span id="lies-t9-w1" class="w">minutes</span> <span id="lies-t9-w2" class="w">≠</span> <span id="lies-t9-w3" class="w">5</span> <span id="lies-t9-w4" class="w">minutes</span></div></div></div>
+    <div id="lies-l3" class="clip el" data-start="68.707" data-duration="8.329" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:400px;z-index:24"><div id="lies-l3-in" class="in"><div class="txt hero" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="lies-l3-w0" class="w">LIE</span> <span id="lies-l3-w1" class="w">#3:</span> <span id="lies-l3-w2" class="w">ONE</span> <span id="lies-l3-w3" class="w">MORE</span> <span id="lies-l3-w4" class="w">THING</span></div></div></div>
+    <div id="lies-d" class="clip el" data-start="70.476" data-duration="11.256" data-track-index="24" style="position:absolute;left:0px;top:240px;width:720px;height:840px;z-index:25"><div id="lies-d-in" class="in"><svg class="stick" id="lies-d-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="lies-d-aLu"><path class="s" d="M150 160 L150 255"/><g id="lies-d-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="lies-d-aRu"><path class="s" d="M150 160 L150 255"/><g id="lies-d-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="lies-d-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="lies-d-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="lies-d-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="lies-d-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="lies-d-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="lies-d-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="lies-o1" class="clip el" data-start="71.511" data-duration="5.525" data-track-index="25" style="position:absolute;left:0px;top:40px;width:1520px;height:1040px;z-index:26" data-layout-allow-overlap><div id="lies-o1-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 40 L164 40 Q172 40 172 48 L172 136 L28 136 L28 48 Q28 40 36 40 Z"/><path class="s acc-s" pathLength="1" d="M46 58 L154 58 L154 120 L46 120 Z"/><path class="s" pathLength="1" d="M8 146 L192 146 Q192 162 176 162 L24 162 Q8 162 8 146 Z"/></svg></div></div></div>
+    <div id="lies-o2" class="clip el" data-start="72.371" data-duration="4.665" data-track-index="26" style="position:absolute;left:320px;top:40px;width:1600px;height:1040px;z-index:27" data-layout-allow-overlap><div id="lies-o2-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 50 L176 50 Q186 50 186 60 L186 146 Q186 156 176 156 L24 156 Q14 156 14 146 L14 60 Q14 50 24 50 Z"/><path class="s" pathLength="1" d="M70 14 L100 46 L130 14"/><path class="s" pathLength="1" d="M60 156 L48 184 M140 156 L152 184"/></svg></div></div></div>
+    <div id="lies-o3" class="clip el" data-start="73.851" data-duration="3.185" data-track-index="27" style="position:absolute;left:1040px;top:40px;width:880px;height:1040px;z-index:28" data-layout-allow-overlap><div id="lies-o3-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 70 m-40 0 a40 40 0 1 0 80 0 a40 40 0 1 0 -80 0"/><path class="s acc-s" pathLength="1" d="M64 70 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"/><path class="s" pathLength="1" d="M94 98 L176 180 M150 154 L132 172 M166 170 L150 186"/></svg></div></div></div>
+    <div id="lies-o1l" class="clip el" data-start="71.511" data-duration="5.575" data-track-index="28" style="position:absolute;left:0px;top:480px;width:1520px;height:600px;z-index:29"><div id="lies-o1l-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="lies-o1l-w0" class="w">email</span></div></div></div>
+    <div id="lies-o2l" class="clip el" data-start="72.371" data-duration="4.715" data-track-index="29" style="position:absolute;left:320px;top:480px;width:1600px;height:600px;z-index:30"><div id="lies-o2l-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="lies-o2l-w0" class="w">episode</span></div></div></div>
+    <div id="lies-o3l" class="clip el" data-start="73.851" data-duration="3.235" data-track-index="30" style="position:absolute;left:1040px;top:480px;width:880px;height:600px;z-index:31"><div id="lies-o3l-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="lies-o3l-w0" class="w">keys</span></div></div></div>
+    <div id="lies-t10" class="clip el" data-start="78.246" data-duration="3.436" data-track-index="31" style="position:absolute;left:320px;top:0px;width:1600px;height:960px;z-index:32"><div id="lies-t10-in" class="in"><div class="txt hero" style="font-size:130px;font-weight:800;color:var(--ink)"><span id="lies-t10-w0" class="w alm">+15</span> <span id="lies-t10-w1" class="w alm">minutes</span></div></div></div>
+    <div id="lies-gl" class="clip el" data-start="82.112" data-duration="9.403" data-track-index="32" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:33" data-layout-allow-overlap><div id="lies-gl-in" class="in"><div class="ico" style="width:280px;height:280px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-80 0 a80 80 0 1 0 160 0 a80 80 0 1 0 -160 0"/><path class="s" pathLength="1" d="M100 20 Q50 100 100 180 Q150 100 100 20"/><path class="s" pathLength="1" d="M24 74 L176 74 M24 126 L176 126"/></svg></div></div></div>
+    <div id="lies-card2" class="clip el" data-start="83.992" data-duration="7.573" data-track-index="33" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:34"><div id="lies-card2-in" class="in"><div class="card"><div class="card-k">PACE OF LIFE · 31 COUNTRIES</div><div class="card-t">Robert Levine</div><div class="card-s">walking · post offices · clocks</div></div></div></div>
+    <div id="lies-sw" class="clip el" data-start="87.132" data-duration="4.383" data-track-index="34" style="position:absolute;left:1080px;top:160px;width:840px;height:920px;z-index:35" data-layout-allow-overlap><div id="lies-sw-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 116 m-68 0 a68 68 0 1 0 136 0 a68 68 0 1 0 -136 0"/><path class="s" pathLength="1" d="M84 24 L116 24 M100 24 L100 48 M152 52 L166 38"/><path class="s alm-s" pathLength="1" d="M100 116 L100 74"/><circle class="f" cx="100" cy="116" r="7"/></svg></div></div></div>
+    <div id="lies-t11" class="clip el" data-start="91.465" data-duration="4.11" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:36"><div id="lies-t11-in" class="in"><div class="txt" style="font-size:100px;font-weight:800;color:var(--ink)"><span id="lies-t11-w0" class="w acc">Switzerland<span class="tail">:</span></span> <span id="lies-t11-w1" class="w">the</span> <span id="lies-t11-w2" class="w">fastest</span></div></div></div>
+    <div id="lies-t12" class="clip el" data-start="97.425" data-duration="2.618" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:800px;z-index:37"><div id="lies-t12-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lies-t12-w0" class="w">5</span> <span id="lies-t12-w1" class="w">minutes</span> <span id="lies-t12-w2" class="w">late</span> <span id="lies-t12-w3" class="w">=</span> <span id="lies-t12-w4" class="w acc">nothing</span></div></div></div>
+    <div id="lies-t13" class="clip el" data-start="98.045" data-duration="1.998" data-track-index="37" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:38"><div id="lies-t13-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="lies-t13-w0" class="w">5</span> <span id="lies-t13-w1" class="w">minutes</span> <span id="lies-t13-w2" class="w">late</span> <span id="lies-t13-w3" class="w">=</span> <span id="lies-t13-w4" class="w alm">an</span> <span id="lies-t13-w5" class="w alm">insult</span></div></div></div>
+    <div id="lies-cl" class="clip el" data-start="100.583" data-duration="2.599" data-track-index="38" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:39" data-layout-allow-overlap><div id="lies-cl-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-80 0 a80 80 0 1 0 160 0 a80 80 0 1 0 -160 0"/><path class="s" pathLength="1" d="M100 100 L100 50"/><path class="s alm-s" pathLength="1" d="M100 100 L140 120"/><circle class="f" cx="100" cy="100" r="8"/></svg></div></div></div>
+    <div id="lies-t14" class="clip el" data-start="100.317" data-duration="2.94" data-track-index="39" style="position:absolute;left:0px;top:580px;width:1920px;height:500px;z-index:40"><div id="lies-t14-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="lies-t14-w0" class="w">your</span> <span id="lies-t14-w1" class="w">clock</span> <span id="lies-t14-w2" class="w">was</span> <span id="lies-t14-w3" class="w">set</span> <span id="lies-t14-w4" class="w acc">before</span> <span id="lies-t14-w5" class="w acc">you</span> <span id="lies-t14-w6" class="w acc">could</span> <span id="lies-t14-w7" class="w acc">read</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"lies-l1","t":"text","from":"slam","exit":null,"in":0.2,"out":1.391,"outDur":0.25,"words":[0.2,0.82,0.82,0.92]},{"id":"lies-card","t":"card","from":"top","exit":null,"in":2.891,"out":9.395,"outDur":0.3},{"id":"lies-t1","t":"text","from":"top","exit":null,"in":11.515,"out":13.681,"outDur":0.3,"words":[9.755,9.875,10.775,11.295,11.515]},{"id":"lies-c1","t":"icon","from":"left","exit":null,"in":8.731,"out":23.037000000000003,"outDur":0.3},{"id":"lies-c1l","t":"text","from":"bottom","exit":null,"in":15.721,"out":23.037000000000003,"outDur":0.3,"words":[15.121,15.221,15.321]},{"id":"lies-c2","t":"bubble","from":"pop","exit":null,"in":16.841,"out":23.037000000000003,"outDur":0.25},{"id":"lies-c2l","t":"text","from":"bottom","exit":null,"in":16.841,"out":23.037000000000003,"outDur":0.3,"words":[16.761,16.841]},{"id":"lies-t2","t":"text","from":"top","exit":null,"in":21.041,"out":23.037000000000003,"outDur":0.3,"words":[21.041,21.541,22.001]},{"id":"lies-t2b","t":"text","from":"top","exit":null,"in":24.257,"out":25.957,"outDur":0.3,"words":[25.137,25.137,25.137,25.677]},{"id":"lies-t3","t":"text","from":"top","exit":null,"in":28.377,"out":31.793000000000003,"outDur":0.3,"words":[28.377,28.477,28.577,28.677,28.777]},{"id":"lies-l2","t":"text","from":"slam","exit":null,"in":32.033,"out":33.598,"outDur":0.25,"words":[32.033,33.233,33.233,33.293]},{"id":"lies-sw","t":"icon","from":"pop","exit":null,"in":38.278,"out":39.338,"outDur":0.25},{"id":"lies-t4","t":"text","from":"bottom","exit":null,"in":37.038000000000004,"out":39.338,"outDur":0.3,"words":[37.558,37.758,38.038,38.278,38.678,38.678]},{"id":"lies-bar1","t":"bar","from":"draw","exit":null,"in":41.598,"out":56.016,"outDur":0.25},{"id":"lies-bar2","t":"bar","from":"draw","exit":null,"in":45.595,"out":56.016,"outDur":0.25},{"id":"lies-t5","t":"text","from":"top","exit":null,"in":48.475,"out":50.934999999999995,"outDur":0.3,"words":[48.895,48.895,49.675,49.675,50.435,50.435]},{"id":"lies-t5b","t":"text","from":"top","exit":null,"in":52.875,"out":56.016,"outDur":0.3,"words":[51.295,52.255,52.255,52.255,52.255,53.355,53.895,53.995,54.095,54.195]},{"id":"lies-sw2","t":"icon","from":"pop","exit":null,"in":56.256,"out":64.349,"outDur":0.25},{"id":"lies-t6","t":"text","from":"slam","exit":null,"in":56.256,"out":61.129,"outDur":0.25,"words":[56.256,56.256,56.256,56.476]},{"id":"lies-t7","t":"text","from":"bottom","exit":null,"in":58.236,"out":61.129,"outDur":0.3,"words":[57.316,57.456,57.696,58.236,58.236,59.176,59.436]},{"id":"lies-t8","t":"text","from":"top","exit":null,"in":62.169,"out":64.349,"outDur":0.3,"words":[61.369,61.649,61.969,62.169]},{"id":"lies-t9","t":"text","from":"slam","exit":null,"in":65.429,"out":68.467,"outDur":0.25,"words":[65.169,65.169,65.269,65.369,65.469]},{"id":"lies-l3","t":"text","from":"slam","exit":null,"in":68.707,"out":76.74600000000001,"outDur":0.25,"words":[68.707,70.176,70.176,70.296,70.476]},{"id":"lies-d","t":"stick","from":"left","exit":null,"in":70.476,"out":81.39200000000001,"outDur":0.3,"poses":[["point",71.511],["shrug",75.945],["holdHead",78.906]],"mouth":[["smile",71.511],["o",78.906]]},{"id":"lies-o1","t":"icon","from":"pop","exit":null,"in":71.511,"out":76.74600000000001,"outDur":0.25},{"id":"lies-o2","t":"icon","from":"pop","exit":null,"in":72.371,"out":76.74600000000001,"outDur":0.25},{"id":"lies-o3","t":"icon","from":"pop","exit":null,"in":73.851,"out":76.74600000000001,"outDur":0.25},{"id":"lies-o1l","t":"text","from":"bottom","exit":null,"in":71.511,"out":76.74600000000001,"outDur":0.3,"words":[71.511]},{"id":"lies-o2l","t":"text","from":"bottom","exit":null,"in":72.371,"out":76.74600000000001,"outDur":0.3,"words":[72.371]},{"id":"lies-o3l","t":"text","from":"bottom","exit":null,"in":73.851,"out":76.74600000000001,"outDur":0.3,"words":[73.851]},{"id":"lies-t10","t":"text","from":"slam","exit":null,"in":78.246,"out":81.39200000000001,"outDur":0.25,"words":[78.646,78.646]},{"id":"lies-gl","t":"icon","from":"pop","exit":null,"in":82.112,"out":91.22500000000001,"outDur":0.25},{"id":"lies-card2","t":"card","from":"top","exit":null,"in":83.992,"out":91.22500000000001,"outDur":0.3},{"id":"lies-sw","t":"icon","from":"pop","exit":null,"in":87.132,"out":91.22500000000001,"outDur":0.25},{"id":"lies-t11","t":"text","from":"slam","exit":null,"in":91.465,"out":95.28500000000001,"outDur":0.25,"words":[91.465,92.345,92.345]},{"id":"lies-t12","t":"text","from":"left","exit":null,"in":97.425,"out":99.703,"outDur":0.3,"words":[96.685,96.685,96.885,97.425,97.425]},{"id":"lies-t13","t":"text","from":"right","exit":null,"in":98.045,"out":99.703,"outDur":0.3,"words":[98.785,98.785,98.785,98.785,98.785,98.865]},{"id":"lies-cl","t":"icon","from":"pop","exit":null,"in":100.583,"out":102.892,"outDur":0.25},{"id":"lies-t14","t":"text","from":"bottom","exit":null,"in":100.317,"out":102.91699999999999,"outDur":0.3,"words":[100.483,100.583,100.803,101.063,101.323,101.703,101.923,102.283]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["lies"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,3354 @@
+{
+ "title": "The Psychology of People Who Are Always Late",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "\"I'll be there in five minutes.\""
+    },
+    {
+     "id": "b01",
+     "say": "You've sent that text."
+    },
+    {
+     "id": "b02",
+     "say": "Maybe today."
+    },
+    {
+     "id": "b03",
+     "say": "And twenty minutes later, someone is still sitting alone at a table, watching the door."
+    },
+    {
+     "id": "b04",
+     "say": "Here's the strange part."
+    },
+    {
+     "id": "b05",
+     "say": "You weren't lying when you sent it."
+    },
+    {
+     "id": "b06",
+     "say": "You really believed five minutes."
+    },
+    {
+     "id": "b07",
+     "say": "So did a Nobel Prize winner."
+    },
+    {
+     "id": "b08",
+     "say": "So did an entire country, for ten years."
+    },
+    {
+     "id": "b09",
+     "say": "By the end of this video, you'll know why your brain gets time wrong."
+    },
+    {
+     "id": "b10",
+     "say": "And the one question that fixes it."
+    },
+    {
+     "id": "b11",
+     "say": "Let's find out where those missing fifteen minutes actually go."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 560,
+     "y": 560,
+     "size": 300,
+     "from": "none",
+     "at": "b00:start",
+     "out": "b03",
+     "startAtZero": true
+    },
+    {
+     "t": "bubble",
+     "id": "msg",
+     "text": "I'll be there in 5 minutes.",
+     "x": 1180,
+     "y": 420,
+     "size": 300,
+     "from": "pop",
+     "at": "b00:start",
+     "fontSize": 46,
+     "out": "b03"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "you've sent this. maybe *today*.",
+     "x": 1180,
+     "y": 760,
+     "size": 60,
+     "from": "bottom",
+     "at": "b01:sent",
+     "out": "b03"
+    },
+    {
+     "t": "stick",
+     "id": "f",
+     "x": 1150,
+     "y": 650,
+     "from": "right",
+     "at": "b03:someone",
+     "poses": [
+      [
+       "headDown",
+       "b03:someone"
+      ],
+      [
+       "idle",
+       "b03:watching"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b03:someone"
+      ]
+     ],
+     "out": "b05",
+     "scale": 0.75,
+     "sit": true
+    },
+    {
+     "t": "icon",
+     "id": "tb",
+     "name": "table",
+     "x": 1200,
+     "y": 700,
+     "size": 300,
+     "from": "right",
+     "at": "b03:someone",
+     "out": "b05"
+    },
+    {
+     "t": "icon",
+     "id": "door",
+     "name": "door",
+     "x": 420,
+     "y": 600,
+     "size": 260,
+     "from": "left",
+     "at": "b03:door",
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "+20 minutes",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "slam",
+     "at": "b03:twenty",
+     "out": "b04",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "the *strange* part",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b04:strange",
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "you weren't !lying!",
+     "x": 960,
+     "y": 440,
+     "size": 96,
+     "from": "slam",
+     "at": "b05:lying",
+     "out": "b06"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "you *believed* five minutes",
+     "x": 960,
+     "y": 440,
+     "size": 80,
+     "from": "top",
+     "at": "b06:believed",
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "md",
+     "name": "medal",
+     "x": 600,
+     "y": 560,
+     "size": 260,
+     "from": "left",
+     "at": "b07:nobel",
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "m1",
+     "text": "a *Nobel* winner",
+     "x": 600,
+     "y": 820,
+     "size": 60,
+     "from": "bottom",
+     "at": "b07:nobel",
+     "out": "b09"
+    },
+    {
+     "t": "icon",
+     "id": "op",
+     "name": "opera",
+     "x": 1320,
+     "y": 560,
+     "size": 300,
+     "from": "right",
+     "at": "b08:country",
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "m2",
+     "text": "a whole *country*, 10 years",
+     "x": 1320,
+     "y": 820,
+     "size": 60,
+     "from": "bottom",
+     "at": "b08:country",
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "why your brain gets *time* wrong",
+     "x": 960,
+     "y": 380,
+     "size": 72,
+     "from": "top",
+     "at": "b09:time",
+     "out": "b11"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 640,
+     "size": 200,
+     "from": "pop",
+     "at": "b10:question",
+     "out": "b11"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "+ the *one question* that fixes it",
+     "x": 960,
+     "y": 860,
+     "size": 56,
+     "from": "bottom",
+     "at": "b10:question",
+     "out": "b11"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "where do *15 minutes* go?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b11:fifteen",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "opera",
+   "beats": [
+    {
+     "id": "b12",
+     "say": "Let's start with the country."
+    },
+    {
+     "id": "b13",
+     "say": "In nineteen fifty-seven, Sydney picked a design for a new opera house."
+    },
+    {
+     "id": "b14",
+     "say": "The plan said it would be finished by nineteen sixty-three, for about seven million dollars."
+    },
+    {
+     "id": "b15",
+     "say": "It opened in nineteen seventy-three."
+    },
+    {
+     "id": "b16",
+     "say": "Ten years late."
+    },
+    {
+     "id": "b17",
+     "say": "And the final bill was about, one hundred and two million dollars."
+    },
+    {
+     "id": "b18",
+     "say": "That's more than fourteen times the original price."
+    },
+    {
+     "id": "b19",
+     "say": "The architect, Jørn Utzon, never even saw it finished."
+    },
+    {
+     "id": "b20",
+     "say": "He quit in nineteen sixty-six, after a fight over money, and went home to Denmark."
+    },
+    {
+     "id": "b21",
+     "say": "When the Queen opened his building in nineteen seventy-three, he reportedly wasn't even watching on TV."
+    },
+    {
+     "id": "b22",
+     "say": "You'd think that kind of disaster only happens to giant projects."
+    },
+    {
+     "id": "b23",
+     "say": "It doesn't."
+    },
+    {
+     "id": "b24",
+     "say": "Because the man who explained it, was making the same mistake, at the very same time."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "01",
+     "text": "Ten years *late*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b12:start",
+     "out": "b13:nineteen"
+    },
+    {
+     "t": "icon",
+     "id": "op",
+     "name": "opera",
+     "x": 960,
+     "y": 560,
+     "size": 440,
+     "from": "bottom",
+     "at": "b13:opera",
+     "out": "b17"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "Sydney · *1957*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b13:sydney",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "plan: *1963* · *$7 million*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b14:plan",
+     "out": "b15"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "opened: !1973!",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "slam",
+     "at": "b15:opened",
+     "out": "b16"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "10 YEARS LATE",
+     "x": 960,
+     "y": 200,
+     "size": 110,
+     "from": "slam",
+     "at": "b16:ten",
+     "out": "b17",
+     "hero": true
+    },
+    {
+     "t": "bar",
+     "id": "bar1",
+     "x": 760,
+     "y": 880,
+     "w": 170,
+     "h": 30,
+     "color": "muted",
+     "label": "planned $7M",
+     "from": "draw",
+     "at": "b17:bill",
+     "out": "b19"
+    },
+    {
+     "t": "bar",
+     "id": "bar2",
+     "x": 1160,
+     "y": 880,
+     "w": 170,
+     "h": 420,
+     "color": "accent",
+     "label": "actual $102M",
+     "from": "draw",
+     "at": "b17:hundred",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "!14×! the price",
+     "x": 960,
+     "y": 200,
+     "size": 100,
+     "from": "slam",
+     "at": "b18:fourteen",
+     "out": "b19",
+     "hero": true
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "ARCHITECT",
+     "text": "Jørn Utzon",
+     "sub": "never saw it finished",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b19:architect",
+     "out": "b21"
+    },
+    {
+     "t": "stick",
+     "id": "u",
+     "x": 960,
+     "y": 600,
+     "from": "top",
+     "at": "b19:utzon",
+     "poses": [
+      [
+       "headDown",
+       "b19:never"
+      ],
+      [
+       "give",
+       "b20:quit"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b19:never"
+      ]
+     ],
+     "out": "b21"
+    },
+    {
+     "t": "icon",
+     "id": "bc",
+     "name": "briefcase",
+     "x": 1240,
+     "y": 760,
+     "size": 140,
+     "from": "pop",
+     "at": "b20:home",
+     "out": "b21"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "quit *1966* · went home to Denmark",
+     "x": 960,
+     "y": 900,
+     "size": 56,
+     "from": "bottom",
+     "at": "b20:quit",
+     "out": "b21"
+    },
+    {
+     "t": "icon",
+     "id": "tv",
+     "name": "tvOff",
+     "x": 960,
+     "y": 560,
+     "size": 300,
+     "from": "pop",
+     "at": "b21:queen",
+     "out": "b22"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "the opening, 1973: *not watching*",
+     "x": 960,
+     "y": 840,
+     "size": 60,
+     "from": "bottom",
+     "at": "b21:watching",
+     "out": "b22"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "only *giant* projects?",
+     "x": 960,
+     "y": 440,
+     "size": 90,
+     "from": "top",
+     "at": "b22:giant",
+     "out": "b23"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "!NO!",
+     "x": 960,
+     "y": 440,
+     "size": 200,
+     "from": "slam",
+     "at": "b23:doesn't",
+     "out": "b24",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "the man who *explained* it",
+     "x": 960,
+     "y": 420,
+     "size": 72,
+     "from": "left",
+     "at": "b24:explained",
+     "out": "b25"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "made the *same mistake*",
+     "x": 960,
+     "y": 560,
+     "size": 72,
+     "from": "right",
+     "at": "b24:mistake",
+     "out": "b25"
+    }
+   ]
+  },
+  {
+   "id": "kahneman",
+   "beats": [
+    {
+     "id": "b25",
+     "say": "His name was Daniel Kahneman."
+    },
+    {
+     "id": "b26",
+     "say": "In the early nineteen-seventies, he was on a team writing a new school textbook in Israel."
+    },
+    {
+     "id": "b27",
+     "say": "After a year of work, he asked everyone a simple question."
+    },
+    {
+     "id": "b28",
+     "say": "How long until we're done?"
+    },
+    {
+     "id": "b29",
+     "say": "Everyone wrote down a number."
+    },
+    {
+     "id": "b30",
+     "say": "They all said about two years."
+    },
+    {
+     "id": "b31",
+     "say": "Then Kahneman turned to the team's curriculum expert, and asked something different."
+    },
+    {
+     "id": "b32",
+     "say": "How long did other teams like ours take?"
+    },
+    {
+     "id": "b33",
+     "say": "The expert went quiet."
+    },
+    {
+     "id": "b34",
+     "say": "Then he admitted it."
+    },
+    {
+     "id": "b35",
+     "say": "About forty percent of those teams, never finished at all."
+    },
+    {
+     "id": "b36",
+     "say": "The rest took seven to ten years."
+    },
+    {
+     "id": "b37",
+     "say": "So how did their own team compare?"
+    },
+    {
+     "id": "b38",
+     "say": "\"Below average,\" he said."
+    },
+    {
+     "id": "b39",
+     "say": "\"But not by much.\""
+    },
+    {
+     "id": "b40",
+     "say": "Nobody quit."
+    },
+    {
+     "id": "b41",
+     "say": "Nobody changed the plan."
+    },
+    {
+     "id": "b42",
+     "say": "The book took eight years."
+    },
+    {
+     "id": "b43",
+     "say": "Kahneman later wrote that they should probably have quit that day."
+    },
+    {
+     "id": "b44",
+     "say": "In nineteen seventy-nine, Kahneman and Amos Tversky gave this mistake its name: the planning fallacy."
+    },
+    {
+     "id": "b45",
+     "say": "We plan for the best-case future."
+    },
+    {
+     "id": "b46",
+     "say": "Then the real one shows up."
+    },
+    {
+     "id": "b47",
+     "say": "That same year, the writer Douglas Hofstadter published a joke about it."
+    },
+    {
+     "id": "b48",
+     "say": "\"It always takes longer than you expect, even when you take into account Hofstadter's Law.\""
+    },
+    {
+     "id": "b49",
+     "say": "It's a joke."
+    },
+    {
+     "id": "b50",
+     "say": "It's also painfully accurate."
+    }
+   ],
+   "elements": [
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "PSYCHOLOGIST · NOBEL PRIZE 2002",
+     "text": "Daniel Kahneman",
+     "sub": "Israel, early 1970s",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b25:kahneman",
+     "out": "b27"
+    },
+    {
+     "t": "stick",
+     "id": "tm0",
+     "x": 520,
+     "y": 680,
+     "from": "bottom",
+     "at": "b26:team",
+     "poses": [
+      [
+       "idle",
+       "b26:team"
+      ],
+      [
+       "shrug",
+       "b28:long"
+      ],
+      [
+       "happy",
+       "b30:two"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b26:team"
+      ],
+      [
+       "smile",
+       "b30:two"
+      ]
+     ],
+     "out": "b33",
+     "scale": 0.6,
+     "flip": false,
+     "delay": 0.0
+    },
+    {
+     "t": "stick",
+     "id": "tm1",
+     "x": 740,
+     "y": 680,
+     "from": "bottom",
+     "at": "b26:team",
+     "poses": [
+      [
+       "idle",
+       "b26:team"
+      ],
+      [
+       "shrug",
+       "b28:long"
+      ],
+      [
+       "happy",
+       "b30:two"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b26:team"
+      ],
+      [
+       "smile",
+       "b30:two"
+      ]
+     ],
+     "out": "b33",
+     "scale": 0.6,
+     "flip": true,
+     "delay": 0.05
+    },
+    {
+     "t": "stick",
+     "id": "tm2",
+     "x": 960,
+     "y": 680,
+     "from": "bottom",
+     "at": "b26:team",
+     "poses": [
+      [
+       "idle",
+       "b26:team"
+      ],
+      [
+       "shrug",
+       "b28:long"
+      ],
+      [
+       "happy",
+       "b30:two"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b26:team"
+      ],
+      [
+       "smile",
+       "b30:two"
+      ]
+     ],
+     "out": "b33",
+     "scale": 0.6,
+     "flip": false,
+     "delay": 0.1
+    },
+    {
+     "t": "stick",
+     "id": "tm3",
+     "x": 1180,
+     "y": 680,
+     "from": "bottom",
+     "at": "b26:team",
+     "poses": [
+      [
+       "idle",
+       "b26:team"
+      ],
+      [
+       "shrug",
+       "b28:long"
+      ],
+      [
+       "happy",
+       "b30:two"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b26:team"
+      ],
+      [
+       "smile",
+       "b30:two"
+      ]
+     ],
+     "out": "b33",
+     "scale": 0.6,
+     "flip": true,
+     "delay": 0.15000000000000002
+    },
+    {
+     "t": "stick",
+     "id": "tm4",
+     "x": 1400,
+     "y": 680,
+     "from": "bottom",
+     "at": "b26:team",
+     "poses": [
+      [
+       "idle",
+       "b26:team"
+      ],
+      [
+       "shrug",
+       "b28:long"
+      ],
+      [
+       "happy",
+       "b30:two"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b26:team"
+      ],
+      [
+       "smile",
+       "b30:two"
+      ]
+     ],
+     "out": "b33",
+     "scale": 0.6,
+     "flip": false,
+     "delay": 0.2
+    },
+    {
+     "t": "icon",
+     "id": "bk",
+     "name": "book",
+     "x": 1680,
+     "y": 640,
+     "size": 200,
+     "from": "right",
+     "at": "b26:textbook",
+     "out": "b33"
+    },
+    {
+     "t": "bubble",
+     "id": "q1",
+     "text": "How long until we're done?",
+     "x": 960,
+     "y": 260,
+     "size": 380,
+     "from": "pop",
+     "at": "b28:long",
+     "fontSize": 42,
+     "out": "b29"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "everyone: about *2 years*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b30:two",
+     "out": "b31"
+    },
+    {
+     "t": "bubble",
+     "id": "q2",
+     "text": "How long did OTHER teams take?",
+     "x": 960,
+     "y": 260,
+     "size": 400,
+     "from": "pop",
+     "at": "b32:other",
+     "fontSize": 40,
+     "out": "b33"
+    },
+    {
+     "t": "stick",
+     "id": "ex",
+     "x": 960,
+     "y": 640,
+     "from": "top",
+     "at": "b33:expert",
+     "poses": [
+      [
+       "headDown",
+       "b33:quiet"
+      ],
+      [
+       "shrug",
+       "b34:admitted"
+      ],
+      [
+       "give",
+       "b38:below"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b33:quiet"
+      ],
+      [
+       "o",
+       "b34:admitted"
+      ],
+      [
+       "smile",
+       "b38:below"
+      ]
+     ],
+     "out": "b40"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "the expert went *quiet*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b33:quiet",
+     "out": "b34"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "!40%! never finished",
+     "x": 960,
+     "y": 220,
+     "size": 96,
+     "from": "slam",
+     "at": "b35:forty",
+     "out": "b36",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "the rest: *7–10 years*",
+     "x": 960,
+     "y": 220,
+     "size": 80,
+     "from": "top",
+     "at": "b36:seven",
+     "out": "b37"
+    },
+    {
+     "t": "bubble",
+     "id": "q3",
+     "text": "Below average… but not by much.",
+     "x": 1440,
+     "y": 300,
+     "size": 380,
+     "from": "pop",
+     "at": "b38:below",
+     "fontSize": 40,
+     "out": "b40"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "nobody *quit*",
+     "x": 960,
+     "y": 360,
+     "size": 80,
+     "from": "left",
+     "at": "b40:quit",
+     "out": "b42"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "nobody changed the *plan*",
+     "x": 960,
+     "y": 500,
+     "size": 80,
+     "from": "right",
+     "at": "b41:plan",
+     "out": "b42"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "it took !8 YEARS!",
+     "x": 960,
+     "y": 460,
+     "size": 130,
+     "from": "slam",
+     "at": "b42:eight",
+     "out": "b43",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "“we should have *quit* that day”",
+     "x": 960,
+     "y": 460,
+     "size": 72,
+     "from": "top",
+     "at": "b43:quit",
+     "out": "b44"
+    },
+    {
+     "t": "card",
+     "id": "card2",
+     "kicker": "1979 · KAHNEMAN & TVERSKY",
+     "text": "The planning fallacy",
+     "sub": "a name for the mistake",
+     "x": 960,
+     "y": 260,
+     "from": "top",
+     "at": "b44:nineteen",
+     "out": "b47"
+    },
+    {
+     "t": "icon",
+     "id": "brn",
+     "name": "brain",
+     "x": 960,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b44:mistake",
+     "out": "b45"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "we plan for the *best case*",
+     "x": 960,
+     "y": 560,
+     "size": 72,
+     "from": "left",
+     "at": "b45:best",
+     "out": "b47"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "then the !real one! shows up",
+     "x": 960,
+     "y": 700,
+     "size": 72,
+     "from": "right",
+     "at": "b46:real",
+     "out": "b47"
+    },
+    {
+     "t": "card",
+     "id": "card3",
+     "kicker": "1979 · DOUGLAS HOFSTADTER",
+     "text": "Hofstadter's Law",
+     "sub": "a joke that became famous",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b47:hofstadter",
+     "out": "b51"
+    },
+    {
+     "t": "bubble",
+     "id": "q4",
+     "text": "It always takes longer than you expect…",
+     "x": 960,
+     "y": 560,
+     "size": 420,
+     "from": "pop",
+     "at": "b48:always",
+     "fontSize": 42,
+     "out": "b49"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "…even when you expect *that*.",
+     "x": 960,
+     "y": 860,
+     "size": 56,
+     "from": "bottom",
+     "at": "b48:even",
+     "out": "b49"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "a *joke*",
+     "x": 960,
+     "y": 520,
+     "size": 90,
+     "from": "left",
+     "at": "b49:joke",
+     "out": "b51"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "and painfully !accurate!",
+     "x": 960,
+     "y": 660,
+     "size": 80,
+     "from": "right",
+     "at": "b50:accurate",
+     "out": "b51"
+    }
+   ]
+  },
+  {
+   "id": "data",
+   "beats": [
+    {
+     "id": "b51",
+     "say": "And the numbers back it up."
+    },
+    {
+     "id": "b52",
+     "say": "The economist Bent Flyvbjerg collected data on more than sixteen thousand big projects, in over a hundred countries."
+    },
+    {
+     "id": "b53",
+     "say": "Only about eight and a half percent, finished on time and on budget."
+    },
+    {
+     "id": "b54",
+     "say": "Just half a percent also delivered everything they promised."
+    },
+    {
+     "id": "b55",
+     "say": "He calls it the iron law: over budget, over time, over and over again."
+    },
+    {
+     "id": "b56",
+     "say": "Boston's \"Big Dig\" tunnel was first budgeted at about two point eight billion dollars."
+    },
+    {
+     "id": "b57",
+     "say": "It finished years late, in two thousand seven, at about fourteen point six billion."
+    },
+    {
+     "id": "b58",
+     "say": "Even airlines plan around it."
+    },
+    {
+     "id": "b59",
+     "say": "Many pad their schedules, so a slow flight can still land, \"on time.\""
+    },
+    {
+     "id": "b60",
+     "say": "But maybe you're thinking: that's governments and giant companies."
+    },
+    {
+     "id": "b61",
+     "say": "I'm just late for brunch."
+    },
+    {
+     "id": "b62",
+     "say": "So let's shrink it down."
+    },
+    {
+     "id": "b63",
+     "say": "To one student, and one deadline."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the *numbers*",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b51:numbers",
+     "out": "b52"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "ECONOMIST · BENT FLYVBJERG",
+     "text": "16,000+ big projects",
+     "sub": "in 100+ countries",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b52:economist",
+     "out": "b53"
+    },
+    {
+     "t": "icon",
+     "id": "grid",
+     "name": "grid",
+     "x": 960,
+     "y": 600,
+     "size": 300,
+     "from": "pop",
+     "at": "b52:projects",
+     "out": "b53"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "!8.5%! on time and on budget",
+     "x": 960,
+     "y": 420,
+     "size": 96,
+     "from": "slam",
+     "at": "b53:eight",
+     "out": "b54",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "*0.5%* delivered what they promised",
+     "x": 960,
+     "y": 600,
+     "size": 64,
+     "from": "bottom",
+     "at": "b54:half",
+     "out": "b55"
+    },
+    {
+     "t": "text",
+     "id": "w1",
+     "text": "over *budget*",
+     "x": 960,
+     "y": 300,
+     "size": 80,
+     "from": "left",
+     "at": "b55:budget",
+     "out": "b56"
+    },
+    {
+     "t": "text",
+     "id": "w2",
+     "text": "over *time*",
+     "x": 960,
+     "y": 440,
+     "size": 80,
+     "from": "right",
+     "at": "b55:time",
+     "out": "b56"
+    },
+    {
+     "t": "text",
+     "id": "w3",
+     "text": "over and over !again!",
+     "x": 960,
+     "y": 580,
+     "size": 80,
+     "from": "left",
+     "at": "b55:again",
+     "out": "b56"
+    },
+    {
+     "t": "icon",
+     "id": "tn",
+     "name": "tunnel",
+     "x": 960,
+     "y": 560,
+     "size": 300,
+     "from": "bottom",
+     "at": "b56:tunnel",
+     "out": "b58"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "Boston's *Big Dig*: $2.8 billion",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b56:budgeted",
+     "out": "b57"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "final: !$14.6 billion! · 2007",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "slam",
+     "at": "b57:fourteen",
+     "out": "b58"
+    },
+    {
+     "t": "icon",
+     "id": "pl",
+     "name": "plane",
+     "x": 960,
+     "y": 560,
+     "size": 280,
+     "from": "right",
+     "at": "b58:airlines",
+     "out": "b60"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "airlines *pad* their schedules",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b59:pad",
+     "out": "b60"
+    },
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 960,
+     "y": 650,
+     "from": "bottom",
+     "at": "b60:thinking",
+     "poses": [
+      [
+       "shrug",
+       "b60:thinking"
+      ],
+      [
+       "happy",
+       "b61:brunch"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b60:thinking"
+      ],
+      [
+       "smile",
+       "b61:brunch"
+      ]
+     ],
+     "out": "b62"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "“I'm just late for *brunch*”",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b61:brunch",
+     "out": "b62"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "one *student*, one *deadline*",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "slam",
+     "at": "b63:student"
+    }
+   ]
+  },
+  {
+   "id": "thesis",
+   "beats": [
+    {
+     "id": "b64",
+     "say": "In nineteen ninety-four, Canadian researchers asked thirty-seven psychology students about their final-year thesis."
+    },
+    {
+     "id": "b65",
+     "say": "When will you finish?"
+    },
+    {
+     "id": "b66",
+     "say": ", Give us your best guess."
+    },
+    {
+     "id": "b67",
+     "say": "On average, they said about, thirty-four days."
+    },
+    {
+     "id": "b68",
+     "say": "Then the researchers asked a sneakier question."
+    },
+    {
+     "id": "b69",
+     "say": "What if everything goes as badly as it possibly could?"
+    },
+    {
+     "id": "b70",
+     "say": "Their worst-case guess was about, forty-nine days."
+    },
+    {
+     "id": "b71",
+     "say": "So, how long did it really take?"
+    },
+    {
+     "id": "b72",
+     "say": "About, fifty-five days."
+    },
+    {
+     "id": "b73",
+     "say": "Later than their own worst-case scenario."
+    },
+    {
+     "id": "b74",
+     "say": "Think about that."
+    },
+    {
+     "id": "b75",
+     "say": "They planned for disaster, and reality was worse than the disaster."
+    },
+    {
+     "id": "b76",
+     "say": "Only about thirty percent finished by the day they'd predicted."
+    },
+    {
+     "id": "b77",
+     "say": "And many of them knew they were usually late."
+    },
+    {
+     "id": "b78",
+     "say": "They just didn't think it would happen this time."
+    },
+    {
+     "id": "b79",
+     "say": "Researchers call that the inside view."
+    },
+    {
+     "id": "b80",
+     "say": "You picture this task, this week, going smoothly."
+    },
+    {
+     "id": "b81",
+     "say": "You don't picture the printer jam, the friend who calls, or the bus that never comes."
+    },
+    {
+     "id": "b82",
+     "say": "So why don't we learn from the last hundred times?"
+    },
+    {
+     "id": "b83",
+     "say": "Because your brain has been quietly lying to you, about all of them."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "02",
+     "text": "Later than the *worst case*",
+     "x": 960,
+     "y": 540,
+     "from": "right",
+     "at": "b64:start",
+     "out": "b64:canadian"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 1994 · CANADA",
+     "text": "37 students, one thesis",
+     "sub": "Buehler, Griffin & Ross",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b64:researchers",
+     "out": "b65"
+    },
+    {
+     "t": "stick",
+     "id": "s",
+     "x": 440,
+     "y": 660,
+     "from": "left",
+     "at": "b64:students",
+     "poses": [
+      [
+       "idle",
+       "b64:students"
+      ],
+      [
+       "point",
+       "b67:average"
+      ],
+      [
+       "shrug",
+       "b70:worst"
+      ],
+      [
+       "holdHead",
+       "b72:fifty"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b64:students"
+      ],
+      [
+       "smile",
+       "b67:average"
+      ],
+      [
+       "o",
+       "b72:fifty"
+      ]
+     ],
+     "out": "b77"
+    },
+    {
+     "t": "bubble",
+     "id": "q1",
+     "text": "When will you finish?",
+     "x": 1240,
+     "y": 380,
+     "size": 300,
+     "from": "pop",
+     "at": "b65:finish",
+     "fontSize": 44,
+     "out": "b67"
+    },
+    {
+     "t": "bar",
+     "id": "bar1",
+     "x": 960,
+     "y": 860,
+     "w": 170,
+     "h": 247,
+     "color": "muted",
+     "label": "best guess: 34",
+     "from": "draw",
+     "at": "b67:thirty",
+     "out": "b77"
+    },
+    {
+     "t": "bubble",
+     "id": "q2",
+     "text": "What if everything goes badly?",
+     "x": 1240,
+     "y": 300,
+     "size": 360,
+     "from": "pop",
+     "at": "b69:badly",
+     "fontSize": 40,
+     "out": "b70"
+    },
+    {
+     "t": "bar",
+     "id": "bar2",
+     "x": 1240,
+     "y": 860,
+     "w": 170,
+     "h": 356,
+     "color": "muted",
+     "label": "worst case: 49",
+     "from": "draw",
+     "at": "b70:forty",
+     "out": "b77"
+    },
+    {
+     "t": "bar",
+     "id": "bar3",
+     "x": 1520,
+     "y": 860,
+     "w": 170,
+     "h": 400,
+     "color": "accent",
+     "label": "actual: 55",
+     "from": "draw",
+     "at": "b72:fifty",
+     "out": "b77"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "how long did it *really* take?",
+     "x": 1240,
+     "y": 220,
+     "size": 60,
+     "from": "top",
+     "at": "b71:really",
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "later than the !worst case!",
+     "x": 1240,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b73:later",
+     "out": "b75"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "reality was *worse than the disaster*",
+     "x": 1240,
+     "y": 220,
+     "size": 52,
+     "from": "top",
+     "at": "b75:worse",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "only *30%* on time",
+     "x": 1240,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b76:thirty",
+     "out": "b77"
+    },
+    {
+     "t": "bubble",
+     "id": "q3",
+     "text": "This time will be different.",
+     "x": 960,
+     "y": 300,
+     "size": 360,
+     "from": "pop",
+     "at": "b78:this",
+     "fontSize": 44,
+     "out": "b79"
+    },
+    {
+     "t": "stick",
+     "id": "s2",
+     "x": 960,
+     "y": 660,
+     "from": "bottom",
+     "at": "b77:knew",
+     "poses": [
+      [
+       "happy",
+       "b77:knew"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b77:knew"
+      ]
+     ],
+     "out": "b79"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "the *inside view*",
+     "x": 960,
+     "y": 460,
+     "size": 110,
+     "from": "slam",
+     "at": "b79:inside",
+     "out": "b80",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "*this* task, *this* week, going smoothly",
+     "x": 960,
+     "y": 220,
+     "size": 60,
+     "from": "top",
+     "at": "b80:task",
+     "out": "b81"
+    },
+    {
+     "t": "icon",
+     "id": "i1",
+     "name": "paper",
+     "x": 520,
+     "y": 560,
+     "size": 220,
+     "from": "left",
+     "at": "b81:printer",
+     "out": "b82"
+    },
+    {
+     "t": "icon",
+     "id": "i2",
+     "name": "phone",
+     "x": 960,
+     "y": 560,
+     "size": 220,
+     "from": "top",
+     "at": "b81:friend",
+     "out": "b82"
+    },
+    {
+     "t": "icon",
+     "id": "i3",
+     "name": "train",
+     "x": 1400,
+     "y": 560,
+     "size": 240,
+     "from": "right",
+     "at": "b81:bus",
+     "out": "b82"
+    },
+    {
+     "t": "text",
+     "id": "i1l",
+     "text": "printer jam",
+     "x": 520,
+     "y": 800,
+     "size": 52,
+     "from": "bottom",
+     "at": "b81:printer",
+     "out": "b82"
+    },
+    {
+     "t": "text",
+     "id": "i2l",
+     "text": "a call",
+     "x": 960,
+     "y": 800,
+     "size": 52,
+     "from": "bottom",
+     "at": "b81:friend",
+     "out": "b82"
+    },
+    {
+     "t": "text",
+     "id": "i3l",
+     "text": "the bus",
+     "x": 1400,
+     "y": 800,
+     "size": 52,
+     "from": "bottom",
+     "at": "b81:bus",
+     "out": "b82"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "why don't we *learn*?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b82:learn",
+     "out": "b83"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "brain",
+     "x": 960,
+     "y": 540,
+     "size": 260,
+     "from": "pop",
+     "at": "b83:brain"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "your brain is !lying! to you",
+     "x": 960,
+     "y": 830,
+     "size": 72,
+     "from": "bottom",
+     "at": "b83:lying"
+    }
+   ]
+  },
+  {
+   "id": "lies",
+   "beats": [
+    {
+     "id": "b84",
+     "say": "Lie number one: your memory."
+    },
+    {
+     "id": "b85",
+     "say": "In two thousand five, psychologists reviewed the research on how we predict time."
+    },
+    {
+     "id": "b86",
+     "say": "We base our guesses on how long things took before."
+    },
+    {
+     "id": "b87",
+     "say": "But we remember those past tasks as shorter than they really were."
+    },
+    {
+     "id": "b88",
+     "say": "Your morning routine might really take forty minutes."
+    },
+    {
+     "id": "b89",
+     "say": "Your memory might say twenty-five."
+    },
+    {
+     "id": "b90",
+     "say": "So you plan tomorrow using the wrong number."
+    },
+    {
+     "id": "b91",
+     "say": "Every, single, day."
+    },
+    {
+     "id": "b92",
+     "say": "Two years later, the same researchers tested it."
+    },
+    {
+     "id": "b93",
+     "say": "The people who remembered past tasks as shortest, underestimated the next one the most."
+    },
+    {
+     "id": "b94",
+     "say": "Lie number two: your sense of a minute."
+    },
+    {
+     "id": "b95",
+     "say": "Researchers at San Diego State asked people to sit quietly, and guess when one minute had passed."
+    },
+    {
+     "id": "b96",
+     "say": "Hurried \"Type A\" people called it at about, fifty-eight seconds."
+    },
+    {
+     "id": "b97",
+     "say": "Relaxed \"Type B\" people waited until about, seventy-seven seconds."
+    },
+    {
+     "id": "b98",
+     "say": "That's almost twenty seconds of difference, in a single minute."
+    },
+    {
+     "id": "b99",
+     "say": "When one person thinks the minute is up, the other still has twenty seconds to go."
+    },
+    {
+     "id": "b100",
+     "say": "Try it yourself."
+    },
+    {
+     "id": "b101",
+     "say": "Close your eyes, count to what feels like one minute, then check a clock."
+    },
+    {
+     "id": "b102",
+     "say": "Most people are off."
+    },
+    {
+     "id": "b103",
+     "say": "And now you know which way you lean."
+    },
+    {
+     "id": "b104",
+     "say": "So \"five minutes\" literally doesn't mean the same thing to everyone."
+    },
+    {
+     "id": "b105",
+     "say": "Lie number three: \"I'll just do one more thing.\""
+    },
+    {
+     "id": "b106",
+     "say": "One more email."
+    },
+    {
+     "id": "b107",
+     "say": "One more episode."
+    },
+    {
+     "id": "b108",
+     "say": "One more look for the keys."
+    },
+    {
+     "id": "b109",
+     "say": "Each one feels like it takes no time at all."
+    },
+    {
+     "id": "b110",
+     "say": "Stack three of them, and you're fifteen minutes late, before you've found your shoes."
+    },
+    {
+     "id": "b111",
+     "say": "And then there's culture."
+    },
+    {
+     "id": "b112",
+     "say": "Psychologist Robert Levine measured the pace of life in thirty-one countries."
+    },
+    {
+     "id": "b113",
+     "say": "He timed people walking, timed post office clerks, and checked the public clocks."
+    },
+    {
+     "id": "b114",
+     "say": "Switzerland came out fastest, with Japan and Western Europe close behind."
+    },
+    {
+     "id": "b115",
+     "say": "In some places, five minutes late is nothing."
+    },
+    {
+     "id": "b116",
+     "say": "In others, it's an insult."
+    },
+    {
+     "id": "b117",
+     "say": "So part of your clock was set, before you could even read one."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "LIE #1: YOUR MEMORY",
+     "x": 960,
+     "y": 480,
+     "size": 110,
+     "from": "slam",
+     "at": "b84:lie",
+     "out": "b85",
+     "hero": true
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "REVIEW · 2005",
+     "text": "Memory bias",
+     "sub": "Roy, Christenfeld & McKenzie",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b85:psychologists",
+     "out": "b87"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "we remember tasks as *shorter*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b87:shorter",
+     "out": "b88"
+    },
+    {
+     "t": "icon",
+     "id": "c1",
+     "name": "clock",
+     "x": 600,
+     "y": 560,
+     "size": 260,
+     "from": "left",
+     "at": "b86:before",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "c1l",
+     "text": "real: *40 min*",
+     "x": 600,
+     "y": 820,
+     "size": 60,
+     "from": "bottom",
+     "at": "b88:forty",
+     "out": "b92"
+    },
+    {
+     "t": "bubble",
+     "id": "c2",
+     "text": "25 min",
+     "x": 1300,
+     "y": 480,
+     "size": 260,
+     "from": "pop",
+     "at": "b89:memory",
+     "fontSize": 60,
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "c2l",
+     "text": "your memory",
+     "x": 1300,
+     "y": 820,
+     "size": 60,
+     "from": "bottom",
+     "at": "b89:memory",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "every. single. !day.!",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b91:every",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "t2b",
+     "text": "2007: they *tested* it",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b92:tested",
+     "out": "b93"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "shortest memories → *worst* guesses",
+     "x": 960,
+     "y": 480,
+     "size": 72,
+     "from": "top",
+     "at": "b93:shortest",
+     "out": "b94"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "LIE #2: A MINUTE",
+     "x": 960,
+     "y": 480,
+     "size": 110,
+     "from": "slam",
+     "at": "b94:lie",
+     "out": "b95",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "sw",
+     "name": "stopwatch",
+     "x": 960,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b95:minute",
+     "out": "b96"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "guess when *one minute* has passed",
+     "x": 960,
+     "y": 840,
+     "size": 60,
+     "from": "bottom",
+     "at": "b95:guess",
+     "out": "b96"
+    },
+    {
+     "t": "bar",
+     "id": "bar1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 290,
+     "color": "muted",
+     "label": "Type A: 58 s",
+     "from": "draw",
+     "at": "b96:fifty",
+     "out": "b100"
+    },
+    {
+     "t": "bar",
+     "id": "bar2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 385,
+     "color": "accent",
+     "label": "Type B: 77 s",
+     "from": "draw",
+     "at": "b97:seventy",
+     "out": "b100"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "*~20 seconds* apart, in one minute",
+     "x": 960,
+     "y": 220,
+     "size": 60,
+     "from": "top",
+     "at": "b98:twenty",
+     "out": "b99"
+    },
+    {
+     "t": "text",
+     "id": "t5b",
+     "text": "one says “time!” · the other has *20 s* left",
+     "x": 960,
+     "y": 220,
+     "size": 56,
+     "from": "top",
+     "at": "b99:up",
+     "out": "b100"
+    },
+    {
+     "t": "icon",
+     "id": "sw2",
+     "name": "stopwatch",
+     "x": 960,
+     "y": 520,
+     "size": 300,
+     "from": "pop",
+     "at": "b100:try",
+     "out": "b104"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "PAUSE AND TRY IT",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "slam",
+     "at": "b100:try",
+     "out": "b102",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "close your eyes · count *one minute*",
+     "x": 960,
+     "y": 860,
+     "size": 56,
+     "from": "bottom",
+     "at": "b101:count",
+     "out": "b102"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "most people are *off*",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b102:off",
+     "out": "b104"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "5 minutes ≠ 5 minutes",
+     "x": 960,
+     "y": 480,
+     "size": 110,
+     "from": "slam",
+     "at": "b104:literally",
+     "out": "b105",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "l3",
+     "text": "LIE #3: ONE MORE THING",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "slam",
+     "at": "b105:lie",
+     "out": "b110",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "d",
+     "x": 360,
+     "y": 660,
+     "from": "left",
+     "at": "b105:thing",
+     "poses": [
+      [
+       "point",
+       "b106:email"
+      ],
+      [
+       "shrug",
+       "b109:time"
+      ],
+      [
+       "holdHead",
+       "b110:late"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b106:email"
+      ],
+      [
+       "o",
+       "b110:late"
+      ]
+     ],
+     "out": "b111"
+    },
+    {
+     "t": "icon",
+     "id": "o1",
+     "name": "laptop",
+     "x": 760,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b106:email",
+     "out": "b110"
+    },
+    {
+     "t": "icon",
+     "id": "o2",
+     "name": "tv",
+     "x": 1120,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b107:episode",
+     "out": "b110"
+    },
+    {
+     "t": "icon",
+     "id": "o3",
+     "name": "keys",
+     "x": 1480,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b108:keys",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "o1l",
+     "text": "email",
+     "x": 760,
+     "y": 780,
+     "size": 52,
+     "from": "bottom",
+     "at": "b106:email",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "o2l",
+     "text": "episode",
+     "x": 1120,
+     "y": 780,
+     "size": 52,
+     "from": "bottom",
+     "at": "b107:episode",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "o3l",
+     "text": "keys",
+     "x": 1480,
+     "y": 780,
+     "size": 52,
+     "from": "bottom",
+     "at": "b108:keys",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "!+15 minutes!",
+     "x": 1120,
+     "y": 480,
+     "size": 130,
+     "from": "slam",
+     "at": "b110:fifteen",
+     "out": "b111",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "gl",
+     "name": "globe",
+     "x": 960,
+     "y": 560,
+     "size": 280,
+     "from": "pop",
+     "at": "b111:culture",
+     "out": "b114"
+    },
+    {
+     "t": "card",
+     "id": "card2",
+     "kicker": "PACE OF LIFE · 31 COUNTRIES",
+     "text": "Robert Levine",
+     "sub": "walking · post offices · clocks",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b112:levine",
+     "out": "b114"
+    },
+    {
+     "t": "icon",
+     "id": "sw",
+     "name": "stopwatch",
+     "x": 1500,
+     "y": 620,
+     "size": 160,
+     "from": "pop",
+     "at": "b113:timed",
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "*Switzerland*: the fastest",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b114:switzerland",
+     "out": "b115"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "5 minutes late = *nothing*",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "left",
+     "at": "b115:nothing",
+     "out": "b117"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "5 minutes late = !an insult!",
+     "x": 960,
+     "y": 540,
+     "size": 72,
+     "from": "right",
+     "at": "b116:insult",
+     "out": "b117"
+    },
+    {
+     "t": "icon",
+     "id": "cl",
+     "name": "clock",
+     "x": 960,
+     "y": 540,
+     "size": 260,
+     "from": "pop",
+     "at": "b117:clock"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "your clock was set *before you could read*",
+     "x": 960,
+     "y": 830,
+     "size": 56,
+     "from": "bottom",
+     "at": "b117:read"
+    }
+   ]
+  },
+  {
+   "id": "table",
+   "beats": [
+    {
+     "id": "b118",
+     "say": "Now go back to that friend at the restaurant."
+    },
+    {
+     "id": "b119",
+     "say": "They don't see your memory bias, your minute, or your culture."
+    },
+    {
+     "id": "b120",
+     "say": "They see someone who said, five minutes."
+    },
+    {
+     "id": "b121",
+     "say": "Ten minutes late, three times a week, adds up to about twenty-six hours a year."
+    },
+    {
+     "id": "b122",
+     "say": "A whole day of someone else's life."
+    },
+    {
+     "id": "b123",
+     "say": "And it feels even longer for them."
+    },
+    {
+     "id": "b124",
+     "say": "In nineteen eighty-five, researcher David Maister wrote a famous paper on the psychology of waiting."
+    },
+    {
+     "id": "b125",
+     "say": "His rule: empty time feels longer than busy time."
+    },
+    {
+     "id": "b126",
+     "say": "Your ten minutes fly by."
+    },
+    {
+     "id": "b127",
+     "say": "Theirs crawl."
+    },
+    {
+     "id": "b128",
+     "say": "It sounds hopeless."
+    },
+    {
+     "id": "b129",
+     "say": "But it wasn't over yet."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "f",
+     "x": 930,
+     "y": 655,
+     "from": "top",
+     "at": "b118:friend",
+     "poses": [
+      [
+       "headDown",
+       "b118:friend"
+      ],
+      [
+       "idle",
+       "b120:see"
+      ],
+      [
+       "headDown",
+       "b127:crawl"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b118:friend"
+      ],
+      [
+       "tight",
+       "b120:see"
+      ],
+      [
+       "frown",
+       "b127:crawl"
+      ]
+     ],
+     "out": "b128",
+     "scale": 0.8,
+     "sit": true
+    },
+    {
+     "t": "icon",
+     "id": "tb",
+     "name": "table",
+     "x": 1000,
+     "y": 720,
+     "size": 340,
+     "from": "bottom",
+     "at": "b118:restaurant",
+     "out": "b128"
+    },
+    {
+     "t": "icon",
+     "id": "cl",
+     "name": "clock",
+     "x": 1460,
+     "y": 420,
+     "size": 180,
+     "from": "pop",
+     "at": "b119:minute",
+     "out": "b127"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "they see: *five minutes*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b120:see",
+     "out": "b121"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "10 min × 3 a week × 52",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b121:ten",
+     "out": "b121:twenty",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "!26 HOURS! a year",
+     "x": 960,
+     "y": 200,
+     "size": 96,
+     "from": "slam",
+     "at": "b121:twenty",
+     "out": "b122",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "a whole *day* of their life",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b122:day",
+     "out": "b123"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "it feels *longer* for them",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b123:longer",
+     "out": "b124"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "1985 · DAVID MAISTER",
+     "text": "The psychology of waiting",
+     "sub": "empty time feels longer",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b124:maister",
+     "out": "b125"
+    },
+    {
+     "t": "text",
+     "id": "t5b",
+     "text": "empty time > *busy* time",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b125:empty",
+     "out": "b126"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "your 10 minutes *fly*",
+     "x": 480,
+     "y": 300,
+     "size": 64,
+     "from": "left",
+     "at": "b126:fly",
+     "out": "b128"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "theirs !crawl!",
+     "x": 1440,
+     "y": 300,
+     "size": 72,
+     "from": "right",
+     "at": "b127:crawl",
+     "out": "b128"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "it sounds *hopeless*",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b128:hopeless",
+     "out": "b129"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "but it wasn't over yet",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b129:over",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "fix",
+   "beats": [
+    {
+     "id": "b130",
+     "say": "So is a late person doomed to be late forever?"
+    },
+    {
+     "id": "b131",
+     "say": "No."
+    },
+    {
+     "id": "b132",
+     "say": "But here's what doesn't work: trying harder."
+    },
+    {
+     "id": "b133",
+     "say": "Kahneman's team heard the warning, and still took eight years."
+    },
+    {
+     "id": "b134",
+     "say": "What works is changing how you plan."
+    },
+    {
+     "id": "b135",
+     "say": "Fix one: break it down."
+    },
+    {
+     "id": "b136",
+     "say": "In two thousand four, a study found that listing every step, made people's time estimates longer, and less optimistic."
+    },
+    {
+     "id": "b137",
+     "say": "The paper's title says it all: \"If you don't want to be late, enumerate.\""
+    },
+    {
+     "id": "b138",
+     "say": "Shower."
+    },
+    {
+     "id": "b139",
+     "say": "Get dressed."
+    },
+    {
+     "id": "b140",
+     "say": "Find keys."
+    },
+    {
+     "id": "b141",
+     "say": "Walk to the car."
+    },
+    {
+     "id": "b142",
+     "say": "Find parking."
+    },
+    {
+     "id": "b143",
+     "say": "Every step you write down, is one your brain had skipped."
+    },
+    {
+     "id": "b144",
+     "say": "Fix two: plan backwards."
+    },
+    {
+     "id": "b145",
+     "say": "A two thousand sixteen study found that working back from the deadline, made predictions less optimistic."
+    },
+    {
+     "id": "b146",
+     "say": "Start with \"I need to be in my seat at nine,\" and walk it back."
+    },
+    {
+     "id": "b147",
+     "say": "And fix three, is the question I promised you."
+    },
+    {
+     "id": "b148",
+     "say": "The one Kahneman's expert answered."
+    },
+    {
+     "id": "b149",
+     "say": "Don't ask, \"How long will this take?\""
+    },
+    {
+     "id": "b150",
+     "say": "Ask, \"How long did this take, last time?\""
+    },
+    {
+     "id": "b151",
+     "say": "Then time your morning once, with a stopwatch, from alarm to front door."
+    },
+    {
+     "id": "b152",
+     "say": "Most people are shocked by the number."
+    },
+    {
+     "id": "b153",
+     "say": "Plan with that one, not the hopeful one."
+    },
+    {
+     "id": "b154",
+     "say": "And add one \"one more thing\" on top, because you know it's coming."
+    },
+    {
+     "id": "b155",
+     "say": "Bonus trick: put the time you need to leave in your calendar, not the time you need to arrive."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "03",
+     "text": "The *fix*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b130:start",
+     "out": "b130:doomed"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "late forever?",
+     "x": 960,
+     "y": 400,
+     "size": 90,
+     "from": "top",
+     "at": "b130:forever",
+     "out": "b132"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "!NO!",
+     "x": 960,
+     "y": 560,
+     "size": 150,
+     "from": "slam",
+     "at": "b131:no",
+     "out": "b132",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "trying harder",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b132:harder",
+     "out": "b134"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 960,
+     "y": 480,
+     "w": 700,
+     "at": "b132:harder",
+     "out": "b134",
+     "delay": 0.3
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "change how you *plan*",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b134:plan",
+     "out": "b135"
+    },
+    {
+     "t": "text",
+     "id": "f1",
+     "text": "FIX 1: BREAK IT DOWN",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "slam",
+     "at": "b135:fix",
+     "out": "b144",
+     "hero": true
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2004",
+     "text": "If you don't want to be late, enumerate",
+     "sub": "Kruger & Evans",
+     "x": 960,
+     "y": 420,
+     "from": "top",
+     "at": "b136:study",
+     "out": "b137:enumerate"
+    },
+    {
+     "t": "icon",
+     "id": "cl",
+     "name": "checklist",
+     "x": 600,
+     "y": 600,
+     "size": 300,
+     "from": "left",
+     "at": "b138:shower",
+     "out": "b144"
+    },
+    {
+     "t": "text",
+     "id": "s1",
+     "text": "shower",
+     "x": 1200,
+     "y": 380,
+     "size": 52,
+     "from": "right",
+     "at": "b138:shower",
+     "out": "b144"
+    },
+    {
+     "t": "text",
+     "id": "s2",
+     "text": "get dressed",
+     "x": 1200,
+     "y": 470,
+     "size": 52,
+     "from": "right",
+     "at": "b139:dressed",
+     "out": "b144"
+    },
+    {
+     "t": "text",
+     "id": "s3",
+     "text": "find keys",
+     "x": 1200,
+     "y": 560,
+     "size": 52,
+     "from": "right",
+     "at": "b140:keys",
+     "out": "b144"
+    },
+    {
+     "t": "text",
+     "id": "s4",
+     "text": "walk to the car",
+     "x": 1200,
+     "y": 650,
+     "size": 52,
+     "from": "right",
+     "at": "b141:walk",
+     "out": "b144"
+    },
+    {
+     "t": "text",
+     "id": "s5",
+     "text": "find *parking*",
+     "x": 1200,
+     "y": 740,
+     "size": 52,
+     "from": "right",
+     "at": "b142:parking",
+     "out": "b144"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "every step = one your brain *skipped*",
+     "x": 960,
+     "y": 900,
+     "size": 56,
+     "from": "bottom",
+     "at": "b143:skipped",
+     "out": "b144"
+    },
+    {
+     "t": "text",
+     "id": "f2",
+     "text": "FIX 2: PLAN BACKWARDS",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "slam",
+     "at": "b144:fix",
+     "out": "b147",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 960,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b145:deadline",
+     "out": "b147"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "“in my seat at *9*” → walk it *back*",
+     "x": 960,
+     "y": 860,
+     "size": 60,
+     "from": "bottom",
+     "at": "b146:nine",
+     "out": "b147"
+    },
+    {
+     "t": "text",
+     "id": "f3",
+     "text": "FIX 3: THE QUESTION",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "slam",
+     "at": "b147:fix",
+     "out": "b155",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t5c",
+     "text": "the one Kahneman's *expert* answered",
+     "x": 960,
+     "y": 480,
+     "size": 72,
+     "from": "top",
+     "at": "b148:expert",
+     "out": "b149"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "“How long *will* this take?”",
+     "x": 960,
+     "y": 440,
+     "size": 72,
+     "from": "left",
+     "at": "b149:will",
+     "out": "b151"
+    },
+    {
+     "t": "strike",
+     "id": "k2",
+     "x": 960,
+     "y": 440,
+     "w": 900,
+     "at": "b150:ask",
+     "out": "b151"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "“How long !did! this take last time?”",
+     "x": 960,
+     "y": 600,
+     "size": 72,
+     "from": "right",
+     "at": "b150:did",
+     "out": "b151"
+    },
+    {
+     "t": "icon",
+     "id": "sw",
+     "name": "stopwatch",
+     "x": 960,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b151:stopwatch",
+     "out": "b154"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "alarm → front door",
+     "x": 960,
+     "y": 830,
+     "size": 64,
+     "from": "bottom",
+     "at": "b151:alarm",
+     "out": "b152"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "plan with *that* number",
+     "x": 960,
+     "y": 830,
+     "size": 64,
+     "from": "bottom",
+     "at": "b153:plan",
+     "out": "b154"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "+1 “one more thing”",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b154:one",
+     "out": "b155"
+    },
+    {
+     "t": "icon",
+     "id": "cal2",
+     "name": "calendar",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b155:calendar"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "calendar: when to *leave*, not arrive",
+     "x": 960,
+     "y": 830,
+     "size": 60,
+     "from": "bottom",
+     "at": "b155:leave"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b156",
+     "say": "So here's the twist."
+    },
+    {
+     "id": "b157",
+     "say": "Many chronically late people, aren't careless at all."
+    },
+    {
+     "id": "b158",
+     "say": "They're optimists."
+    },
+    {
+     "id": "b159",
+     "say": "They really believe the best version of the day, is the one that's coming."
+    },
+    {
+     "id": "b160",
+     "say": "Honestly, as mistakes go, that's a pretty nice one to make."
+    },
+    {
+     "id": "b161",
+     "say": "In nineteen ninety-nine, Sydney asked Utzon to come back, and help shape the building's future."
+    },
+    {
+     "id": "b162",
+     "say": "In two thousand seven, his opera house became a World Heritage site."
+    },
+    {
+     "id": "b163",
+     "say": "He died the following year."
+    },
+    {
+     "id": "b164",
+     "say": "Today, nobody remembers it was ten years late."
+    },
+    {
+     "id": "b165",
+     "say": "But your friend at the restaurant, will remember the twenty minutes."
+    },
+    {
+     "id": "b166",
+     "say": "Because your five minutes, and their five minutes, were never the same five minutes."
+    },
+    {
+     "id": "b167",
+     "say": "So, are you the one who's always late, or the one who's always waiting?"
+    },
+    {
+     "id": "b168",
+     "say": ", Tell me in the comments."
+    },
+    {
+     "id": "b169",
+     "say": "Which habit should we cover next?"
+    },
+    {
+     "id": "b170",
+     "say": ", Drop it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the !twist!",
+     "x": 960,
+     "y": 480,
+     "size": 130,
+     "from": "slam",
+     "at": "b156:twist",
+     "out": "b157",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "sun",
+     "name": "sun",
+     "x": 960,
+     "y": 520,
+     "size": 240,
+     "from": "pop",
+     "at": "b158:optimists",
+     "out": "b161"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "not careless",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b157:careless",
+     "out": "b158"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "*optimists*",
+     "x": 960,
+     "y": 200,
+     "size": 110,
+     "from": "slam",
+     "at": "b158:optimists",
+     "out": "b160",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "a pretty *nice* mistake",
+     "x": 960,
+     "y": 830,
+     "size": 64,
+     "from": "bottom",
+     "at": "b160:nice",
+     "out": "b161"
+    },
+    {
+     "t": "icon",
+     "id": "op",
+     "name": "opera",
+     "x": 960,
+     "y": 560,
+     "size": 400,
+     "from": "bottom",
+     "at": "b161:utzon",
+     "out": "b164"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "1999: Utzon asked *back*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b161:nineteen",
+     "out": "b162"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "2007: *World Heritage*",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b162:world",
+     "out": "b164"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "nobody remembers the *10 years*",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b164:nobody",
+     "out": "b165"
+    },
+    {
+     "t": "stick",
+     "id": "f",
+     "x": 890,
+     "y": 660,
+     "from": "top",
+     "at": "b165:friend",
+     "poses": [
+      [
+       "headDown",
+       "b165:friend"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b165:friend"
+      ]
+     ],
+     "out": "b167",
+     "scale": 0.75,
+     "sit": true
+    },
+    {
+     "t": "icon",
+     "id": "tb",
+     "name": "table",
+     "x": 960,
+     "y": 720,
+     "size": 320,
+     "from": "bottom",
+     "at": "b165:restaurant",
+     "out": "b167"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "they'll remember the *20 minutes*",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b165:twenty",
+     "out": "b166"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "*your* 5 minutes ≠ *their* 5 minutes",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b166:never",
+     "out": "b167"
+    },
+    {
+     "t": "icon",
+     "id": "cl",
+     "name": "clock",
+     "x": 960,
+     "y": 460,
+     "size": 220,
+     "from": "pop",
+     "at": "b167:always"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "always *late*, or always *waiting*?",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b167:late"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "which habit *next*?",
+     "x": 960,
+     "y": 750,
+     "size": 80,
+     "from": "bottom",
+     "at": "b169:habit",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 880,
+     "size": 48,
+     "from": "bottom",
+     "at": "b170:comments",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}

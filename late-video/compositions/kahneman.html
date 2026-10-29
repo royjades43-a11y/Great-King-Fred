@@ -1,0 +1,268 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="kahneman" data-width="1920" data-height="1080">
+    <div id="kahneman-card" class="clip el" data-start="1.42" data-duration="6.2" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:2"><div id="kahneman-card-in" class="in"><div class="card"><div class="card-k">PSYCHOLOGIST · NOBEL PRIZE 2002</div><div class="card-t">Daniel Kahneman</div><div class="card-s">Israel, early 1970s</div></div></div></div>
+    <div id="kahneman-tm0" class="clip el" data-start="4.4" data-duration="18.437" data-track-index="2" style="position:absolute;left:0px;top:280px;width:1040px;height:800px;z-index:3"><div id="kahneman-tm0-in" class="in"><svg class="stick" id="kahneman-tm0-svg" width="180" height="312" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="kahneman-tm0-aLu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-tm0-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-tm0-aRu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-tm0-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-tm0-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="kahneman-tm0-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="kahneman-tm0-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="kahneman-tm0-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="kahneman-tm0-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="kahneman-tm0-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="kahneman-tm1" class="clip el" data-start="4.45" data-duration="18.387" data-track-index="3" style="position:absolute;left:0px;top:280px;width:1480px;height:800px;z-index:4"><div id="kahneman-tm1-in" class="in"><svg class="stick" id="kahneman-tm1-svg" width="180" height="312" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="kahneman-tm1-aLu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-tm1-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-tm1-aRu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-tm1-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-tm1-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="kahneman-tm1-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="kahneman-tm1-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="kahneman-tm1-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="kahneman-tm1-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="kahneman-tm1-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="kahneman-tm2" class="clip el" data-start="4.5" data-duration="18.337" data-track-index="4" style="position:absolute;left:0px;top:280px;width:1920px;height:800px;z-index:5"><div id="kahneman-tm2-in" class="in"><svg class="stick" id="kahneman-tm2-svg" width="180" height="312" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="kahneman-tm2-aLu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-tm2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-tm2-aRu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-tm2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-tm2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="kahneman-tm2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="kahneman-tm2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="kahneman-tm2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="kahneman-tm2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="kahneman-tm2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="kahneman-tm3" class="clip el" data-start="4.55" data-duration="18.287" data-track-index="5" style="position:absolute;left:440px;top:280px;width:1480px;height:800px;z-index:6"><div id="kahneman-tm3-in" class="in"><svg class="stick" id="kahneman-tm3-svg" width="180" height="312" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="kahneman-tm3-aLu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-tm3-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-tm3-aRu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-tm3-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-tm3-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="kahneman-tm3-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="kahneman-tm3-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="kahneman-tm3-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="kahneman-tm3-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="kahneman-tm3-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="kahneman-tm4" class="clip el" data-start="4.6" data-duration="18.237" data-track-index="6" style="position:absolute;left:880px;top:280px;width:1040px;height:800px;z-index:7"><div id="kahneman-tm4-in" class="in"><svg class="stick" id="kahneman-tm4-svg" width="180" height="312" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="kahneman-tm4-aLu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-tm4-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-tm4-aRu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-tm4-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-tm4-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="kahneman-tm4-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="kahneman-tm4-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="kahneman-tm4-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="kahneman-tm4-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="kahneman-tm4-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="kahneman-bk" class="clip el" data-start="5.78" data-duration="17.057" data-track-index="7" style="position:absolute;left:1440px;top:200px;width:480px;height:880px;z-index:8" data-layout-allow-overlap><div id="kahneman-bk-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 52 Q60 32 18 46 L18 168 Q60 154 100 174 Q140 154 182 168 L182 46 Q140 32 100 52 Z"/><path class="s" pathLength="1" d="M100 52 L100 174"/><path class="s acc-s" pathLength="1" d="M40 80 L80 86 M40 108 L80 114 M120 86 L160 80 M120 114 L160 108"/></svg></div></div></div>
+    <div id="kahneman-q1" class="clip el" data-start="11.479" data-duration="1.18" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:520px;z-index:9" data-layout-allow-overlap><div id="kahneman-q1-in" class="in"><div class="ico bub" style="width:532px;height:380px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:42px">How long until we're done?</div></div></div></div>
+    <div id="kahneman-t1" class="clip el" data-start="14.149" data-duration="1.965" data-track-index="9" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:10"><div id="kahneman-t1-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="kahneman-t1-w0" class="w">everyone:</span> <span id="kahneman-t1-w1" class="w">about</span> <span id="kahneman-t1-w2" class="w acc">2</span> <span id="kahneman-t1-w3" class="w acc">years</span></div></div></div>
+    <div id="kahneman-q2" class="clip el" data-start="21.037" data-duration="1.75" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:520px;z-index:11" data-layout-allow-overlap><div id="kahneman-q2-in" class="in"><div class="ico bub" style="width:560px;height:400px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:40px">How long did OTHER teams take?</div></div></div></div>
+    <div id="kahneman-ex" class="clip el" data-start="22.897" data-duration="12.248" data-track-index="11" style="position:absolute;left:0px;top:200px;width:1920px;height:880px;z-index:12"><div id="kahneman-ex-in" class="in"><svg class="stick" id="kahneman-ex-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="kahneman-ex-aLu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-ex-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-ex-aRu"><path class="s" d="M150 160 L150 255"/><g id="kahneman-ex-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="kahneman-ex-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="kahneman-ex-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="kahneman-ex-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="kahneman-ex-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="kahneman-ex-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="kahneman-ex-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="kahneman-t2" class="clip el" data-start="22.737" data-duration="1.701" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:13"><div id="kahneman-t2-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="kahneman-t2-w0" class="w">the</span> <span id="kahneman-t2-w1" class="w">expert</span> <span id="kahneman-t2-w2" class="w">went</span> <span id="kahneman-t2-w3" class="w acc">quiet</span></div></div></div>
+    <div id="kahneman-t3" class="clip el" data-start="25.612" data-duration="3.01" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:14"><div id="kahneman-t3-in" class="in"><div class="txt hero" style="font-size:96px;font-weight:800;color:var(--ink)"><span id="kahneman-t3-w0" class="w alm">40%</span> <span id="kahneman-t3-w1" class="w">never</span> <span id="kahneman-t3-w2" class="w">finished</span></div></div></div>
+    <div id="kahneman-t4" class="clip el" data-start="28.572" data-duration="1.998" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:15"><div id="kahneman-t4-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="kahneman-t4-w0" class="w">the</span> <span id="kahneman-t4-w1" class="w">rest:</span> <span id="kahneman-t4-w2" class="w acc">7–10</span> <span id="kahneman-t4-w3" class="w acc">years</span></div></div></div>
+    <div id="kahneman-q3" class="clip el" data-start="32.351" data-duration="2.744" data-track-index="15" style="position:absolute;left:960px;top:0px;width:960px;height:600px;z-index:16" data-layout-allow-overlap><div id="kahneman-q3-in" class="in"><div class="ico bub" style="width:532px;height:380px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:40px">Below average… but not by much.</div></div></div></div>
+    <div id="kahneman-t5" class="clip el" data-start="35.345" data-duration="1.925" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:720px;z-index:17"><div id="kahneman-t5-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="kahneman-t5-w0" class="w">nobody</span> <span id="kahneman-t5-w1" class="w acc">quit</span></div></div></div>
+    <div id="kahneman-t6" class="clip el" data-start="35.785" data-duration="1.485" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:18"><div id="kahneman-t6-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="kahneman-t6-w0" class="w">nobody</span> <span id="kahneman-t6-w1" class="w">changed</span> <span id="kahneman-t6-w2" class="w">the</span> <span id="kahneman-t6-w3" class="w acc">plan</span></div></div></div>
+    <div id="kahneman-t7" class="clip el" data-start="37.17" data-duration="1.805" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:920px;z-index:19"><div id="kahneman-t7-in" class="in"><div class="txt hero" style="font-size:130px;font-weight:800;color:var(--ink)"><span id="kahneman-t7-w0" class="w">it</span> <span id="kahneman-t7-w1" class="w">took</span> <span id="kahneman-t7-w2" class="w alm">8</span> <span id="kahneman-t7-w3" class="w alm">YEARS</span></div></div></div>
+    <div id="kahneman-t8" class="clip el" data-start="39.859" data-duration="2.64" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:920px;z-index:20"><div id="kahneman-t8-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="kahneman-t8-w0" class="w">“we</span> <span id="kahneman-t8-w1" class="w">should</span> <span id="kahneman-t8-w2" class="w">have</span> <span id="kahneman-t8-w3" class="w acc">quit</span> <span id="kahneman-t8-w4" class="w">that</span> <span id="kahneman-t8-w5" class="w">day”</span></div></div></div>
+    <div id="kahneman-card2" class="clip el" data-start="42.559" data-duration="10.596" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:520px;z-index:21"><div id="kahneman-card2-in" class="in"><div class="card"><div class="card-k">1979 · KAHNEMAN &amp; TVERSKY</div><div class="card-t">The planning fallacy</div><div class="card-s">a name for the mistake</div></div></div></div>
+    <div id="kahneman-brn" class="clip el" data-start="46.059" data-duration="2.69" data-track-index="21" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:22" data-layout-allow-overlap><div id="kahneman-brn-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 40 Q70 18 50 44 Q22 50 28 84 Q12 108 34 130 Q36 162 70 162 Q88 182 100 160 Q112 182 130 162 Q164 162 166 130 Q188 108 172 84 Q178 50 150 44 Q130 18 100 40 Z"/><path class="s" pathLength="1" d="M100 40 L100 160 M60 80 Q80 90 70 110 M140 80 Q120 90 130 110"/></svg></div></div></div>
+    <div id="kahneman-t9" class="clip el" data-start="49.379" data-duration="3.776" data-track-index="22" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:23"><div id="kahneman-t9-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="kahneman-t9-w0" class="w">we</span> <span id="kahneman-t9-w1" class="w">plan</span> <span id="kahneman-t9-w2" class="w">for</span> <span id="kahneman-t9-w3" class="w">the</span> <span id="kahneman-t9-w4" class="w acc">best</span> <span id="kahneman-t9-w5" class="w acc">case</span></div></div></div>
+    <div id="kahneman-t10" class="clip el" data-start="50.719" data-duration="2.436" data-track-index="23" style="position:absolute;left:0px;top:320px;width:1920px;height:760px;z-index:24"><div id="kahneman-t10-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="kahneman-t10-w0" class="w">then</span> <span id="kahneman-t10-w1" class="w">the</span> <span id="kahneman-t10-w2" class="w alm">real</span> <span id="kahneman-t10-w3" class="w alm">one</span> <span id="kahneman-t10-w4" class="w">shows</span> <span id="kahneman-t10-w5" class="w">up</span></div></div></div>
+    <div id="kahneman-card3" class="clip el" data-start="54.675" data-duration="9.988" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:25"><div id="kahneman-card3-in" class="in"><div class="card"><div class="card-k">1979 · DOUGLAS HOFSTADTER</div><div class="card-t">Hofstadter's Law</div><div class="card-s">a joke that became famous</div></div></div></div>
+    <div id="kahneman-q4" class="clip el" data-start="57.224" data-duration="5.341" data-track-index="25" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:26" data-layout-allow-overlap><div id="kahneman-q4-in" class="in"><div class="ico bub" style="width:588px;height:420px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:42px">It always takes longer than you expect…</div></div></div></div>
+    <div id="kahneman-t11" class="clip el" data-start="59.484" data-duration="3.131" data-track-index="26" style="position:absolute;left:0px;top:640px;width:1920px;height:440px;z-index:27"><div id="kahneman-t11-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="kahneman-t11-w0" class="w">…even</span> <span id="kahneman-t11-w1" class="w">when</span> <span id="kahneman-t11-w2" class="w">you</span> <span id="kahneman-t11-w3" class="w">expect</span> <span id="kahneman-t11-w4" class="w acc">that<span class="tail">.</span></span></div></div></div>
+    <div id="kahneman-t12" class="clip el" data-start="62.755" data-duration="1.908" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:1040px;z-index:28"><div id="kahneman-t12-in" class="in"><div class="txt" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="kahneman-t12-w0" class="w">a</span> <span id="kahneman-t12-w1" class="w acc">joke</span></div></div></div>
+    <div id="kahneman-t13" class="clip el" data-start="63.235" data-duration="1.428" data-track-index="28" style="position:absolute;left:0px;top:240px;width:1920px;height:840px;z-index:29"><div id="kahneman-t13-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="kahneman-t13-w0" class="w">and</span> <span id="kahneman-t13-w1" class="w">painfully</span> <span id="kahneman-t13-w2" class="w alm">accurate</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"kahneman-card","t":"card","from":"top","exit":null,"in":1.42,"out":7.279999999999999,"outDur":0.3},{"id":"kahneman-tm0","t":"stick","from":"bottom","exit":null,"in":4.4,"out":22.497,"outDur":0.3,"poses":[["idle",4.4],["shrug",11.479],["happy",14.829]],"mouth":[["neutral",4.4],["smile",14.829]]},{"id":"kahneman-tm1","t":"stick","from":"bottom","exit":null,"in":4.45,"out":22.497,"outDur":0.3,"poses":[["idle",4.45],["shrug",11.479],["happy",14.829]],"mouth":[["neutral",4.45],["smile",14.829]]},{"id":"kahneman-tm2","t":"stick","from":"bottom","exit":null,"in":4.5,"out":22.497,"outDur":0.3,"poses":[["idle",4.5],["shrug",11.479],["happy",14.829]],"mouth":[["neutral",4.5],["smile",14.829]]},{"id":"kahneman-tm3","t":"stick","from":"bottom","exit":null,"in":4.55,"out":22.497,"outDur":0.3,"poses":[["idle",4.55],["shrug",11.479],["happy",14.829]],"mouth":[["neutral",4.55],["smile",14.829]]},{"id":"kahneman-tm4","t":"stick","from":"bottom","exit":null,"in":4.6,"out":22.497,"outDur":0.3,"poses":[["idle",4.6],["shrug",11.479],["happy",14.829]],"mouth":[["neutral",4.6],["smile",14.829]]},{"id":"kahneman-bk","t":"icon","from":"right","exit":null,"in":5.78,"out":22.497,"outDur":0.3},{"id":"kahneman-q1","t":"bubble","from":"pop","exit":null,"in":11.479,"out":12.369,"outDur":0.25},{"id":"kahneman-t1","t":"text","from":"top","exit":null,"in":14.149,"out":15.774,"outDur":0.3,"words":[14.629,14.629,15.089,15.089]},{"id":"kahneman-q2","t":"bubble","from":"pop","exit":null,"in":21.037,"out":22.497,"outDur":0.25},{"id":"kahneman-ex","t":"stick","from":"top","exit":null,"in":22.897,"out":34.805,"outDur":0.3,"poses":[["headDown",23.397],["shrug",24.518],["give",32.351]],"mouth":[["tight",23.397],["o",24.518],["smile",32.351]]},{"id":"kahneman-t2","t":"text","from":"top","exit":null,"in":22.737,"out":24.098000000000003,"outDur":0.3,"words":[22.737,22.897,23.217,23.397]},{"id":"kahneman-t3","t":"text","from":"slam","exit":null,"in":25.612,"out":28.332,"outDur":0.25,"words":[27.032,27.032,27.452]},{"id":"kahneman-t4","t":"text","from":"top","exit":null,"in":28.572,"out":30.23,"outDur":0.3,"words":[28.572,28.732,29.712,29.712]},{"id":"kahneman-q3","t":"bubble","from":"pop","exit":null,"in":32.351,"out":34.805,"outDur":0.25},{"id":"kahneman-t5","t":"text","from":"left","exit":null,"in":35.345,"out":36.93,"outDur":0.3,"words":[35.045,35.345]},{"id":"kahneman-t6","t":"text","from":"right","exit":null,"in":35.785,"out":36.93,"outDur":0.3,"words":[35.785,36.005,36.345,36.545]},{"id":"kahneman-t7","t":"text","from":"slam","exit":null,"in":37.17,"out":38.684999999999995,"outDur":0.25,"words":[37.45,37.45,37.91,37.91]},{"id":"kahneman-t8","t":"text","from":"top","exit":null,"in":39.859,"out":42.159,"outDur":0.3,"words":[40.265,40.265,40.925,41.125,41.305,41.525]},{"id":"kahneman-card2","t":"card","from":"top","exit":null,"in":42.559,"out":52.815,"outDur":0.3},{"id":"kahneman-brn","t":"icon","from":"pop","exit":null,"in":46.059,"out":48.458999999999996,"outDur":0.25},{"id":"kahneman-t9","t":"text","from":"left","exit":null,"in":49.379,"out":52.815,"outDur":0.3,"words":[48.699,48.779,49.059,49.259,49.379,49.479]},{"id":"kahneman-t10","t":"text","from":"right","exit":null,"in":50.719,"out":52.815,"outDur":0.3,"words":[50.719,50.939,51.099,51.359,51.599,51.839]},{"id":"kahneman-card3","t":"card","from":"top","exit":null,"in":54.675,"out":64.623,"outDur":0.3},{"id":"kahneman-q4","t":"bubble","from":"pop","exit":null,"in":57.224,"out":62.275,"outDur":0.25},{"id":"kahneman-t11","t":"text","from":"bottom","exit":null,"in":59.484,"out":62.275,"outDur":0.3,"words":[59.484,59.684,59.844,59.944,60.044]},{"id":"kahneman-t12","t":"text","from":"left","exit":null,"in":62.755,"out":64.623,"outDur":0.3,"words":[62.735,62.755]},{"id":"kahneman-t13","t":"text","from":"right","exit":null,"in":63.235,"out":64.623,"outDur":0.3,"words":[63.595,63.595,64.035]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["kahneman"] = tl;
+    })();
+  </script>
+</template>
