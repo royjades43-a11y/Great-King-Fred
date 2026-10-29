@@ -5,20 +5,28 @@ plays on a Victorian toy-theatre stage: cut-paper flats move on rails, and a war
 spotlight "reads along" with the narrator, landing on each person or place as it's named.
 
 ```
-episode.yaml ──► voice (Kokoro TTS, per-word timing) ──► art (code-drawn sets & props)
-   script          │                                        │
-   + cues          └──────────► director: cue timing, camera, lighting, entrances, music
-                                         │
-                                         └──► renderer ──► episode.mp4 + captions.srt + timing.md
+episode.yaml ──► READ_ALONG.md ──► your voiceover (voice/*.mp3) ──► aligner: sentence + cue timing
+   script                                                              │
+   + cues        art (code-drawn sets & props) ◄───────────────────────┤
+                                                                       ▼
+                     director: camera, lighting, entrances, music ──► renderer
+                                                                       │
+                                     episode.mp4 + captions.srt + timing.md
 ```
 
 ## Making an episode
 
 ```bash
 pip install -r requirements.txt            # plus ffmpeg on the PATH
-python3 -m lantern.voice --fetch           # one-time: Kokoro voice model from huggingface.co (~330 MB)
 
-python3 -m lantern.director episodes/01-the-king-in-the-marsh --no-render --stills  # check timing + stills
+python3 -m lantern.director episodes/01-the-king-in-the-marsh --export-script
+#   -> READ_ALONG.md: the narration to record, per scene, with delivery and pronunciation notes
+
+#   record it (or paste each scene into a TTS site) and save the audio as either
+#     episodes/01-the-king-in-the-marsh/voice/<scene id>.mp3   (one file per scene), or
+#     episodes/01-the-king-in-the-marsh/voice/full.mp3         (everything, ~2 s between scenes)
+
+python3 -m lantern.director episodes/01-the-king-in-the-marsh --no-render --stills  # check timing
 python3 -m lantern.director episodes/01-the-king-in-the-marsh --draft              # half-size render
 python3 -m lantern.director episodes/01-the-king-in-the-marsh                      # final 1080p
 ```
@@ -27,8 +35,16 @@ The build folder gets `episode.mp4`, `captions.srt` (upload to YouTube), `timing
 cue with its timestamp, plus an engagement check), the narration and music stems, and the
 generated art.
 
-`--silent-preview` blocks out timing with estimated durations and no voice. It's only for
-checking layout before the voice model is installed, and its output is labeled `SILENT_PREVIEW`.
+**How the voiceover is timed.** The aligner finds speech and pauses in your recording. It then
+picks the sentence boundaries that best match each scripted sentence's length, preferring clear
+pauses. Inside a sentence, cues are placed by phoneme count along the speech only, so dramatic
+pauses don't throw them off. On test recordings with mid-sentence pauses of up to half a second,
+sentence boundaries land within about 0.01 s (`python3 tests/test_align.py`). Read the script as
+written: an added or skipped sentence will shift the timing.
+
+**Other voice sources.** With no recordings present, the director uses Kokoro TTS if the model
+is installed (`python3 -m lantern.voice --fetch`, which needs huggingface.co). `--silent-preview`
+blocks out timing with estimated durations and no voice; its output is labeled `SILENT_PREVIEW`.
 
 ## Writing the script
 
@@ -85,7 +101,8 @@ decorator. Maps are drawn from real coordinates (`lantern/art/maps.py`), so addi
 
 ```
 lantern/director.py  script -> timed scenes, camera, lighting, music, captions, report
-lantern/voice.py     Kokoro narration with per-word cue timing
+lantern/align.py     times the script against an uploaded voiceover
+lantern/voice.py     sentence splitting, cue parsing; optional Kokoro TTS
 lantern/music.py     procedural score built on the channel motif
 lantern/art/         code-drawn sets, props and maps
 lantern/render.py    per-frame compositing, lighting, encoding

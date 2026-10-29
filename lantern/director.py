@@ -26,7 +26,8 @@ from .anim import keyframes
 from .art import SETS
 from .art.props import make_prop
 from .render import TRANSITION_LEN, clamp_camera
-from .voice import SR, Narrator, SilentEstimator, split_sentences, strip_cues, write_wav
+from .align import RecordedVoice, find_recordings
+from .voice import SR, VOICES, Narrator, SilentEstimator, split_sentences, strip_cues, write_wav
 
 W, H = 1920, 1080
 LEAD = 0.45          # breath after a scene opens before the narrator speaks
@@ -70,6 +71,21 @@ class Cast:
         return min(0.36, max(0.08, 0.62 * max(self.w, self.h * H / W)))
 
 
+def scene_items(sc):
+    """Narration as [(spoken sentence, cues, paragraph index)]; cue-only lines have no text."""
+    paragraphs = [p for p in re.split(r"\n\s*\n", (sc.get("narration") or "").strip()) if p.strip()]
+    items = []
+    for pi, para in enumerate(paragraphs):
+        for sentence in split_sentences(" ".join(para.split())):
+            spoken, cues = strip_cues(sentence)
+            items.append((spoken, cues, pi))
+    return items
+
+
+def scene_id(sc, index):
+    return sc.get("id", f"s{index:02d}")
+
+
 def parse_cue_arg(arg):
     return [a.strip() for a in (arg or "").split(":")] if arg else []
 
@@ -81,7 +97,7 @@ def side_of(x):
 class SceneBuild:
     def __init__(self, sc, index, build_dir, narrator):
         self.sc, self.index = sc, index
-        self.id = sc.get("id", f"s{index:02d}")
+        self.id = scene_id(sc, index)
         self.build_dir = build_dir
         art_dir = os.path.join(build_dir, "art")
         os.makedirs(art_dir, exist_ok=True)
@@ -101,11 +117,32 @@ class SceneBuild:
         self.close = sc.get("close", "lantern")
         self.voice_clips, self.cues, self.captions = [], [], []
         t = TRANSITION_LEN.get(self.open, 0) + LEAD
-        paragraphs = [p for p in re.split(r"\n\s*\n", (sc.get("narration") or "").strip()) if p.strip()]
+        items = scene_items(sc)
         last_end = t
-        for pi, para in enumerate(paragraphs):
-            for sentence in split_sentences(" ".join(para.split())):
-                spoken, cues = strip_cues(sentence)
+        if isinstance(narrator, RecordedVoice):
+            # one recorded clip per scene; sentence and cue times come from the aligner
+            spoken_items = [it for it in items if it[0]]
+            if spoken_items:
+                clip, spans, cue_time = narrator.scene(self.id)
+                self.voice_clips.append((t, clip))
+                si = 0
+                for spoken, cues, _ in items:
+                    if not spoken:  # cue-only line: fires as the next sentence begins
+                        at = t + spans[min(si, len(spans) - 1)][0]
+                        self.cues += [(at, n, parse_cue_arg(a), "") for _, n, a in cues if n != "pause"]
+                        continue
+                    for off, name, arg in cues:
+                        if name != "pause":  # the reader's own pauses stand
+                            self.cues.append((t + cue_time(si, off), name, parse_cue_arg(arg), spoken))
+                    self.captions.append((t + spans[si][0], t + spans[si][1], spoken))
+                    si += 1
+                last_end = t + len(clip) / SR
+        else:
+            prev_para = 0
+            for spoken, cues, para in items:
+                if para != prev_para:
+                    t += PARAGRAPH_GAP - SENTENCE_GAP
+                    prev_para = para
                 extra = 0.0
                 if spoken:
                     audio, at = narrator.sentence(spoken)
@@ -124,7 +161,6 @@ class SceneBuild:
                             t += float(arg or 0.8)
                         else:
                             self.cues.append((t, name, parse_cue_arg(arg), ""))
-            t += PARAGRAPH_GAP - SENTENCE_GAP
         self.duration = round(last_end + sc.get("tail", TAIL) + TRANSITION_LEN.get(self.close, 0), 3)
         self.duration = max(self.duration, sc.get("min_duration", 0))
         self.cues.sort(key=lambda c: c[0])
@@ -345,11 +381,22 @@ def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_prev
         shutil.rmtree(os.path.join(build_dir, "art"))
     os.makedirs(build_dir, exist_ok=True)
     v = ep.get("voice", {})
-    voice_cls = SilentEstimator if silent_preview else Narrator
+    voice_dir = os.path.join(ep_dir, "voice")
+    lang = v.get("lang", "en-gb")
     if silent_preview:
-        print("  SILENT LAYOUT PREVIEW: no voice model, timings are estimates")
-    narrator = voice_cls(v.get("name", "bm_george"), v.get("speed", 0.95), v.get("lang", "en-gb"),
-                         cache_dir=os.path.join(ep_dir, ".voice-cache"))
+        print("  SILENT LAYOUT PREVIEW: no voice, timings are estimates")
+        narrator = SilentEstimator(v.get("name"), v.get("speed", 0.95), lang)
+    elif find_recordings(voice_dir):
+        print(f"  narration: recordings in {voice_dir}")
+        narrator = RecordedVoice(voice_dir, [(scene_id(sc, i), [it[0] for it in scene_items(sc) if it[0]])
+                                             for i, sc in enumerate(ep["scenes"])], lang)
+    else:
+        if not os.path.exists(VOICES):
+            raise SystemExit(f"No narration: put recordings in {voice_dir}/ (one per scene, named by scene id, "
+                             "or a single full.mp3) - see READ_ALONG.md from --export-script - or install "
+                             "the Kokoro model with `python -m lantern.voice --fetch`.")
+        narrator = Narrator(v.get("name", "bm_george"), v.get("speed", 0.95), lang,
+                            cache_dir=os.path.join(ep_dir, ".voice-cache"))
 
     scenes, start = [], 0.0
     scene_builds = []
@@ -409,6 +456,54 @@ def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_prev
     return total
 
 
+DELIVERY = {
+    "mystery": "low and unhurried; let the last word of each line land",
+    "somber": "slow and quiet; leave space after each sentence",
+    "tense": "a touch quicker and clipped; lean on the verbs",
+    "battle": "driving and stronger; short sentences hit hard",
+    "wonder": "warmer, lifting; a hint of surprise",
+    "triumph": "full voice but measured; savour the final line",
+}
+
+
+def export_script(ep_dir):
+    """READ_ALONG.md: the narration with cues removed, for recording or pasting into a TTS site."""
+    with open(os.path.join(ep_dir, "episode.yaml")) as f:
+        ep = yaml.safe_load(f)
+    out = [f"# {ep.get('title', 'Episode')} - read-along script", "",
+           "Record **one file per scene**, named exactly as shown (`.mp3`, `.wav` or `.m4a`), "
+           "and put them in this episode's `voice/` folder. Or record the whole thing as a single "
+           "`voice/full.mp3`, leaving about two seconds of silence between scenes.", "",
+           "Leave a natural pause between sentences; the visuals are timed to them. Don't read the "
+           "scene headings.", ""]
+    if ep.get("pronounce"):
+        out += ["## Pronunciation", ""] + [f"- **{k}**: {v}" for k, v in ep["pronounce"].items()] + [""]
+    mood = "mystery"
+    words = 0
+    for i, sc in enumerate(ep["scenes"]):
+        mood = sc.get("mood", mood)
+        sid = scene_id(sc, i)
+        items = scene_items(sc)
+        out += [f"## {i + 1}. `{sid}.mp3`", "", f"*Delivery: {DELIVERY.get(mood, '')}*", ""]
+        para, line = 0, []
+        for spoken, _, p in items:
+            if not spoken:
+                continue
+            if p != para and line:
+                out += [" ".join(line), ""]
+                line = []
+            para = p
+            line.append(spoken)
+            words += len(spoken.split())
+        if line:
+            out += [" ".join(line), ""]
+    out.insert(2, f"About {words} words, roughly {words / 150:.1f} minutes at documentary pace.\n")
+    path = os.path.join(ep_dir, "READ_ALONG.md")
+    with open(path, "w") as f:
+        f.write("\n".join(out))
+    return path
+
+
 def fmt(t):
     m, s = divmod(t, 60)
     return f"{int(m):02d}:{s:05.2f}"
@@ -455,9 +550,14 @@ def main(argv=None):
     ap.add_argument("--no-render", action="store_true")
     ap.add_argument("--stills", action="store_true", help="save one still per scene")
     ap.add_argument("--jobs", type=int)
+    ap.add_argument("--export-script", action="store_true",
+                    help="write READ_ALONG.md (narration to record) and stop")
     ap.add_argument("--silent-preview", action="store_true",
                     help="block out timing without the voice model (silent, estimated)")
     a = ap.parse_args(argv)
+    if a.export_script:
+        print("wrote", export_script(a.episode))
+        return
     total = build(a.episode, render=not a.no_render, draft=a.draft, stills=a.stills, jobs=a.jobs,
                   silent_preview=a.silent_preview)
     print(f"runtime {fmt(total)}")

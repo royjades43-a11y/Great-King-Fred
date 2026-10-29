@@ -14,6 +14,15 @@
 title: The King in the Marsh
 voice: {name: bm_george, speed: 0.92, lang: en-gb}
 music_volume: 0.16
+pronounce:
+  Wessex: WESS-ex
+  Athelney: ATH-ul-nee
+  Guthrum: GOOTH-rum
+  Athelstan: ATH-ul-stan
+  Chippenham: CHIP-en-um
+  Edington: ED-ing-tun
+  Aller: "AL-er, rhymes with pallor"
+  burhs: "burrs (Old English for fortified towns)"
 seed: 878
 
 scenes:
