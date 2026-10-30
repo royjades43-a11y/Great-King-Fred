@@ -666,7 +666,7 @@ def main(argv=None):
         return
 
     if a.remix:
-        p = Project(a.scene, 0.1)  # only timing is needed; tiny frames load fast
+        p = Project(a.scene, 0.25)  # only timing is needed; small frames load fast
         events, total = p.cues()
         wav = tempfile.NamedTemporaryFile(suffix=".wav", delete=False).name
         audio.render(wav, events, total, p.data.get("audio", {}), p.base)
