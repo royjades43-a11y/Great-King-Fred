@@ -18,7 +18,7 @@ from PIL import Image, ImageDraw, ImageFilter
 
 from . import audio, graphics
 from .anim import clamp, ease_in, ease_in_out, ease_out, keyframes, point_along, smooth_noise
-from .fx import draw_flame, draw_ink, draw_smoke, duotone, paper_card
+from .fx import draw_face, draw_flame, draw_ink, draw_smoke, duotone, paper_card
 from .stage import Dust, Snow, Stage
 
 DEFAULT_STYLE = {
@@ -240,8 +240,20 @@ class Layer:
     def render(self, t, dur, cam, lights):
         img = self.card
         fx = self.spec.get("fx", [])
-        if fx:
+        face = self.spec.get("face")
+        if fx or face:
             img = img.copy()
+        if face:  # a painted face: expression changes on cue, and it blinks
+            expr = face["expr"][0][1]
+            for kt, name in face["expr"]:
+                if kt <= t:
+                    expr = name
+            seed = face.get("seed", 0)
+            period = 3.6 + (seed % 7) * 0.31
+            blink = face.get("blink", True) and ((t + seed * 1.37) % period) < 0.13
+            cw_, ch_ = self.iw * self.hr, self.ih * self.hr
+            draw_face(img, self.pad + face["x"] * cw_, self.pad + face["y"] * ch_, face["r"] * ch_, expr, blink,
+                      face.get("facing", 0.0), face.get("rot", 0.0), face.get("blind", False))
         M = self.matrix(t, dur, cam)
         k = self.W / 1280
         iw, ih = self.iw * self.hr, self.ih * self.hr  # card pixels (hi-res layers are drawn larger)
@@ -494,6 +506,17 @@ class Project:
             self.snow.render(rgb, light, t + si * 13.0)
 
         img = Image.fromarray(rgb.clip(0, 255).astype(np.uint8), "RGB").convert("RGBA")
+
+        # --- focus pull: the window softens behind a graphic or a key line, so it owns the screen
+        fk = 0.0
+        for a_, b_ in sc.get("focus", []):
+            fk = max(fk, clamp((t - a_) / 0.45) * (1 - clamp((t - b_) / 0.45)))
+        if fk > 0.01:
+            blurred = img.filter(ImageFilter.GaussianBlur(fk * 9 * W / 1920))
+            img = Image.blend(img, blurred, min(1.0, fk * 1.2))
+            dim = np.asarray(img).astype(np.float32)
+            dim[..., :3] *= 1 - 0.25 * fk
+            img = Image.fromarray(dim.astype(np.uint8), "RGBA")
 
         # --- title ticket rises from behind the stage lip
         if ticket is not None:

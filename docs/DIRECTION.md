@@ -32,6 +32,14 @@ Each act opens with a curtain and a ticket title (`ACT II | Twelfth Night`), whi
 - **Maps for movement, stages for people.** Use a map scene whenever the story moves across country, and draw the route in ink as the narrator describes it.
 - **Vary the sets.** Never put two consecutive scenes on the same set and time of day.
 
+## Camera and faces
+
+- **Film it, don't stage it.** Cut within a scene, roughly every 3 to 6 seconds in dialogue and action. Start wide to show where we are, go medium for an action, and go close for a feeling.
+- **Dialogue is shot, reverse shot.** Cut to whoever is speaking (`[cut:delilah:close]` then `[cut:samson:close]`), and use a two-shot (`[cut:samson:two:delilah]`) when the line is about both of them.
+- **Return wide for the big physical moments**: the burst ropes, the collapse, the thousand fallen.
+- **Faces carry the emotion.** Change the expression on the beat it changes in the story (`[face:samson:afraid]`), and especially in close-ups.
+- **Focus pulls are automatic**: the window softens behind a count, a timeline or a centred line of glass words.
+
 ## On-screen words
 
 - **Use them sparingly**: about one a minute, never more than one per scene. Words on screen compete with the picture and the voice, so save them for the line the viewer should remember.

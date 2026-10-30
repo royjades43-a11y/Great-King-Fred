@@ -135,3 +135,73 @@ def draw_smoke(layer, x, y, size, t, seed=0.0, puffs=7, life=5.0):
         d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(g, g - 4, g - 8, a))
     patch = patch.filter(ImageFilter.GaussianBlur(size * 0.35))
     layer.alpha_composite(patch, (int(x - bx), int(y - by)))
+
+
+# ---------------------------------------------------------------------------- painted faces
+# Medieval glass painters drew faces onto the glass in dark brown "grisaille" paint: brows,
+# eyes, the line of the nose and the mouth. These are drawn the same way, every frame, so a
+# face can blink and change expression.
+GRISAILLE = (52, 32, 24, 235)
+
+# brow tilt (inner end up +), brow lift, eye shape, mouth curve (+ smile), mouth open
+EXPRESSIONS = {
+    "calm": (0.0, 0.0, "open", 0.0, 0.0),
+    "sad": (0.5, 0.05, "open", -0.6, 0.0),
+    "angry": (-0.7, -0.05, "narrow", -0.3, 0.0),
+    "afraid": (0.6, 0.15, "wide", -0.2, 0.5),
+    "surprised": (0.1, 0.22, "wide", 0.0, 0.7),
+    "determined": (-0.35, -0.03, "narrow", -0.1, 0.0),
+    "smile": (0.1, 0.05, "open", 0.7, 0.0),
+    "laugh": (0.1, 0.1, "closed_up", 0.8, 0.6),
+    "shout": (-0.5, 0.05, "open", 0.0, 0.9),
+    "pray": (0.25, 0.0, "closed", 0.0, 0.0),
+    "asleep": (0.0, -0.02, "closed", 0.1, 0.0),
+    "pain": (0.7, 0.05, "closed", -0.5, 0.3),
+}
+
+
+def draw_face(img, cx, cy, r, expr="calm", blink=False, facing=0.0, rot=0.0, blind=False):
+    """Paint a face on a round glass head centred at (cx, cy) with radius r (card pixels).
+    facing -1..1 turns it left/right; rot (degrees) for figures lying down."""
+    b_tilt, b_lift, eyes, m_curve, m_open = EXPRESSIONS.get(expr, EXPRESSIONS["calm"])
+    d = ImageDraw.Draw(img)
+    w = max(1.0, r * 0.1)
+    a = math.radians(rot)
+    ca, sa = math.cos(a), math.sin(a)
+    fx = facing * r * 0.16
+
+    def P(x, y):  # face space (r units, y down) -> card pixels, turned and rotated
+        x, y = x * r + fx, y * r
+        return (cx + x * ca + y * sa, cy - x * sa + y * ca)
+
+    def line(pts, width=w):
+        d.line([P(*p) for p in pts], fill=GRISAILLE, width=max(1, int(round(width))), joint="curve")
+
+    for side in (-1, 1):
+        ex = side * 0.36
+        # brows: the inner end rises (sad, afraid) or falls (angry)
+        inner, outer = (ex - side * 0.16, -0.36 - b_lift - b_tilt * 0.12), (ex + side * 0.16, -0.34 - b_lift)
+        line([inner, outer], w * 1.1)
+        if blind:
+            continue
+        if blink or eyes == "closed":
+            line([(ex - 0.12, -0.16), (ex, -0.12), (ex + 0.12, -0.16)])
+        elif eyes == "closed_up":
+            line([(ex - 0.12, -0.13), (ex, -0.19), (ex + 0.12, -0.13)])
+        else:
+            ry = {"open": 0.085, "narrow": 0.05, "wide": 0.12}[eyes]
+            pts = [P(ex + math.cos(k / 10 * 2 * math.pi) * 0.14, -0.16 + math.sin(k / 10 * 2 * math.pi) * ry)
+                   for k in range(10)]
+            d.polygon(pts, outline=GRISAILLE, fill=(240, 232, 214, 255))
+            px, py = P(ex + facing * 0.04, -0.16)
+            pr = r * min(0.06, ry * 0.75)
+            d.ellipse([px - pr, py - pr, px + pr, py + pr], fill=GRISAILLE)
+    line([(0.02, -0.1), (0.05, 0.12), (-0.04, 0.16)], w * 0.9)  # nose
+    if m_open > 0.05:  # an open mouth: a dark oval
+        mw, mh = 0.17 + 0.04 * abs(m_curve), 0.05 + 0.12 * m_open
+        pts = [P(math.cos(k / 12 * 2 * math.pi) * mw, 0.42 + m_curve * -0.05 + math.sin(k / 12 * 2 * math.pi) * mh)
+               for k in range(12)]
+        d.polygon(pts, fill=(70, 30, 26, 240), outline=GRISAILLE)
+    else:
+        # y grows downward: a smile has its corners above its middle, a frown below
+        line([(-0.24, 0.4 - m_curve * 0.09), (0.0, 0.4 + m_curve * 0.09), (0.24, 0.4 - m_curve * 0.09)], w * 1.1)

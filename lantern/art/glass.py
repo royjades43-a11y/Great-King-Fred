@@ -206,7 +206,9 @@ def glass_david(h, rng, pose="sling"):
         g.band([P(0.17, 0.98), P(0.2, 0.05)], 0.016, WOOD)
         g.band([P(0.2, 0.05), P(0.24, -0.01), P(0.27, 0.04)], 0.016, WOOD)
         hand = P(0.17, 0.45)
-    return g.finish(meta={"center": P(0, 0.45), "head": f["head"], "hand": hand})
+    face = P(0, 0.12)
+    return g.finish(meta={"center": P(0, 0.45), "head": f["head"], "hand": hand, "face": face,
+                          "face_r": (face[0] + 0.05, face[1])})
 
 
 @prop("glass_goliath")
@@ -228,7 +230,9 @@ def glass_goliath(h, rng):
     g.poly([P(0.235, -0.06), P(0.26, -0.06), P(0.25, -0.16)], IRON)
     g.circle(*P(-0.2, 0.45), 0.13, BRONZE, cuts=3)                                     # shield
     g.circle(*P(-0.2, 0.45), 0.035, GOLD)
-    return g.finish(meta={"center": P(0, 0.4), "head": f["head"], "forehead": P(0, 0.07)})
+    hx, hy = f["head"]
+    return g.finish(meta={"center": P(0, 0.4), "head": f["head"], "forehead": P(0, 0.07), "face": (hx, hy + 0.012),
+                          "face_r": (hx + 0.05, hy + 0.012)})
 
 
 @prop("glass_army")

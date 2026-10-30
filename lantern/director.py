@@ -13,6 +13,7 @@ Narration cues (placed just before the word they land on):
 """
 import argparse
 import json
+import math
 import os
 import re
 import shutil
@@ -47,7 +48,7 @@ PACE = {}            # series pacing: {breath_gap, gap_warn} - how often somethi
 class Cast:
     """A prop placed on stage, with everything needed to aim lights and cameras at it."""
 
-    def __init__(self, key, spec, art_dir, scene_id, seed):
+    def __init__(self, key, spec, art_dir, scene_id, seed, hires=1.0):
         if "character" in spec:
             name = spec["character"]
             if name not in CHARACTERS:
@@ -62,7 +63,8 @@ class Cast:
         self.depth = spec.get("depth", 0.75 + 0.5 * max(0.0, self.at[1] - 0.6))
         params = {k: v.replace("{series}", SERIES["dir"]) if isinstance(v, str) else v
                   for k, v in spec.get("params", {}).items()}
-        img, self.meta = make_prop(spec["prop"], self.h * H * 1.3, seed=spec.get("seed", seed), **params)
+        self.hires = hires  # scenes with close-ups keep their figures sharp
+        img, self.meta = make_prop(spec["prop"], self.h * H * max(1.3, hires), seed=spec.get("seed", seed), **params)
         if spec.get("flip"):
             img = img.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
             self.meta = {k: (1 - x, y) for k, (x, y) in self.meta.items()}
@@ -73,6 +75,18 @@ class Cast:
         self.anchor = spec.get("anchor", [0.5, 1.0])
         self.hidden_until = None
         self.layer = None
+
+    def face_spec(self):
+        """Where the painted face goes, for figures that have one."""
+        if "face" not in self.meta or self.spec.get("face") is False:
+            return None
+        (fx, fy), (rx, ry) = self.meta["face"], self.meta["face_r"]
+        r = math.hypot((rx - fx) * self.aspect, ry - fy)
+        params = self.spec.get("params", {})
+        return {"x": fx, "y": fy, "r": r, "expr": [[0.0, self.spec.get("expr", "calm")]],
+                "facing": self.spec.get("facing", 0.0), "rot": 90.0 if params.get("pose") == "sleep" else 0.0,
+                "blind": bool(params.get("blind")), "seed": sum(map(ord, self.key)) % 97,
+                "blink": params.get("pose") != "sleep"}
 
     def point(self, name="center"):
         """Frame position of a meta point (or the image centre)."""
@@ -311,13 +325,19 @@ class SceneBuild:
         os.makedirs(art_dir, exist_ok=True)
 
         # ---------------------------------------------------------------- set + cast
+        self.has_cuts = "[cut:" in (sc.get("narration") or "")
         set_spec = dict(sc.get("set", {"name": "void"}))
         set_name = set_spec.pop("name")
         if set_name == "great_window":  # the series' rose window, with every finished pane in it
             set_spec.setdefault("panes_dir", os.path.join(SERIES["dir"], "panes"))
-        self.set = SETS[set_name](W, H, np.random.default_rng(sc.get("seed", index + 1)), **set_spec)
+        if self.has_cuts and set_name != "great_window":  # close-ups need a sharper window
+            self.set = SETS[set_name](W * 2, H * 2, np.random.default_rng(sc.get("seed", index + 1)), **set_spec)
+            for l in self.set["layers"]:
+                l["hires"] = 2
+        else:
+            self.set = SETS[set_name](W, H, np.random.default_rng(sc.get("seed", index + 1)), **set_spec)
         self.places = self.set.get("places", {})
-        self.cast = {k: Cast(k, v, art_dir, self.id, seed=index * 100 + i)
+        self.cast = {k: Cast(k, v, art_dir, self.id, seed=index * 100 + i, hires=2.6 if self.has_cuts else 1.0)
                      for i, (k, v) in enumerate((sc.get("cast") or {}).items())}
         self.routes = {k: [self.route_point(p) for p in v] for k, v in (sc.get("routes") or {}).items()}
 
@@ -490,8 +510,16 @@ class SceneBuild:
         def base_zoom(t):
             return 1.0 + drift * t / dur
 
+        in_shot = False  # after a cut to a framed shot, spotlight moves don't reframe the camera
         for t, name, args, _ in self.cues:
-            if name not in ("spot", "push"):
+            if name == "cut":
+                prev = keyframes(keys, t)
+                keys = [k for k in keys if k[0] < t]
+                z, fx, fy = self.shot(args)
+                keys += [[max(0.0, t - 0.001), *prev], [t, z, fx, fy], [t + 3.2, z * 1.03, fx, fy]]
+                in_shot = z > 1.01
+                continue
+            if name not in ("spot", "push") or in_shot:
                 continue
             target = self.target_of(name, args)
             if target is None:
@@ -510,6 +538,31 @@ class SceneBuild:
         last = keys[-1]
         keys.append([dur, max(last[1], base_zoom(dur)) + 0.008, last[2], last[3]])
         return keys
+
+    def shot(self, args):
+        """Camera framing for [cut:x:close|medium], [cut:a:two:b] or [cut:all] -> (zoom, focus x, focus y)."""
+        if not args or args[0] in ("all", "wide"):
+            return 1.0, 0.5, 0.5
+        c = self.cast[args[0]]
+        kind = args[1] if len(args) > 1 else "medium"
+        d = c.depth
+
+        def focus(x, y):  # the focus that puts (x, y) at the centre of the frame for this depth
+            return 0.5 + (x - 0.5) / d, 0.5 + (y - 0.5) / d
+        if kind == "two" and len(args) > 2:
+            o = self.cast[args[2]]
+            (ax, ay), (bx, by) = c.point("center"), o.point("center")
+            span = abs(ax - bx) + (c.w + o.w) / 2
+            return min(2.0, max(1.0, 0.8 / max(span, 0.1))), *focus((ax + bx) / 2, (ay + by) / 2 - 0.04)
+        if kind == "close":  # head and shoulders
+            hx, hy = c.point("face") if "face" in c.meta else c.point("head") if "head" in c.meta else c.point()
+            return min(4.2, max(2.0, 0.55 / (c.h * 0.3))), *focus(hx, hy + c.h * 0.07)
+        # medium: from the waist up
+        return min(2.8, max(1.4, 0.62 / (c.h * 0.6))), *focus(c.at[0], c.at[1] - c.h * 0.68)
+
+    def zoom_at(self, t, depth, cam_keys):
+        z = clamp_camera(*keyframes(cam_keys, t), W, H)[0]
+        return 1 + (z - 1) * depth
 
     def to_screen(self, x, y, depth, t, cam_keys):
         z, fx, fy = clamp_camera(*keyframes(cam_keys, t), W, H)
@@ -582,6 +635,11 @@ class SceneBuild:
                     fx.append(e)
             if fx:
                 spec["fx"] = fx
+            if c.hires > 1:
+                spec["hires"] = c.hires
+            face = c.face_spec()
+            if face:
+                spec["face"] = face
             if c.spec.get("hidden"):  # waits off the glass until [appear:x] or [swap:other:x]
                 spec["opacity"] = [[0.0, 0.0]]
             for k in ("spin", "hires"):
@@ -618,10 +676,29 @@ class SceneBuild:
                     continue
                 mod = args[1] if len(args) > 1 else ""
                 r *= {"wide": 1.6, "tight": 0.62}.get(mod, 1.0)
+                r = min(0.95, r * self.zoom_at(t + 0.4, d, cam))  # a close shot needs a wider pool
                 sx, sy = self.to_screen(tx, ty, d, t + 0.4, cam)
                 prev = keyframes(spot_keys, t - SPOT_TRAVEL * 0.6)
                 spot_keys.append([max(spot_keys[-1][0] + 0.01, t - SPOT_TRAVEL * 0.6), *prev[:4]])
                 spot_keys.append([t + SPOT_TRAVEL * 0.4, sx, sy, r, 1.0])
+                events.append(t)
+            elif name == "cut":  # the light snaps with the camera
+                prev = keyframes(spot_keys, t - 0.002)
+                if not args or args[0] in ("all", "wide"):
+                    new_key = [t, 0.5, 0.5, 0.62, 1.0]
+                else:
+                    c = self.cast[args[0]]
+                    tx, ty = c.point("face") if (len(args) > 1 and args[1] == "close" and "face" in c.meta) \
+                        else c.point("center")
+                    sx, sy = self.to_screen(tx, ty, c.depth, t + 0.01, cam)
+                    new_key = [t, sx, sy, min(0.95, c.radius() * self.zoom_at(t + 0.01, c.depth, cam)), 1.0]
+                spot_keys.append([max(spot_keys[-1][0] + 0.001, t - 0.002), *prev[:4]])
+                spot_keys.append(new_key)
+                events.append(t)
+            elif name == "face":
+                c = self.cast[args[0]]
+                if c.layer.get("face"):
+                    c.layer["face"]["expr"].append([t, args[1] if len(args) > 1 else "calm"])
                 events.append(t)
             elif name == "flood":  # light pours through the whole window from behind
                 prev = keyframes(spot_keys, t - 0.6)
@@ -764,6 +841,11 @@ class SceneBuild:
             scene["labels"] = labels
         if self.texts:
             scene["texts"] = self.compile_texts(cam, dur)
+        focus = [[g["start"], g["until"]] for g in scene_fx["graphics"] if g["kind"] in ("tally", "timeline")]
+        focus += [[tx["words"][0][1] - 0.1, tx["until"]] for tx in scene.get("texts", [])
+                  if tx["kind"] == "glass" and tx["pos"][1] > 0.4 and tx["pos"][1] < 0.6]
+        if focus:
+            scene["focus"] = focus
         for k in ("quakes", "flashes", "graphics"):
             if scene_fx[k]:
                 scene[k] = scene_fx[k]

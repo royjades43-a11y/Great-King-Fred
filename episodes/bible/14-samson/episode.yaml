@@ -40,12 +40,12 @@ scenes:
       crowd: {prop: glass_crowd, at: [0.5, 0.31], height: 0.13, depth: 0.9}
       samson: {character: samson, params: {pose: chained, hair: short, blind: true}, at: [0.5, 0.95], height: 0.42}
     narration: |
-      [spot:samson] He was the strongest man who ever lived.
-      [laugh:crowd] [spot:crowd] And this is how his story ended.
+      [cut:samson:close] [face:samson:pain] [spot:samson] He was the strongest man who ever lived.
+      [cut:all] [laugh:crowd] [spot:crowd] And this is how his story ended.
       [spot:samson:tight] [say:Blind. In chains.|ruby|center] Blind. [shake:samson] [sfx:rattle] In chains.
-      [laugh:crowd] [spot:crowd:wide] Brought out [shake:samson] to entertain the enemies of his people.
-      [push:samson] [spot:samson] How did the strongest man [spot:samson:tight] in the Bible end up here?
-      [title:SAMSON|Judges 13-16] [laugh:crowd] [pause:1.0]
+      [cut:crowd:medium] [laugh:crowd] [spot:crowd:wide] Brought out [cut:samson:medium] [shake:samson] to entertain the enemies of his people.
+      [cut:samson:close] [face:samson:sad] [spot:samson] How did the strongest man [spot:samson:tight] in the Bible end up here?
+      [cut:all] [title:SAMSON|Judges 13-16] [laugh:crowd] [pause:1.0]
 
   - id: the_promise
     set: {name: glass_birth}
@@ -62,9 +62,9 @@ scenes:
     narration: |
       [spot:mother] It began with a promise.
       [appear:angel] [flash:gold] [spot:angel] An angel appeared to a childless woman in Israel.
-      [recoil:mother] [spot:mother] She would have a son, he told her.
-      [spot:mother:tight] And he would be a Nazarite, [flash:gold] set apart to God [spot:angel] before he was born.
-      [spot:angel:wide] Under the law of Moses, a Nazarite drank [appear:vow_wine] no wine,
+      [recoil:mother] [face:mother:surprised] [cut:mother:close] [spot:mother] She would have a son, he told her.
+      [face:mother:smile] [spot:mother:tight] And he would be a Nazarite, [flash:gold] [cut:angel:medium] set apart to God [spot:angel] before he was born.
+      [cut:all] [spot:angel:wide] Under the law of Moses, a Nazarite drank [appear:vow_wine] no wine,
       [appear:vow_dead] touched nothing dead, [appear:vow_hair] and never cut his hair.
       [spot:angel:wide] This boy, he said, [hop:mother] would begin to deliver Israel [spot:mother] from the Philistines.
       [ignite:altar] [spot:altar] And when an offering was made on the altar,
@@ -79,11 +79,11 @@ scenes:
       samson: {character: samson, at: [0.3, 0.95], height: 0.46}
       lion: {prop: glass_lion, at: [0.74, 0.95], height: 0.3}
     narration: |
-      [spot:samson] Samson grew up strong.
-      [enter:lion] [spot:lion] In the vineyards of Timnah, [lunge:lion] [quake] [sfx:roar] a young lion came roaring at him.
-      [lunge:lion] [recoil:samson] [quake] [spot:samson] The Spirit of the LORD [flash:gold] [shake:samson] came mightily upon him.
-      [lunge:samson] [shake:lion] [quake] [sfx:growl] He tore the lion apart [lunge:samson] [shake:lion] [quake] with his bare hands.
-      [fall:lion:right] [spot:samson:tight] And he told no one.
+      [cut:samson:medium] [face:samson:smile] [spot:samson] Samson grew up strong.
+      [cut:all] [enter:lion] [spot:lion] In the vineyards of Timnah, [lunge:lion] [quake] [sfx:roar] a young lion came roaring at him.
+      [lunge:lion] [recoil:samson] [face:samson:afraid] [quake] [cut:samson:close] [spot:samson] The Spirit of the LORD [flash:gold] [face:samson:determined] [shake:samson] came mightily upon him.
+      [cut:all] [face:samson:angry] [lunge:samson] [shake:lion] [quake] [sfx:growl] He tore the lion apart [lunge:samson] [shake:lion] [quake] with his bare hands.
+      [fall:lion:right] [cut:samson:close] [face:samson:calm] [spot:samson:tight] And he told no one.
 
   - id: the_jawbone
     set: {name: glass_valley}
@@ -96,13 +96,13 @@ scenes:
       bound: {character: samson, params: {bound: ropes}, at: [0.3, 0.95], height: 0.46}
       samson: {character: samson, params: {pose: jawbone}, at: [0.3, 0.95], height: 0.5, hidden: true}
     narration: |
-      [spot:bound] Later, his own people tied him with two new ropes, [shake:bound] [spot:bound:tight] and handed him over [spot:army] to the Philistines.
-      [enter:army] [spot:army] The Philistines ran at him, shouting.
-      [shake:bound] [spot:bound:tight] Then the Spirit of the LORD came upon him,
-      [swap:bound:samson] [flash:gold] [quake] and the ropes fell from his arms like burnt thread.
+      [face:bound:sad] [spot:bound] Later, his own people tied him with two new ropes, [shake:bound] [spot:bound:tight] and handed him over [spot:army] to the Philistines.
+      [enter:army] [cut:army:medium] [spot:army] The Philistines ran at him, shouting.
+      [cut:bound:close] [face:bound:determined] [shake:bound] [spot:bound:tight] Then the Spirit of the LORD came upon him,
+      [cut:all] [face:samson:angry] [swap:bound:samson] [flash:gold] [quake] and the ropes fell from his arms like burnt thread.
       [spot:samson] He grabbed the only weapon he could find, [spot:samson.head] [hop:samson] the fresh jawbone of a donkey.
       [lunge:samson] [shake:army] [quake] [tally:1000] And with it, [lunge:samson] [shake:army] [quake] he struck down [vanish:army] [appear:fallen] [spot:fallen:wide] [quake] a thousand men.
-      [tilt:samson:-4] [spot:samson:tight] One man. A thousand enemies.
+      [cut:samson:close] [face:samson:determined] [tilt:samson:-4] [spot:samson:tight] One man. A thousand enemies.
 
   - id: the_gates
     set: {name: glass_gaza}
@@ -115,10 +115,10 @@ scenes:
       samson: {character: samson, params: {pose: lift}, at: [0.24, 0.92], height: 0.42}
       gates: {prop: glass_gates, at: [0.24, 0.53], height: 0.24, depth: 1.0}
     narration: |
-      [spot:guard1] In Gaza, his enemies surrounded the city, [spot:guard2] and lay in wait all night to kill him at dawn.
-      [spot:samson] But at midnight, Samson rose.
-      [shake:samson] [spot:gates] He took hold of the city gates, [shake:gates] [quake] and pulled them up, [hop:gates] [quake] posts, bar and all.
-      [move:samson:0.78] [move:gates:0.78] [recoil:guard1] [spot:samson] And he carried them on his shoulders [recoil:guard2] [spot:guard2] to the top of a hill.
+      [face:guard1:smile] [face:guard2:smile] [spot:guard1] In Gaza, his enemies surrounded the city, [spot:guard2] and lay in wait all night to kill him at dawn.
+      [cut:samson:medium] [face:samson:determined] [spot:samson] But at midnight, Samson rose.
+      [cut:all] [shake:samson] [spot:gates] He took hold of the city gates, [shake:gates] [quake] and pulled them up, [hop:gates] [quake] posts, bar and all.
+      [move:samson:0.78] [move:gates:0.78] [face:guard1:afraid] [face:guard2:afraid] [recoil:guard1] [spot:samson] And he carried them on his shoulders [recoil:guard2] [spot:guard2] to the top of a hill.
 
   - id: the_offer
     set: {name: glass_house}
@@ -134,10 +134,10 @@ scenes:
       silver4: {prop: glass_silver, at: [0.880, 0.97], height: 0.09, seed: 4, hidden: true}
       silver5: {prop: glass_silver, at: [0.945, 0.97], height: 0.09, seed: 5, hidden: true}
     narration: |
-      [spot:delilah] Then he fell in love with a woman named Delilah.
-      [enter:lord] [spot:lord] The Philistine lords came to her with an offer.
+      [cut:delilah:medium] [face:delilah:smile] [spot:delilah] Then he fell in love with a woman named Delilah.
+      [cut:all] [enter:lord] [spot:lord] The Philistine lords came to her with an offer.
       [appear:silver1] [spot:silver3] Eleven hundred pieces of silver [cascade:silver2,silver3,silver4,silver5] [spot:silver3:wide] from each of them,
-      [lunge:lord] [spot:delilah:tight] if she would find the secret [exit:lord] of his strength.
+      [lunge:lord] [cut:delilah:close] [face:delilah:determined] [spot:delilah:tight] if she would find the secret [exit:lord] of his strength.
 
   - id: the_bindings
     set: {name: glass_house}
@@ -149,14 +149,14 @@ scenes:
       samson: {character: samson, at: [0.32, 0.95], height: 0.46, hidden: true}
       ropes: {character: samson, params: {bound: ropes}, at: [0.32, 0.95], height: 0.46, hidden: true}
     narration: |
-      [spot:delilah] So she asked him.
-      [spot:withs] Bind me with seven fresh bowstrings, he said, [shake:withs] [spot:withs:tight] and I will be as weak as any man.
-      [lunge:delilah] [spot:delilah] She bound him, and cried, [hop:delilah] the Philistines are upon you!
-      [shake:withs] [swap:withs:samson] [flash:gold] [quake] He snapped them like thread.
+      [cut:delilah:close] [face:delilah:smile] [spot:delilah] So she asked him.
+      [cut:withs:close] [face:withs:smile] [spot:withs] Bind me with seven fresh bowstrings, he said, [shake:withs] [spot:withs:tight] and I will be as weak as any man.
+      [cut:delilah:medium] [face:delilah:shout] [lunge:delilah] [spot:delilah] She bound him, and cried, [hop:delilah] the Philistines are upon you!
+      [cut:all] [face:samson:laugh] [shake:withs] [swap:withs:samson] [flash:gold] [quake] He snapped them like thread.
       [swap:samson:ropes] [spot:ropes] Then new ropes. [shake:ropes] [swap:ropes:samson] [quake] He broke them off his arms.
-      [spot:delilah] Then she wove his hair into her loom. [shake:samson] [quake] He tore the loom away.
-      [spot:samson] Three times he lied. [spot:delilah] And three times, he stayed.
-      [lunge:delilah] [spot:delilah:tight] She pressed him day after day, [spot:samson:tight] until at last, he told her everything.
+      [cut:delilah:close] [face:delilah:angry] [spot:delilah] Then she wove his hair into her loom. [cut:samson:medium] [shake:samson] [quake] He tore the loom away.
+      [cut:samson:close] [face:samson:smile] [spot:samson] Three times he lied. [cut:samson:two:delilah] [spot:delilah] And three times, he stayed.
+      [cut:delilah:close] [face:delilah:determined] [lunge:delilah] [spot:delilah:tight] She pressed him day after day, [cut:samson:close] [face:samson:sad] [spot:samson:tight] until at last, he told her everything.
 
   - id: the_razor
     set: {name: glass_house}
@@ -165,17 +165,17 @@ scenes:
     mood: somber
     cast:
       delilah: {character: delilah, at: [0.66, 0.95], height: 0.46}
-      sleeper: {character: samson, params: {pose: sleep}, at: [0.36, 0.96], height: 0.2}
+      sleeper: {character: samson, params: {pose: sleep}, at: [0.36, 0.96], height: 0.2, expr: asleep}
       locks: {prop: glass_locks, at: [0.255, 0.93], height: 0.09, depth: 1.0}
       barber: {character: philistine, params: {weapon: razor, face: right}, at: [0.12, 0.95], height: 0.44}
       samson: {character: samson, params: {hair: short}, at: [0.36, 0.95], height: 0.46, hidden: true}
     narration: |
-      [spot:sleeper] She lulled him to sleep on her knees,
-      [enter:barber] [spot:barber] and called for a man [lunge:barber] to shave off the seven locks of his head.
-      [exit:locks:bottom] [lunge:barber] [spot:sleeper:tight] And his strength left him.
-      [exit:barber] [lunge:delilah] [spot:delilah] The Philistines are upon you, Samson!
-      [swap:sleeper:samson] [spot:samson] He woke, [shake:samson] and thought he would shake himself free, [shake:samson] as he always had.
-      [shake:samson] [dark:0.3] [spot:samson:tight] [say:he did not know|ruby] But he did not know that the LORD had left him.
+      [cut:sleeper:two:delilah] [spot:sleeper] She lulled him to sleep on her knees,
+      [cut:all] [enter:barber] [spot:barber] and called for a man [lunge:barber] to shave off the seven locks of his head.
+      [cut:sleeper:close] [exit:locks:bottom] [lunge:barber] [spot:sleeper:tight] And his strength left him.
+      [exit:barber] [cut:delilah:close] [face:delilah:shout] [lunge:delilah] [spot:delilah] The Philistines are upon you, Samson!
+      [swap:sleeper:samson] [cut:samson:medium] [face:samson:surprised] [spot:samson] He woke, [shake:samson] and thought he would shake himself free, [shake:samson] as he always had.
+      [cut:samson:close] [face:samson:afraid] [shake:samson] [dark:0.3] [spot:samson:tight] [say:he did not know|ruby] But he did not know that the LORD had left him.
 
   - id: the_capture
     set: {name: glass_prison}
@@ -188,9 +188,9 @@ scenes:
       soldier1: {character: philistine, params: {weapon: spear, face: right}, at: [0.22, 0.95], height: 0.44}
       soldier2: {character: philistine, params: {weapon: sword}, at: [0.8, 0.95], height: 0.44}
     narration: |
-      [enter:soldier1] [enter:soldier2] [spot:samson] The Philistines seized him.
+      [enter:soldier1] [enter:soldier2] [face:samson:afraid] [face:soldier1:angry] [face:soldier2:angry] [spot:samson] The Philistines seized him.
       [shake:samson] [lunge:soldier2] [flash:red] [quake] [dark:0.18] They put out his eyes.
-      [swap:samson:blind] [light] [spot:blind:tight] The strongest man in Israel [tilt:blind:-6] would never see again.
+      [swap:samson:blind] [light] [cut:blind:close] [face:blind:pain] [spot:blind:tight] The strongest man in Israel [tilt:blind:-6] would never see again.
 
   - id: the_prison
     set: {name: glass_prison}
@@ -201,11 +201,11 @@ scenes:
       mill: {prop: glass_grindstone, at: [0.66, 0.7], anchor: [0.5, 0.5], pivot: [0.5, 0.5], height: 0.42, depth: 0.95}
       samson: {character: samson, params: {pose: chained, hair: short, blind: true}, at: [0.32, 0.95], height: 0.46}
     narration: |
-      [spot:samson] They bound him with chains of bronze, [shake:samson] [sfx:rattle]
+      [face:samson:pain] [spot:samson] They bound him with chains of bronze, [shake:samson] [sfx:rattle]
       [spin:mill:30] [spot:mill] and set him to grind grain in the prison at Gaza.
       [move:samson:0.38] [spot:samson] Day after day, [move:samson:0.3] round and round.
-      [spot:samson:tight] But the Bible adds one quiet line.
-      [label:samson.head|The hair grows back] [flood:0.9] The hair of his head began to grow again.
+      [cut:samson:close] [face:samson:sad] [spot:samson:tight] But the Bible adds one quiet line.
+      [face:samson:calm] [label:samson.head|The hair grows back] [flood:0.9] The hair of his head began to grow again.
 
   - id: the_temple
     set: {name: glass_hall}
@@ -220,14 +220,14 @@ scenes:
       boy: {prop: glass_boy, at: [0.6, 0.95], height: 0.26}
     narration: |
       [spot:temple:wide] The Philistines held a great feast [laugh:crowd] for their god Dagon.
-      [laugh:crowd] [spot:crowd] Three thousand men and women crowded the roof,
+      [cut:crowd:medium] [laugh:crowd] [spot:crowd] Three thousand men and women crowded the roof,
       [laugh:crowd] calling for Samson to be brought out to entertain them.
-      [spot:boy] A boy led the blind man by the hand, [move:boy:0.56] [spot:samson] to the pillars [spot:temple.left_pillar] that held up the house.
-      [exit:boy:right] [tilt:samson:-5] [spot:samson:tight] And Samson prayed.
+      [cut:all] [face:samson:sad] [spot:boy] A boy led the blind man by the hand, [move:boy:0.56] [spot:samson] to the pillars [spot:temple.left_pillar] that held up the house.
+      [exit:boy:right] [cut:samson:close] [face:samson:pray] [tilt:samson:-5] [spot:samson:tight] And Samson prayed.
       [flood:0.8] [scroll:samson|O Lord GOD, remember me, and strengthen me, only this once.] O Lord GOD, remember me, [spot:samson] and strengthen me, [spot:samson:tight] only this once.
-      [swap:samson:pushing] [push:pushing] [spot:pushing] He took hold of the two middle pillars, [spot:pushing.right_hand] one with his right hand [spot:pushing.left_hand] and one with his left,
-      [shake:pushing] [shake:temple] [quake] and pushed with all his might.
-      [shatter:temple] [shatter:crowd] [shatter:pushing] [quake:0.03] [flash:white] [spot:all:wide] The house fell.
+      [cut:all] [face:pushing:determined] [swap:samson:pushing] [spot:pushing] He took hold of the two middle pillars, [spot:pushing.right_hand] one with his right hand [spot:pushing.left_hand] and one with his left,
+      [cut:pushing:close] [face:pushing:pain] [shake:pushing] [shake:temple] [quake] and pushed with all his might.
+      [cut:all] [shatter:temple] [shatter:crowd] [shatter:pushing] [quake:0.03] [flash:white] [spot:all:wide] The house fell.
       [dark:0.32] In his death, [quake] Samson defeated more of Israel's enemies [spot:all] than in all his life.
     tail: 1.6
 
@@ -246,8 +246,8 @@ scenes:
       vow_hair: {prop: glass_vow, params: {vow: razor}, at: [0.64, 0.33], anchor: [0.5, 0.5], height: 0.15, depth: 0.7}
     narration: |
       [fall:lion:right] [spot:all] Now, let's read this window.
-      [spot:samson] Most people think Samson fell [tilt:samson:-5] on the day his hair was cut. [tilt:samson:0] [spot:samson:tight] Look closer.
-      [spot:lion] On his way back through Timnah, he turned aside to the lion's carcass, [lunge:samson] and scooped honey out of it.
+      [spot:samson] Most people think Samson fell [tilt:samson:-5] on the day his hair was cut. [tilt:samson:0] [cut:samson:close] [spot:samson:tight] Look closer.
+      [cut:all] [spot:lion] On his way back through Timnah, he turned aside to the lion's carcass, [lunge:samson] and scooped honey out of it.
       [shatter:vow_dead] [quake] [spot:lion:tight] A Nazarite was never to touch the dead.
       [hop:samson] [spot:samson] Then he threw a feast, [laugh:samson] and the Hebrew word for it means a drinking feast.
       [shatter:vow_wine] [quake] Wine was the second vow.
@@ -261,9 +261,9 @@ scenes:
     cast:
       samson: {character: samson, at: [0.5, 0.95], height: 0.5}
     narration: |
-      [spot:samson] And the most chilling line in the story is this one. [dark:0.3] [spot:samson:tight] He did not know the LORD had left him.
+      [spot:samson] And the most chilling line in the story is this one. [dark:0.3] [cut:samson:close] [face:samson:sad] [spot:samson:tight] He did not know the LORD had left him.
       [tilt:samson:-6] [spot:samson:tight] Drift rarely announces itself.
-      [light] [flood] But now hold this window up to the light.
+      [cut:all] [face:samson:calm] [light] [flood] But now hold this window up to the light.
       [label:samson.hair|Not the source] Samson's strength was never in his hair.
       [spot:all:wide] Every time it came, [timeline:4] the text says the same thing. [flash:gold] The Spirit of the LORD came upon him.
       [tilt:samson:0] [spot:samson] The hair was the sign of a promise. [flood:1.3] The strength was God's.

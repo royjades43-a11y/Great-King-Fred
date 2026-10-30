@@ -86,7 +86,9 @@ def glass_samson(h, rng, pose="stand", hair="long", blind=False, bound=None):
            HAIR)  # hairline
     if blind:  # his eyes were put out (16:21): a dark band across them
         g.poly([P(-0.062, 0.08), P(0.062, 0.08), P(0.062, 0.11), P(-0.062, 0.11)], (70, 30, 30))
-    meta = {"center": P(0, 0.42), "head": P(0, 0.1), "hair": P(0, 0.3), "eyes": P(0, 0.095)}
+    face = P(0, 0.1)
+    meta = {"center": P(0, 0.42), "head": P(0, 0.1), "hair": P(0, 0.3), "eyes": P(0, 0.095), "face": face,
+            "face_r": (face[0] + 0.06 * kk, face[1])}
     if pose == "push":
         meta.update(left_hand=P(-0.4, 0.27), right_hand=P(0.4, 0.26))
     img, m = g.finish(meta=meta)
@@ -114,7 +116,8 @@ def glass_woman(h, rng, robe="violet", mantle="teal", jewels=False, veil="white"
         for i in range(5):
             g.circle(*P(-0.04 + i * 0.02, 0.2), 0.009, GOLD)
         g.circle(*P(-0.052, 0.13), 0.01, GOLD)
-    return g.finish(meta={"center": P(0, 0.42), "head": P(0, 0.11)})
+    face = P(0, 0.11)
+    return g.finish(meta={"center": P(0, 0.42), "head": face, "face": face, "face_r": (face[0] + 0.05, face[1])})
 
 
 @prop("glass_philistine")
@@ -129,7 +132,8 @@ def glass_philistine(h, rng, weapon="sword", face="left"):
     g.poly([P(-0.12, 0.24), P(0.12, 0.24), P(0.11, 0.42), P(-0.11, 0.42)], BRONZE, cuts=2)  # breastplate
     g.poly([P(-0.12, 0.22), P(-0.16, 0.24), P(-0.17, 0.5), P(-0.13, 0.5)], SKIN)
     g.poly([P(0.12, 0.22), P(0.16, 0.21), P(0.27, 0.12), P(0.25, 0.08)], SKIN)  # weapon arm forward-up
-    meta = {"center": P(0, 0.45), "head": P(0, 0.11)}
+    face = P(0, 0.11)
+    meta = {"center": P(0, 0.45), "head": face, "face": face, "face_r": (face[0] + 0.062 * 0.82, face[1])}
     if weapon == "sword":
         g.poly([P(0.25, 0.1), P(0.28, 0.08), P(0.42, -0.12), P(0.4, -0.13)], (196, 200, 210))
         g.band([P(0.22, 0.12), P(0.3, 0.06)], 0.014, GOLD)
@@ -181,7 +185,9 @@ def glass_boy(h, rng):
     g.poly([P(0.12, 0.22), P(0.16, 0.24), P(0.17, 0.5), P(0.13, 0.5)], SKIN)
     g.circle(*P(0, 0.08), 0.065, HAIR)
     g.circle(*P(0, 0.12), 0.05, SKIN)
-    return g.finish(meta={"center": P(0, 0.45), "hand": P(-0.22, 0.44)})
+    face = P(0, 0.12)
+    return g.finish(meta={"center": P(0, 0.45), "hand": P(-0.22, 0.44), "head": face, "face": face,
+                          "face_r": (face[0] + 0.05, face[1])})
 
 
 @prop("glass_altar")
@@ -236,7 +242,8 @@ def glass_angel(h, rng):
     g.poly([P(0.12, 0.22), P(0.16, 0.21), P(0.24, 0.02), P(0.2, 0.0)], WHITE)  # hand raised
     g.circle(*P(0.22, 0.0), 0.022, SKIN)
     g.poly([P(-0.06, 0.1), P(-0.05, 0.04), P(0.0, 0.02), P(0.05, 0.04), P(0.06, 0.1)], (214, 170, 80))
-    return g.finish(meta={"center": P(0, 0.4), "head": P(0, 0.11)})
+    face = P(0, 0.11)
+    return g.finish(meta={"center": P(0, 0.4), "head": face, "face": face, "face_r": (face[0] + 0.062, face[1])})
 
 
 # ============================================================================ animals and things

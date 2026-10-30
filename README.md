@@ -96,6 +96,8 @@ fraction of the frame.
 | `[pause:0.8]` | extra silence after this sentence |
 | `[say:a thousand men]` `[say:He did not know\|ruby\|center]` | words in leaded glass, each appearing as it is spoken (options: gold/ruby/sky/white, top/center/bottom) |
 | `[scroll:delilah\|The Philistines are upon you!]` | a medieval speech scroll unrolls by a character, writing their words in time with the voice |
+| `[cut:x:close]` `[cut:x:medium]` `[cut:a:two:b]` `[cut:all]` | film it: cut to a close-up, a waist-up shot, a two-shot, or back to the wide window (scenes with cuts are drawn sharper automatically) |
+| `[face:x:sad]` | change a painted face: calm, sad, angry, afraid, surprised, determined, smile, laugh, shout, pray, asleep, pain (faces also blink) |
 | `[tally:1000]` | a number you can see: that many glass tiles light up in a sweep |
 | `[cascade:a,b,c]` | cast members appear one after another (piles multiplying) |
 | `[timeline:4]` | a lead bar whose nodes light gold one by one ("four times the Spirit came") |
