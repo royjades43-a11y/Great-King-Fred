@@ -21,15 +21,17 @@ TERRACOTTA = (176, 92, 56)
 
 # ============================================================================ people
 @prop("glass_samson")
-def glass_samson(h, rng, pose="stand", hair="long", blind=False):
+def glass_samson(h, rng, pose="stand", hair="long", blind=False, bound=None):
     """Samson: broad, bearded, seven locks of hair (Judges 16:13, 19) unless shorn."""
     lying = pose == "sleep"
+    top = 0.22 if pose in ("jawbone", "lift") else 0.0  # headroom for raised arms
+    kk = 1 / (1 + top)
     g = GlassCanvas(h * (1.2 if pose == "push" else 0.8), h, seed=int(rng.integers(1e6)))
     cx = 0.6 if pose == "push" else 0.4
     b = 1.25  # broad shoulders
 
     def P(x, y):
-        return (cx + x * b, y)
+        return (cx + x * b * kk, (y + top) * kk)
 
     if hair == "long":  # seven locks hanging behind the shoulders
         for i in range(7):
@@ -58,9 +60,21 @@ def glass_samson(h, rng, pose="stand", hair="long", blind=False):
                     [P(0.12, 0.21), P(0.16, 0.23), P(0.04, 0.5), P(0.0, 0.47)]],
         "sleep": [[P(-0.12, 0.22), P(-0.16, 0.24), P(-0.17, 0.52), P(-0.13, 0.52)],
                   [P(0.12, 0.21), P(0.16, 0.23), P(0.17, 0.52), P(0.13, 0.52)]],
+        "jawbone": [[P(-0.12, 0.22), P(-0.16, 0.24), P(-0.2, 0.5), P(-0.15, 0.5)],
+                    [P(0.12, 0.21), P(0.16, 0.21), P(0.26, 0.0), P(0.22, -0.02)]],
     }[pose]
     for a in arms:
         g.poly(a, SKIN)
+    if pose == "jawbone":  # the jawbone of an ass, raised (15:15)
+        g.poly([P(0.2, -0.02), P(0.27, -0.12), P(0.36, -0.15), P(0.34, -0.1), P(0.28, -0.07), P(0.25, 0.01)],
+               (236, 226, 200), cuts=1)
+        for j in range(4):  # teeth
+            g.poly([P(0.28 + j * 0.02, -0.12 + j * 0.004), P(0.29 + j * 0.02, -0.17), P(0.3 + j * 0.02, -0.12)],
+                   (236, 226, 200))
+    if bound:  # bowstrings (green withs) or new ropes wound round him (16:7-12)
+        col = {"withs": (96, 150, 70), "ropes": (196, 168, 112)}[bound]
+        for y, tilt in ((0.27, 0.03), (0.36, -0.03), (0.45, 0.02), (0.6, -0.02), (0.82, 0.02)):
+            g.band([P(-0.2, y + tilt), P(0.0, y - tilt * 0.5), P(0.2, y - tilt)], 0.016, col)
     if pose == "chained":
         g.band([P(-0.03, 0.49), P(0.03, 0.49)], 0.014, IRON)
         g.band([P(0.0, 0.5), P(0.02, 0.62), P(0.0, 0.75)], 0.008, IRON)
@@ -72,7 +86,7 @@ def glass_samson(h, rng, pose="stand", hair="long", blind=False):
            HAIR)  # hairline
     if blind:  # his eyes were put out (16:21): a dark band across them
         g.poly([P(-0.062, 0.08), P(0.062, 0.08), P(0.062, 0.11), P(-0.062, 0.11)], (70, 30, 30))
-    meta = {"center": P(0, 0.42), "head": P(0, 0.1), "hair": P(0, 0.3)}
+    meta = {"center": P(0, 0.42), "head": P(0, 0.1), "hair": P(0, 0.3), "eyes": P(0, 0.095)}
     if pose == "push":
         meta.update(left_hand=P(-0.4, 0.27), right_hand=P(0.4, 0.26))
     img, m = g.finish(meta=meta)
@@ -101,6 +115,111 @@ def glass_woman(h, rng, robe="violet", mantle="teal", jewels=False, veil="white"
             g.circle(*P(-0.04 + i * 0.02, 0.2), 0.009, GOLD)
         g.circle(*P(-0.052, 0.13), 0.01, GOLD)
     return g.finish(meta={"center": P(0, 0.42), "head": P(0, 0.11)})
+
+
+@prop("glass_philistine")
+def glass_philistine(h, rng, weapon="sword", face="left"):
+    """A Philistine soldier: feathered headdress, bronze, and a sword, spear or a glowing iron."""
+    g = GlassCanvas(h * 0.7, h, seed=int(rng.integers(1e6)))
+    f = _figure(g, 0.36, robe=(150, 52, 40), short=True, scale=0.82)  # room above for a raised blade
+    P = f["P"]
+    for k in range(5):
+        a = -0.5 + k * 0.25
+        g.poly([P(-0.01 + a * 0.08, 0.07), P(0.01 + a * 0.08, 0.07), P(a * 0.2, -0.06)], WHITE)
+    g.poly([P(-0.12, 0.24), P(0.12, 0.24), P(0.11, 0.42), P(-0.11, 0.42)], BRONZE, cuts=2)  # breastplate
+    g.poly([P(-0.12, 0.22), P(-0.16, 0.24), P(-0.17, 0.5), P(-0.13, 0.5)], SKIN)
+    g.poly([P(0.12, 0.22), P(0.16, 0.21), P(0.27, 0.12), P(0.25, 0.08)], SKIN)  # weapon arm forward-up
+    meta = {"center": P(0, 0.45), "head": P(0, 0.11)}
+    if weapon == "sword":
+        g.poly([P(0.25, 0.1), P(0.28, 0.08), P(0.42, -0.12), P(0.4, -0.13)], (196, 200, 210))
+        g.band([P(0.22, 0.12), P(0.3, 0.06)], 0.014, GOLD)
+    elif weapon == "spear":
+        g.band([P(0.26, 0.96), P(0.3, -0.12)], 0.012, WOOD)
+        g.poly([P(0.29, -0.12), P(0.31, -0.12), P(0.3, -0.19)], IRON)
+    elif weapon == "razor":
+        g.poly([P(0.25, 0.1), P(0.27, 0.08), P(0.33, 0.02), P(0.31, 0.0)], (210, 214, 224))
+    elif weapon == "iron":  # an iron heated in the fire
+        g.band([P(0.26, 0.1), P(0.44, -0.06)], 0.014, IRON)
+        g.circle(*P(0.45, -0.07), 0.018, (255, 140, 40))
+        meta["tip"] = P(0.45, -0.07)
+    img, m = g.finish(meta=meta)
+    if face == "right":
+        img = img.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
+        m = {k: (1 - x, y) for k, (x, y) in m.items()}
+    return img, m
+
+
+@prop("glass_fallen")
+def glass_fallen(h, rng, count=5):
+    """Philistines struck down (15:15): bodies lying where they fell, shields and spears scattered."""
+    w = 2.4
+    g = GlassCanvas(h * w, h, seed=int(rng.integers(1e6)))
+    for i in range(count):
+        x = 0.15 + i * (w - 0.3) / max(1, count - 1)
+        y = 0.75 + (i % 2) * 0.12
+        d = 1 if i % 2 else -1
+        g.poly([(x - 0.22 * d, y - 0.05), (x + 0.18 * d, y - 0.07), (x + 0.2 * d, y + 0.05), (x - 0.22 * d, y + 0.06)],
+               (150, 52, 40), cuts=1)                                            # body lying down
+        g.circle(x + 0.26 * d, y - 0.01, 0.055, SKIN)
+        for k in range(3):
+            g.poly([(x + (0.3 + k * 0.03) * d, y - 0.03), (x + (0.3 + k * 0.03) * d, y + 0.01),
+                    (x + (0.42 + k * 0.03) * d, y - 0.06 + k * 0.03)], WHITE)      # fallen headdress
+        g.poly([(x - 0.24 * d, y - 0.02), (x - 0.45 * d, y + 0.02), (x - 0.45 * d, y + 0.07), (x - 0.24 * d, y + 0.05)],
+               SKIN)                                                             # legs
+        g.ellipse(x + 0.02 * d, y - 0.2, 0.12, 0.09, BRONZE, cuts=1)             # dropped shield
+        g.band([(x - 0.3, y + 0.18), (x + 0.32, y - 0.32)], 0.012, WOOD)         # broken spear
+    return g.finish(meta={"center": (w / 2, 0.7)})
+
+
+@prop("glass_boy")
+def glass_boy(h, rng):
+    """The lad who led blind Samson by the hand (16:26)."""
+    g = GlassCanvas(h * 0.55, h, seed=int(rng.integers(1e6)))
+    f = _figure(g, 0.27, robe=(200, 170, 90), short=True)
+    P = f["P"]
+    g.poly([P(-0.12, 0.22), P(-0.16, 0.24), P(-0.24, 0.42), P(-0.2, 0.45)], SKIN)  # hand held out behind
+    g.poly([P(0.12, 0.22), P(0.16, 0.24), P(0.17, 0.5), P(0.13, 0.5)], SKIN)
+    g.circle(*P(0, 0.08), 0.065, HAIR)
+    g.circle(*P(0, 0.12), 0.05, SKIN)
+    return g.finish(meta={"center": P(0, 0.45), "hand": P(-0.22, 0.44)})
+
+
+@prop("glass_altar")
+def glass_altar(h, rng):
+    """A rock altar with an offering on the fire (13:19-20)."""
+    g = GlassCanvas(h * 1.3, h, seed=int(rng.integers(1e6)))
+    g.poly([(0.15, 0.45), (1.15, 0.45), (1.1, 1.0), (0.2, 1.0)], STONE, cuts=4)
+    g.poly([(0.1, 0.4), (1.2, 0.4), (1.2, 0.47), (0.1, 0.47)], (150, 150, 160))
+    return g.finish(meta={"center": (0.65, 0.6), "flame1": (0.45, 0.4), "flame2": (0.65, 0.38),
+                          "flame3": (0.85, 0.4), "smoke": (0.65, 0.3)})
+
+
+@prop("glass_crowd")
+def glass_crowd(h, rng, count=12, width=1.95):
+    """Philistine men and women on the temple roof (16:27)."""
+    g = GlassCanvas(h * width * 5, h * 5, seed=int(rng.integers(1e6)))  # drawn in the temple's units
+    for i in range(count):
+        x = 0.12 + i * (width - 0.24) / (count - 1)
+        c = [RUBY, (52, 70, 140), GOLD, EMERALD, VIOLET, TEAL][i % 6]
+        g.poly([(x - 0.035, 0.2), (x + 0.035, 0.2), (x + 0.03, 0.08), (x - 0.03, 0.08)], c)
+        g.circle(x, 0.055, 0.025, SKIN)
+        g.band([(x - 0.03, 0.1), (x - 0.06, 0.03)], 0.012, SKIN)   # arms raised, jeering
+        g.band([(x + 0.03, 0.1), (x + 0.06, 0.03)], 0.012, SKIN)
+    return g.finish(meta={"center": (width / 2, 0.12)})
+
+
+@prop("glass_grindstone")
+def glass_grindstone(h, rng):
+    """The upper millstone, seen from above, so it can turn."""
+    g = GlassCanvas(h, h, seed=int(rng.integers(1e6)))
+    g.circle(0.5, 0.5, 0.48, (150, 150, 160), cuts=0)
+    for k in range(8):
+        a = k / 8 * 2 * math.pi
+        g.band([(0.5 + math.cos(a) * 0.1, 0.5 + math.sin(a) * 0.1), (0.5 + math.cos(a) * 0.46,
+                0.5 + math.sin(a) * 0.46)], 0.012, (110, 110, 120))
+    g.circle(0.5, 0.5, 0.09, (70, 70, 80))
+    g.band([(0.5, 0.5), (0.96, 0.5)], 0.06, WOOD)  # the handle he pushes round
+    return g.finish(lead=0.012, meta={"center": (0.5, 0.5)})
 
 
 @prop("glass_angel")

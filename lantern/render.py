@@ -178,6 +178,12 @@ class Layer:
         bob = self.spec.get("bob")
         if bob:
             a += bob.get("roll", 1.5) * math.sin(2 * math.pi * t / bob.get("period", 3.0) + 0.9)
+        tilt = self.spec.get("angle_keys")  # [[t, degrees]]: bowing, recoiling, leaning in
+        if tilt:
+            a += keyframes(tilt, t)[0]
+        if self.spec.get("spin"):  # continuous turning, e.g. a millstone (deg per second)
+            sp = self.spec["spin"]
+            a += sp["rate"] * max(0.0, t - sp.get("from", 0.0))
         fall = self.spec.get("fall")  # topple about the pivot, accelerating like a falling body
         if fall and t > fall["at"]:
             a += fall.get("angle", -88) * ease_in((t - fall["at"]) / fall.get("dur", 1.1))
@@ -238,20 +244,22 @@ class Layer:
             img = img.copy()
         M = self.matrix(t, dur, cam)
         k = self.W / 1280
+        iw, ih = self.iw * self.hr, self.ih * self.hr  # card pixels (hi-res layers are drawn larger)
+        k *= self.hr
         for i, e in enumerate(fx):
-            x = self.pad + e.get("x", 0.5) * self.iw
-            y = self.pad + e.get("y", 0.5) * self.ih
+            x = self.pad + e.get("x", 0.5) * iw
+            y = self.pad + e.get("y", 0.5) * ih
             if e["type"] == "flame":
                 if t < e.get("from", -1):
                     continue
-                size = e.get("size", 0.012) * self.W
+                size = e.get("size", 0.012) * self.W * self.hr
                 inten = draw_flame(img, x, y, size, t, seed=i + e.get("seed", 0))
                 sx, sy, _ = M @ np.array([x, y - size * 0.6, 1.0])
                 lights.append((sx, sy, e.get("glow", 0.06) * self.W, inten * e.get("light", 0.35)))
             elif e["type"] == "smoke":
-                draw_smoke(img, x, y, e.get("size", 0.03) * self.W, t, seed=i + e.get("seed", 0))
+                draw_smoke(img, x, y, e.get("size", 0.03) * self.W * self.hr, t, seed=i + e.get("seed", 0))
             elif e["type"] == "ink":
-                pts = [(self.pad + p[0] * self.iw, self.pad + p[1] * self.ih) for p in e["points"]]
+                pts = [(self.pad + p[0] * iw, self.pad + p[1] * ih) for p in e["points"]]
                 prog = (t - e.get("start", 0)) / max(1e-6, e.get("end", dur) - e.get("start", 0))
                 p = ease_in_out(prog)
                 draw_ink(img, pts, p, e.get("color", "#7a1f1f"), e.get("width", 4) * k)
@@ -282,6 +290,13 @@ class Layer:
         inv = np.linalg.inv(T(-x0, -y0) @ M)
         out = img.transform((x1 - x0, y1 - y0), Image.AFFINE, data=tuple(inv[:2].flatten()),
                             resample=Image.BILINEAR)
+        op = self.spec.get("opacity")  # [[t, alpha]]: appear, vanish, swap between poses
+        if op:
+            a = keyframes(op, t)[0]
+            if a <= 0.001:
+                return None, (0, 0)
+            if a < 0.999:
+                out.putalpha(out.getchannel("A").point(lambda v: int(v * a)))
         return out, (x0, y0)
 
 
@@ -334,6 +349,10 @@ class Project:
 
         cam_keys = sc.get("camera") or [[0, 1.0, 0.5, 0.5], [dur, 1.035, 0.5, 0.5]]
         cam = clamp_camera(*keyframes(cam_keys, t), W, H)
+        for qt, amp, qd in sc.get("quakes", []):  # impacts shake the whole window
+            if qt <= t < qt + qd:
+                k = amp * (1 - (t - qt) / qd)
+                cam = (cam[0] + k * 0.25, cam[1] + k * math.sin(t * 71.0), cam[2] + k * math.sin(t * 53.0 + 1.3))
 
         canvas = Image.new("RGBA", (W, H), tuple(int(st["backdrop"][i:i + 2], 16) for i in (1, 3, 5)) + (255,))
         lights = []
@@ -347,6 +366,8 @@ class Project:
         # --- lighting: dim stage, a warm lantern pool that follows the narration, flame glows.
         # Light is smooth, so it is computed at half resolution and scaled up.
         amb = sc.get("ambient", st["ambient"])
+        if sc.get("ambient_keys"):  # darkness falling, light returning
+            amb = keyframes(sc["ambient_keys"], t)[0]
         spot = keyframes(sc.get("spotlight"), t)
         track = sc.get("spotlight_follow")  # {"layer": i, "from": s, "to": s, "offset": [dx, dy]}
         if spot and track and track.get("from", 0) <= t <= track.get("to", dur):
@@ -456,6 +477,15 @@ class Project:
             self.stage.glass_assemble(out, ease_in_out(t / TRANSITION_LEN["glass"]))
         if c == "glass" and t > dur - TRANSITION_LEN["glass"]:
             self.stage.glass_assemble(out, 1 - ease_in_out((t - (dur - TRANSITION_LEN["glass"])) / TRANSITION_LEN["glass"]))
+        for ft, col, fd in sc.get("flashes", []):  # a burst of coloured light in the glass
+            if ft <= t < ft + fd:
+                k = (1 - (t - ft) / fd) ** 1.5
+                c = np.array([int(col[i:i + 2], 16) for i in (1, 3, 5)], np.float32)
+                hole = getattr(self.stage, "hole", None)  # only the glass flashes, not the stonework
+                if hole is not None:
+                    out[hole] += (c - out[hole]) * k * 0.75
+                else:
+                    out += (c - out) * k * 0.75
         if flash:
             out += (np.array([250, 238, 210], np.float32) - out) * flash * 0.9
         if black:

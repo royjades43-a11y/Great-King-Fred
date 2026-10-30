@@ -40,7 +40,8 @@ SPOT_TRAVEL = 0.8    # seconds the lantern takes to swing to a new target
 CAST_DEFAULTS = {}   # defaults for every cast member (series/episode: cast_defaults)
 CHARACTERS = {}      # recurring characters from the series cast.yaml, used as `character: name`
 SERIES = {"dir": "."}  # folder of the series the episode belongs to
-SERIES_KEYS = ("style", "voice", "motif", "music_volume", "cast_defaults", "pronounce", "fps")
+SERIES_KEYS = ("style", "voice", "motif", "music_volume", "cast_defaults", "pronounce", "fps", "pace")
+PACE = {}            # series pacing: {breath_gap, gap_warn} - how often something must move
 
 
 class Cast:
@@ -82,6 +83,141 @@ class Cast:
 
     def radius(self):
         return min(0.36, max(0.08, 0.62 * max(self.w, self.h * H / W)))
+
+
+# ------------------------------------------------------------------ actions
+# Small pieces of acting, each a cue: they add keyframes to a cast member's layer (or to the
+# scene) so figures can react to what the narrator says.
+
+FLASH_COLORS = {"red": "#ff3a24", "white": "#fff4d8", "gold": "#ffd27a", "blue": "#9ec8ff"}
+
+
+def _slide_at(layer, t):
+    keys = layer.get("slide")
+    return keyframes(keys, t) if keys else (0.0, 0.0)
+
+
+def _add_slide(layer, pts):
+    keys = layer.setdefault("slide", [[0.0, 0.0, 0.0]])
+    keys += [list(p) for p in pts]
+    keys.sort(key=lambda k: k[0])
+
+
+def _opacity(c, t, val, dur):
+    keys = c.layer.setdefault("opacity", [[0.0, 1.0]])
+    cur = keyframes(keys, t)[0]
+    keys += [[t, cur], [t + dur, val]]
+    keys.sort(key=lambda k: k[0])
+
+
+def _tilt(c, pts):
+    keys = c.layer.setdefault("angle_keys", [[0.0, 0.0]])
+    keys += [list(p) for p in pts]
+    keys.sort(key=lambda k: k[0])
+
+
+def _toward_centre(c):
+    return 1.0 if c.at[0] < 0.5 else -1.0
+
+
+def act_swap(sb, t, args, fx):          # [swap:a:b] a gives way to b (a pose change)
+    a, b = sb.cast[args[0]], sb.cast[args[1]]
+    b.layer.setdefault("opacity", [[0.0, 0.0]])
+    _opacity(a, t, 0.0, 0.3)
+    _opacity(b, t, 1.0, 0.3)
+
+
+def act_appear(sb, t, args, fx):        # [appear:x] fades in
+    c = sb.cast[args[0]]
+    c.layer.setdefault("opacity", [[0.0, 0.0]])
+    _opacity(c, t, 1.0, 0.8)
+
+
+def act_vanish(sb, t, args, fx):        # [vanish:x] fades out
+    _opacity(sb.cast[args[0]], t, 0.0, 0.8)
+
+
+def act_shake(sb, t, args, fx):         # [shake:x] trembles - straining, struck, terrified
+    c = sb.cast[args[0]]
+    a = float(args[1]) if len(args) > 1 else 0.008
+    bx, by = _slide_at(c.layer, t)
+    _add_slide(c.layer, [[t, bx, by], [t + 0.07, bx + a, by], [t + 0.14, bx - a, by], [t + 0.21, bx + a * 0.7, by],
+                         [t + 0.28, bx - a * 0.5, by], [t + 0.42, bx, by]])
+
+
+def act_lunge(sb, t, args, fx):         # [lunge:x] strikes forward and back
+    c = sb.cast[args[0]]
+    d = (0.06 if len(args) < 2 else float(args[1])) * _toward_centre(c)
+    bx, by = _slide_at(c.layer, t)
+    _add_slide(c.layer, [[t, bx, by], [t + 0.22, bx + d, by - 0.01], [t + 0.75, bx, by]])
+    _tilt(c, [[t, 0], [t + 0.22, 7 * (1 if d > 0 else -1)], [t + 0.75, 0]])
+
+
+def act_recoil(sb, t, args, fx):        # [recoil:x] flinches back
+    c = sb.cast[args[0]]
+    d = -0.035 * _toward_centre(c)
+    bx, by = _slide_at(c.layer, t)
+    _add_slide(c.layer, [[t, bx, by], [t + 0.18, bx + d, by], [t + 0.9, bx + d * 0.4, by]])
+    _tilt(c, [[t, 0], [t + 0.18, -8 * (1 if d > 0 else -1)], [t + 0.9, 0]])
+
+
+def act_hop(sb, t, args, fx):           # [hop:x] a jump - or [laugh:x], three quick ones
+    c = sb.cast[args[0]]
+    bx, by = _slide_at(c.layer, t)
+    _add_slide(c.layer, [[t, bx, by], [t + 0.15, bx, by - 0.025], [t + 0.32, bx, by]])
+
+
+def act_laugh(sb, t, args, fx):
+    c = sb.cast[args[0]]
+    bx, by = _slide_at(c.layer, t)
+    pts = []
+    for k in range(4):
+        pts += [[t + k * 0.32, bx, by], [t + k * 0.32 + 0.14, bx, by - 0.012]]
+    _add_slide(c.layer, pts + [[t + 1.3, bx, by]])
+
+
+def act_tilt(sb, t, args, fx):          # [tilt:x:-12] leans (bowing in prayer, slumping)
+    c = sb.cast[args[0]]
+    deg = float(args[1]) if len(args) > 1 else 10
+    cur = keyframes(c.layer.get("angle_keys", [[0.0, 0.0]]), t)[0]
+    _tilt(c, [[t, cur], [t + 0.8, deg]])
+
+
+def act_ascend(sb, t, args, fx):        # [ascend:x] rises up and away (the angel in the flame)
+    c = sb.cast[args[0]]
+    bx, by = _slide_at(c.layer, t)
+    _add_slide(c.layer, [[t, bx, by], [t + 2.6, bx, by - 0.5]])
+    _opacity(c, t + 1.2, 0.0, 1.4)
+
+
+def act_spin(sb, t, args, fx):          # [spin:x:40] starts turning, degrees per second
+    c = sb.cast[args[0]]
+    c.layer["spin"] = {"rate": float(args[1]) if len(args) > 1 else 40.0, "from": t}
+
+
+def act_quake(sb, t, args, fx):         # [quake] the camera shakes on an impact
+    fx["quakes"].append([t, float(args[0]) if args else 0.012, 0.9])
+
+
+def act_flash(sb, t, args, fx):         # [flash:red] a burst of coloured light
+    col = args[0] if args else "white"
+    fx["flashes"].append([t, FLASH_COLORS.get(col, col), 0.7])
+
+
+def act_dark(sb, t, args, fx):          # [dark] the glass goes dark; [light] brings it back
+    cur = keyframes(fx["ambient_keys"], t)[0]
+    fx["ambient_keys"] += [[t, cur], [t + 1.4, float(args[0]) if args else 0.16]]
+
+
+def act_light(sb, t, args, fx):
+    cur = keyframes(fx["ambient_keys"], t)[0]
+    fx["ambient_keys"] += [[t, cur], [t + 1.6, fx["base_ambient"]]]
+
+
+ACTIONS = {"swap": act_swap, "appear": act_appear, "vanish": act_vanish, "shake": act_shake,
+           "lunge": act_lunge, "recoil": act_recoil, "hop": act_hop, "laugh": act_laugh, "tilt": act_tilt,
+           "ascend": act_ascend, "spin": act_spin, "quake": act_quake, "flash": act_flash, "dark": act_dark,
+           "light": act_light}
 
 
 def scene_items(sc):
@@ -186,7 +322,7 @@ class SceneBuild:
         if "." in p:
             who, point = p.split(".", 1)
             return list(self.cast[who].point(point))
-        return list(self.places[p])
+        return list(self.places[p.lstrip("@")])
 
     # ---------------------------------------------------------------- camera
     def camera_keys(self):
@@ -289,6 +425,11 @@ class SceneBuild:
                     fx.append(e)
             if fx:
                 spec["fx"] = fx
+            if c.spec.get("hidden"):  # waits off the glass until [appear:x] or [swap:other:x]
+                spec["opacity"] = [[0.0, 0.0]]
+            for k in ("spin", "hires"):
+                if k in c.spec:
+                    spec[k] = c.spec[k]
             c.layer = spec
             layers.append((c.key, spec))
 
@@ -303,6 +444,8 @@ class SceneBuild:
         ink_fx = []
         events = [0.0]
         labels = []
+        base_amb = sc.get("ambient", self.set.get("ambient", 0.45))
+        scene_fx = {"quakes": [], "flashes": [], "ambient_keys": [[0.0, base_amb]], "base_ambient": base_amb}
         for i, (t, name, args, _) in enumerate(self.cues):
             nxt = next((c[0] for c in self.cues[i + 1:] if c[1] in ("spot", "ink", "sail")), dur)
             if name in ("spot", "push"):
@@ -371,6 +514,9 @@ class SceneBuild:
                 c.layer["write"] = {"start": t, "end": max(t + 1.5, nxt_any - 0.4),
                                     "lines": c.meta["lines"], "initial": c.meta.get("initial")}
                 events.append(t)
+            elif name in ACTIONS:
+                ACTIONS[name](self, t, args, scene_fx)
+                events.append(t)
             elif name == "ignite":
                 c = self.cast[args[0]]
                 for e in c.layer.get("fx", []):
@@ -400,9 +546,31 @@ class SceneBuild:
                 events.append(t)
         # breathing room: no stretch longer than BREATH_GAP without the lantern moving
         events = sorted(set(events + [dur]))
+        # continuous actions keep the screen moving for their whole length, not just their start
+        busy = []
+        for spec in (spec for _, spec in layers):
+            if spec.get("write"):
+                busy.append((spec["write"]["start"], spec["write"]["end"]))
+            if spec.get("follow"):
+                busy.append((spec["follow"]["start"], spec["follow"]["end"]))
+            if spec.get("spin"):
+                busy.append((spec["spin"]["from"], dur))
+            if spec.get("shatter"):
+                busy.append((spec["shatter"]["at"], spec["shatter"]["at"] + spec["shatter"].get("dur", 3.4)))
+            for k in ("scale_keys", "slide"):
+                keys = spec.get(k) or []
+                for a_, b_ in zip(keys, keys[1:]):
+                    if b_[0] - a_[0] > 1.0 and a_[1:] != b_[1:]:
+                        busy.append((a_[0], b_[0]))
+        for e in ink_fx:
+            busy.append((e["start"], e["end"]))
+        busy.append((0.0, TRANSITION_LEN.get(self.open, 0) + LEAD))           # the window assembling
+        busy.append((dur - TRANSITION_LEN.get(self.close, 0) - sc.get("tail", TAIL), dur))  # and closing
+        filled = [a_ + k * 1.5 for a_, b_ in busy for k in range(int((b_ - a_) / 1.5) + 1)]
+        self.cue_events = sorted(set(events + [x for x in filled if x < dur]))
         breaths = []
         for a, b in zip(events, events[1:]):
-            n = int((b - a) // BREATH_GAP)
+            n = int((b - a) // PACE.get("breath_gap", BREATH_GAP))
             for k in range(1, n + 1):
                 tm = a + (b - a) * k / (n + 1)
                 cur = keyframes(spot_keys, tm)
@@ -428,6 +596,11 @@ class SceneBuild:
         }
         if labels:
             scene["labels"] = labels
+        for k in ("quakes", "flashes"):
+            if scene_fx[k]:
+                scene[k] = scene_fx[k]
+        if len(scene_fx["ambient_keys"]) > 1:
+            scene["ambient_keys"] = scene_fx["ambient_keys"]
         if follow:
             i, c = follow
             scene["spotlight_follow"] = {"layer": i, "from": c["follow"]["start"], "to": c["follow"]["end"] + 0.6,
@@ -498,6 +671,8 @@ def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_prev
     os.makedirs(build_dir, exist_ok=True)
     CAST_DEFAULTS.clear()
     CAST_DEFAULTS.update(ep.get("cast_defaults", {}))
+    PACE.clear()
+    PACE.update(ep.get("pace", {}))
     CHARACTERS.clear()
     CHARACTERS.update(ep.get("_characters", {}))
     SERIES["dir"] = ep.get("_series_dir", os.path.dirname(os.path.abspath(ep_dir)))
@@ -680,9 +855,10 @@ def write_report(ep, builds, total, build_dir):
         lines.append(f"## {sb.id}  ({fmt(sb.start)} - {fmt(sb.start + sb.duration)}, {sb.duration:.1f}s)")
         for t, name, args, spoken in sb.cues:
             lines.append(f"- `{fmt(sb.start + t)}` **[{name}:{':'.join(args)}]**  {spoken[:70]}")
-        gaps = [(a, b) for a, b in zip(sb.events, sb.events[1:]) if b - a > GAP_WARN]
+        warn = PACE.get("gap_warn", GAP_WARN)
+        gaps = [(a, b) for a, b in zip(sb.cue_events, sb.cue_events[1:]) if b - a > warn]
         for a, b in gaps:
-            warnings.append(f"{sb.id}: {b - a:.1f}s with no visual change ({fmt(sb.start + a)}-{fmt(sb.start + b)})")
+            warnings.append(f"{sb.id}: {b - a:.1f}s with no scripted action ({fmt(sb.start + a)}-{fmt(sb.start + b)})")
         for a, b, text in sb.captions:
             srt.append(f"{n}\n{srt_time(sb.start + a)} --> {srt_time(sb.start + b)}\n{text}\n")
             n += 1

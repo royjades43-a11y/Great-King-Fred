@@ -26,6 +26,10 @@ voice:
   respell:               # how the voice should say words it gets wrong (captions keep the spelling)
     comest: cummest
 
+pace:                    # something on screen moves at least this often
+  breath_gap: 2.5        # longer gaps get an automatic spotlight swell
+  gap_warn: 3.2          # the timing report flags scripted gaps longer than this
+
 motif: [62, 66, 69, 71, 69, 66, 62]   # D F# A B A F# D - the series' signature tune
 music_volume: 0.15
 
