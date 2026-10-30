@@ -244,6 +244,44 @@ class Stage:
         e = edge & hole
         out[e] = out[e] * (1 - a) + np.array([30, 27, 26], np.float32) * a
 
+    def shatter_out(self, out, k):
+        """The whole window cracks into its shards, which drop away into the dark (k: 0 -> 1)."""
+        if not hasattr(self, "_shards"):
+            rank, _ = self.glass_cells
+            cells = np.round(rank * 110).astype(np.int32)
+            self._shards = []
+            rng = np.random.default_rng(8)
+            for c in np.unique(cells):
+                ys, xs = np.nonzero(cells == c)
+                if not len(xs):
+                    continue
+                x0, x1, y0, y1 = xs.min(), xs.max() + 1, ys.min(), ys.max() + 1
+                m = (cells[y0:y1, x0:x1] == c) & self.hole[y0:y1, x0:x1]
+                self._shards.append((x0, y0, m, rng.uniform(0, 0.35) + (1 - y0 / self.H) * 0.15,
+                                     rng.uniform(-0.05, 0.05) * self.W))
+        src = out.copy()
+        res = out.copy()
+        res[self.hole] = (14, 10, 9)
+        _, edge = self.glass_cells
+        crack = edge & self.hole
+        res_src = src.copy()
+        res_src[crack] = (30, 27, 26)  # the leading shows first, then the pieces go
+        g = 2.2 * self.H
+        for x0, y0, m, delay, vx in self._shards:
+            tau = max(0.0, k * 1.8 - 0.25 - delay)
+            dy, dx = int(0.5 * g * tau * tau), int(vx * tau)
+            ny0, nx0 = y0 + dy, x0 + dx
+            h, w = m.shape
+            if ny0 >= self.H or nx0 >= self.W or nx0 + w <= 0:
+                continue
+            ys0, xs0 = max(0, -ny0), max(0, -nx0)
+            ys1, xs1 = min(h, self.H - ny0), min(w, self.W - nx0)
+            mm = m[ys0:ys1, xs0:xs1] & self.hole[ny0 + ys0:ny0 + ys1, nx0 + xs0:nx0 + xs1]  # stays in the window
+            piece = res_src[y0 + ys0:y0 + ys1, x0 + xs0:x0 + xs1]
+            dst = res[ny0 + ys0:ny0 + ys1, nx0 + xs0:nx0 + xs1]
+            dst[mm] = piece[mm]
+        return res
+
     # ------------------------------------------------------------------ curtains
     def _curtains(self):
         x0, y0, x1, y1 = self.opening

@@ -56,13 +56,16 @@ scenes:
       altar: {prop: glass_altar, at: [0.5, 0.95], height: 0.2, depth: 0.85, fx: [flames], flame_size: 0.012}
       angel: {character: angel, at: [0.28, 0.95], height: 0.52, hidden: true}
       mother: {prop: glass_woman, params: {robe: blue, mantle: white}, at: [0.74, 0.95], height: 0.44}
+      vow_wine: {prop: glass_vow, params: {vow: wine}, at: [0.39, 0.38], anchor: [0.5, 0.5], height: 0.15, depth: 0.7, hidden: true}
+      vow_dead: {prop: glass_vow, params: {vow: dead}, at: [0.5, 0.38], anchor: [0.5, 0.5], height: 0.15, depth: 0.7, hidden: true}
+      vow_hair: {prop: glass_vow, params: {vow: razor}, at: [0.61, 0.38], anchor: [0.5, 0.5], height: 0.15, depth: 0.7, hidden: true}
     narration: |
       [spot:mother] It began with a promise.
       [appear:angel] [flash:gold] [spot:angel] An angel appeared to a childless woman in Israel.
       [recoil:mother] [spot:mother] She would have a son, he told her.
       [spot:mother:tight] And he would be a Nazarite, [flash:gold] set apart to God [spot:angel] before he was born.
-      [spot:angel:wide] Under the law of Moses, [label:angel.head|No wine] a Nazarite drank no wine,
-      [label:angel|Nothing dead] touched nothing dead, [label:mother.head|No razor] and never cut his hair.
+      [spot:angel:wide] Under the law of Moses, a Nazarite drank [appear:vow_wine] no wine,
+      [appear:vow_dead] touched nothing dead, [appear:vow_hair] and never cut his hair.
       [spot:angel:wide] This boy, he said, [hop:mother] would begin to deliver Israel [spot:mother] from the Philistines.
       [ignite:altar] [spot:altar] And when an offering was made on the altar,
       [ascend:angel] [flash:gold] [spot:altar:wide] the angel rose up to heaven in the flame.
@@ -98,7 +101,7 @@ scenes:
       [shake:bound] [spot:bound:tight] Then the Spirit of the LORD came upon him,
       [swap:bound:samson] [flash:gold] [quake] and the ropes fell from his arms like burnt thread.
       [spot:samson] He grabbed the only weapon he could find, [spot:samson.head] [hop:samson] the fresh jawbone of a donkey.
-      [lunge:samson] [shake:army] [quake] [say:a thousand men] And with it, [lunge:samson] [shake:army] [quake] he struck down [vanish:army] [appear:fallen] [spot:fallen:wide] [quake] a thousand men.
+      [lunge:samson] [shake:army] [quake] [tally:1000] And with it, [lunge:samson] [shake:army] [quake] he struck down [vanish:army] [appear:fallen] [spot:fallen:wide] [quake] a thousand men.
       [tilt:samson:-4] [spot:samson:tight] One man. A thousand enemies.
 
   - id: the_gates
@@ -125,11 +128,15 @@ scenes:
     cast:
       delilah: {character: delilah, at: [0.5, 0.95], height: 0.46}
       lord: {character: philistine, params: {weapon: spear, face: right}, at: [0.2, 0.95], height: 0.46}
-      silver: {prop: glass_silver, at: [0.78, 0.97], height: 0.12}
+      silver1: {prop: glass_silver, at: [0.685, 0.97], height: 0.09, seed: 1, hidden: true}
+      silver2: {prop: glass_silver, at: [0.750, 0.97], height: 0.09, seed: 2, hidden: true}
+      silver3: {prop: glass_silver, at: [0.815, 0.97], height: 0.09, seed: 3, hidden: true}
+      silver4: {prop: glass_silver, at: [0.880, 0.97], height: 0.09, seed: 4, hidden: true}
+      silver5: {prop: glass_silver, at: [0.945, 0.97], height: 0.09, seed: 5, hidden: true}
     narration: |
       [spot:delilah] Then he fell in love with a woman named Delilah.
       [enter:lord] [spot:lord] The Philistine lords came to her with an offer.
-      [show:silver] [spot:silver] Eleven hundred pieces of silver [hop:silver] from each of them,
+      [appear:silver1] [spot:silver3] Eleven hundred pieces of silver [cascade:silver2,silver3,silver4,silver5] [spot:silver3:wide] from each of them,
       [lunge:lord] [spot:delilah:tight] if she would find the secret [exit:lord] of his strength.
 
   - id: the_bindings
@@ -203,7 +210,7 @@ scenes:
   - id: the_temple
     set: {name: glass_hall}
     open: glass
-    close: fade
+    close: shatter     # the story ends: the window breaks and falls away
     mood: battle
     cast:
       temple: {prop: glass_temple, params: {crowd: 0}, at: [0.5, 0.95], height: 0.8, depth: 0.9}
@@ -229,23 +236,28 @@ scenes:
     set: {name: glass_vineyard}
     open: glass
     close: fade
+    progress: 1
     mood: psalm
     cast:
       samson: {character: samson, at: [0.3, 0.95], height: 0.46}
       lion: {prop: glass_lion, at: [0.68, 0.95], height: 0.26}
+      vow_wine: {prop: glass_vow, params: {vow: wine}, at: [0.36, 0.33], anchor: [0.5, 0.5], height: 0.15, depth: 0.7}
+      vow_dead: {prop: glass_vow, params: {vow: dead}, at: [0.5, 0.33], anchor: [0.5, 0.5], height: 0.15, depth: 0.7}
+      vow_hair: {prop: glass_vow, params: {vow: razor}, at: [0.64, 0.33], anchor: [0.5, 0.5], height: 0.15, depth: 0.7}
     narration: |
       [fall:lion:right] [spot:all] Now, let's read this window.
       [spot:samson] Most people think Samson fell [tilt:samson:-5] on the day his hair was cut. [tilt:samson:0] [spot:samson:tight] Look closer.
       [spot:lion] On his way back through Timnah, he turned aside to the lion's carcass, [lunge:samson] and scooped honey out of it.
-      [label:lion|First vow: nothing dead] [spot:lion:tight] A Nazarite was never to touch the dead.
+      [shatter:vow_dead] [quake] [spot:lion:tight] A Nazarite was never to touch the dead.
       [hop:samson] [spot:samson] Then he threw a feast, [laugh:samson] and the Hebrew word for it means a drinking feast.
-      [label:samson|Second vow: no wine] Wine was the second vow.
-      [label:samson.hair|Third vow: no razor] [spot:samson:tight] So the haircut was not the first vow Samson broke. [flash:gold] [say:It was the last.|ruby|center] It was the last.
+      [shatter:vow_wine] [quake] Wine was the second vow.
+      [spot:vow_hair] So the haircut was not the first vow Samson broke. [shatter:vow_hair] [quake] [flash:gold] [say:It was the last.|ruby|center] It was the last.
 
   - id: read_the_light
     set: {name: glass_house}
     open: glass
     close: fade
+    progress: 2
     cast:
       samson: {character: samson, at: [0.5, 0.95], height: 0.5}
     narration: |
@@ -253,13 +265,14 @@ scenes:
       [tilt:samson:-6] [spot:samson:tight] Drift rarely announces itself.
       [light] [flood] But now hold this window up to the light.
       [label:samson.hair|Not the source] Samson's strength was never in his hair.
-      [spot:all:wide] Every time it came, [label:samson|Judges 14:6, 14:19, 15:14] the text says the same thing. [flash:gold] The Spirit of the LORD came upon him.
+      [spot:all:wide] Every time it came, [timeline:4] the text says the same thing. [flash:gold] The Spirit of the LORD came upon him.
       [tilt:samson:0] [spot:samson] The hair was the sign of a promise. [flood:1.3] The strength was God's.
 
   - id: read_the_thread
     set: {name: glass_hall}
     open: glass
     close: fade
+    progress: 3
     mood: wonder
     cast:
       samson: {character: samson, params: {pose: push, hair: short, blind: true}, at: [0.42, 0.95], height: 0.5}
@@ -267,7 +280,7 @@ scenes:
       thread: [samson.center, [0.7, 0.4], [0.97, 0.14]]
     narration: |
       [spot:samson] Now follow the thread.
-      [spot:samson:wide] A deliverer promised by an angel, [label:samson.head|Promised before birth] set apart before his birth, [spot:samson] who won his greatest victory [label:samson.right_hand|Arms stretched out] with his arms stretched out, [spot:samson:tight] in his death.
+      [spot:samson:wide] A deliverer promised by an angel, set apart before his birth, [spot:samson] who won his greatest victory with his arms stretched out, [spot:samson:tight] in his death.
       [ink:thread:gold] Samson is a broken picture of a better deliverer.
       [shake:samson] [spot:samson:tight] Samson died asking God to avenge his eyes.
       [flood:1.2] Jesus died praying for the people who crucified him. [label:samson|Luke 23:34] Father, forgive them.
@@ -276,6 +289,7 @@ scenes:
     set: {name: scroll}
     open: glass
     close: fade
+    progress: 4
     mood: psalm
     cast:
       verse: {prop: verse, params: {text: "O Lord GOD, remember me, I pray thee, and strengthen me, I pray thee, only this once, O God, that I may be at once avenged of the Philistines for my two eyes.", ref: "Judges 16:28 (KJV)", width: 1.45},
@@ -292,6 +306,7 @@ scenes:
     set: {name: great_window, exclude: 14}
     routes:
       toward_centre: ["@pane14", centre]
+      from_david: ["@pane17", centre]
     open: glass
     close: fade
     mood: triumph
@@ -301,6 +316,6 @@ scenes:
     narration: |
       [spot:pane] Every story in this series [spot:pane:wide] is one pane of a single great window.
       [settle:pane:@pane14] Samson takes his place among the judges and the kings, [spot:@pane17] next to David.
-      [spot:@centre] And at the centre, the window is still dark. [ink:toward_centre:gold] Every pane points toward it.
+      [spot:@centre] And at the centre, the window is still dark. [ink:toward_centre:gold] [ink:from_david:gold] Every pane points toward it.
       [spot:all:wide] By the end, you'll see why.
     tail: 2.6

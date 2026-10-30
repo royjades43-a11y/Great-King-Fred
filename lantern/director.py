@@ -214,7 +214,29 @@ def act_light(sb, t, args, fx):
     fx["ambient_keys"] += [[t, cur], [t + 1.6, fx["base_ambient"]]]
 
 
-ACTIONS = {"swap": act_swap, "appear": act_appear, "vanish": act_vanish, "shake": act_shake,
+def act_cascade(sb, t, args, fx):       # [cascade:a,b,c] appear one after another - piles multiplying
+    for i, key in enumerate(args[0].split(",")):
+        c = sb.cast[key.strip()]
+        c.layer.setdefault("opacity", [[0.0, 0.0]])
+        _opacity(c, t + i * 0.32, 1.0, 0.25)
+        bx, by = _slide_at(c.layer, t)
+        _add_slide(c.layer, [[t + i * 0.32, bx, by - 0.03], [t + i * 0.32 + 0.3, bx, by]])
+
+
+def act_tally(sb, t, args, fx):         # [tally:1000] that many glass tiles light up in a sweep
+    n = int(args[0])
+    rect = [float(v) for v in args[1].split(",")] if len(args) > 1 else [0.14, 0.13, 0.86, 0.43]
+    fx["graphics"].append({"kind": "tally", "n": n, "rect": rect, "start": t, "dur": 2.0, "until": t + 4.2,
+                           "color": args[2] if len(args) > 2 else "gold"})
+
+
+def act_timeline(sb, t, args, fx):      # [timeline:4] a bar whose nodes light gold one by one
+    n = int(args[0]) if args else 4
+    fx["graphics"].append({"kind": "timeline", "times": [t + 0.6 + i * 0.55 for i in range(n)], "start": t,
+                           "until": t + 6.5, "line": [0.2, 0.22, 0.8]})
+
+
+ACTIONS = {"cascade": act_cascade, "tally": act_tally, "timeline": act_timeline, "swap": act_swap, "appear": act_appear, "vanish": act_vanish, "shake": act_shake,
            "lunge": act_lunge, "recoil": act_recoil, "hop": act_hop, "laugh": act_laugh, "tilt": act_tilt,
            "ascend": act_ascend, "spin": act_spin, "quake": act_quake, "flash": act_flash, "dark": act_dark,
            "light": act_light}
@@ -544,7 +566,11 @@ class SceneBuild:
         events = [0.0]
         labels = []
         base_amb = sc.get("ambient", self.set.get("ambient", 0.45))
-        scene_fx = {"quakes": [], "flashes": [], "ambient_keys": [[0.0, base_amb]], "base_ambient": base_amb}
+        scene_fx = {"quakes": [], "flashes": [], "ambient_keys": [[0.0, base_amb]], "base_ambient": base_amb,
+                    "graphics": []}
+        if sc.get("progress"):  # which step of reading the window this scene is (1-3)
+            scene_fx["graphics"].append({"kind": "progress", "active": sc["progress"], "count": 3, "start": 0.4,
+                                         "until": dur - 0.3})
         for i, (t, name, args, _) in enumerate(self.cues):
             nxt = next((c[0] for c in self.cues[i + 1:] if c[1] in ("spot", "ink", "sail")), dur)
             if name in ("spot", "push"):
@@ -665,6 +691,9 @@ class SceneBuild:
                         busy.append((a_[0], b_[0]))
         for e in ink_fx:
             busy.append((e["start"], e["end"]))
+        for gph in scene_fx["graphics"]:
+            if gph["kind"] != "progress":
+                busy.append((gph["start"], gph["start"] + gph.get("dur", 3.0)))
         busy.append((0.0, TRANSITION_LEN.get(self.open, 0) + LEAD))           # the window assembling
         busy.append((dur - TRANSITION_LEN.get(self.close, 0) - sc.get("tail", TAIL), dur))  # and closing
         filled = [a_ + k * 1.5 for a_, b_ in busy for k in range(int((b_ - a_) / 1.5) + 1)]
@@ -699,7 +728,7 @@ class SceneBuild:
             scene["labels"] = labels
         if self.texts:
             scene["texts"] = self.compile_texts(cam, dur)
-        for k in ("quakes", "flashes"):
+        for k in ("quakes", "flashes", "graphics"):
             if scene_fx[k]:
                 scene[k] = scene_fx[k]
         if len(scene_fx["ambient_keys"]) > 1:

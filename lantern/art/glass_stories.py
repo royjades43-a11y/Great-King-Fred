@@ -327,6 +327,29 @@ def glass_silver(h, rng):
     return g.finish(lead=0.03, meta={"center": (0.8, 0.6)})
 
 
+@prop("glass_vow")
+def glass_vow(h, rng, vow="wine"):
+    """One of the three Nazarite vows (Numbers 6) as a round glass medallion: the vine, the dead, the razor."""
+    g = GlassCanvas(h, h, seed=int(rng.integers(1e6)))
+    g.circle(0.5, 0.5, 0.49, (40, 34, 30))
+    g.circle(0.5, 0.5, 0.45, GOLD)
+    g.circle(0.5, 0.5, 0.4, (36, 52, 120), tiles=6)
+    if vow == "wine":  # a cluster of grapes and a leaf
+        g.poly([(0.5, 0.2), (0.7, 0.28), (0.56, 0.36)], EMERALD)
+        for (x, y) in ((0.42, 0.38), (0.54, 0.38), (0.48, 0.48), (0.6, 0.48), (0.42, 0.5), (0.54, 0.58),
+                       (0.46, 0.66)):
+            g.circle(x, y, 0.07, VIOLET)
+    elif vow == "dead":  # a skull, as old windows show death
+        g.ellipse(0.5, 0.45, 0.2, 0.19, (226, 218, 196))
+        g.poly([(0.38, 0.55), (0.62, 0.55), (0.58, 0.72), (0.42, 0.72)], (226, 218, 196))
+        g.circle(0.42, 0.46, 0.055, (30, 27, 26))
+        g.circle(0.58, 0.46, 0.055, (30, 27, 26))
+    else:  # a razor
+        g.poly([(0.26, 0.6), (0.62, 0.36), (0.7, 0.44), (0.34, 0.68)], (210, 214, 224), cuts=1)
+        g.poly([(0.62, 0.36), (0.78, 0.26), (0.82, 0.32), (0.7, 0.44)], WOOD)
+    return g.finish(lead=0.03, meta={"center": (0.5, 0.5)})
+
+
 @prop("pane_image")
 def pane_image(h, rng, path=""):
     """A finished story pane (a circular medallion image made by a previous build)."""

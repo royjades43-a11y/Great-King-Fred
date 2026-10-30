@@ -16,7 +16,7 @@ from multiprocessing import Pool
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
-from . import audio
+from . import audio, graphics
 from .anim import clamp, ease_in, ease_in_out, ease_out, keyframes, point_along, smooth_noise
 from .fx import draw_flame, draw_ink, draw_smoke, duotone, paper_card
 from .stage import Dust, Snow, Stage
@@ -33,7 +33,7 @@ DEFAULT_STYLE = {
     "backdrop": "#0c0806",
 }
 
-TRANSITION_LEN = {"curtain": 1.3, "lantern": 0.35, "fade": 0.7, "glass": 1.6, "none": 0.0}
+TRANSITION_LEN = {"curtain": 1.3, "lantern": 0.35, "fade": 0.7, "glass": 1.6, "shatter": 1.8, "none": 0.0}
 
 
 def clamp_camera(z, fx, fy, W=1920, H=1080):
@@ -319,6 +319,7 @@ class Project:
                 ticket = self.stage.ticket(sc["title"]["text"], sc["title"].get("sub"))
             sc["_labels"] = [(lb, self.stage.label(lb["text"])) for lb in sc.get("labels", [])]
             sc["_texts"] = [self._prepare_text(it) for it in sc.get("texts", [])]
+            sc["_graphics"] = [graphics.prepare(g, self.W, self.H) for g in sc.get("graphics", [])]
             self.scenes.append((sc, layers, ticket))
         self.snow = Snow(self.W, self.H, count=int(260 * self.W / 1280))
         if self.style.get("rays"):  # soft diagonal sunbeams, wider than the frame so they can drift
@@ -507,6 +508,10 @@ class Project:
                 tx = (W - ticket.width) // 2
                 img.alpha_composite(ticket, (tx, int(y_hidden + (y_shown - y_hidden) * k)))
 
+        # --- motion graphics: counts, diagrams, section markers
+        for g in sc.get("_graphics", []):
+            g.draw(img, t)
+
         # --- words on the glass, in time with the voice
         self._draw_texts(img, sc, t)
 
@@ -558,6 +563,8 @@ class Project:
             black = max(black, ease_in_out((t - (dur - TRANSITION_LEN["fade"])) / TRANSITION_LEN["fade"]))
         if o == "glass" and t < TRANSITION_LEN["glass"]:
             self.stage.glass_assemble(out, ease_in_out(t / TRANSITION_LEN["glass"]))
+        if c == "shatter" and t > dur - TRANSITION_LEN["shatter"]:  # the window breaks and falls away
+            out = self.stage.shatter_out(out, (t - (dur - TRANSITION_LEN["shatter"])) / TRANSITION_LEN["shatter"])
         if c == "glass" and t > dur - TRANSITION_LEN["glass"]:
             self.stage.glass_assemble(out, 1 - ease_in_out((t - (dur - TRANSITION_LEN["glass"])) / TRANSITION_LEN["glass"]))
         for ft, col, fd in sc.get("flashes", []):  # a burst of coloured light in the glass
