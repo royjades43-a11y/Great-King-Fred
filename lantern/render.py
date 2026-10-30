@@ -113,15 +113,15 @@ class Layer:
             px = card[y0:y1, x0:x1].copy()
             px[..., 3] = np.where(m[y0:y1, x0:x1], px[..., 3], 0)
             # shards near the middle go first, the rest follow, like a roof giving way from the centre
-            delay = abs((x0 + x1) / 2 / w - 0.5) * sh.get("spread", 0.9) + rng.uniform(0, 0.25)
-            pieces.append((Image.fromarray(px, "RGBA"), x0, y0, rng.uniform(-0.25, 0.25) * self.W,
-                           rng.uniform(-120, 120), delay))
+            delay = abs((x0 + x1) / 2 / w - 0.5) * sh.get("spread", 1.6) + rng.uniform(0, 0.5)
+            pieces.append((Image.fromarray(px, "RGBA"), x0, y0, rng.uniform(-0.12, 0.12) * self.W,
+                           rng.uniform(-70, 70), delay))
         return pieces
 
     def _render_shatter(self, t, M):
         sh = self.spec["shatter"]
         out = Image.new("RGBA", (self.W, self.H), (0, 0, 0, 0))
-        g = 2.4 * self.H
+        g = 0.9 * self.H  # slower than real gravity: the collapse is the moment, let it be seen
         fade = 1 - clamp((t - sh["at"] - sh.get("dur", 3.0) * 0.6) / (sh.get("dur", 3.0) * 0.4))
         for img, x0, y0, vx, spin, delay in self.pieces:
             tau = max(0.0, t - sh["at"] - delay)
@@ -253,7 +253,15 @@ class Layer:
             elif e["type"] == "ink":
                 pts = [(self.pad + p[0] * self.iw, self.pad + p[1] * self.ih) for p in e["points"]]
                 prog = (t - e.get("start", 0)) / max(1e-6, e.get("end", dur) - e.get("start", 0))
-                draw_ink(img, pts, ease_in_out(prog), e.get("color", "#7a1f1f"), e.get("width", 4) * k)
+                p = ease_in_out(prog)
+                draw_ink(img, pts, p, e.get("color", "#7a1f1f"), e.get("width", 4) * k)
+                if e.get("glow") and p > 0:  # a gold thread carries its own light along with it
+                    nx, ny = point_along(pts, p)
+                    glows = [((nx, ny), e["glow"])]
+                    glows += [(point_along(pts, p * f), e["glow"] * 0.45) for f in (0.15, 0.4, 0.65, 0.88)]
+                    for (qx, qy), li in glows:
+                        sx, sy, _ = M @ np.array([qx, qy, 1.0])
+                        lights.append((sx, sy, 0.06 * self.W, li))
         ax, ay = self.spec.get("anchor", (0.5, 1.0))
         self.screen_pos = (M @ np.array([self.pad + ax * self.iw, self.pad + 0.5 * self.ih, 1.0]))[:2]
         sh = self.spec.get("shatter")

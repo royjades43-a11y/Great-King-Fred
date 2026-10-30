@@ -377,7 +377,7 @@ def great_window(W, H, rng, panes_dir="", exclude=None, hires=2):
     places = {f"pane{n}": (x, y) for n, (x, y, _) in slots.items()}
     places["centre"] = (0.5, 0.5)
     return {"layers": [{"key": "window", "image": img, "depth": 0.6, "paper": False, "grade": 0, "hires": hires}],
-            "ambient": 0.55, "weather": None, "places": places,
+            "ambient": 0.72, "weather": None, "places": places,
             "slot_sizes": {f"pane{n}": dia for n, (_, _, dia) in slots.items()}, "filled": filled}
 
 

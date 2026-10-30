@@ -326,6 +326,7 @@ class SceneBuild:
                 events.append(t)
             elif name == "label":
                 target, _, text = (":".join(args)).partition("|")
+                text = re.sub(r":(?=\S)", ": ", text)  # cue parsing strips the space after a colon
                 tx, ty, _, d = self.target_of("label", [target])
                 sx, sy = self.to_screen(tx, ty, d, t + 0.5, cam)
                 if labels:
@@ -381,7 +382,9 @@ class SceneBuild:
                 end = min(dur - 0.5, max(t + 2.5, nxt - 0.2))
                 gold = len(args) > 1 and args[1] == "gold"  # the gold thread between stories
                 ink_fx.append({"type": "ink", "points": pts, "start": t, "end": end,
-                               "color": "#f2cf6e" if gold else "#7a1f1f", "width": 9 if gold else 6})
+                               "color": "#ffe08a" if gold else "#7a1f1f", "width": 10 if gold else 6})
+                if gold:
+                    ink_fx[-1]["glow"] = 0.9
                 events.append(t)
             elif name == "sail":
                 c = self.cast[args[0]]
