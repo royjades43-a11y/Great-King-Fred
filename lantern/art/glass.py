@@ -108,12 +108,12 @@ class GlassCanvas:
         pp = [self.P(x, y) for x, y in pts]
         self._fill(self._mask(lambda d: d.polygon(pp, fill=255)), color, cuts, jitter, streak, tiles)
 
-    def ellipse(self, cx, cy, rx, ry, color, cuts=0, jitter=0.08):
+    def ellipse(self, cx, cy, rx, ry, color, cuts=0, jitter=0.08, tiles=0):
         box = [(cx - rx) * self.s, (cy - ry) * self.s, (cx + rx) * self.s, (cy + ry) * self.s]
-        self._fill(self._mask(lambda d: d.ellipse(box, fill=255)), color, cuts, jitter, 1.0)
+        self._fill(self._mask(lambda d: d.ellipse(box, fill=255)), color, cuts, jitter, 1.0, tiles)
 
-    def circle(self, cx, cy, r, color, cuts=0, jitter=0.08):
-        self.ellipse(cx, cy, r, r, color, cuts, jitter)
+    def circle(self, cx, cy, r, color, cuts=0, jitter=0.08, tiles=0):
+        self.ellipse(cx, cy, r, r, color, cuts, jitter, tiles)
 
     def band(self, pts, width, color, cuts=0):
         """A thick polyline as one piece: spears, staffs, sling cords."""
