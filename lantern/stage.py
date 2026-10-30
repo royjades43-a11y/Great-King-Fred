@@ -317,6 +317,20 @@ class Stage:
         shadow.alpha_composite(card, (20, 20))
         return shadow
 
+    def label(self, text):
+        """A small gold-on-dark plaque for pointing out details in the glass."""
+        k = self.k
+        f = load_font("italic", int(22 * k), self.style.get("font_italic"))
+        tw = f.getbbox(text)[2]
+        w, h = int(tw + 34 * k), int(40 * k)
+        img = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+        d = ImageDraw.Draw(img)
+        gold = hex_rgb(self.style.get("ticket_ink", "#e8c56a"))
+        d.rounded_rectangle([0, 0, w - 1, h - 1], radius=int(6 * k), fill=(26, 20, 16, 235),
+                            outline=gold + (255,), width=max(1, int(2 * k)))
+        d.text((17 * k, (h - f.getbbox(text)[3]) / 2 - 2 * k), text, font=f, fill=gold + (255,))
+        return img
+
     # ------------------------------------------------------------------ lens / film
     def _vignette(self):
         W, H = self.W, self.H

@@ -39,6 +39,7 @@ BREATH_GAP = 5.5     # longer gaps get an automatic spotlight swell
 SPOT_TRAVEL = 0.8    # seconds the lantern takes to swing to a new target
 CAST_DEFAULTS = {}   # defaults for every cast member (series/episode: cast_defaults)
 CHARACTERS = {}      # recurring characters from the series cast.yaml, used as `character: name`
+SERIES = {"dir": "."}  # folder of the series the episode belongs to
 SERIES_KEYS = ("style", "voice", "motif", "music_volume", "cast_defaults", "pronounce", "fps")
 
 
@@ -58,8 +59,9 @@ class Cast:
         self.at = list(spec.get("at", [0.5, 0.85]))
         self.h = spec.get("height", 0.3)
         self.depth = spec.get("depth", 0.75 + 0.5 * max(0.0, self.at[1] - 0.6))
-        img, self.meta = make_prop(spec["prop"], self.h * H * 1.3, seed=spec.get("seed", seed),
-                                   **spec.get("params", {}))
+        params = {k: v.replace("{series}", SERIES["dir"]) if isinstance(v, str) else v
+                  for k, v in spec.get("params", {}).items()}
+        img, self.meta = make_prop(spec["prop"], self.h * H * 1.3, seed=spec.get("seed", seed), **params)
         if spec.get("flip"):
             img = img.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
             self.meta = {k: (1 - x, y) for k, (x, y) in self.meta.items()}
@@ -116,6 +118,8 @@ class SceneBuild:
         # ---------------------------------------------------------------- set + cast
         set_spec = dict(sc.get("set", {"name": "void"}))
         set_name = set_spec.pop("name")
+        if set_name == "great_window":  # the series' rose window, with every finished pane in it
+            set_spec.setdefault("panes_dir", os.path.join(SERIES["dir"], "panes"))
         self.set = SETS[set_name](W, H, np.random.default_rng(sc.get("seed", index + 1)), **set_spec)
         self.places = self.set.get("places", {})
         self.cast = {k: Cast(k, v, art_dir, self.id, seed=index * 100 + i)
@@ -232,10 +236,11 @@ class SceneBuild:
                 raise SystemExit(f"scene {self.id}: unknown place {key}; map shows {list(self.places)}")
             x, y = self.places[key[1:]]
             return (x, y, 0.1, 1.0)
+        key, _, point = key.partition(".")
         if key not in self.cast:
             raise SystemExit(f"scene {self.id}: cue [{name}:{key}] names no cast member")
         c = self.cast[key]
-        x, y = c.point("center")
+        x, y = c.point(point or "center")
         return (x, y, c.radius(), c.depth)
 
     # ---------------------------------------------------------------- compile
@@ -251,6 +256,8 @@ class SceneBuild:
                     "paper": l.get("paper", False)}
             if "grade" in l:
                 spec["grade"] = l["grade"]
+            if l.get("hires"):
+                spec["hires"] = l["hires"]
             if l.get("drift"):
                 spec["slide"] = [[0, 0, 0], [dur, l["drift"] * dur, 0]]
             layers.append((l["key"], spec))
@@ -286,15 +293,16 @@ class SceneBuild:
             layers.append((c.key, spec))
 
         spot_keys, title = [], sc.get("title")
-        spot_default = (0.5, 0.5, 0.55)
+        spot_default = (0.5, 0.5, 0.55, 1.0)  # x, y, radius, intensity
         first_spot = next((cue for cue in self.cues if cue[1] == "spot"), None)
         if first_spot and first_spot[0] < 2.5:  # open on the first subject
             tx, ty, r, d = self.target_of("spot", first_spot[2])
             sx, sy = self.to_screen(tx, ty, d, 0, cam)
-            spot_default = (sx, sy, r)
+            spot_default = (sx, sy, r, 1.0)
         spot_keys.append([0.0, *spot_default])
         ink_fx = []
         events = [0.0]
+        labels = []
         for i, (t, name, args, _) in enumerate(self.cues):
             nxt = next((c[0] for c in self.cues[i + 1:] if c[1] in ("spot", "ink", "sail")), dur)
             if name in ("spot", "push"):
@@ -308,8 +316,33 @@ class SceneBuild:
                 r *= {"wide": 1.6, "tight": 0.62}.get(mod, 1.0)
                 sx, sy = self.to_screen(tx, ty, d, t + 0.4, cam)
                 prev = keyframes(spot_keys, t - SPOT_TRAVEL * 0.6)
-                spot_keys.append([max(spot_keys[-1][0] + 0.01, t - SPOT_TRAVEL * 0.6), *prev[:3]])
-                spot_keys.append([t + SPOT_TRAVEL * 0.4, sx, sy, r])
+                spot_keys.append([max(spot_keys[-1][0] + 0.01, t - SPOT_TRAVEL * 0.6), *prev[:4]])
+                spot_keys.append([t + SPOT_TRAVEL * 0.4, sx, sy, r, 1.0])
+                events.append(t)
+            elif name == "flood":  # light pours through the whole window from behind
+                prev = keyframes(spot_keys, t - 0.6)
+                spot_keys.append([max(spot_keys[-1][0] + 0.01, t - 0.6), *prev[:4]])
+                spot_keys.append([t + 1.6, 0.5, 0.45, 1.6, float(args[0]) if args else 1.35])
+                events.append(t)
+            elif name == "label":
+                target, _, text = (":".join(args)).partition("|")
+                tx, ty, _, d = self.target_of("label", [target])
+                sx, sy = self.to_screen(tx, ty, d, t + 0.5, cam)
+                if labels:
+                    labels[-1]["hold"] = min(labels[-1]["hold"], max(1.0, t - labels[-1]["at"] - 0.2))
+                labels.append({"text": text.strip(), "x": sx, "y": sy, "at": t, "hold": 4.5})
+                events.append(t)
+            elif name == "shatter":
+                c = self.cast[args[0]]
+                c.layer["shatter"] = {"at": t, "dur": 3.4, "pieces": 80}
+                events.append(t)
+            elif name == "settle":  # a pane flies into its slot in the Great Window
+                c = self.cast[args[0]]
+                place = args[1].lstrip("@")
+                px, py = self.places[place]
+                slot = self.set.get("slot_sizes", {}).get(place, 0.1)
+                c.layer["scale_keys"] = [[0, 1.0], [t, 1.0], [t + 3.4, slot / c.h]]
+                c.layer["slide"] = [[0, 0, 0], [t, 0, 0], [t + 3.4, px - c.at[0], py - c.at[1]]]
                 events.append(t)
             elif name in ("enter", "exit", "show"):
                 c = self.cast[args[0]]
@@ -346,8 +379,9 @@ class SceneBuild:
             elif name == "ink":
                 pts = self.routes[args[0]]
                 end = min(dur - 0.5, max(t + 2.5, nxt - 0.2))
-                ink_fx.append({"type": "ink", "points": pts, "start": t, "end": end, "color": "#7a1f1f",
-                               "width": 6})
+                gold = len(args) > 1 and args[1] == "gold"  # the gold thread between stories
+                ink_fx.append({"type": "ink", "points": pts, "start": t, "end": end,
+                               "color": "#f2cf6e" if gold else "#7a1f1f", "width": 9 if gold else 6})
                 events.append(t)
             elif name == "sail":
                 c = self.cast[args[0]]
@@ -371,7 +405,7 @@ class SceneBuild:
                 cur = keyframes(spot_keys, tm)
                 swell = 1.28 if len(breaths) % 2 == 0 else 0.82
                 sx = cur[0] + (0.5 - cur[0]) * 0.12
-                breaths.append((tm, [tm - 1.2, *cur[:3]], [tm + 1.4, sx, cur[1], min(0.9, cur[2] * swell)]))
+                breaths.append((tm, [tm - 1.2, *cur[:4]], [tm + 1.4, sx, cur[1], min(0.9, cur[2] * swell), cur[3]]))
         for tm, k0, k1 in breaths:
             spot_keys.append(k0)
             spot_keys.append(k1)
@@ -389,6 +423,8 @@ class SceneBuild:
             "camera": cam, "spotlight": spot_keys,
             "layers": [spec for _, spec in layers],
         }
+        if labels:
+            scene["labels"] = labels
         if follow:
             i, c = follow
             scene["spotlight_follow"] = {"layer": i, "from": c["follow"]["start"], "to": c["follow"]["end"] + 0.6,
@@ -447,6 +483,7 @@ def load_episode(ep_dir):
         with open(cast_path) as f:
             ep["_characters"] = yaml.safe_load(f) or {}
     ep["_series"] = series.get("title")
+    ep["_series_dir"] = series_dir
     return ep
 
 
@@ -460,6 +497,7 @@ def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_prev
     CAST_DEFAULTS.update(ep.get("cast_defaults", {}))
     CHARACTERS.clear()
     CHARACTERS.update(ep.get("_characters", {}))
+    SERIES["dir"] = ep.get("_series_dir", os.path.dirname(os.path.abspath(ep_dir)))
     v = ep.get("voice", {})
     voice_dir = os.path.join(ep_dir, "voice")
     lang = v.get("lang", "en-gb")
@@ -485,6 +523,9 @@ def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_prev
         sb.start = start
         scenes.append(sb.compile())
         scene_builds.append(sb)
+        pane = ep.get("pane")
+        if pane and pane.get("scene") == sb.id:  # this story's medallion for the Great Window
+            save_pane(sb, pane, build_dir)
         start += sb.duration
         print(f"  scene {sb.id:<22} {sb.duration:6.1f}s  {len(sb.cues)} cues")
     total = start
@@ -592,6 +633,34 @@ def loudnorm(path, lufs=-14):
                     f"loudnorm=I={lufs}:TP=-1.5:LRA=11", "-ar", "48000", "-c:a", "aac", "-b:a", "192k",
                     "-movflags", "+faststart", tmp], check=True)
     os.replace(tmp, path)
+
+
+def snapshot(sb):
+    """The scene's set and cast composed at rest, unlit - the picture a pane is cut from."""
+    canvas = Image.new("RGBA", (W, H), (0, 0, 0, 255))
+    for l in sb.set["layers"]:
+        im = l["image"]
+        if im.size != (W, H):
+            im = im.resize((W, H), Image.LANCZOS)
+        canvas.alpha_composite(im)
+    for c in sorted(sb.cast.values(), key=lambda c: c.depth):
+        im = Image.open(c.path).convert("RGBA")
+        w = max(1, int(c.w * W))
+        im = im.resize((w, max(1, int(im.height * w / im.width))), Image.LANCZOS)
+        ax, ay = c.anchor
+        canvas.alpha_composite(im, (int(c.at[0] * W - ax * im.width), int(c.at[1] * H - ay * im.height)))
+    return canvas
+
+
+def save_pane(sb, pane, build_dir):
+    from .art.glass_stories import make_pane
+    img = make_pane(snapshot(sb), pane.get("center", [0.5, 0.5]), pane.get("radius", 0.45))
+    panes_dir = os.path.join(SERIES["dir"], "panes")
+    os.makedirs(panes_dir, exist_ok=True)
+    path = os.path.join(panes_dir, f"{pane['number']}.png")
+    img.save(path)
+    img.save(os.path.join(build_dir, "pane.png"))
+    print(f"  pane {pane['number']} saved for the Great Window")
 
 
 def fmt(t):

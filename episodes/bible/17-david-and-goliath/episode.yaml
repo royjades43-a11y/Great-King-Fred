@@ -14,6 +14,7 @@
 
 title: David and Goliath
 seed: 17
+pane: {scene: the_stone, number: 17, center: [0.48, 0.62], radius: 0.4}   # its medallion in the Great Window
 voice:
   respell: {Elah: Eelah}   # added to the series list for this episode only
 pronounce:

@@ -1,0 +1,227 @@
+# Bible Stories in Stained Glass - 14. Samson   (Great Window format: story, then "reading the window")
+#
+# Look, voice and music come from ../series.yaml; recurring characters from ../cast.yaml.
+#
+# Sources (KJV):
+#   Judges 13:2-5    the angel and Manoah's wife; no razor; a Nazarite from the womb; "begin to deliver Israel"
+#   Numbers 6:3-6    the Nazarite vow: no wine or grapes, no razor, no touching the dead
+#   Judges 13:25, 14:6, 14:19, 15:14   "the Spirit of the LORD came (mightily) upon him"
+#   Judges 14:5-6    the young lion in the vineyards of Timnah; "he told not his father or his mother"
+#   Judges 14:8-10   honey from the lion's carcase; "Samson made there a feast" (Hebrew mishteh, a drinking feast)
+#   Judges 15:15     a thousand men with the jawbone of an ass
+#   Judges 16:1-3    Gaza: the doors of the gate, the two posts and the bar, carried to a hilltop
+#   Judges 16:4-17   Delilah; 1100 pieces of silver from each lord; three lies; "told her all his heart"
+#   Judges 16:19-20  asleep on her knees; seven locks shaved; "he wist not that the LORD was departed from him"
+#   Judges 16:21-22  eyes put out, fetters of brass, grinding in the prison house; "the hair ... began to grow again"
+#   Judges 16:23-30  feast to Dagon; three thousand on the roof; a lad led him; the prayer; the two middle pillars;
+#                    "the dead which he slew at his death were more than they which he slew in his life"
+#   Hebrews 11:32    Samson named among the faithful;  Luke 23:34  "Father, forgive them"
+
+title: Samson
+seed: 14
+pane: {scene: the_temple, number: 14, center: [0.5, 0.6], radius: 0.42}
+voice:
+  respell: {Dagon: Daygon}
+pronounce:
+  Delilah: dih-LY-lah
+  Timnah: TIM-nah
+  Nazarite: NAZ-a-rite (one set apart by a vow)
+  Dagon: DAY-gon
+
+scenes:
+  # ======================================================================= the story
+  - id: cold_open
+    set: {name: glass_hall}
+    open: glass
+    close: fade
+    mood: tense
+    cast:
+      temple: {prop: glass_temple, at: [0.5, 0.95], height: 0.8, depth: 0.9}
+      samson: {character: samson, params: {pose: push, hair: short, blind: true}, at: [0.5, 0.95], height: 0.42}
+    narration: |
+      [spot:samson] He was the strongest man who ever lived.
+      [spot:temple:wide] And this is how his story ended. Blind. In chains. Brought out to entertain the enemies of his people.
+      [spot:samson:tight] How did the strongest man in the Bible end up here?
+      [title:SAMSON|Judges 13-16] [pause:1.2]
+
+  - id: the_promise
+    set: {name: glass_birth}
+    open: glass
+    close: fade
+    mood: psalm
+    cast:
+      angel: {character: angel, at: [0.34, 0.95], height: 0.52}
+      mother: {prop: glass_woman, params: {robe: blue, mantle: white}, at: [0.64, 0.95], height: 0.44}
+    narration: |
+      [spot:mother] It began with a promise.
+      [show:angel] [spot:angel] An angel appeared to a childless woman in Israel, and told her she would have a son.
+      [spot:mother] He would be a Nazarite, set apart to God from before his birth.
+      [spot:angel:wide] Under the law of Moses, a Nazarite drank no wine, touched nothing dead, and never cut his hair.
+      [spot:angel] And this boy, the angel said, would begin to deliver Israel from the Philistines.
+
+  - id: the_lion
+    set: {name: glass_vineyard}
+    open: glass
+    close: fade
+    mood: battle
+    cast:
+      samson: {character: samson, at: [0.3, 0.95], height: 0.46}
+      lion: {prop: glass_lion, at: [0.72, 0.95], height: 0.3}
+    narration: |
+      [spot:samson] Samson grew up strong.
+      [enter:lion] [spot:lion] One day, in the vineyards of Timnah, a young lion came roaring at him.
+      [spot:samson] The Spirit of the LORD came mightily upon him, and he tore the lion apart with his bare hands.
+      [exit:lion:bottom] [spot:samson:tight] And he told no one.
+
+  - id: the_gates
+    set: {name: glass_gaza}
+    open: glass
+    close: fade
+    cast:
+      samson: {character: samson, params: {pose: lift}, at: [0.5, 0.9], height: 0.42}
+      gates: {prop: glass_gates, at: [0.5, 0.52], height: 0.26, depth: 1.0}
+    narration: |
+      [spot:samson] His strength became a legend. With the jawbone of a donkey, he struck down a thousand men.
+      [spot:gates] When his enemies shut him inside the walls of Gaza, he rose at midnight, and pulled up the city gates, posts, bar and all.
+      [move:samson:0.78] [move:gates:0.78] [spot:samson] And he carried them to the top of a hill.
+
+  - id: delilah
+    set: {name: glass_house}
+    open: glass
+    close: none
+    mood: mystery
+    cast:
+      samson: {character: samson, at: [0.3, 0.95], height: 0.46}
+      delilah: {character: delilah, at: [0.66, 0.95], height: 0.46}
+      silver: {prop: glass_silver, at: [0.85, 0.97], height: 0.1}
+    narration: |
+      [spot:delilah] Then he fell in love with a woman named Delilah.
+      [show:silver] [spot:silver] The Philistine lords each offered her eleven hundred pieces of silver to discover the secret of his strength.
+      [spot:delilah] Three times she asked. [spot:samson] Three times he lied. And three times, he stayed.
+      [spot:delilah:tight] She pressed him day after day, until at last he told her everything.
+
+  - id: the_razor
+    set: {name: glass_house}
+    open: none
+    close: fade
+    mood: somber
+    cast:
+      delilah: {character: delilah, at: [0.66, 0.95], height: 0.46}
+      samson: {character: samson, params: {pose: sleep}, at: [0.36, 0.96], height: 0.2}
+      locks: {prop: glass_locks, at: [0.255, 0.93], height: 0.09, depth: 1.0}
+    narration: |
+      [spot:samson] She lulled him to sleep on her knees, and called for a man to shave off the seven locks of his head.
+      [exit:locks:bottom] [spot:samson:tight] And his strength left him.
+      [spot:delilah] The Philistines are upon you, Samson!
+      [spot:samson] He woke, and thought he would shake himself free, as he always had.
+      [spot:samson:tight] But he did not know that the LORD had left him.
+
+  - id: the_prison
+    set: {name: glass_prison}
+    open: glass
+    close: fade
+    cast:
+      mill: {prop: glass_mill, at: [0.64, 0.95], height: 0.32}
+      samson: {character: samson, params: {pose: chained, hair: short, blind: true}, at: [0.3, 0.95], height: 0.46}
+    narration: |
+      [spot:samson] The Philistines seized him and put out his eyes.
+      [spot:mill] They bound him in bronze chains, and set him to grind grain in the prison at Gaza.
+      [spot:samson:tight] But the Bible adds one quiet line.
+      [label:samson.head|The hair grows back] The hair of his head began to grow again.
+
+  - id: the_temple
+    set: {name: glass_hall}
+    open: glass
+    close: fade
+    mood: battle
+    cast:
+      temple: {prop: glass_temple, at: [0.5, 0.95], height: 0.8, depth: 0.9}
+      samson: {character: samson, params: {pose: push, hair: short, blind: true}, at: [0.5, 0.95], height: 0.42}
+    narration: |
+      [spot:temple:wide] The Philistines held a great feast for their god Dagon.
+      [spot:temple.roof] Three thousand men and women crowded the roof to watch Samson brought out to entertain them.
+      [spot:samson] A boy led the blind man by the hand to the pillars that held up the house.
+      [spot:samson:tight] And Samson prayed. O Lord GOD, remember me, and strengthen me, only this once.
+      [push:samson] He took hold of the two middle pillars, one with his right hand and one with his left,
+      [shatter:temple] [shatter:samson] and pushed with all his might.
+      [spot:all:wide] The house fell. In his death, Samson defeated more of Israel's enemies than in all his life.
+    tail: 1.6
+
+  # ======================================================================= reading the window
+  - id: read_the_vows
+    set: {name: glass_vineyard}
+    open: glass
+    close: fade
+    mood: psalm
+    cast:
+      samson: {character: samson, at: [0.3, 0.95], height: 0.46}
+      lion: {prop: glass_lion, at: [0.68, 0.95], height: 0.26}
+    narration: |
+      [fall:lion:right] [spot:all] Now, let's read this window.
+      [spot:samson] Most people think Samson fell on the day his hair was cut. Look closer.
+      [spot:lion] On his way back through Timnah, he turned aside to the lion's carcass, and scooped honey out of it.
+      [label:lion|First vow: nothing dead] A Nazarite was never to touch the dead.
+      [spot:samson] Then he threw a feast, and the Hebrew word for it means a drinking feast.
+      [label:samson|Second vow: no wine] Wine was the second vow.
+      [label:samson.hair|Third vow: no razor] [spot:samson:tight] So the haircut was not the first vow Samson broke. It was the last.
+
+  - id: read_the_light
+    set: {name: glass_house}
+    open: glass
+    close: fade
+    cast:
+      samson: {character: samson, at: [0.5, 0.95], height: 0.5}
+    narration: |
+      [spot:samson] And the most chilling line in the story is this one. He did not know the LORD had left him.
+      [spot:samson:tight] Drift rarely announces itself.
+      [flood] But now hold this window up to the light.
+      [label:samson.hair|Not the source] Samson's strength was never in his hair.
+      [spot:all:wide] Every time it came, the text says the same thing. The Spirit of the LORD came upon him.
+      [spot:samson] The hair was the sign of a promise. The strength was God's.
+
+  - id: read_the_thread
+    set: {name: glass_hall}
+    open: glass
+    close: fade
+    mood: wonder
+    cast:
+      samson: {character: samson, params: {pose: push, hair: short, blind: true}, at: [0.42, 0.95], height: 0.5}
+    routes:
+      thread: [samson.center, [0.7, 0.4], [0.97, 0.14]]
+    narration: |
+      [spot:samson] Now follow the thread.
+      [spot:samson:wide] A deliverer promised by an angel, set apart before his birth, who won his greatest victory with his arms stretched out, in his death.
+      [ink:thread:gold] Samson is a broken picture of a better deliverer.
+      [spot:samson:tight] Samson died asking God to avenge his eyes.
+      [flood:1.2] Jesus died praying for the people who crucified him. Father, forgive them.
+
+  - id: the_verse
+    set: {name: scroll}
+    open: glass
+    close: fade
+    mood: psalm
+    cast:
+      verse: {prop: verse, params: {text: "O Lord GOD, remember me, I pray thee, and strengthen me, I pray thee, only this once, O God, that I may be at once avenged of the Philistines for my two eyes.", ref: "Judges 16:28 (KJV)", width: 1.45},
+              at: [0.5, 0.86], height: 0.66, depth: 0.6}
+    narration: |
+      [spot:verse:wide] Even Samson's last prayer was not a noble one.
+      [write:verse] O Lord GOD, remember me, I pray thee, and strengthen me, I pray thee, only this once, O God, that I may be at once avenged of the Philistines for my two eyes.
+      [spot:all] And God still answered it. Centuries later, the book of Hebrews names Samson among the heroes of faith.
+      [spot:verse] The hair grew back. That is grace.
+      [spot:verse:tight] So, what small compromise are you telling yourself does not matter?
+      [pause:1.5]
+
+  - id: the_great_window
+    set: {name: great_window, exclude: 14}
+    open: glass
+    close: fade
+    mood: triumph
+    cast:
+      pane: {prop: pane_image, params: {path: "{series}/panes/14.png"}, at: [0.5, 0.5], anchor: [0.5, 0.5],
+             height: 0.8, depth: 0.6, hires: 1}
+    narration: |
+      [spot:pane] Every story in this series is one pane of a single great window.
+      [settle:pane:@pane14] Samson takes his place among the judges and the kings, [spot:@pane17] next to David.
+      [spot:@centre] And at the centre, the window is still dark. Every pane points toward it.
+      [spot:all:wide] By the end, you'll see why.
+    tail: 2.6

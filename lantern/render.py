@@ -14,7 +14,7 @@ import tempfile
 from multiprocessing import Pool
 
 import numpy as np
-from PIL import Image, ImageFilter
+from PIL import Image, ImageDraw, ImageFilter
 
 from . import audio
 from .anim import clamp, ease_in, ease_in_out, ease_out, keyframes, point_along, smooth_noise
@@ -64,16 +64,19 @@ class Layer:
     def __init__(self, spec, base_dir, W, H, style):
         self.spec = spec
         img = Image.open(os.path.join(base_dir, spec["image"])).convert("RGBA")
+        # `hires` keeps extra resolution for layers the camera or a scale animation enlarges
+        self.hr = hr = spec.get("hires", 1)
         if "pos" in spec:  # a cut-out figure placed on stage
             w = spec.get("scale", 0.2) * W
-            img = img.resize((max(1, int(w)), max(1, int(img.height * w / img.width))), Image.LANCZOS)
+            lw, lh = max(1, int(w)), max(1, int(img.height * w / img.width))
         else:  # a full backdrop, scaled to cover the stage
             s = max(W / img.width, H / img.height) * spec.get("scale", 1.0)
-            img = img.resize((int(img.width * s), int(img.height * s)), Image.LANCZOS)
+            lw, lh = int(img.width * s), int(img.height * s)
+        img = img.resize((int(lw * hr), int(lh * hr)), Image.LANCZOS)
         grade = spec.get("grade", style["grade"])
         if grade:
             img = duotone(img, style["shadow"], style["mid"], style["highlight"], grade)
-        self.iw, self.ih = img.size
+        self.iw, self.ih = lw, lh
         if spec.get("paper", "pos" in spec):
             self.card, self.pad = paper_card(img, edge_px=max(1, int(3 * W / 1280)),
                                              shadow_px=max(2, int(10 * W / 1280)))
@@ -81,6 +84,61 @@ class Layer:
             self.card, self.pad = img, 0
         self.depth = spec.get("depth", 1.0)
         self.W, self.H = W, H
+        self.pieces = self._shards(spec["shatter"]) if spec.get("shatter") else None
+
+    def _shards(self, sh):
+        """Cut the card into Voronoi shards that fall when the layer shatters."""
+        rng = np.random.default_rng(sh.get("seed", 3))
+        a = np.asarray(self.card.getchannel("A"))
+        h, w = a.shape
+        n = sh.get("pieces", 60)
+        sx, sy = rng.uniform(0, w, n), rng.uniform(0, h, n)
+        q = 4
+        gy, gx = np.mgrid[0:h:q, 0:w:q].astype(np.float32)
+        best = np.full(gx.shape, np.inf, np.float32)
+        cell = np.zeros(gx.shape, np.int32)
+        for i in range(n):
+            d = (gx - sx[i]) ** 2 + (gy - sy[i]) ** 2
+            c = d < best
+            best[c], cell[c] = d[c], i
+        cell = cell.repeat(q, 0).repeat(q, 1)[:h, :w]
+        card = np.asarray(self.card)
+        pieces = []
+        for i in range(n):
+            m = (cell == i) & (a > 0)
+            if not m.any():
+                continue
+            ys, xs = np.nonzero(m)
+            x0, x1, y0, y1 = xs.min(), xs.max() + 1, ys.min(), ys.max() + 1
+            px = card[y0:y1, x0:x1].copy()
+            px[..., 3] = np.where(m[y0:y1, x0:x1], px[..., 3], 0)
+            # shards near the middle go first, the rest follow, like a roof giving way from the centre
+            delay = abs((x0 + x1) / 2 / w - 0.5) * sh.get("spread", 0.9) + rng.uniform(0, 0.25)
+            pieces.append((Image.fromarray(px, "RGBA"), x0, y0, rng.uniform(-0.25, 0.25) * self.W,
+                           rng.uniform(-120, 120), delay))
+        return pieces
+
+    def _render_shatter(self, t, M):
+        sh = self.spec["shatter"]
+        out = Image.new("RGBA", (self.W, self.H), (0, 0, 0, 0))
+        g = 2.4 * self.H
+        fade = 1 - clamp((t - sh["at"] - sh.get("dur", 3.0) * 0.6) / (sh.get("dur", 3.0) * 0.4))
+        for img, x0, y0, vx, spin, delay in self.pieces:
+            tau = max(0.0, t - sh["at"] - delay)
+            pw, ph = img.size
+            Mp = M @ T(x0 + vx * tau, y0 + 0.5 * g * tau * tau) @ R(spin * tau, pw / 2, ph / 2)
+            corners = Mp @ np.array([[0, pw, 0, pw], [0, 0, ph, ph], [1, 1, 1, 1]], np.float64)
+            bx0, by0 = max(0, int(corners[0].min()) - 1), max(0, int(corners[1].min()) - 1)
+            bx1, by1 = min(self.W, int(corners[0].max()) + 2), min(self.H, int(corners[1].max()) + 2)
+            if bx1 <= bx0 or by1 <= by0:
+                continue
+            inv = np.linalg.inv(T(-bx0, -by0) @ Mp)
+            piece = img.transform((bx1 - bx0, by1 - by0), Image.AFFINE, data=tuple(inv[:2].flatten()),
+                                  resample=Image.BILINEAR)
+            if fade < 1:
+                piece.putalpha(piece.getchannel("A").point(lambda v: int(v * fade)))
+            out.alpha_composite(piece, (bx0, by0))
+        return out
 
     def offset(self, t, dur):
         """Stage-logic movement: slides on rails, drop-ins, exits and bobbing."""
@@ -158,7 +216,14 @@ class Layer:
             tlx, tly = (W - self.iw) / 2, (H - self.ih) / 2
         px, py = sp.get("pivot", (0.5, 1.0))
         dx, dy = self.offset(t, dur)
-        local = T(dx, dy) @ R(self.angle(t), tlx + px * self.iw, tly + py * self.ih) @ T(tlx - self.pad, tly - self.pad)
+        local = (T(dx, dy) @ R(self.angle(t), tlx + px * self.iw, tly + py * self.ih)
+                 @ T(tlx, tly) @ S(1 / self.hr) @ T(-self.pad, -self.pad))
+        sk = sp.get("scale_keys")  # [[t, k]]: grow or shrink about the anchor point
+        if sk:
+            k, = keyframes(sk, t)
+            ax, ay = sp.get("anchor", (0.5, 1.0)) if "pos" in sp else (0.5, 0.5)
+            cxs, cys = tlx + ax * self.iw + dx, tly + ay * self.ih + dy
+            local = T(cxs, cys) @ S(k) @ T(-cxs, -cys) @ local
         z, fx, fy = cam
         d = self.depth
         zl = 1 + (z - 1) * d
@@ -191,6 +256,9 @@ class Layer:
                 draw_ink(img, pts, ease_in_out(prog), e.get("color", "#7a1f1f"), e.get("width", 4) * k)
         ax, ay = self.spec.get("anchor", (0.5, 1.0))
         self.screen_pos = (M @ np.array([self.pad + ax * self.iw, self.pad + 0.5 * self.ih, 1.0]))[:2]
+        sh = self.spec.get("shatter")
+        if sh and t >= sh["at"]:
+            return self._render_shatter(t, M), (0, 0)
         wr = self.spec.get("write")  # scripture written out line by line, in time with the voice
         if wr:
             img = self._written(img, t, wr)
@@ -226,6 +294,7 @@ class Project:
             ticket = None
             if sc.get("title"):
                 ticket = self.stage.ticket(sc["title"]["text"], sc["title"].get("sub"))
+            sc["_labels"] = [(lb, self.stage.label(lb["text"])) for lb in sc.get("labels", [])]
             self.scenes.append((sc, layers, ticket))
         self.snow = Snow(self.W, self.H, count=int(260 * self.W / 1280))
         if self.style.get("rays"):  # soft diagonal sunbeams, wider than the frame so they can drift
@@ -328,6 +397,28 @@ class Project:
                 y_shown = self.stage.opening[3] - ticket.height - int(18 * W / 1280)
                 tx = (W - ticket.width) // 2
                 img.alpha_composite(ticket, (tx, int(y_hidden + (y_shown - y_hidden) * k)))
+
+        # --- gold labels pointing out details ("look closer")
+        for lb, plaque in sc.get("_labels", []):
+            a = clamp((t - lb["at"]) / 0.4) * (1 - clamp((t - lb["at"] - lb.get("hold", 4.0)) / 0.4))
+            if a <= 0:
+                continue
+            x, y = lb["x"] * W, lb["y"] * H
+            right = lb["x"] < 0.62
+            k = W / 1280
+            lx = x + (30 * k if right else -30 * k - plaque.width)
+            ly = max(self.stage.opening[1] + 40 * k, y - 70 * k - plaque.height)
+            over = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+            d = ImageDraw.Draw(over)
+            gold = (232, 197, 106, 255)
+            ex = lx if right else lx + plaque.width
+            d.line([(x, y), (ex, ly + plaque.height / 2)], fill=gold, width=max(1, int(2 * k)))
+            r = 5 * k
+            d.ellipse([x - r, y - r, x + r, y + r], fill=gold)
+            over.alpha_composite(plaque, (int(lx), int(ly)))
+            if a < 1:
+                over.putalpha(over.getchannel("A").point(lambda v: int(v * a)))
+            img.alpha_composite(over)
 
         # --- curtains
         closed = 0.0

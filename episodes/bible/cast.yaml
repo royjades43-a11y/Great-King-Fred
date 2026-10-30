@@ -12,3 +12,7 @@ david_slinger: {prop: glass_david, params: {pose: sling}}
 goliath: {prop: glass_goliath}
 israel_army: {prop: glass_army, params: {side: israel, count: 5}}
 philistine_army: {prop: glass_army, params: {side: philistine, count: 5}}
+
+samson: {prop: glass_samson}
+delilah: {prop: glass_woman, params: {robe: violet, mantle: teal, jewels: true, veil: gold}}
+angel: {prop: glass_angel}
