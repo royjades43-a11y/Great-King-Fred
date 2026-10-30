@@ -42,7 +42,7 @@ scenes:
     narration: |
       [spot:samson] He was the strongest man who ever lived.
       [laugh:crowd] [spot:crowd] And this is how his story ended.
-      [spot:samson:tight] [say:Blind. In chains.|ruby|center] Blind. [shake:samson] In chains.
+      [spot:samson:tight] [say:Blind. In chains.|ruby|center] Blind. [shake:samson] [sfx:rattle] In chains.
       [laugh:crowd] [spot:crowd:wide] Brought out [shake:samson] to entertain the enemies of his people.
       [push:samson] [spot:samson] How did the strongest man [spot:samson:tight] in the Bible end up here?
       [title:SAMSON|Judges 13-16] [laugh:crowd] [pause:1.0]
@@ -80,9 +80,9 @@ scenes:
       lion: {prop: glass_lion, at: [0.74, 0.95], height: 0.3}
     narration: |
       [spot:samson] Samson grew up strong.
-      [enter:lion] [spot:lion] In the vineyards of Timnah, [lunge:lion] [quake] a young lion came roaring at him.
+      [enter:lion] [spot:lion] In the vineyards of Timnah, [lunge:lion] [quake] [sfx:roar] a young lion came roaring at him.
       [lunge:lion] [recoil:samson] [quake] [spot:samson] The Spirit of the LORD [flash:gold] [shake:samson] came mightily upon him.
-      [lunge:samson] [shake:lion] [quake] He tore the lion apart [lunge:samson] [shake:lion] [quake] with his bare hands.
+      [lunge:samson] [shake:lion] [quake] [sfx:growl] He tore the lion apart [lunge:samson] [shake:lion] [quake] with his bare hands.
       [fall:lion:right] [spot:samson:tight] And he told no one.
 
   - id: the_jawbone
@@ -201,7 +201,7 @@ scenes:
       mill: {prop: glass_grindstone, at: [0.66, 0.7], anchor: [0.5, 0.5], pivot: [0.5, 0.5], height: 0.42, depth: 0.95}
       samson: {character: samson, params: {pose: chained, hair: short, blind: true}, at: [0.32, 0.95], height: 0.46}
     narration: |
-      [spot:samson] They bound him with chains of bronze, [shake:samson]
+      [spot:samson] They bound him with chains of bronze, [shake:samson] [sfx:rattle]
       [spin:mill:30] [spot:mill] and set him to grind grain in the prison at Gaza.
       [move:samson:0.38] [spot:samson] Day after day, [move:samson:0.3] round and round.
       [spot:samson:tight] But the Bible adds one quiet line.

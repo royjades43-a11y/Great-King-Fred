@@ -89,6 +89,14 @@ class Cast:
 # Small pieces of acting, each a cue: they add keyframes to a cast member's layer (or to the
 # scene) so figures can react to what the narrator says.
 
+# the sound each kind of cue makes (None: silent - the spotlight and small gestures stay quiet)
+SFX_FOR = {"quake": "boom", "shatter": "break", "lunge": "strike", "recoil": "whoosh_small", "enter": "whoosh",
+           "exit": "whoosh", "show": "whoosh_small", "swap": "whoosh_small", "appear": "sparkle",
+           "vanish": "whoosh_small", "fall": "thud", "laugh": "jeer", "ascend": "rise", "dark": "descend",
+           "light": "swell_small", "flood": "swell", "label": "tick", "scroll": "paper", "say": "chime",
+           "tally": "tally", "title": "chime", "settle": "shimmer_long", "ignite": "fire", "flash": "shimmer",
+           "ink": "shimmer_long", "spin": "grind", "cascade": "clinks", "timeline": "chimes", "sail": "whoosh"}
+
 FLASH_COLORS = {"red": "#ff3a24", "white": "#fff4d8", "gold": "#ffd27a", "blue": "#9ec8ff"}
 
 
@@ -411,6 +419,34 @@ class SceneBuild:
             item["words"] += [(w, t0 + (i + 1) * 0.28) for i, w in enumerate(rest)]
         self._pending = None
 
+    def sound_effects(self, dur, scene_fx):
+        """A sound for every visual event: [t, kind, length, extra]. [sfx:name] adds one by hand."""
+        out = []
+        if self.open == "glass":
+            out.append([0.0, "assemble", TRANSITION_LEN["glass"], None])
+        if self.close == "shatter":
+            out.append([dur - TRANSITION_LEN["shatter"], "break_big", 0, None])
+        for t, name, args, _ in self.cues:
+            kind, extra, length = SFX_FOR.get(name), None, 0
+            if name == "sfx" and args:
+                kind = args[0]
+            elif name == "flash" and args and args[0] == "red":
+                kind = "sting"
+            elif name == "ink" and not (len(args) > 1 and args[1] == "gold"):
+                kind = None
+            elif name == "cascade":
+                extra = len(args[0].split(","))
+            elif name == "timeline":
+                extra = [0.6 + i * 0.55 for i in range(int(args[0]) if args else 4)]
+            elif name == "spin":
+                length = dur - t
+            if kind:
+                out.append([round(t, 3), kind, length, extra])
+        for g in scene_fx["graphics"]:
+            if g["kind"] == "progress":
+                out.append([g.get("start", 0.4) + 0.6, "chime", 0, None])
+        return out
+
     def compile_texts(self, cam, dur):
         out = []
         items = sorted(self.texts, key=lambda it: it["words"][0][1])
@@ -731,6 +767,7 @@ class SceneBuild:
         for k in ("quakes", "flashes", "graphics"):
             if scene_fx[k]:
                 scene[k] = scene_fx[k]
+        scene["sfx"] = self.sound_effects(dur, scene_fx)
         if len(scene_fx["ambient_keys"]) > 1:
             scene["ambient_keys"] = scene_fx["ambient_keys"]
         if follow:

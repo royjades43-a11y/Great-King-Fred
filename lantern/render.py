@@ -596,6 +596,11 @@ class Project:
                 events.append(("clack", start, 0))
             if c == "lantern":
                 events.append(("clack", start + dur - 0.05, 0))
+            if "sfx" in sc:  # the director scored this scene's effects itself
+                for t, kind, length, extra in sc["sfx"]:
+                    events.append((kind, start + t, length, extra))
+                start += dur
+                continue
             if sc.get("title"):
                 events.append(("slide", start + sc["title"].get("at", 0.8), 0.9))
             for l in layers:
