@@ -32,6 +32,10 @@ pace:                    # something on screen moves at least this often
   max_texts_per_minute: 1.0   # on-screen words ([say], [scroll]) are for the lines that matter most
   max_texts_per_scene: 1
 
+sound:                   # only the narrator and the background music
+  effects: false         # no sound effects or stage foley
+  hum: 0                 # no projector hum
+
 motif: [62, 66, 69, 71, 69, 66, 62]   # D F# A B A F# D - the series' signature tune
 music_volume: 0.15
 

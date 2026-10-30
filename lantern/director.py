@@ -41,7 +41,8 @@ SPOT_TRAVEL = 0.8    # seconds the lantern takes to swing to a new target
 CAST_DEFAULTS = {}   # defaults for every cast member (series/episode: cast_defaults)
 CHARACTERS = {}      # recurring characters from the series cast.yaml, used as `character: name`
 SERIES = {"dir": "."}  # folder of the series the episode belongs to
-SERIES_KEYS = ("style", "voice", "motif", "music_volume", "cast_defaults", "pronounce", "fps", "pace")
+SERIES_KEYS = ("style", "voice", "motif", "music_volume", "cast_defaults", "pronounce", "fps", "pace", "sound")
+SOUND = {}           # series sound settings: {effects: bool, hum: level}
 PACE = {}            # series pacing: {breath_gap, gap_warn} - how often something must move
 
 
@@ -849,7 +850,8 @@ class SceneBuild:
         for k in ("quakes", "flashes", "graphics"):
             if scene_fx[k]:
                 scene[k] = scene_fx[k]
-        scene["sfx"] = self.sound_effects(dur, scene_fx)
+        # an empty list also keeps the renderer's stage foley out of the scene
+        scene["sfx"] = self.sound_effects(dur, scene_fx) if SOUND.get("effects", True) else []
         if len(scene_fx["ambient_keys"]) > 1:
             scene["ambient_keys"] = scene_fx["ambient_keys"]
         if follow:
@@ -924,6 +926,8 @@ def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_prev
     CAST_DEFAULTS.update(ep.get("cast_defaults", {}))
     PACE.clear()
     PACE.update(ep.get("pace", {}))
+    SOUND.clear()
+    SOUND.update(ep.get("sound", {}))
     CHARACTERS.clear()
     CHARACTERS.update(ep.get("_characters", {}))
     SERIES["dir"] = ep.get("_series_dir", os.path.dirname(os.path.abspath(ep_dir)))
@@ -976,7 +980,7 @@ def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_prev
     project = {
         "width": W, "height": H, "fps": ep.get("fps", 24),
         "style": ep.get("style", {}),
-        "audio": {"hum": 0.7, "tracks": [
+        "audio": {"hum": SOUND.get("hum", 0.7), "tracks": [
             {"file": "narration.wav", "voice": True, "volume": 1.0},
             {"file": "music.wav", "duck": 0.65, "volume": ep.get("music_volume", 0.16)},
         ]},

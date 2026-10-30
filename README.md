@@ -53,6 +53,9 @@ blocks out timing with estimated durations and no voice; its output is labeled `
 
 ## Series
 
+A series can turn sound effects off with `sound: {effects: false, hum: 0}` in `series.yaml`; then only the narration and the music play. The Bible series does this.
+
+
 A folder of episodes can share a `series.yaml` (style, voice, motif, music level, cast defaults,
 pronunciations) and a `cast.yaml` (recurring characters). Every `episode.yaml` in the folder
 inherits them, so the look and sound can't drift between episodes. An episode places a recurring

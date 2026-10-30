@@ -654,6 +654,7 @@ def main(argv=None):
     ap.add_argument("--still", help="render one PNG: SCENE:SECONDS (scene index from 0)")
     ap.add_argument("--jobs", type=int, default=os.cpu_count())
     ap.add_argument("--no-audio", action="store_true")
+    ap.add_argument("--remix", help="replace the soundtrack of this already-rendered video (picture untouched)")
     a = ap.parse_args(argv)
     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
 
@@ -662,6 +663,18 @@ def main(argv=None):
         p = Project(a.scene, a.scale)
         Image.fromarray(p.frame(int(si), float(t), 0)).save(a.out)
         print(f"wrote {a.out}")
+        return
+
+    if a.remix:
+        p = Project(a.scene, 0.1)  # only timing is needed; tiny frames load fast
+        events, total = p.cues()
+        wav = tempfile.NamedTemporaryFile(suffix=".wav", delete=False).name
+        audio.render(wav, events, total, p.data.get("audio", {}), p.base)
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", a.remix, "-i", wav, "-map", "0:v", "-map", "1:a",
+                        "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "48000", "-c:a", "aac",
+                        "-b:a", "192k", "-shortest", "-movflags", "+faststart", a.out], check=True)
+        os.unlink(wav)
+        print(f"wrote {a.out} with a new soundtrack")
         return
 
     p = Project(a.scene, a.scale)
