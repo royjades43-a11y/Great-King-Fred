@@ -318,6 +318,7 @@ class Project:
             if sc.get("title"):
                 ticket = self.stage.ticket(sc["title"]["text"], sc["title"].get("sub"))
             sc["_labels"] = [(lb, self.stage.label(lb["text"])) for lb in sc.get("labels", [])]
+            sc["_texts"] = [self._prepare_text(it) for it in sc.get("texts", [])]
             self.scenes.append((sc, layers, ticket))
         self.snow = Snow(self.W, self.H, count=int(260 * self.W / 1280))
         if self.style.get("rays"):  # soft diagonal sunbeams, wider than the frame so they can drift
@@ -333,6 +334,85 @@ class Project:
         # half-resolution pixel-centre grid for the lighting pass
         yy, xx = np.mgrid[0:(self.H + 1) // 2, 0:(self.W + 1) // 2]
         self.xx, self.yy = xx.astype(np.float32) * 2 + 0.5, yy.astype(np.float32) * 2 + 0.5
+
+    def _prepare_text(self, it):
+        """Pre-render on-screen words: leaded-glass lettering, or a speech scroll."""
+        W, H = self.W, self.H
+        if it["kind"] == "scroll":
+            size = it.get("size", 0.05) * H
+            rib, placed, wy = self.stage.banderole([w for w, _ in it["words"]], size)
+            if rib.width > W * 0.86:  # long speeches: shrink the scroll to fit the window
+                size *= W * 0.86 / rib.width
+                rib, placed, wy = self.stage.banderole([w for w, _ in it["words"]], size)
+            return {"it": it, "ribbon": rib, "words": [(im, x, wy, t) for (im, x), (_, t) in zip(placed, it["words"])]}
+        from .art.glass import glass_word
+        size = it.get("size", 0.085) * H
+        ims = [glass_word(w.upper(), size, it.get("palette", "gold"), seed=i) for i, (w, _) in enumerate(it["words"])]
+        gap = -size * 0.42  # glass words carry their own halo padding
+        lines, cur, width = [], [], 0.0
+        for im, (_, t) in zip(ims, it["words"]):  # wrap onto a second line if it would overrun the window
+            if cur and width + gap + im.width > W * 0.84:
+                lines.append((cur, width))
+                cur, width = [], 0.0
+            width += (gap if cur else 0) + im.width
+            cur.append((im, t))
+        lines.append((cur, width))
+        placed, lh = [], ims[0].height * 0.72
+        cx, cy = it.get("pos", [0.5, 0.27])
+        y0 = cy * H - (len(lines) * lh) / 2 - ims[0].height * 0.14
+        for li, (row, wdt) in enumerate(lines):
+            x = cx * W - wdt / 2
+            for im, t in row:
+                placed.append((im, x, y0 + li * lh, t))
+                x += im.width + gap
+        return {"it": it, "words": placed}
+
+    def _draw_texts(self, img, sc, t):
+        W, H = self.W, self.H
+        for pt in sc.get("_texts", []):
+            it = pt["it"]
+            end_k = clamp((t - it["until"]) / 0.45)
+            if t < it["words"][0][1] - 0.3 or end_k >= 1:
+                continue
+            fade = 1 - end_k
+            if it["kind"] == "scroll":
+                rib = pt["ribbon"]
+                t0 = it["words"][0][1] - 0.3
+                u = ease_out((t - t0) / 0.45)  # the scroll unrolls from its middle
+                if u <= 0:
+                    continue
+                vis = max(2, int(rib.width * u))
+                piece = rib.crop(((rib.width - vis) // 2, 0, (rib.width + vis) // 2, rib.height))
+                layer = Image.new("RGBA", rib.size, (0, 0, 0, 0))
+                layer.alpha_composite(piece, ((rib.width - vis) // 2, 0))
+                for im, x, wy, tw in pt["words"]:
+                    a = clamp((t - tw + 0.05) / 0.22)
+                    if a > 0 and u > 0.98:
+                        w_im = im if a >= 1 else im.copy()
+                        if a < 1:
+                            w_im.putalpha(im.getchannel("A").point(lambda v, a=a: int(v * a)))
+                        layer.alpha_composite(w_im, (int(x), int(wy)))
+                if fade < 1:
+                    layer.putalpha(layer.getchannel("A").point(lambda v: int(v * fade)))
+                px, py = it["pos"]
+                img.alpha_composite(layer, (int(px * W - rib.width / 2), int(py * H - rib.height / 2)))
+                continue
+            for im, x, y, tw in pt["words"]:
+                k = clamp((t - tw + 0.04) / 0.35)
+                if k <= 0:
+                    continue
+                e = ease_out(k)
+                s_ = 1.28 - 0.28 * e  # each word lands with a small pop as it is spoken
+                a = min(e, fade)
+                w_im = im
+                if s_ > 1.001:
+                    w_im = im.resize((max(1, int(im.width * s_)), max(1, int(im.height * s_))), Image.BILINEAR)
+                if a < 0.999:
+                    w_im = w_im.copy()
+                    w_im.putalpha(w_im.getchannel("A").point(lambda v, a=a: int(v * a)))
+                dy = end_k * 0.03 * H
+                img.alpha_composite(w_im, (int(x - (w_im.width - im.width) / 2),
+                                           int(y - (w_im.height - im.height) / 2 + dy)))
 
     def timeline(self):
         frames = []
@@ -426,6 +506,9 @@ class Project:
                 y_shown = self.stage.opening[3] - ticket.height - int(18 * W / 1280)
                 tx = (W - ticket.width) // 2
                 img.alpha_composite(ticket, (tx, int(y_hidden + (y_shown - y_hidden) * k)))
+
+        # --- words on the glass, in time with the voice
+        self._draw_texts(img, sc, t)
 
         # --- gold labels pointing out details ("look closer")
         for lb, plaque in sc.get("_labels", []):

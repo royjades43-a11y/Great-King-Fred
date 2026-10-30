@@ -220,6 +220,35 @@ ACTIONS = {"swap": act_swap, "appear": act_appear, "vanish": act_vanish, "shake"
            "light": act_light}
 
 
+def match_words(spoken, off, words):
+    """Character offsets of `words` where they occur in the spoken sentence (at or after `off`, else
+    anywhere), comparing letters only. None if the phrase isn't in the narration."""
+    def norm(w):
+        return re.sub(r"[^a-z0-9]", "", w.lower())
+    toks = [(m.start(), norm(m.group())) for m in re.finditer(r"\S+", spoken)]
+    want = [norm(w) for w in words]
+    for start_at in (off, 0):
+        cand = [i for i, (o, _) in enumerate(toks) if o >= start_at - 1]
+        for k in cand:
+            if k + len(want) <= len(toks) and all(toks[k + i][1] == want[i] for i in range(len(want))):
+                return [toks[k + i][0] for i in range(len(want))]
+    return None
+
+
+def match_prefix_at_end(spoken, off, words):
+    """Offsets of the longest start of `words` that ends the sentence (after `off`), for phrases that
+    continue into the next sentence."""
+    def norm(w):
+        return re.sub(r"[^a-z0-9]", "", w.lower())
+    toks = [(m.start(), norm(m.group())) for m in re.finditer(r"\S+", spoken) if m.start() >= off - 1]
+    want = [norm(w) for w in words]
+    for n in range(min(len(want) - 1, len(toks)), 0, -1):
+        tail = toks[-n:]
+        if all(tail[i][1] == want[i] for i in range(n)):
+            return [o for o, _ in tail]
+    return None
+
+
 def scene_items(sc):
     """Narration as [(spoken sentence, cues, paragraph index)]; cue-only lines have no text."""
     paragraphs = [p for p in re.split(r"\n\s*\n", (sc.get("narration") or "").strip()) if p.strip()]
@@ -265,7 +294,8 @@ class SceneBuild:
         # ---------------------------------------------------------------- narration + cue timing
         self.open = sc.get("open", "lantern")
         self.close = sc.get("close", "lantern")
-        self.voice_clips, self.cues, self.captions = [], [], []
+        self.voice_clips, self.cues, self.captions, self.texts = [], [], [], []
+        self._pending = None
         t = TRANSITION_LEN.get(self.open, 0) + LEAD
         items = scene_items(sc)
         last_end = t
@@ -281,7 +311,11 @@ class SceneBuild:
                         at = t + spans[min(si, len(spans) - 1)][0]
                         self.cues += [(at, n, parse_cue_arg(a), "") for _, n, a in cues if n != "pause"]
                         continue
+                    self._continue_pending(spoken, lambda o, si=si: t + cue_time(si, o), t + spans[si][1])
                     for off, name, arg in cues:
+                        if name in ("say", "scroll"):
+                            self._text_cue(name, arg, spoken, off, lambda o, si=si: t + cue_time(si, o),
+                                           t + spans[si][1])
                         if name != "pause":  # the reader's own pauses stand
                             self.cues.append((t + cue_time(si, off), name, parse_cue_arg(arg), spoken))
                     self.captions.append((t + spans[si][0], t + spans[si][1], spoken))
@@ -297,7 +331,11 @@ class SceneBuild:
                 if spoken:
                     audio, at = narrator.sentence(spoken)
                     self.voice_clips.append((t, audio))
+                    self._continue_pending(spoken, lambda o, t=t, at=at: t + at(o), t + len(audio) / SR)
                     for off, name, arg in cues:
+                        if name in ("say", "scroll"):
+                            self._text_cue(name, arg, spoken, off, lambda o, t=t, at=at: t + at(o),
+                                           t + len(audio) / SR)
                         if name == "pause":
                             extra += float(arg or 0.8)
                         else:
@@ -314,6 +352,67 @@ class SceneBuild:
         self.duration = round(last_end + sc.get("tail", TAIL) + TRANSITION_LEN.get(self.close, 0), 3)
         self.duration = max(self.duration, sc.get("min_duration", 0))
         self.cues.sort(key=lambda c: c[0])
+
+    def _text_cue(self, name, arg, spoken, off, time_of, sentence_end):
+        """[say:phrase|opts] glass words / [scroll:who|words] a speech scroll, each word timed to the voice."""
+        parts = [p.strip() for p in (arg or "").split("|")]
+        if name == "scroll":
+            who, phrase, opts = parts[0], parts[1] if len(parts) > 1 else "", parts[2:]
+        else:
+            who, phrase, opts = None, parts[0], parts[1:]
+        words = phrase.split()
+        item = {"kind": name, "who": who, "words": [], "opts": opts, "sentence_end": sentence_end}
+        self.texts.append(item)
+        offsets = match_words(spoken, off, words)
+        if offsets:
+            item["words"] = list(zip(words, [time_of(o) for o in offsets]))
+            return
+        head = match_prefix_at_end(spoken, off, words)
+        if head:  # the phrase runs on into the next sentence
+            item["words"] = list(zip(words, [time_of(o) for o in head]))
+            self._pending = (item, words[len(head):])
+            return
+        t0 = time_of(off)  # not a quotation of the narration: reveal at the cue, a beat apart
+        item["words"] = list(zip(words, [t0 + i * 0.28 for i in range(len(words))]))
+
+    def _continue_pending(self, spoken, time_of, sentence_end):
+        """Carry a phrase that crossed a sentence break on into this sentence."""
+        if not getattr(self, "_pending", None):
+            return
+        item, rest = self._pending
+        offsets = match_words(spoken, 0, rest)
+        if offsets and offsets[0] < 3:
+            item["words"] += list(zip(rest, [time_of(o) for o in offsets]))
+            item["sentence_end"] = sentence_end
+        else:
+            t0 = item["words"][-1][1] if item["words"] else 0.0
+            item["words"] += [(w, t0 + (i + 1) * 0.28) for i, w in enumerate(rest)]
+        self._pending = None
+
+    def compile_texts(self, cam, dur):
+        out = []
+        items = sorted(self.texts, key=lambda it: it["words"][0][1])
+        for i, it in enumerate(items):
+            first, last = it["words"][0][1], it["words"][-1][1]
+            until = max(last + 1.0, it["sentence_end"] + 1.2)
+            later = [o["words"][0][1] for o in items[i + 1:] if o["kind"] == it["kind"]]
+            if later:
+                until = min(until, later[0] - 0.15)
+            until = min(until, dur - 0.6)
+            spec = {"kind": "glass" if it["kind"] == "say" else "scroll", "words": it["words"], "until": until}
+            if it["kind"] == "scroll":
+                c = self.cast[it["who"]]
+                hx, hy = c.point("head")
+                sx, sy = self.to_screen(hx, hy, c.depth, first, cam)
+                spec["pos"] = [min(0.74, max(0.26, sx)), min(0.82, max(0.16, sy - 0.11))]
+            else:
+                pos = {"top": 0.27, "center": 0.46, "middle": 0.46, "bottom": 0.8}  # clear of the arch
+                spec["pos"] = [0.5, next((pos[o] for o in it["opts"] if o in pos), 0.27)]
+                pal = next((o for o in it["opts"] if o in ("gold", "ruby", "sky", "white")), None)
+                if pal:
+                    spec["palette"] = pal
+            out.append(spec)
+        return out
 
     def route_point(self, p):
         """A route waypoint: [x, y], a map place name, or a cast point like 'david.hand'."""
@@ -514,6 +613,8 @@ class SceneBuild:
                 c.layer["write"] = {"start": t, "end": max(t + 1.5, nxt_any - 0.4),
                                     "lines": c.meta["lines"], "initial": c.meta.get("initial")}
                 events.append(t)
+            elif name in ("say", "scroll"):
+                events.append(t)
             elif name in ACTIONS:
                 ACTIONS[name](self, t, args, scene_fx)
                 events.append(t)
@@ -596,6 +697,8 @@ class SceneBuild:
         }
         if labels:
             scene["labels"] = labels
+        if self.texts:
+            scene["texts"] = self.compile_texts(cam, dur)
         for k in ("quakes", "flashes"):
             if scene_fx[k]:
                 scene[k] = scene_fx[k]

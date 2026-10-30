@@ -129,6 +129,10 @@ class GlassCanvas:
                for i in range(n, -1, -1)]
         self.poly(top + bot, color, cuts, tiles=tiles)
 
+    def mask_piece(self, mask, color, jitter=0.08, tiles=0, cuts=0):
+        """Fill an arbitrary boolean mask (e.g. rendered lettering) as glass."""
+        self._fill(np.asarray(mask, bool), color, cuts, jitter, 1.0, tiles)
+
     # ------------------------------------------------------------------ finish
     def finish(self, lead=0.006, meta=None, crop=True):
         lab = self.label
@@ -401,3 +405,32 @@ def scroll_set(W, H, rng):
             d.ellipse([x - W * 0.018, y, x + W * 0.018, y + H * 0.04], fill=(206, 158, 60, 255))
     return {"layers": [{"key": "scroll", "image": img, "depth": 0.6, "paper": False, "grade": 0}],
             "ambient": 0.5, "weather": None}
+
+
+WORD_PALETTES = {"gold": (236, 186, 70), "ruby": (196, 44, 50), "sky": (70, 120, 200), "white": (240, 232, 210)}
+
+
+def glass_word(text, height, palette="gold", seed=0):
+    """A word made of leaded glass: the letters are cut into shards, outlined in lead, and given a warm
+    glow so they read over any scene."""
+    from ..stage import load_font
+    f = load_font("bold", int(height * 1.32))
+    pad = int(height * 0.35)
+    l, t_, r, b = f.getbbox(text)
+    w, h = r - l + pad * 2, b - t_ + pad * 2
+    m = Image.new("L", (w, h), 0)
+    ImageDraw.Draw(m).text((pad - l, pad - t_), text, font=f, fill=255)
+    mask = np.asarray(m) > 127
+    g = GlassCanvas(w, h, seed=seed)
+    g.mask_piece(mask, WORD_PALETTES.get(palette, palette), jitter=0.14, tiles=max(3, len(text) * 2))
+    img, _ = g.finish(lead=max(0.02, 3.0 / h), crop=False)
+    # dark outer lead line, then a soft warm halo behind, so the word holds up on bright glass too
+    a = img.getchannel("A")
+    outline = a.filter(ImageFilter.MaxFilter(max(3, int(height * 0.07)) | 1))
+    halo = a.filter(ImageFilter.MaxFilter(max(3, int(height * 0.12)) | 1)).filter(
+        ImageFilter.GaussianBlur(height * 0.18))
+    out = Image.new("RGBA", img.size, (0, 0, 0, 0))
+    out.paste((255, 200, 110, 255), (0, 0), halo.point(lambda v: int(v * 0.55)))
+    out.paste((30, 27, 26, 255), (0, 0), outline)
+    out.alpha_composite(img)
+    return out

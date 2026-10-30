@@ -86,14 +86,25 @@ def fetch_npm():
     print(f"model ok (sha256 verified), {len(voices)} voices")
 
 
-SENTENCE = re.compile(r"(?<=[.!?…])[\"')\]]?\s+(?=[\"'(\[A-Z0-9])")
 CUE = re.compile(r"\[(\w+)(?::([^\]]*))?\]")
 
 
 def split_sentences(paragraph):
-    """Split on sentence ends, keeping cue markers attached to the words they precede."""
-    parts = SENTENCE.split(paragraph.strip())
-    return [p.strip() for p in parts if p.strip()]
+    """Split on sentence ends, keeping cue markers attached to the words they precede.
+    Punctuation inside a cue ([say:Blind. In chains.]) never ends a sentence."""
+    cues = []
+
+    def hide(m):
+        cues.append(m.group(0))
+        return f"\x00{len(cues) - 1}\x00"
+    text = CUE.sub(hide, paragraph.strip())
+    parts = re.split(r"(?<=[.!?…])[\"')\]]?\s+(?=[\"'(\x00A-Z0-9])", text)
+    out = []
+    for p in parts:
+        p = re.sub(r"\x00(\d+)\x00", lambda m: cues[int(m.group(1))], p).strip()
+        if p:
+            out.append(p)
+    return out
 
 
 def strip_cues(text):

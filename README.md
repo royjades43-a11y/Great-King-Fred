@@ -94,6 +94,8 @@ fraction of the frame.
 | `[ink:route]` `[sail:x:route]` | draw a route on the map / move a figure along it |
 | `[title:ACT I|Subtitle]` | theatre-ticket title card |
 | `[pause:0.8]` | extra silence after this sentence |
+| `[say:a thousand men]` `[say:He did not know\|ruby\|center]` | words in leaded glass, each appearing as it is spoken (options: gold/ruby/sky/white, top/center/bottom) |
+| `[scroll:delilah\|The Philistines are upon you!]` | a medieval speech scroll unrolls by a character, writing their words in time with the voice |
 
 See [`docs/DIRECTION.md`](docs/DIRECTION.md) for the structure and pacing rules episodes are
 written to.

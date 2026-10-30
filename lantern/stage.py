@@ -1,4 +1,5 @@
 """The fixed stage furniture: proscenium arch, curtains, title tickets, dust and film grain."""
+import math
 import os
 
 import numpy as np
@@ -330,6 +331,37 @@ class Stage:
                             outline=gold + (255,), width=max(1, int(2 * k)))
         d.text((17 * k, (h - f.getbbox(text)[3]) / 2 - 2 * k), text, font=f, fill=gold + (255,))
         return img
+
+    def banderole(self, words, size):
+        """A medieval speech scroll: a parchment ribbon with forked ends, and the words in ink.
+        Returns (ribbon image, [(word image, x offset)])."""
+        f = load_font("italic", int(size), self.style.get("font_italic"))
+        space = f.getlength(" ")
+        imgs, x = [], 0.0
+        for w in words:
+            l, t_, r, b = f.getbbox(w)
+            im = Image.new("RGBA", (int(r - l + 4), int(size * 1.4)), (0, 0, 0, 0))
+            ImageDraw.Draw(im).text((2 - l, size * 0.12), w, font=f, fill=(48, 26, 18, 255))
+            imgs.append((im, x))
+            x += r - l + space
+        body_w, h = int(x - space + size * 1.6), int(size * 1.9)
+        end = int(h * 0.7)
+        W_ = body_w + end * 2
+        rib = Image.new("RGBA", (W_, h + 20), (0, 0, 0, 0))
+        d = ImageDraw.Draw(rib)
+        wave = lambda u: math.sin(u * math.pi * 2) * h * 0.07  # noqa: E731
+        top = [(end + u * body_w, 8 + wave(u)) for u in np.linspace(0, 1, 40)]
+        bot = [(end + u * body_w, 8 + h + wave(u + 0.15)) for u in np.linspace(1, 0, 40)]
+        for side in (-1, 1):  # the folded, forked tails behind the ribbon
+            x0 = end if side < 0 else end + body_w
+            tail = [(x0, 8 + h * 0.15), (x0 + side * end, 8 + h * 0.1), (x0 + side * end * 0.55, 8 + h * 0.55),
+                    (x0 + side * end, 8 + h * 1.0), (x0, 8 + h * 0.85)]
+            d.polygon(tail, fill=(196, 176, 130, 255), outline=(60, 40, 28, 255))
+        d.polygon(top + bot, fill=(236, 220, 178, 255), outline=(60, 40, 28, 255))
+        d.line(top, fill=(60, 40, 28, 255), width=max(2, int(size * 0.06)))
+        d.line(bot, fill=(60, 40, 28, 255), width=max(2, int(size * 0.06)))
+        placed = [(im, end + size * 0.8 + x_) for im, x_ in imgs]
+        return rib, placed, 8 + (h - size * 1.4) / 2
 
     # ------------------------------------------------------------------ lens / film
     def _vignette(self):
