@@ -2,6 +2,6 @@ __pycache__/
 *.pyc
 demo/assets/
 out/
-episodes/*/build/
-episodes/*/.voice-cache/
+episodes/**/build/
+episodes/**/.voice-cache/
 models/

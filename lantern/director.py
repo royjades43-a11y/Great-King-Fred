@@ -37,13 +37,22 @@ TAIL = 1.1           # hold after the last word before the scene closes
 GAP_WARN = 7.0       # longest stretch without a visual event before the report complains
 BREATH_GAP = 5.5     # longer gaps get an automatic spotlight swell
 SPOT_TRAVEL = 0.8    # seconds the lantern takes to swing to a new target
-CAST_DEFAULTS = {}   # per-episode defaults for every cast member (episode.yaml: cast_defaults)
+CAST_DEFAULTS = {}   # defaults for every cast member (series/episode: cast_defaults)
+CHARACTERS = {}      # recurring characters from the series cast.yaml, used as `character: name`
+SERIES_KEYS = ("style", "voice", "motif", "music_volume", "cast_defaults", "pronounce", "fps")
 
 
 class Cast:
     """A prop placed on stage, with everything needed to aim lights and cameras at it."""
 
     def __init__(self, key, spec, art_dir, scene_id, seed):
+        if "character" in spec:
+            name = spec["character"]
+            if name not in CHARACTERS:
+                raise SystemExit(f"scene {scene_id}: unknown character {name!r}; series cast has "
+                                 f"{sorted(CHARACTERS)}")
+            base = CHARACTERS[name]
+            spec = {**base, **spec, "params": {**base.get("params", {}), **spec.get("params", {})}}
         spec = {**CAST_DEFAULTS, **spec}
         self.key, self.spec = key, spec
         self.at = list(spec.get("at", [0.5, 0.85]))
@@ -394,15 +403,63 @@ class SceneBuild:
         return scene
 
 
-def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_preview=False):
+def _merge(base, over):
+    """Deep-merge dicts: `over` wins, nested dicts merge key by key."""
+    out = dict(base)
+    for k, v in over.items():
+        out[k] = _merge(out[k], v) if isinstance(v, dict) and isinstance(out.get(k), dict) else v
+    return out
+
+
+def _overrides(base, over, prefix=""):
+    """Settings the episode changes (not merely adds) relative to the series."""
+    out = []
+    for k, v in over.items():
+        if k not in base:
+            continue
+        if isinstance(v, dict) and isinstance(base[k], dict):
+            out += _overrides(base[k], v, f"{prefix}{k}.")
+        elif v != base[k]:
+            out.append(prefix + k)
+    return out
+
+
+def load_episode(ep_dir):
+    """episode.yaml merged over the series it belongs to (series.yaml + cast.yaml one folder up).
+
+    The series fixes the look and sound - frame, glass, voice, motif, colours - so episodes
+    can't drift apart. An episode may still override a series setting, but the build says so.
+    """
     with open(os.path.join(ep_dir, "episode.yaml")) as f:
         ep = yaml.safe_load(f)
+    series_dir = os.path.dirname(os.path.abspath(ep_dir))
+    series_path = os.path.join(series_dir, "series.yaml")
+    if not os.path.exists(series_path):
+        return ep
+    with open(series_path) as f:
+        series = yaml.safe_load(f) or {}
+    shared = {k: series[k] for k in SERIES_KEYS if k in series}
+    for path in _overrides(shared, ep):
+        print(f"  note: {os.path.basename(ep_dir)} overrides the series setting {path}")
+    ep = _merge(shared, ep)
+    cast_path = os.path.join(series_dir, "cast.yaml")
+    if os.path.exists(cast_path):
+        with open(cast_path) as f:
+            ep["_characters"] = yaml.safe_load(f) or {}
+    ep["_series"] = series.get("title")
+    return ep
+
+
+def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_preview=False):
+    ep = load_episode(ep_dir)
     build_dir = os.path.join(ep_dir, "build")
     if os.path.exists(os.path.join(build_dir, "art")):
         shutil.rmtree(os.path.join(build_dir, "art"))
     os.makedirs(build_dir, exist_ok=True)
     CAST_DEFAULTS.clear()
     CAST_DEFAULTS.update(ep.get("cast_defaults", {}))
+    CHARACTERS.clear()
+    CHARACTERS.update(ep.get("_characters", {}))
     v = ep.get("voice", {})
     voice_dir = os.path.join(ep_dir, "voice")
     lang = v.get("lang", "en-gb")
@@ -492,8 +549,7 @@ DELIVERY = {
 
 def export_script(ep_dir):
     """READ_ALONG.md: the narration with cues removed, for recording or pasting into a TTS site."""
-    with open(os.path.join(ep_dir, "episode.yaml")) as f:
-        ep = yaml.safe_load(f)
+    ep = load_episode(ep_dir)
     out = [f"# {ep.get('title', 'Episode')} - read-along script", "",
            "Record **one file per scene**, named exactly as shown (`.mp3`, `.wav` or `.m4a`), "
            "and put them in this episode's `voice/` folder. Or record the whole thing as a single "

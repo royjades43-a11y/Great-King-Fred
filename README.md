@@ -51,6 +51,14 @@ sha256. Episode 1 uses `bm_george`, a deep British male voice. Set `voice.respel
 (`{Athelstan: Athelston}`). `--silent-preview`
 blocks out timing with estimated durations and no voice; its output is labeled `SILENT_PREVIEW`.
 
+## Series
+
+A folder of episodes can share a `series.yaml` (style, voice, motif, music level, cast defaults,
+pronunciations) and a `cast.yaml` (recurring characters). Every `episode.yaml` in the folder
+inherits them, so the look and sound can't drift between episodes. An episode places a recurring
+character with `character: david_shepherd`, and the build prints a note if an episode changes a
+series setting. See `episodes/bible/`: its `STORIES.md` is the story list and the character guide.
+
 ## Writing the script
 
 An episode is one YAML file. Each scene picks a **set**, places a **cast** of props, and gives
@@ -124,4 +132,4 @@ layer there takes `image`, `pos`/`scale`/`anchor`, `depth`, `paper`, `grade`, `e
 
 ## Stained glass style
 
-Set `style: {frame: window, glass: true, bloom: 0.55, rays: 0.07}` and `cast_defaults: {paper: false, grade: 0}` for the stained-glass look (see `episodes/bible-01-david-and-goliath`). Glass sets: `glass_valley`, `glass_brook`, `scroll`. Glass props: `glass_david` (pose: sling/staff), `glass_goliath`, `glass_army` (israel/philistine), `glass_stones`, `glass_stone`, `glass_sheep`, `verse` (scripture with an illuminated initial). Extra cues: `[fall:x]` topples a figure, `[write:verse]` writes the scripture out in time with the voice, and `open: glass` assembles the window shard by shard. Routes can use cast points, like `david.hand`.
+Set `style: {frame: window, glass: true, bloom: 0.55, rays: 0.07}` and `cast_defaults: {paper: false, grade: 0}` for the stained-glass look (see `episodes/bible/17-david-and-goliath`). Glass sets: `glass_valley`, `glass_brook`, `scroll`. Glass props: `glass_david` (pose: sling/staff), `glass_goliath`, `glass_army` (israel/philistine), `glass_stones`, `glass_stone`, `glass_sheep`, `verse` (scripture with an illuminated initial). Extra cues: `[fall:x]` topples a figure, `[write:verse]` writes the scripture out in time with the voice, and `open: glass` assembles the window shard by shard. Routes can use cast points, like `david.hand`.

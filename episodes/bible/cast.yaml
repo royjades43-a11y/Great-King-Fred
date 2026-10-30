@@ -1,0 +1,14 @@
+# Recurring characters, defined once and reused across episodes.
+#
+# An episode places a character with `character: name` plus where it stands:
+#     david: {character: david_shepherd, at: [0.36, 0.97], height: 0.44}
+# Anything given in the episode (params, height...) overrides what is here.
+#
+# Each figure follows the traditional stained-glass identifiers listed in STORIES.md,
+# so a viewer recognises them at a glance, as in a real church window.
+
+david_shepherd: {prop: glass_david, params: {pose: staff}}
+david_slinger: {prop: glass_david, params: {pose: sling}}
+goliath: {prop: glass_goliath}
+israel_army: {prop: glass_army, params: {side: israel, count: 5}}
+philistine_army: {prop: glass_army, params: {side: philistine, count: 5}}

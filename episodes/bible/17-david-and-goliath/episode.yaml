@@ -1,4 +1,6 @@
-# Bible Stories in Stained Glass - prototype: David and Goliath
+# Bible Stories in Stained Glass - 17. David and Goliath
+#
+# Look, voice and music come from ../series.yaml; recurring characters from ../cast.yaml.
 #
 # Source: 1 Samuel 17. Narration paraphrases the passage; the scripture card quotes the
 # King James Version (public domain), verse 45, ending at "the LORD of hosts".
@@ -11,29 +13,11 @@
 #   v48-49 David ran toward the army; the stone sank into his forehead; he fell on his face
 
 title: David and Goliath
-voice:
-  name: bm_george
-  speed: 0.92
-  lang: en-gb
-  respell: {Elah: Eelah, comest: cummest}
-music_volume: 0.15
 seed: 17
-motif: [62, 66, 69, 71, 69, 66, 62]   # D F# A B A F# D - the series' signature
-
-style:
-  frame: window          # gothic stone window instead of the toy-theatre stage
-  glass: true            # unlit glass goes dull as well as dark
-  bloom: 0.55
-  rays: 0.07
-  flicker: 0.015
-  grain: 3.0
-  dust: 45
-  ticket: "#2a1f1a"
-  ticket_ink: "#e8c56a"
-  accent: "#c9a24a"
-  ticket_perforate: false
-
-cast_defaults: {paper: false, grade: 0}
+voice:
+  respell: {Elah: Eelah}   # added to the series list for this episode only
+pronounce:
+  Elah: EE-lah
 
 scenes:
   - id: the_valley
@@ -42,9 +26,9 @@ scenes:
     close: fade
     mood: psalm
     cast:
-      israel: {prop: glass_army, params: {side: israel, count: 5}, at: [0.16, 0.7], height: 0.2, depth: 0.7}
-      philistines: {prop: glass_army, params: {side: philistine, count: 5}, at: [0.84, 0.7], height: 0.2, depth: 0.7}
-      goliath: {prop: glass_goliath, at: [0.6, 0.97], height: 0.62, depth: 0.95}
+      israel: {character: israel_army, at: [0.16, 0.7], height: 0.2, depth: 0.7}
+      philistines: {character: philistine_army, at: [0.84, 0.7], height: 0.2, depth: 0.7}
+      goliath: {character: goliath, at: [0.6, 0.97], height: 0.62, depth: 0.95}
     narration: |
       [title:DAVID AND GOLIATH|1 Samuel 17] [spot:all] In the Valley of Elah, two armies faced each other across the valley.
       [spot:philistines] On one hill, the Philistines. [spot:israel] On the other, the army of Israel.
@@ -59,7 +43,7 @@ scenes:
     mood: psalm
     cast:
       sheep: {prop: glass_sheep, at: [0.78, 0.66], height: 0.12, depth: 0.8}
-      david: {prop: glass_david, params: {pose: staff}, at: [0.36, 0.97], height: 0.44, depth: 0.95}
+      david: {character: david_shepherd, at: [0.36, 0.97], height: 0.44, depth: 0.95}
       stones: {prop: glass_stones, at: [0.66, 0.97], height: 0.07, depth: 1.0}
     narration: |
       [enter:david] [spot:david] David was the youngest son of Jesse, a shepherd boy, [spot:sheep] who kept his father's sheep.
@@ -74,8 +58,8 @@ scenes:
     close: fade
     mood: battle
     cast:
-      david: {prop: glass_david, params: {pose: sling}, at: [0.26, 0.97], height: 0.36, depth: 0.95}
-      goliath: {prop: glass_goliath, at: [0.68, 0.97], height: 0.62, depth: 0.95}
+      david: {character: david_slinger, at: [0.26, 0.97], height: 0.36, depth: 0.95}
+      goliath: {character: goliath, at: [0.68, 0.97], height: 0.62, depth: 0.95}
       stone: {prop: glass_stone, at: [0.3, 0.5], height: 0.025, depth: 0.95}
     routes:
       shot: [david.hand, [0.5, 0.36], goliath.forehead]

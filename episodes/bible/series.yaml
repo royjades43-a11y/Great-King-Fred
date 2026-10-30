@@ -1,0 +1,35 @@
+# The series bible: every episode in this folder inherits these settings.
+#
+# This file fixes the look and sound of the whole series. Change something here and it
+# changes in every episode on the next build. An episode can override a setting, but the
+# build prints a note when it does - overrides should be rare and deliberate.
+
+title: Bible Stories in Stained Glass   # working title
+
+style:
+  frame: window          # carved gothic stone window around every scene
+  glass: true            # unlit glass goes dull as well as dark
+  bloom: 0.55            # light glowing through the brightest glass
+  rays: 0.07             # soft sunbeams drifting through the window
+  flicker: 0.015
+  grain: 3.0
+  dust: 45
+  ticket: "#2a1f1a"      # title plaque: dark wood, gold lettering
+  ticket_ink: "#e8c56a"
+  accent: "#c9a24a"
+  ticket_perforate: false
+
+voice:
+  name: bm_george        # one narrator for the whole series
+  speed: 0.92
+  lang: en-gb
+  respell:               # how the voice should say words it gets wrong (captions keep the spelling)
+    comest: cummest
+
+motif: [62, 66, 69, 71, 69, 66, 62]   # D F# A B A F# D - the series' signature tune
+music_volume: 0.15
+
+cast_defaults: {paper: false, grade: 0}
+
+pronounce:               # printed in every read-along script, for human narrators
+  comest: KUM-est (King James English)
