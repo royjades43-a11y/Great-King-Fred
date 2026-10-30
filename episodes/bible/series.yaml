@@ -29,6 +29,8 @@ voice:
 pace:                    # something on screen moves at least this often
   breath_gap: 2.5        # longer gaps get an automatic spotlight swell
   gap_warn: 3.2          # the timing report flags scripted gaps longer than this
+  max_texts_per_minute: 1.0   # on-screen words ([say], [scroll]) are for the lines that matter most
+  max_texts_per_scene: 1
 
 motif: [62, 66, 69, 71, 69, 66, 62]   # D F# A B A F# D - the series' signature tune
 music_volume: 0.15

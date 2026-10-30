@@ -966,6 +966,15 @@ def write_report(ep, builds, total, build_dir):
             srt.append(f"{n}\n{srt_time(sb.start + a)} --> {srt_time(sb.start + b)}\n{text}\n")
             n += 1
         lines.append("")
+    # on-screen words are seasoning: flag episodes and scenes that use too many
+    per_min = PACE.get("max_texts_per_minute", 1.0)
+    n_texts = sum(len(sb.texts) for sb in builds)
+    if n_texts > per_min * total / 60 + 0.5:
+        warnings.append(f"text: {n_texts} on-screen text moments in {fmt(total)} - keep to about "
+                        f"{per_min:g} a minute, for the lines that matter most")
+    for sb in builds:
+        if len(sb.texts) > PACE.get("max_texts_per_scene", 1):
+            warnings.append(f"text: {sb.id} has {len(sb.texts)} text moments - one per scene at most")
     if builds and builds[0].events[1:2] and builds[0].events[1] > 4:
         warnings.insert(0, "hook: first visual change after 4s - viewers decide in the first seconds")
     lines += ["## Engagement check", ""] + ([f"- {w}" for w in warnings] or ["- no gaps over "

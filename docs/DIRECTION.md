@@ -25,12 +25,19 @@ Each act opens with a curtain and a ticket title (`ACT II | Twelfth Night`), whi
 
 ## Visual rhythm
 
-- **Something changes every 4–6 seconds**, whether the spotlight swings, a figure enters, the camera pushes, or ink draws on a map. The director adds an automatic spotlight "breath" to any gap over 5.5 s and the timing report flags anything over 7 s. Treat a breath as a sign the script needs a real cue there.
+- **Something moves at least every 2.5 seconds** (the series `pace` setting), whether the spotlight swings, a figure acts, the camera pushes, or ink draws on a map. Act out what the voice says: lunges, recoils, swaps between poses, flashes and quakes. The director adds an automatic spotlight "breath" to any longer gap, and the timing report flags scripted gaps over 3.2 s. Treat a breath as a sign the script needs a real cue there.
 - **The light says what the voice says.** Put a `[spot:x]` before the noun the narrator is naming, not after. The spotlight lands as the word is spoken.
 - **Entrances are events.** Bring characters on (`[enter:x]`) at the moment they enter the story, not at the scene start.
 - **Push in on the emotional line** (`[push:x]`), at most once per scene.
 - **Maps for movement, stages for people.** Use a map scene whenever the story moves across country, and draw the route in ink as the narrator describes it.
 - **Vary the sets.** Never put two consecutive scenes on the same set and time of day.
+
+## On-screen words
+
+- **Use them sparingly**: about one a minute, never more than one per scene. Words on screen compete with the picture and the voice, so save them for the line the viewer should remember.
+- **Glass words** (`[say:…]`) go on the hook and the turning points: *BLIND. IN CHAINS.*, *HE DID NOT KNOW*, *IT WAS THE LAST.*, *THAT IS GRACE.*
+- **Speech scrolls** (`[scroll:who|…]`) are only for a short line a character actually speaks that matters to the story, like Delilah's cry or the final prayer.
+- Never put up words that just repeat the narration word for word, unless the line is the point of the scene.
 
 ## Sound
 

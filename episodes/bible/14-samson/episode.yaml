@@ -60,7 +60,7 @@ scenes:
       [spot:mother] It began with a promise.
       [appear:angel] [flash:gold] [spot:angel] An angel appeared to a childless woman in Israel.
       [recoil:mother] [spot:mother] She would have a son, he told her.
-      [spot:mother:tight] [say:a Nazarite] And he would be a Nazarite, [flash:gold] set apart to God [spot:angel] before he was born.
+      [spot:mother:tight] And he would be a Nazarite, [flash:gold] set apart to God [spot:angel] before he was born.
       [spot:angel:wide] Under the law of Moses, [label:angel.head|No wine] a Nazarite drank no wine,
       [label:angel|Nothing dead] touched nothing dead, [label:mother.head|No razor] and never cut his hair.
       [spot:angel:wide] This boy, he said, [hop:mother] would begin to deliver Israel [spot:mother] from the Philistines.
@@ -79,7 +79,7 @@ scenes:
       [spot:samson] Samson grew up strong.
       [enter:lion] [spot:lion] In the vineyards of Timnah, [lunge:lion] [quake] a young lion came roaring at him.
       [lunge:lion] [recoil:samson] [quake] [spot:samson] The Spirit of the LORD [flash:gold] [shake:samson] came mightily upon him.
-      [lunge:samson] [shake:lion] [quake] [say:with his bare hands] He tore the lion apart [lunge:samson] [shake:lion] [quake] with his bare hands.
+      [lunge:samson] [shake:lion] [quake] He tore the lion apart [lunge:samson] [shake:lion] [quake] with his bare hands.
       [fall:lion:right] [spot:samson:tight] And he told no one.
 
   - id: the_jawbone
@@ -129,7 +129,7 @@ scenes:
     narration: |
       [spot:delilah] Then he fell in love with a woman named Delilah.
       [enter:lord] [spot:lord] The Philistine lords came to her with an offer.
-      [show:silver] [spot:silver] [say:Eleven hundred pieces of silver] Eleven hundred pieces of silver [hop:silver] from each of them,
+      [show:silver] [spot:silver] Eleven hundred pieces of silver [hop:silver] from each of them,
       [lunge:lord] [spot:delilah:tight] if she would find the secret [exit:lord] of his strength.
 
   - id: the_bindings
@@ -143,8 +143,8 @@ scenes:
       ropes: {character: samson, params: {bound: ropes}, at: [0.32, 0.95], height: 0.46, hidden: true}
     narration: |
       [spot:delilah] So she asked him.
-      [spot:withs] [scroll:withs|Bind me with seven fresh bowstrings,] Bind me with seven fresh bowstrings, he said, [shake:withs] [spot:withs:tight] and I will be as weak as any man.
-      [lunge:delilah] [spot:delilah] [scroll:delilah|the Philistines are upon you!] She bound him, and cried, [hop:delilah] the Philistines are upon you!
+      [spot:withs] Bind me with seven fresh bowstrings, he said, [shake:withs] [spot:withs:tight] and I will be as weak as any man.
+      [lunge:delilah] [spot:delilah] She bound him, and cried, [hop:delilah] the Philistines are upon you!
       [shake:withs] [swap:withs:samson] [flash:gold] [quake] He snapped them like thread.
       [swap:samson:ropes] [spot:ropes] Then new ropes. [shake:ropes] [swap:ropes:samson] [quake] He broke them off his arms.
       [spot:delilah] Then she wove his hair into her loom. [shake:samson] [quake] He tore the loom away.
@@ -166,7 +166,7 @@ scenes:
       [spot:sleeper] She lulled him to sleep on her knees,
       [enter:barber] [spot:barber] and called for a man [lunge:barber] to shave off the seven locks of his head.
       [exit:locks:bottom] [lunge:barber] [spot:sleeper:tight] And his strength left him.
-      [exit:barber] [lunge:delilah] [spot:delilah] [scroll:delilah|The Philistines are upon you, Samson!] The Philistines are upon you, Samson!
+      [exit:barber] [lunge:delilah] [spot:delilah] The Philistines are upon you, Samson!
       [swap:sleeper:samson] [spot:samson] He woke, [shake:samson] and thought he would shake himself free, [shake:samson] as he always had.
       [shake:samson] [dark:0.3] [spot:samson:tight] [say:he did not know|ruby] But he did not know that the LORD had left him.
 
@@ -198,7 +198,7 @@ scenes:
       [spin:mill:30] [spot:mill] and set him to grind grain in the prison at Gaza.
       [move:samson:0.38] [spot:samson] Day after day, [move:samson:0.3] round and round.
       [spot:samson:tight] But the Bible adds one quiet line.
-      [label:samson.head|The hair grows back] [flood:0.9] [say:began to grow again] The hair of his head began to grow again.
+      [label:samson.head|The hair grows back] [flood:0.9] The hair of his head began to grow again.
 
   - id: the_temple
     set: {name: glass_hall}
@@ -213,7 +213,7 @@ scenes:
       boy: {prop: glass_boy, at: [0.6, 0.95], height: 0.26}
     narration: |
       [spot:temple:wide] The Philistines held a great feast [laugh:crowd] for their god Dagon.
-      [laugh:crowd] [spot:crowd] [say:Three thousand|bottom] Three thousand men and women crowded the roof,
+      [laugh:crowd] [spot:crowd] Three thousand men and women crowded the roof,
       [laugh:crowd] calling for Samson to be brought out to entertain them.
       [spot:boy] A boy led the blind man by the hand, [move:boy:0.56] [spot:samson] to the pillars [spot:temple.left_pillar] that held up the house.
       [exit:boy:right] [tilt:samson:-5] [spot:samson:tight] And Samson prayed.
@@ -235,7 +235,7 @@ scenes:
       lion: {prop: glass_lion, at: [0.68, 0.95], height: 0.26}
     narration: |
       [fall:lion:right] [spot:all] Now, let's read this window.
-      [spot:samson] Most people think Samson fell [tilt:samson:-5] on the day his hair was cut. [tilt:samson:0] [spot:samson:tight] [say:Look closer.] Look closer.
+      [spot:samson] Most people think Samson fell [tilt:samson:-5] on the day his hair was cut. [tilt:samson:0] [spot:samson:tight] Look closer.
       [spot:lion] On his way back through Timnah, he turned aside to the lion's carcass, [lunge:samson] and scooped honey out of it.
       [label:lion|First vow: nothing dead] [spot:lion:tight] A Nazarite was never to touch the dead.
       [hop:samson] [spot:samson] Then he threw a feast, [laugh:samson] and the Hebrew word for it means a drinking feast.
@@ -254,7 +254,7 @@ scenes:
       [light] [flood] But now hold this window up to the light.
       [label:samson.hair|Not the source] Samson's strength was never in his hair.
       [spot:all:wide] Every time it came, [label:samson|Judges 14:6, 14:19, 15:14] the text says the same thing. [flash:gold] The Spirit of the LORD came upon him.
-      [tilt:samson:0] [spot:samson] The hair was the sign of a promise. [flood:1.3] [say:The strength was God's.|center] The strength was God's.
+      [tilt:samson:0] [spot:samson] The hair was the sign of a promise. [flood:1.3] The strength was God's.
 
   - id: read_the_thread
     set: {name: glass_hall}
@@ -268,9 +268,9 @@ scenes:
     narration: |
       [spot:samson] Now follow the thread.
       [spot:samson:wide] A deliverer promised by an angel, [label:samson.head|Promised before birth] set apart before his birth, [spot:samson] who won his greatest victory [label:samson.right_hand|Arms stretched out] with his arms stretched out, [spot:samson:tight] in his death.
-      [ink:thread:gold] [say:a better deliverer] Samson is a broken picture of a better deliverer.
+      [ink:thread:gold] Samson is a broken picture of a better deliverer.
       [shake:samson] [spot:samson:tight] Samson died asking God to avenge his eyes.
-      [flood:1.2] Jesus died praying for the people who crucified him. [label:samson|Luke 23:34] [say:Father, forgive them.|white] Father, forgive them.
+      [flood:1.2] Jesus died praying for the people who crucified him. [label:samson|Luke 23:34] Father, forgive them.
 
   - id: the_verse
     set: {name: scroll}
