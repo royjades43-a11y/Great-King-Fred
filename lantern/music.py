@@ -17,6 +17,7 @@ MOODS = {
     "battle": (38, (0, 7, 12), 1.6, 0, 96, 0.6, 0.55),
     "triumph": (38, (0, 4, 7, 12), 1.4, 12, None, 0.6, 0.6),
     "wonder": (41, (0, 4, 7, 11), 1.9, 12, None, 0.5, 0.5),
+    "psalm": (38, (0, 4, 7, 12, 16), 2.4, 12, None, 0.6, 0.4),   # open major chord, hymn-like
 }
 
 
@@ -64,18 +65,18 @@ def drum(length=0.5):
     return body + skin
 
 
-def section(n, mood, rng, motif_at_start=True):
+def section(n, mood, rng, motif_at_start=True, motif=MOTIF):
     root, chord, every, octv, bpm, pad_gain, bright = MOODS[mood]
     out = pad(n, root, chord, bright, rng) * pad_gain
     # music box: the motif first, then wandering phrases drawn from it
     t, i = 0.6, 0
-    notes = MOTIF if motif_at_start else []
+    notes = motif if motif_at_start else []
     while t < n / SR - 0.5:
         if i < len(notes):
             m = notes[i] + octv
             step = 0.42
         else:
-            m = MOTIF[int(rng.integers(0, len(MOTIF)))] + octv + (12 if rng.random() < 0.15 else 0)
+            m = motif[int(rng.integers(0, len(motif)))] + octv + (12 if rng.random() < 0.15 else 0)
             step = every * rng.uniform(0.6, 1.3)
         s = int(t * SR)
         nb = box_note(m)
@@ -97,7 +98,7 @@ def section(n, mood, rng, motif_at_start=True):
     return out
 
 
-def score(duration, sections, seed=7):
+def score(duration, sections, seed=7, motif=None):
     """sections: [(start, end, mood)] in seconds -> mono float array, crossfaded."""
     rng = np.random.default_rng(seed)
     n = int(duration * SR) + SR
@@ -109,7 +110,7 @@ def score(duration, sections, seed=7):
         e = min(n, int(end * SR) + fade // 2)
         if e <= s:
             continue
-        part = section(e - s, mood, rng, motif_at_start=(mood != last_mood))
+        part = section(e - s, mood, rng, motif_at_start=(mood != last_mood), motif=motif or MOTIF)
         env = np.ones(e - s)
         f = min(fade, (e - s) // 2)
         env[:f] = np.linspace(0, 1, f)

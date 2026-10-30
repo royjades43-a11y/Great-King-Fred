@@ -37,12 +37,14 @@ TAIL = 1.1           # hold after the last word before the scene closes
 GAP_WARN = 7.0       # longest stretch without a visual event before the report complains
 BREATH_GAP = 5.5     # longer gaps get an automatic spotlight swell
 SPOT_TRAVEL = 0.8    # seconds the lantern takes to swing to a new target
+CAST_DEFAULTS = {}   # per-episode defaults for every cast member (episode.yaml: cast_defaults)
 
 
 class Cast:
     """A prop placed on stage, with everything needed to aim lights and cameras at it."""
 
     def __init__(self, key, spec, art_dir, scene_id, seed):
+        spec = {**CAST_DEFAULTS, **spec}
         self.key, self.spec = key, spec
         self.at = list(spec.get("at", [0.5, 0.85]))
         self.h = spec.get("height", 0.3)
@@ -109,8 +111,7 @@ class SceneBuild:
         self.places = self.set.get("places", {})
         self.cast = {k: Cast(k, v, art_dir, self.id, seed=index * 100 + i)
                      for i, (k, v) in enumerate((sc.get("cast") or {}).items())}
-        self.routes = {k: [self.places[p] if isinstance(p, str) else p for p in v]
-                       for k, v in (sc.get("routes") or {}).items()}
+        self.routes = {k: [self.route_point(p) for p in v] for k, v in (sc.get("routes") or {}).items()}
 
         # ---------------------------------------------------------------- narration + cue timing
         self.open = sc.get("open", "lantern")
@@ -164,6 +165,15 @@ class SceneBuild:
         self.duration = round(last_end + sc.get("tail", TAIL) + TRANSITION_LEN.get(self.close, 0), 3)
         self.duration = max(self.duration, sc.get("min_duration", 0))
         self.cues.sort(key=lambda c: c[0])
+
+    def route_point(self, p):
+        """A route waypoint: [x, y], a map place name, or a cast point like 'david.hand'."""
+        if not isinstance(p, str):
+            return list(p)
+        if "." in p:
+            who, point = p.split(".", 1)
+            return list(self.cast[who].point(point))
+        return list(self.places[p])
 
     # ---------------------------------------------------------------- camera
     def camera_keys(self):
@@ -307,6 +317,17 @@ class SceneBuild:
                 keys.append([t, keys[-1][1], 0])
                 keys.append([t + 2.0, dx, 0])
                 events.append(t)
+            elif name == "fall":
+                c = self.cast[args[0]]
+                way = args[1] if len(args) > 1 else ("left" if c.at[0] > 0.5 else "right")
+                c.layer["fall"] = {"at": t, "dur": 1.1, "angle": -86 if way == "left" else 86}
+                events.append(t)
+            elif name == "write":
+                c = self.cast[args[0]]
+                nxt_any = next((cc[0] for cc in self.cues[i + 1:] if cc[1] != "write"), dur - 1.5)
+                c.layer["write"] = {"start": t, "end": max(t + 1.5, nxt_any - 0.4),
+                                    "lines": c.meta["lines"], "initial": c.meta.get("initial")}
+                events.append(t)
             elif name == "ignite":
                 c = self.cast[args[0]]
                 for e in c.layer.get("fx", []):
@@ -323,7 +344,7 @@ class SceneBuild:
                 c = self.cast[args[0]]
                 pts = self.routes[args[1]]
                 c.layer["pos"] = list(pts[0])  # wait at the start of the route
-                end = min(dur - 0.5, max(t + 2.5, nxt - 0.2))
+                end = min(dur - 0.5, max(t + 0.9, nxt - 0.15))
                 c.layer["follow"] = {"points": pts, "start": t, "end": end}
                 c.layer["anchor"] = [0.5, 0.8]
                 events.append(t)
@@ -380,6 +401,8 @@ def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_prev
     if os.path.exists(os.path.join(build_dir, "art")):
         shutil.rmtree(os.path.join(build_dir, "art"))
     os.makedirs(build_dir, exist_ok=True)
+    CAST_DEFAULTS.clear()
+    CAST_DEFAULTS.update(ep.get("cast_defaults", {}))
     v = ep.get("voice", {})
     voice_dir = os.path.join(ep_dir, "voice")
     lang = v.get("lang", "en-gb")
@@ -420,7 +443,7 @@ def build(ep_dir, render=True, draft=False, stills=False, jobs=None, silent_prev
     for sb in scene_builds:
         mood = sb.sc.get("mood", mood)
         sections.append((sb.start, sb.start + sb.duration, mood))
-    score = music.score(total, sections, seed=ep.get("seed", 7))
+    score = music.score(total, sections, seed=ep.get("seed", 7), motif=ep.get("motif"))
     write_wav(os.path.join(build_dir, "music.wav"), score, music.SR)
 
     project = {

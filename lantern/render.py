@@ -14,10 +14,10 @@ import tempfile
 from multiprocessing import Pool
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter
 
 from . import audio
-from .anim import ease_in, ease_in_out, ease_out, keyframes, point_along, smooth_noise
+from .anim import clamp, ease_in, ease_in_out, ease_out, keyframes, point_along, smooth_noise
 from .fx import draw_flame, draw_ink, draw_smoke, duotone, paper_card
 from .stage import Dust, Snow, Stage
 
@@ -33,7 +33,7 @@ DEFAULT_STYLE = {
     "backdrop": "#0c0806",
 }
 
-TRANSITION_LEN = {"curtain": 1.3, "lantern": 0.35, "fade": 0.7, "none": 0.0}
+TRANSITION_LEN = {"curtain": 1.3, "lantern": 0.35, "fade": 0.7, "glass": 1.6, "none": 0.0}
 
 
 def clamp_camera(z, fx, fy, W=1920, H=1080):
@@ -120,7 +120,32 @@ class Layer:
         bob = self.spec.get("bob")
         if bob:
             a += bob.get("roll", 1.5) * math.sin(2 * math.pi * t / bob.get("period", 3.0) + 0.9)
+        fall = self.spec.get("fall")  # topple about the pivot, accelerating like a falling body
+        if fall and t > fall["at"]:
+            a += fall.get("angle", -88) * ease_in((t - fall["at"]) / fall.get("dur", 1.1))
         return a
+
+    def _written(self, img, t, wr):
+        lines = wr["lines"]
+        lens = [max(1e-3, b[2] - b[0]) for b in lines]
+        prog = clamp((t - wr["start"]) / max(1e-3, wr["end"] - wr["start"])) * sum(lens)
+        a = np.asarray(img.getchannel("A")).astype(np.float32)
+        keep = np.zeros_like(a)
+        if wr.get("initial"):
+            x0, y0, x1, y1 = (int(v * n) + self.pad for v, n in zip(wr["initial"], (self.iw, self.ih) * 2))
+            keep[y0:y1, x0:x1] = 1
+        for b, L in zip(lines, lens):
+            if prog <= 0:
+                break
+            x0, y0, x1, y1 = (int(v * n) + self.pad for v, n in zip(b, (self.iw, self.ih) * 2))
+            reveal = x0 + (x1 - x0) * min(1.0, prog / L)
+            xs = np.arange(a.shape[1], dtype=np.float32)
+            ramp = np.clip((reveal - xs) / (0.02 * self.W) + 0.5, 0, 1)  # soft ink edge
+            keep[y0:y1, :] = np.maximum(keep[y0:y1, :], ramp[None, :] * ((xs >= x0 - 2) & (xs <= x1 + 2))[None, :])
+            prog -= L
+        out = img.copy()
+        out.putalpha(Image.fromarray((a * keep).astype(np.uint8)))
+        return out
 
     def matrix(self, t, dur, cam):
         """Forward transform: card pixels -> screen pixels."""
@@ -166,6 +191,9 @@ class Layer:
                 draw_ink(img, pts, ease_in_out(prog), e.get("color", "#7a1f1f"), e.get("width", 4) * k)
         ax, ay = self.spec.get("anchor", (0.5, 1.0))
         self.screen_pos = (M @ np.array([self.pad + ax * self.iw, self.pad + 0.5 * self.ih, 1.0]))[:2]
+        wr = self.spec.get("write")  # scripture written out line by line, in time with the voice
+        if wr:
+            img = self._written(img, t, wr)
         # only transform the screen rectangle the card actually covers
         cw, ch = img.size
         corners = M @ np.array([[0, cw, 0, cw], [0, 0, ch, ch], [1, 1, 1, 1]], np.float64)
@@ -200,6 +228,16 @@ class Project:
                 ticket = self.stage.ticket(sc["title"]["text"], sc["title"].get("sub"))
             self.scenes.append((sc, layers, ticket))
         self.snow = Snow(self.W, self.H, count=int(260 * self.W / 1280))
+        if self.style.get("rays"):  # soft diagonal sunbeams, wider than the frame so they can drift
+            rr = np.random.default_rng(4)
+            span = self.W * 2
+            yy, xx = np.mgrid[0:self.H, 0:span].astype(np.float32)
+            u = (xx + yy * 0.55) / (self.W * 0.11)
+            beams = np.zeros_like(u)
+            for _ in range(5):
+                c, wdt = rr.uniform(0, span / (self.W * 0.11)), rr.uniform(0.15, 0.45)
+                beams += np.exp(-((u - c) / wdt) ** 2) * rr.uniform(0.5, 1.0)
+            self.rays = (beams * (1 - yy / self.H * 0.6)).astype(np.float32)
         # half-resolution pixel-centre grid for the lighting pass
         yy, xx = np.mgrid[0:(self.H + 1) // 2, 0:(self.W + 1) // 2]
         self.xx, self.yy = xx.astype(np.float32) * 2 + 0.5, yy.astype(np.float32) * 2 + 0.5
@@ -258,7 +296,20 @@ class Project:
         warmth = warmth.repeat(2, 0).repeat(2, 1)[:H, :W]
         tint = cool + (warm - cool) * warmth[..., None]
         flicker = 1 + st["flicker"] * smooth_noise(t + si * 17.0, 0.7, 6.0)
+        if st.get("glass"):  # unlit glass is dull as well as dark
+            lum = rgb.mean(axis=2, keepdims=True)
+            sat = np.clip(light * 1.15, 0.55, 1.0)[..., None]
+            rgb = lum + (rgb - lum) * sat
         rgb *= (light[..., None] * tint) * flicker
+        if st.get("rays"):
+            shift = int(t * W * 0.01) % self.rays.shape[1]
+            rays = np.roll(self.rays, shift, axis=1)[:, :W]
+            rgb += rays[..., None] * np.array([255, 236, 190], np.float32) * st["rays"] * np.clip(light, 0, 1.3)[..., None]
+        if st.get("bloom"):  # light glows through the brightest glass
+            hi = np.clip(rgb - 165, 0, None)
+            small = Image.fromarray(hi.clip(0, 255).astype(np.uint8)).resize((W // 4, H // 4), Image.BILINEAR)
+            glow = small.filter(ImageFilter.GaussianBlur(6 * W / 1920)).resize((W, H), Image.BILINEAR)
+            rgb += np.asarray(glow).astype(np.float32) * st["bloom"]
         self.dust.render(rgb, light, t + si * 31.0, st["dust"])
         if sc.get("weather") == "snow":
             self.snow.render(rgb, light, t + si * 13.0)
@@ -302,6 +353,10 @@ class Project:
             black = max(black, 1 - ease_in_out(t / TRANSITION_LEN["fade"]))
         if c == "fade":
             black = max(black, ease_in_out((t - (dur - TRANSITION_LEN["fade"])) / TRANSITION_LEN["fade"]))
+        if o == "glass" and t < TRANSITION_LEN["glass"]:
+            self.stage.glass_assemble(out, ease_in_out(t / TRANSITION_LEN["glass"]))
+        if c == "glass" and t > dur - TRANSITION_LEN["glass"]:
+            self.stage.glass_assemble(out, 1 - ease_in_out((t - (dur - TRANSITION_LEN["glass"])) / TRANSITION_LEN["glass"]))
         if flash:
             out += (np.array([250, 238, 210], np.float32) - out) * flash * 0.9
         if black:

@@ -121,3 +121,7 @@ demo/                the original three-scene style demo (hand-written scene.jso
 The renderer can also be driven directly with a hand-written `scene.json` (see `demo/`). Each
 layer there takes `image`, `pos`/`scale`/`anchor`, `depth`, `paper`, `grade`, `enter`/`exit`,
 `slide`, `sway`, `bob`, `follow` and `fx` (flame, smoke, ink).
+
+## Stained glass style
+
+Set `style: {frame: window, glass: true, bloom: 0.55, rays: 0.07}` and `cast_defaults: {paper: false, grade: 0}` for the stained-glass look (see `episodes/bible-01-david-and-goliath`). Glass sets: `glass_valley`, `glass_brook`, `scroll`. Glass props: `glass_david` (pose: sling/staff), `glass_goliath`, `glass_army` (israel/philistine), `glass_stones`, `glass_stone`, `glass_sheep`, `verse` (scripture with an illuminated initial). Extra cues: `[fall:x]` topples a figure, `[write:verse]` writes the scripture out in time with the voice, and `open: glass` assembles the window shard by shard. Routes can use cast points, like `david.hand`.

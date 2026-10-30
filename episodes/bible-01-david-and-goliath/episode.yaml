@@ -1,0 +1,100 @@
+# Bible Stories in Stained Glass - prototype: David and Goliath
+#
+# Source: 1 Samuel 17. Narration paraphrases the passage; the scripture card quotes the
+# King James Version (public domain), verse 45, ending at "the LORD of hosts".
+#   v1-3   two armies on two hills, the valley of Elah between them
+#   v4-7   Goliath of Gath, six cubits and a span (about 9 ft 9 in), bronze helmet and armour
+#   v11    Israel "dismayed, and greatly afraid";  v16  forty days, morning and evening
+#   v14-18 David the youngest of Jesse's sons, keeping sheep, sent with food for his brothers
+#   v38-40 Saul's armour; five smooth stones out of the brook
+#   v42    the giant "disdained him";  v45  the verse;  v47  "the battle is the LORD's"
+#   v48-49 David ran toward the army; the stone sank into his forehead; he fell on his face
+
+title: David and Goliath
+voice:
+  name: bm_george
+  speed: 0.92
+  lang: en-gb
+  respell: {Elah: Eelah, comest: cummest}
+music_volume: 0.15
+seed: 17
+motif: [62, 66, 69, 71, 69, 66, 62]   # D F# A B A F# D - the series' signature
+
+style:
+  frame: window          # gothic stone window instead of the toy-theatre stage
+  glass: true            # unlit glass goes dull as well as dark
+  bloom: 0.55
+  rays: 0.07
+  flicker: 0.015
+  grain: 3.0
+  dust: 45
+  ticket: "#2a1f1a"
+  ticket_ink: "#e8c56a"
+  accent: "#c9a24a"
+  ticket_perforate: false
+
+cast_defaults: {paper: false, grade: 0}
+
+scenes:
+  - id: the_valley
+    set: {name: glass_valley}
+    open: glass
+    close: fade
+    mood: psalm
+    cast:
+      israel: {prop: glass_army, params: {side: israel, count: 5}, at: [0.16, 0.7], height: 0.2, depth: 0.7}
+      philistines: {prop: glass_army, params: {side: philistine, count: 5}, at: [0.84, 0.7], height: 0.2, depth: 0.7}
+      goliath: {prop: glass_goliath, at: [0.6, 0.97], height: 0.62, depth: 0.95}
+    narration: |
+      [title:DAVID AND GOLIATH|1 Samuel 17] [spot:all] In the Valley of Elah, two armies faced each other across the valley.
+      [spot:philistines] On one hill, the Philistines. [spot:israel] On the other, the army of Israel.
+      [enter:goliath] [spot:goliath] And every morning and every evening, for forty days, a champion came out from the Philistine camp.
+      [spot:goliath:tight] Goliath of Gath. Over nine feet tall, and armoured in bronze.
+      [spot:israel:wide] And all of Israel's soldiers were afraid.
+
+  - id: the_shepherd
+    set: {name: glass_brook}
+    open: glass
+    close: fade
+    mood: psalm
+    cast:
+      sheep: {prop: glass_sheep, at: [0.78, 0.66], height: 0.12, depth: 0.8}
+      david: {prop: glass_david, params: {pose: staff}, at: [0.36, 0.97], height: 0.44, depth: 0.95}
+      stones: {prop: glass_stones, at: [0.66, 0.97], height: 0.07, depth: 1.0}
+    narration: |
+      [enter:david] [spot:david] David was the youngest son of Jesse, a shepherd boy, [spot:sheep] who kept his father's sheep.
+      [spot:david] Sent to the camp with food for his brothers, he heard the giant's challenge.
+      [spot:david:tight] And he would not let it stand.
+      [spot:all] King Saul gave him his own armour, but David could not walk in it.
+      [show:stones] [spot:stones] So he took his staff, and chose five smooth stones from the brook.
+
+  - id: the_stone
+    set: {name: glass_valley}
+    open: glass
+    close: fade
+    mood: battle
+    cast:
+      david: {prop: glass_david, params: {pose: sling}, at: [0.26, 0.97], height: 0.36, depth: 0.95}
+      goliath: {prop: glass_goliath, at: [0.68, 0.97], height: 0.62, depth: 0.95}
+      stone: {prop: glass_stone, at: [0.3, 0.5], height: 0.025, depth: 0.95}
+    routes:
+      shot: [david.hand, [0.5, 0.36], goliath.forehead]
+    narration: |
+      [spot:goliath] The giant looked at David, and despised him.
+      [spot:david] But David ran toward the battle line.
+      [sail:stone:shot] He slung a single stone, [fall:goliath] and Goliath fell on his face to the earth.
+      [spot:all:wide] The battle was over almost before it began.
+
+  - id: the_verse
+    set: {name: scroll}
+    open: glass
+    close: fade
+    mood: psalm
+    cast:
+      verse: {prop: verse, params: {text: "Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of the LORD of hosts.", ref: "1 Samuel 17:45 (KJV)", width: 1.45},
+              at: [0.5, 0.86], height: 0.66, depth: 0.6}
+    narration: |
+      [spot:verse:wide] Before the battle, David had told the giant why he was not afraid.
+      [write:verse] Thou comest to me with a sword, and with a spear, and with a shield: but I come to thee in the name of the LORD of hosts.
+      [spot:all] The battle is the Lord's.
+    tail: 2.4

@@ -35,9 +35,13 @@ class Stage:
         self.style = style
         k = width / 1280.0
         self.k = k
-        side, top, bottom = int(58 * k), int(36 * k), int(74 * k)
+        self.kind = style.get("frame", "proscenium")
+        if self.kind == "window":
+            side, top, bottom = int(64 * k), int(26 * k), int(60 * k)
+        else:
+            side, top, bottom = int(58 * k), int(36 * k), int(74 * k)
         self.opening = (side, top, width - side, height - bottom)
-        self.frame = self._proscenium()
+        self.frame = self._window() if self.kind == "window" else self._proscenium()
         self.curtain_l, self.curtain_r = self._curtains()
         self.vignette = self._vignette()
         # soft, clumpy grain (generated at half size) reads like film and compresses far better
@@ -155,6 +159,90 @@ class Stage:
         out.alpha_composite(drape)
         return out
 
+    # ------------------------------------------------------------------ gothic window
+    def arch_top(self, x):
+        """Top edge of the pointed-arch opening at pixel column x."""
+        x0, y0, x1, y1 = self.opening
+        cx, hw = (x0 + x1) / 2, (x1 - x0) / 2
+        u = np.clip(np.abs(x - cx) / hw, 0, 1)
+        return y0 + (y1 - y0) * 0.2 * (1 - np.sqrt(1 - u))
+
+    def _window_mask(self):
+        W, H = self.W, self.H
+        x0, y0, x1, y1 = self.opening
+        xs = np.arange(W)
+        top = self.arch_top(xs)
+        yy = np.arange(H)[:, None]
+        m = (yy >= top[None, :]) & (yy <= y1) & (xs[None, :] >= x0) & (xs[None, :] <= x1)
+        return Image.fromarray((m * 255).astype(np.uint8))
+
+    def _window(self):
+        """Carved stone around a pointed-arch window, the glass seen from inside the church."""
+        W, H, k = self.W, self.H, self.k
+        rng = np.random.default_rng(5)
+        stone = np.array(hex_rgb(self.style.get("stone", "#5c544c")), np.float32)
+        small = rng.normal(0, 1, (H // 12, W // 12))
+        n = Image.fromarray(((small + 3) * 42).clip(0, 255).astype(np.uint8)).resize((W, H), Image.BICUBIC)
+        n = np.asarray(n).astype(np.float32) / 255 - 0.5
+        arr = stone[None, None, :] * (1 + n[..., None] * 0.3)
+        img = Image.fromarray(arr.clip(0, 255).astype(np.uint8), "RGB").convert("RGBA")
+        d = ImageDraw.Draw(img)
+        course = int(48 * k)
+        joint = (40, 36, 32, 255)
+        for r_, y in enumerate(range(0, H, course)):  # ashlar courses
+            d.line([(0, y), (W, y)], fill=joint, width=max(1, int(2 * k)))
+            for x in range(-(r_ % 2) * course, W, course * 2):
+                d.line([(x, y), (x, y + course)], fill=joint, width=max(1, int(2 * k)))
+        hole = self._window_mask()
+        # deep splayed reveal: darkening toward the glass
+        reveal = hole.filter(ImageFilter.MaxFilter(int(31 * k) | 1)).filter(ImageFilter.GaussianBlur(10 * k))
+        img = Image.composite(Image.new("RGBA", (W, H), (14, 12, 12, 255)), img, reveal.point(lambda v: int(v * 0.8)))
+        # moulding: a pale stone roll around the opening
+        ring = hole.filter(ImageFilter.MaxFilter(int(13 * k) | 1))
+        ring = Image.fromarray(np.where(np.asarray(hole) > 0, 0, np.asarray(ring)).astype(np.uint8))
+        img.paste((150, 138, 118, 255), (0, 0), ring)
+        x0, _, x1, y1 = self.opening
+        d = ImageDraw.Draw(img)
+        d.rectangle([x0 - 24 * k, y1 + 6 * k, x1 + 24 * k, y1 + 22 * k], fill=(120, 110, 96, 255))  # sill
+        d.line([x0 - 24 * k, y1 + 6 * k, x1 + 24 * k, y1 + 6 * k], fill=(170, 158, 136, 255), width=max(1, int(2 * k)))
+        img.putalpha(Image.eval(hole, lambda v: 255 - v))
+        self.hole = np.asarray(hole) > 127
+        self.glass_cells = self._cells()
+        return img
+
+    def _cells(self, n=110, q=4):
+        """A shard map of the opening, for the glazier's assembling transition."""
+        W, H = self.W, self.H
+        rng = np.random.default_rng(31)
+        sx, sy = rng.uniform(0, W, n), rng.uniform(0, H, n)
+        gy, gx = np.mgrid[0:H:q, 0:W:q].astype(np.float32)
+        best = np.full(gx.shape, np.inf, np.float32)
+        cell = np.zeros(gx.shape, np.int32)
+        for i in range(n):
+            dd = (gx - sx[i]) ** 2 + (gy - sy[i]) ** 2
+            c = dd < best
+            best[c], cell[c] = dd[c], i
+        cell = cell.repeat(q, 0).repeat(q, 1)[:H, :W]
+        order = np.argsort(np.argsort(-sy + rng.normal(0, H * 0.12, n)))  # bottom-up, loosely
+        edge = np.zeros((H, W), bool)
+        edge[:, 1:] |= cell[:, 1:] != cell[:, :-1]
+        edge[1:, :] |= cell[1:, :] != cell[:-1, :]
+        edge = np.asarray(Image.fromarray(edge.astype(np.uint8) * 255).filter(
+            ImageFilter.MaxFilter(max(3, int(3 * self.k)) | 1))) > 0
+        return order[cell].astype(np.float32) / n, edge
+
+    def glass_assemble(self, out, f):
+        """Show only the shards placed so far (f: 0 -> 1), with leading between all shards."""
+        rank, edge = self.glass_cells
+        hole = self.hole
+        shown = rank < f
+        fresh = (rank < f) & (rank > f - 0.06) & hole  # a shard just set in place catches the light
+        out[~shown & hole] = (16, 12, 10)
+        out[fresh] = out[fresh] * 1.35 + 20
+        a = max(0.0, 1 - f) ** 0.5
+        e = edge & hole
+        out[e] = out[e] * (1 - a) + np.array([30, 27, 26], np.float32) * a
+
     # ------------------------------------------------------------------ curtains
     def _curtains(self):
         x0, y0, x1, y1 = self.opening
@@ -205,7 +293,7 @@ class Stage:
         accent = hex_rgb(self.style.get("accent", "#7a1f1f"))
         d.rectangle([0, 0, w, h], fill=paper + (255,))
         r = 11 * k
-        for cx in (0, w):  # perforated notches on both ends
+        for cx in ((0, w) if self.style.get("ticket_perforate", True) else ()):  # perforated ends
             for i in range(3):
                 cy = h * (i + 1) / 4
                 d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=(0, 0, 0, 0))
