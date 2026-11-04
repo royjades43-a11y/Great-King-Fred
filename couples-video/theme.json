@@ -1,0 +1,29 @@
+{
+  "paper": "#A8BDA2",
+  "ink": "#000000",
+  "muted": "#2E3A2C",
+  "accent": "#B00E1B",
+  "accent2": "#000000",
+  "alarm": "#B00E1B",
+  "card": "#F1F5EF",
+  "font": "Montserrat",
+  "fontFiles": [
+    {
+      "weight": 600,
+      "src": "assets/fonts/montserrat-600.woff2"
+    },
+    {
+      "weight": 800,
+      "src": "assets/fonts/montserrat-800.woff2"
+    }
+  ],
+  "display": "Montserrat",
+  "displayFiles": [],
+  "lead": 0.25,
+  "handle": "@darealwhy",
+  "voiceover": "assets/voiceover.mp3",
+  "shadow": "rgba(0, 0, 0, 0.28)",
+  "shadowSoft": "rgba(0, 0, 0, 0.16)",
+  "displayWeight": 800,
+  "perWord": true
+}

@@ -75,8 +75,7 @@ The opening minutes **alone** | predicted who'd still be married | six years lat
 **Direction:** clear and confident, a little bright. Make "Five to one." a clean beat. Energy 3.
 
 The next one was a **number**. |
-During a fight, stable couples didn't **avoid** negativity. |
-(lean in) They **balanced** it. ||
+During a fight, stable couples didn't **avoid** negativity. | They **balanced** it. ||
 For every negative moment, | a criticism, | an eye-roll, | a sharp tone, | they had about **five** positive ones. |
 (smile) A **touch**. | A **joke**. | A "you're **right**." | A smile in the middle of an argument. ||
 (land it) Five | to **one**. ||
@@ -109,7 +108,7 @@ Very often, it's a body that's **overwhelmed**, | not a heart that doesn't **car
 But over time, | it still does **damage**. ||
 (slower) And number **four**, | the worst of **all**: ||
 (land it) **contempt**. ||
-**Mockery**. | **Sarcasm**. | **Eye-rolling**. | Talking **down**. |
+(slower) **Mockery**. || **Sarcasm**. || **Eye-rolling**. || Talking **down**. ||
 (character) It says, | "I'm **better** than you." ||
 Gottman called contempt the single best predictor of **divorce**. |
 (lean in) And in his research, | it seemed to reach the **body** too. |
