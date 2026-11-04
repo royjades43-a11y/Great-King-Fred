@@ -89,7 +89,16 @@ PROG.update({
     "table":    ["Dm", "F", "E", "Am"],
     "fix":      ["C", "G", "Am", "F"],
 })
-DYN = {"opera": 0.85, "kahneman": 0.85, "data": 0.85, "thesis": 0.8, "lies": 0.85, "table": 0.7, "fix": 0.9, "glue": 0.85, "ties": 0.85, "breaks": 0.8, "gap": 0.8, "deep": 0.85, "follow": 0.9, "origins": 0.8, "lucy": 0.85, "exposure": 0.8, "money": 0.85, "crack": 0.75, "wars": 0.85, "answers": 0.8, "nostalgia": 0.8,
+PROG.update({
+    "lab":       ["F", "C", "G", "Am"],
+    "ratio":     ["C", "G", "Am", "F"],
+    "horsemen":  ["Dm", "Am", "E", "Am", "Dm", "F", "E", "E"],
+    "perpetual": ["F", "C", "Dm", "Am"],
+    "bids":      ["F", "C", "G", "Am", "F", "C", "G", "C"],
+    "goodnews":  ["C", "G", "Am", "F"],
+    "todo":      ["F", "C", "G", "C"],
+})
+DYN = {"lab": 0.85, "ratio": 0.85, "horsemen": 0.75, "perpetual": 0.8, "bids": 0.9, "goodnews": 0.9, "todo": 0.9, "opera": 0.85, "kahneman": 0.85, "data": 0.85, "thesis": 0.8, "lies": 0.85, "table": 0.7, "fix": 0.9, "glue": 0.85, "ties": 0.85, "breaks": 0.8, "gap": 0.8, "deep": 0.85, "follow": 0.9, "origins": 0.8, "lucy": 0.85, "exposure": 0.8, "money": 0.85, "crack": 0.75, "wars": 0.85, "answers": 0.8, "nostalgia": 0.8,
        "timeline": 0.9, "mirror": 1.0, "forever": 0.8, "reverse": 0.8, "inside": 0.8, "twist": 0.85, "end": 1.0, "hook": 0.9, "choice": 0.8, "flood": 0.75, "child": 0.8, "layer": 0.75, "miss": 0.8, "try": 0.9, "watch": 1.0}
 
 def scenes():

@@ -1,0 +1,3152 @@
+{
+ "title": "The Psychology of Couples Who Last",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "Your partner is looking out the window."
+    },
+    {
+     "id": "b01",
+     "say": "They say, \"Look at that bird.\""
+    },
+    {
+     "id": "b02",
+     "say": "That's it."
+    },
+    {
+     "id": "b03",
+     "say": "Nothing important."
+    },
+    {
+     "id": "b04",
+     "say": "What you do in the next few seconds, might say more about your relationship, than your last big fight."
+    },
+    {
+     "id": "b05",
+     "say": "Sound strange?"
+    },
+    {
+     "id": "b06",
+     "say": "Most people would say good couples communicate better, or fight less."
+    },
+    {
+     "id": "b07",
+     "say": "That's not quite what the cameras showed."
+    },
+    {
+     "id": "b08",
+     "say": "Researchers have spent decades watching couples, live, with cameras and heart monitors."
+    },
+    {
+     "id": "b09",
+     "say": "And they found that couples who last, aren't the ones who never fight."
+    },
+    {
+     "id": "b10",
+     "say": "By the end of this video, you'll know what they do instead."
+    },
+    {
+     "id": "b11",
+     "say": "And the ten-second habit, that predicted who stayed together."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "win",
+     "name": "window",
+     "x": 1500,
+     "y": 420,
+     "size": 300,
+     "from": "none",
+     "at": "b00:start",
+     "out": "b05",
+     "startAtZero": true
+    },
+    {
+     "t": "stick",
+     "id": "ca",
+     "x": 760,
+     "y": 655,
+     "from": "bottom",
+     "at": "b00:partner",
+     "poses": [
+      [
+       "idle",
+       "b00:partner"
+      ],
+      [
+       "point",
+       "b01:look"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b00:partner"
+      ]
+     ],
+     "out": "b05",
+     "scale": 0.75,
+     "sit": true
+    },
+    {
+     "t": "stick",
+     "id": "cb",
+     "x": 1040,
+     "y": 655,
+     "from": "bottom",
+     "at": "b00:partner",
+     "poses": [
+      [
+       "idle",
+       "b00:partner"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b00:partner"
+      ]
+     ],
+     "out": "b05",
+     "scale": 0.75,
+     "sit": true,
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "ct",
+     "name": "table",
+     "x": 960,
+     "y": 720,
+     "size": 420,
+     "from": "bottom",
+     "at": "b00:partner",
+     "out": "b05"
+    },
+    {
+     "t": "icon",
+     "id": "bird",
+     "name": "bird",
+     "x": 1500,
+     "y": 400,
+     "size": 150,
+     "from": "pop",
+     "at": "b01:bird",
+     "out": "b05"
+    },
+    {
+     "t": "bubble",
+     "id": "q",
+     "text": "Look at that bird.",
+     "x": 640,
+     "y": 300,
+     "size": 300,
+     "from": "pop",
+     "at": "b01:look",
+     "fontSize": 46,
+     "out": "b03"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "nothing *important*",
+     "x": 640,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b03:nothing",
+     "out": "b04"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "might matter more than your last *big fight*",
+     "x": 960,
+     "y": 200,
+     "size": 56,
+     "from": "top",
+     "at": "b04:fight",
+     "out": "b05"
+    },
+    {
+     "t": "icon",
+     "id": "q2",
+     "name": "question",
+     "x": 960,
+     "y": 540,
+     "size": 220,
+     "from": "pop",
+     "at": "b05:strange",
+     "out": "b06"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "communicate better? fight less?",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "top",
+     "at": "b06:communicate",
+     "out": "b08"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "not what the !cameras! showed",
+     "x": 960,
+     "y": 560,
+     "size": 72,
+     "from": "bottom",
+     "at": "b07:cameras",
+     "out": "b08"
+    },
+    {
+     "t": "icon",
+     "id": "cam",
+     "name": "camera",
+     "x": 700,
+     "y": 560,
+     "size": 240,
+     "from": "left",
+     "at": "b08:cameras",
+     "out": "b10"
+    },
+    {
+     "t": "icon",
+     "id": "hb",
+     "name": "heartbeat",
+     "x": 1240,
+     "y": 560,
+     "size": 260,
+     "from": "right",
+     "at": "b08:heart",
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "decades of *watching couples*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b08:decades",
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "couples who last !still fight!",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b09:never",
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "so what do they do *instead*?",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b10:instead",
+     "out": "b11"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "THE 10-SECOND HABIT",
+     "x": 960,
+     "y": 480,
+     "size": 120,
+     "from": "slam",
+     "at": "b11:habit",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "lab",
+   "beats": [
+    {
+     "id": "b12",
+     "say": "In the nineteen-eighties and nineties, two psychologists, John Gottman and Robert Levenson, did something unusual."
+    },
+    {
+     "id": "b13",
+     "say": "They studied couples the way biologists study animals."
+    },
+    {
+     "id": "b14",
+     "say": "By watching."
+    },
+    {
+     "id": "b15",
+     "say": "Couples came into the lab and talked about their day, and about a topic they always fought about."
+    },
+    {
+     "id": "b16",
+     "say": "The researchers recorded every word, every facial expression, and every jump in heart rate."
+    },
+    {
+     "id": "b17",
+     "say": "Later, Gottman even built a lab that looked like a small apartment, with a view of a park."
+    },
+    {
+     "id": "b18",
+     "say": "Couples spent a whole day there, just living, while the cameras rolled."
+    },
+    {
+     "id": "b19",
+     "say": "Then the researchers did the important part."
+    },
+    {
+     "id": "b20",
+     "say": "They waited."
+    },
+    {
+     "id": "b21",
+     "say": "For years."
+    },
+    {
+     "id": "b22",
+     "say": "They checked back to see which couples were still together."
+    },
+    {
+     "id": "b23",
+     "say": "And they looked for the patterns that had been there, from the start."
+    },
+    {
+     "id": "b24",
+     "say": "Gottman's team reported that they could predict which couples would divorce, with over ninety percent accuracy."
+    },
+    {
+     "id": "b25",
+     "say": "Some researchers have argued those numbers are less impressive than they sound."
+    },
+    {
+     "id": "b26",
+     "say": "The models were fitted to couples the team had already studied."
+    },
+    {
+     "id": "b27",
+     "say": "But the patterns themselves have held up."
+    },
+    {
+     "id": "b28",
+     "say": "One of the clearest came from just the first three minutes."
+    },
+    {
+     "id": "b29",
+     "say": "In a nineteen ninety-nine study, the team filmed one hundred and twenty-four newlywed couples, having one argument."
+    },
+    {
+     "id": "b30",
+     "say": "The opening minutes alone, predicted who'd still be married, six years later."
+    },
+    {
+     "id": "b31",
+     "say": "The way a fight starts, is usually the way it ends."
+    },
+    {
+     "id": "b32",
+     "say": "So what else did they find?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "01",
+     "text": "The Love *Lab*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b12:start",
+     "out": "b12:psychologists"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "PSYCHOLOGISTS · 1980s–90s",
+     "text": "Gottman & Levenson",
+     "sub": "watching couples, for years",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b12:gottman",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "like biologists *watching animals*",
+     "x": 960,
+     "y": 560,
+     "size": 72,
+     "from": "bottom",
+     "at": "b13:biologists",
+     "out": "b15"
+    },
+    {
+     "t": "icon",
+     "id": "couch",
+     "name": "couch",
+     "x": 960,
+     "y": 700,
+     "size": 520,
+     "from": "bottom",
+     "at": "b15:couples",
+     "out": "b19"
+    },
+    {
+     "t": "stick",
+     "id": "la",
+     "x": 820,
+     "y": 668,
+     "from": "top",
+     "at": "b15:couples",
+     "poses": [
+      [
+       "idle",
+       "b15:couples"
+      ],
+      [
+       "shrug",
+       "b15:fought"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b15:day"
+      ],
+      [
+       "tight",
+       "b15:fought"
+      ]
+     ],
+     "out": "b19",
+     "scale": 0.8,
+     "sit": true
+    },
+    {
+     "t": "stick",
+     "id": "lb",
+     "x": 1100,
+     "y": 668,
+     "from": "top",
+     "at": "b15:lab",
+     "poses": [
+      [
+       "idle",
+       "b15:lab"
+      ],
+      [
+       "armsCrossed",
+       "b15:fought"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b15:day"
+      ],
+      [
+       "frown",
+       "b15:fought"
+      ]
+     ],
+     "out": "b19",
+     "scale": 0.8,
+     "sit": true,
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "cam",
+     "name": "camera",
+     "x": 380,
+     "y": 420,
+     "size": 200,
+     "from": "left",
+     "at": "b16:recorded",
+     "out": "b19"
+    },
+    {
+     "t": "icon",
+     "id": "hb",
+     "name": "heartbeat",
+     "x": 1560,
+     "y": 420,
+     "size": 200,
+     "from": "right",
+     "at": "b16:heart",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "every *word*, *face* and *heartbeat*",
+     "x": 960,
+     "y": 200,
+     "size": 60,
+     "from": "top",
+     "at": "b16:word",
+     "out": "b17"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "a lab like a small *apartment*",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b17:apartment",
+     "out": "b18"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "a whole *day*, just living",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b18:day",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "t4i",
+     "text": "then: the *important* part",
+     "x": 960,
+     "y": 480,
+     "size": 72,
+     "from": "bottom",
+     "at": "b19:then",
+     "out": "b20"
+    },
+    {
+     "t": "icon",
+     "id": "hg",
+     "name": "hourglass",
+     "x": 960,
+     "y": 520,
+     "size": 260,
+     "from": "pop",
+     "at": "b20:waited",
+     "out": "b24:ninety"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "they *waited*. for *years*.",
+     "x": 960,
+     "y": 820,
+     "size": 72,
+     "from": "bottom",
+     "at": "b20:waited",
+     "out": "b22"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "who was still *together*?",
+     "x": 960,
+     "y": 820,
+     "size": 72,
+     "from": "bottom",
+     "at": "b22:together",
+     "out": "b24:ninety"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "!90%+! accuracy, they reported",
+     "x": 960,
+     "y": 400,
+     "size": 96,
+     "from": "slam",
+     "at": "b24:ninety",
+     "out": "b27",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "critics: the models were *fitted* to data they already had",
+     "x": 960,
+     "y": 600,
+     "size": 44,
+     "from": "bottom",
+     "at": "b25:argued",
+     "out": "b27",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "but the *patterns* held up",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b27:patterns",
+     "out": "b28"
+    },
+    {
+     "t": "icon",
+     "id": "sw",
+     "name": "stopwatch",
+     "x": 960,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b28:first",
+     "out": "b29"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "the first *3 minutes*",
+     "x": 960,
+     "y": 830,
+     "size": 72,
+     "from": "bottom",
+     "at": "b28:three",
+     "out": "b29"
+    },
+    {
+     "t": "card",
+     "id": "card2",
+     "kicker": "STUDY · 1999",
+     "text": "124 newlywed couples, one argument",
+     "sub": "Carrère & Gottman",
+     "x": 960,
+     "y": 260,
+     "from": "top",
+     "at": "b29:study",
+     "out": "b31"
+    },
+    {
+     "t": "icon",
+     "id": "pp",
+     "name": "people",
+     "x": 960,
+     "y": 470,
+     "size": 180,
+     "from": "pop",
+     "at": "b29:newlywed",
+     "out": "b30"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "first minutes → married *6 years* later?",
+     "x": 960,
+     "y": 600,
+     "size": 64,
+     "from": "bottom",
+     "at": "b30:predicted",
+     "out": "b31"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "how it *starts* = how it *ends*",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b31:starts",
+     "out": "b32"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "what *else*?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b32:else"
+    }
+   ]
+  },
+  {
+   "id": "ratio",
+   "beats": [
+    {
+     "id": "b33",
+     "say": "The next one was a number."
+    },
+    {
+     "id": "b34",
+     "say": "During a fight, stable couples didn't avoid negativity."
+    },
+    {
+     "id": "b35",
+     "say": "They balanced it."
+    },
+    {
+     "id": "b36",
+     "say": "For every negative moment, a criticism, an eye-roll, a sharp tone, they had about five positive ones."
+    },
+    {
+     "id": "b37",
+     "say": "A touch."
+    },
+    {
+     "id": "b38",
+     "say": "A joke."
+    },
+    {
+     "id": "b39",
+     "say": "A \"you're right.\""
+    },
+    {
+     "id": "b40",
+     "say": "A smile in the middle of an argument."
+    },
+    {
+     "id": "b41",
+     "say": "Five, to one."
+    },
+    {
+     "id": "b42",
+     "say": "Couples heading for divorce were closer to one to one."
+    },
+    {
+     "id": "b43",
+     "say": "Sometimes less."
+    },
+    {
+     "id": "b44",
+     "say": "In other words, a happy couple can have plenty of fights."
+    },
+    {
+     "id": "b45",
+     "say": "They just have a lot more of everything else."
+    },
+    {
+     "id": "b46",
+     "say": "So the question isn't whether you fight."
+    },
+    {
+     "id": "b47",
+     "say": "It's what else happens while you're fighting."
+    },
+    {
+     "id": "b48",
+     "say": "And some negative moments, are far more dangerous than others."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "a *number*",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b33:number",
+     "out": "b34"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "they didn't *avoid* negativity",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b34:avoid",
+     "out": "b35"
+    },
+    {
+     "t": "balance",
+     "id": "bal",
+     "x": 960,
+     "y": 620,
+     "size": 600,
+     "from": "bottom",
+     "at": "b35:balanced",
+     "out": "b41",
+     "labels": [
+      "1 BAD",
+      "5 GOOD"
+     ],
+     "tilt": [
+      [
+       0,
+       "b35:balanced"
+      ],
+      [
+       -10,
+       "b36:five"
+      ],
+      [
+       0,
+       "b36:five"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "they *balanced* it",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b35:balanced",
+     "out": "b36"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "1 negative : *5 positive*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b36:five",
+     "out": "b37"
+    },
+    {
+     "t": "text",
+     "id": "p1",
+     "text": "a *touch*",
+     "x": 480,
+     "y": 200,
+     "size": 56,
+     "from": "left",
+     "at": "b37:touch",
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "p2",
+     "text": "a *joke*",
+     "x": 800,
+     "y": 200,
+     "size": 56,
+     "from": "top",
+     "at": "b38:joke",
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "p3",
+     "text": "“you're *right*”",
+     "x": 1120,
+     "y": 200,
+     "size": 56,
+     "from": "top",
+     "at": "b39:right",
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "p4",
+     "text": "a *smile*",
+     "x": 1440,
+     "y": 200,
+     "size": 56,
+     "from": "right",
+     "at": "b40:smile",
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "5 : 1",
+     "x": 960,
+     "y": 480,
+     "size": 220,
+     "from": "slam",
+     "at": "b41:five",
+     "out": "b42",
+     "hero": true
+    },
+    {
+     "t": "bar",
+     "id": "bar1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 360,
+     "color": "accent",
+     "label": "stable: 5 : 1",
+     "from": "draw",
+     "at": "b42:couples",
+     "out": "b44:fights"
+    },
+    {
+     "t": "bar",
+     "id": "bar2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 72,
+     "color": "muted",
+     "label": "divorcing: ~1 : 1",
+     "from": "draw",
+     "at": "b42:one",
+     "out": "b44:fights"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "sometimes *less*",
+     "x": 960,
+     "y": 300,
+     "size": 64,
+     "from": "bottom",
+     "at": "b43:less",
+     "out": "b44:fights",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "plenty of *fights*",
+     "x": 960,
+     "y": 400,
+     "size": 80,
+     "from": "left",
+     "at": "b44:fights",
+     "out": "b46"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "and *more of everything else*",
+     "x": 960,
+     "y": 540,
+     "size": 80,
+     "from": "right",
+     "at": "b45:everything",
+     "out": "b46"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "not *whether* you fight",
+     "x": 960,
+     "y": 400,
+     "size": 80,
+     "from": "top",
+     "at": "b46:whether",
+     "out": "b48"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "but what *else* happens",
+     "x": 960,
+     "y": 540,
+     "size": 80,
+     "from": "bottom",
+     "at": "b47:else",
+     "out": "b48"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "some moments are more !dangerous!",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "slam",
+     "at": "b48:dangerous"
+    }
+   ]
+  },
+  {
+   "id": "horsemen",
+   "beats": [
+    {
+     "id": "b49",
+     "say": "Gottman found four behaviors that predicted the end."
+    },
+    {
+     "id": "b50",
+     "say": "He called them the Four Horsemen."
+    },
+    {
+     "id": "b51",
+     "say": "Number one: criticism."
+    },
+    {
+     "id": "b52",
+     "say": "Not complaining about something you did."
+    },
+    {
+     "id": "b53",
+     "say": "Attacking who you are."
+    },
+    {
+     "id": "b54",
+     "say": "A complaint says, \"The trash is still here.\""
+    },
+    {
+     "id": "b55",
+     "say": "Criticism says, \"You never think about anyone but yourself.\""
+    },
+    {
+     "id": "b56",
+     "say": "Number two: defensiveness."
+    },
+    {
+     "id": "b57",
+     "say": "Answering every complaint with an excuse, or a counter-attack."
+    },
+    {
+     "id": "b58",
+     "say": "\"Well, you're the one who...\""
+    },
+    {
+     "id": "b59",
+     "say": "Number three: stonewalling."
+    },
+    {
+     "id": "b60",
+     "say": "Shutting down."
+    },
+    {
+     "id": "b61",
+     "say": "Going silent."
+    },
+    {
+     "id": "b62",
+     "say": "Turning into a wall."
+    },
+    {
+     "id": "b63",
+     "say": "If you've watched our video on people who go quiet in a fight, you'll know this one."
+    },
+    {
+     "id": "b64",
+     "say": "Very often, it's a body that's overwhelmed, not a heart that doesn't care."
+    },
+    {
+     "id": "b65",
+     "say": "But over time, it still does damage."
+    },
+    {
+     "id": "b66",
+     "say": "And number four, the worst of all: contempt."
+    },
+    {
+     "id": "b67",
+     "say": "Mockery."
+    },
+    {
+     "id": "b68",
+     "say": "Sarcasm."
+    },
+    {
+     "id": "b69",
+     "say": "Eye-rolling."
+    },
+    {
+     "id": "b70",
+     "say": "Talking down."
+    },
+    {
+     "id": "b71",
+     "say": "It says, \"I'm better than you.\""
+    },
+    {
+     "id": "b72",
+     "say": "Gottman called contempt the single best predictor of divorce."
+    },
+    {
+     "id": "b73",
+     "say": "And in his research, it seemed to reach the body too."
+    },
+    {
+     "id": "b74",
+     "say": "He reported that partners on the receiving end of contempt, had more infectious illnesses, over the next four years."
+    },
+    {
+     "id": "b75",
+     "say": "The good news, is that each horseman has an antidote."
+    },
+    {
+     "id": "b76",
+     "say": "Instead of criticism, start gently."
+    },
+    {
+     "id": "b77",
+     "say": "\"I feel stressed when the dishes pile up,\" not \"You're so lazy.\""
+    },
+    {
+     "id": "b78",
+     "say": "Instead of defensiveness, take responsibility for even a small part."
+    },
+    {
+     "id": "b79",
+     "say": "Instead of stonewalling, take a real break."
+    },
+    {
+     "id": "b80",
+     "say": "Twenty minutes to calm your body, then come back."
+    },
+    {
+     "id": "b81",
+     "say": "And instead of contempt, build a habit of appreciation."
+    },
+    {
+     "id": "b82",
+     "say": "Notice what they do right, and say it."
+    },
+    {
+     "id": "b83",
+     "say": "But even the antidotes, aren't the whole story."
+    },
+    {
+     "id": "b84",
+     "say": "Here's the part nobody expects."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "02",
+     "text": "The Four *Horsemen*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b49:start",
+     "out": "b51"
+    },
+    {
+     "t": "text",
+     "id": "h1",
+     "text": "1 · CRITICISM",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "slam",
+     "at": "b51:criticism",
+     "out": "b56",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "not what you *did* — who you *are*",
+     "x": 960,
+     "y": 340,
+     "size": 60,
+     "from": "bottom",
+     "at": "b52:complaining",
+     "out": "b54"
+    },
+    {
+     "t": "bubble",
+     "id": "c1",
+     "text": "The trash is still here.",
+     "x": 600,
+     "y": 560,
+     "size": 320,
+     "from": "pop",
+     "at": "b54:complaint",
+     "fontSize": 44,
+     "out": "b56"
+    },
+    {
+     "t": "text",
+     "id": "c1l",
+     "text": "complaint",
+     "x": 600,
+     "y": 820,
+     "size": 52,
+     "from": "bottom",
+     "at": "b54:complaint",
+     "out": "b56"
+    },
+    {
+     "t": "bubble",
+     "id": "c2",
+     "text": "You never think about anyone but yourself.",
+     "x": 1320,
+     "y": 560,
+     "size": 380,
+     "from": "pop",
+     "at": "b55:criticism",
+     "fontSize": 40,
+     "out": "b56"
+    },
+    {
+     "t": "text",
+     "id": "c2l",
+     "text": "!criticism!",
+     "x": 1320,
+     "y": 820,
+     "size": 52,
+     "from": "bottom",
+     "at": "b55:criticism",
+     "out": "b56"
+    },
+    {
+     "t": "text",
+     "id": "h2",
+     "text": "2 · DEFENSIVENESS",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "slam",
+     "at": "b56:defensiveness",
+     "out": "b59",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "d",
+     "x": 960,
+     "y": 660,
+     "from": "bottom",
+     "at": "b57:answering",
+     "poses": [
+      [
+       "armsCrossed",
+       "b57:answering"
+      ],
+      [
+       "point",
+       "b58:well"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b57:answering"
+      ]
+     ],
+     "out": "b59"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "an *excuse* or a *counter-attack*",
+     "x": 960,
+     "y": 960,
+     "size": 56,
+     "from": "bottom",
+     "at": "b57:excuse",
+     "out": "b58"
+    },
+    {
+     "t": "bubble",
+     "id": "d1",
+     "text": "Well, YOU'RE the one who...",
+     "x": 1400,
+     "y": 400,
+     "size": 320,
+     "from": "pop",
+     "at": "b58:well",
+     "fontSize": 42,
+     "out": "b59"
+    },
+    {
+     "t": "text",
+     "id": "h3",
+     "text": "3 · STONEWALLING",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "slam",
+     "at": "b59:stonewalling",
+     "out": "b66",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "s",
+     "x": 760,
+     "y": 660,
+     "from": "left",
+     "at": "b60:shutting",
+     "poses": [
+      [
+       "headDown",
+       "b60:shutting"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b60:shutting"
+      ]
+     ],
+     "out": "b66"
+    },
+    {
+     "t": "icon",
+     "id": "wall",
+     "name": "wall",
+     "x": 1200,
+     "y": 600,
+     "size": 320,
+     "from": "right",
+     "at": "b62:wall",
+     "out": "b66"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "shut down · go silent · *a wall*",
+     "x": 960,
+     "y": 920,
+     "size": 56,
+     "from": "bottom",
+     "at": "b60:shutting",
+     "out": "b62"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "see our video: *people who go quiet in a fight*",
+     "x": 960,
+     "y": 920,
+     "size": 48,
+     "from": "bottom",
+     "at": "b63:watched",
+     "out": "b64",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "an *overwhelmed body*, not a cold heart",
+     "x": 960,
+     "y": 920,
+     "size": 52,
+     "from": "bottom",
+     "at": "b64:overwhelmed",
+     "out": "b66"
+    },
+    {
+     "t": "text",
+     "id": "h4",
+     "text": "4 · CONTEMPT",
+     "x": 960,
+     "y": 200,
+     "size": 110,
+     "from": "slam",
+     "at": "b66:contempt",
+     "out": "b72",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "ct",
+     "x": 960,
+     "y": 660,
+     "from": "bottom",
+     "at": "b66:contempt",
+     "poses": [
+      [
+       "armsCrossed",
+       "b66:contempt"
+      ],
+      [
+       "proud",
+       "b71:better"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b66:contempt"
+      ]
+     ],
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "m1",
+     "text": "mockery",
+     "x": 480,
+     "y": 480,
+     "size": 60,
+     "from": "left",
+     "at": "b67:mockery",
+     "out": "b71"
+    },
+    {
+     "t": "text",
+     "id": "m2",
+     "text": "sarcasm",
+     "x": 480,
+     "y": 640,
+     "size": 60,
+     "from": "left",
+     "at": "b68:sarcasm",
+     "out": "b71"
+    },
+    {
+     "t": "text",
+     "id": "m3",
+     "text": "eye-rolling",
+     "x": 1440,
+     "y": 480,
+     "size": 60,
+     "from": "right",
+     "at": "b69:eyerolling",
+     "out": "b71"
+    },
+    {
+     "t": "text",
+     "id": "m4",
+     "text": "talking down",
+     "x": 1440,
+     "y": 640,
+     "size": 60,
+     "from": "right",
+     "at": "b70:talking",
+     "out": "b71"
+    },
+    {
+     "t": "bubble",
+     "id": "ctb",
+     "text": "I'm better than you.",
+     "x": 1280,
+     "y": 470,
+     "size": 280,
+     "from": "pop",
+     "at": "b71:better",
+     "fontSize": 44,
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "the #1 predictor of !divorce!",
+     "x": 960,
+     "y": 440,
+     "size": 90,
+     "from": "slam",
+     "at": "b72:predictor",
+     "out": "b74",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "hb",
+     "name": "heartbeat",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b73:body",
+     "out": "b75"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "more *infections*, over 4 years",
+     "x": 960,
+     "y": 820,
+     "size": 64,
+     "from": "bottom",
+     "at": "b74:infectious",
+     "out": "b75"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "each one has an *antidote*",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b75:antidote",
+     "out": "b83"
+    },
+    {
+     "t": "text",
+     "id": "a1",
+     "text": "criticism → *start gently*",
+     "x": 960,
+     "y": 340,
+     "size": 56,
+     "from": "left",
+     "at": "b76:gently",
+     "out": "b83"
+    },
+    {
+     "t": "text",
+     "id": "a1q",
+     "text": "“I feel stressed when the dishes pile up”",
+     "x": 960,
+     "y": 420,
+     "size": 44,
+     "from": "left",
+     "at": "b77:stressed",
+     "out": "b83",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "a2",
+     "text": "defensiveness → *take responsibility*",
+     "x": 960,
+     "y": 520,
+     "size": 56,
+     "from": "right",
+     "at": "b78:responsibility",
+     "out": "b83"
+    },
+    {
+     "t": "text",
+     "id": "a3",
+     "text": "stonewalling → *a real break* (20 min)",
+     "x": 960,
+     "y": 620,
+     "size": 56,
+     "from": "left",
+     "at": "b79:break",
+     "out": "b83"
+    },
+    {
+     "t": "text",
+     "id": "a4",
+     "text": "contempt → *appreciation*",
+     "x": 960,
+     "y": 720,
+     "size": 56,
+     "from": "right",
+     "at": "b81:appreciation",
+     "out": "b83"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "not the *whole story*",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b83:story",
+     "out": "b84"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "the part nobody !expects!",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "slam",
+     "at": "b84:expects"
+    }
+   ]
+  },
+  {
+   "id": "perpetual",
+   "beats": [
+    {
+     "id": "b85",
+     "say": "Happy couples, don't solve most of their problems."
+    },
+    {
+     "id": "b86",
+     "say": "According to Gottman, about sixty-nine percent of relationship conflicts, are perpetual."
+    },
+    {
+     "id": "b87",
+     "say": "They never really go away."
+    },
+    {
+     "id": "b88",
+     "say": "The money argument."
+    },
+    {
+     "id": "b89",
+     "say": "The messy kitchen."
+    },
+    {
+     "id": "b90",
+     "say": "Whose family you visit for the holidays."
+    },
+    {
+     "id": "b91",
+     "say": "They come from real differences in personality, and those don't disappear."
+    },
+    {
+     "id": "b92",
+     "say": "As one therapist put it, choosing a partner means choosing a set of problems, you'll be living with for years."
+    },
+    {
+     "id": "b93",
+     "say": "Couples who last don't win these arguments."
+    },
+    {
+     "id": "b94",
+     "say": "They learn to live with them, with humor, and without contempt."
+    },
+    {
+     "id": "b95",
+     "say": "They stop trying to win, and start trying to understand."
+    },
+    {
+     "id": "b96",
+     "say": "So if it isn't about fixing every problem, what is it about?"
+    },
+    {
+     "id": "b97",
+     "say": "It's about the bird."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "happy couples don't *solve* most problems",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b85:solve",
+     "out": "b86"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "!69%! never go away",
+     "x": 960,
+     "y": 460,
+     "size": 130,
+     "from": "slam",
+     "at": "b86:sixty",
+     "out": "b88",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "i1",
+     "name": "money",
+     "x": 520,
+     "y": 560,
+     "size": 220,
+     "from": "left",
+     "at": "b88:money",
+     "out": "b91"
+    },
+    {
+     "t": "icon",
+     "id": "i2",
+     "name": "house",
+     "x": 960,
+     "y": 560,
+     "size": 220,
+     "from": "top",
+     "at": "b89:kitchen",
+     "out": "b91"
+    },
+    {
+     "t": "icon",
+     "id": "i3",
+     "name": "calendar",
+     "x": 1400,
+     "y": 560,
+     "size": 220,
+     "from": "right",
+     "at": "b90:holidays",
+     "out": "b91"
+    },
+    {
+     "t": "text",
+     "id": "i1l",
+     "text": "money",
+     "x": 520,
+     "y": 800,
+     "size": 52,
+     "from": "bottom",
+     "at": "b88:money",
+     "out": "b91"
+    },
+    {
+     "t": "text",
+     "id": "i2l",
+     "text": "the kitchen",
+     "x": 960,
+     "y": 800,
+     "size": 52,
+     "from": "bottom",
+     "at": "b89:kitchen",
+     "out": "b91"
+    },
+    {
+     "t": "text",
+     "id": "i3l",
+     "text": "the holidays",
+     "x": 1400,
+     "y": 800,
+     "size": 52,
+     "from": "bottom",
+     "at": "b90:holidays",
+     "out": "b91"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "real *personality* differences",
+     "x": 960,
+     "y": 480,
+     "size": 80,
+     "from": "top",
+     "at": "b91:personality",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "a partner = a *set of problems* for years",
+     "x": 960,
+     "y": 480,
+     "size": 72,
+     "from": "slam",
+     "at": "b92:problems",
+     "out": "b93"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "they don't *win*",
+     "x": 960,
+     "y": 360,
+     "size": 80,
+     "from": "left",
+     "at": "b93:win",
+     "out": "b96"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "humor · no contempt · *understanding*",
+     "x": 960,
+     "y": 520,
+     "size": 64,
+     "from": "right",
+     "at": "b95:understand",
+     "out": "b96"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "so what *is* it about?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b96:about",
+     "out": "b97"
+    },
+    {
+     "t": "icon",
+     "id": "bird",
+     "name": "bird",
+     "x": 960,
+     "y": 500,
+     "size": 260,
+     "from": "pop",
+     "at": "b97:bird"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "the !bird!",
+     "x": 960,
+     "y": 800,
+     "size": 100,
+     "from": "slam",
+     "at": "b97:bird",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "bids",
+   "beats": [
+    {
+     "id": "b98",
+     "say": "Gottman calls them bids."
+    },
+    {
+     "id": "b99",
+     "say": "A bid is any small attempt to connect."
+    },
+    {
+     "id": "b100",
+     "say": "They happen all day long, and most of them are tiny."
+    },
+    {
+     "id": "b101",
+     "say": "\"Look at that bird.\""
+    },
+    {
+     "id": "b102",
+     "say": "\"Guess what happened at work.\""
+    },
+    {
+     "id": "b103",
+     "say": "A sigh."
+    },
+    {
+     "id": "b104",
+     "say": "A hand on your shoulder."
+    },
+    {
+     "id": "b105",
+     "say": "And every bid gets one of three answers."
+    },
+    {
+     "id": "b106",
+     "say": "You can turn toward it."
+    },
+    {
+     "id": "b107",
+     "say": "\"Oh wow, what kind is it?\""
+    },
+    {
+     "id": "b108",
+     "say": "You can turn away."
+    },
+    {
+     "id": "b109",
+     "say": "You keep scrolling, and say nothing."
+    },
+    {
+     "id": "b110",
+     "say": "Or you can turn against it."
+    },
+    {
+     "id": "b111",
+     "say": "\"Can't you see I'm busy?\""
+    },
+    {
+     "id": "b112",
+     "say": "Turning away can feel harmless."
+    },
+    {
+     "id": "b113",
+     "say": "You were just busy."
+    },
+    {
+     "id": "b114",
+     "say": "But to the person reaching out, silence can sound like, \"you don't matter.\""
+    },
+    {
+     "id": "b115",
+     "say": "In one study, Gottman followed newlywed couples for six years."
+    },
+    {
+     "id": "b116",
+     "say": "The couples who were still married, had turned toward each other's bids, about eighty-six percent of the time."
+    },
+    {
+     "id": "b117",
+     "say": "The couples who divorced?"
+    },
+    {
+     "id": "b118",
+     "say": "About thirty-three percent."
+    },
+    {
+     "id": "b119",
+     "say": "That's the ten-second habit I promised you."
+    },
+    {
+     "id": "b120",
+     "say": "Not grand gestures."
+    },
+    {
+     "id": "b121",
+     "say": "Not perfect communication."
+    },
+    {
+     "id": "b122",
+     "say": "Just looking at the bird."
+    },
+    {
+     "id": "b123",
+     "say": "Each time you turn toward a bid, you're saying, \"I'm here."
+    },
+    {
+     "id": "b124",
+     "say": "You matter.\""
+    },
+    {
+     "id": "b125",
+     "say": "And each time you turn away, a little bit of trust leaks out."
+    },
+    {
+     "id": "b126",
+     "say": "But it wasn't over yet."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "BIDS",
+     "x": 960,
+     "y": 220,
+     "size": 120,
+     "from": "slam",
+     "at": "b98:bids",
+     "out": "b100",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "small attempts to *connect*",
+     "x": 960,
+     "y": 360,
+     "size": 64,
+     "from": "bottom",
+     "at": "b99:connect",
+     "out": "b100"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "all day long · mostly *tiny*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b100:tiny",
+     "out": "b101"
+    },
+    {
+     "t": "bubble",
+     "id": "b1",
+     "text": "Look at that bird.",
+     "x": 480,
+     "y": 520,
+     "size": 280,
+     "from": "pop",
+     "at": "b101:look",
+     "fontSize": 44,
+     "out": "b105"
+    },
+    {
+     "t": "bubble",
+     "id": "b2",
+     "text": "Guess what happened at work.",
+     "x": 1000,
+     "y": 400,
+     "size": 320,
+     "from": "pop",
+     "at": "b102:guess",
+     "fontSize": 40,
+     "out": "b105"
+    },
+    {
+     "t": "text",
+     "id": "b3",
+     "text": "a *sigh*",
+     "x": 1460,
+     "y": 560,
+     "size": 64,
+     "from": "right",
+     "at": "b103:sigh",
+     "out": "b105"
+    },
+    {
+     "t": "text",
+     "id": "b4",
+     "text": "a hand on your *shoulder*",
+     "x": 960,
+     "y": 820,
+     "size": 60,
+     "from": "bottom",
+     "at": "b104:hand",
+     "out": "b105"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "every bid: *three* answers",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b105:three",
+     "out": "b112"
+    },
+    {
+     "t": "stick",
+     "id": "ra",
+     "x": 820,
+     "y": 655,
+     "from": "bottom",
+     "at": "b106:toward",
+     "poses": [
+      [
+       "idle",
+       "b106:toward"
+      ],
+      [
+       "point",
+       "b106:toward"
+      ],
+      [
+       "headDown",
+       "b108:away"
+      ],
+      [
+       "armsCrossed",
+       "b110:against"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b106:toward"
+      ]
+     ],
+     "out": "b112",
+     "scale": 0.75,
+     "sit": true
+    },
+    {
+     "t": "stick",
+     "id": "rb",
+     "x": 1100,
+     "y": 655,
+     "from": "bottom",
+     "at": "b106:toward",
+     "poses": [
+      [
+       "happy",
+       "b106:toward"
+      ],
+      [
+       "idle",
+       "b108:away"
+      ],
+      [
+       "shrug",
+       "b110:against"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b106:toward"
+      ]
+     ],
+     "out": "b112",
+     "scale": 0.75,
+     "sit": true,
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "rt",
+     "name": "table",
+     "x": 960,
+     "y": 720,
+     "size": 420,
+     "from": "bottom",
+     "at": "b106:toward",
+     "out": "b112"
+    },
+    {
+     "t": "text",
+     "id": "r1",
+     "text": "1 · turn *toward*",
+     "x": 520,
+     "y": 360,
+     "size": 56,
+     "from": "left",
+     "at": "b106:toward",
+     "out": "b112"
+    },
+    {
+     "t": "bubble",
+     "id": "r1b",
+     "text": "Oh wow, what kind is it?",
+     "x": 520,
+     "y": 560,
+     "size": 330,
+     "from": "pop",
+     "at": "b107:wow",
+     "fontSize": 40,
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "r2",
+     "text": "2 · turn *away*",
+     "x": 960,
+     "y": 360,
+     "size": 56,
+     "from": "top",
+     "at": "b108:away",
+     "out": "b112"
+    },
+    {
+     "t": "text",
+     "id": "r3",
+     "text": "3 · turn !against!",
+     "x": 1400,
+     "y": 360,
+     "size": 56,
+     "from": "right",
+     "at": "b110:against",
+     "out": "b112"
+    },
+    {
+     "t": "bubble",
+     "id": "r3b",
+     "text": "Can't you see I'm busy?",
+     "x": 1400,
+     "y": 560,
+     "size": 280,
+     "from": "pop",
+     "at": "b111:busy",
+     "fontSize": 40,
+     "out": "b112"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "turning away feels *harmless*",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "top",
+     "at": "b112:harmless",
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "silence sounds like !“you don't matter”!",
+     "x": 960,
+     "y": 560,
+     "size": 64,
+     "from": "bottom",
+     "at": "b114:matter",
+     "out": "b115"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "NEWLYWEDS · 6 YEARS",
+     "text": "Who turned toward bids?",
+     "sub": "Gottman",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b115:newlywed",
+     "out": "b119"
+    },
+    {
+     "t": "bar",
+     "id": "bar1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 344,
+     "color": "accent",
+     "label": "still married: 86%",
+     "from": "draw",
+     "at": "b116:eighty",
+     "out": "b119"
+    },
+    {
+     "t": "bar",
+     "id": "bar2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 132,
+     "color": "muted",
+     "label": "divorced: 33%",
+     "from": "draw",
+     "at": "b118:thirty",
+     "out": "b119"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "the *10-second habit*",
+     "x": 960,
+     "y": 220,
+     "size": 80,
+     "from": "top",
+     "at": "b119:habit",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "not grand *gestures*",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "left",
+     "at": "b120:grand",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "not perfect *communication*",
+     "x": 960,
+     "y": 540,
+     "size": 72,
+     "from": "right",
+     "at": "b121:perfect",
+     "out": "b122"
+    },
+    {
+     "t": "icon",
+     "id": "bird",
+     "name": "bird",
+     "x": 960,
+     "y": 520,
+     "size": 260,
+     "from": "pop",
+     "at": "b122:bird",
+     "out": "b126"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "just looking at the !bird!",
+     "x": 960,
+     "y": 820,
+     "size": 80,
+     "from": "slam",
+     "at": "b122:looking",
+     "out": "b123",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "“I'm here. *You matter.*”",
+     "x": 960,
+     "y": 820,
+     "size": 72,
+     "from": "bottom",
+     "at": "b123:here",
+     "out": "b125"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "turn away: a little *trust* leaks out",
+     "x": 960,
+     "y": 820,
+     "size": 60,
+     "from": "bottom",
+     "at": "b125:trust",
+     "out": "b126"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "but it wasn't over yet",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b126:over",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "goodnews",
+   "beats": [
+    {
+     "id": "b127",
+     "say": "Here's one most people never think about."
+    },
+    {
+     "id": "b128",
+     "say": "We all know a partner should support you when things go wrong."
+    },
+    {
+     "id": "b129",
+     "say": "But psychologist Shelly Gable found that how they react when things go right, may matter even more."
+    },
+    {
+     "id": "b130",
+     "say": "Imagine you come home and say \"I got the promotion!\""
+    },
+    {
+     "id": "b131",
+     "say": "Your partner could say, \"Nice,\" and keep watching TV."
+    },
+    {
+     "id": "b132",
+     "say": "They could say, \"Won't that mean longer hours?\""
+    },
+    {
+     "id": "b133",
+     "say": "Or they could light up and ask, \"Tell me everything."
+    },
+    {
+     "id": "b134",
+     "say": "What did your boss say?\""
+    },
+    {
+     "id": "b135",
+     "say": "Only that last kind of response, interested and enthusiastic, was linked to more trust, intimacy, and satisfaction."
+    },
+    {
+     "id": "b136",
+     "say": "Celebrating someone is a skill."
+    },
+    {
+     "id": "b137",
+     "say": "And most of us are a bit lazy at it."
+    },
+    {
+     "id": "b138",
+     "say": "When did you last react to good news, like it was the best thing you'd heard all week?"
+    },
+    {
+     "id": "b139",
+     "say": "Then there's boredom."
+    },
+    {
+     "id": "b140",
+     "say": "In two thousand, psychologist Arthur Aron gave couples a strange task."
+    },
+    {
+     "id": "b141",
+     "say": "Some were tied together at the wrist and ankle, and had to cross a padded obstacle course, carrying a pillow."
+    },
+    {
+     "id": "b142",
+     "say": "Others did something dull."
+    },
+    {
+     "id": "b143",
+     "say": "After just seven minutes, the couples who did the new, slightly ridiculous task, reported feeling better about their relationship."
+    },
+    {
+     "id": "b144",
+     "say": "Novelty, it seems, brings back a little of the early spark."
+    },
+    {
+     "id": "b145",
+     "say": "Your usual restaurant won't do it."
+    },
+    {
+     "id": "b146",
+     "say": "Something new will."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "when things go *right*",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b128:wrong",
+     "out": "b129"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2004",
+     "text": "When things go right",
+     "sub": "Shelly Gable et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b129:gable",
+     "out": "b130"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 520,
+     "y": 660,
+     "from": "left",
+     "at": "b130:home",
+     "poses": [
+      [
+       "victory",
+       "b130:promotion"
+      ],
+      [
+       "headDown",
+       "b131:nice"
+      ],
+      [
+       "shrug",
+       "b132:longer"
+      ],
+      [
+       "victory",
+       "b133:light"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b130:home"
+      ],
+      [
+       "frown",
+       "b131:nice"
+      ],
+      [
+       "tight",
+       "b132:longer"
+      ],
+      [
+       "smile",
+       "b133:light"
+      ]
+     ],
+     "out": "b136"
+    },
+    {
+     "t": "bubble",
+     "id": "p",
+     "text": "I got the promotion!",
+     "x": 520,
+     "y": 300,
+     "size": 300,
+     "from": "pop",
+     "at": "b130:promotion",
+     "fontSize": 46,
+     "out": "b131"
+    },
+    {
+     "t": "bubble",
+     "id": "r1",
+     "text": "Nice.",
+     "x": 1300,
+     "y": 300,
+     "size": 240,
+     "from": "pop",
+     "at": "b131:nice",
+     "fontSize": 60,
+     "out": "b132"
+    },
+    {
+     "t": "bubble",
+     "id": "r2",
+     "text": "Won't that mean longer hours?",
+     "x": 1300,
+     "y": 300,
+     "size": 340,
+     "from": "pop",
+     "at": "b132:longer",
+     "fontSize": 40,
+     "out": "b133"
+    },
+    {
+     "t": "bubble",
+     "id": "r3",
+     "text": "Tell me everything!",
+     "x": 1300,
+     "y": 300,
+     "size": 300,
+     "from": "pop",
+     "at": "b133:everything",
+     "fontSize": 46,
+     "out": "b135"
+    },
+    {
+     "t": "icon",
+     "id": "h",
+     "name": "heart",
+     "x": 1300,
+     "y": 640,
+     "size": 180,
+     "from": "pop",
+     "at": "b135:trust",
+     "out": "b136",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "*trust* · *intimacy* · *satisfaction*",
+     "x": 1300,
+     "y": 860,
+     "size": 52,
+     "from": "bottom",
+     "at": "b135:trust",
+     "out": "b136"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "celebrating is a *skill*",
+     "x": 960,
+     "y": 400,
+     "size": 80,
+     "from": "top",
+     "at": "b136:skill",
+     "out": "b138"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "most of us are a bit !lazy! at it",
+     "x": 960,
+     "y": 540,
+     "size": 72,
+     "from": "bottom",
+     "at": "b137:lazy",
+     "out": "b138"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "the best news *all week*?",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b138:best",
+     "out": "b139"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "BOREDOM",
+     "x": 960,
+     "y": 480,
+     "size": 140,
+     "from": "slam",
+     "at": "b139:boredom",
+     "out": "b140",
+     "hero": true
+    },
+    {
+     "t": "card",
+     "id": "card2",
+     "kicker": "STUDY · 2000",
+     "text": "A strange task for couples",
+     "sub": "Arthur Aron et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b140:aron",
+     "out": "b141"
+    },
+    {
+     "t": "stick",
+     "id": "ta",
+     "x": 860,
+     "y": 660,
+     "from": "left",
+     "at": "b141:tied",
+     "poses": [
+      [
+       "victory",
+       "b141:tied"
+      ],
+      [
+       "happy",
+       "b141:course"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b141:tied"
+      ]
+     ],
+     "out": "b143"
+    },
+    {
+     "t": "stick",
+     "id": "tb",
+     "x": 1060,
+     "y": 660,
+     "from": "right",
+     "at": "b141:wrist",
+     "poses": [
+      [
+       "victory",
+       "b141:wrist"
+      ],
+      [
+       "happy",
+       "b141:course"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b141:wrist"
+      ]
+     ],
+     "out": "b143",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "tied at wrist & ankle · obstacle course · *a pillow*",
+     "x": 960,
+     "y": 220,
+     "size": 48,
+     "from": "top",
+     "at": "b141:pillow",
+     "out": "b143"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "7 MINUTES",
+     "x": 960,
+     "y": 440,
+     "size": 150,
+     "from": "slam",
+     "at": "b143:seven",
+     "out": "b144",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "→ felt *better* about the relationship",
+     "x": 960,
+     "y": 620,
+     "size": 60,
+     "from": "bottom",
+     "at": "b143:better",
+     "out": "b144"
+    },
+    {
+     "t": "icon",
+     "id": "sun",
+     "name": "sun",
+     "x": 960,
+     "y": 520,
+     "size": 220,
+     "from": "pop",
+     "at": "b144:spark",
+     "out": "b146"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "novelty brings back the *spark*",
+     "x": 960,
+     "y": 800,
+     "size": 64,
+     "from": "bottom",
+     "at": "b144:spark",
+     "out": "b145"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "not the usual restaurant: something *new*",
+     "x": 960,
+     "y": 800,
+     "size": 56,
+     "from": "bottom",
+     "at": "b146:new",
+     "out": "b146:end"
+    }
+   ]
+  },
+  {
+   "id": "todo",
+   "beats": [
+    {
+     "id": "b147",
+     "say": "So what can you actually do tomorrow?"
+    },
+    {
+     "id": "b148",
+     "say": "Start hard talks gently."
+    },
+    {
+     "id": "b149",
+     "say": "The first three minutes matter."
+    },
+    {
+     "id": "b150",
+     "say": "Turn toward the bids."
+    },
+    {
+     "id": "b151",
+     "say": "Even the boring ones."
+    },
+    {
+     "id": "b152",
+     "say": "Aim for five good moments for every bad one, especially in a fight."
+    },
+    {
+     "id": "b153",
+     "say": "Swap contempt for appreciation."
+    },
+    {
+     "id": "b154",
+     "say": "Say what you're grateful for, out loud."
+    },
+    {
+     "id": "b155",
+     "say": "Celebrate the good news like it matters, because to them, it does."
+    },
+    {
+     "id": "b156",
+     "say": "Try something new together."
+    },
+    {
+     "id": "b157",
+     "say": "It doesn't have to be expensive."
+    },
+    {
+     "id": "b158",
+     "say": "It just has to be new."
+    },
+    {
+     "id": "b159",
+     "say": "And don't wait too long to ask for help."
+    },
+    {
+     "id": "b160",
+     "say": "Gottman has said the average couple waits about six years with problems, before they get help."
+    },
+    {
+     "id": "b161",
+     "say": "That's a long time to let things build."
+    },
+    {
+     "id": "b162",
+     "say": "And the best part?"
+    },
+    {
+     "id": "b163",
+     "say": ", None of this costs anything."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "what to do *tomorrow*",
+     "x": 960,
+     "y": 180,
+     "size": 72,
+     "from": "top",
+     "at": "b147:tomorrow"
+    },
+    {
+     "t": "icon",
+     "id": "cl",
+     "name": "checklist",
+     "x": 360,
+     "y": 560,
+     "size": 300,
+     "from": "left",
+     "at": "b148:start"
+    },
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "start hard talks *gently*",
+     "x": 1100,
+     "y": 300,
+     "size": 52,
+     "from": "right",
+     "at": "b148:gently"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "turn toward the *bids*",
+     "x": 1100,
+     "y": 390,
+     "size": 52,
+     "from": "right",
+     "at": "b150:bids"
+    },
+    {
+     "t": "text",
+     "id": "l3",
+     "text": "*5 good* for every bad",
+     "x": 1100,
+     "y": 480,
+     "size": 52,
+     "from": "right",
+     "at": "b152:five"
+    },
+    {
+     "t": "text",
+     "id": "l4",
+     "text": "contempt → *appreciation*",
+     "x": 1100,
+     "y": 570,
+     "size": 52,
+     "from": "right",
+     "at": "b153:appreciation"
+    },
+    {
+     "t": "text",
+     "id": "l5",
+     "text": "*celebrate* good news",
+     "x": 1100,
+     "y": 660,
+     "size": 52,
+     "from": "right",
+     "at": "b155:celebrate"
+    },
+    {
+     "t": "text",
+     "id": "l6",
+     "text": "try something *new*",
+     "x": 1100,
+     "y": 750,
+     "size": 52,
+     "from": "right",
+     "at": "b156:new"
+    },
+    {
+     "t": "text",
+     "id": "l7",
+     "text": "get help *early*",
+     "x": 1100,
+     "y": 840,
+     "size": 52,
+     "from": "right",
+     "at": "b159:help"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "the average couple waits *6 years*",
+     "x": 1100,
+     "y": 940,
+     "size": 44,
+     "from": "bottom",
+     "at": "b160:six",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 360,
+     "y": 900,
+     "size": 140,
+     "from": "pop",
+     "at": "b160:average"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b164",
+     "say": "So here's the twist."
+    },
+    {
+     "id": "b165",
+     "say": "Couples who last, still fight."
+    },
+    {
+     "id": "b166",
+     "say": "Most of their problems never go away."
+    },
+    {
+     "id": "b167",
+     "say": "What makes them different, is tiny."
+    },
+    {
+     "id": "b168",
+     "say": "They notice when the other person reaches out."
+    },
+    {
+     "id": "b169",
+     "say": "And they reach back."
+    },
+    {
+     "id": "b170",
+     "say": "Love doesn't usually end, with one big fight."
+    },
+    {
+     "id": "b171",
+     "say": "It fades in the moments, nobody looked at the bird."
+    },
+    {
+     "id": "b172",
+     "say": "So here's your challenge for this week."
+    },
+    {
+     "id": "b173",
+     "say": "Every time someone you love says \"look at this,\" stop, and actually look."
+    },
+    {
+     "id": "b174",
+     "say": "Then come back and tell me what changed."
+    },
+    {
+     "id": "b175",
+     "say": "When your partner or a friend says \"Look at that,\" do you look?"
+    },
+    {
+     "id": "b176",
+     "say": ", Tell me in the comments."
+    },
+    {
+     "id": "b177",
+     "say": "Which habit should we cover next?"
+    },
+    {
+     "id": "b178",
+     "say": ", Drop it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the !twist!",
+     "x": 960,
+     "y": 480,
+     "size": 130,
+     "from": "slam",
+     "at": "b164:twist",
+     "out": "b165",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "couples who last *still fight*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b165:fight",
+     "out": "b167"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "the difference is *tiny*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b167:tiny",
+     "out": "b168"
+    },
+    {
+     "t": "icon",
+     "id": "win",
+     "name": "window",
+     "x": 1500,
+     "y": 420,
+     "size": 300,
+     "from": "right",
+     "at": "b168:notice",
+     "out": "b172"
+    },
+    {
+     "t": "icon",
+     "id": "bird",
+     "name": "bird",
+     "x": 1500,
+     "y": 400,
+     "size": 150,
+     "from": "pop",
+     "at": "b168:reaches",
+     "out": "b172"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 780,
+     "y": 660,
+     "from": "left",
+     "at": "b168:notice",
+     "poses": [
+      [
+       "point",
+       "b168:reaches"
+      ],
+      [
+       "happy",
+       "b169:back"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b168:notice"
+      ]
+     ],
+     "out": "b172"
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 1080,
+     "y": 660,
+     "from": "left",
+     "at": "b168:other",
+     "poses": [
+      [
+       "idle",
+       "b168:other"
+      ],
+      [
+       "point",
+       "b169:back"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b169:back"
+      ]
+     ],
+     "out": "b172",
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "they notice · they *reach back*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b168:notice",
+     "out": "b170"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "love fades when nobody looks at the !bird!",
+     "x": 960,
+     "y": 220,
+     "size": 60,
+     "from": "top",
+     "at": "b171:fades",
+     "out": "b172"
+    },
+    {
+     "t": "icon",
+     "id": "eye",
+     "name": "check",
+     "x": 960,
+     "y": 520,
+     "size": 200,
+     "from": "pop",
+     "at": "b173:look",
+     "out": "b175"
+    },
+    {
+     "t": "text",
+     "id": "t4b",
+     "text": "your *challenge* for this week",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b172:challenge",
+     "out": "b175"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "this week: when they say “look” — *look*",
+     "x": 960,
+     "y": 820,
+     "size": 60,
+     "from": "bottom",
+     "at": "b173:look",
+     "out": "b175"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "do *you* look?",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "top",
+     "at": "b175:look"
+    },
+    {
+     "t": "icon",
+     "id": "bird2",
+     "name": "bird",
+     "x": 960,
+     "y": 480,
+     "size": 220,
+     "from": "pop",
+     "at": "b175:partner"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "which habit *next*?",
+     "x": 960,
+     "y": 760,
+     "size": 80,
+     "from": "bottom",
+     "at": "b177:habit",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 880,
+     "size": 48,
+     "from": "bottom",
+     "at": "b178:comments",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}
