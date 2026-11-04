@@ -50,26 +50,31 @@ const css = `
 `;
 
 const variants = {
-  // A: the reframe. A cheerful late runner and a clock, with the twist in two words.
+  // A: the hook scene. One bid, one partner on a phone, and the promise of the habit.
   a: `
-    <div class="abs ico" style="left:120px; top:120px; width:260px; height:260px">${iconSvg("clock")}</div>
-    <div class="abs" style="left:330px; top:330px">${stick("a", { pose: "victory", mouth: "smile", scale: 1.4 })}</div>
-    <div class="abs t" style="left:900px; top:250px; font-size:150px">Not rude.</div>
-    <div class="abs t r" style="left:900px; top:430px; font-size:118px">Optimistic.</div>
-    <div class="abs tag" style="left:920px; top:650px; font-size:58px; white-space:nowrap">why you're always late</div>`,
-  // B: the text message, and the friend waiting.
+    <div class="bubble" style="left:190px; top:70px; font-size:64px">Look at that bird.</div>
+    <div class="abs ico" style="left:880px; top:150px; width:270px; height:270px">${iconSvg("window")}</div>
+    <div class="abs ico" style="left:950px; top:200px; width:135px; height:135px">${iconSvg("bird")}</div>
+    <div class="abs" style="left:150px; top:420px">${stick("a", { pose: "point", mouth: "smile", scale: 1.1, sit: true })}</div>
+    <div class="abs" style="left:470px; top:420px">${stick("b", { pose: "headDown", mouth: "neutral", scale: 1.1, sit: true, flip: true, bow: true })}</div>
+    <div class="abs ico" style="left:140px; top:600px; width:560px; height:560px">${iconSvg("table")}</div>
+    <div class="abs t" style="left:1210px; top:330px; font-size:116px">The<br><span class="r">10-second</span><br>habit</div>
+    <div class="abs tag" style="left:1215px; top:720px; font-size:52px; white-space:nowrap">couples who last</div>`,
+  // B: the twist. A couple mid-argument, still together.
   b: `
-    <div class="bubble" style="left:110px; top:120px">I'll be there in 5 min</div>
-    <div class="abs" style="left:262px; top:430px">${stick("f", { pose: "headDown", mouth: "frown", scale: 1.1, sit: true })}</div>
-    <div class="abs ico" style="left:190px; top:590px; width:480px; height:480px">${iconSvg("table")}</div>
-    <div class="abs t" style="left:930px; top:270px; font-size:136px">Your 5 min<br>≠ their<br><span class="r">5 min</span></div>`,
-  // C: the numbers. Best guess, worst case, reality.
+    <div class="abs" style="left:150px; top:260px">${stick("a", { pose: "point", mouth: "tight", scale: 1.35 })}</div>
+    <div class="abs" style="left:520px; top:260px">${stick("b", { pose: "armsCrossed", mouth: "frown", scale: 1.35, flip: true, bow: true })}</div>
+    <div class="abs ico" style="left:395px; top:110px; width:200px; height:200px">${iconSvg("heart")}</div>
+    <div class="abs t" style="left:1000px; top:250px; font-size:140px">Happy<br>couples<br><span class="r">still fight</span></div>`,
+  // C: the number. Turned toward the bids: 86% vs 33%.
   c: `
-    <div class="bar" style="left:120px; height:300px; background:#2E3A2C"></div>
-    <div class="bar" style="left:330px; height:430px; background:#2E3A2C"></div>
-    <div class="bar" style="left:540px; height:490px; background:${theme.accent}"></div>
-    <div class="bl" style="left:85px">best</div><div class="bl" style="left:295px">worst</div><div class="bl r" style="left:505px">real</div>
-    <div class="abs t" style="left:830px; top:270px; font-size:140px">Later than<br>the <span class="r">worst</span><br><span class="r">case</span></div>`,
+    <div class="bar" style="left:150px; height:560px; background:${theme.accent}"></div>
+    <div class="bar" style="left:420px; height:215px; background:#2E3A2C"></div>
+    <div class="abs t r" style="left:118px; top:200px; font-size:84px">86%</div>
+    <div class="abs t" style="left:388px; top:545px; font-size:84px">33%</div>
+    <div class="bl" style="left:115px">stayed</div><div class="bl" style="left:385px">split</div>
+    <div class="abs t" style="left:800px; top:250px; font-size:122px">One tiny habit<br><span class="r">predicted</span><br>who stayed</div>
+    <div class="abs tag" style="left:810px; top:700px; font-size:52px; white-space:nowrap">turning toward the bids</div>`,
 };
 
 for (const [k, body] of Object.entries(variants)) {
