@@ -1,0 +1,3080 @@
+{
+ "title": "The Psychology of People Who Never Text First",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "You open a chat with an old friend."
+    },
+    {
+     "id": "b01",
+     "say": "The last message is from four months ago."
+    },
+    {
+     "id": "b02",
+     "say": "You type, \"Hey, how've you been?\""
+    },
+    {
+     "id": "b03",
+     "say": "Then you delete it."
+    },
+    {
+     "id": "b04",
+     "say": "They're probably busy."
+    },
+    {
+     "id": "b05",
+     "say": "It's been too long."
+    },
+    {
+     "id": "b06",
+     "say": "It would be weird."
+    },
+    {
+     "id": "b07",
+     "say": "And anyway, if they wanted to talk, they'd text you."
+    },
+    {
+     "id": "b08",
+     "say": "Sound familiar?"
+    },
+    {
+     "id": "b09",
+     "say": "Here's the strange part."
+    },
+    {
+     "id": "b10",
+     "say": "On the other side of that chat, your friend may be doing the exact same thing."
+    },
+    {
+     "id": "b11",
+     "say": "Psychologists have now tested what happens, when people send that message."
+    },
+    {
+     "id": "b12",
+     "say": "Across thousands of people, the senders got it wrong in the same direction, almost every time."
+    },
+    {
+     "id": "b13",
+     "say": "By the end of this video, you'll know why."
+    },
+    {
+     "id": "b14",
+     "say": "And why the friend you're waiting for, is probably waiting for you."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 560,
+     "y": 660,
+     "from": "left",
+     "at": "b00:open",
+     "poses": [
+      [
+       "idle",
+       "b00:open"
+      ],
+      [
+       "headDown",
+       "b02:type"
+      ],
+      [
+       "shrug",
+       "b04:busy"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:open"
+      ],
+      [
+       "tight",
+       "b04:busy"
+      ]
+     ],
+     "out": "b08"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 820,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b00:chat",
+     "out": "b08"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "last message: *4 months ago*",
+     "x": 1360,
+     "y": 260,
+     "size": 56,
+     "from": "top",
+     "at": "b01:four",
+     "out": "b04"
+    },
+    {
+     "t": "bubble",
+     "id": "m1",
+     "text": "Hey, how've you been?",
+     "x": 1360,
+     "y": 470,
+     "size": 340,
+     "from": "pop",
+     "at": "b02:hey",
+     "fontSize": 46,
+     "out": "b04"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 1360,
+     "y": 470,
+     "w": 380,
+     "at": "b03:delete",
+     "out": "b04"
+    },
+    {
+     "t": "text",
+     "id": "e1",
+     "text": "they're probably *busy*",
+     "x": 1360,
+     "y": 300,
+     "size": 60,
+     "from": "right",
+     "at": "b04:busy",
+     "out": "b08"
+    },
+    {
+     "t": "text",
+     "id": "e2",
+     "text": "it's been too *long*",
+     "x": 1360,
+     "y": 420,
+     "size": 60,
+     "from": "right",
+     "at": "b05:long",
+     "out": "b08"
+    },
+    {
+     "t": "text",
+     "id": "e3",
+     "text": "it would be *weird*",
+     "x": 1360,
+     "y": 540,
+     "size": 60,
+     "from": "right",
+     "at": "b06:weird",
+     "out": "b08"
+    },
+    {
+     "t": "text",
+     "id": "e4",
+     "text": "if they wanted to talk, !they'd text you!",
+     "x": 1360,
+     "y": 700,
+     "size": 48,
+     "from": "bottom",
+     "at": "b07:wanted",
+     "out": "b08"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "sound *familiar*?",
+     "x": 960,
+     "y": 480,
+     "size": 110,
+     "from": "top",
+     "at": "b08:familiar",
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "here's the *strange* part",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b09:strange",
+     "out": "b10"
+    },
+    {
+     "t": "stick",
+     "id": "pa",
+     "x": 600,
+     "y": 660,
+     "from": "left",
+     "at": "b10:other",
+     "poses": [
+      [
+       "headDown",
+       "b10:other"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b10:other"
+      ]
+     ],
+     "out": "b11"
+    },
+    {
+     "t": "stick",
+     "id": "pb",
+     "x": 1320,
+     "y": 660,
+     "from": "right",
+     "at": "b10:other",
+     "poses": [
+      [
+       "headDown",
+       "b10:friend"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b10:other"
+      ]
+     ],
+     "out": "b11",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "ppa",
+     "name": "phone",
+     "x": 790,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b10:other",
+     "out": "b11"
+    },
+    {
+     "t": "icon",
+     "id": "ppb",
+     "name": "phone",
+     "x": 1130,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b10:other",
+     "out": "b11"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "your friend: !the same thing!",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b10:same",
+     "out": "b11"
+    },
+    {
+     "t": "icon",
+     "id": "fl",
+     "name": "flask",
+     "x": 960,
+     "y": 520,
+     "size": 240,
+     "from": "pop",
+     "at": "b11:tested",
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "psychologists *tested* it",
+     "x": 960,
+     "y": 800,
+     "size": 72,
+     "from": "bottom",
+     "at": "b11:tested",
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "the senders got it !wrong!",
+     "x": 960,
+     "y": 460,
+     "size": 100,
+     "from": "slam",
+     "at": "b12:wrong",
+     "out": "b13",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "you'll know *why*",
+     "x": 960,
+     "y": 400,
+     "size": 80,
+     "from": "top",
+     "at": "b13:why"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "and why your friend is !waiting for you!",
+     "x": 960,
+     "y": 560,
+     "size": 72,
+     "from": "bottom",
+     "at": "b14:waiting"
+    }
+   ]
+  },
+  {
+   "id": "study",
+   "beats": [
+    {
+     "id": "b15",
+     "say": "In twenty twenty-two, a team led by psychologist Peggy Liu, ran a series of experiments on one simple act."
+    },
+    {
+     "id": "b16",
+     "say": "Reaching out."
+    },
+    {
+     "id": "b17",
+     "say": "More than five thousand nine hundred people took part, across thirteen experiments."
+    },
+    {
+     "id": "b18",
+     "say": "In the first, people remembered reaching out to someone, or someone reaching out to them."
+    },
+    {
+     "id": "b19",
+     "say": "People who remembered being contacted, rated their appreciation higher than the senders imagined."
+    },
+    {
+     "id": "b20",
+     "say": "In others, people really did it."
+    },
+    {
+     "id": "b21",
+     "say": "They sent a short note to someone they hadn't talked to in a while."
+    },
+    {
+     "id": "b22",
+     "say": "Sometimes with a small gift, like cookies."
+    },
+    {
+     "id": "b23",
+     "say": "Then both sides answered the same question."
+    },
+    {
+     "id": "b24",
+     "say": "How much did the person appreciate it?"
+    },
+    {
+     "id": "b25",
+     "say": "The senders guessed."
+    },
+    {
+     "id": "b26",
+     "say": "The receivers told the truth."
+    },
+    {
+     "id": "b27",
+     "say": "And the senders underestimated it."
+    },
+    {
+     "id": "b28",
+     "say": "Not once."
+    },
+    {
+     "id": "b29",
+     "say": "Again and again, across the studies."
+    },
+    {
+     "id": "b30",
+     "say": "People liked being reached out to, far more than the person reaching out expected."
+    },
+    {
+     "id": "b31",
+     "say": "Here's the part that matters most."
+    },
+    {
+     "id": "b32",
+     "say": "The gap got bigger, when the message was more surprising."
+    },
+    {
+     "id": "b33",
+     "say": "When it came from someone they weren't close to anymore."
+    },
+    {
+     "id": "b34",
+     "say": "When it arrived out of the blue, for no reason at all."
+    },
+    {
+     "id": "b35",
+     "say": "Think about that."
+    },
+    {
+     "id": "b36",
+     "say": "The thing that stops you from texting, is \"it's been too long.\""
+    },
+    {
+     "id": "b37",
+     "say": "And that is exactly what makes the message land."
+    },
+    {
+     "id": "b38",
+     "say": "The weirdness you're afraid of, is the best part of the gift."
+    },
+    {
+     "id": "b39",
+     "say": "So if a text means that much, why don't we send it?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "01",
+     "text": "The *reach-out* experiments",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b15:start",
+     "out": "b15:liu"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "STUDY · 2022",
+     "text": "The surprise of reaching out",
+     "sub": "Peggy Liu et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b15:liu",
+     "out": "b17"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "REACHING OUT",
+     "x": 960,
+     "y": 520,
+     "size": 110,
+     "from": "slam",
+     "at": "b16:reaching",
+     "out": "b17",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "!5,900+! people · !13! experiments",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "slam",
+     "at": "b17:five",
+     "out": "b18",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "sa",
+     "x": 540,
+     "y": 680,
+     "from": "left",
+     "at": "b18:reaching",
+     "poses": [
+      [
+       "point",
+       "b18:reaching"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b18:reaching"
+      ]
+     ],
+     "out": "b20"
+    },
+    {
+     "t": "stick",
+     "id": "sb",
+     "x": 1380,
+     "y": 680,
+     "from": "right",
+     "at": "b18:them",
+     "poses": [
+      [
+       "idle",
+       "b18:them"
+      ],
+      [
+       "happy",
+       "b19:higher"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b18:them"
+      ]
+     ],
+     "out": "b20",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "remembered *reaching out*",
+     "x": 540,
+     "y": 260,
+     "size": 46,
+     "from": "top",
+     "at": "b18:reaching",
+     "out": "b20"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "remembered *being contacted*",
+     "x": 1380,
+     "y": 260,
+     "size": 46,
+     "from": "top",
+     "at": "b18:them",
+     "out": "b20"
+    },
+    {
+     "t": "text",
+     "id": "l3",
+     "text": "appreciated it !more! than senders imagined",
+     "x": 960,
+     "y": 960,
+     "size": 48,
+     "from": "bottom",
+     "at": "b19:higher",
+     "out": "b20"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "then: *for real*",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b20:really",
+     "out": "b23"
+    },
+    {
+     "t": "icon",
+     "id": "let",
+     "name": "letter",
+     "x": 760,
+     "y": 540,
+     "size": 260,
+     "from": "left",
+     "at": "b21:note",
+     "out": "b23"
+    },
+    {
+     "t": "icon",
+     "id": "ck",
+     "name": "cookie",
+     "x": 1180,
+     "y": 560,
+     "size": 200,
+     "from": "right",
+     "at": "b22:cookies",
+     "out": "b23"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "how much did they *appreciate* it?",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b23:both",
+     "out": "b27"
+    },
+    {
+     "t": "bar",
+     "id": "g",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 220,
+     "color": "muted",
+     "label": "senders' guess",
+     "from": "draw",
+     "at": "b25:guessed",
+     "out": "b31"
+    },
+    {
+     "t": "bar",
+     "id": "r",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 420,
+     "color": "accent",
+     "label": "how they really felt",
+     "from": "draw",
+     "at": "b26:truth",
+     "out": "b31"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "senders !underestimated! it",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b27:underestimated",
+     "out": "b31"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "not once · *again and again*",
+     "x": 960,
+     "y": 330,
+     "size": 52,
+     "from": "bottom",
+     "at": "b28:once",
+     "out": "b31",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "the part that matters *most*",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b31:most",
+     "out": "b32"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "more surprising = !bigger gap!",
+     "x": 960,
+     "y": 260,
+     "size": 80,
+     "from": "top",
+     "at": "b32:bigger",
+     "out": "b35"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "from someone you'd *drifted from*",
+     "x": 960,
+     "y": 480,
+     "size": 64,
+     "from": "left",
+     "at": "b33:close",
+     "out": "b35"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "out of the *blue*",
+     "x": 960,
+     "y": 620,
+     "size": 64,
+     "from": "right",
+     "at": "b34:blue",
+     "out": "b35"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "think about *that*",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b35:think",
+     "out": "b36"
+    },
+    {
+     "t": "bubble",
+     "id": "b1",
+     "text": "it's been too long",
+     "x": 960,
+     "y": 400,
+     "size": 340,
+     "from": "pop",
+     "at": "b36:stops",
+     "fontSize": 52,
+     "out": "b38"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "is exactly what makes it !land!",
+     "x": 960,
+     "y": 700,
+     "size": 72,
+     "from": "bottom",
+     "at": "b37:exactly",
+     "out": "b38"
+    },
+    {
+     "t": "icon",
+     "id": "gift",
+     "name": "gift",
+     "x": 960,
+     "y": 480,
+     "size": 260,
+     "from": "pop",
+     "at": "b38:gift",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "the weirdness is !the gift!",
+     "x": 960,
+     "y": 800,
+     "size": 72,
+     "from": "bottom",
+     "at": "b38:weirdness",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "so why don't we *send it*?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b39:send"
+    }
+   ]
+  },
+  {
+   "id": "stories",
+   "beats": [
+    {
+     "id": "b40",
+     "say": "Because when you look at that empty chat, your brain tells you three stories."
+    },
+    {
+     "id": "b41",
+     "say": "And all three, are wrong."
+    },
+    {
+     "id": "b42",
+     "say": "Story number one: \"They don't want to hear from me.\""
+    },
+    {
+     "id": "b43",
+     "say": "If you've watched our video on small talk, you'll know the liking gap."
+    },
+    {
+     "id": "b44",
+     "say": "After a conversation, people consistently underestimate, how much the other person liked them."
+    },
+    {
+     "id": "b45",
+     "say": "Even dormmates, who'd lived together for months."
+    },
+    {
+     "id": "b46",
+     "say": "We carry that same doubt into the chat."
+    },
+    {
+     "id": "b47",
+     "say": "We remember every awkward pause."
+    },
+    {
+     "id": "b48",
+     "say": "We forget the part where they laughed."
+    },
+    {
+     "id": "b49",
+     "say": "And so we assume the silence means, they've moved on."
+    },
+    {
+     "id": "b50",
+     "say": "Very often, it means they're busy."
+    },
+    {
+     "id": "b51",
+     "say": "Or they're waiting for you."
+    },
+    {
+     "id": "b52",
+     "say": "A friend who hasn't texted in months, isn't a verdict."
+    },
+    {
+     "id": "b53",
+     "say": "It's a gap."
+    },
+    {
+     "id": "b54",
+     "say": "Story number two: \"It'll be awkward.\""
+    },
+    {
+     "id": "b55",
+     "say": "In twenty eighteen, psychologists Amit Kumar and Nicholas Epley, ran a simple test."
+    },
+    {
+     "id": "b56",
+     "say": "People wrote a thank-you letter, to someone who'd helped them."
+    },
+    {
+     "id": "b57",
+     "say": "Before sending it, the writers predicted how the receiver would feel."
+    },
+    {
+     "id": "b58",
+     "say": "They expected the letter to feel more awkward than it did."
+    },
+    {
+     "id": "b59",
+     "say": "And they underestimated, how happy it would make the person."
+    },
+    {
+     "id": "b60",
+     "say": "Here's the human detail."
+    },
+    {
+     "id": "b61",
+     "say": "The writers worried about getting the words right."
+    },
+    {
+     "id": "b62",
+     "say": "The receivers barely noticed the words."
+    },
+    {
+     "id": "b63",
+     "say": "They noticed the warmth."
+    },
+    {
+     "id": "b64",
+     "say": "You're editing a sentence."
+    },
+    {
+     "id": "b65",
+     "say": "They're reading a feeling."
+    },
+    {
+     "id": "b66",
+     "say": "So when did you last delete a message, because it didn't sound perfect?"
+    },
+    {
+     "id": "b67",
+     "say": "Story number three: \"If they cared, they'd text first.\""
+    },
+    {
+     "id": "b68",
+     "say": "This one feels like self-respect."
+    },
+    {
+     "id": "b69",
+     "say": "You texted last time."
+    },
+    {
+     "id": "b70",
+     "say": "It's their turn."
+    },
+    {
+     "id": "b71",
+     "say": "Psychologists Margaret Clark and Judson Mills, described two kinds of relationships."
+    },
+    {
+     "id": "b72",
+     "say": "In exchange relationships, people keep score."
+    },
+    {
+     "id": "b73",
+     "say": "You did something for me, so I owe you."
+    },
+    {
+     "id": "b74",
+     "say": "That's how business works."
+    },
+    {
+     "id": "b75",
+     "say": "In communal relationships, like friendships, people give because they care, not to settle a debt."
+    },
+    {
+     "id": "b76",
+     "say": "Their research suggests that keeping a strict score, is a sign of the first kind."
+    },
+    {
+     "id": "b77",
+     "say": "So counting who texted last, quietly turns a friend into a transaction."
+    },
+    {
+     "id": "b78",
+     "say": "And here's the irony."
+    },
+    {
+     "id": "b79",
+     "say": "Your friend may be keeping the same score."
+    },
+    {
+     "id": "b80",
+     "say": "Two people, both waiting for the other to prove they care."
+    },
+    {
+     "id": "b81",
+     "say": "Both feeling a little forgotten."
+    },
+    {
+     "id": "b82",
+     "say": "Neither one forgot."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "02",
+     "text": "Three *stories*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b40:start",
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "all three are !wrong!",
+     "x": 960,
+     "y": 480,
+     "size": 110,
+     "from": "slam",
+     "at": "b41:wrong",
+     "out": "b42",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "h1",
+     "text": "1 · “they don't want to hear from me”",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "slam",
+     "at": "b42:story",
+     "out": "b54"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "CALLBACK · VIDEO 4",
+     "text": "The liking gap",
+     "sub": "Boothby et al., 2018",
+     "x": 960,
+     "y": 380,
+     "from": "top",
+     "at": "b43:liking",
+     "out": "b46"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "they liked you *more* than you think",
+     "x": 960,
+     "y": 620,
+     "size": 60,
+     "from": "bottom",
+     "at": "b44:underestimate",
+     "out": "b46"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "even *dormmates*, after months",
+     "x": 960,
+     "y": 740,
+     "size": 52,
+     "from": "bottom",
+     "at": "b45:dormmates",
+     "out": "b46",
+     "weight": 600
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b46:carry",
+     "out": "b50"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "every awkward *pause*",
+     "x": 440,
+     "y": 560,
+     "size": 56,
+     "from": "left",
+     "at": "b47:pause",
+     "out": "b50"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "when they laughed",
+     "x": 1460,
+     "y": 560,
+     "size": 56,
+     "from": "right",
+     "at": "b48:laughed",
+     "out": "b50"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 1460,
+     "y": 560,
+     "w": 530,
+     "at": "b48:forget",
+     "out": "b50"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "silence = they've moved on?",
+     "x": 960,
+     "y": 860,
+     "size": 60,
+     "from": "bottom",
+     "at": "b49:silence",
+     "out": "b50"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "they're *busy*",
+     "x": 640,
+     "y": 480,
+     "size": 80,
+     "from": "left",
+     "at": "b50:busy",
+     "out": "b52"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "or !waiting for you!",
+     "x": 1280,
+     "y": 480,
+     "size": 80,
+     "from": "right",
+     "at": "b51:waiting",
+     "out": "b52"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "not a *verdict*",
+     "x": 960,
+     "y": 420,
+     "size": 90,
+     "from": "top",
+     "at": "b52:friend",
+     "out": "b54"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "a !gap!",
+     "x": 960,
+     "y": 620,
+     "size": 130,
+     "from": "slam",
+     "at": "b53:gap",
+     "out": "b54",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "h2",
+     "text": "2 · “it'll be awkward”",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "slam",
+     "at": "b54:story",
+     "out": "b67"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "STUDY · 2018",
+     "text": "Undervaluing gratitude",
+     "sub": "Kumar & Epley",
+     "x": 960,
+     "y": 380,
+     "from": "top",
+     "at": "b55:kumar",
+     "out": "b57"
+    },
+    {
+     "t": "icon",
+     "id": "let",
+     "name": "letter",
+     "x": 960,
+     "y": 660,
+     "size": 220,
+     "from": "pop",
+     "at": "b56:letter",
+     "out": "b57"
+    },
+    {
+     "t": "stick",
+     "id": "w",
+     "x": 600,
+     "y": 680,
+     "from": "left",
+     "at": "b57:writers",
+     "poses": [
+      [
+       "holdHead",
+       "b57:writers"
+      ],
+      [
+       "armsCrossed",
+       "b61:worried"
+      ],
+      [
+       "idle",
+       "b64:editing"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b57:writers"
+      ]
+     ],
+     "out": "b66"
+    },
+    {
+     "t": "stick",
+     "id": "rc",
+     "x": 1320,
+     "y": 680,
+     "from": "right",
+     "at": "b57:receiver",
+     "poses": [
+      [
+       "idle",
+       "b57:receiver"
+      ],
+      [
+       "happy",
+       "b59:happy"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b57:receiver"
+      ],
+      [
+       "smile",
+       "b59:happy"
+      ]
+     ],
+     "out": "b66",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "expected: *awkward*",
+     "x": 600,
+     "y": 320,
+     "size": 56,
+     "from": "top",
+     "at": "b58:awkward",
+     "out": "b60"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "really: much !happier!",
+     "x": 1320,
+     "y": 320,
+     "size": 56,
+     "from": "top",
+     "at": "b59:happy",
+     "out": "b60"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "the human *detail*",
+     "x": 960,
+     "y": 320,
+     "size": 64,
+     "from": "top",
+     "at": "b60:human",
+     "out": "b61"
+    },
+    {
+     "t": "bubble",
+     "id": "b1",
+     "text": "the right words…",
+     "x": 330,
+     "y": 400,
+     "size": 300,
+     "from": "pop",
+     "at": "b61:words",
+     "fontSize": 46,
+     "out": "b64"
+    },
+    {
+     "t": "icon",
+     "id": "hrt",
+     "name": "heart",
+     "x": 1320,
+     "y": 360,
+     "size": 160,
+     "from": "pop",
+     "at": "b63:warmth",
+     "out": "b64",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "you edit a *sentence*",
+     "x": 600,
+     "y": 960,
+     "size": 56,
+     "from": "left",
+     "at": "b64:editing",
+     "out": "b66"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "they read a !feeling!",
+     "x": 1320,
+     "y": 960,
+     "size": 56,
+     "from": "right",
+     "at": "b65:feeling",
+     "out": "b66"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "deleted for not sounding *perfect*?",
+     "x": 960,
+     "y": 520,
+     "size": 80,
+     "from": "top",
+     "at": "b66:delete",
+     "out": "b67"
+    },
+    {
+     "t": "text",
+     "id": "h3",
+     "text": "3 · “if they cared, they'd text first”",
+     "x": 960,
+     "y": 180,
+     "size": 60,
+     "from": "slam",
+     "at": "b67:story",
+     "out": "b83"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "feels like *self-respect*",
+     "x": 960,
+     "y": 480,
+     "size": 80,
+     "from": "top",
+     "at": "b68:selfrespect",
+     "out": "b69"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "you texted *last time*",
+     "x": 960,
+     "y": 420,
+     "size": 72,
+     "from": "left",
+     "at": "b69:texted",
+     "out": "b71"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "*their* turn",
+     "x": 960,
+     "y": 560,
+     "size": 72,
+     "from": "right",
+     "at": "b70:turn",
+     "out": "b71"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "Clark & Mills: *two kinds* of relationship",
+     "x": 960,
+     "y": 300,
+     "size": 52,
+     "from": "top",
+     "at": "b71:clark",
+     "out": "b72",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "x1",
+     "text": "EXCHANGE",
+     "x": 600,
+     "y": 330,
+     "size": 72,
+     "from": "left",
+     "at": "b72:exchange",
+     "out": "b76",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "rec",
+     "name": "paper",
+     "x": 600,
+     "y": 560,
+     "size": 220,
+     "from": "left",
+     "at": "b72:score",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "x2",
+     "text": "keep *score*",
+     "x": 600,
+     "y": 780,
+     "size": 56,
+     "from": "bottom",
+     "at": "b72:score",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "x3",
+     "text": "you did this → I *owe* you",
+     "x": 600,
+     "y": 880,
+     "size": 44,
+     "from": "bottom",
+     "at": "b73:owe",
+     "out": "b76",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "y1",
+     "text": "COMMUNAL",
+     "x": 1320,
+     "y": 330,
+     "size": 72,
+     "from": "right",
+     "at": "b75:communal",
+     "out": "b76",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "hrt2",
+     "name": "heart",
+     "x": 1320,
+     "y": 560,
+     "size": 200,
+     "from": "right",
+     "at": "b75:communal",
+     "out": "b76",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "y2",
+     "text": "give because you *care*",
+     "x": 1320,
+     "y": 780,
+     "size": 56,
+     "from": "bottom",
+     "at": "b75:care",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "a strict score = *exchange*",
+     "x": 960,
+     "y": 480,
+     "size": 80,
+     "from": "top",
+     "at": "b76:score",
+     "out": "b77"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "a friend → a !transaction!",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "slam",
+     "at": "b77:transaction",
+     "out": "b78"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "the *irony*",
+     "x": 960,
+     "y": 400,
+     "size": 90,
+     "from": "top",
+     "at": "b78:irony",
+     "out": "b80"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "your friend keeps the *same score*",
+     "x": 960,
+     "y": 560,
+     "size": 64,
+     "from": "bottom",
+     "at": "b79:score",
+     "out": "b80"
+    },
+    {
+     "t": "stick",
+     "id": "w2a",
+     "x": 600,
+     "y": 660,
+     "from": "left",
+     "at": "b80:two",
+     "poses": [
+      [
+       "headDown",
+       "b80:two"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b80:two"
+      ]
+     ],
+     "out": "b83"
+    },
+    {
+     "t": "stick",
+     "id": "w2b",
+     "x": 1320,
+     "y": 660,
+     "from": "right",
+     "at": "b80:two",
+     "poses": [
+      [
+       "headDown",
+       "b80:two"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b80:two"
+      ]
+     ],
+     "out": "b83",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "w2pa",
+     "name": "phone",
+     "x": 790,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b80:two",
+     "out": "b83"
+    },
+    {
+     "t": "icon",
+     "id": "w2pb",
+     "name": "phone",
+     "x": 1130,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b80:two",
+     "out": "b83"
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "both waiting for *proof*",
+     "x": 960,
+     "y": 320,
+     "size": 60,
+     "from": "top",
+     "at": "b80:prove",
+     "out": "b81"
+    },
+    {
+     "t": "text",
+     "id": "t23",
+     "text": "both feel *forgotten*",
+     "x": 960,
+     "y": 320,
+     "size": 60,
+     "from": "top",
+     "at": "b81:forgotten",
+     "out": "b82"
+    },
+    {
+     "t": "text",
+     "id": "t24",
+     "text": "neither one !forgot!",
+     "x": 960,
+     "y": 320,
+     "size": 72,
+     "from": "slam",
+     "at": "b82:forgot",
+     "out": "b83",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "cost",
+   "beats": [
+    {
+     "id": "b83",
+     "say": "Everyone knows this line."
+    },
+    {
+     "id": "b84",
+     "say": "\"We should catch up soon!\""
+    },
+    {
+     "id": "b85",
+     "say": "\"Definitely!\""
+    },
+    {
+     "id": "b86",
+     "say": "And then nobody does."
+    },
+    {
+     "id": "b87",
+     "say": "Not because anyone stopped caring."
+    },
+    {
+     "id": "b88",
+     "say": "Because both people assumed, the other one would plan it."
+    },
+    {
+     "id": "b89",
+     "say": "So what happens if nobody goes first?"
+    },
+    {
+     "id": "b90",
+     "say": "It isn't dramatic."
+    },
+    {
+     "id": "b91",
+     "say": "That's the problem."
+    },
+    {
+     "id": "b92",
+     "say": "Friendships rarely end with a fight."
+    },
+    {
+     "id": "b93",
+     "say": "They end with a pause, that gets longer."
+    },
+    {
+     "id": "b94",
+     "say": "In twenty eighteen, communication researcher Jeffrey Hall, estimated how much time friendship takes."
+    },
+    {
+     "id": "b95",
+     "say": "About fifty hours, to go from acquaintance to casual friend."
+    },
+    {
+     "id": "b96",
+     "say": "About ninety hours, to become a real friend."
+    },
+    {
+     "id": "b97",
+     "say": "And more than two hundred hours, to become a close friend."
+    },
+    {
+     "id": "b98",
+     "say": "Those hours don't happen on their own."
+    },
+    {
+     "id": "b99",
+     "say": "Someone has to start them."
+    },
+    {
+     "id": "b100",
+     "say": "Psychologist Robin Dunbar's research, suggests our friendships sit in layers."
+    },
+    {
+     "id": "b101",
+     "say": "About five people in the innermost circle."
+    },
+    {
+     "id": "b102",
+     "say": "About fifteen in the next."
+    },
+    {
+     "id": "b103",
+     "say": "And those inner layers need regular contact to stay there."
+    },
+    {
+     "id": "b104",
+     "say": "Roughly weekly for the closest five."
+    },
+    {
+     "id": "b105",
+     "say": "Roughly monthly for the next fifteen."
+    },
+    {
+     "id": "b106",
+     "say": "Friends don't usually leave."
+    },
+    {
+     "id": "b107",
+     "say": "They slide outward, one layer at a time."
+    },
+    {
+     "id": "b108",
+     "say": "Dunbar and his colleague Sam Roberts followed students, as they moved away to university, for eighteen months."
+    },
+    {
+     "id": "b109",
+     "say": "When contact with old friends dropped, the friendships faded."
+    },
+    {
+     "id": "b110",
+     "say": "Faster than family ties did."
+    },
+    {
+     "id": "b111",
+     "say": "And the friendships that survived, were the ones where someone made an effort."
+    },
+    {
+     "id": "b112",
+     "say": "For the women in the study, talking more on the phone helped."
+    },
+    {
+     "id": "b113",
+     "say": "For the men, doing things together did."
+    },
+    {
+     "id": "b114",
+     "say": "A lot of people are now feeling the cost."
+    },
+    {
+     "id": "b115",
+     "say": "In a twenty twenty-one American survey, twelve percent of adults said they had no close friends at all."
+    },
+    {
+     "id": "b116",
+     "say": "In nineteen ninety, it was three percent."
+    },
+    {
+     "id": "b117",
+     "say": "Among men in that survey, it was fifteen percent."
+    },
+    {
+     "id": "b118",
+     "say": "And this isn't only about feelings."
+    },
+    {
+     "id": "b119",
+     "say": "A review of one hundred and forty-eight studies, covering more than three hundred thousand people, found something striking."
+    },
+    {
+     "id": "b120",
+     "say": "People with stronger social ties, had about fifty percent higher odds of survival, over the study periods."
+    },
+    {
+     "id": "b121",
+     "say": "In twenty twenty-three, America's Surgeon General, compared the health risk of disconnection, to smoking up to fifteen cigarettes a day."
+    },
+    {
+     "id": "b122",
+     "say": "All of that, can start with one message, nobody sent."
+    },
+    {
+     "id": "b123",
+     "say": "But it wasn't over yet."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "03",
+     "text": "What it *costs*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b83:start",
+     "out": "b84"
+    },
+    {
+     "t": "stick",
+     "id": "ca",
+     "x": 600,
+     "y": 660,
+     "from": "left",
+     "at": "b84:catch",
+     "poses": [
+      [
+       "happy",
+       "b84:catch"
+      ],
+      [
+       "idle",
+       "b86:nobody"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b84:catch"
+      ],
+      [
+       "neutral",
+       "b86:nobody"
+      ]
+     ],
+     "out": "b89"
+    },
+    {
+     "t": "stick",
+     "id": "cb",
+     "x": 1320,
+     "y": 660,
+     "from": "right",
+     "at": "b84:catch",
+     "poses": [
+      [
+       "happy",
+       "b85:definitely"
+      ],
+      [
+       "idle",
+       "b86:nobody"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b85:definitely"
+      ],
+      [
+       "neutral",
+       "b86:nobody"
+      ]
+     ],
+     "out": "b89",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "bubble",
+     "id": "q1",
+     "text": "We should catch up soon!",
+     "x": 600,
+     "y": 260,
+     "size": 340,
+     "from": "pop",
+     "at": "b84:catch",
+     "fontSize": 44,
+     "out": "b86"
+    },
+    {
+     "t": "bubble",
+     "id": "q2",
+     "text": "Definitely!",
+     "x": 1320,
+     "y": 260,
+     "size": 260,
+     "from": "pop",
+     "at": "b85:definitely",
+     "fontSize": 52,
+     "out": "b86"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "…and then nobody does",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b86:nobody",
+     "out": "b88"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "both assumed the *other* would plan it",
+     "x": 960,
+     "y": 220,
+     "size": 60,
+     "from": "top",
+     "at": "b88:assumed",
+     "out": "b89"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "what if nobody goes *first*?",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b89:first",
+     "out": "b90"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "not dramatic",
+     "x": 960,
+     "y": 420,
+     "size": 72,
+     "from": "left",
+     "at": "b90:dramatic",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "that's the !problem!",
+     "x": 960,
+     "y": 560,
+     "size": 80,
+     "from": "right",
+     "at": "b91:problem",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "no big *fight*",
+     "x": 960,
+     "y": 420,
+     "size": 72,
+     "from": "top",
+     "at": "b92:fight",
+     "out": "b94"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "just a pause that gets !longer!",
+     "x": 960,
+     "y": 560,
+     "size": 72,
+     "from": "bottom",
+     "at": "b93:longer",
+     "out": "b94"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "STUDY · 2018",
+     "text": "How many hours make a friend?",
+     "sub": "Jeffrey Hall",
+     "x": 960,
+     "y": 200,
+     "from": "top",
+     "at": "b94:hall",
+     "out": "b98"
+    },
+    {
+     "t": "bar",
+     "id": "h1",
+     "x": 560,
+     "y": 860,
+     "w": 170,
+     "h": 100,
+     "color": "muted",
+     "label": "casual friend · 50 h",
+     "from": "draw",
+     "at": "b95:fifty",
+     "out": "b98"
+    },
+    {
+     "t": "bar",
+     "id": "h2",
+     "x": 960,
+     "y": 860,
+     "w": 170,
+     "h": 180,
+     "color": "muted",
+     "label": "friend · 90 h",
+     "from": "draw",
+     "at": "b96:ninety",
+     "out": "b98"
+    },
+    {
+     "t": "bar",
+     "id": "h3",
+     "x": 1360,
+     "y": 860,
+     "w": 170,
+     "h": 400,
+     "color": "accent",
+     "label": "close friend · 200+ h",
+     "from": "draw",
+     "at": "b97:two",
+     "out": "b98"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "they don't happen on their *own*",
+     "x": 960,
+     "y": 420,
+     "size": 72,
+     "from": "top",
+     "at": "b98:own",
+     "out": "b100:layers"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "someone has to !start! them",
+     "x": 960,
+     "y": 560,
+     "size": 80,
+     "from": "bottom",
+     "at": "b99:start",
+     "out": "b100:layers"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "Dunbar: friendships sit in *layers*",
+     "x": 960,
+     "y": 180,
+     "size": 60,
+     "from": "top",
+     "at": "b100:layers",
+     "out": "b108"
+    },
+    {
+     "t": "icon",
+     "id": "ring",
+     "name": "circles",
+     "x": 960,
+     "y": 590,
+     "size": 520,
+     "from": "pop",
+     "at": "b100:layers",
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "n5",
+     "text": "5",
+     "x": 960,
+     "y": 590,
+     "size": 64,
+     "from": "pop",
+     "at": "b101:five",
+     "out": "b108",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "n15",
+     "text": "15",
+     "x": 960,
+     "y": 472,
+     "size": 44,
+     "from": "pop",
+     "at": "b102:fifteen",
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "f5",
+     "text": "5 → *weekly*",
+     "x": 1520,
+     "y": 480,
+     "size": 56,
+     "from": "right",
+     "at": "b104:weekly",
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "f15",
+     "text": "15 → *monthly*",
+     "x": 1520,
+     "y": 600,
+     "size": 56,
+     "from": "right",
+     "at": "b105:monthly",
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "o1",
+     "text": "friends don't *leave*",
+     "x": 400,
+     "y": 480,
+     "size": 52,
+     "from": "left",
+     "at": "b106:leave",
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "o2",
+     "text": "they slide !outward!",
+     "x": 400,
+     "y": 600,
+     "size": 56,
+     "from": "left",
+     "at": "b107:outward",
+     "out": "b108"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "STUDY · 18 MONTHS",
+     "text": "Moving away to university",
+     "sub": "Roberts & Dunbar",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b108:students",
+     "out": "b111:effort"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "less contact → friendships *faded*",
+     "x": 960,
+     "y": 480,
+     "size": 72,
+     "from": "top",
+     "at": "b109:faded",
+     "out": "b111:effort"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "faster than *family* ties",
+     "x": 960,
+     "y": 620,
+     "size": 60,
+     "from": "bottom",
+     "at": "b110:family",
+     "out": "b111:effort"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "the ones that survived: *effort*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b111:effort",
+     "out": "b114"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 600,
+     "y": 520,
+     "size": 220,
+     "from": "left",
+     "at": "b112:phone",
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "women: *talking*",
+     "x": 600,
+     "y": 780,
+     "size": 60,
+     "from": "bottom",
+     "at": "b112:women",
+     "out": "b114"
+    },
+    {
+     "t": "icon",
+     "id": "tk",
+     "name": "ticket",
+     "x": 1320,
+     "y": 520,
+     "size": 220,
+     "from": "right",
+     "at": "b113:together",
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "men: *doing things together*",
+     "x": 1320,
+     "y": 780,
+     "size": 60,
+     "from": "bottom",
+     "at": "b113:men",
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "a lot of people feel the *cost*",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b114:cost",
+     "out": "b115"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "adults with *no close friends*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b115:close",
+     "out": "b118"
+    },
+    {
+     "t": "bar",
+     "id": "s1",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 288,
+     "color": "accent",
+     "label": "2021: 12%",
+     "from": "draw",
+     "at": "b115:twelve",
+     "out": "b118"
+    },
+    {
+     "t": "bar",
+     "id": "s2",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 72,
+     "color": "muted",
+     "label": "1990: 3%",
+     "from": "draw",
+     "at": "b116:three",
+     "out": "b118"
+    },
+    {
+     "t": "text",
+     "id": "s3",
+     "text": "men: !15%!",
+     "x": 1560,
+     "y": 480,
+     "size": 80,
+     "from": "right",
+     "at": "b117:fifteen",
+     "out": "b118"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "not only about *feelings*",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b118:feelings",
+     "out": "b119"
+    },
+    {
+     "t": "card",
+     "id": "c3",
+     "kicker": "REVIEW · 148 STUDIES",
+     "text": "300,000+ people",
+     "sub": "Holt-Lunstad et al., 2010",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b119:review",
+     "out": "b121"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "strong ties: !+50%! odds of survival",
+     "x": 960,
+     "y": 520,
+     "size": 84,
+     "from": "slam",
+     "at": "b120:fifty",
+     "out": "b121",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "cig",
+     "name": "cigarette",
+     "x": 960,
+     "y": 480,
+     "size": 320,
+     "from": "pop",
+     "at": "b121:smoking",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "Surgeon General, 2023: like smoking up to *15 a day*",
+     "x": 960,
+     "y": 760,
+     "size": 52,
+     "from": "bottom",
+     "at": "b121:surgeon",
+     "out": "b122"
+    },
+    {
+     "t": "icon",
+     "id": "ph2",
+     "name": "phone",
+     "x": 960,
+     "y": 480,
+     "size": 260,
+     "from": "pop",
+     "at": "b122:message",
+     "out": "b123"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "one message !nobody sent!",
+     "x": 960,
+     "y": 800,
+     "size": 72,
+     "from": "bottom",
+     "at": "b122:nobody",
+     "out": "b123"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "but it wasn't over yet",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b123:over",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "fix",
+   "beats": [
+    {
+     "id": "b124",
+     "say": "Remember what the receivers noticed, that the senders missed."
+    },
+    {
+     "id": "b125",
+     "say": "Not the gift."
+    },
+    {
+     "id": "b126",
+     "say": "Not the wording."
+    },
+    {
+     "id": "b127",
+     "say": "The surprise."
+    },
+    {
+     "id": "b128",
+     "say": "The simple fact that someone thought of them, when they didn't have to."
+    },
+    {
+     "id": "b129",
+     "say": "That's what the friend you're waiting for wants too."
+    },
+    {
+     "id": "b130",
+     "say": "Not a perfect message."
+    },
+    {
+     "id": "b131",
+     "say": "Proof that they crossed your mind."
+    },
+    {
+     "id": "b132",
+     "say": "So how do you actually do it?"
+    },
+    {
+     "id": "b133",
+     "say": "Rule one: don't wait for a reason."
+    },
+    {
+     "id": "b134",
+     "say": "\"Saw this and thought of you\" is enough."
+    },
+    {
+     "id": "b135",
+     "say": "Out of the blue is a feature, not a bug."
+    },
+    {
+     "id": "b136",
+     "say": "Rule two: skip the apology."
+    },
+    {
+     "id": "b137",
+     "say": "You don't need to explain the four months."
+    },
+    {
+     "id": "b138",
+     "say": "\"It's been forever, I miss talking to you\" works better than a paragraph about how busy you've been."
+    },
+    {
+     "id": "b139",
+     "say": "Rule three: say something real."
+    },
+    {
+     "id": "b140",
+     "say": "A meme is a start."
+    },
+    {
+     "id": "b141",
+     "say": "But tell them one true thing, or ask one real question."
+    },
+    {
+     "id": "b142",
+     "say": "Instead of \"how are you?\", try \"what's been the best part of your month?\""
+    },
+    {
+     "id": "b143",
+     "say": "Research on conversations suggests, people want more depth than we expect."
+    },
+    {
+     "id": "b144",
+     "say": "Rule four: stop keeping score."
+    },
+    {
+     "id": "b145",
+     "say": "If you're the one who usually texts first, that doesn't make you needy."
+    },
+    {
+     "id": "b146",
+     "say": "It makes you the friend, who keeps the friendship alive."
+    },
+    {
+     "id": "b147",
+     "say": "Rule five: make it a habit, not a mood."
+    },
+    {
+     "id": "b148",
+     "say": "Pick one person a week."
+    },
+    {
+     "id": "b149",
+     "say": "One message."
+    },
+    {
+     "id": "b150",
+     "say": "It takes about ten seconds."
+    },
+    {
+     "id": "b151",
+     "say": "Those ten seconds add up, to the hours that friendship needs."
+    },
+    {
+     "id": "b152",
+     "say": "And the best part?"
+    },
+    {
+     "id": "b153",
+     "say": "The research suggests the message doesn't have to be perfect."
+    },
+    {
+     "id": "b154",
+     "say": "It just has to be sent."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "04",
+     "text": "How to text *first*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b124:start",
+     "out": "b125"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "not the gift",
+     "x": 600,
+     "y": 420,
+     "size": 64,
+     "from": "left",
+     "at": "b125:gift",
+     "out": "b128",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "not the wording",
+     "x": 1320,
+     "y": 420,
+     "size": 64,
+     "from": "right",
+     "at": "b126:wording",
+     "out": "b128",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "the !surprise!",
+     "x": 960,
+     "y": 620,
+     "size": 120,
+     "from": "slam",
+     "at": "b127:surprise",
+     "out": "b128",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "someone *thought of them*",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b128:thought",
+     "out": "b129"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "what your friend wants *too*",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "top",
+     "at": "b129:wants",
+     "out": "b130"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "not a perfect message",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "top",
+     "at": "b130:perfect",
+     "out": "b132",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "proof you !crossed their mind!",
+     "x": 960,
+     "y": 560,
+     "size": 80,
+     "from": "bottom",
+     "at": "b131:proof",
+     "out": "b132"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "so how do you *do it*?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b132:do",
+     "out": "b133"
+    },
+    {
+     "t": "icon",
+     "id": "cl",
+     "name": "checklist",
+     "x": 360,
+     "y": 540,
+     "size": 300,
+     "from": "left",
+     "at": "b133:rule",
+     "out": "b152"
+    },
+    {
+     "t": "text",
+     "id": "r1",
+     "text": "1 · don't wait for a *reason*",
+     "x": 1100,
+     "y": 200,
+     "size": 56,
+     "from": "right",
+     "at": "b133:reason",
+     "out": "b152"
+    },
+    {
+     "t": "text",
+     "id": "e1",
+     "text": "“saw this and thought of you”",
+     "x": 1100,
+     "y": 268,
+     "size": 40,
+     "from": "right",
+     "at": "b134:saw",
+     "out": "b152",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "r2",
+     "text": "2 · skip the *apology*",
+     "x": 1100,
+     "y": 370,
+     "size": 56,
+     "from": "right",
+     "at": "b136:apology",
+     "out": "b152"
+    },
+    {
+     "t": "text",
+     "id": "e2",
+     "text": "“it's been forever, I miss talking to you”",
+     "x": 1100,
+     "y": 438,
+     "size": 40,
+     "from": "right",
+     "at": "b138:forever",
+     "out": "b152",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "r3",
+     "text": "3 · say something *real*",
+     "x": 1100,
+     "y": 540,
+     "size": 56,
+     "from": "right",
+     "at": "b139:real",
+     "out": "b152"
+    },
+    {
+     "t": "text",
+     "id": "e3",
+     "text": "“what's been the best part of your month?”",
+     "x": 1100,
+     "y": 608,
+     "size": 40,
+     "from": "right",
+     "at": "b142:best",
+     "out": "b152",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "r4",
+     "text": "4 · stop keeping *score*",
+     "x": 1100,
+     "y": 710,
+     "size": 56,
+     "from": "right",
+     "at": "b144:score",
+     "out": "b152"
+    },
+    {
+     "t": "text",
+     "id": "r5",
+     "text": "5 · make it a *habit*",
+     "x": 1100,
+     "y": 820,
+     "size": 56,
+     "from": "right",
+     "at": "b147:habit",
+     "out": "b152"
+    },
+    {
+     "t": "text",
+     "id": "e5",
+     "text": "one person a week · about 10 seconds",
+     "x": 1100,
+     "y": 888,
+     "size": 40,
+     "from": "right",
+     "at": "b148:person",
+     "out": "b152",
+     "weight": 600,
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "the best part?",
+     "x": 960,
+     "y": 360,
+     "size": 90,
+     "from": "top",
+     "at": "b152:best"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "it doesn't have to be *perfect*",
+     "x": 960,
+     "y": 520,
+     "size": 72,
+     "from": "bottom",
+     "at": "b153:perfect"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "it just has to be !sent!",
+     "x": 960,
+     "y": 680,
+     "size": 90,
+     "from": "slam",
+     "at": "b154:sent",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b155",
+     "say": "So here's the twist."
+    },
+    {
+     "id": "b156",
+     "say": "People who never text first, usually aren't cold."
+    },
+    {
+     "id": "b157",
+     "say": "Very often, they care a lot."
+    },
+    {
+     "id": "b158",
+     "say": "They're just afraid of being the one, who cares more."
+    },
+    {
+     "id": "b159",
+     "say": "But the research says the person on the other side of that chat, is probably not annoyed."
+    },
+    {
+     "id": "b160",
+     "say": "They're probably not busy forever."
+    },
+    {
+     "id": "b161",
+     "say": "And they'd probably love to hear from you."
+    },
+    {
+     "id": "b162",
+     "say": "They might be staring at the same empty chat, waiting for you."
+    },
+    {
+     "id": "b163",
+     "say": "Someone has to go first."
+    },
+    {
+     "id": "b164",
+     "say": "Why not you?"
+    },
+    {
+     "id": "b165",
+     "say": "So here's your challenge for today."
+    },
+    {
+     "id": "b166",
+     "say": "Think of one person you've lost touch with."
+    },
+    {
+     "id": "b167",
+     "say": "Send them one message."
+    },
+    {
+     "id": "b168",
+     "say": "No reason needed."
+    },
+    {
+     "id": "b169",
+     "say": "Then come back and tell me what they said."
+    },
+    {
+     "id": "b170",
+     "say": "Are you the friend who always texts first, or the one who waits?"
+    },
+    {
+     "id": "b171",
+     "say": "Tell me in the comments."
+    },
+    {
+     "id": "b172",
+     "say": "Which habit should we cover next?"
+    },
+    {
+     "id": "b173",
+     "say": "Drop it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the !twist!",
+     "x": 960,
+     "y": 480,
+     "size": 130,
+     "from": "slam",
+     "at": "b155:twist",
+     "out": "b156",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "usually aren't *cold*",
+     "x": 960,
+     "y": 360,
+     "size": 80,
+     "from": "top",
+     "at": "b156:usually",
+     "out": "b159"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "they care a *lot*",
+     "x": 960,
+     "y": 500,
+     "size": 80,
+     "from": "left",
+     "at": "b157:lot",
+     "out": "b159"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "afraid of caring !more!",
+     "x": 960,
+     "y": 640,
+     "size": 80,
+     "from": "right",
+     "at": "b158:afraid",
+     "out": "b159"
+    },
+    {
+     "t": "stick",
+     "id": "fa",
+     "x": 600,
+     "y": 660,
+     "from": "left",
+     "at": "b159:person",
+     "poses": [
+      [
+       "headDown",
+       "b159:person"
+      ],
+      [
+       "point",
+       "b163:first"
+      ],
+      [
+       "happy",
+       "b164:you"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b159:person"
+      ],
+      [
+       "smile",
+       "b163:first"
+      ]
+     ],
+     "out": "b165"
+    },
+    {
+     "t": "stick",
+     "id": "fb",
+     "x": 1320,
+     "y": 660,
+     "from": "right",
+     "at": "b159:person",
+     "poses": [
+      [
+       "headDown",
+       "b159:person"
+      ],
+      [
+       "happy",
+       "b164:you"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b159:person"
+      ],
+      [
+       "smile",
+       "b164:you"
+      ]
+     ],
+     "out": "b165",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "fpa",
+     "name": "phone",
+     "x": 790,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b159:person",
+     "out": "b165"
+    },
+    {
+     "t": "icon",
+     "id": "fpb",
+     "name": "phone",
+     "x": 1130,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b159:person",
+     "out": "b165"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "not annoyed · not busy forever",
+     "x": 960,
+     "y": 200,
+     "size": 60,
+     "from": "top",
+     "at": "b159:annoyed",
+     "out": "b161"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "they'd *love* to hear from you",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b161:love",
+     "out": "b163"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "someone has to go *first*",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b163:first",
+     "out": "b165"
+    },
+    {
+     "t": "bubble",
+     "id": "hi",
+     "text": "Hey! I miss you",
+     "x": 1580,
+     "y": 400,
+     "size": 280,
+     "from": "pop",
+     "at": "b163:first",
+     "fontSize": 46,
+     "out": "b165"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "why not !you!?",
+     "x": 960,
+     "y": 960,
+     "size": 80,
+     "from": "slam",
+     "at": "b164:you",
+     "out": "b165",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "your *challenge* for today",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b165:challenge",
+     "out": "b170"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 960,
+     "y": 520,
+     "size": 260,
+     "from": "pop",
+     "at": "b166:think",
+     "out": "b170"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "one person · one message · no reason",
+     "x": 960,
+     "y": 800,
+     "size": 56,
+     "from": "bottom",
+     "at": "b167:send",
+     "out": "b169"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "then tell me what they *said*",
+     "x": 960,
+     "y": 800,
+     "size": 60,
+     "from": "bottom",
+     "at": "b169:said",
+     "out": "b170"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "do *you* text first?",
+     "x": 960,
+     "y": 200,
+     "size": 90,
+     "from": "top",
+     "at": "b170:texts"
+    },
+    {
+     "t": "icon",
+     "id": "ph2",
+     "name": "phone",
+     "x": 960,
+     "y": 480,
+     "size": 220,
+     "from": "pop",
+     "at": "b170:friend"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "which habit *next*?",
+     "x": 960,
+     "y": 760,
+     "size": 80,
+     "from": "bottom",
+     "at": "b172:habit",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 880,
+     "size": 48,
+     "from": "bottom",
+     "at": "b173:comments",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}
