@@ -1,0 +1,9 @@
+[
+  {"id": "01-you-deleted-it", "from": "b00", "to": "b14", "title": ["You typed it.", "Then you !deleted! it."]},
+  {"id": "02-its-been-too-long", "from": "b31", "to": "b38", "title": ["“It's been too long”", "is the !best! reason"]},
+  {"id": "03-who-texted-last", "from": "b67", "to": "b82", "title": ["Stop counting", "who texted !last!"]},
+  {"id": "04-the-thank-you-letter", "from": "b54", "to": "b66", "title": ["You edit words.", "They read !feelings!"]},
+  {"id": "05-200-hours", "from": "b92", "to": "b99", "title": ["!200 hours!", "to make a close friend"]},
+  {"id": "06-it-means-more", "from": "b20", "to": "b30", "title": ["Text them.", "It means !more!"]},
+  {"id": "07-how-to-text-first", "from": "b133", "to": "b151", "title": ["How to text first", "(without it being !weird!)"]}
+]
