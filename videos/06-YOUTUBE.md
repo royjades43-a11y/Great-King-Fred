@@ -44,7 +44,7 @@ In this video: how Benjamin Franklin won over a rival by borrowing a book, why s
 3:58 Fear 2: "I'll be a burden"
 4:36 Fear 3: "They'll think I'm weak"
 5:35 What never asking costs
-5:57 How to ask: 4 rules
+6:17 How to ask: 4 rules
 6:28 Email vs face to face
 7:44 The twist
 
