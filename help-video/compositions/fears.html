@@ -1,0 +1,320 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="fears" data-width="1920" data-height="1080">
+    <div id="fears-ch" class="clip el" data-start="0.2" data-duration="1.52" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:2"><div id="fears-ch-in" class="in"><div class="chap"><div class="chap-num">03</div><div class="chap-rule"></div><div class="txt" style="font-size:76px;font-weight:800;color:var(--ink)"><span id="fears-ch-w0" class="w">Three</span> <span id="fears-ch-w1" class="w acc">fears</span></div></div></div></div>
+    <div id="fears-t0" class="clip el" data-start="1.62" data-duration="3.031" data-track-index="2" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:3"><div id="fears-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="fears-t0-w0" class="w">needing</span> <span id="fears-t0-w1" class="w">help</span> <span id="fears-t0-w2" class="w">=</span> <span id="fears-t0-w3" class="w">didn't</span> <span id="fears-t0-w4" class="w">try</span> <span id="fears-t0-w5" class="w">hard</span> <span id="fears-t0-w6" class="w acc">enough<span class="tail">?</span></span></div></div></div>
+    <div id="fears-t1" class="clip el" data-start="5.111" data-duration="2.84" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:4"><div id="fears-t1-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="fears-t1-w0" class="w">three</span> <span id="fears-t1-w1" class="w">fears</span> <span id="fears-t1-w2" class="w">in</span> <span id="fears-t1-w3" class="w acc">every</span> <span id="fears-t1-w4" class="w acc">ask</span></div></div></div>
+    <div id="fears-h1" class="clip el" data-start="7.851" data-duration="22.969" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:360px;z-index:5"><div id="fears-h1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="fears-h1-w0" class="w">1</span> <span id="fears-h1-w1" class="w">·</span> <span id="fears-h1-w2" class="w">“they'll</span> <span id="fears-h1-w3" class="w">say</span> <span id="fears-h1-w4" class="w">no”</span></div></div></div>
+    <div id="fears-t2" class="clip el" data-start="10.411" data-duration="1.98" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:6"><div id="fears-t2-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="fears-t2-w0" class="w">what</span> <span id="fears-t2-w1" class="w">your</span> <span id="fears-t2-w2" class="w">brain</span> <span id="fears-t2-w3" class="w acc">forgets</span></div></div></div>
+    <div id="fears-as" class="clip el" data-start="12.651" data-duration="9.438" data-track-index="6" style="position:absolute;left:0px;top:280px;width:1200px;height:800px;z-index:7"><div id="fears-as-in" class="in"><svg class="stick" id="fears-as-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="fears-as-aLu"><path class="s" d="M150 160 L150 255"/><g id="fears-as-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-as-aRu"><path class="s" d="M150 160 L150 255"/><g id="fears-as-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-as-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="fears-as-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="fears-as-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="fears-as-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="fears-as-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="fears-as-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="fears-tg" class="clip el" data-start="16.829" data-duration="5.26" data-track-index="7" style="position:absolute;left:720px;top:280px;width:1200px;height:800px;z-index:8"><div id="fears-tg-in" class="in"><svg class="stick" id="fears-tg-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="fears-tg-aLu"><path class="s" d="M150 160 L150 255"/><g id="fears-tg-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-tg-aRu"><path class="s" d="M150 160 L150 255"/><g id="fears-tg-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-tg-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="fears-tg-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="fears-tg-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="fears-tg-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="fears-tg-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="fears-tg-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="fears-l1" class="clip el" data-start="14.849" data-duration="7.24" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1200px;height:640px;z-index:9"><div id="fears-l1-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="fears-l1-w0" class="w">your</span> <span id="fears-l1-w1" class="w acc">embarrassment</span></div></div></div>
+    <div id="fears-l2" class="clip el" data-start="16.829" data-duration="5.26" data-track-index="9" style="position:absolute;left:720px;top:0px;width:1200px;height:640px;z-index:10"><div id="fears-l2-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="fears-l2-w0" class="w acc">theirs</span></div></div></div>
+    <div id="fears-l3" class="clip el" data-start="19.749000000000002" data-duration="2.34" data-track-index="10" style="position:absolute;left:0px;top:920px;width:1920px;height:160px;z-index:11"><div id="fears-l3-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="fears-l3-w0" class="w">saying</span> <span id="fears-l3-w1" class="w">no</span> <span id="fears-l3-w2" class="w">is</span> <span id="fears-l3-w3" class="w">awkward</span> <span id="fears-l3-w4" class="w acc">too</span></div></div></div>
+    <div id="fears-t3" class="clip el" data-start="24.069" data-duration="3.621" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:840px;z-index:12"><div id="fears-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="fears-t3-w0" class="w">askers</span> <span id="fears-t3-w1" class="w">think:</span> <span id="fears-t3-w2" class="w">how</span> <span id="fears-t3-w3" class="w">hard</span> <span id="fears-t3-w4" class="w">to</span> <span id="fears-t3-w5" class="w acc">ask</span></div></div></div>
+    <div id="fears-t4" class="clip el" data-start="25.05" data-duration="2.64" data-track-index="12" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:13"><div id="fears-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="fears-t4-w0" class="w">they</span> <span id="fears-t4-w1" class="w">forget:</span> <span id="fears-t4-w2" class="w">how</span> <span id="fears-t4-w3" class="w">hard</span> <span id="fears-t4-w4" class="w">to</span> <span id="fears-t4-w5" class="w alm">refuse</span></div></div></div>
+    <div id="fears-t5" class="clip el" data-start="28.23" data-duration="2.64" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:14"><div id="fears-t5-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="fears-t5-w0" class="w">the</span> <span id="fears-t5-w1" class="w">yeses</span> <span id="fears-t5-w2" class="w">catch</span> <span id="fears-t5-w3" class="w">them</span> <span id="fears-t5-w4" class="w">off</span> <span id="fears-t5-w5" class="w acc">guard</span></div></div></div>
+    <div id="fears-h2" class="clip el" data-start="30.77" data-duration="38.016" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:360px;z-index:15"><div id="fears-h2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="fears-h2-w0" class="w">2</span> <span id="fears-h2-w1" class="w">·</span> <span id="fears-h2-w2" class="w">“I'll</span> <span id="fears-h2-w3" class="w">be</span> <span id="fears-h2-w4" class="w">a</span> <span id="fears-h2-w5" class="w">burden”</span></div></div></div>
+    <div id="fears-c1" class="clip el" data-start="33.61" data-duration="5.403" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:760px;z-index:16"><div id="fears-c1-in" class="in"><div class="card"><div class="card-k">STUDY · 2022</div><div class="card-t">2,000+ people</div><div class="card-s">Zhao &amp; Epley</div></div></div></div>
+    <div id="fears-ak" class="clip el" data-start="40.033" data-duration="13.51" data-track-index="16" style="position:absolute;left:0px;top:280px;width:1200px;height:800px;z-index:17"><div id="fears-ak-in" class="in"><svg class="stick" id="fears-ak-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="fears-ak-aLu"><path class="s" d="M150 160 L150 255"/><g id="fears-ak-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-ak-aRu"><path class="s" d="M150 160 L150 255"/><g id="fears-ak-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-ak-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="fears-ak-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="fears-ak-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="fears-ak-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="fears-ak-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="fears-ak-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="fears-cam" class="clip el" data-start="41.873" data-duration="11.62" data-track-index="17" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:18" data-layout-allow-overlap><div id="fears-cam-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 92 L130 92 L130 162 L24 162 Z"/><path class="s" pathLength="1" d="M56 62 m-26 0 a26 26 0 1 0 52 0 a26 26 0 1 0 -52 0"/><path class="s" pathLength="1" d="M108 62 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s acc-s" pathLength="1" d="M130 112 L178 92 L178 162 L130 142"/></svg></div></div></div>
+    <div id="fears-hp" class="clip el" data-start="40.253" data-duration="13.29" data-track-index="18" style="position:absolute;left:720px;top:280px;width:1200px;height:800px;z-index:19"><div id="fears-hp-in" class="in"><svg class="stick" id="fears-hp-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="fears-hp-aLu"><path class="s" d="M150 160 L150 255"/><g id="fears-hp-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-hp-aRu"><path class="s" d="M150 160 L150 255"/><g id="fears-hp-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-hp-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="fears-hp-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="fears-hp-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="fears-hp-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="fears-hp-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="fears-hp-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="fears-t6" class="clip el" data-start="44.806" data-duration="1.5" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:640px;z-index:20"><div id="fears-t6-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="fears-t6-w0" class="w">expected:</span> <span id="fears-t6-w1" class="w acc">inconvenienced</span></div></div></div>
+    <div id="fears-t7" class="clip el" data-start="46.206" data-duration="1.27" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:640px;z-index:21"><div id="fears-t7-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="fears-t7-w0" class="w">they</span> <span id="fears-t7-w1" class="w">were</span> <span id="fears-t7-w2" class="w alm">wrong</span></div></div></div>
+    <div id="fears-t8" class="clip el" data-start="48.366" data-duration="5.177" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:640px;z-index:22"><div id="fears-t8-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="fears-t8-w0" class="w">more</span> <span id="fears-t8-w1" class="w acc">willing</span> <span id="fears-t8-w2" class="w">·</span> <span id="fears-t8-w3" class="w">felt</span> <span id="fears-t8-w4" class="w acc">better</span></div></div></div>
+    <div id="fears-t9" class="clip el" data-start="54.983" data-duration="7.04" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:640px;z-index:23"><div id="fears-t9-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="fears-t9-w0" class="w">remember</span> <span id="fears-t9-w1" class="w">when</span> <span id="fears-t9-w2" class="w">you</span> <span id="fears-t9-w3" class="w acc">helped<span class="tail">?</span></span></div></div></div>
+    <div id="fears-ht" class="clip el" data-start="58.723" data-duration="3.25" data-track-index="23" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:24" data-layout-allow-overlap><div id="fears-ht-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="fears-t10" class="clip el" data-start="58.723" data-duration="3.3" data-track-index="24" style="position:absolute;left:0px;top:560px;width:1920px;height:520px;z-index:25"><div id="fears-t10-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="fears-t10-w0" class="w acc">warm</span> <span id="fears-t10-w1" class="w">memories</span> <span id="fears-t10-w2" class="w">·</span> <span id="fears-t10-w3" class="w">it</span> <span id="fears-t10-w4" class="w">felt</span> <span id="fears-t10-w5" class="w acc">good</span></div></div></div>
+    <div id="fears-t11" class="clip el" data-start="62.683" data-duration="6.153" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:800px;z-index:26"><div id="fears-t11-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="fears-t11-w0" class="w">we</span> <span id="fears-t11-w1" class="w">think</span> <span id="fears-t11-w2" class="w">we're</span> <span id="fears-t11-w3" class="w acc">taking</span></div></div></div>
+    <div id="fears-t12" class="clip el" data-start="65.216" data-duration="3.62" data-track-index="26" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:27"><div id="fears-t12-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="fears-t12-w0" class="w">we're</span> <span id="fears-t12-w1" class="w alm">giving</span></div></div></div>
+    <div id="fears-t13" class="clip el" data-start="66.556" data-duration="2.28" data-track-index="27" style="position:absolute;left:0px;top:280px;width:1920px;height:800px;z-index:28"><div id="fears-t13-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="fears-t13-w0" class="w">a</span> <span id="fears-t13-w1" class="w">small</span> <span id="fears-t13-w2" class="w">chance</span> <span id="fears-t13-w3" class="w">to</span> <span id="fears-t13-w4" class="w">be</span> <span id="fears-t13-w5" class="w acc">kind</span></div></div></div>
+    <div id="fears-h3" class="clip el" data-start="68.736" data-duration="52.617" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:360px;z-index:29"><div id="fears-h3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="fears-h3-w0" class="w">3</span> <span id="fears-h3-w1" class="w">·</span> <span id="fears-h3-w2" class="w">“they'll</span> <span id="fears-h3-w3" class="w">think</span> <span id="fears-h3-w4" class="w">I'm</span> <span id="fears-h3-w5" class="w">weak”</span></div></div></div>
+    <div id="fears-t14" class="clip el" data-start="71.716" data-duration="1.74" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:30"><div id="fears-t14-in" class="in"><div class="txt" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="fears-t14-w0" class="w">the</span> <span id="fears-t14-w1" class="w acc">big</span> <span id="fears-t14-w2" class="w">one</span></div></div></div>
+    <div id="fears-c2" class="clip el" data-start="75.274" data-duration="7.22" data-track-index="30" style="position:absolute;left:0px;top:0px;width:1920px;height:760px;z-index:31"><div id="fears-c2-in" class="in"><div class="card"><div class="card-k">STUDY · 2015</div><div class="card-t">Harvard &amp; Wharton</div><div class="card-s">Brooks, Gino &amp; Schweitzer</div></div></div></div>
+    <div id="fears-pz" class="clip el" data-start="80.674" data-duration="1.77" data-track-index="31" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:32" data-layout-allow-overlap><div id="fears-pz-in" class="in"><div class="ico" style="width:180px;height:180px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 62 L80 62 Q78 34 100 34 Q122 34 120 62 L160 62 L160 100 Q188 98 188 120 Q188 142 160 140 L160 180 L40 180 L40 140 Q66 142 66 120 Q66 98 40 100 Z"/></svg></div></div></div>
+    <div id="fears-t15" class="clip el" data-start="79.072" data-duration="3.422" data-track-index="32" style="position:absolute;left:0px;top:560px;width:1920px;height:520px;z-index:33"><div id="fears-t15-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="fears-t15-w0" class="w">~170</span> <span id="fears-t15-w1" class="w">people</span> <span id="fears-t15-w2" class="w">·</span> <span id="fears-t15-w3" class="w acc">brainteasers</span></div></div></div>
+    <div id="fears-a1" class="clip el" data-start="83.134" data-duration="6.79" data-track-index="33" style="position:absolute;left:0px;top:280px;width:1200px;height:800px;z-index:34"><div id="fears-a1-in" class="in"><svg class="stick" id="fears-a1-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="fears-a1-aLu"><path class="s" d="M150 160 L150 255"/><g id="fears-a1-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-a1-aRu"><path class="s" d="M150 160 L150 255"/><g id="fears-a1-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-a1-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="fears-a1-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="fears-a1-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="fears-a1-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="fears-a1-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="fears-a1-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="fears-a2" class="clip el" data-start="84.854" data-duration="5.07" data-track-index="34" style="position:absolute;left:720px;top:280px;width:1200px;height:800px;z-index:35"><div id="fears-a2-in" class="in"><svg class="stick" id="fears-a2-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="fears-a2-aLu"><path class="s" d="M150 160 L150 255"/><g id="fears-a2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-a2-aRu"><path class="s" d="M150 160 L150 255"/><g id="fears-a2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-a2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="fears-a2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="fears-a2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="fears-a2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="fears-a2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="fears-a2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="fears-l4" class="clip el" data-start="83.794" data-duration="6.13" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1200px;height:640px;z-index:36"><div id="fears-l4-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="fears-l4-w0" class="w">asked</span> <span id="fears-l4-w1" class="w">for</span> <span id="fears-l4-w2" class="w acc">advice</span></div></div></div>
+    <div id="fears-l5" class="clip el" data-start="84.854" data-duration="5.07" data-track-index="36" style="position:absolute;left:720px;top:0px;width:1200px;height:640px;z-index:37"><div id="fears-l5-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--muted)"><span id="fears-l5-w0" class="w">didn't</span> <span id="fears-l5-w1" class="w">ask</span></div></div></div>
+    <div id="fears-l6" class="clip el" data-start="88.184" data-duration="1.74" data-track-index="37" style="position:absolute;left:0px;top:920px;width:1920px;height:160px;z-index:38"><div id="fears-l6-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="fears-l6-w0" class="w">rated</span> <span id="fears-l6-w1" class="w">more</span> <span id="fears-l6-w2" class="w alm">competent</span></div></div></div>
+    <div id="fears-t16" class="clip el" data-start="90.004" data-duration="1.6" data-track-index="38" style="position:absolute;left:0px;top:0px;width:1920px;height:800px;z-index:39"><div id="fears-t16-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--muted)"><span id="fears-t16-w0" class="w">not</span> <span id="fears-t16-w1" class="w">less</span></div></div></div>
+    <div id="fears-t17" class="clip el" data-start="90.764" data-duration="0.89" data-track-index="39" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:40"><div id="fears-t17-in" class="in"><div class="txt hero" style="font-size:150px;font-weight:800;color:var(--ink)"><span id="fears-t17-w0" class="w">MORE</span></div></div></div>
+    <div id="fears-t18" class="clip el" data-start="93.044" data-duration="3.947" data-track-index="40" style="position:absolute;left:0px;top:0px;width:1920px;height:840px;z-index:41"><div id="fears-t18-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="fears-t18-w0" class="w">especially</span> <span id="fears-t18-w1" class="w">when</span> <span id="fears-t18-w2" class="w">it's</span> <span id="fears-t18-w3" class="w acc">hard</span></div></div></div>
+    <div id="fears-t19" class="clip el" data-start="94.95100000000001" data-duration="2.04" data-track-index="41" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:42"><div id="fears-t19-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="fears-t19-w0" class="w">easy</span> <span id="fears-t19-w1" class="w">tasks:</span> <span id="fears-t19-w2" class="w">didn't</span> <span id="fears-t19-w3" class="w acc">hurt</span></div></div></div>
+    <div id="fears-sm" class="clip el" data-start="97.111" data-duration="5.16" data-track-index="42" style="position:absolute;left:0px;top:280px;width:1920px;height:800px;z-index:43"><div id="fears-sm-in" class="in"><svg class="stick" id="fears-sm-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="fears-sm-aLu"><path class="s" d="M150 160 L150 255"/><g id="fears-sm-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-sm-aRu"><path class="s" d="M150 160 L150 255"/><g id="fears-sm-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-sm-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="fears-sm-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="fears-sm-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="fears-sm-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="fears-sm-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="fears-sm-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="fears-t20" class="clip el" data-start="98.571" data-duration="3.7" data-track-index="43" style="position:absolute;left:0px;top:0px;width:1920px;height:600px;z-index:44"><div id="fears-t20-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="fears-t20-w0" class="w">being</span> <span id="fears-t20-w1" class="w">asked</span> <span id="fears-t20-w2" class="w">feels</span> <span id="fears-t20-w3" class="w acc">smart</span></div></div></div>
+    <div id="fears-t21" class="clip el" data-start="103.051" data-duration="6.683" data-track-index="44" style="position:absolute;left:0px;top:0px;width:1920px;height:720px;z-index:45"><div id="fears-t21-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="fears-t21-w0" class="w">one</span> <span id="fears-t21-w1" class="w acc">catch</span></div></div></div>
+    <div id="fears-t22" class="clip el" data-start="105.931" data-duration="3.803" data-track-index="45" style="position:absolute;left:0px;top:0px;width:1920px;height:1040px;z-index:46"><div id="fears-t22-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="fears-t22-w0" class="w">ask</span> <span id="fears-t22-w1" class="w acc">directly</span> <span id="fears-t22-w2" class="w">·</span> <span id="fears-t22-w3" class="w">they</span> <span id="fears-t22-w4" class="w">know</span> <span id="fears-t22-w5" class="w">the</span> <span id="fears-t22-w6" class="w acc">topic</span></div></div></div>
+    <div id="fears-t23" class="clip el" data-start="110.614" data-duration="2.29" data-track-index="46" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:47"><div id="fears-t23-in" class="in"><div class="txt hero" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="fears-t23-w0" class="w">the</span> <span id="fears-t23-w1" class="w">fear</span> <span id="fears-t23-w2" class="w">has</span> <span id="fears-t23-w3" class="w">it</span> <span id="fears-t23-w4" class="w alm">backwards</span></div></div></div>
+    <div id="fears-me" class="clip el" data-start="112.854" data-duration="8.549" data-track-index="47" style="position:absolute;left:0px;top:280px;width:1920px;height:800px;z-index:48"><div id="fears-me-in" class="in"><svg class="stick" id="fears-me-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="fears-me-aLu"><path class="s" d="M150 160 L150 255"/><g id="fears-me-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-me-aRu"><path class="s" d="M150 160 L150 255"/><g id="fears-me-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="fears-me-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="fears-me-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="fears-me-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="fears-me-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="fears-me-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="fears-me-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="fears-t24" class="clip el" data-start="114.23400000000001" data-duration="2.04" data-track-index="48" style="position:absolute;left:0px;top:0px;width:1920px;height:600px;z-index:49"><div id="fears-t24-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="fears-t24-w0" class="w">someone</span> <span id="fears-t24-w1" class="w">asked</span> <span id="fears-t24-w2" class="w acc">your</span> <span id="fears-t24-w3" class="w">advice</span></div></div></div>
+    <div id="fears-t25" class="clip el" data-start="116.174" data-duration="1.8" data-track-index="49" style="position:absolute;left:0px;top:0px;width:1920px;height:600px;z-index:50"><div id="fears-t25-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="fears-t25-w0" class="w">did</span> <span id="fears-t25-w1" class="w">you</span> <span id="fears-t25-w2" class="w">think</span> <span id="fears-t25-w3" class="w acc">less</span> <span id="fears-t25-w4" class="w">of</span> <span id="fears-t25-w5" class="w">them?</span></div></div></div>
+    <div id="fears-t26" class="clip el" data-start="117.874" data-duration="1.269" data-track-index="50" style="position:absolute;left:0px;top:0px;width:1920px;height:600px;z-index:51"><div id="fears-t26-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="fears-t26-w0" class="w">probably</span> <span id="fears-t26-w1" class="w acc">not</span></div></div></div>
+    <div id="fears-t27" class="clip el" data-start="119.663" data-duration="1.69" data-track-index="51" style="position:absolute;left:0px;top:0px;width:1920px;height:600px;z-index:52"><div id="fears-t27-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="fears-t27-w0" class="w">you</span> <span id="fears-t27-w1" class="w">felt</span> <span id="fears-t27-w2" class="w alm">flattered</span></div></div></div>
+    <div id="fears-t28" class="clip el" data-start="122.563" data-duration="4.864" data-track-index="52" style="position:absolute;left:0px;top:0px;width:1920px;height:720px;z-index:53"><div id="fears-t28-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="fears-t28-w0" class="w">which</span> <span id="fears-t28-w1" class="w">fear</span> <span id="fears-t28-w2" class="w">is</span> <span id="fears-t28-w3" class="w acc">yours<span class="tail">?</span></span></div></div></div>
+    <div id="fears-t29" class="clip el" data-start="123.503" data-duration="3.899" data-track-index="53" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:54"><div id="fears-t29-in" class="in"><div class="txt hero" style="font-size:120px;font-weight:800;color:var(--ink)"><span id="fears-t29-w0" class="w">1</span> <span id="fears-t29-w1" class="w">·</span> <span id="fears-t29-w2" class="w">2</span> <span id="fears-t29-w3" class="w">·</span> <span id="fears-t29-w4" class="w">3</span></div></div></div>
+    <div id="fears-t30" class="clip el" data-start="125.943" data-duration="1.534" data-track-index="54" style="position:absolute;left:0px;top:360px;width:1920px;height:720px;z-index:55"><div id="fears-t30-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="fears-t30-w0" class="w">put</span> <span id="fears-t30-w1" class="w">it</span> <span id="fears-t30-w2" class="w">in</span> <span id="fears-t30-w3" class="w">the</span> <span id="fears-t30-w4" class="w acc">comments</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"fears-ch","t":"chapter","from":"left","exit":null,"in":0.2,"out":1.3800000000000001,"outDur":0.3,"words":[0.3,0.4]},{"id":"fears-t0","t":"text","from":"top","exit":null,"in":1.62,"out":4.311,"outDur":0.3,"words":[1.62,1.92,2.86,2.86,3.16,3.5,3.8]},{"id":"fears-t1","t":"text","from":"top","exit":null,"in":5.111,"out":7.611,"outDur":0.3,"words":[5.111,5.591,6.291,6.291,6.731]},{"id":"fears-h1","t":"text","from":"slam","exit":null,"in":7.851,"out":30.53,"outDur":0.25,"words":[9.011,9.011,9.011,9.271,9.491]},{"id":"fears-t2","t":"text","from":"top","exit":null,"in":10.411,"out":12.051,"outDur":0.3,"words":[10.771,10.891,11.031,11.291]},{"id":"fears-as","t":"stick","from":"left","exit":null,"in":12.651,"out":21.749000000000002,"outDur":0.3,"poses":[["holdHead",12.651]],"mouth":[["tight",12.651]]},{"id":"fears-tg","t":"stick","from":"right","exit":null,"in":16.829,"out":21.749000000000002,"outDur":0.3,"poses":[["shrug",16.829]],"mouth":[["tight",16.829]]},{"id":"fears-l1","t":"text","from":"top","exit":null,"in":14.849,"out":21.749000000000002,"outDur":0.3,"words":[14.489,14.849]},{"id":"fears-l2","t":"text","from":"top","exit":null,"in":16.829,"out":21.749000000000002,"outDur":0.3,"words":[16.829]},{"id":"fears-l3","t":"text","from":"bottom","exit":null,"in":19.749000000000002,"out":21.749000000000002,"outDur":0.3,"words":[17.789,18.089,20.309,20.709,21.049]},{"id":"fears-t3","t":"text","from":"left","exit":null,"in":24.069,"out":27.35,"outDur":0.3,"words":[21.989,22.969,22.969,23.229,23.949,24.069]},{"id":"fears-t4","t":"text","from":"right","exit":null,"in":25.05,"out":27.35,"outDur":0.3,"words":[24.95,25.09,25.49,25.79,26.43,26.57]},{"id":"fears-t5","t":"text","from":"top","exit":null,"in":28.23,"out":30.53,"outDur":0.3,"words":[28.15,28.31,29.05,29.43,29.61,29.77]},{"id":"fears-h2","t":"text","from":"slam","exit":null,"in":30.77,"out":68.49600000000001,"outDur":0.25,"words":[31.59,31.59,31.59,32.25,32.39,32.51]},{"id":"fears-c1","t":"card","from":"top","exit":null,"in":33.61,"out":38.672999999999995,"outDur":0.3},{"id":"fears-ak","t":"stick","from":"left","exit":null,"in":40.033,"out":53.202999999999996,"outDur":0.3,"poses":[["give",40.033],["happy",47.506]],"mouth":[["smile",40.033]]},{"id":"fears-cam","t":"icon","from":"pop","exit":null,"in":41.873,"out":53.202999999999996,"outDur":0.25},{"id":"fears-hp","t":"stick","from":"right","exit":null,"in":40.253,"out":53.202999999999996,"outDur":0.3,"poses":[["idle",40.253],["happy",49.226]],"mouth":[["neutral",40.253],["smile",49.226]]},{"id":"fears-t6","t":"text","from":"top","exit":null,"in":44.806,"out":45.966,"outDur":0.3,"words":[43.306,44.806]},{"id":"fears-t7","t":"text","from":"slam","exit":null,"in":46.206,"out":47.186,"outDur":0.25,"words":[46.206,46.406,46.546]},{"id":"fears-t8","t":"text","from":"top","exit":null,"in":48.366,"out":53.202999999999996,"outDur":0.3,"words":[48.106,48.366,49.106,49.106,49.226]},{"id":"fears-t9","t":"text","from":"top","exit":null,"in":54.983,"out":61.683,"outDur":0.3,"words":[54.983,56.023,56.023,56.023]},{"id":"fears-ht","t":"icon","from":"pop","exit":null,"in":58.723,"out":61.683,"outDur":0.25},{"id":"fears-t10","t":"text","from":"bottom","exit":null,"in":58.723,"out":61.683,"outDur":0.3,"words":[58.723,58.823,58.923,59.023,59.123,59.223]},{"id":"fears-t11","t":"text","from":"left","exit":null,"in":62.683,"out":68.49600000000001,"outDur":0.3,"words":[61.923,62.123,62.463,62.683]},{"id":"fears-t12","t":"text","from":"right","exit":null,"in":65.216,"out":68.49600000000001,"outDur":0.3,"words":[64.676,65.216]},{"id":"fears-t13","t":"text","from":"bottom","exit":null,"in":66.556,"out":68.49600000000001,"outDur":0.3,"words":[66.556,66.656,67.016,67.396,67.576,67.696]},{"id":"fears-h3","t":"text","from":"slam","exit":null,"in":68.736,"out":121.063,"outDur":0.25,"words":[70.016,70.016,70.016,70.276,70.496,70.776]},{"id":"fears-t14","t":"text","from":"top","exit":null,"in":71.716,"out":73.116,"outDur":0.3,"words":[72.256,72.416,72.696]},{"id":"fears-c2","t":"card","from":"top","exit":null,"in":75.274,"out":82.15400000000001,"outDur":0.3},{"id":"fears-pz","t":"icon","from":"pop","exit":null,"in":80.674,"out":82.15400000000001,"outDur":0.25},{"id":"fears-t15","t":"text","from":"bottom","exit":null,"in":79.072,"out":82.15400000000001,"outDur":0.3,"words":[79.654,79.654,80.674,80.674]},{"id":"fears-a1","t":"stick","from":"left","exit":null,"in":83.134,"out":89.584,"outDur":0.3,"poses":[["point",83.134]],"mouth":[["smile",83.134]]},{"id":"fears-a2","t":"stick","from":"right","exit":null,"in":84.854,"out":89.584,"outDur":0.3,"poses":[["idle",84.854]],"mouth":[["neutral",84.854]]},{"id":"fears-l4","t":"text","from":"top","exit":null,"in":83.794,"out":89.584,"outDur":0.3,"words":[83.134,83.474,83.794]},{"id":"fears-l5","t":"text","from":"top","exit":null,"in":84.854,"out":89.584,"outDur":0.3,"words":[84.854,84.954]},{"id":"fears-l6","t":"text","from":"bottom","exit":null,"in":88.184,"out":89.584,"outDur":0.3,"words":[87.264,88.604,88.944]},{"id":"fears-t16","t":"text","from":"left","exit":null,"in":90.004,"out":91.26400000000001,"outDur":0.3,"words":[89.824,90.004]},{"id":"fears-t17","t":"text","from":"slam","exit":null,"in":90.764,"out":91.36399999999999,"outDur":0.25,"words":[90.764]},{"id":"fears-t18","t":"text","from":"top","exit":null,"in":93.044,"out":96.65100000000001,"outDur":0.3,"words":[91.504,92.204,93.044,93.044]},{"id":"fears-t19","t":"text","from":"bottom","exit":null,"in":94.95100000000001,"out":96.65100000000001,"outDur":0.3,"words":[94.084,94.384,95.464,95.844]},{"id":"fears-sm","t":"stick","from":"bottom","exit":null,"in":97.111,"out":101.93100000000001,"outDur":0.3,"poses":[["victory",98.571]],"mouth":[["smile",98.571]]},{"id":"fears-t20","t":"text","from":"top","exit":null,"in":98.571,"out":101.93100000000001,"outDur":0.3,"words":[96.891,97.111,98.291,98.571]},{"id":"fears-t21","t":"text","from":"top","exit":null,"in":103.051,"out":109.394,"outDur":0.3,"words":[102.691,103.051]},{"id":"fears-t22","t":"text","from":"bottom","exit":null,"in":105.931,"out":109.394,"outDur":0.3,"words":[105.931,105.931,107.431,107.431,108.474,108.474,108.654]},{"id":"fears-t23","t":"text","from":"slam","exit":null,"in":110.614,"out":112.614,"outDur":0.25,"words":[109.914,110.214,111.294,111.634,111.794]},{"id":"fears-me","t":"stick","from":"bottom","exit":null,"in":112.854,"out":121.063,"outDur":0.3,"poses":[["idle",112.854],["happy",120.343]],"mouth":[["neutral",112.854],["smile",120.343]]},{"id":"fears-t24","t":"text","from":"top","exit":null,"in":114.23400000000001,"out":115.93400000000001,"outDur":0.3,"words":[113.994,114.334,114.914,115.134]},{"id":"fears-t25","t":"text","from":"top","exit":null,"in":116.174,"out":117.634,"outDur":0.3,"words":[116.174,116.354,116.494,116.714,116.974,117.174]},{"id":"fears-t26","t":"text","from":"top","exit":null,"in":117.874,"out":118.80300000000001,"outDur":0.3,"words":[117.874,118.214]},{"id":"fears-t27","t":"text","from":"slam","exit":null,"in":119.663,"out":121.063,"outDur":0.25,"words":[119.043,119.703,120.343]},{"id":"fears-t28","t":"text","from":"top","exit":null,"in":122.563,"out":127.08699999999999,"outDur":0.3,"words":[121.603,122.103,122.343,122.563]},{"id":"fears-t29","t":"text","from":"slam","exit":null,"in":123.503,"out":127.112,"outDur":0.25,"words":[123.603,123.703,123.803,123.903,124.003]},{"id":"fears-t30","t":"text","from":"bottom","exit":null,"in":125.943,"out":127.13699999999999,"outDur":0.3,"words":[125.943,126.083,126.203,126.283,126.383]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["fears"] = tl;
+    })();
+  </script>
+</template>

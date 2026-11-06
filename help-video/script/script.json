@@ -1,0 +1,3529 @@
+{
+ "title": "The Psychology of People Who Never Ask for Help",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "You're lost."
+    },
+    {
+     "id": "b01",
+     "say": "There's a person right there."
+    },
+    {
+     "id": "b02",
+     "say": "You could just ask."
+    },
+    {
+     "id": "b03",
+     "say": "Instead, you walk around the same block, three times."
+    },
+    {
+     "id": "b04",
+     "say": "Or you're buried at work, someone asks if you're okay, and you say, \"I'm fine.\""
+    },
+    {
+     "id": "b05",
+     "say": "Sound familiar?"
+    },
+    {
+     "id": "b06",
+     "say": "Here's the strange part."
+    },
+    {
+     "id": "b07",
+     "say": "Psychologists have tested this, with thousands of strangers."
+    },
+    {
+     "id": "b08",
+     "say": "And the people who won't ask, are wrong about almost everything."
+    },
+    {
+     "id": "b09",
+     "say": "Wrong about how many people will say yes."
+    },
+    {
+     "id": "b10",
+     "say": "Wrong about how they'll feel."
+    },
+    {
+     "id": "b11",
+     "say": "Wrong about how they'll see you."
+    },
+    {
+     "id": "b12",
+     "say": "By the end of this video, you'll know why."
+    },
+    {
+     "id": "b13",
+     "say": "And the one thing that makes people say yes."
+    },
+    {
+     "id": "b14",
+     "say": "It isn't what you'd guess."
+    },
+    {
+     "id": "b15",
+     "say": "Let's start with a man who figured this out, almost three hundred years ago."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 520,
+     "y": 660,
+     "from": "left",
+     "at": "b00:lost",
+     "poses": [
+      [
+       "holdHead",
+       "b00:lost"
+      ],
+      [
+       "shrug",
+       "b03:block"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b00:lost"
+      ]
+     ],
+     "out": "b04"
+    },
+    {
+     "t": "icon",
+     "id": "map",
+     "name": "map",
+     "x": 860,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b00:lost",
+     "out": "b04"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "you're *lost*",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b00:lost",
+     "out": "b01"
+    },
+    {
+     "t": "stick",
+     "id": "st",
+     "x": 1400,
+     "y": 660,
+     "from": "right",
+     "at": "b01:person",
+     "poses": [
+      [
+       "idle",
+       "b01:person"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b01:person"
+      ]
+     ],
+     "out": "b04",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "a person *right there*",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b01:person",
+     "out": "b02"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "you could just !ask!",
+     "x": 960,
+     "y": 200,
+     "size": 80,
+     "from": "top",
+     "at": "b02:ask",
+     "out": "b03"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "the same block, *three times*",
+     "x": 960,
+     "y": 200,
+     "size": 64,
+     "from": "top",
+     "at": "b03:block",
+     "out": "b04"
+    },
+    {
+     "t": "stick",
+     "id": "w",
+     "x": 760,
+     "y": 660,
+     "from": "left",
+     "at": "b04:buried",
+     "poses": [
+      [
+       "holdHead",
+       "b04:buried"
+      ],
+      [
+       "happy",
+       "b04:fine"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b04:buried"
+      ],
+      [
+       "smile",
+       "b04:fine"
+      ]
+     ],
+     "out": "b05"
+    },
+    {
+     "t": "icon",
+     "id": "bc",
+     "name": "briefcase",
+     "x": 1180,
+     "y": 600,
+     "size": 220,
+     "from": "right",
+     "at": "b04:work",
+     "out": "b05"
+    },
+    {
+     "t": "bubble",
+     "id": "ok",
+     "text": "I'm fine.",
+     "x": 760,
+     "y": 300,
+     "size": 260,
+     "from": "pop",
+     "at": "b04:say",
+     "fontSize": 56,
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "sound *familiar*?",
+     "x": 960,
+     "y": 480,
+     "size": 110,
+     "from": "top",
+     "at": "b05:familiar",
+     "out": "b06"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "here's the *strange* part",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b06:strange",
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "ppl",
+     "name": "people",
+     "x": 960,
+     "y": 500,
+     "size": 260,
+     "from": "pop",
+     "at": "b07:thousands",
+     "out": "b08"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "tested with *thousands* of strangers",
+     "x": 960,
+     "y": 800,
+     "size": 64,
+     "from": "bottom",
+     "at": "b07:tested",
+     "out": "b08"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "wrong about almost !everything!",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "slam",
+     "at": "b08:wrong",
+     "out": "b12",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "w1",
+     "text": "how many say *yes*",
+     "x": 960,
+     "y": 420,
+     "size": 60,
+     "from": "left",
+     "at": "b09:yes",
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "w2",
+     "text": "how they'll *feel*",
+     "x": 960,
+     "y": 540,
+     "size": 60,
+     "from": "right",
+     "at": "b10:feel",
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "w3",
+     "text": "how they'll *see you*",
+     "x": 960,
+     "y": 660,
+     "size": 60,
+     "from": "left",
+     "at": "b11:see",
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "you'll know *why*",
+     "x": 960,
+     "y": 400,
+     "size": 80,
+     "from": "top",
+     "at": "b12:why",
+     "out": "b15"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "the !one thing! that gets a yes",
+     "x": 960,
+     "y": 560,
+     "size": 72,
+     "from": "bottom",
+     "at": "b13:thing",
+     "out": "b15"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "it isn't what you'd *guess*",
+     "x": 960,
+     "y": 700,
+     "size": 56,
+     "from": "bottom",
+     "at": "b14:guess",
+     "out": "b15",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "almost *300 years* ago",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b15:almost"
+    }
+   ]
+  },
+  {
+   "id": "franklin",
+   "beats": [
+    {
+     "id": "b16",
+     "say": "It's the story of one of history's most famous people, and one of his enemies."
+    },
+    {
+     "id": "b17",
+     "say": "In the seventeen-thirties, Benjamin Franklin had a problem in the Pennsylvania Assembly."
+    },
+    {
+     "id": "b18",
+     "say": "He'd just been chosen as its clerk, and he wanted to keep the job."
+    },
+    {
+     "id": "b19",
+     "say": "A new member, wealthy and well-educated, made a long speech against him."
+    },
+    {
+     "id": "b20",
+     "say": "Franklin didn't want to grovel."
+    },
+    {
+     "id": "b21",
+     "say": "He didn't want to fight."
+    },
+    {
+     "id": "b22",
+     "say": "So he did something strange."
+    },
+    {
+     "id": "b23",
+     "say": "He heard that this rival owned a rare, unusual book."
+    },
+    {
+     "id": "b24",
+     "say": "And he wrote him a note, asking if he could borrow it."
+    },
+    {
+     "id": "b25",
+     "say": "The rival sent it straight away."
+    },
+    {
+     "id": "b26",
+     "say": "Franklin returned it about a week later, with a note of thanks."
+    },
+    {
+     "id": "b27",
+     "say": "The next time they met, the man spoke to him, for the first time, and with real courtesy."
+    },
+    {
+     "id": "b28",
+     "say": "They became friends, and stayed friends until the man's death."
+    },
+    {
+     "id": "b29",
+     "say": "Franklin wrote down the lesson in his autobiography."
+    },
+    {
+     "id": "b30",
+     "say": "He called it an old saying he'd learned, now proven true."
+    },
+    {
+     "id": "b31",
+     "say": "\"He that has once done you a kindness, will be more ready to do you another, than he whom you yourself have obliged.\""
+    },
+    {
+     "id": "b32",
+     "say": "Asking didn't cost him anything."
+    },
+    {
+     "id": "b33",
+     "say": "It won him a friend."
+    },
+    {
+     "id": "b34",
+     "say": "So why do so many of us feel the exact opposite?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "01",
+     "text": "The rival and the *book*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b16:start",
+     "out": "b17"
+    },
+    {
+     "t": "card",
+     "id": "card",
+     "kicker": "THE 1730s · PENNSYLVANIA",
+     "text": "Benjamin Franklin",
+     "sub": "clerk of the Assembly",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b17:franklin",
+     "out": "b19"
+    },
+    {
+     "t": "stick",
+     "id": "fr",
+     "x": 600,
+     "y": 680,
+     "from": "left",
+     "at": "b17:franklin",
+     "poses": [
+      [
+       "idle",
+       "b17:franklin"
+      ],
+      [
+       "armsCrossed",
+       "b19:speech"
+      ],
+      [
+       "give",
+       "b24:wrote"
+      ],
+      [
+       "happy",
+       "b27:spoke"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b17:franklin"
+      ],
+      [
+       "tight",
+       "b19:speech"
+      ],
+      [
+       "smile",
+       "b24:wrote"
+      ]
+     ],
+     "out": "b29",
+     "hat": true
+    },
+    {
+     "t": "stick",
+     "id": "rv",
+     "x": 1320,
+     "y": 680,
+     "from": "right",
+     "at": "b19:member",
+     "poses": [
+      [
+       "point",
+       "b19:member"
+      ],
+      [
+       "armsCrossed",
+       "b20:grovel"
+      ],
+      [
+       "give",
+       "b25:sent"
+      ],
+      [
+       "happy",
+       "b27:spoke"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b19:member"
+      ],
+      [
+       "neutral",
+       "b25:sent"
+      ],
+      [
+       "smile",
+       "b27:spoke"
+      ]
+     ],
+     "out": "b29",
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "a long speech *against* him",
+     "x": 1320,
+     "y": 300,
+     "size": 48,
+     "from": "top",
+     "at": "b19:speech",
+     "out": "b20"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "no *groveling*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "left",
+     "at": "b20:grovel",
+     "out": "b22"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "no *fighting*",
+     "x": 960,
+     "y": 320,
+     "size": 64,
+     "from": "right",
+     "at": "b21:fight",
+     "out": "b22"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "something !strange!",
+     "x": 960,
+     "y": 220,
+     "size": 80,
+     "from": "slam",
+     "at": "b22:strange",
+     "out": "b23"
+    },
+    {
+     "t": "icon",
+     "id": "bk",
+     "name": "book",
+     "x": 1320,
+     "y": 330,
+     "size": 160,
+     "from": "pop",
+     "at": "b23:book",
+     "out": "b26"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "a rare *book*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b23:book",
+     "out": "b24"
+    },
+    {
+     "t": "bubble",
+     "id": "ask",
+     "text": "Could I borrow it?",
+     "x": 600,
+     "y": 330,
+     "size": 300,
+     "from": "pop",
+     "at": "b24:borrow",
+     "fontSize": 46,
+     "out": "b25"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "sent *straight away*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b25:straight",
+     "out": "b26"
+    },
+    {
+     "t": "icon",
+     "id": "let",
+     "name": "letter",
+     "x": 960,
+     "y": 480,
+     "size": 160,
+     "from": "pop",
+     "at": "b26:thanks",
+     "out": "b27"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "returned · with *thanks*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b26:returned",
+     "out": "b27"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "the man spoke to him · real *courtesy*",
+     "x": 960,
+     "y": 220,
+     "size": 56,
+     "from": "top",
+     "at": "b27:spoke",
+     "out": "b28"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "!friends! for life",
+     "x": 960,
+     "y": 220,
+     "size": 80,
+     "from": "slam",
+     "at": "b28:friends",
+     "out": "b29",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "auto",
+     "name": "book",
+     "x": 960,
+     "y": 520,
+     "size": 240,
+     "from": "pop",
+     "at": "b29:autobiography",
+     "out": "b32"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "Franklin's *autobiography*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b29:autobiography",
+     "out": "b31"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "THE BEN FRANKLIN EFFECT",
+     "x": 960,
+     "y": 220,
+     "size": 76,
+     "from": "slam",
+     "at": "b31:kindness",
+     "out": "b32",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "q1",
+     "text": "“He that has once done you a *kindness*",
+     "x": 960,
+     "y": 790,
+     "size": 46,
+     "from": "bottom",
+     "at": "b31:kindness",
+     "out": "b32",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "q2",
+     "text": "will be more ready to do you *another*…”",
+     "x": 960,
+     "y": 860,
+     "size": 46,
+     "from": "bottom",
+     "at": "b31:another",
+     "out": "b32",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "asking cost him *nothing*",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "top",
+     "at": "b32:cost",
+     "out": "b34"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "it won him a !friend!",
+     "x": 960,
+     "y": 560,
+     "size": 80,
+     "from": "slam",
+     "at": "b33:friend",
+     "out": "b34"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "so why do we feel the *opposite*?",
+     "x": 960,
+     "y": 480,
+     "size": 80,
+     "from": "top",
+     "at": "b34:opposite"
+    }
+   ]
+  },
+  {
+   "id": "tests",
+   "beats": [
+    {
+     "id": "b35",
+     "say": "In nineteen sixty-nine, two psychologists tested Franklin's idea."
+    },
+    {
+     "id": "b36",
+     "say": "People took part in a contest, and won some money."
+    },
+    {
+     "id": "b37",
+     "say": "Afterwards, the researcher asked some of them for a favor."
+    },
+    {
+     "id": "b38",
+     "say": "Could they give the money back?"
+    },
+    {
+     "id": "b39",
+     "say": "He'd been paying out of his own pocket."
+    },
+    {
+     "id": "b40",
+     "say": "The people he asked, ended up liking him more, than the people he didn't."
+    },
+    {
+     "id": "b41",
+     "say": "A favor didn't push them away."
+    },
+    {
+     "id": "b42",
+     "say": "It pulled them closer."
+    },
+    {
+     "id": "b43",
+     "say": "Then, in two thousand eight, researchers at Stanford asked a simpler question."
+    },
+    {
+     "id": "b44",
+     "say": "How many strangers do you think you'd need to ask, before one says yes?"
+    },
+    {
+     "id": "b45",
+     "say": "In one task, students had to get a stranger, to walk them to the campus gym."
+    },
+    {
+     "id": "b46",
+     "say": "They guessed they'd need to ask about, seven people."
+    },
+    {
+     "id": "b47",
+     "say": "In reality, it took just over two."
+    },
+    {
+     "id": "b48",
+     "say": "In another study, volunteers raised money for charity."
+    },
+    {
+     "id": "b49",
+     "say": "They expected to approach about, two hundred and ten people to hit their goal."
+    },
+    {
+     "id": "b50",
+     "say": "They needed about, one hundred and twenty-two."
+    },
+    {
+     "id": "b51",
+     "say": "And across studies with more than fourteen thousand strangers, people underestimated how often they'd hear yes, by about half."
+    },
+    {
+     "id": "b52",
+     "say": "Half."
+    },
+    {
+     "id": "b53",
+     "say": "We think the world is full of people who'll say no."
+    },
+    {
+     "id": "b54",
+     "say": "It's mostly full of people who'll say yes."
+    },
+    {
+     "id": "b55",
+     "say": "And it goes further than you'd think."
+    },
+    {
+     "id": "b56",
+     "say": "In one study, people asked strangers to do something, a little bit wrong."
+    },
+    {
+     "id": "b57",
+     "say": "Write the word, \"pickle,\" in pen, in a library book."
+    },
+    {
+     "id": "b58",
+     "say": "Even then, more people agreed than the askers expected."
+    },
+    {
+     "id": "b59",
+     "say": "If strangers will deface a library book for you, they'll probably hold a door."
+    },
+    {
+     "id": "b60",
+     "say": "So why are we so sure they won't?"
+    },
+    {
+     "id": "b61",
+     "say": "Because when you're about to ask, your brain makes three predictions."
+    },
+    {
+     "id": "b62",
+     "say": "And all three, are wrong."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "02",
+     "text": "The *experiments*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b35:start",
+     "out": "b35:psychologists"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "STUDY · 1969",
+     "text": "Testing Franklin's idea",
+     "sub": "Jecker & Landy",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b35:tested",
+     "out": "b37"
+    },
+    {
+     "t": "icon",
+     "id": "mn",
+     "name": "money",
+     "x": 960,
+     "y": 520,
+     "size": 220,
+     "from": "pop",
+     "at": "b36:money",
+     "out": "b40"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "win some *money*",
+     "x": 960,
+     "y": 800,
+     "size": 56,
+     "from": "bottom",
+     "at": "b36:money",
+     "out": "b37"
+    },
+    {
+     "t": "bubble",
+     "id": "bk",
+     "text": "Could I have it back?",
+     "x": 960,
+     "y": 300,
+     "size": 360,
+     "from": "pop",
+     "at": "b38:back",
+     "fontSize": 46,
+     "out": "b40"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "his own *pocket*",
+     "x": 960,
+     "y": 820,
+     "size": 56,
+     "from": "bottom",
+     "at": "b39:pocket",
+     "out": "b40"
+    },
+    {
+     "t": "stick",
+     "id": "ga",
+     "x": 600,
+     "y": 680,
+     "from": "left",
+     "at": "b40:asked",
+     "poses": [
+      [
+       "happy",
+       "b40:asked"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b40:asked"
+      ]
+     ],
+     "out": "b43"
+    },
+    {
+     "t": "stick",
+     "id": "gb",
+     "x": 1320,
+     "y": 680,
+     "from": "right",
+     "at": "b40:didn't",
+     "poses": [
+      [
+       "idle",
+       "b40:didn't"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b40:didn't"
+      ]
+     ],
+     "out": "b43",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "asked for a favor: liked him *more*",
+     "x": 600,
+     "y": 300,
+     "size": 44,
+     "from": "top",
+     "at": "b40:more",
+     "out": "b43"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "not asked",
+     "x": 1320,
+     "y": 300,
+     "size": 44,
+     "from": "top",
+     "at": "b40:didn't",
+     "out": "b43",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "a favor pulled them !closer!",
+     "x": 960,
+     "y": 1000,
+     "size": 56,
+     "from": "bottom",
+     "at": "b42:closer",
+     "out": "b43"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "STUDY · 2008",
+     "text": "How many asks until a yes?",
+     "sub": "Flynn & Lake",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b43:stanford",
+     "out": "b48"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "how many strangers before a *yes*?",
+     "x": 960,
+     "y": 480,
+     "size": 64,
+     "from": "top",
+     "at": "b44:yes",
+     "out": "b45"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "“walk me to the *gym*?”",
+     "x": 960,
+     "y": 400,
+     "size": 60,
+     "from": "top",
+     "at": "b45:gym",
+     "out": "b46"
+    },
+    {
+     "t": "bar",
+     "id": "g1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 350,
+     "color": "muted",
+     "label": "guessed: ~7 asks",
+     "from": "draw",
+     "at": "b46:seven",
+     "out": "b48"
+    },
+    {
+     "t": "bar",
+     "id": "g2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 115,
+     "color": "accent",
+     "label": "reality: ~2",
+     "from": "draw",
+     "at": "b47:two",
+     "out": "b48"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "raising money for *charity*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b48:another",
+     "out": "b51"
+    },
+    {
+     "t": "bar",
+     "id": "f1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 360,
+     "color": "muted",
+     "label": "expected: 210 asks",
+     "from": "draw",
+     "at": "b49:two",
+     "out": "b51"
+    },
+    {
+     "t": "bar",
+     "id": "f2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 210,
+     "color": "accent",
+     "label": "needed: 122",
+     "from": "draw",
+     "at": "b50:one",
+     "out": "b51"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "14,000+ strangers",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b51:fourteen",
+     "out": "b53"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "yeses underestimated by about *half*",
+     "x": 960,
+     "y": 480,
+     "size": 64,
+     "from": "bottom",
+     "at": "b51:half",
+     "out": "b52"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "HALF",
+     "x": 960,
+     "y": 480,
+     "size": 170,
+     "from": "slam",
+     "at": "b52:half",
+     "out": "b53",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "we expect *no*",
+     "x": 960,
+     "y": 420,
+     "size": 72,
+     "from": "left",
+     "at": "b53:think",
+     "out": "b55"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "it's mostly !yes!",
+     "x": 960,
+     "y": 560,
+     "size": 80,
+     "from": "right",
+     "at": "b54:yes",
+     "out": "b55"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "it goes *further*",
+     "x": 960,
+     "y": 480,
+     "size": 80,
+     "from": "top",
+     "at": "b55:further",
+     "out": "b56"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "something a little bit *wrong*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b56:strangers",
+     "out": "b58"
+    },
+    {
+     "t": "icon",
+     "id": "lib",
+     "name": "book",
+     "x": 760,
+     "y": 520,
+     "size": 240,
+     "from": "left",
+     "at": "b57:library",
+     "out": "b59"
+    },
+    {
+     "t": "icon",
+     "id": "pn",
+     "name": "pen",
+     "x": 1160,
+     "y": 520,
+     "size": 220,
+     "from": "right",
+     "at": "b57:pen",
+     "out": "b59"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "write !PICKLE! in a library book",
+     "x": 960,
+     "y": 820,
+     "size": 56,
+     "from": "bottom",
+     "at": "b57:pickle",
+     "out": "b59"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "more agreed than *expected*",
+     "x": 960,
+     "y": 220,
+     "size": 64,
+     "from": "top",
+     "at": "b58:expected",
+     "out": "b59"
+    },
+    {
+     "t": "icon",
+     "id": "dr",
+     "name": "door",
+     "x": 960,
+     "y": 480,
+     "size": 240,
+     "from": "pop",
+     "at": "b59:strangers",
+     "out": "b60"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "they'll probably hold a *door*",
+     "x": 960,
+     "y": 800,
+     "size": 64,
+     "from": "bottom",
+     "at": "b59:door",
+     "out": "b60"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "so why are we so sure they *won't*?",
+     "x": 960,
+     "y": 480,
+     "size": 72,
+     "from": "top",
+     "at": "b60:sure",
+     "out": "b61"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "brain",
+     "x": 960,
+     "y": 460,
+     "size": 240,
+     "from": "pop",
+     "at": "b61:brain",
+     "out": "b62:end"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "three *predictions*",
+     "x": 960,
+     "y": 760,
+     "size": 64,
+     "from": "bottom",
+     "at": "b61:predictions",
+     "out": "b62:end"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "all !wrong!",
+     "x": 960,
+     "y": 880,
+     "size": 80,
+     "from": "slam",
+     "at": "b62:wrong",
+     "out": "b62:end",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "fears",
+   "beats": [
+    {
+     "id": "b63",
+     "say": "Many of us learned early, that needing help means you didn't try hard enough."
+    },
+    {
+     "id": "b64",
+     "say": "So we carry three fears into every ask."
+    },
+    {
+     "id": "b65",
+     "say": "Fear number one: \"They'll say no.\""
+    },
+    {
+     "id": "b66",
+     "say": "Here's what your brain forgets."
+    },
+    {
+     "id": "b67",
+     "say": "When you picture asking, you picture your embarrassment."
+    },
+    {
+     "id": "b68",
+     "say": "You don't picture theirs."
+    },
+    {
+     "id": "b69",
+     "say": "Saying no to a real person, face to face, is awkward too."
+    },
+    {
+     "id": "b70",
+     "say": "Askers focus on how hard it is to ask."
+    },
+    {
+     "id": "b71",
+     "say": "They forget how hard it is to refuse."
+    },
+    {
+     "id": "b72",
+     "say": "That's why the yeses keep catching them off guard."
+    },
+    {
+     "id": "b73",
+     "say": "Fear number two: \"I'll be a burden.\""
+    },
+    {
+     "id": "b74",
+     "say": "In twenty twenty-two, psychologists ran a set of experiments, with more than two thousand people."
+    },
+    {
+     "id": "b75",
+     "say": "In one, people asked strangers in a park, to take their photo."
+    },
+    {
+     "id": "b76",
+     "say": "The askers expected the helpers to feel inconvenienced."
+    },
+    {
+     "id": "b77",
+     "say": "They were wrong."
+    },
+    {
+     "id": "b78",
+     "say": "The helpers were more willing, felt better afterwards, and felt far less put out than the askers predicted."
+    },
+    {
+     "id": "b79",
+     "say": "The team also asked people to remember times they'd helped someone else."
+    },
+    {
+     "id": "b80",
+     "say": "Most of those memories were warm ones."
+    },
+    {
+     "id": "b81",
+     "say": "Being asked had felt good."
+    },
+    {
+     "id": "b82",
+     "say": "We think we're taking something from people."
+    },
+    {
+     "id": "b83",
+     "say": "Often, we're giving them something."
+    },
+    {
+     "id": "b84",
+     "say": "A small chance to be kind."
+    },
+    {
+     "id": "b85",
+     "say": "Fear number three: \"They'll think I'm weak.\""
+    },
+    {
+     "id": "b86",
+     "say": "This is the big one."
+    },
+    {
+     "id": "b87",
+     "say": "In twenty fifteen, researchers at Harvard and Wharton tested it directly."
+    },
+    {
+     "id": "b88",
+     "say": "In one study, about a hundred and seventy people solved brainteasers with a partner."
+    },
+    {
+     "id": "b89",
+     "say": "Some partners asked for their advice."
+    },
+    {
+     "id": "b90",
+     "say": "Some didn't."
+    },
+    {
+     "id": "b91",
+     "say": "The people who were asked for advice, rated their partner as more competent."
+    },
+    {
+     "id": "b92",
+     "say": "Not less."
+    },
+    {
+     "id": "b93",
+     "say": "More."
+    },
+    {
+     "id": "b94",
+     "say": "Especially when the task was hard."
+    },
+    {
+     "id": "b95",
+     "say": "And on easy tasks, asking didn't hurt at all."
+    },
+    {
+     "id": "b96",
+     "say": "Being asked makes people feel smart."
+    },
+    {
+     "id": "b97",
+     "say": "And they like the person who made them feel that way."
+    },
+    {
+     "id": "b98",
+     "say": "There was one catch."
+    },
+    {
+     "id": "b99",
+     "say": "It worked best when the person was asked directly, and when they actually knew the topic."
+    },
+    {
+     "id": "b100",
+     "say": "So the fear of looking weak, has it backwards."
+    },
+    {
+     "id": "b101",
+     "say": "Think about the last time someone asked for your advice."
+    },
+    {
+     "id": "b102",
+     "say": "Did you think less of them?"
+    },
+    {
+     "id": "b103",
+     "say": "Probably not."
+    },
+    {
+     "id": "b104",
+     "say": "You probably felt a little flattered."
+    },
+    {
+     "id": "b105",
+     "say": "So which fear is yours?"
+    },
+    {
+     "id": "b106",
+     "say": "Number one, two, or three?"
+    },
+    {
+     "id": "b107",
+     "say": "Put it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "03",
+     "text": "Three *fears*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b63:start",
+     "out": "b63:needing"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "needing help = didn't try hard *enough*?",
+     "x": 960,
+     "y": 480,
+     "size": 64,
+     "from": "top",
+     "at": "b63:needing",
+     "out": "b64"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "three fears in *every ask*",
+     "x": 960,
+     "y": 480,
+     "size": 80,
+     "from": "top",
+     "at": "b64:three",
+     "out": "b65"
+    },
+    {
+     "t": "text",
+     "id": "h1",
+     "text": "1 · “they'll say no”",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "slam",
+     "at": "b65:fear",
+     "out": "b73"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "what your brain *forgets*",
+     "x": 960,
+     "y": 480,
+     "size": 72,
+     "from": "top",
+     "at": "b66:forgets",
+     "out": "b67"
+    },
+    {
+     "t": "stick",
+     "id": "as",
+     "x": 600,
+     "y": 680,
+     "from": "left",
+     "at": "b67:picture",
+     "poses": [
+      [
+       "holdHead",
+       "b67:picture"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b67:picture"
+      ]
+     ],
+     "out": "b70"
+    },
+    {
+     "t": "stick",
+     "id": "tg",
+     "x": 1320,
+     "y": 680,
+     "from": "right",
+     "at": "b68:theirs",
+     "poses": [
+      [
+       "shrug",
+       "b68:theirs"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b68:theirs"
+      ]
+     ],
+     "out": "b70",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "your *embarrassment*",
+     "x": 600,
+     "y": 320,
+     "size": 52,
+     "from": "top",
+     "at": "b67:embarrassment",
+     "out": "b70"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "*theirs*",
+     "x": 1320,
+     "y": 320,
+     "size": 60,
+     "from": "top",
+     "at": "b68:theirs",
+     "out": "b70"
+    },
+    {
+     "t": "text",
+     "id": "l3",
+     "text": "saying no is awkward *too*",
+     "x": 960,
+     "y": 1000,
+     "size": 56,
+     "from": "bottom",
+     "at": "b69:awkward",
+     "out": "b70"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "askers think: how hard to *ask*",
+     "x": 960,
+     "y": 420,
+     "size": 64,
+     "from": "left",
+     "at": "b70:ask",
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "they forget: how hard to !refuse!",
+     "x": 960,
+     "y": 560,
+     "size": 64,
+     "from": "right",
+     "at": "b71:refuse",
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "the yeses catch them off *guard*",
+     "x": 960,
+     "y": 480,
+     "size": 72,
+     "from": "top",
+     "at": "b72:yeses",
+     "out": "b73"
+    },
+    {
+     "t": "text",
+     "id": "h2",
+     "text": "2 · “I'll be a burden”",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "slam",
+     "at": "b73:fear",
+     "out": "b85"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "STUDY · 2022",
+     "text": "2,000+ people",
+     "sub": "Zhao & Epley",
+     "x": 960,
+     "y": 380,
+     "from": "top",
+     "at": "b74:twenty",
+     "out": "b75"
+    },
+    {
+     "t": "stick",
+     "id": "ak",
+     "x": 600,
+     "y": 680,
+     "from": "left",
+     "at": "b75:asked",
+     "poses": [
+      [
+       "give",
+       "b75:asked"
+      ],
+      [
+       "happy",
+       "b78:helpers"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b75:asked"
+      ]
+     ],
+     "out": "b79"
+    },
+    {
+     "t": "icon",
+     "id": "cam",
+     "name": "camera",
+     "x": 960,
+     "y": 560,
+     "size": 170,
+     "from": "pop",
+     "at": "b75:photo",
+     "out": "b79"
+    },
+    {
+     "t": "stick",
+     "id": "hp",
+     "x": 1320,
+     "y": 680,
+     "from": "right",
+     "at": "b75:strangers",
+     "poses": [
+      [
+       "idle",
+       "b75:strangers"
+      ],
+      [
+       "happy",
+       "b78:better"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b75:strangers"
+      ],
+      [
+       "smile",
+       "b78:better"
+      ]
+     ],
+     "out": "b79",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "expected: *inconvenienced*",
+     "x": 960,
+     "y": 320,
+     "size": 56,
+     "from": "top",
+     "at": "b76:inconvenienced",
+     "out": "b77"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "they were !wrong!",
+     "x": 960,
+     "y": 320,
+     "size": 72,
+     "from": "slam",
+     "at": "b77:wrong",
+     "out": "b78"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "more *willing* · felt *better*",
+     "x": 960,
+     "y": 320,
+     "size": 56,
+     "from": "top",
+     "at": "b78:willing",
+     "out": "b79"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "remember when you *helped*?",
+     "x": 960,
+     "y": 320,
+     "size": 60,
+     "from": "top",
+     "at": "b79:remember",
+     "out": "b82"
+    },
+    {
+     "t": "icon",
+     "id": "ht",
+     "name": "heart",
+     "x": 960,
+     "y": 560,
+     "size": 220,
+     "from": "pop",
+     "at": "b80:warm",
+     "out": "b82",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "*warm* memories · it felt *good*",
+     "x": 960,
+     "y": 820,
+     "size": 56,
+     "from": "bottom",
+     "at": "b80:warm",
+     "out": "b82"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "we think we're *taking*",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "left",
+     "at": "b82:taking",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "we're !giving!",
+     "x": 960,
+     "y": 540,
+     "size": 80,
+     "from": "right",
+     "at": "b83:giving",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "a small chance to be *kind*",
+     "x": 960,
+     "y": 680,
+     "size": 56,
+     "from": "bottom",
+     "at": "b84:kind",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "h3",
+     "text": "3 · “they'll think I'm weak”",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "slam",
+     "at": "b85:fear",
+     "out": "b105"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "the *big* one",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b86:big",
+     "out": "b87"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "STUDY · 2015",
+     "text": "Harvard & Wharton",
+     "sub": "Brooks, Gino & Schweitzer",
+     "x": 960,
+     "y": 380,
+     "from": "top",
+     "at": "b87:harvard",
+     "out": "b89"
+    },
+    {
+     "t": "icon",
+     "id": "pz",
+     "name": "puzzle",
+     "x": 960,
+     "y": 620,
+     "size": 180,
+     "from": "pop",
+     "at": "b88:brainteasers",
+     "out": "b89"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "~170 people · *brainteasers*",
+     "x": 960,
+     "y": 820,
+     "size": 52,
+     "from": "bottom",
+     "at": "b88:hundred",
+     "out": "b89"
+    },
+    {
+     "t": "stick",
+     "id": "a1",
+     "x": 600,
+     "y": 680,
+     "from": "left",
+     "at": "b89:asked",
+     "poses": [
+      [
+       "point",
+       "b89:asked"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b89:asked"
+      ]
+     ],
+     "out": "b92"
+    },
+    {
+     "t": "stick",
+     "id": "a2",
+     "x": 1320,
+     "y": 680,
+     "from": "right",
+     "at": "b90:didn't",
+     "poses": [
+      [
+       "idle",
+       "b90:didn't"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b90:didn't"
+      ]
+     ],
+     "out": "b92",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "l4",
+     "text": "asked for *advice*",
+     "x": 600,
+     "y": 320,
+     "size": 52,
+     "from": "top",
+     "at": "b89:advice",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "l5",
+     "text": "didn't ask",
+     "x": 1320,
+     "y": 320,
+     "size": 52,
+     "from": "top",
+     "at": "b90:didn't",
+     "out": "b92",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "l6",
+     "text": "rated more !competent!",
+     "x": 960,
+     "y": 1000,
+     "size": 56,
+     "from": "bottom",
+     "at": "b91:competent",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "not less",
+     "x": 960,
+     "y": 400,
+     "size": 80,
+     "from": "left",
+     "at": "b92:less",
+     "out": "b94",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "MORE",
+     "x": 960,
+     "y": 580,
+     "size": 150,
+     "from": "slam",
+     "at": "b93:more",
+     "out": "b94",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "especially when it's *hard*",
+     "x": 960,
+     "y": 420,
+     "size": 64,
+     "from": "top",
+     "at": "b94:hard",
+     "out": "b96"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "easy tasks: didn't *hurt*",
+     "x": 960,
+     "y": 560,
+     "size": 56,
+     "from": "bottom",
+     "at": "b95:hurt",
+     "out": "b96"
+    },
+    {
+     "t": "stick",
+     "id": "sm",
+     "x": 960,
+     "y": 680,
+     "from": "bottom",
+     "at": "b96:asked",
+     "poses": [
+      [
+       "victory",
+       "b96:smart"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b96:smart"
+      ]
+     ],
+     "out": "b98"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "being asked feels *smart*",
+     "x": 960,
+     "y": 300,
+     "size": 64,
+     "from": "top",
+     "at": "b96:smart",
+     "out": "b98"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "one *catch*",
+     "x": 960,
+     "y": 360,
+     "size": 72,
+     "from": "top",
+     "at": "b98:catch",
+     "out": "b100"
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "ask *directly* · they know the *topic*",
+     "x": 960,
+     "y": 520,
+     "size": 56,
+     "from": "bottom",
+     "at": "b99:directly",
+     "out": "b100"
+    },
+    {
+     "t": "text",
+     "id": "t23",
+     "text": "the fear has it !backwards!",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "slam",
+     "at": "b100:backwards",
+     "out": "b101",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 960,
+     "y": 680,
+     "from": "bottom",
+     "at": "b101:think",
+     "poses": [
+      [
+       "idle",
+       "b101:think"
+      ],
+      [
+       "happy",
+       "b104:flattered"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b101:think"
+      ],
+      [
+       "smile",
+       "b104:flattered"
+      ]
+     ],
+     "out": "b105"
+    },
+    {
+     "t": "text",
+     "id": "t24",
+     "text": "someone asked *your* advice",
+     "x": 960,
+     "y": 300,
+     "size": 64,
+     "from": "top",
+     "at": "b101:advice",
+     "out": "b102"
+    },
+    {
+     "t": "text",
+     "id": "t25",
+     "text": "did you think *less* of them?",
+     "x": 960,
+     "y": 300,
+     "size": 64,
+     "from": "top",
+     "at": "b102:less",
+     "out": "b103"
+    },
+    {
+     "t": "text",
+     "id": "t26",
+     "text": "probably *not*",
+     "x": 960,
+     "y": 300,
+     "size": 72,
+     "from": "top",
+     "at": "b103:not",
+     "out": "b104"
+    },
+    {
+     "t": "text",
+     "id": "t27",
+     "text": "you felt !flattered!",
+     "x": 960,
+     "y": 300,
+     "size": 72,
+     "from": "slam",
+     "at": "b104:flattered",
+     "out": "b105"
+    },
+    {
+     "t": "text",
+     "id": "t28",
+     "text": "which fear is *yours*?",
+     "x": 960,
+     "y": 360,
+     "size": 80,
+     "from": "top",
+     "at": "b105:yours"
+    },
+    {
+     "t": "text",
+     "id": "t29",
+     "text": "1 · 2 · 3",
+     "x": 960,
+     "y": 540,
+     "size": 120,
+     "from": "slam",
+     "at": "b106:number",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t30",
+     "text": "put it in the *comments*",
+     "x": 960,
+     "y": 720,
+     "size": 56,
+     "from": "bottom",
+     "at": "b107:comments"
+    }
+   ]
+  },
+  {
+   "id": "cost",
+   "beats": [
+    {
+     "id": "b108",
+     "say": "Now think about what never asking, really costs."
+    },
+    {
+     "id": "b109",
+     "say": "The project that takes three days, instead of one."
+    },
+    {
+     "id": "b110",
+     "say": "The problem that grows while you wait."
+    },
+    {
+     "id": "b111",
+     "say": "The question you never ask in class, so you stay confused for the rest of the term."
+    },
+    {
+     "id": "b112",
+     "say": "The friend who would have helped in ten minutes, and never knew you needed it."
+    },
+    {
+     "id": "b113",
+     "say": "And the slow, lonely feeling, of carrying everything by yourself."
+    },
+    {
+     "id": "b114",
+     "say": "Psychologist Nicholas Epley, who worked on that twenty twenty-two study, put it bluntly."
+    },
+    {
+     "id": "b115",
+     "say": "Not asking, when someone would be happy to help, isn't kind."
+    },
+    {
+     "id": "b116",
+     "say": "It's a little unkind."
+    },
+    {
+     "id": "b117",
+     "say": "Because you're taking away their chance to help."
+    },
+    {
+     "id": "b118",
+     "say": "It sounds harsh."
+    },
+    {
+     "id": "b119",
+     "say": "But it wasn't over yet."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "04",
+     "text": "What it *costs*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b108:start",
+     "out": "b109"
+    },
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 960,
+     "y": 480,
+     "size": 220,
+     "from": "pop",
+     "at": "b109:project",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "three days instead of *one*",
+     "x": 960,
+     "y": 780,
+     "size": 64,
+     "from": "bottom",
+     "at": "b109:days",
+     "out": "b110"
+    },
+    {
+     "t": "icon",
+     "id": "mt",
+     "name": "mountain",
+     "x": 960,
+     "y": 480,
+     "size": 240,
+     "from": "pop",
+     "at": "b110:problem",
+     "out": "b111"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "the problem *grows*",
+     "x": 960,
+     "y": 780,
+     "size": 64,
+     "from": "bottom",
+     "at": "b110:grows",
+     "out": "b111"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 480,
+     "size": 220,
+     "from": "pop",
+     "at": "b111:question",
+     "out": "b112"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "the question you never *ask*",
+     "x": 960,
+     "y": 780,
+     "size": 64,
+     "from": "bottom",
+     "at": "b111:ask",
+     "out": "b112"
+    },
+    {
+     "t": "stick",
+     "id": "fd",
+     "x": 960,
+     "y": 680,
+     "from": "bottom",
+     "at": "b112:friend",
+     "poses": [
+      [
+       "give",
+       "b112:helped"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b112:friend"
+      ]
+     ],
+     "out": "b113"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "a friend who'd help in *ten minutes*",
+     "x": 960,
+     "y": 260,
+     "size": 60,
+     "from": "top",
+     "at": "b112:friend",
+     "out": "b113"
+    },
+    {
+     "t": "stick",
+     "id": "al",
+     "x": 960,
+     "y": 680,
+     "from": "bottom",
+     "at": "b113:lonely",
+     "poses": [
+      [
+       "headDown",
+       "b113:lonely"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b113:lonely"
+      ]
+     ],
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "carrying *everything* by yourself",
+     "x": 960,
+     "y": 260,
+     "size": 60,
+     "from": "top",
+     "at": "b113:carrying",
+     "out": "b114"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "PSYCHOLOGIST",
+     "text": "Nicholas Epley",
+     "sub": "co-author of the 2022 study",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b114:epley",
+     "out": "b117"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "not asking isn't *kind*",
+     "x": 960,
+     "y": 480,
+     "size": 72,
+     "from": "top",
+     "at": "b115:asking",
+     "out": "b117"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "it's a little !unkind!",
+     "x": 960,
+     "y": 620,
+     "size": 80,
+     "from": "slam",
+     "at": "b116:unkind",
+     "out": "b117"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "you take away their *chance to help*",
+     "x": 960,
+     "y": 480,
+     "size": 64,
+     "from": "top",
+     "at": "b117:taking",
+     "out": "b118"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "it sounds *harsh*",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "top",
+     "at": "b118:harsh",
+     "out": "b119"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "but it wasn't over yet",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b119:over",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "fix",
+   "beats": [
+    {
+     "id": "b120",
+     "say": "So what actually works?"
+    },
+    {
+     "id": "b121",
+     "say": "How do you ask?"
+    },
+    {
+     "id": "b122",
+     "say": "Rule one: ask in person."
+    },
+    {
+     "id": "b123",
+     "say": "Not a text."
+    },
+    {
+     "id": "b124",
+     "say": "Not an email."
+    },
+    {
+     "id": "b125",
+     "say": "Walk over, or at least call."
+    },
+    {
+     "id": "b126",
+     "say": "In twenty seventeen, researchers had people ask strangers, to fill in a short survey."
+    },
+    {
+     "id": "b127",
+     "say": "Some asked by email."
+    },
+    {
+     "id": "b128",
+     "say": "Some asked face to face."
+    },
+    {
+     "id": "b129",
+     "say": "Both groups expected about the same success."
+    },
+    {
+     "id": "b130",
+     "say": "But the face-to-face requests, were about thirty-four times more effective."
+    },
+    {
+     "id": "b131",
+     "say": "And here's the twist inside the twist."
+    },
+    {
+     "id": "b132",
+     "say": "When people ask by email, they do the opposite of everything we've seen."
+    },
+    {
+     "id": "b133",
+     "say": "They overestimate the yeses."
+    },
+    {
+     "id": "b134",
+     "say": "Later work found video and phone calls, land somewhere in between."
+    },
+    {
+     "id": "b135",
+     "say": "That's the thing I promised you."
+    },
+    {
+     "id": "b136",
+     "say": "It isn't the perfect wording."
+    },
+    {
+     "id": "b137",
+     "say": "It's showing up."
+    },
+    {
+     "id": "b138",
+     "say": "An email is easy to ignore."
+    },
+    {
+     "id": "b139",
+     "say": "A person standing in front of you, is not."
+    },
+    {
+     "id": "b140",
+     "say": "Rule two: be specific."
+    },
+    {
+     "id": "b141",
+     "say": "\"Could you look at this for ten minutes on Friday?\""
+    },
+    {
+     "id": "b142",
+     "say": "That's easy to say yes to."
+    },
+    {
+     "id": "b143",
+     "say": "\"Can you help me sometime?\""
+    },
+    {
+     "id": "b144",
+     "say": "That's easy to put off."
+    },
+    {
+     "id": "b145",
+     "say": "Rule three: ask for advice, not just help."
+    },
+    {
+     "id": "b146",
+     "say": "\"What would you do?\""
+    },
+    {
+     "id": "b147",
+     "say": "makes the other person the expert."
+    },
+    {
+     "id": "b148",
+     "say": "And as we just saw, that makes them think more of you, not less."
+    },
+    {
+     "id": "b149",
+     "say": "Rule four: make \"no\" easy."
+    },
+    {
+     "id": "b150",
+     "say": "Remember, saying no face to face is hard."
+    },
+    {
+     "id": "b151",
+     "say": "So give people a real way out."
+    },
+    {
+     "id": "b152",
+     "say": "\"No worries if you can't\" turns pressure into an invitation."
+    },
+    {
+     "id": "b153",
+     "say": "The people who do say yes, will mean it."
+    }
+   ],
+   "elements": [
+    {
+     "t": "chapter",
+     "id": "ch",
+     "num": "05",
+     "text": "How to *ask*",
+     "x": 960,
+     "y": 540,
+     "from": "left",
+     "at": "b120:start",
+     "out": "b121"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "how do you *ask*?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "top",
+     "at": "b121:ask",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "h1",
+     "text": "rule 1 · ask in *person*",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "slam",
+     "at": "b122:person",
+     "out": "b140"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 560,
+     "y": 540,
+     "size": 200,
+     "from": "pop",
+     "at": "b123:text",
+     "out": "b126"
+    },
+    {
+     "t": "strike",
+     "id": "k1",
+     "x": 560,
+     "y": 540,
+     "w": 240,
+     "at": "b123:text",
+     "out": "b126"
+    },
+    {
+     "t": "icon",
+     "id": "em",
+     "name": "letter",
+     "x": 960,
+     "y": 540,
+     "size": 200,
+     "from": "pop",
+     "at": "b124:email",
+     "out": "b126"
+    },
+    {
+     "t": "strike",
+     "id": "k2",
+     "x": 960,
+     "y": 540,
+     "w": 240,
+     "at": "b124:email",
+     "out": "b126"
+    },
+    {
+     "t": "stick",
+     "id": "wk",
+     "x": 1380,
+     "y": 680,
+     "from": "right",
+     "at": "b125:walk",
+     "poses": [
+      [
+       "point",
+       "b125:walk"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b125:walk"
+      ]
+     ],
+     "out": "b126",
+     "flip": true
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "STUDY · 2017",
+     "text": "Email vs face to face",
+     "sub": "Roghanizad & Bohns",
+     "x": 960,
+     "y": 380,
+     "from": "top",
+     "at": "b126:twenty",
+     "out": "b127"
+    },
+    {
+     "t": "icon",
+     "id": "em2",
+     "name": "letter",
+     "x": 640,
+     "y": 540,
+     "size": 200,
+     "from": "left",
+     "at": "b127:email",
+     "out": "b130"
+    },
+    {
+     "t": "stick",
+     "id": "ff",
+     "x": 1320,
+     "y": 680,
+     "from": "right",
+     "at": "b128:face",
+     "poses": [
+      [
+       "give",
+       "b128:face"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b128:face"
+      ]
+     ],
+     "out": "b130",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "expected: about the *same*",
+     "x": 960,
+     "y": 1000,
+     "size": 56,
+     "from": "bottom",
+     "at": "b129:same",
+     "out": "b130"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "!34 TIMES! more effective",
+     "x": 960,
+     "y": 340,
+     "size": 72,
+     "from": "slam",
+     "at": "b130:thirty",
+     "out": "b131",
+     "hero": true
+    },
+    {
+     "t": "bar",
+     "id": "e",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 14,
+     "color": "muted",
+     "label": "email",
+     "from": "draw",
+     "at": "b130:requests",
+     "out": "b131"
+    },
+    {
+     "t": "bar",
+     "id": "p",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 420,
+     "color": "accent",
+     "label": "in person",
+     "from": "draw",
+     "at": "b130:thirty",
+     "out": "b131"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "the twist inside the *twist*",
+     "x": 960,
+     "y": 480,
+     "size": 80,
+     "from": "top",
+     "at": "b131:twist",
+     "out": "b132"
+    },
+    {
+     "t": "icon",
+     "id": "em3",
+     "name": "letter",
+     "x": 960,
+     "y": 480,
+     "size": 200,
+     "from": "pop",
+     "at": "b132:email",
+     "out": "b134"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "by email, they *overestimate* the yeses",
+     "x": 960,
+     "y": 780,
+     "size": 56,
+     "from": "bottom",
+     "at": "b133:overestimate",
+     "out": "b134"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "video & phone: in *between*",
+     "x": 960,
+     "y": 480,
+     "size": 64,
+     "from": "top",
+     "at": "b134:between",
+     "out": "b135"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "the thing I *promised*",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "top",
+     "at": "b135:promised",
+     "out": "b136"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "not the perfect wording",
+     "x": 960,
+     "y": 400,
+     "size": 72,
+     "from": "top",
+     "at": "b136:wording",
+     "out": "b138",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "SHOWING UP",
+     "x": 960,
+     "y": 560,
+     "size": 120,
+     "from": "slam",
+     "at": "b137:showing",
+     "out": "b138",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "em4",
+     "name": "letter",
+     "x": 640,
+     "y": 540,
+     "size": 200,
+     "from": "left",
+     "at": "b138:email",
+     "out": "b140"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "easy to *ignore*",
+     "x": 640,
+     "y": 800,
+     "size": 56,
+     "from": "bottom",
+     "at": "b138:ignore",
+     "out": "b140"
+    },
+    {
+     "t": "stick",
+     "id": "pr",
+     "x": 1320,
+     "y": 680,
+     "from": "right",
+     "at": "b139:person",
+     "poses": [
+      [
+       "idle",
+       "b139:person"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b139:person"
+      ]
+     ],
+     "out": "b140",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "a person is !not!",
+     "x": 1320,
+     "y": 300,
+     "size": 56,
+     "from": "top",
+     "at": "b139:not",
+     "out": "b140"
+    },
+    {
+     "t": "text",
+     "id": "h2",
+     "text": "rule 2 · be *specific*",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "slam",
+     "at": "b140:specific",
+     "out": "b145"
+    },
+    {
+     "t": "bubble",
+     "id": "s1",
+     "text": "Could you look at this for 10 minutes on Friday?",
+     "x": 600,
+     "y": 420,
+     "size": 380,
+     "from": "pop",
+     "at": "b141:look",
+     "fontSize": 38,
+     "out": "b145"
+    },
+    {
+     "t": "text",
+     "id": "s1l",
+     "text": "easy to say *yes*",
+     "x": 600,
+     "y": 800,
+     "size": 56,
+     "from": "bottom",
+     "at": "b142:yes",
+     "out": "b145"
+    },
+    {
+     "t": "bubble",
+     "id": "s2",
+     "text": "Can you help me sometime?",
+     "x": 1320,
+     "y": 420,
+     "size": 320,
+     "from": "pop",
+     "at": "b143:help",
+     "fontSize": 42,
+     "out": "b145"
+    },
+    {
+     "t": "text",
+     "id": "s2l",
+     "text": "easy to put *off*",
+     "x": 1320,
+     "y": 800,
+     "size": 56,
+     "from": "bottom",
+     "at": "b144:off",
+     "out": "b145"
+    },
+    {
+     "t": "text",
+     "id": "h3",
+     "text": "rule 3 · ask for *advice*",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "slam",
+     "at": "b145:advice",
+     "out": "b149"
+    },
+    {
+     "t": "bubble",
+     "id": "ad",
+     "text": "What would you do?",
+     "x": 960,
+     "y": 420,
+     "size": 340,
+     "from": "pop",
+     "at": "b146:what",
+     "fontSize": 46,
+     "out": "b149"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "makes them the *expert*",
+     "x": 960,
+     "y": 680,
+     "size": 64,
+     "from": "bottom",
+     "at": "b147:expert",
+     "out": "b149"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "they think *more* of you",
+     "x": 960,
+     "y": 800,
+     "size": 56,
+     "from": "bottom",
+     "at": "b148:more",
+     "out": "b149"
+    },
+    {
+     "t": "text",
+     "id": "h4",
+     "text": "rule 4 · make “no” *easy*",
+     "x": 960,
+     "y": 180,
+     "size": 64,
+     "from": "slam",
+     "at": "b149:easy"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "saying no is *hard*",
+     "x": 960,
+     "y": 360,
+     "size": 64,
+     "from": "left",
+     "at": "b150:hard",
+     "out": "b152"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "give a real way *out*",
+     "x": 960,
+     "y": 480,
+     "size": 64,
+     "from": "right",
+     "at": "b151:out",
+     "out": "b152"
+    },
+    {
+     "t": "bubble",
+     "id": "nw",
+     "text": "No worries if you can't",
+     "x": 960,
+     "y": 420,
+     "size": 360,
+     "from": "pop",
+     "at": "b152:worries",
+     "fontSize": 46
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "pressure → *invitation*",
+     "x": 960,
+     "y": 680,
+     "size": 64,
+     "from": "bottom",
+     "at": "b152:invitation"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "the yeses will !mean it!",
+     "x": 960,
+     "y": 820,
+     "size": 64,
+     "from": "bottom",
+     "at": "b153:mean"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b154",
+     "say": "So here's the twist."
+    },
+    {
+     "id": "b155",
+     "say": "People who never ask for help, think they're protecting themselves."
+    },
+    {
+     "id": "b156",
+     "say": "From the no."
+    },
+    {
+     "id": "b157",
+     "say": "From being a burden."
+    },
+    {
+     "id": "b158",
+     "say": "From looking weak."
+    },
+    {
+     "id": "b159",
+     "say": "But the research says the no, is rarer than you think."
+    },
+    {
+     "id": "b160",
+     "say": "The burden is lighter than you think."
+    },
+    {
+     "id": "b161",
+     "say": "And the weakness is in your head, not theirs."
+    },
+    {
+     "id": "b162",
+     "say": "One of the most impressive people of his century, didn't win over his rival by being impressive."
+    },
+    {
+     "id": "b163",
+     "say": "He won him over, by asking to borrow a book."
+    },
+    {
+     "id": "b164",
+     "say": "Sometimes the strongest thing you can do, is let someone help you."
+    },
+    {
+     "id": "b165",
+     "say": "And the next time you're lost, just ask."
+    },
+    {
+     "id": "b166",
+     "say": "Odds are, the second person you stop, will walk you there."
+    },
+    {
+     "id": "b167",
+     "say": "So here's your challenge for this week."
+    },
+    {
+     "id": "b168",
+     "say": "Ask one person, for one small, specific thing."
+    },
+    {
+     "id": "b169",
+     "say": "In person."
+    },
+    {
+     "id": "b170",
+     "say": "Then come back and tell me what happened."
+    },
+    {
+     "id": "b171",
+     "say": "Are you the one who never asks, or the one who always helps?"
+    },
+    {
+     "id": "b172",
+     "say": "Tell me in the comments."
+    },
+    {
+     "id": "b173",
+     "say": "Which habit should we cover next?"
+    },
+    {
+     "id": "b174",
+     "say": "Drop it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the !twist!",
+     "x": 960,
+     "y": 480,
+     "size": 130,
+     "from": "slam",
+     "at": "b154:twist",
+     "out": "b155",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "they think they're *protecting* themselves",
+     "x": 960,
+     "y": 220,
+     "size": 60,
+     "from": "top",
+     "at": "b155:protecting",
+     "out": "b159"
+    },
+    {
+     "t": "text",
+     "id": "f1",
+     "text": "from the *no*",
+     "x": 960,
+     "y": 400,
+     "size": 64,
+     "from": "left",
+     "at": "b156:no",
+     "out": "b159"
+    },
+    {
+     "t": "text",
+     "id": "f2",
+     "text": "from being a *burden*",
+     "x": 960,
+     "y": 520,
+     "size": 64,
+     "from": "right",
+     "at": "b157:burden",
+     "out": "b159"
+    },
+    {
+     "t": "text",
+     "id": "f3",
+     "text": "from looking *weak*",
+     "x": 960,
+     "y": 640,
+     "size": 64,
+     "from": "left",
+     "at": "b158:weak",
+     "out": "b159"
+    },
+    {
+     "t": "text",
+     "id": "r1",
+     "text": "the no is *rarer*",
+     "x": 960,
+     "y": 360,
+     "size": 64,
+     "from": "top",
+     "at": "b159:rarer",
+     "out": "b162"
+    },
+    {
+     "t": "text",
+     "id": "r2",
+     "text": "the burden is *lighter*",
+     "x": 960,
+     "y": 480,
+     "size": 64,
+     "from": "top",
+     "at": "b160:lighter",
+     "out": "b162"
+    },
+    {
+     "t": "text",
+     "id": "r3",
+     "text": "the weakness: in !your head!",
+     "x": 960,
+     "y": 600,
+     "size": 64,
+     "from": "top",
+     "at": "b161:head",
+     "out": "b162"
+    },
+    {
+     "t": "stick",
+     "id": "fr",
+     "x": 720,
+     "y": 680,
+     "from": "left",
+     "at": "b162:impressive",
+     "poses": [
+      [
+       "happy",
+       "b162:impressive"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b162:impressive"
+      ]
+     ],
+     "out": "b164",
+     "hat": true
+    },
+    {
+     "t": "stick",
+     "id": "rv",
+     "x": 1200,
+     "y": 680,
+     "from": "right",
+     "at": "b162:rival",
+     "poses": [
+      [
+       "happy",
+       "b162:rival"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b162:rival"
+      ]
+     ],
+     "out": "b164",
+     "flip": true
+    },
+    {
+     "t": "icon",
+     "id": "bk",
+     "name": "book",
+     "x": 960,
+     "y": 380,
+     "size": 150,
+     "from": "pop",
+     "at": "b163:book",
+     "out": "b164"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "he won him over by *borrowing a book*",
+     "x": 960,
+     "y": 200,
+     "size": 56,
+     "from": "top",
+     "at": "b163:borrow",
+     "out": "b164"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "let someone !help you!",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "slam",
+     "at": "b164:help",
+     "out": "b165",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "lo",
+     "x": 600,
+     "y": 680,
+     "from": "left",
+     "at": "b165:lost",
+     "poses": [
+      [
+       "point",
+       "b165:ask"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b165:ask"
+      ]
+     ],
+     "out": "b167"
+    },
+    {
+     "t": "stick",
+     "id": "gd",
+     "x": 1320,
+     "y": 680,
+     "from": "right",
+     "at": "b166:second",
+     "poses": [
+      [
+       "happy",
+       "b166:second"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b166:second"
+      ]
+     ],
+     "out": "b167",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "just *ask*",
+     "x": 960,
+     "y": 220,
+     "size": 80,
+     "from": "top",
+     "at": "b165:ask",
+     "out": "b167"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "the *second* person will walk you there",
+     "x": 960,
+     "y": 1000,
+     "size": 52,
+     "from": "bottom",
+     "at": "b166:second",
+     "out": "b167"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "your *challenge* this week",
+     "x": 960,
+     "y": 220,
+     "size": 72,
+     "from": "top",
+     "at": "b167:challenge",
+     "out": "b171"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "one person · one small, specific thing",
+     "x": 960,
+     "y": 440,
+     "size": 56,
+     "from": "bottom",
+     "at": "b168:small",
+     "out": "b171"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "in !person!",
+     "x": 960,
+     "y": 580,
+     "size": 90,
+     "from": "slam",
+     "at": "b169:person",
+     "out": "b171"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "then tell me what *happened*",
+     "x": 960,
+     "y": 760,
+     "size": 56,
+     "from": "bottom",
+     "at": "b170:happened",
+     "out": "b171"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "never ask, or always *help*?",
+     "x": 960,
+     "y": 200,
+     "size": 72,
+     "from": "top",
+     "at": "b171:never"
+    },
+    {
+     "t": "icon",
+     "id": "pp",
+     "name": "people",
+     "x": 960,
+     "y": 480,
+     "size": 220,
+     "from": "pop",
+     "at": "b171:never"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "which habit *next*?",
+     "x": 960,
+     "y": 760,
+     "size": 80,
+     "from": "bottom",
+     "at": "b173:habit",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 880,
+     "size": 48,
+     "from": "bottom",
+     "at": "b174:comments",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}

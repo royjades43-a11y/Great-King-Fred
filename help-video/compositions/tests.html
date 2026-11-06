@@ -1,0 +1,224 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="tests" data-width="1920" data-height="1080">
+    <div id="tests-ch" class="clip el" data-start="0.2" data-duration="1.76" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:2"><div id="tests-ch-in" class="in"><div class="chap"><div class="chap-num">02</div><div class="chap-rule"></div><div class="txt" style="font-size:76px;font-weight:800;color:var(--ink)"><span id="tests-ch-w0" class="w">The</span> <span id="tests-ch-w1" class="w acc">experiments</span></div></div></div></div>
+    <div id="tests-c1" class="clip el" data-start="2.44" data-duration="5.158" data-track-index="2" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:3"><div id="tests-c1-in" class="in"><div class="card"><div class="card-k">STUDY · 1969</div><div class="card-t">Testing Franklin's idea</div><div class="card-s">Jecker &amp; Landy</div></div></div></div>
+    <div id="tests-mn" class="clip el" data-start="6.64" data-duration="8.168" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:1040px;z-index:4" data-layout-allow-overlap><div id="tests-mn-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M14 64 L186 64 L186 150 L14 150 Z"/><path class="s" pathLength="1" d="M24 160 L196 160 M34 172 L196 172"/><path class="s acc-s" pathLength="1" d="M118 86 Q100 76 86 86 Q76 98 100 107 Q124 115 114 128 Q100 138 80 128 M100 72 L100 142"/></svg></div></div></div>
+    <div id="tests-t1" class="clip el" data-start="5.8580000000000005" data-duration="1.74" data-track-index="4" style="position:absolute;left:0px;top:520px;width:1920px;height:560px;z-index:5"><div id="tests-t1-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="tests-t1-w0" class="w">win</span> <span id="tests-t1-w1" class="w">some</span> <span id="tests-t1-w2" class="w acc">money</span></div></div></div>
+    <div id="tests-bk" class="clip el" data-start="11.858" data-duration="2.95" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:600px;z-index:6" data-layout-allow-overlap><div id="tests-bk-in" class="in"><div class="ico bub" style="width:503.99999999999994px;height:360px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:46px">Could I have it back?</div></div></div></div>
+    <div id="tests-t2" class="clip el" data-start="13.117999999999999" data-duration="1.74" data-track-index="6" style="position:absolute;left:0px;top:560px;width:1920px;height:520px;z-index:7"><div id="tests-t2-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="tests-t2-w0" class="w">his</span> <span id="tests-t2-w1" class="w">own</span> <span id="tests-t2-w2" class="w acc">pocket</span></div></div></div>
+    <div id="tests-ga" class="clip el" data-start="15.298" data-duration="7.508" data-track-index="7" style="position:absolute;left:0px;top:280px;width:1200px;height:800px;z-index:8"><div id="tests-ga-in" class="in"><svg class="stick" id="tests-ga-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="tests-ga-aLu"><path class="s" d="M150 160 L150 255"/><g id="tests-ga-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="tests-ga-aRu"><path class="s" d="M150 160 L150 255"/><g id="tests-ga-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="tests-ga-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="tests-ga-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="tests-ga-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="tests-ga-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="tests-ga-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="tests-ga-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="tests-gb" class="clip el" data-start="17.978" data-duration="4.828" data-track-index="8" style="position:absolute;left:720px;top:280px;width:1200px;height:800px;z-index:9"><div id="tests-gb-in" class="in"><svg class="stick" id="tests-gb-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="tests-gb-aLu"><path class="s" d="M150 160 L150 255"/><g id="tests-gb-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="tests-gb-aRu"><path class="s" d="M150 160 L150 255"/><g id="tests-gb-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="tests-gb-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="tests-gb-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="tests-gb-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="tests-gb-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="tests-gb-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="tests-gb-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="tests-l1" class="clip el" data-start="16.838" data-duration="5.968" data-track-index="9" style="position:absolute;left:0px;top:0px;width:1200px;height:600px;z-index:10"><div id="tests-l1-in" class="in"><div class="txt" style="font-size:44px;font-weight:800;color:var(--ink)"><span id="tests-l1-w0" class="w">asked</span> <span id="tests-l1-w1" class="w">for</span> <span id="tests-l1-w2" class="w">a</span> <span id="tests-l1-w3" class="w">favor:</span> <span id="tests-l1-w4" class="w">liked</span> <span id="tests-l1-w5" class="w">him</span> <span id="tests-l1-w6" class="w acc">more</span></div></div></div>
+    <div id="tests-l2" class="clip el" data-start="17.978" data-duration="4.828" data-track-index="10" style="position:absolute;left:720px;top:0px;width:1200px;height:600px;z-index:11"><div id="tests-l2-in" class="in"><div class="txt" style="font-size:44px;font-weight:800;color:var(--muted)"><span id="tests-l2-w0" class="w">not</span> <span id="tests-l2-w1" class="w">asked</span></div></div></div>
+    <div id="tests-t3" class="clip el" data-start="21.046" data-duration="1.76" data-track-index="11" style="position:absolute;left:0px;top:920px;width:1920px;height:160px;z-index:12"><div id="tests-t3-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="tests-t3-w0" class="w">a</span> <span id="tests-t3-w1" class="w">favor</span> <span id="tests-t3-w2" class="w">pulled</span> <span id="tests-t3-w3" class="w">them</span> <span id="tests-t3-w4" class="w alm">closer</span></div></div></div>
+    <div id="tests-c2" class="clip el" data-start="25.186" data-duration="17.443" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:13"><div id="tests-c2-in" class="in"><div class="card"><div class="card-k">STUDY · 2008</div><div class="card-t">How many asks until a yes?</div><div class="card-s">Flynn &amp; Lake</div></div></div></div>
+    <div id="tests-t4" class="clip el" data-start="29.695" data-duration="2.64" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:14"><div id="tests-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="tests-t4-w0" class="w">how</span> <span id="tests-t4-w1" class="w">many</span> <span id="tests-t4-w2" class="w">strangers</span> <span id="tests-t4-w3" class="w">before</span> <span id="tests-t4-w4" class="w">a</span> <span id="tests-t4-w5" class="w acc">yes<span class="tail">?</span></span></div></div></div>
+    <div id="tests-t5" class="clip el" data-start="34.469" data-duration="2.34" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:800px;z-index:15"><div id="tests-t5-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="tests-t5-w0" class="w">“walk</span> <span id="tests-t5-w1" class="w">me</span> <span id="tests-t5-w2" class="w">to</span> <span id="tests-t5-w3" class="w">the</span> <span id="tests-t5-w4" class="w acc">gym<span class="tail">?”</span></span></div></div></div>
+    <div id="tests-g1" class="clip el" data-start="38.229" data-duration="4.35" data-track-index="15" style="position:absolute;left:0px;top:640px;width:1520px;height:440px;z-index:16"><div id="tests-g1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:350px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">guessed: ~7 asks</div></div></div></div>
+    <div id="tests-g2" class="clip el" data-start="41.569" data-duration="1.01" data-track-index="16" style="position:absolute;left:400px;top:640px;width:1520px;height:440px;z-index:17"><div id="tests-g2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:115px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">reality: ~2</div></div></div></div>
+    <div id="tests-t6" class="clip el" data-start="42.749" data-duration="10.5" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:18"><div id="tests-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="tests-t6-w0" class="w">raising</span> <span id="tests-t6-w1" class="w">money</span> <span id="tests-t6-w2" class="w">for</span> <span id="tests-t6-w3" class="w acc">charity</span></div></div></div>
+    <div id="tests-f1" class="clip el" data-start="47.369" data-duration="5.83" data-track-index="18" style="position:absolute;left:0px;top:640px;width:1520px;height:440px;z-index:19"><div id="tests-f1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:360px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">expected: 210 asks</div></div></div></div>
+    <div id="tests-f2" class="clip el" data-start="51.349" data-duration="1.85" data-track-index="19" style="position:absolute;left:400px;top:640px;width:1520px;height:440px;z-index:20"><div id="tests-f2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:210px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">needed: 122</div></div></div></div>
+    <div id="tests-t7" class="clip el" data-start="54.569" data-duration="7.841" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:21"><div id="tests-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="tests-t7-w0" class="w">14,000+</span> <span id="tests-t7-w1" class="w">strangers</span></div></div></div>
+    <div id="tests-t8" class="clip el" data-start="59.21" data-duration="2.34" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:22"><div id="tests-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="tests-t8-w0" class="w">yeses</span> <span id="tests-t8-w1" class="w">underestimated</span> <span id="tests-t8-w2" class="w">by</span> <span id="tests-t8-w3" class="w">about</span> <span id="tests-t8-w4" class="w acc">half</span></div></div></div>
+    <div id="tests-t9" class="clip el" data-start="61.45" data-duration="0.91" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:23"><div id="tests-t9-in" class="in"><div class="txt hero" style="font-size:170px;font-weight:800;color:var(--ink)"><span id="tests-t9-w0" class="w">HALF</span></div></div></div>
+    <div id="tests-t10" class="clip el" data-start="62.59" data-duration="5.889" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:840px;z-index:24"><div id="tests-t10-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="tests-t10-w0" class="w">we</span> <span id="tests-t10-w1" class="w">expect</span> <span id="tests-t10-w2" class="w acc">no</span></div></div></div>
+    <div id="tests-t11" class="clip el" data-start="66.739" data-duration="1.74" data-track-index="24" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:25"><div id="tests-t11-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="tests-t11-w0" class="w">it's</span> <span id="tests-t11-w1" class="w">mostly</span> <span id="tests-t11-w2" class="w alm">yes</span></div></div></div>
+    <div id="tests-t12" class="clip el" data-start="68.679" data-duration="1.74" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:26"><div id="tests-t12-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="tests-t12-w0" class="w">it</span> <span id="tests-t12-w1" class="w">goes</span> <span id="tests-t12-w2" class="w acc">further</span></div></div></div>
+    <div id="tests-t13" class="clip el" data-start="72.079" data-duration="6.96" data-track-index="26" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:27"><div id="tests-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="tests-t13-w0" class="w">something</span> <span id="tests-t13-w1" class="w">a</span> <span id="tests-t13-w2" class="w">little</span> <span id="tests-t13-w3" class="w">bit</span> <span id="tests-t13-w4" class="w acc">wrong</span></div></div></div>
+    <div id="tests-lib" class="clip el" data-start="77.619" data-duration="5.26" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1520px;height:1040px;z-index:28" data-layout-allow-overlap><div id="tests-lib-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 52 Q60 32 18 46 L18 168 Q60 154 100 174 Q140 154 182 168 L182 46 Q140 32 100 52 Z"/><path class="s" pathLength="1" d="M100 52 L100 174"/><path class="s acc-s" pathLength="1" d="M40 80 L80 86 M40 108 L80 114 M120 86 L160 80 M120 114 L160 108"/></svg></div></div></div>
+    <div id="tests-pn" class="clip el" data-start="76.739" data-duration="6.14" data-track-index="28" style="position:absolute;left:400px;top:0px;width:1520px;height:1040px;z-index:29" data-layout-allow-overlap><div id="tests-pn-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M150 24 L176 50 L76 150 L42 160 L52 126 Z"/><path class="s" pathLength="1" d="M136 38 L162 64"/><path class="s acc-s" pathLength="1" d="M52 126 L76 150"/></svg></div></div></div>
+    <div id="tests-t14" class="clip el" data-start="75.699" data-duration="7.18" data-track-index="29" style="position:absolute;left:0px;top:560px;width:1920px;height:520px;z-index:30"><div id="tests-t14-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="tests-t14-w0" class="w">write</span> <span id="tests-t14-w1" class="w alm">PICKLE</span> <span id="tests-t14-w2" class="w">in</span> <span id="tests-t14-w3" class="w">a</span> <span id="tests-t14-w4" class="w">library</span> <span id="tests-t14-w5" class="w">book</span></div></div></div>
+    <div id="tests-t15" class="clip el" data-start="80.839" data-duration="2.04" data-track-index="30" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:31"><div id="tests-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="tests-t15-w0" class="w">more</span> <span id="tests-t15-w1" class="w">agreed</span> <span id="tests-t15-w2" class="w">than</span> <span id="tests-t15-w3" class="w acc">expected</span></div></div></div>
+    <div id="tests-dr" class="clip el" data-start="82.939" data-duration="4.37" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:32" data-layout-allow-overlap><div id="tests-dr-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M50 20 L150 20 L150 186 L50 186 Z"/><path class="s" pathLength="1" d="M126 104 L126 112"/></svg></div></div></div>
+    <div id="tests-t16" class="clip el" data-start="85.019" data-duration="2.34" data-track-index="32" style="position:absolute;left:0px;top:520px;width:1920px;height:560px;z-index:33"><div id="tests-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="tests-t16-w0" class="w">they'll</span> <span id="tests-t16-w1" class="w">probably</span> <span id="tests-t16-w2" class="w">hold</span> <span id="tests-t16-w3" class="w">a</span> <span id="tests-t16-w4" class="w acc">door</span></div></div></div>
+    <div id="tests-t17" class="clip el" data-start="87.259" data-duration="2.423" data-track-index="33" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:34"><div id="tests-t17-in" class="in"><div class="txt" style="font-size:72px;font-weight:800;color:var(--ink)"><span id="tests-t17-w0" class="w">so</span> <span id="tests-t17-w1" class="w">why</span> <span id="tests-t17-w2" class="w">are</span> <span id="tests-t17-w3" class="w">we</span> <span id="tests-t17-w4" class="w">so</span> <span id="tests-t17-w5" class="w">sure</span> <span id="tests-t17-w6" class="w">they</span> <span id="tests-t17-w7" class="w acc">won't<span class="tail">?</span></span></div></div></div>
+    <div id="tests-br" class="clip el" data-start="91.502" data-duration="3.81" data-track-index="34" style="position:absolute;left:0px;top:0px;width:1920px;height:920px;z-index:35" data-layout-allow-overlap><div id="tests-br-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 40 Q70 18 50 44 Q22 50 28 84 Q12 108 34 130 Q36 162 70 162 Q88 182 100 160 Q112 182 130 162 Q164 162 166 130 Q188 108 172 84 Q178 50 150 44 Q130 18 100 40 Z"/><path class="s" pathLength="1" d="M100 40 L100 160 M60 80 Q80 90 70 110 M140 80 Q120 90 130 110"/></svg></div></div></div>
+    <div id="tests-t18" class="clip el" data-start="92.582" data-duration="2.78" data-track-index="35" style="position:absolute;left:0px;top:440px;width:1920px;height:640px;z-index:36"><div id="tests-t18-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="tests-t18-w0" class="w">three</span> <span id="tests-t18-w1" class="w acc">predictions</span></div></div></div>
+    <div id="tests-t19" class="clip el" data-start="93.92200000000001" data-duration="1.39" data-track-index="36" style="position:absolute;left:0px;top:680px;width:1920px;height:400px;z-index:37"><div id="tests-t19-in" class="in"><div class="txt hero" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="tests-t19-w0" class="w">all</span> <span id="tests-t19-w1" class="w alm">wrong</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"tests-ch","t":"chapter","from":"left","exit":null,"in":0.2,"out":1.62,"outDur":0.3,"words":[0.3,0.4]},{"id":"tests-c1","t":"card","from":"top","exit":null,"in":2.44,"out":7.258,"outDur":0.3},{"id":"tests-mn","t":"icon","from":"pop","exit":null,"in":6.64,"out":14.517999999999999,"outDur":0.25},{"id":"tests-t1","t":"text","from":"bottom","exit":null,"in":5.8580000000000005,"out":7.258,"outDur":0.3,"words":[6.42,6.42,6.64]},{"id":"tests-bk","t":"bubble","from":"pop","exit":null,"in":11.858,"out":14.517999999999999,"outDur":0.25},{"id":"tests-t2","t":"text","from":"bottom","exit":null,"in":13.117999999999999,"out":14.517999999999999,"outDur":0.3,"words":[13.458,13.558,13.738]},{"id":"tests-ga","t":"stick","from":"left","exit":null,"in":15.298,"out":22.466,"outDur":0.3,"poses":[["happy",15.298]],"mouth":[["smile",15.298]]},{"id":"tests-gb","t":"stick","from":"right","exit":null,"in":17.978,"out":22.466,"outDur":0.3,"poses":[["idle",17.978]],"mouth":[["neutral",17.978]]},{"id":"tests-l1","t":"text","from":"top","exit":null,"in":16.838,"out":22.466,"outDur":0.3,"words":[15.298,16.598,16.598,16.598,16.598,16.598,16.838]},{"id":"tests-l2","t":"text","from":"top","exit":null,"in":17.978,"out":22.466,"outDur":0.3,"words":[15.298,15.298]},{"id":"tests-t3","t":"text","from":"bottom","exit":null,"in":21.046,"out":22.466,"outDur":0.3,"words":[21.106,21.106,21.106,21.386,21.566]},{"id":"tests-c2","t":"card","from":"top","exit":null,"in":25.186,"out":42.289,"outDur":0.3},{"id":"tests-t4","t":"text","from":"top","exit":null,"in":29.695,"out":31.995,"outDur":0.3,"words":[27.615,27.835,28.035,30.055,31.055,31.055]},{"id":"tests-t5","t":"text","from":"top","exit":null,"in":34.469,"out":36.469,"outDur":0.3,"words":[34.755,35.175,35.175,35.295,35.715]},{"id":"tests-g1","t":"bar","from":"draw","exit":null,"in":38.229,"out":42.289,"outDur":0.25},{"id":"tests-g2","t":"bar","from":"draw","exit":null,"in":41.569,"out":42.289,"outDur":0.25},{"id":"tests-t6","t":"text","from":"top","exit":null,"in":42.749,"out":52.909,"outDur":0.3,"words":[44.469,44.469,44.809,44.989]},{"id":"tests-f1","t":"bar","from":"draw","exit":null,"in":47.369,"out":52.909,"outDur":0.25},{"id":"tests-f2","t":"bar","from":"draw","exit":null,"in":51.349,"out":52.909,"outDur":0.25},{"id":"tests-t7","t":"text","from":"top","exit":null,"in":54.569,"out":62.07,"outDur":0.3,"words":[55.889,55.889]},{"id":"tests-t8","t":"text","from":"bottom","exit":null,"in":59.21,"out":61.21,"outDur":0.3,"words":[57.27,57.27,59.63,60.01,60.31]},{"id":"tests-t9","t":"text","from":"slam","exit":null,"in":61.45,"out":62.07,"outDur":0.25,"words":[61.45]},{"id":"tests-t10","t":"text","from":"left","exit":null,"in":62.59,"out":68.13900000000001,"outDur":0.3,"words":[62.31,64.67,64.67]},{"id":"tests-t11","t":"text","from":"right","exit":null,"in":66.739,"out":68.13900000000001,"outDur":0.3,"words":[65.55,65.81,67.39]},{"id":"tests-t12","t":"text","from":"top","exit":null,"in":68.679,"out":70.07900000000001,"outDur":0.3,"words":[68.519,68.599,68.759]},{"id":"tests-t13","t":"text","from":"top","exit":null,"in":72.079,"out":78.699,"outDur":0.3,"words":[73.019,73.419,73.699,73.979,74.179]},{"id":"tests-lib","t":"icon","from":"left","exit":null,"in":77.619,"out":82.539,"outDur":0.3},{"id":"tests-pn","t":"icon","from":"right","exit":null,"in":76.739,"out":82.539,"outDur":0.3},{"id":"tests-t14","t":"text","from":"bottom","exit":null,"in":75.699,"out":82.539,"outDur":0.3,"words":[74.999,75.699,76.239,77.519,77.619,78.019]},{"id":"tests-t15","t":"text","from":"top","exit":null,"in":80.839,"out":82.539,"outDur":0.3,"words":[79.979,80.539,80.959,81.759]},{"id":"tests-dr","t":"icon","from":"pop","exit":null,"in":82.939,"out":87.019,"outDur":0.25},{"id":"tests-t16","t":"text","from":"bottom","exit":null,"in":85.019,"out":87.019,"outDur":0.3,"words":[85.499,85.679,86.179,86.439,86.559]},{"id":"tests-t17","t":"text","from":"top","exit":null,"in":87.259,"out":89.342,"outDur":0.3,"words":[87.259,87.499,87.759,87.879,87.979,88.219,88.519,88.699]},{"id":"tests-br","t":"icon","from":"pop","exit":null,"in":91.502,"out":95.022,"outDur":0.25},{"id":"tests-t18","t":"text","from":"bottom","exit":null,"in":92.582,"out":95.022,"outDur":0.3,"words":[92.142,92.582]},{"id":"tests-t19","t":"text","from":"slam","exit":null,"in":93.92200000000001,"out":95.022,"outDur":0.25,"words":[93.902,94.922]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["tests"] = tl;
+    })();
+  </script>
+</template>
