@@ -1,14 +1,15 @@
 # Video 9: The Psychology of People Who Fall in Love Too Fast
 
 **Title:** The Psychology of People Who Fall in Love Too Fast
-**Length:** about 8:30 at the channel's pace; over 8:00 so mid-roll ads are possible
+**Length:** about 9:00 at the channel's pace; over 8:00 so mid-roll ads are possible
 
 **How it differs from competitors:** most videos on this topic either warn about "red flags" or tell people
 who fall fast that something is wrong with them. This one walks through what researchers actually measured
 (a shaky bridge, brain scans, blood tests, a newspaper love quiz) and lands kindly: falling fast isn't a flaw,
 but the rush isn't proof either. Make sure it's them, not the bridge.
 
-**Engagement design:** opens on the viewer (three dates in, already naming the dog); an open loop ("the one
+**Engagement design:** talks straight to the viewer throughout ("but for you", "if that's you", "be honest",
+"now imagine you're halfway across"); opens on the viewer (three dates in, already naming the dog); an open loop ("the one
 question that tells love apart from something else") paid off in rule one and the ending; a running thread
 (the bridge) that opens, returns in the middle ("sometimes the bridge is the person") and closes the video;
 a counter-intuitive fact (men say "I love you" first); every section ends on a hook.
@@ -20,41 +21,45 @@ the way they are spoken, so the voiceover text can be pasted straight into Eleve
 
 ## [0:00–0:40] HOOK
 
-Three dates in, you already know.
+Three dates in, and you already know.
 *[a stick figure with hearts for eyes; three dates ticked off on a calendar]*
 This one is different.
 You've pictured the holidays together.
-You've maybe even named the dog.
+Maybe you've even named the dog.
 *[a thought bubble: a house, a dog, a name tag]*
 Your friends tell you to slow down.
-But it doesn't feel fast.
+But for you, it doesn't feel fast.
 It feels like fate.
+If that's you, you're not alone.
 It happens to millions of people.
-And for some, it happens again and again.
+And for some of us, it happens again and again.
 Sound familiar?
 Psychologists have studied that rush for decades.
 With bridges, brain scanners and blood tests.
-And what they found is a little uncomfortable.
-The spark you feel might not be telling you what you think.
-By the end of this video, you'll know why some people fall so fast.
-And the one question that tells love apart from something else.
+And what they found might feel a little uncomfortable.
+That spark you feel might not be telling you what you think.
+By the end of this video, you'll know why you might fall so fast.
+And the one question that can tell love apart from something else.
 Let's start on a very wobbly bridge.
 *[a rope bridge swaying over a canyon]*
 
-## [0:40–2:05] THE SHAKY BRIDGE
+## [0:40–2:15] THE SHAKY BRIDGE
 
 In nineteen seventy-four, two psychologists in Canada ran a famous experiment about attraction.
 Their names were Donald Dutton and Arthur Aron.
-Their setting was the Capilano Suspension Bridge, near Vancouver.
-It's a narrow walkway of wooden boards and cables.
+Picture the setting.
+The Capilano Suspension Bridge, near Vancouver.
+A narrow walkway of wooden boards and cables.
 It hangs about seventy meters above rocks and rapids.
 *[label: CAPILANO SUSPENSION BRIDGE · ~70 m high]*
-And it sways when you walk on it.
-Men crossing the bridge were stopped by an attractive young woman.
-She asked them to fill in a short questionnaire.
-Then she tore off a corner of the page and wrote down her phone number.
+And it sways with every step you take.
+Now imagine you're halfway across, gripping the rope.
+*[a stick figure clutching the rope, halfway across]*
+An attractive young woman stops you.
+She asks you to fill in a short questionnaire.
+Then she tears off a corner of the page and writes down her phone number.
 *[a scrap of paper with a phone number]*
-"Call me if you want to talk more," she said.
+"Call me if you want to talk more," she says.
 The researchers repeated the experiment on a second bridge.
 A low, solid one, just a few meters above a small stream.
 Then they waited to see who called.
@@ -67,7 +72,7 @@ Same questions.
 Same phone number.
 The only difference was the bridge.
 And when the interviewer was a man, the bridge made almost no difference at all.
-Here's what the researchers think happened.
+So what happened?
 On the shaky bridge, the men's hearts were already pounding.
 Their bodies were full of fear.
 And when an attractive woman appeared, their brains made a mistake.
@@ -75,12 +80,13 @@ They read the fear as attraction.
 *[a pounding heart icon turning from 'fear' to 'attraction']*
 Psychologists call it misattribution of arousal.
 In other words, the bridge did half the flirting.
-So what does a wobbly bridge have to do with your love life?
+Now, you're probably not dating on a rope bridge.
+So what does any of this have to do with your love life?
 
-## [2:05–3:25] YOUR BRAIN IN LOVE
+## [2:15–3:40] YOUR BRAIN IN LOVE
 
 Quite a lot.
-Because falling in love sets off the same kind of storm inside you.
+Because when you fall in love, the same kind of storm starts inside you.
 In twenty oh five, a team including Arthur Aron and anthropologist Helen Fisher scanned the brains of seventeen people.
 *[label: STUDY · Aron, Fisher et al., 2005 · 17 people; a brain with one area glowing red]*
 All of them were intensely in love.
@@ -94,19 +100,20 @@ Another study, in Italy, measured something in people's blood.
 *[label: STUDY · Marazziti et al., 1999; a test tube]*
 Twenty people who'd fallen in love in the last six months were compared with patients with obsessive-compulsive disorder.
 On one marker of serotonin, the two groups looked almost the same.
-That might explain why you can't stop thinking about them.
+So if you can't stop thinking about them, that's not weakness.
+That's chemistry.
 It's why new love can make you lose sleep, skip meals, and check your phone again and again.
 When some of the lovers were tested again about a year later, the levels had returned to normal.
 The psychologist Dorothy Tennov had a name for this early, obsessive stage.
 Limerence.
 *[label: LIMERENCE · Dorothy Tennov, 1979 · ~18 months to 3 years]*
 From her interviews, she estimated it usually lasts from about eighteen months to three years.
-So that rush is real.
+So that rush you feel is real.
 It's also temporary.
 Which raises a question.
-Why do some people fall into it so much faster than others?
+Why do some of us fall into it so much faster than others?
 
-## [3:25–5:20] THE LOVE QUIZ
+## [3:40–5:45] THE LOVE QUIZ
 
 In nineteen eighty-seven, psychologists Cindy Hazan and Phillip Shaver printed a "love quiz" in a local newspaper.
 Six hundred and twenty people sent in their answers.
@@ -122,6 +129,7 @@ Emotional highs and lows.
 Extreme attraction.
 A desperate wish for the feeling to be returned.
 And jealousy.
+If you recognise yourself in that list, be gentle with yourself.
 For anxious people, love doesn't arrive slowly.
 It hits like a wave.
 Psychiatrist Amir Levine and psychologist Rachel Heller go one step further.
@@ -133,22 +141,27 @@ Remember the bridge?
 Sometimes the bridge is the person.
 *[the bridge from before, with a stick figure standing in its place]*
 Here's the irony.
-A calm, kind partner can feel boring at first.
+The calm, kind person who texts back on time can feel boring at first.
 Not because something is missing.
-Because nothing is setting off the alarm.
+Because nothing is setting off your alarm.
+Be honest.
 Have you ever mistaken a pounding heart for a perfect match?
 The good news is that these styles aren't fixed.
 Many people become more secure over time, often with a steady partner.
+You can too.
 And here's one more surprise.
 Most people believe women fall in love first.
 In twenty eleven, a team led by Joshua Ackerman found the opposite.
 *[label: STUDY · Ackerman et al., 2011; a speech bubble 'I love you' over the man]*
 Men thought about saying "I love you" about six weeks earlier than women.
 And in most couples, the man said it first.
+So if you've ever said it too soon, you're in good company.
 
-## [5:20–6:05] LOVE AT FIRST SIGHT
+## [5:45–6:35] LOVE AT FIRST SIGHT
 
 So what about love at first sight?
+Maybe you've felt it.
+One look across a room, and that was that.
 In twenty seventeen, a team in the Netherlands studied people who said they'd felt it.
 *[label: STUDY · Zsok et al., 2017]*
 They found it wasn't marked by intimacy, passion or commitment.
@@ -161,10 +174,10 @@ Before speed dating, people answered more than a hundred questions about themsel
 The computer still couldn't predict who would want whom.
 Chemistry is real.
 But you can't find it on paper.
-And three dates is not much more than paper.
+And honestly, three dates isn't much more than paper.
 But it wasn't over yet.
 
-## [6:05–6:55] WHAT THE NUMBERS SAY
+## [6:35–7:30] WHAT THE NUMBERS SAY
 
 Because there's a cost to falling too fast, and it shows up in the numbers.
 In twenty fifteen, economists Andrew Francis-Tan and Hugo Mialon surveyed about three thousand people who had been married.
@@ -172,20 +185,20 @@ In twenty fifteen, economists Andrew Francis-Tan and Hugo Mialon surveyed about 
 Couples who dated for one to two years before getting engaged did better.
 They were about twenty percent less likely to divorce than couples who dated for under a year.
 Couples who dated for three years or more were about thirty-nine percent less likely.
-That doesn't prove that waiting causes a better marriage.
+Now, that doesn't prove that waiting causes a better marriage.
 Couples who wait may be different in other ways.
-But time does one thing nothing else can.
+But time gives you something nothing else can.
 It lets the rush wear off, so you can see who's actually there.
-Remember Tennov's estimate.
+Remember Tennov's estimate?
 Eighteen months to three years.
 That's roughly how long the rush lasts, and roughly how long the safer couples waited.
 So how do you fall in love at the right speed?
 
-## [6:55–7:50] FIVE RULES
+## [7:30–8:25] FIVE RULES
 
 Rule one: do the bridge check.
 *[a checklist builds, one rule per line]*
-When your heart is racing, ask one question.
+Next time your heart is racing, ask yourself one question.
 Is it them, or is it the uncertainty?
 If you feel calm and safe, that's a good sign, not a boring one.
 
@@ -198,23 +211,25 @@ You don't really know someone until you've seen them on a bad day.
 
 Rule three: keep your own life.
 Your friends, your hobbies, your routines.
-Falling fast often means letting everything else fall away.
+When you fall fast, it's easy to let everything else fall away.
+Don't.
 
-Rule four: let actions catch up with feelings.
+Rule four: let their actions catch up with your feelings.
 Words are fast.
 Consistency is slow.
-Watch what someone does, week after week.
+Watch what they do, week after week.
 
 And rule five: give it time.
 The rush can last a year or more.
 Let some of it settle before you make big decisions.
 
-## [7:50–8:30] PUNCHLINE & CTA
+## [8:25–9:00] PUNCHLINE & CTA
 
 So here's the twist.
 Falling fast isn't a flaw.
-It often comes from a big heart, and a brain doing exactly what it evolved to do.
-People who fall fast love with their whole chest.
+If you fall fast, it often means you have a big heart.
+And a brain doing exactly what it evolved to do.
+You love with your whole chest.
 That's worth keeping.
 Just add a little patience.
 The problem isn't how fast you fall.
@@ -228,6 +243,7 @@ Make sure it's them, not the bridge.
 So here's your challenge for this week.
 Think about the last time you fell for someone fast.
 Ask yourself honestly: was it them, or the bridge?
+No judgement here.
 Then come back and tell me what you found.
 
 Are you someone who falls fast, or someone who takes their time?
