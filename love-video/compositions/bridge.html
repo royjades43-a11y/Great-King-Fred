@@ -1,0 +1,287 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="bridge" data-width="1920" data-height="1080">
+    <div id="bridge-c1" class="clip el" data-start="1.98" data-duration="7.42" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:2"><div id="bridge-c1-in" class="in"><div class="card"><div class="card-k">1974 · CANADA</div><div class="card-t">Dutton &amp; Aron</div><div class="card-s">an experiment about attraction</div></div></div></div>
+    <div id="bridge-br" class="clip el" data-start="9.3" data-duration="28.226" data-track-index="2" style="position:absolute;left:0px;top:200px;width:1920px;height:880px;z-index:3" data-layout-allow-overlap><div id="bridge-br-in" class="in"><div class="ico" style="width:1500px;height:1500px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s mid" pathLength="1" d="M0 92 L22 92 L34 168 L0 168"/><path class="s mid" pathLength="1" d="M200 92 L178 92 L166 168 L200 168"/><path class="s mid" pathLength="1" d="M22 92 Q100 118 178 92"/><path class="s thin" pathLength="1" d="M22 70 Q100 100 178 70"/><path class="s mid" pathLength="1" d="M22 92 L22 64 M178 92 L178 64"/><path class="s thin" pathLength="1" d="M38 77 L38 97 M54 83 L54 102 M70 87 L70 106 M86 90 L86 108 M100 91 L100 109 M114 90 L114 108 M130 87 L130 106 M146 83 L146 102 M162 77 L162 97"/><path class="s thin acc-s" pathLength="1" d="M40 156 Q52 150 64 156 T88 156 T112 156 T136 156 T160 156"/></svg></div></div></div>
+    <div id="bridge-t1" class="clip el" data-start="10.596" data-duration="6.04" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:4"><div id="bridge-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t1-w0" class="w">the</span> <span id="bridge-t1-w1" class="w">Capilano</span> <span id="bridge-t1-w2" class="w">Suspension</span> <span id="bridge-t1-w3" class="w acc">Bridge</span></div></div></div>
+    <div id="bridge-t2" class="clip el" data-start="17.236" data-duration="5.637" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:5"><div id="bridge-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t2-w0" class="w">~70</span> <span id="bridge-t2-w1" class="w">m</span> <span id="bridge-t2-w2" class="w">above</span> <span id="bridge-t2-w3" class="w">the</span> <span id="bridge-t2-w4" class="w acc">rapids</span></div></div></div>
+    <div id="bridge-you" class="clip el" data-start="22.953" data-duration="14.623" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1040px;height:1010px;z-index:6"><div id="bridge-you-in" class="in"><svg class="stick" id="bridge-you-svg" width="165" height="286" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="bridge-you-aLu"><path class="s" d="M150 160 L150 255"/><g id="bridge-you-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="bridge-you-aRu"><path class="s" d="M150 160 L150 255"/><g id="bridge-you-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="bridge-you-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="bridge-you-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="bridge-you-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="bridge-you-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="bridge-you-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="bridge-you-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="bridge-t3" class="clip el" data-start="22.953" data-duration="2.78" data-track-index="6" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:7"><div id="bridge-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t3-w0" class="w">imagine</span> <span id="bridge-t3-w1" class="w">you're</span> <span id="bridge-t3-w2" class="w acc">halfway</span> <span id="bridge-t3-w3" class="w">across</span></div></div></div>
+    <div id="bridge-wo" class="clip el" data-start="26.933" data-duration="10.643" data-track-index="7" style="position:absolute;left:520px;top:0px;width:1400px;height:1030px;z-index:8"><div id="bridge-wo-in" class="in"><svg class="stick" id="bridge-wo-svg" width="165" height="286" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="bridge-wo-aLu"><path class="s" d="M150 160 L150 255"/><g id="bridge-wo-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="bridge-wo-aRu"><path class="s" d="M150 160 L150 255"/><g id="bridge-wo-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="bridge-wo-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="bridge-wo-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="bridge-wo-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="bridge-wo-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="bridge-wo-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="bridge-wo-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="bridge-sc" class="clip el" data-start="34.156" data-duration="3.37" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1800px;height:840px;z-index:9" data-layout-allow-overlap><div id="bridge-sc-in" class="in"><div class="ico" style="width:90px;height:90px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 50 L64 42 L86 52 L110 40 L134 50 L160 44 L160 160 L40 160 Z"/><path class="s" pathLength="1" d="M58 84 L142 84 M58 108 L124 108"/><path class="s acc-s" pathLength="1" d="M58 134 L82 134 M92 134 L116 134 M126 134 L140 134"/></svg></div></div></div>
+    <div id="bridge-call" class="clip el" data-start="34.936" data-duration="2.59" data-track-index="9" style="position:absolute;left:440px;top:0px;width:1480px;height:540px;z-index:10" data-layout-allow-overlap><div id="bridge-call-in" class="in"><div class="ico bub" style="width:475.99999999999994px;height:340px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:40px">Call me if you want to talk more.</div></div></div></div>
+    <div id="bridge-br1" class="clip el" data-start="37.996" data-duration="23.441" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1040px;height:860px;z-index:11" data-layout-allow-overlap><div id="bridge-br1-in" class="in"><div class="ico" style="width:560px;height:560px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s mid" pathLength="1" d="M0 92 L22 92 L34 168 L0 168"/><path class="s mid" pathLength="1" d="M200 92 L178 92 L166 168 L200 168"/><path class="s mid" pathLength="1" d="M22 92 Q100 118 178 92"/><path class="s thin" pathLength="1" d="M22 70 Q100 100 178 70"/><path class="s mid" pathLength="1" d="M22 92 L22 64 M178 92 L178 64"/><path class="s thin" pathLength="1" d="M38 77 L38 97 M54 83 L54 102 M70 87 L70 106 M86 90 L86 108 M100 91 L100 109 M114 90 L114 108 M130 87 L130 106 M146 83 L146 102 M162 77 L162 97"/><path class="s thin acc-s" pathLength="1" d="M40 156 Q52 150 64 156 T88 156 T112 156 T136 156 T160 156"/></svg></div></div></div>
+    <div id="bridge-br2" class="clip el" data-start="39.556" data-duration="21.881" data-track-index="11" style="position:absolute;left:880px;top:0px;width:1040px;height:880px;z-index:12" data-layout-allow-overlap><div id="bridge-br2-in" class="in"><div class="ico" style="width:520px;height:520px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s mid" pathLength="1" d="M10 120 L190 120"/><path class="s mid" pathLength="1" d="M30 120 L30 150 M170 120 L170 150 M100 120 L100 150"/><path class="s thin" pathLength="1" d="M10 106 L190 106"/><path class="s thin" pathLength="1" d="M40 106 L40 120 M70 106 L70 120 M100 106 L100 120 M130 106 L130 120 M160 106 L160 120"/><path class="s thin acc-s" pathLength="1" d="M20 162 Q40 156 60 162 T100 162 T140 162 T180 162"/></svg></div></div></div>
+    <div id="bridge-t4" class="clip el" data-start="39.556" data-duration="5.058" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:13"><div id="bridge-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t4-w0" class="w">a</span> <span id="bridge-t4-w1" class="w acc">second</span> <span id="bridge-t4-w2" class="w">bridge:</span> <span id="bridge-t4-w3" class="w">low</span> <span id="bridge-t4-w4" class="w">and</span> <span id="bridge-t4-w5" class="w">solid</span></div></div></div>
+    <div id="bridge-t5" class="clip el" data-start="46.114" data-duration="8.794" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:14"><div id="bridge-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t5-w0" class="w">who</span> <span id="bridge-t5-w1" class="w acc">called<span class="tail">?</span></span></div></div></div>
+    <div id="bridge-ph" class="clip el" data-start="46.114" data-duration="0.91" data-track-index="14" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:15" data-layout-allow-overlap><div id="bridge-ph-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="bridge-bs" class="clip el" data-start="48.534" data-duration="12.903" data-track-index="15" style="position:absolute;left:880px;top:840px;width:1040px;height:240px;z-index:16"><div id="bridge-bs-in" class="in"><div class="barw" style="height:240px"><div class="bar" style="width:150px;height:50px;background:var(--muted);bottom:50%;margin-left:-75px"></div><div class="bar-l" style="top:calc(50% + 14px)">2 of 16</div></div></div></div>
+    <div id="bridge-bw" class="clip el" data-start="52.768" data-duration="8.669" data-track-index="16" style="position:absolute;left:0px;top:840px;width:1040px;height:240px;z-index:17"><div id="bridge-bw-in" class="in"><div class="barw" style="height:240px"><div class="bar" style="width:150px;height:200px;background:var(--accent);bottom:50%;margin-left:-75px"></div><div class="bar-l" style="top:calc(50% + 14px)">9 of 18</div></div></div></div>
+    <div id="bridge-t6" class="clip el" data-start="54.808" data-duration="0.99" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:18"><div id="bridge-t6-in" class="in"><div class="txt hero" style="font-size:120px;font-weight:800;color:var(--ink)"><span id="bridge-t6-w0" class="w">HALF</span></div></div></div>
+    <div id="bridge-t7" class="clip el" data-start="55.748" data-duration="3.48" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:19"><div id="bridge-t7-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="bridge-t7-w0" class="w">same</span> <span id="bridge-t7-w1" class="w">woman</span> <span id="bridge-t7-w2" class="w">·</span> <span id="bridge-t7-w3" class="w">same</span> <span id="bridge-t7-w4" class="w">questions</span> <span id="bridge-t7-w5" class="w">·</span> <span id="bridge-t7-w6" class="w">same</span> <span id="bridge-t7-w7" class="w">number</span></div></div></div>
+    <div id="bridge-t8" class="clip el" data-start="59.147" data-duration="2.34" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="bridge-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t8-w0" class="w">the</span> <span id="bridge-t8-w1" class="w">only</span> <span id="bridge-t8-w2" class="w">difference:</span> <span id="bridge-t8-w3" class="w">the</span> <span id="bridge-t8-w4" class="w acc">bridge</span></div></div></div>
+    <div id="bridge-mi" class="clip el" data-start="62.547" data-duration="3.14" data-track-index="20" style="position:absolute;left:0px;top:300px;width:1920px;height:780px;z-index:21"><div id="bridge-mi-in" class="in"><svg class="stick" id="bridge-mi-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="bridge-mi-aLu"><path class="s" d="M150 160 L150 255"/><g id="bridge-mi-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="bridge-mi-aRu"><path class="s" d="M150 160 L150 255"/><g id="bridge-mi-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="bridge-mi-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="bridge-mi-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="bridge-mi-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="bridge-mi-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="bridge-mi-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="bridge-mi-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="bridge-t9" class="clip el" data-start="62.547" data-duration="3.14" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:22"><div id="bridge-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t9-w0" class="w">a</span> <span id="bridge-t9-w1" class="w">male</span> <span id="bridge-t9-w2" class="w">interviewer:</span> <span id="bridge-t9-w3" class="w acc">no</span> <span id="bridge-t9-w4" class="w">difference</span></div></div></div>
+    <div id="bridge-sh" class="clip el" data-start="66.247" data-duration="19.596" data-track-index="22" style="position:absolute;left:0px;top:300px;width:1920px;height:780px;z-index:23"><div id="bridge-sh-in" class="in"><svg class="stick" id="bridge-sh-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="bridge-sh-aLu"><path class="s" d="M150 160 L150 255"/><g id="bridge-sh-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="bridge-sh-aRu"><path class="s" d="M150 160 L150 255"/><g id="bridge-sh-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="bridge-sh-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="bridge-sh-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="bridge-sh-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="bridge-sh-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="bridge-sh-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="bridge-sh-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="bridge-hp" class="clip el" data-start="68.947" data-duration="16.846" data-track-index="23" style="position:absolute;left:480px;top:0px;width:1440px;height:940px;z-index:24" data-layout-allow-overlap><div id="bridge-hp-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="bridge-t10" class="clip el" data-start="65.607" data-duration="1.74" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:25"><div id="bridge-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t10-w0" class="w">so</span> <span id="bridge-t10-w1" class="w">what</span> <span id="bridge-t10-w2" class="w acc">happened<span class="tail">?</span></span></div></div></div>
+    <div id="bridge-t11" class="clip el" data-start="69.274" data-duration="1.74" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:26"><div id="bridge-t11-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t11-w0" class="w">hearts</span> <span id="bridge-t11-w1" class="w">already</span> <span id="bridge-t11-w2" class="w acc">pounding</span></div></div></div>
+    <div id="bridge-t12" class="clip el" data-start="72.114" data-duration="4.68" data-track-index="26" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:27"><div id="bridge-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t12-w0" class="w">full</span> <span id="bridge-t12-w1" class="w">of</span> <span id="bridge-t12-w2" class="w acc">fear<span class="tail">…</span></span></div></div></div>
+    <div id="bridge-t13" class="clip el" data-start="76.914" data-duration="2.6" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:28"><div id="bridge-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t13-w0" class="w">…read</span> <span id="bridge-t13-w1" class="w">as</span> <span id="bridge-t13-w2" class="w alm">attraction</span></div></div></div>
+    <div id="bridge-t14" class="clip el" data-start="80.583" data-duration="2.18" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:29"><div id="bridge-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t14-w0" class="w">misattribution</span> <span id="bridge-t14-w1" class="w">of</span> <span id="bridge-t14-w2" class="w acc">arousal</span></div></div></div>
+    <div id="bridge-t15" class="clip el" data-start="83.203" data-duration="2.64" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:30"><div id="bridge-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t15-w0" class="w">the</span> <span id="bridge-t15-w1" class="w">bridge</span> <span id="bridge-t15-w2" class="w">did</span> <span id="bridge-t15-w3" class="w">half</span> <span id="bridge-t15-w4" class="w">the</span> <span id="bridge-t15-w5" class="w acc">flirting</span></div></div></div>
+    <div id="bridge-fb" class="clip el" data-start="83.663" data-duration="2.13" data-track-index="30" style="position:absolute;left:0px;top:40px;width:1200px;height:1040px;z-index:31" data-layout-allow-overlap><div id="bridge-fb-in" class="in"><div class="ico" style="width:380px;height:380px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s mid" pathLength="1" d="M0 92 L22 92 L34 168 L0 168"/><path class="s mid" pathLength="1" d="M200 92 L178 92 L166 168 L200 168"/><path class="s mid" pathLength="1" d="M22 92 Q100 118 178 92"/><path class="s thin" pathLength="1" d="M22 70 Q100 100 178 70"/><path class="s mid" pathLength="1" d="M22 92 L22 64 M178 92 L178 64"/><path class="s thin" pathLength="1" d="M38 77 L38 97 M54 83 L54 102 M70 87 L70 106 M86 90 L86 108 M100 91 L100 109 M114 90 L114 108 M130 87 L130 106 M146 83 L146 102 M162 77 L162 97"/><path class="s thin acc-s" pathLength="1" d="M40 156 Q52 150 64 156 T88 156 T112 156 T136 156 T160 156"/></svg></div></div></div>
+    <div id="bridge-nd" class="clip el" data-start="86.423" data-duration="5.2" data-track-index="31" style="position:absolute;left:0px;top:300px;width:1920px;height:780px;z-index:32"><div id="bridge-nd-in" class="in"><svg class="stick" id="bridge-nd-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="bridge-nd-aLu"><path class="s" d="M150 160 L150 255"/><g id="bridge-nd-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="bridge-nd-aRu"><path class="s" d="M150 160 L150 255"/><g id="bridge-nd-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="bridge-nd-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="bridge-nd-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="bridge-nd-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="bridge-nd-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="bridge-nd-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="bridge-nd-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="bridge-t16" class="clip el" data-start="86.043" data-duration="2.64" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:33"><div id="bridge-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t16-w0" class="w">not</span> <span id="bridge-t16-w1" class="w">dating</span> <span id="bridge-t16-w2" class="w">on</span> <span id="bridge-t16-w3" class="w">a</span> <span id="bridge-t16-w4" class="w">rope</span> <span id="bridge-t16-w5" class="w">bridge?</span></div></div></div>
+    <div id="bridge-q" class="clip el" data-start="90.883" data-duration="0.796" data-track-index="33" style="position:absolute;left:560px;top:0px;width:1360px;height:1040px;z-index:34" data-layout-allow-overlap><div id="bridge-q-in" class="in"><div class="ico" style="width:180px;height:180px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="bridge-t17" class="clip el" data-start="89.014" data-duration="2.64" data-track-index="34" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:35"><div id="bridge-t17-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="bridge-t17-w0" class="w">so</span> <span id="bridge-t17-w1" class="w">what</span> <span id="bridge-t17-w2" class="w">about</span> <span id="bridge-t17-w3" class="w">your</span> <span id="bridge-t17-w4" class="w acc">love</span> <span id="bridge-t17-w5" class="w acc">life<span class="tail">?</span></span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"bridge-c1","t":"card","from":"top","exit":null,"in":1.98,"out":9.06,"outDur":0.3},{"id":"bridge-br","t":"icon","from":"draw","exit":null,"in":9.3,"out":37.236,"outDur":0.25,"sway":1,"period":3},{"id":"bridge-t1","t":"text","from":"top","exit":null,"in":10.596,"out":16.296000000000003,"outDur":0.3,"words":[10.476,10.596,11.196,11.736]},{"id":"bridge-t2","t":"text","from":"top","exit":null,"in":17.236,"out":22.533,"outDur":0.3,"words":[18.156,18.156,18.156,19.116,19.116]},{"id":"bridge-you","t":"stick","from":"left","exit":null,"in":22.953,"out":37.236,"outDur":0.3,"poses":[["holdHead",24.933],["idle",29.673]],"mouth":[["o",22.953],["smile",29.673]],"move":[[240,10,23.613,1.6]]},{"id":"bridge-t3","t":"text","from":"top","exit":null,"in":22.953,"out":25.393,"outDur":0.3,"words":[22.953,23.353,23.613,24.073]},{"id":"bridge-wo","t":"stick","from":"right","exit":null,"in":26.933,"out":37.236,"outDur":0.3,"poses":[["idle",26.933],["give",31.416]],"mouth":[["smile",26.933]],"move":[[-260,5,27.193,1.2]]},{"id":"bridge-sc","t":"icon","from":"pop","exit":null,"in":34.156,"out":37.236,"outDur":0.25},{"id":"bridge-call","t":"bubble","from":"pop","exit":null,"in":34.936,"out":37.236,"outDur":0.25},{"id":"bridge-br1","t":"icon","from":"pop","exit":null,"in":37.996,"out":61.147,"outDur":0.25,"sway":1,"period":3},{"id":"bridge-br2","t":"icon","from":"pop","exit":null,"in":39.556,"out":61.147,"outDur":0.25},{"id":"bridge-t4","t":"text","from":"top","exit":null,"in":39.556,"out":44.274,"outDur":0.3,"words":[39.456,39.556,39.876,39.976,40.076,40.176]},{"id":"bridge-t5","t":"text","from":"top","exit":null,"in":46.114,"out":54.568,"outDur":0.3,"words":[45.854,46.114]},{"id":"bridge-ph","t":"icon","from":"pop","exit":null,"in":46.114,"out":46.733999999999995,"outDur":0.25,"sway":8,"period":0.5},{"id":"bridge-bs","t":"bar","from":"draw","exit":null,"in":48.534,"out":61.147,"outDur":0.25},{"id":"bridge-bw","t":"bar","from":"draw","exit":null,"in":52.768,"out":61.147,"outDur":0.25},{"id":"bridge-t6","t":"text","from":"slam","exit":null,"in":54.808,"out":55.507999999999996,"outDur":0.25,"words":[54.808]},{"id":"bridge-t7","t":"text","from":"top","exit":null,"in":55.748,"out":58.888,"outDur":0.3,"words":[55.748,56.028,56.128,56.228,56.328,56.428,56.528,56.628]},{"id":"bridge-t8","t":"text","from":"top","exit":null,"in":59.147,"out":61.147,"outDur":0.3,"words":[59.128,59.208,59.588,60.348,60.508]},{"id":"bridge-mi","t":"stick","from":"bottom","exit":null,"in":62.547,"out":65.34700000000001,"outDur":0.3,"poses":[["give",62.547],["shrug",64.407]],"mouth":[["neutral",62.547]]},{"id":"bridge-t9","t":"text","from":"top","exit":null,"in":62.547,"out":65.34700000000001,"outDur":0.3,"words":[62.427,64.047,64.047,64.047,64.407]},{"id":"bridge-sh","t":"stick","from":"bottom","exit":null,"in":66.247,"out":85.503,"outDur":0.3,"poses":[["holdHead",69.927],["happy",78.174]],"mouth":[["o",69.927],["smile",78.174]]},{"id":"bridge-hp","t":"icon","from":"pop","exit":null,"in":68.947,"out":85.503,"outDur":0.25,"pulse":1.2,"beat":0.55},{"id":"bridge-t10","t":"text","from":"top","exit":null,"in":65.607,"out":67.007,"outDur":0.3,"words":[65.587,65.847,66.247]},{"id":"bridge-t11","t":"text","from":"top","exit":null,"in":69.274,"out":70.674,"outDur":0.3,"words":[68.947,69.367,69.927]},{"id":"bridge-t12","t":"text","from":"top","exit":null,"in":72.114,"out":76.45400000000001,"outDur":0.3,"words":[71.634,71.934,72.114]},{"id":"bridge-t13","t":"text","from":"top","exit":null,"in":76.914,"out":79.174,"outDur":0.3,"words":[76.914,77.694,78.174]},{"id":"bridge-t14","t":"text","from":"top","exit":null,"in":80.583,"out":82.423,"outDur":0.3,"words":[80.583,81.363,81.703]},{"id":"bridge-t15","t":"text","from":"top","exit":null,"in":83.203,"out":85.503,"outDur":0.3,"words":[83.603,83.663,84.023,84.343,84.623,84.863]},{"id":"bridge-fb","t":"icon","from":"pop","exit":null,"in":83.663,"out":85.503,"outDur":0.25,"sway":1.5,"period":2},{"id":"bridge-nd","t":"stick","from":"bottom","exit":null,"in":86.423,"out":91.283,"outDur":0.3,"poses":[["shrug",86.423]],"mouth":[["smile",86.423]]},{"id":"bridge-t16","t":"text","from":"top","exit":null,"in":86.043,"out":88.343,"outDur":0.3,"words":[86.923,87.183,87.543,87.703,87.803,87.983]},{"id":"bridge-q","t":"icon","from":"pop","exit":null,"in":90.883,"out":91.48299999999999,"outDur":0.25},{"id":"bridge-t17","t":"text","from":"top","exit":null,"in":89.014,"out":91.314,"outDur":0.3,"words":[88.583,88.863,90.703,90.703,90.883,91.123]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["bridge"] = tl;
+    })();
+  </script>
+</template>

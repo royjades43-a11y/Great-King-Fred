@@ -1,0 +1,351 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="quiz" data-width="1920" data-height="1080">
+    <div id="quiz-np" class="clip el" data-start="1.66" data-duration="8.673" data-track-index="1" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:2" data-layout-allow-overlap><div id="quiz-np-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 40 L156 40 L156 168 Q156 182 170 182 L36 182 Q20 182 20 166 Z"/><path class="s" pathLength="1" d="M156 78 L182 78 L182 168 Q182 182 170 182"/><path class="s alm-s" pathLength="1" d="M42 66 L134 66"/><path class="s" pathLength="1" d="M42 98 L134 98 M42 128 L134 128 M42 156 L106 156"/></svg></div></div></div>
+    <div id="quiz-t0" class="clip el" data-start="4.583" data-duration="2.34" data-track-index="2" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:3"><div id="quiz-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t0-w0" class="w">1987</span> <span id="quiz-t0-w1" class="w">·</span> <span id="quiz-t0-w2" class="w">a</span> <span id="quiz-t0-w3" class="w acc">love</span> <span id="quiz-t0-w4" class="w acc">quiz</span></div></div></div>
+    <div id="quiz-t1" class="clip el" data-start="6.823" data-duration="3.56" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:4"><div id="quiz-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t1-w0" class="w acc">620</span> <span id="quiz-t1-w1" class="w">readers</span> <span id="quiz-t1-w2" class="w">replied</span></div></div></div>
+    <div id="quiz-t2" class="clip el" data-start="12.383" data-duration="12.088" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:5"><div id="quiz-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t2-w0" class="w">three</span> <span id="quiz-t2-w1" class="w">styles</span> <span id="quiz-t2-w2" class="w">of</span> <span id="quiz-t2-w3" class="w">love</span></div></div></div>
+    <div id="quiz-q1" class="clip el" data-start="10.483" data-duration="13.938" data-track-index="5" style="position:absolute;left:0px;top:840px;width:1200px;height:240px;z-index:6"><div id="quiz-q1-in" class="in"><div class="barw" style="height:240px"><div class="bar" style="width:170px;height:392px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">secure · 56%</div></div></div></div>
+    <div id="quiz-q2" class="clip el" data-start="16.709" data-duration="7.712" data-track-index="6" style="position:absolute;left:0px;top:840px;width:1920px;height:240px;z-index:7"><div id="quiz-q2-in" class="in"><div class="barw" style="height:240px"><div class="bar" style="width:170px;height:175px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">avoidant · 25%</div></div></div></div>
+    <div id="quiz-q3" class="clip el" data-start="21.329" data-duration="3.092" data-track-index="7" style="position:absolute;left:720px;top:840px;width:1200px;height:240px;z-index:8"><div id="quiz-q3-in" class="in"><div class="barw" style="height:240px"><div class="bar" style="width:170px;height:133px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">anxious · 19%</div></div></div></div>
+    <div id="quiz-ax" class="clip el" data-start="24.371" data-duration="16.049" data-track-index="8" style="position:absolute;left:0px;top:300px;width:1920px;height:780px;z-index:9"><div id="quiz-ax-in" class="in"><svg class="stick" id="quiz-ax-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="quiz-ax-aLu"><path class="s" d="M150 160 L150 255"/><g id="quiz-ax-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-ax-aRu"><path class="s" d="M150 160 L150 255"/><g id="quiz-ax-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-ax-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="quiz-ax-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="quiz-ax-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="quiz-ax-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="quiz-ax-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="quiz-ax-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="quiz-t3" class="clip el" data-start="24.371" data-duration="2.48" data-track-index="9" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:10"><div id="quiz-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t3-w0" class="w">love,</span> <span id="quiz-t3-w1" class="w">the</span> <span id="quiz-t3-w2" class="w">anxious</span> <span id="quiz-t3-w3" class="w">way</span></div></div></div>
+    <div id="quiz-a1" class="clip el" data-start="27.311" data-duration="9.199" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1240px;height:840px;z-index:11" data-layout-allow-overlap><div id="quiz-a1-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M150 70 A60 60 0 1 0 160 120"/><path class="s alm-s" pathLength="1" d="M128 64 L152 70 L150 44"/></svg></div></div></div>
+    <div id="quiz-t4" class="clip el" data-start="27.311" data-duration="1.4" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:12"><div id="quiz-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t4-w0" class="w acc">obsession</span></div></div></div>
+    <div id="quiz-a2" class="clip el" data-start="29.171" data-duration="7.339" data-track-index="12" style="position:absolute;left:680px;top:0px;width:1240px;height:840px;z-index:13" data-layout-allow-overlap><div id="quiz-a2-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M10 110 L60 110 L76 70 L96 160 L116 40 L134 130 L146 110 L190 110"/></svg></div></div></div>
+    <div id="quiz-t5" class="clip el" data-start="29.011000000000003" data-duration="1.74" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:14"><div id="quiz-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t5-w0" class="w">highs</span> <span id="quiz-t5-w1" class="w">and</span> <span id="quiz-t5-w2" class="w acc">lows</span></div></div></div>
+    <div id="quiz-a3" class="clip el" data-start="30.651" data-duration="5.859" data-track-index="14" style="position:absolute;left:0px;top:280px;width:1200px;height:800px;z-index:15" data-layout-allow-overlap><div id="quiz-a3-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="quiz-t6" class="clip el" data-start="30.651" data-duration="1.8" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:16"><div id="quiz-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t6-w0" class="w">extreme</span> <span id="quiz-t6-w1" class="w acc">attraction</span></div></div></div>
+    <div id="quiz-a4" class="clip el" data-start="32.931" data-duration="3.579" data-track-index="16" style="position:absolute;left:720px;top:280px;width:1200px;height:800px;z-index:17" data-layout-allow-overlap><div id="quiz-a4-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="quiz-t7" class="clip el" data-start="32.351" data-duration="2.909" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:18"><div id="quiz-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t7-w0" class="w">a</span> <span id="quiz-t7-w1" class="w">need</span> <span id="quiz-t7-w2" class="w">for</span> <span id="quiz-t7-w3" class="w">it</span> <span id="quiz-t7-w4" class="w">to</span> <span id="quiz-t7-w5" class="w">be</span> <span id="quiz-t7-w6" class="w acc">returned</span></div></div></div>
+    <div id="quiz-a5" class="clip el" data-start="35.38" data-duration="1.13" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:720px;z-index:19" data-layout-allow-overlap><div id="quiz-a5-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M118 14 L52 112 L100 112 L82 186 L150 82 L102 82 Z"/></svg></div></div></div>
+    <div id="quiz-t8" class="clip el" data-start="35.38" data-duration="1.18" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="quiz-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t8-w0" class="w acc">jealousy</span></div></div></div>
+    <div id="quiz-gh" class="clip el" data-start="38.88" data-duration="1.49" data-track-index="20" style="position:absolute;left:180px;top:140px;width:1740px;height:940px;z-index:21" data-layout-allow-overlap><div id="quiz-gh-in" class="in"><div class="ico" style="width:80px;height:80px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="quiz-t9" class="clip el" data-start="36.74" data-duration="3.68" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:22"><div id="quiz-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t9-w0" class="w">be</span> <span id="quiz-t9-w1" class="w acc">gentle</span> <span id="quiz-t9-w2" class="w">with</span> <span id="quiz-t9-w3" class="w">yourself</span></div></div></div>
+    <div id="quiz-t9b" class="clip el" data-start="41.58" data-duration="2.04" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:23"><div id="quiz-t9b-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t9b-w0" class="w">love</span> <span id="quiz-t9b-w1" class="w">doesn't</span> <span id="quiz-t9b-w2" class="w">arrive</span> <span id="quiz-t9b-w3" class="w acc">slowly</span></div></div></div>
+    <div id="quiz-wv" class="clip el" data-start="41.62" data-duration="3.16" data-track-index="23" style="position:absolute;left:0px;top:40px;width:800px;height:1040px;z-index:24" data-layout-allow-overlap><div id="quiz-wv-in" class="in"><div class="ico" style="width:380px;height:380px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M10 120 Q35 90 60 120 Q85 150 110 120 Q135 90 160 120 Q178 140 190 128"/><path class="s" pathLength="1" d="M10 160 Q35 130 60 160 Q85 190 110 160 Q135 130 160 160 Q178 180 190 168"/><path class="s" pathLength="1" d="M10 80 Q35 50 60 80 Q85 110 110 80 Q135 50 160 80 Q178 100 190 88"/></svg></div></div></div>
+    <div id="quiz-t10" class="clip el" data-start="43.52" data-duration="1.26" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:25"><div id="quiz-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t10-w0" class="w">it</span> <span id="quiz-t10-w1" class="w">hits</span> <span id="quiz-t10-w2" class="w">like</span> <span id="quiz-t10-w3" class="w">a</span> <span id="quiz-t10-w4" class="w alm">wave</span></div></div></div>
+    <div id="quiz-c1" class="clip el" data-start="46.308" data-duration="3.78" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:26"><div id="quiz-c1-in" class="in"><div class="card"><div class="card-k">PSYCHIATRIST &amp; PSYCHOLOGIST</div><div class="card-t">Amir Levine &amp; Rachel Heller</div><div class="card-s">authors of “Attached”</div></div></div></div>
+    <div id="quiz-al" class="clip el" data-start="52.508" data-duration="8.717" data-track-index="26" style="position:absolute;left:0px;top:80px;width:1520px;height:1000px;z-index:27" data-layout-allow-overlap><div id="quiz-al-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M100 30 Q150 30 150 96 L150 136 L168 156 L32 156 L50 136 L50 96 Q50 30 100 30 Z"/><path class="s alm-s" pathLength="1" d="M84 172 Q100 188 116 172"/><path class="s alm-s" pathLength="1" d="M24 46 L10 34 M176 46 L190 34 M16 92 L2 92 M184 92 L198 92"/></svg></div></div></div>
+    <div id="quiz-ah" class="clip el" data-start="53.288" data-duration="7.937" data-track-index="27" style="position:absolute;left:400px;top:80px;width:1520px;height:1000px;z-index:28" data-layout-allow-overlap><div id="quiz-ah-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="quiz-t11" class="clip el" data-start="52.388" data-duration="2.04" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:29"><div id="quiz-t11-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t11-w0" class="w">an</span> <span id="quiz-t11-w1" class="w acc">alarm<span class="tail">,</span></span> <span id="quiz-t11-w2" class="w">not</span> <span id="quiz-t11-w3" class="w">chemistry</span></div></div></div>
+    <div id="quiz-hot" class="clip el" data-start="54.948" data-duration="6.277" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1120px;height:800px;z-index:30" data-layout-allow-overlap><div id="quiz-hot-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M100 100 m-38 0 a38 38 0 1 0 76 0 a38 38 0 1 0 -76 0"/><path class="s" pathLength="1" d="M100 18 L100 40 M100 160 L100 182 M18 100 L40 100 M160 100 L182 100 M42 42 L58 58 M142 142 L158 158 M158 42 L142 58 M58 142 L42 158"/></svg></div></div></div>
+    <div id="quiz-cold" class="clip el" data-start="55.308" data-duration="5.917" data-track-index="30" style="position:absolute;left:800px;top:0px;width:1120px;height:800px;z-index:31" data-layout-allow-overlap><div id="quiz-cold-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 24 L100 176 M34 62 L166 138 M34 138 L166 62"/><path class="s acc-s" pathLength="1" d="M100 24 L86 40 M100 24 L114 40 M100 176 L86 160 M100 176 L114 160"/></svg></div></div></div>
+    <div id="quiz-t12" class="clip el" data-start="54.948" data-duration="3.227" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:32"><div id="quiz-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t12-w0" class="w">hot</span> <span id="quiz-t12-w1" class="w">and</span> <span id="quiz-t12-w2" class="w acc">cold</span></div></div></div>
+    <div id="quiz-t13" class="clip el" data-start="58.855" data-duration="2.42" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:33"><div id="quiz-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t13-w0" class="w">racing</span> <span id="quiz-t13-w1" class="w">feels</span> <span id="quiz-t13-w2" class="w">like</span> <span id="quiz-t13-w3" class="w acc">passion</span></div></div></div>
+    <div id="quiz-br" class="clip el" data-start="61.175" data-duration="3.91" data-track-index="33" style="position:absolute;left:0px;top:200px;width:1920px;height:880px;z-index:34" data-layout-allow-overlap><div id="quiz-br-in" class="in"><div class="ico" style="width:1100px;height:1100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s mid" pathLength="1" d="M0 92 L22 92 L34 168 L0 168"/><path class="s mid" pathLength="1" d="M200 92 L178 92 L166 168 L200 168"/><path class="s mid" pathLength="1" d="M22 92 Q100 118 178 92"/><path class="s thin" pathLength="1" d="M22 70 Q100 100 178 70"/><path class="s mid" pathLength="1" d="M22 92 L22 64 M178 92 L178 64"/><path class="s thin" pathLength="1" d="M38 77 L38 97 M54 83 L54 102 M70 87 L70 106 M86 90 L86 108 M100 91 L100 109 M114 90 L114 108 M130 87 L130 106 M146 83 L146 102 M162 77 L162 97"/><path class="s thin acc-s" pathLength="1" d="M40 156 Q52 150 64 156 T88 156 T112 156 T136 156 T160 156"/></svg></div></div></div>
+    <div id="quiz-bp" class="clip el" data-start="64.155" data-duration="0.98" data-track-index="34" style="position:absolute;left:0px;top:10px;width:1920px;height:1070px;z-index:35"><div id="quiz-bp-in" class="in"><svg class="stick" id="quiz-bp-svg" width="135" height="234" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="quiz-bp-aLu"><path class="s" d="M150 160 L150 255"/><g id="quiz-bp-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-bp-aRu"><path class="s" d="M150 160 L150 255"/><g id="quiz-bp-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-bp-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="quiz-bp-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="quiz-bp-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="quiz-bp-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="quiz-bp-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="quiz-bp-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="quiz-t14" class="clip el" data-start="61.175" data-duration="1.3" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:36"><div id="quiz-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t14-w0" class="w">remember</span> <span id="quiz-t14-w1" class="w">the</span> <span id="quiz-t14-w2" class="w acc">bridge<span class="tail">?</span></span></div></div></div>
+    <div id="quiz-t15" class="clip el" data-start="62.375" data-duration="2.76" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:37"><div id="quiz-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t15-w0" class="w">sometimes</span> <span id="quiz-t15-w1" class="w">the</span> <span id="quiz-t15-w2" class="w">bridge</span> <span id="quiz-t15-w3" class="w">is</span> <span id="quiz-t15-w4" class="w">the</span> <span id="quiz-t15-w5" class="w alm">person</span></div></div></div>
+    <div id="quiz-ck" class="clip el" data-start="65.415" data-duration="9.947" data-track-index="37" style="position:absolute;left:600px;top:300px;width:1320px;height:780px;z-index:38"><div id="quiz-ck-in" class="in"><svg class="stick" id="quiz-ck-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="quiz-ck-aLu"><path class="s" d="M150 160 L150 255"/><g id="quiz-ck-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-ck-aRu"><path class="s" d="M150 160 L150 255"/><g id="quiz-ck-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-ck-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="quiz-ck-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="quiz-ck-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="quiz-ck-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="quiz-ck-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="quiz-ck-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="quiz-cp" class="clip el" data-start="65.415" data-duration="9.897" data-track-index="38" style="position:absolute;left:160px;top:40px;width:1760px;height:1040px;z-index:39" data-layout-allow-overlap><div id="quiz-cp-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="quiz-cc" class="clip el" data-start="68.642" data-duration="6.67" data-track-index="39" style="position:absolute;left:160px;top:0px;width:1760px;height:860px;z-index:40" data-layout-allow-overlap><div id="quiz-cc-in" class="in"><div class="ico" style="width:80px;height:80px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M30 104 L80 154 L172 50"/></svg></div></div></div>
+    <div id="quiz-vw" class="clip el" data-start="65.415" data-duration="9.947" data-track-index="40" style="position:absolute;left:0px;top:300px;width:1280px;height:780px;z-index:41"><div id="quiz-vw-in" class="in"><svg class="stick" id="quiz-vw-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="quiz-vw-aLu"><path class="s" d="M150 160 L150 255"/><g id="quiz-vw-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-vw-aRu"><path class="s" d="M150 160 L150 255"/><g id="quiz-vw-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-vw-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="quiz-vw-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="quiz-vw-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="quiz-vw-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="quiz-vw-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="quiz-vw-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="quiz-t16" class="clip el" data-start="65.035" data-duration="1.227" data-track-index="41" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:42"><div id="quiz-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t16-w0" class="w">the</span> <span id="quiz-t16-w1" class="w acc">irony</span></div></div></div>
+    <div id="quiz-t17" class="clip el" data-start="69.582" data-duration="3.28" data-track-index="42" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:43"><div id="quiz-t17-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t17-w0" class="w">calm</span> <span id="quiz-t17-w1" class="w">can</span> <span id="quiz-t17-w2" class="w">feel</span> <span id="quiz-t17-w3" class="w acc">boring</span></div></div></div>
+    <div id="quiz-t18" class="clip el" data-start="72.962" data-duration="2.4" data-track-index="43" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:44"><div id="quiz-t18-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t18-w0" class="w">nothing</span> <span id="quiz-t18-w1" class="w">sets</span> <span id="quiz-t18-w2" class="w">off</span> <span id="quiz-t18-w3" class="w">your</span> <span id="quiz-t18-w4" class="w acc">alarm</span></div></div></div>
+    <div id="quiz-hp" class="clip el" data-start="77.39" data-duration="2.37" data-track-index="44" style="position:absolute;left:0px;top:40px;width:1680px;height:1040px;z-index:45" data-layout-allow-overlap><div id="quiz-hp-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="quiz-hq" class="clip el" data-start="78.87" data-duration="0.89" data-track-index="45" style="position:absolute;left:280px;top:40px;width:1640px;height:1040px;z-index:46" data-layout-allow-overlap><div id="quiz-hq-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="quiz-t19" class="clip el" data-start="75.402" data-duration="4.408" data-track-index="46" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:47"><div id="quiz-t19-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t19-w0" class="w">a</span> <span id="quiz-t19-w1" class="w">pounding</span> <span id="quiz-t19-w2" class="w">heart…</span> <span id="quiz-t19-w3" class="w">or</span> <span id="quiz-t19-w4" class="w">a</span> <span id="quiz-t19-w5" class="w acc">match<span class="tail">?</span></span></div></div></div>
+    <div id="quiz-p1" class="clip el" data-start="81.81" data-duration="6.383" data-track-index="47" style="position:absolute;left:0px;top:300px;width:1200px;height:780px;z-index:48"><div id="quiz-p1-in" class="in"><svg class="stick" id="quiz-p1-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="quiz-p1-aLu"><path class="s" d="M150 160 L150 255"/><g id="quiz-p1-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-p1-aRu"><path class="s" d="M150 160 L150 255"/><g id="quiz-p1-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-p1-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="quiz-p1-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="quiz-p1-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="quiz-p1-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="quiz-p1-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="quiz-p1-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="quiz-p2" class="clip el" data-start="81.81" data-duration="6.383" data-track-index="48" style="position:absolute;left:720px;top:300px;width:1200px;height:780px;z-index:49"><div id="quiz-p2-in" class="in"><svg class="stick" id="quiz-p2-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="quiz-p2-aLu"><path class="s" d="M150 160 L150 255"/><g id="quiz-p2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-p2-aRu"><path class="s" d="M150 160 L150 255"/><g id="quiz-p2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-p2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="quiz-p2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="quiz-p2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="quiz-p2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="quiz-p2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="quiz-p2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="quiz-t20" class="clip el" data-start="81.81" data-duration="5.163" data-track-index="49" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:50"><div id="quiz-t20-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t20-w0" class="w">styles</span> <span id="quiz-t20-w1" class="w">aren't</span> <span id="quiz-t20-w2" class="w acc">fixed</span></div></div></div>
+    <div id="quiz-t21" class="clip el" data-start="86.873" data-duration="1.32" data-track-index="50" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:51"><div id="quiz-t21-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t21-w0" class="w">you</span> <span id="quiz-t21-w1" class="w">can</span> <span id="quiz-t21-w2" class="w alm">too</span></div></div></div>
+    <div id="quiz-mn" class="clip el" data-start="89.073" data-duration="19.997" data-track-index="51" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:52"><div id="quiz-mn-in" class="in"><svg class="stick" id="quiz-mn-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="quiz-mn-aLu"><path class="s" d="M150 160 L150 255"/><g id="quiz-mn-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-mn-aRu"><path class="s" d="M150 160 L150 255"/><g id="quiz-mn-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-mn-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="quiz-mn-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="quiz-mn-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="quiz-mn-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="quiz-mn-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="quiz-mn-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="quiz-wn" class="clip el" data-start="89.073" data-duration="19.997" data-track-index="52" style="position:absolute;left:400px;top:300px;width:1520px;height:780px;z-index:53"><div id="quiz-wn-in" class="in"><svg class="stick" id="quiz-wn-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="quiz-wn-aLu"><path class="s" d="M150 160 L150 255"/><g id="quiz-wn-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-wn-aRu"><path class="s" d="M150 160 L150 255"/><g id="quiz-wn-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="quiz-wn-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="quiz-wn-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="quiz-wn-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="quiz-wn-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="quiz-wn-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="quiz-wn-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="quiz-t21b" class="clip el" data-start="88.313" data-duration="1.74" data-track-index="53" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:54"><div id="quiz-t21b-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t21b-w0" class="w">one</span> <span id="quiz-t21b-w1" class="w">more</span> <span id="quiz-t21b-w2" class="w acc">surprise</span></div></div></div>
+    <div id="quiz-t22" class="clip el" data-start="90.413" data-duration="6.22" data-track-index="54" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:55"><div id="quiz-t22-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t22-w0" class="w">who</span> <span id="quiz-t22-w1" class="w">falls</span> <span id="quiz-t22-w2" class="w">in</span> <span id="quiz-t22-w3" class="w">love</span> <span id="quiz-t22-w4" class="w acc">first<span class="tail">?</span></span></div></div></div>
+    <div id="quiz-t23" class="clip el" data-start="96.30000000000001" data-duration="1.44" data-track-index="55" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:56"><div id="quiz-t23-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t23-w0" class="w">the</span> <span id="quiz-t23-w1" class="w acc">opposite</span></div></div></div>
+    <div id="quiz-lv" class="clip el" data-start="98.44" data-duration="10.63" data-track-index="56" style="position:absolute;left:0px;top:0px;width:1120px;height:780px;z-index:57" data-layout-allow-overlap><div id="quiz-lv-in" class="in"><div class="ico bub" style="width:392px;height:280px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:54px">I love you!</div></div></div></div>
+    <div id="quiz-t24" class="clip el" data-start="99.96" data-duration="2.42" data-track-index="57" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:58"><div id="quiz-t24-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t24-w0" class="w">men:</span> <span id="quiz-t24-w1" class="w">about</span> <span id="quiz-t24-w2" class="w acc">6</span> <span id="quiz-t24-w3" class="w acc">weeks</span> <span id="quiz-t24-w4" class="w">earlier</span></div></div></div>
+    <div id="quiz-t25" class="clip el" data-start="103.18" data-duration="2.34" data-track-index="58" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:59"><div id="quiz-t25-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t25-w0" class="w">the</span> <span id="quiz-t25-w1" class="w">man</span> <span id="quiz-t25-w2" class="w">said</span> <span id="quiz-t25-w3" class="w">it</span> <span id="quiz-t25-w4" class="w acc">first</span></div></div></div>
+    <div id="quiz-t26" class="clip el" data-start="107.33" data-duration="1.74" data-track-index="59" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:60"><div id="quiz-t26-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="quiz-t26-w0" class="w">you're</span> <span id="quiz-t26-w1" class="w">in</span> <span id="quiz-t26-w2" class="w">good</span> <span id="quiz-t26-w3" class="w acc">company</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"quiz-np","t":"icon","from":"pop","exit":null,"in":1.66,"out":10.043,"outDur":0.25},{"id":"quiz-t0","t":"text","from":"top","exit":null,"in":4.583,"out":6.583,"outDur":0.3,"words":[4.523,4.523,4.523,4.783,5.263]},{"id":"quiz-t1","t":"text","from":"top","exit":null,"in":6.823,"out":10.043,"outDur":0.3,"words":[6.923,7.023,7.123]},{"id":"quiz-t2","t":"text","from":"top","exit":null,"in":12.383,"out":24.131,"outDur":0.3,"words":[12.803,12.803,13.203,13.403]},{"id":"quiz-q1","t":"bar","from":"draw","exit":null,"in":10.483,"out":24.131,"outDur":0.25},{"id":"quiz-q2","t":"bar","from":"draw","exit":null,"in":16.709,"out":24.131,"outDur":0.25},{"id":"quiz-q3","t":"bar","from":"draw","exit":null,"in":21.329,"out":24.131,"outDur":0.25},{"id":"quiz-ax","t":"stick","from":"bottom","exit":null,"in":24.371,"out":40.08,"outDur":0.3,"poses":[["holdHead",24.371],["happy",38.88]],"mouth":[["o",24.371],["smile",38.88]]},{"id":"quiz-t3","t":"text","from":"top","exit":null,"in":24.371,"out":26.511000000000003,"outDur":0.3,"words":[25.491,25.591,25.691,25.791]},{"id":"quiz-a1","t":"icon","from":"pop","exit":null,"in":27.311,"out":36.22,"outDur":0.25},{"id":"quiz-t4","t":"text","from":"top","exit":null,"in":27.311,"out":28.371000000000002,"outDur":0.3,"words":[27.311]},{"id":"quiz-a2","t":"icon","from":"pop","exit":null,"in":29.171,"out":36.22,"outDur":0.25},{"id":"quiz-t5","t":"text","from":"top","exit":null,"in":29.011000000000003,"out":30.411,"outDur":0.3,"words":[29.171,29.631,29.871]},{"id":"quiz-a3","t":"icon","from":"pop","exit":null,"in":30.651,"out":36.22,"outDur":0.25,"pulse":1.15,"beat":0.9},{"id":"quiz-t6","t":"text","from":"top","exit":null,"in":30.651,"out":32.111,"outDur":0.3,"words":[30.651,31.251]},{"id":"quiz-a4","t":"icon","from":"pop","exit":null,"in":32.931,"out":36.22,"outDur":0.25},{"id":"quiz-t7","t":"text","from":"top","exit":null,"in":32.351,"out":34.919999999999995,"outDur":0.3,"words":[32.351,33.271,33.271,33.911,33.911,34.091,34.211]},{"id":"quiz-a5","t":"icon","from":"pop","exit":null,"in":35.38,"out":36.22,"outDur":0.25},{"id":"quiz-t8","t":"text","from":"top","exit":null,"in":35.38,"out":36.22,"outDur":0.3,"words":[35.38]},{"id":"quiz-gh","t":"icon","from":"pop","exit":null,"in":38.88,"out":40.08,"outDur":0.25},{"id":"quiz-t9","t":"text","from":"top","exit":null,"in":36.74,"out":40.08,"outDur":0.3,"words":[38.78,38.88,39.24,39.42]},{"id":"quiz-t9b","t":"text","from":"top","exit":null,"in":41.58,"out":43.28,"outDur":0.3,"words":[41.62,41.7,42.18,42.46]},{"id":"quiz-wv","t":"icon","from":"left","exit":null,"in":41.62,"out":44.44,"outDur":0.3,"move":[[560,0,43.62,0.9]]},{"id":"quiz-t10","t":"text","from":"top","exit":null,"in":43.52,"out":44.44,"outDur":0.3,"words":[43.52,43.62,44.02,44.2,44.36]},{"id":"quiz-c1","t":"card","from":"top","exit":null,"in":46.308,"out":49.748,"outDur":0.3},{"id":"quiz-al","t":"icon","from":"pop","exit":null,"in":52.508,"out":60.934999999999995,"outDur":0.25,"sway":10,"period":0.35},{"id":"quiz-ah","t":"icon","from":"pop","exit":null,"in":53.288,"out":60.934999999999995,"outDur":0.25,"pulse":1.18,"beat":0.5},{"id":"quiz-t11","t":"text","from":"top","exit":null,"in":52.388,"out":54.088,"outDur":0.3,"words":[52.268,52.508,53.288,53.288]},{"id":"quiz-hot","t":"icon","from":"pop","exit":null,"in":54.948,"out":60.934999999999995,"outDur":0.25},{"id":"quiz-cold","t":"icon","from":"pop","exit":null,"in":55.308,"out":60.934999999999995,"outDur":0.25},{"id":"quiz-t12","t":"text","from":"top","exit":null,"in":54.948,"out":57.835,"outDur":0.3,"words":[54.948,55.168,55.308]},{"id":"quiz-t13","t":"text","from":"top","exit":null,"in":58.855,"out":60.934999999999995,"outDur":0.3,"words":[58.855,59.375,59.935,60.215]},{"id":"quiz-br","t":"icon","from":"pop","exit":null,"in":61.175,"out":64.795,"outDur":0.25,"sway":1.2,"period":2.6},{"id":"quiz-bp","t":"stick","from":"bottom","exit":null,"in":64.155,"out":64.795,"outDur":0.3,"poses":[["armsCrossed",64.155]],"mouth":[["tight",64.155]]},{"id":"quiz-t14","t":"text","from":"top","exit":null,"in":61.175,"out":62.135,"outDur":0.3,"words":[61.175,61.415,61.575]},{"id":"quiz-t15","t":"text","from":"top","exit":null,"in":62.375,"out":64.795,"outDur":0.3,"words":[62.375,62.875,63.095,63.455,63.935,64.155]},{"id":"quiz-ck","t":"stick","from":"right","exit":null,"in":65.415,"out":75.022,"outDur":0.3,"poses":[["give",67.862]],"mouth":[["smile",66.302]]},{"id":"quiz-cp","t":"icon","from":"pop","exit":null,"in":65.415,"out":75.022,"outDur":0.25},{"id":"quiz-cc","t":"icon","from":"pop","exit":null,"in":68.642,"out":75.022,"outDur":0.25},{"id":"quiz-vw","t":"stick","from":"left","exit":null,"in":65.415,"out":75.022,"outDur":0.3,"poses":[["shrug",69.582]],"mouth":[["neutral",67.162]]},{"id":"quiz-t16","t":"text","from":"top","exit":null,"in":65.035,"out":65.92200000000001,"outDur":0.3,"words":[65.295,65.415]},{"id":"quiz-t17","t":"text","from":"top","exit":null,"in":69.582,"out":72.522,"outDur":0.3,"words":[66.302,68.942,69.322,69.582]},{"id":"quiz-t18","t":"text","from":"top","exit":null,"in":72.962,"out":75.022,"outDur":0.3,"words":[72.962,73.982,73.982,74.202,74.342]},{"id":"quiz-hp","t":"icon","from":"pop","exit":null,"in":77.39,"out":79.47,"outDur":0.25,"pulse":1.2,"beat":0.5},{"id":"quiz-hq","t":"icon","from":"pop","exit":null,"in":78.87,"out":79.47,"outDur":0.25},{"id":"quiz-t19","t":"text","from":"top","exit":null,"in":75.402,"out":79.47,"outDur":0.3,"words":[75.502,75.602,75.702,75.802,75.902,76.002]},{"id":"quiz-p1","t":"stick","from":"left","exit":null,"in":81.81,"out":87.85300000000001,"outDur":0.3,"poses":[["idle",81.81],["happy",83.87]],"mouth":[["smile",81.81]],"move":[[220,0,85.85,1.4]]},{"id":"quiz-p2","t":"stick","from":"right","exit":null,"in":81.81,"out":87.85300000000001,"outDur":0.3,"poses":[["idle",81.81],["happy",83.87]],"mouth":[["smile",81.81]],"move":[[-220,0,85.85,1.4]]},{"id":"quiz-t20","t":"text","from":"top","exit":null,"in":81.81,"out":86.63300000000001,"outDur":0.3,"words":[80.93,81.33,81.81]},{"id":"quiz-t21","t":"text","from":"top","exit":null,"in":86.873,"out":87.85300000000001,"outDur":0.3,"words":[86.873,87.153,87.373]},{"id":"quiz-mn","t":"stick","from":"left","exit":null,"in":89.073,"out":109.03,"outDur":0.3,"poses":[["idle",90.413],["give",98.44],["happy",108.29]],"mouth":[["smile",90.413]]},{"id":"quiz-wn","t":"stick","from":"right","exit":null,"in":89.073,"out":109.03,"outDur":0.3,"poses":[["idle",90.413],["happy",104.48]],"mouth":[["neutral",90.413],["o",98.44],["smile",104.48]]},{"id":"quiz-t21b","t":"text","from":"top","exit":null,"in":88.313,"out":89.71300000000001,"outDur":0.3,"words":[88.573,88.813,89.073]},{"id":"quiz-t22","t":"text","from":"top","exit":null,"in":90.413,"out":96.293,"outDur":0.3,"words":[91.293,91.293,91.573,91.753,91.893]},{"id":"quiz-t23","t":"text","from":"top","exit":null,"in":96.30000000000001,"out":97.4,"outDur":0.3,"words":[96.333,96.533]},{"id":"quiz-lv","t":"bubble","from":"pop","exit":null,"in":98.44,"out":109.03,"outDur":0.25},{"id":"quiz-t24","t":"text","from":"top","exit":null,"in":99.96,"out":102.04,"outDur":0.3,"words":[97.64,98.22,100.42,100.42,100.68]},{"id":"quiz-t25","t":"text","from":"top","exit":null,"in":103.18,"out":105.18,"outDur":0.3,"words":[103.74,103.82,104.08,104.36,104.48]},{"id":"quiz-t26","t":"text","from":"top","exit":null,"in":107.33,"out":109.03,"outDur":0.3,"words":[107.79,108.07,108.13,108.29]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["quiz"] = tl;
+    })();
+  </script>
+</template>

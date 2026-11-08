@@ -1,0 +1,4499 @@
+{
+ "title": "The Psychology of People Who Fall in Love Too Fast",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "Three dates in, and you already know."
+    },
+    {
+     "id": "b01",
+     "say": "This one is different."
+    },
+    {
+     "id": "b02",
+     "say": "You've pictured the holidays together."
+    },
+    {
+     "id": "b03",
+     "say": "Maybe you've even named the dog."
+    },
+    {
+     "id": "b04",
+     "say": "Your friends tell you to slow down."
+    },
+    {
+     "id": "b05",
+     "say": "But for you, it doesn't feel fast."
+    },
+    {
+     "id": "b06",
+     "say": "It feels like fate."
+    },
+    {
+     "id": "b07",
+     "say": "If that's you, you're not alone."
+    },
+    {
+     "id": "b08",
+     "say": "It happens to millions of people."
+    },
+    {
+     "id": "b09",
+     "say": "And for some of us, it happens again and again."
+    },
+    {
+     "id": "b10",
+     "say": "Sound familiar?"
+    },
+    {
+     "id": "b11",
+     "say": "Psychologists have studied that rush for decades."
+    },
+    {
+     "id": "b12",
+     "say": "With bridges, brain scanners, and blood tests."
+    },
+    {
+     "id": "b13",
+     "say": "And what they found, might feel a little uncomfortable."
+    },
+    {
+     "id": "b14",
+     "say": "That spark you feel, might not be telling you what you think."
+    },
+    {
+     "id": "b15",
+     "say": "By the end of this video, you'll know why you might fall so fast."
+    },
+    {
+     "id": "b16",
+     "say": "And the one question, that can tell love apart from something else."
+    },
+    {
+     "id": "b17",
+     "say": "Let's start on a very wobbly bridge."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b00:three",
+     "poses": [
+      [
+       "happy",
+       "b00:three"
+      ],
+      [
+       "victory",
+       "b01:different"
+      ],
+      [
+       "happy",
+       "b02:pictured"
+      ],
+      [
+       "shrug",
+       "b04:friends"
+      ],
+      [
+       "happy",
+       "b05:you"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b00:three"
+      ]
+     ],
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "h1",
+     "name": "heart",
+     "x": 700,
+     "y": 420,
+     "size": 70,
+     "from": "pop",
+     "at": "b00:know",
+     "out": "b07",
+     "color": "accent",
+     "bob": 10,
+     "period": 2.0
+    },
+    {
+     "t": "icon",
+     "id": "h2",
+     "name": "heart",
+     "x": 830,
+     "y": 400,
+     "size": 54,
+     "from": "pop",
+     "at": "b01:different",
+     "out": "b07",
+     "color": "accent",
+     "bob": 8,
+     "period": 2.6
+    },
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 1240,
+     "y": 560,
+     "size": 200,
+     "from": "right",
+     "at": "b00:dates",
+     "out": "b02"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "three dates in",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b00:dates",
+     "out": "b01"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "“this one is *different*”",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b01:different",
+     "out": "b02"
+    },
+    {
+     "t": "icon",
+     "id": "th",
+     "name": "thought",
+     "x": 1170,
+     "y": 420,
+     "size": 420,
+     "from": "pop",
+     "at": "b02:pictured",
+     "out": "b04"
+    },
+    {
+     "t": "icon",
+     "id": "sun",
+     "name": "sun",
+     "x": 1100,
+     "y": 400,
+     "size": 110,
+     "from": "pop",
+     "at": "b02:holidays",
+     "out": "b04"
+    },
+    {
+     "t": "icon",
+     "id": "dog",
+     "name": "dog",
+     "x": 1250,
+     "y": 410,
+     "size": 130,
+     "from": "pop",
+     "at": "b03:dog",
+     "out": "b04"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "you've even named the *dog*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b03:named",
+     "out": "b04"
+    },
+    {
+     "t": "stick",
+     "id": "f1",
+     "x": 1300,
+     "y": 690,
+     "from": "right",
+     "at": "b04:friends",
+     "poses": [
+      [
+       "point",
+       "b04:slow"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b04:friends"
+      ]
+     ],
+     "out": "b05",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "stick",
+     "id": "f2",
+     "x": 1560,
+     "y": 690,
+     "from": "right",
+     "at": "b04:friends",
+     "poses": [
+      [
+       "armsCrossed",
+       "b04:slow"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b04:friends"
+      ]
+     ],
+     "out": "b05",
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "“slow *down*”",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b04:slow",
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "but for *you*, it doesn't feel fast",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b05:you",
+     "out": "b06"
+    },
+    {
+     "t": "icon",
+     "id": "hb",
+     "name": "heart",
+     "x": 1180,
+     "y": 540,
+     "size": 200,
+     "from": "pop",
+     "at": "b06:fate",
+     "out": "b07",
+     "color": "accent",
+     "pulse": 1.14,
+     "beat": 0.8
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "it feels like !fate!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b06:fate",
+     "out": "b07"
+    },
+    {
+     "t": "stick",
+     "id": "c1",
+     "x": 560,
+     "y": 690,
+     "from": "bottom",
+     "at": "b07:not",
+     "poses": [
+      [
+       "happy",
+       "b07:not"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b07:not"
+      ]
+     ],
+     "out": "b10"
+    },
+    {
+     "t": "stick",
+     "id": "c2",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b08:millions",
+     "poses": [
+      [
+       "victory",
+       "b08:millions"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b08:millions"
+      ]
+     ],
+     "out": "b10",
+     "variant": "bow"
+    },
+    {
+     "t": "stick",
+     "id": "c3",
+     "x": 1360,
+     "y": 690,
+     "from": "bottom",
+     "at": "b09:again",
+     "poses": [
+      [
+       "holdHead",
+       "b09:again"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b09:again"
+      ]
+     ],
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "you're not *alone*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b07:not",
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "again… and *again*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b09:again",
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "sound familiar?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b10:sound",
+     "out": "b11",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "decades of *research*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b11:decades",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "i1",
+     "name": "bridge",
+     "x": 520,
+     "y": 560,
+     "size": 360,
+     "from": "pop",
+     "at": "b11:studied",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "i2",
+     "name": "brain",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b12:brain",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "i3",
+     "name": "flask",
+     "x": 1400,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b12:blood",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "sp",
+     "name": "bolt",
+     "x": 960,
+     "y": 560,
+     "size": 300,
+     "from": "pop",
+     "at": "b13:found",
+     "out": "b15",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "a little *uncomfortable*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b13:uncomfortable",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "the spark may not mean what you *think*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b14:spark",
+     "out": "b15"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "why you fall so *fast*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b15:why",
+     "out": "b16"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b16:question",
+     "out": "b17"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "the !one question!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b16:one",
+     "out": "b17"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "bridge",
+     "x": 960,
+     "y": 640,
+     "size": 1500,
+     "from": "draw",
+     "at": "b17:wobbly",
+     "sway": 1.2
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "a very *wobbly* bridge",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b17:wobbly"
+    }
+   ]
+  },
+  {
+   "id": "bridge",
+   "beats": [
+    {
+     "id": "b18",
+     "say": "In nineteen seventy-four, two psychologists in Canada, ran a famous experiment about attraction."
+    },
+    {
+     "id": "b19",
+     "say": "Their names were Donald Dutton, and Arthur Aron."
+    },
+    {
+     "id": "b20",
+     "say": "Picture the setting."
+    },
+    {
+     "id": "b21",
+     "say": "The Capilano Suspension Bridge, near Vancouver."
+    },
+    {
+     "id": "b22",
+     "say": "A narrow walkway of wooden boards, and cables."
+    },
+    {
+     "id": "b23",
+     "say": "It hangs about seventy meters, above rocks and rapids."
+    },
+    {
+     "id": "b24",
+     "say": "And it sways, with every step you take."
+    },
+    {
+     "id": "b25",
+     "say": "Now imagine you're halfway across, gripping the rope."
+    },
+    {
+     "id": "b26",
+     "say": "An attractive young woman stops you."
+    },
+    {
+     "id": "b27",
+     "say": "She asks you to fill in a short questionnaire."
+    },
+    {
+     "id": "b28",
+     "say": "Then she tears off a corner of the page, and writes down her phone number."
+    },
+    {
+     "id": "b29",
+     "say": "\"Call me, if you want to talk more,\" she says."
+    },
+    {
+     "id": "b30",
+     "say": "The researchers repeated the experiment on a second bridge."
+    },
+    {
+     "id": "b31",
+     "say": "A low, solid one, just a few meters above a small stream."
+    },
+    {
+     "id": "b32",
+     "say": "Then they waited, to see who called."
+    },
+    {
+     "id": "b33",
+     "say": "From the solid bridge, only two men out of sixteen called her."
+    },
+    {
+     "id": "b34",
+     "say": "From the swaying bridge, it was nine out of eighteen."
+    },
+    {
+     "id": "b35",
+     "say": "Half."
+    },
+    {
+     "id": "b36",
+     "say": "Same woman."
+    },
+    {
+     "id": "b37",
+     "say": "Same questions."
+    },
+    {
+     "id": "b38",
+     "say": "Same phone number."
+    },
+    {
+     "id": "b39",
+     "say": "The only difference, was the bridge."
+    },
+    {
+     "id": "b40",
+     "say": "And when the interviewer was a man, the bridge made almost no difference at all."
+    },
+    {
+     "id": "b41",
+     "say": "So what happened?"
+    },
+    {
+     "id": "b42",
+     "say": "On the shaky bridge, the men's hearts were already pounding."
+    },
+    {
+     "id": "b43",
+     "say": "Their bodies were full of fear."
+    },
+    {
+     "id": "b44",
+     "say": "And when an attractive woman appeared, their brains made a mistake."
+    },
+    {
+     "id": "b45",
+     "say": "They read the fear, as attraction."
+    },
+    {
+     "id": "b46",
+     "say": "Psychologists call it, misattribution of arousal."
+    },
+    {
+     "id": "b47",
+     "say": "In other words, the bridge did half the flirting."
+    },
+    {
+     "id": "b48",
+     "say": "Now, you're probably not dating on a rope bridge."
+    },
+    {
+     "id": "b49",
+     "say": "So what does any of this, have to do with your love life?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "1974 · CANADA",
+     "text": "Dutton & Aron",
+     "sub": "an experiment about attraction",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b18:psychologists",
+     "out": "b20"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "bridge",
+     "x": 960,
+     "y": 640,
+     "size": 1500,
+     "from": "draw",
+     "at": "b20:picture",
+     "out": "b30",
+     "sway": 1.0,
+     "period": 3.0
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "the Capilano Suspension *Bridge*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b21:capilano",
+     "out": "b23"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "~70 m above the *rapids*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b23:seventy",
+     "out": "b25"
+    },
+    {
+     "t": "stick",
+     "id": "you",
+     "x": 520,
+     "y": 505,
+     "from": "left",
+     "at": "b25:imagine",
+     "poses": [
+      [
+       "holdHead",
+       "b25:gripping"
+      ],
+      [
+       "idle",
+       "b27:questionnaire"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b25:imagine"
+      ],
+      [
+       "smile",
+       "b27:questionnaire"
+      ]
+     ],
+     "out": "b30",
+     "scale": 0.55,
+     "move": [
+      [
+       760,
+       515,
+       "b25:halfway",
+       1.6
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "imagine you're *halfway* across",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b25:imagine",
+     "out": "b26"
+    },
+    {
+     "t": "stick",
+     "id": "wo",
+     "x": 1220,
+     "y": 515,
+     "from": "right",
+     "at": "b26:woman",
+     "poses": [
+      [
+       "idle",
+       "b26:woman"
+      ],
+      [
+       "give",
+       "b28:tears"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b26:woman"
+      ]
+     ],
+     "out": "b30",
+     "scale": 0.55,
+     "flip": true,
+     "variant": "bow",
+     "move": [
+      [
+       960,
+       520,
+       "b26:stops",
+       1.2
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "sc",
+     "name": "scrap",
+     "x": 900,
+     "y": 420,
+     "size": 90,
+     "from": "pop",
+     "at": "b28:number",
+     "out": "b30"
+    },
+    {
+     "t": "bubble",
+     "id": "call",
+     "text": "Call me if you want to talk more.",
+     "x": 1180,
+     "y": 270,
+     "size": 340,
+     "from": "pop",
+     "at": "b29:call",
+     "fontSize": 40,
+     "out": "b30"
+    },
+    {
+     "t": "icon",
+     "id": "br1",
+     "name": "bridge",
+     "x": 520,
+     "y": 430,
+     "size": 560,
+     "from": "pop",
+     "at": "b30:repeated",
+     "out": "b40",
+     "sway": 1.0,
+     "period": 3.0
+    },
+    {
+     "t": "icon",
+     "id": "br2",
+     "name": "bridgeLow",
+     "x": 1400,
+     "y": 440,
+     "size": 520,
+     "from": "pop",
+     "at": "b30:second",
+     "out": "b40"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "a *second* bridge: low and solid",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b30:second",
+     "out": "b32"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "who *called*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b32:called",
+     "out": "b35"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 960,
+     "y": 560,
+     "size": 160,
+     "from": "pop",
+     "at": "b32:called",
+     "out": "b33",
+     "sway": 8,
+     "period": 0.5
+    },
+    {
+     "t": "bar",
+     "id": "bs",
+     "x": 1400,
+     "y": 960,
+     "w": 150,
+     "h": 50,
+     "color": "muted",
+     "label": "2 of 16",
+     "from": "draw",
+     "at": "b33:two",
+     "out": "b40"
+    },
+    {
+     "t": "bar",
+     "id": "bw",
+     "x": 520,
+     "y": 960,
+     "w": 150,
+     "h": 200,
+     "color": "accent",
+     "label": "9 of 18",
+     "from": "draw",
+     "at": "b34:nine",
+     "out": "b40"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "HALF",
+     "x": 960,
+     "y": 170,
+     "size": 120,
+     "from": "slam",
+     "at": "b35:half",
+     "out": "b36",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "same woman · same questions · same number",
+     "x": 960,
+     "y": 170,
+     "size": 52,
+     "from": "top",
+     "at": "b36:same",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "the only difference: the *bridge*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b39:only",
+     "out": "b40"
+    },
+    {
+     "t": "stick",
+     "id": "mi",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b40:man",
+     "poses": [
+      [
+       "give",
+       "b40:interviewer"
+      ],
+      [
+       "shrug",
+       "b40:difference"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b40:man"
+      ]
+     ],
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "a male interviewer: *no* difference",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b40:man",
+     "out": "b41"
+    },
+    {
+     "t": "stick",
+     "id": "sh",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b41:happened",
+     "poses": [
+      [
+       "holdHead",
+       "b42:pounding"
+      ],
+      [
+       "happy",
+       "b45:attraction"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b42:pounding"
+      ],
+      [
+       "smile",
+       "b45:attraction"
+      ]
+     ],
+     "out": "b48"
+    },
+    {
+     "t": "icon",
+     "id": "hp",
+     "name": "heart",
+     "x": 1200,
+     "y": 470,
+     "size": 150,
+     "from": "pop",
+     "at": "b42:hearts",
+     "out": "b48",
+     "color": "accent",
+     "pulse": 1.2,
+     "beat": 0.55
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "so what *happened*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b41:happened",
+     "out": "b42"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "hearts already *pounding*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b42:pounding",
+     "out": "b43"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "full of *fear*…",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b43:fear",
+     "out": "b45"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "…read as !attraction!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b45:read",
+     "out": "b46"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "misattribution of *arousal*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b46:misattribution",
+     "out": "b47"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "the bridge did half the *flirting*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b47:bridge",
+     "out": "b48"
+    },
+    {
+     "t": "icon",
+     "id": "fb",
+     "name": "bridge",
+     "x": 600,
+     "y": 560,
+     "size": 380,
+     "from": "pop",
+     "at": "b47:bridge",
+     "out": "b48",
+     "sway": 1.5,
+     "period": 2.0
+    },
+    {
+     "t": "stick",
+     "id": "nd",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b48:probably",
+     "poses": [
+      [
+       "shrug",
+       "b48:probably"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b48:probably"
+      ]
+     ],
+     "out": "b49:end"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "not dating on a rope bridge?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b48:dating",
+     "out": "b49"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 1240,
+     "y": 520,
+     "size": 180,
+     "from": "pop",
+     "at": "b49:love",
+     "out": "b49:end"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "so what about your *love life*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b49:love"
+    }
+   ]
+  },
+  {
+   "id": "brain",
+   "beats": [
+    {
+     "id": "b50",
+     "say": "Quite a lot."
+    },
+    {
+     "id": "b51",
+     "say": "Because when you fall in love, the same kind of storm starts inside you."
+    },
+    {
+     "id": "b52",
+     "say": "In twenty oh five, a team including Arthur Aron and anthropologist Helen Fisher, scanned the brains of seventeen people."
+    },
+    {
+     "id": "b53",
+     "say": "All of them were intensely in love."
+    },
+    {
+     "id": "b54",
+     "say": "The longest for seventeen months."
+    },
+    {
+     "id": "b55",
+     "say": "When they looked at a photo of their partner, one area lit up most clearly."
+    },
+    {
+     "id": "b56",
+     "say": "A deep part of the brain's reward system, rich in dopamine."
+    },
+    {
+     "id": "b57",
+     "say": "It's linked to wanting, motivation, and craving."
+    },
+    {
+     "id": "b58",
+     "say": "Not calm satisfaction."
+    },
+    {
+     "id": "b59",
+     "say": "Wanting."
+    },
+    {
+     "id": "b60",
+     "say": "Another study, in Italy, measured something in people's blood."
+    },
+    {
+     "id": "b61",
+     "say": "Twenty people who'd fallen in love in the last six months, were compared with patients with obsessive-compulsive disorder."
+    },
+    {
+     "id": "b62",
+     "say": "On one marker of serotonin, the two groups looked almost the same."
+    },
+    {
+     "id": "b63",
+     "say": "So if you can't stop thinking about them, that's not weakness."
+    },
+    {
+     "id": "b64",
+     "say": "That's chemistry."
+    },
+    {
+     "id": "b65",
+     "say": "It's why new love can make you lose sleep, skip meals, and check your phone again and again."
+    },
+    {
+     "id": "b66",
+     "say": "When some of the lovers were tested again about a year later, the levels had returned to normal."
+    },
+    {
+     "id": "b67",
+     "say": "The psychologist Dorothy Tennov, had a name for this early, obsessive stage."
+    },
+    {
+     "id": "b68",
+     "say": "Limerence."
+    },
+    {
+     "id": "b69",
+     "say": "From her interviews, she estimated it usually lasts, from about eighteen months to three years."
+    },
+    {
+     "id": "b70",
+     "say": "So that rush you feel is real."
+    },
+    {
+     "id": "b71",
+     "say": "It's also temporary."
+    },
+    {
+     "id": "b72",
+     "say": "Which raises a question."
+    },
+    {
+     "id": "b73",
+     "say": "Why do some of us fall into it, so much faster than others?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "bolt",
+     "name": "bolt",
+     "x": 960,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b50:quite",
+     "out": "b52",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the same kind of *storm*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b51:storm",
+     "out": "b52"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2005 · BRAIN SCANS",
+     "text": "17 people, intensely in love",
+     "sub": "Aron, Fisher et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b52:scanned",
+     "out": "b55"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "brain",
+     "x": 960,
+     "y": 620,
+     "size": 340,
+     "from": "draw",
+     "at": "b52:brains",
+     "out": "b60"
+    },
+    {
+     "t": "icon",
+     "id": "h1",
+     "name": "heart",
+     "x": 720,
+     "y": 560,
+     "size": 70,
+     "from": "pop",
+     "at": "b53:love",
+     "out": "b55",
+     "color": "accent",
+     "bob": 10
+    },
+    {
+     "t": "icon",
+     "id": "h2",
+     "name": "heart",
+     "x": 1200,
+     "y": 520,
+     "size": 60,
+     "from": "pop",
+     "at": "b53:intensely",
+     "out": "b55",
+     "color": "accent",
+     "bob": 8,
+     "period": 2.8
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "a photo of their *partner*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b55:photo",
+     "out": "b56"
+    },
+    {
+     "t": "icon",
+     "id": "gl",
+     "name": "glow",
+     "x": 1010,
+     "y": 640,
+     "size": 120,
+     "from": "pop",
+     "at": "b55:lit",
+     "out": "b60",
+     "pulse": 1.25,
+     "beat": 1.0
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "the reward system: *dopamine*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b56:reward",
+     "out": "b57"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "*wanting* · craving",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b57:wanting",
+     "out": "b58"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "not calm satisfaction",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b58:calm",
+     "out": "b59",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "WANTING",
+     "x": 960,
+     "y": 170,
+     "size": 110,
+     "from": "slam",
+     "at": "b59:wanting",
+     "out": "b60",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "Italy: a blood *test*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b60:italy",
+     "out": "b61"
+    },
+    {
+     "t": "icon",
+     "id": "fa",
+     "name": "flask",
+     "x": 760,
+     "y": 600,
+     "size": 240,
+     "from": "pop",
+     "at": "b60:measured",
+     "out": "b63"
+    },
+    {
+     "t": "icon",
+     "id": "fb",
+     "name": "flask",
+     "x": 1160,
+     "y": 600,
+     "size": 240,
+     "from": "pop",
+     "at": "b60:blood",
+     "out": "b63"
+    },
+    {
+     "t": "icon",
+     "id": "fh",
+     "name": "heart",
+     "x": 760,
+     "y": 400,
+     "size": 80,
+     "from": "pop",
+     "at": "b61:love",
+     "out": "b63",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "fl",
+     "name": "loop",
+     "x": 1160,
+     "y": 400,
+     "size": 90,
+     "from": "pop",
+     "at": "b61:obsessive",
+     "out": "b63"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "new love ≈ *obsessive* thinking",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b62:serotonin",
+     "out": "b63"
+    },
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b63:thinking",
+     "poses": [
+      [
+       "holdHead",
+       "b63:thinking"
+      ],
+      [
+       "happy",
+       "b64:chemistry"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b63:thinking"
+      ],
+      [
+       "smile",
+       "b64:chemistry"
+      ]
+     ],
+     "out": "b66"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "not *weakness*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b63:weakness",
+     "out": "b64"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "!chemistry!",
+     "x": 960,
+     "y": 170,
+     "size": 80,
+     "from": "top",
+     "at": "b64:chemistry",
+     "out": "b65"
+    },
+    {
+     "t": "icon",
+     "id": "mn",
+     "name": "moon",
+     "x": 1300,
+     "y": 420,
+     "size": 120,
+     "from": "pop",
+     "at": "b65:sleep",
+     "out": "b66"
+    },
+    {
+     "t": "icon",
+     "id": "pl",
+     "name": "plate",
+     "x": 1460,
+     "y": 560,
+     "size": 130,
+     "from": "pop",
+     "at": "b65:meals",
+     "out": "b66"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 1300,
+     "y": 700,
+     "size": 120,
+     "from": "pop",
+     "at": "b65:phone",
+     "out": "b66",
+     "sway": 6,
+     "period": 0.6
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "lose sleep · skip meals · check your phone",
+     "x": 960,
+     "y": 170,
+     "size": 52,
+     "from": "top",
+     "at": "b65:sleep",
+     "out": "b66"
+    },
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b66:year",
+     "out": "b67"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "a year later: back to *normal*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b66:year",
+     "out": "b67"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "Dorothy Tennov",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b67:tennov",
+     "out": "b68",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "LIMERENCE",
+     "x": 960,
+     "y": 170,
+     "size": 110,
+     "from": "slam",
+     "at": "b68:limerence",
+     "out": "b69",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "hg",
+     "name": "hourglass",
+     "x": 960,
+     "y": 580,
+     "size": 280,
+     "from": "pop",
+     "at": "b67:name",
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "about *18 months to 3 years*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b69:eighteen",
+     "out": "b70"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "it's *real*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b70:real",
+     "out": "b71"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "and *temporary*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b71:temporary",
+     "out": "b72"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b72:question",
+     "out": "b73:end"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "why do some of us fall *faster*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b73:faster"
+    }
+   ]
+  },
+  {
+   "id": "quiz",
+   "beats": [
+    {
+     "id": "b74",
+     "say": "In nineteen eighty-seven, psychologists Cindy Hazan and Phillip Shaver, printed a \"love quiz\" in a local newspaper."
+    },
+    {
+     "id": "b75",
+     "say": "Six hundred and twenty people, sent in their answers."
+    },
+    {
+     "id": "b76",
+     "say": "About fifty-six percent, described a secure style of love."
+    },
+    {
+     "id": "b77",
+     "say": "Trusting, comfortable, steady."
+    },
+    {
+     "id": "b78",
+     "say": "About twenty-five percent were avoidant."
+    },
+    {
+     "id": "b79",
+     "say": "They kept partners at a distance."
+    },
+    {
+     "id": "b80",
+     "say": "And about nineteen percent, were what they called anxious."
+    },
+    {
+     "id": "b81",
+     "say": "Those people described love very differently."
+    },
+    {
+     "id": "b82",
+     "say": "As obsession."
+    },
+    {
+     "id": "b83",
+     "say": "Emotional highs and lows."
+    },
+    {
+     "id": "b84",
+     "say": "Extreme attraction."
+    },
+    {
+     "id": "b85",
+     "say": "A desperate wish, for the feeling to be returned."
+    },
+    {
+     "id": "b86",
+     "say": "And jealousy."
+    },
+    {
+     "id": "b87",
+     "say": "If you recognise yourself in that list, be gentle with yourself."
+    },
+    {
+     "id": "b88",
+     "say": "For anxious people, love doesn't arrive slowly."
+    },
+    {
+     "id": "b89",
+     "say": "It hits like a wave."
+    },
+    {
+     "id": "b90",
+     "say": "Psychiatrist Amir Levine and psychologist Rachel Heller, go one step further."
+    },
+    {
+     "id": "b91",
+     "say": "They argue that anxious people often mistake an alarm, for chemistry."
+    },
+    {
+     "id": "b92",
+     "say": "When someone is hot and cold, the uncertainty keeps your heart racing."
+    },
+    {
+     "id": "b93",
+     "say": "And that racing, feels like passion."
+    },
+    {
+     "id": "b94",
+     "say": "Remember the bridge?"
+    },
+    {
+     "id": "b95",
+     "say": "Sometimes the bridge, is the person."
+    },
+    {
+     "id": "b96",
+     "say": "Here's the irony."
+    },
+    {
+     "id": "b97",
+     "say": "The calm, kind person who texts back on time, can feel boring at first."
+    },
+    {
+     "id": "b98",
+     "say": "Not because something is missing."
+    },
+    {
+     "id": "b99",
+     "say": "Because nothing is setting off your alarm."
+    },
+    {
+     "id": "b100",
+     "say": "Be honest."
+    },
+    {
+     "id": "b101",
+     "say": "Have you ever mistaken a pounding heart, for a perfect match?"
+    },
+    {
+     "id": "b102",
+     "say": "The good news, is that these styles aren't fixed."
+    },
+    {
+     "id": "b103",
+     "say": "Many people become more secure over time, often with a steady partner."
+    },
+    {
+     "id": "b104",
+     "say": "You can too."
+    },
+    {
+     "id": "b105",
+     "say": "And here's one more surprise."
+    },
+    {
+     "id": "b106",
+     "say": "Most people believe women fall in love first."
+    },
+    {
+     "id": "b107",
+     "say": "In twenty eleven, a team led by Joshua Ackerman, found the opposite."
+    },
+    {
+     "id": "b108",
+     "say": "Men thought about saying \"I love you\" about six weeks earlier than women."
+    },
+    {
+     "id": "b109",
+     "say": "And in most couples, the man said it first."
+    },
+    {
+     "id": "b110",
+     "say": "So if you've ever said it too soon, you're in good company."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "np",
+     "name": "news",
+     "x": 960,
+     "y": 560,
+     "size": 300,
+     "from": "pop",
+     "at": "b74:psychologists",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "1987 · a *love quiz*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b74:quiz",
+     "out": "b75"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "*620* readers replied",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b75:six",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "three styles of love",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b76:secure",
+     "out": "b81"
+    },
+    {
+     "t": "bar",
+     "id": "q1",
+     "x": 600,
+     "y": 960,
+     "w": 170,
+     "h": 392,
+     "color": "muted",
+     "label": "secure · 56%",
+     "from": "draw",
+     "at": "b76:fifty",
+     "out": "b81"
+    },
+    {
+     "t": "bar",
+     "id": "q2",
+     "x": 960,
+     "y": 960,
+     "w": 170,
+     "h": 175,
+     "color": "muted",
+     "label": "avoidant · 25%",
+     "from": "draw",
+     "at": "b78:twenty",
+     "out": "b81"
+    },
+    {
+     "t": "bar",
+     "id": "q3",
+     "x": 1320,
+     "y": 960,
+     "w": 170,
+     "h": 133,
+     "color": "accent",
+     "label": "anxious · 19%",
+     "from": "draw",
+     "at": "b80:nineteen",
+     "out": "b81"
+    },
+    {
+     "t": "stick",
+     "id": "ax",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b81:those",
+     "poses": [
+      [
+       "holdHead",
+       "b81:those"
+      ],
+      [
+       "happy",
+       "b87:gentle"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b81:those"
+      ],
+      [
+       "smile",
+       "b87:gentle"
+      ]
+     ],
+     "out": "b88"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "love, the anxious way",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b81:those",
+     "out": "b82"
+    },
+    {
+     "t": "icon",
+     "id": "a1",
+     "name": "loop",
+     "x": 620,
+     "y": 420,
+     "size": 130,
+     "from": "pop",
+     "at": "b82:obsession",
+     "out": "b87"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "*obsession*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b82:obsession",
+     "out": "b83"
+    },
+    {
+     "t": "icon",
+     "id": "a2",
+     "name": "heartbeat",
+     "x": 1300,
+     "y": 420,
+     "size": 150,
+     "from": "pop",
+     "at": "b83:highs",
+     "out": "b87"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "highs and *lows*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b83:highs",
+     "out": "b84"
+    },
+    {
+     "t": "icon",
+     "id": "a3",
+     "name": "heart",
+     "x": 600,
+     "y": 680,
+     "size": 120,
+     "from": "pop",
+     "at": "b84:extreme",
+     "out": "b87",
+     "color": "accent",
+     "pulse": 1.15
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "extreme *attraction*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b84:extreme",
+     "out": "b85"
+    },
+    {
+     "t": "icon",
+     "id": "a4",
+     "name": "phone",
+     "x": 1320,
+     "y": 680,
+     "size": 120,
+     "from": "pop",
+     "at": "b85:wish",
+     "out": "b87"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "a need for it to be *returned*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b85:wish",
+     "out": "b86"
+    },
+    {
+     "t": "icon",
+     "id": "a5",
+     "name": "bolt",
+     "x": 960,
+     "y": 360,
+     "size": 110,
+     "from": "pop",
+     "at": "b86:jealousy",
+     "out": "b87",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "*jealousy*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b86:jealousy",
+     "out": "b87"
+    },
+    {
+     "t": "icon",
+     "id": "gh",
+     "name": "heart",
+     "x": 1050,
+     "y": 610,
+     "size": 80,
+     "from": "pop",
+     "at": "b87:gentle",
+     "out": "b88",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "be *gentle* with yourself",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b87:recognise",
+     "out": "b88"
+    },
+    {
+     "t": "text",
+     "id": "t9b",
+     "text": "love doesn't arrive *slowly*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b88:love",
+     "out": "b89"
+    },
+    {
+     "t": "icon",
+     "id": "wv",
+     "name": "wave",
+     "x": 400,
+     "y": 560,
+     "size": 380,
+     "from": "left",
+     "at": "b88:love",
+     "out": "b90",
+     "move": [
+      [
+       960,
+       560,
+       "b89:hits",
+       0.9
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "it hits like a !wave!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b89:hits",
+     "out": "b90"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "PSYCHIATRIST & PSYCHOLOGIST",
+     "text": "Amir Levine & Rachel Heller",
+     "sub": "authors of “Attached”",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b90:levine",
+     "out": "b91"
+    },
+    {
+     "t": "icon",
+     "id": "al",
+     "name": "alarm",
+     "x": 760,
+     "y": 580,
+     "size": 240,
+     "from": "pop",
+     "at": "b91:alarm",
+     "out": "b94",
+     "sway": 10,
+     "period": 0.35
+    },
+    {
+     "t": "icon",
+     "id": "ah",
+     "name": "heart",
+     "x": 1160,
+     "y": 580,
+     "size": 200,
+     "from": "pop",
+     "at": "b91:chemistry",
+     "out": "b94",
+     "color": "accent",
+     "pulse": 1.18,
+     "beat": 0.5
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "an *alarm*, not chemistry",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b91:alarm",
+     "out": "b92"
+    },
+    {
+     "t": "icon",
+     "id": "hot",
+     "name": "sun",
+     "x": 560,
+     "y": 400,
+     "size": 110,
+     "from": "pop",
+     "at": "b92:hot",
+     "out": "b94"
+    },
+    {
+     "t": "icon",
+     "id": "cold",
+     "name": "snow",
+     "x": 1360,
+     "y": 400,
+     "size": 110,
+     "from": "pop",
+     "at": "b92:cold",
+     "out": "b94"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "hot and *cold*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b92:hot",
+     "out": "b93"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "racing feels like *passion*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b93:racing",
+     "out": "b94"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "bridge",
+     "x": 960,
+     "y": 640,
+     "size": 1100,
+     "from": "pop",
+     "at": "b94:remember",
+     "out": "b96",
+     "sway": 1.2,
+     "period": 2.6
+    },
+    {
+     "t": "stick",
+     "id": "bp",
+     "x": 960,
+     "y": 545,
+     "from": "bottom",
+     "at": "b95:person",
+     "poses": [
+      [
+       "armsCrossed",
+       "b95:person"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b95:person"
+      ]
+     ],
+     "out": "b96",
+     "scale": 0.45
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "remember the *bridge*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b94:remember",
+     "out": "b95"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "sometimes the bridge is the !person!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b95:sometimes",
+     "out": "b96"
+    },
+    {
+     "t": "stick",
+     "id": "ck",
+     "x": 1260,
+     "y": 690,
+     "from": "right",
+     "at": "b96:irony",
+     "poses": [
+      [
+       "give",
+       "b97:texts"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b97:calm"
+      ]
+     ],
+     "out": "b100",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "cp",
+     "name": "phone",
+     "x": 1040,
+     "y": 560,
+     "size": 110,
+     "from": "pop",
+     "at": "b96:irony",
+     "out": "b100"
+    },
+    {
+     "t": "icon",
+     "id": "cc",
+     "name": "check",
+     "x": 1040,
+     "y": 430,
+     "size": 80,
+     "from": "pop",
+     "at": "b97:time",
+     "out": "b100",
+     "color": "accent"
+    },
+    {
+     "t": "stick",
+     "id": "vw",
+     "x": 640,
+     "y": 690,
+     "from": "left",
+     "at": "b96:irony",
+     "poses": [
+      [
+       "shrug",
+       "b97:boring"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b97:person"
+      ]
+     ],
+     "out": "b100"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "the *irony*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b96:irony",
+     "out": "b97"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "calm can feel *boring*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b97:boring",
+     "out": "b99"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "nothing sets off your *alarm*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b99:nothing",
+     "out": "b100"
+    },
+    {
+     "t": "icon",
+     "id": "hp",
+     "name": "heart",
+     "x": 840,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b101:pounding",
+     "out": "b102",
+     "color": "accent",
+     "pulse": 1.2,
+     "beat": 0.5
+    },
+    {
+     "t": "icon",
+     "id": "hq",
+     "name": "question",
+     "x": 1100,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b101:match",
+     "out": "b102"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "a pounding heart… or a *match*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b100:honest",
+     "out": "b102"
+    },
+    {
+     "t": "stick",
+     "id": "p1",
+     "x": 600,
+     "y": 690,
+     "from": "left",
+     "at": "b102:fixed",
+     "poses": [
+      [
+       "idle",
+       "b102:fixed"
+      ],
+      [
+       "happy",
+       "b103:secure"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b102:fixed"
+      ]
+     ],
+     "out": "b105",
+     "move": [
+      [
+       820,
+       690,
+       "b103:steady",
+       1.4
+      ]
+     ]
+    },
+    {
+     "t": "stick",
+     "id": "p2",
+     "x": 1320,
+     "y": 690,
+     "from": "right",
+     "at": "b102:fixed",
+     "poses": [
+      [
+       "idle",
+       "b102:fixed"
+      ],
+      [
+       "happy",
+       "b103:secure"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b102:fixed"
+      ]
+     ],
+     "out": "b105",
+     "flip": true,
+     "variant": "bow",
+     "move": [
+      [
+       1100,
+       690,
+       "b103:steady",
+       1.4
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "styles aren't *fixed*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b102:fixed",
+     "out": "b104"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "you can !too!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b104:too",
+     "out": "b105"
+    },
+    {
+     "t": "stick",
+     "id": "mn",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b105:surprise",
+     "poses": [
+      [
+       "idle",
+       "b106:believe"
+      ],
+      [
+       "give",
+       "b108:saying"
+      ],
+      [
+       "happy",
+       "b110:company"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b106:believe"
+      ]
+     ],
+     "out": "b111"
+    },
+    {
+     "t": "stick",
+     "id": "wn",
+     "x": 1160,
+     "y": 690,
+     "from": "right",
+     "at": "b105:surprise",
+     "poses": [
+      [
+       "idle",
+       "b106:believe"
+      ],
+      [
+       "happy",
+       "b109:first"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b106:believe"
+      ],
+      [
+       "o",
+       "b108:saying"
+      ],
+      [
+       "smile",
+       "b109:first"
+      ]
+     ],
+     "out": "b111",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t21b",
+     "text": "one more *surprise*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b105:surprise",
+     "out": "b106"
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "who falls in love *first*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b106:believe",
+     "out": "b107:opposite"
+    },
+    {
+     "t": "text",
+     "id": "t23",
+     "text": "the *opposite*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b107:opposite",
+     "out": "b108"
+    },
+    {
+     "t": "bubble",
+     "id": "lv",
+     "text": "I love you!",
+     "x": 560,
+     "y": 390,
+     "size": 280,
+     "from": "pop",
+     "at": "b108:saying",
+     "fontSize": 54,
+     "out": "b111"
+    },
+    {
+     "t": "text",
+     "id": "t24",
+     "text": "men: about *6 weeks* earlier",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b108:six",
+     "out": "b109"
+    },
+    {
+     "t": "text",
+     "id": "t25",
+     "text": "the man said it *first*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b109:first",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "t26",
+     "text": "you're in good *company*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b110:company",
+     "out": "b111"
+    }
+   ]
+  },
+  {
+   "id": "sight",
+   "beats": [
+    {
+     "id": "b111",
+     "say": "So what about love at first sight?"
+    },
+    {
+     "id": "b112",
+     "say": "Maybe you've felt it."
+    },
+    {
+     "id": "b113",
+     "say": "One look across a room, and that was that."
+    },
+    {
+     "id": "b114",
+     "say": "In twenty seventeen, a team in the Netherlands, studied people who said they'd felt it."
+    },
+    {
+     "id": "b115",
+     "say": "They found it wasn't marked by intimacy, passion, or commitment."
+    },
+    {
+     "id": "b116",
+     "say": "Its strongest link, was physical attraction."
+    },
+    {
+     "id": "b117",
+     "say": "At their speed-dating events, not one case of love at first sight, was mutual."
+    },
+    {
+     "id": "b118",
+     "say": "And many people only decided it had been love at first sight, later, looking back."
+    },
+    {
+     "id": "b119",
+     "say": "That same year, researchers tried to predict attraction, with a computer."
+    },
+    {
+     "id": "b120",
+     "say": "Before speed dating, people answered more than a hundred questions about themselves."
+    },
+    {
+     "id": "b121",
+     "say": "The computer still couldn't predict, who would want whom."
+    },
+    {
+     "id": "b122",
+     "say": "Chemistry is real."
+    },
+    {
+     "id": "b123",
+     "say": "But you can't find it on paper."
+    },
+    {
+     "id": "b124",
+     "say": "And honestly, three dates isn't much more than paper."
+    },
+    {
+     "id": "b125",
+     "say": "But it wasn't over yet."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "l",
+     "x": 420,
+     "y": 690,
+     "from": "left",
+     "at": "b111:sight",
+     "poses": [
+      [
+       "idle",
+       "b111:sight"
+      ],
+      [
+       "point",
+       "b113:look"
+      ],
+      [
+       "happy",
+       "b113:that"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b111:sight"
+      ]
+     ],
+     "out": "b114"
+    },
+    {
+     "t": "stick",
+     "id": "r",
+     "x": 1500,
+     "y": 690,
+     "from": "right",
+     "at": "b111:sight",
+     "poses": [
+      [
+       "idle",
+       "b111:sight"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b111:sight"
+      ]
+     ],
+     "out": "b114",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "fh",
+     "name": "heart",
+     "x": 560,
+     "y": 460,
+     "size": 110,
+     "from": "pop",
+     "at": "b113:look",
+     "out": "b114",
+     "color": "accent",
+     "move": [
+      [
+       1360,
+       460,
+       "b113:room",
+       1.3
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "love at first *sight*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b111:sight",
+     "out": "b112"
+    },
+    {
+     "t": "text",
+     "id": "t0b",
+     "text": "maybe you've *felt* it",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b112:felt",
+     "out": "b113"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "one look… and that was *that*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b113:look",
+     "out": "b114"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2017 · THE NETHERLANDS",
+     "text": "Love at first sight",
+     "sub": "Zsok et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b114:netherlands",
+     "out": "b116"
+    },
+    {
+     "t": "icon",
+     "id": "x1",
+     "name": "cross",
+     "x": 960,
+     "y": 600,
+     "size": 200,
+     "from": "pop",
+     "at": "b115:intimacy",
+     "out": "b116",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "eye",
+     "name": "heart",
+     "x": 960,
+     "y": 600,
+     "size": 220,
+     "from": "pop",
+     "at": "b116:physical",
+     "out": "b117",
+     "color": "accent",
+     "pulse": 1.1
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "mostly *physical attraction*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b116:physical",
+     "out": "b117"
+    },
+    {
+     "t": "stick",
+     "id": "da",
+     "x": 820,
+     "y": 655,
+     "from": "bottom",
+     "at": "b117:speed",
+     "poses": [
+      [
+       "happy",
+       "b117:speed"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b117:speed"
+      ]
+     ],
+     "out": "b118",
+     "scale": 0.75,
+     "sit": true
+    },
+    {
+     "t": "stick",
+     "id": "db",
+     "x": 1100,
+     "y": 655,
+     "from": "bottom",
+     "at": "b117:speed",
+     "poses": [
+      [
+       "idle",
+       "b117:speed"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b117:speed"
+      ]
+     ],
+     "out": "b118",
+     "scale": 0.75,
+     "sit": true,
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "dt",
+     "name": "table",
+     "x": 960,
+     "y": 720,
+     "size": 420,
+     "from": "bottom",
+     "at": "b117:speed",
+     "out": "b118"
+    },
+    {
+     "t": "icon",
+     "id": "dh",
+     "name": "heart",
+     "x": 820,
+     "y": 430,
+     "size": 90,
+     "from": "pop",
+     "at": "b117:love",
+     "out": "b118",
+     "color": "accent",
+     "pulse": 1.15
+    },
+    {
+     "t": "icon",
+     "id": "dq",
+     "name": "question",
+     "x": 1100,
+     "y": 430,
+     "size": 90,
+     "from": "pop",
+     "at": "b117:mutual",
+     "out": "b118"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "not one was *mutual*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b117:mutual",
+     "out": "b118"
+    },
+    {
+     "t": "icon",
+     "id": "hg",
+     "name": "hourglass",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b118:later",
+     "out": "b119"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "often decided *later*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b118:later",
+     "out": "b119"
+    },
+    {
+     "t": "icon",
+     "id": "lp",
+     "name": "laptop",
+     "x": 820,
+     "y": 580,
+     "size": 260,
+     "from": "pop",
+     "at": "b119:researchers",
+     "out": "b122"
+    },
+    {
+     "t": "icon",
+     "id": "ck",
+     "name": "checklist",
+     "x": 1160,
+     "y": 580,
+     "size": 200,
+     "from": "pop",
+     "at": "b120:hundred",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "researchers tried a *computer*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b119:researchers",
+     "out": "b120"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "100+ questions",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b120:hundred",
+     "out": "b121"
+    },
+    {
+     "t": "icon",
+     "id": "lq",
+     "name": "question",
+     "x": 960,
+     "y": 380,
+     "size": 120,
+     "from": "pop",
+     "at": "b121:predict",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "no *prediction*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b121:couldn't",
+     "out": "b122"
+    },
+    {
+     "t": "icon",
+     "id": "fk",
+     "name": "flask",
+     "x": 760,
+     "y": 560,
+     "size": 220,
+     "from": "pop",
+     "at": "b122:chemistry",
+     "out": "b125",
+     "bob": 10
+    },
+    {
+     "t": "icon",
+     "id": "pp",
+     "name": "paper",
+     "x": 1160,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b123:paper",
+     "out": "b125"
+    },
+    {
+     "t": "strike",
+     "id": "kp",
+     "x": 1160,
+     "y": 560,
+     "w": 240,
+     "at": "b123:paper",
+     "out": "b125"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "chemistry is *real*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b122:chemistry",
+     "out": "b123"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "but it's not on *paper*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b123:paper",
+     "out": "b124"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "three dates ≈ *paper*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b124:dates",
+     "out": "b125"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "but it wasn't over yet",
+     "x": 960,
+     "y": 480,
+     "size": 96,
+     "from": "slam",
+     "at": "b125:over",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "numbers",
+   "beats": [
+    {
+     "id": "b126",
+     "say": "Because there's a cost to falling too fast, and it shows up in the numbers."
+    },
+    {
+     "id": "b127",
+     "say": "In twenty fifteen, economists Andrew Francis-Tan and Hugo Mialon, surveyed about three thousand people who had been married."
+    },
+    {
+     "id": "b128",
+     "say": "Couples who dated for one to two years before getting engaged, did better."
+    },
+    {
+     "id": "b129",
+     "say": "They were about twenty percent less likely to divorce, than couples who dated for under a year."
+    },
+    {
+     "id": "b130",
+     "say": "Couples who dated for three years or more, were about thirty-nine percent less likely."
+    },
+    {
+     "id": "b131",
+     "say": "Now, that doesn't prove, that waiting causes a better marriage."
+    },
+    {
+     "id": "b132",
+     "say": "Couples who wait, may be different in other ways."
+    },
+    {
+     "id": "b133",
+     "say": "But time gives you something, nothing else can."
+    },
+    {
+     "id": "b134",
+     "say": "It lets the rush wear off, so you can see who's actually there."
+    },
+    {
+     "id": "b135",
+     "say": "Remember Tennov's estimate?"
+    },
+    {
+     "id": "b136",
+     "say": "Eighteen months to three years."
+    },
+    {
+     "id": "b137",
+     "say": "That's roughly how long the rush lasts, and roughly how long the safer couples waited."
+    },
+    {
+     "id": "b138",
+     "say": "So how do you fall in love, at the right speed?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "a *cost* to falling too fast",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b126:cost",
+     "out": "b127"
+    },
+    {
+     "t": "icon",
+     "id": "rg",
+     "name": "rings",
+     "x": 960,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b126:cost",
+     "out": "b127"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2015 · ~3,000 MARRIED PEOPLE",
+     "text": "Francis-Tan & Mialon",
+     "sub": "dating time vs divorce",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b127:economists",
+     "out": "b128"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "the risk of *divorce*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b128:couples",
+     "out": "b131"
+    },
+    {
+     "t": "bar",
+     "id": "d1",
+     "x": 560,
+     "y": 960,
+     "w": 180,
+     "h": 400,
+     "color": "muted",
+     "label": "dated < 1 year",
+     "from": "draw",
+     "at": "b128:couples",
+     "out": "b131"
+    },
+    {
+     "t": "bar",
+     "id": "d2",
+     "x": 960,
+     "y": 960,
+     "w": 180,
+     "h": 320,
+     "color": "muted",
+     "label": "1–2 years: −20%",
+     "from": "draw",
+     "at": "b129:twenty",
+     "out": "b131"
+    },
+    {
+     "t": "bar",
+     "id": "d3",
+     "x": 1360,
+     "y": 960,
+     "w": 180,
+     "h": 244,
+     "color": "accent",
+     "label": "3+ years: −39%",
+     "from": "draw",
+     "at": "b130:three",
+     "out": "b131"
+    },
+    {
+     "t": "icon",
+     "id": "bal",
+     "name": "question",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b131:prove",
+     "out": "b133"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "a link, not *proof*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b131:prove",
+     "out": "b133"
+    },
+    {
+     "t": "stick",
+     "id": "a",
+     "x": 760,
+     "y": 690,
+     "from": "blur",
+     "at": "b133:time",
+     "poses": [
+      [
+       "idle",
+       "b133:time"
+      ],
+      [
+       "happy",
+       "b134:actually"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b133:time"
+      ]
+     ],
+     "out": "b135"
+    },
+    {
+     "t": "stick",
+     "id": "b",
+     "x": 1160,
+     "y": 690,
+     "from": "blur",
+     "at": "b133:time",
+     "poses": [
+      [
+       "idle",
+       "b133:time"
+      ],
+      [
+       "happy",
+       "b134:actually"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b134:actually"
+      ]
+     ],
+     "out": "b135",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "hgl",
+     "name": "hourglass",
+     "x": 960,
+     "y": 420,
+     "size": 140,
+     "from": "pop",
+     "at": "b133:time",
+     "out": "b135"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "time lets the rush wear *off*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b134:rush",
+     "out": "b135"
+    },
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 960,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b135:remember",
+     "out": "b138"
+    },
+    {
+     "t": "text",
+     "id": "t3b",
+     "text": "*Tennov's* estimate?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b135:remember",
+     "out": "b136"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "*18 months to 3 years*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b136:eighteen",
+     "out": "b137"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "how long the safer couples *waited*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b137:safer",
+     "out": "b138"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b138:right",
+     "out": "b138:end"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "the *right* speed?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b138:right"
+    }
+   ]
+  },
+  {
+   "id": "rules",
+   "beats": [
+    {
+     "id": "b139",
+     "say": "Rule one: do the bridge check."
+    },
+    {
+     "id": "b140",
+     "say": "Next time your heart is racing, ask yourself one question."
+    },
+    {
+     "id": "b141",
+     "say": "Is it them, or is it the uncertainty?"
+    },
+    {
+     "id": "b142",
+     "say": "If you feel calm and safe, that's a good sign, not a boring one."
+    },
+    {
+     "id": "b143",
+     "say": "Rule two: see them in every weather."
+    },
+    {
+     "id": "b144",
+     "say": "Tired."
+    },
+    {
+     "id": "b145",
+     "say": "Stressed."
+    },
+    {
+     "id": "b146",
+     "say": "Hungry."
+    },
+    {
+     "id": "b147",
+     "say": "Wrong."
+    },
+    {
+     "id": "b148",
+     "say": "You don't really know someone, until you've seen them on a bad day."
+    },
+    {
+     "id": "b149",
+     "say": "Rule three: keep your own life."
+    },
+    {
+     "id": "b150",
+     "say": "Your friends, your hobbies, your routines."
+    },
+    {
+     "id": "b151",
+     "say": "When you fall fast, it's easy to let everything else fall away."
+    },
+    {
+     "id": "b152",
+     "say": "Don't."
+    },
+    {
+     "id": "b153",
+     "say": "Rule four: let their actions catch up with your feelings."
+    },
+    {
+     "id": "b154",
+     "say": "Words are fast."
+    },
+    {
+     "id": "b155",
+     "say": "Consistency is slow."
+    },
+    {
+     "id": "b156",
+     "say": "Watch what they do, week after week."
+    },
+    {
+     "id": "b157",
+     "say": "And rule five: give it time."
+    },
+    {
+     "id": "b158",
+     "say": "The rush can last a year or more."
+    },
+    {
+     "id": "b159",
+     "say": "Let some of it settle, before you make big decisions."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "r1",
+     "text": "rule 1 · the bridge *check*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b139:rule",
+     "out": "b141"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "bridge",
+     "x": 960,
+     "y": 660,
+     "size": 1100,
+     "from": "draw",
+     "at": "b139:bridge",
+     "out": "b143",
+     "sway": 1.0
+    },
+    {
+     "t": "stick",
+     "id": "rs",
+     "x": 960,
+     "y": 565,
+     "from": "bottom",
+     "at": "b140:racing",
+     "poses": [
+      [
+       "holdHead",
+       "b140:racing"
+      ],
+      [
+       "happy",
+       "b142:calm"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b140:racing"
+      ],
+      [
+       "smile",
+       "b142:calm"
+      ]
+     ],
+     "out": "b143",
+     "scale": 0.45
+    },
+    {
+     "t": "icon",
+     "id": "rh",
+     "name": "heart",
+     "x": 1100,
+     "y": 420,
+     "size": 90,
+     "from": "pop",
+     "at": "b140:heart",
+     "out": "b142",
+     "color": "accent",
+     "pulse": 1.2,
+     "beat": 0.5
+    },
+    {
+     "t": "text",
+     "id": "r1b",
+     "text": "them… or the *uncertainty*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b141:them",
+     "out": "b142"
+    },
+    {
+     "t": "text",
+     "id": "r1c",
+     "text": "calm and safe is a *good* sign",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b142:calm",
+     "out": "b143"
+    },
+    {
+     "t": "text",
+     "id": "r2",
+     "text": "rule 2 · every *weather*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b143:rule",
+     "out": "b148"
+    },
+    {
+     "t": "stick",
+     "id": "w",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b143:weather",
+     "poses": [
+      [
+       "idle",
+       "b143:weather"
+      ],
+      [
+       "headDown",
+       "b144:tired"
+      ],
+      [
+       "holdHead",
+       "b145:stressed"
+      ],
+      [
+       "shrug",
+       "b146:hungry"
+      ],
+      [
+       "armsCrossed",
+       "b147:wrong"
+      ],
+      [
+       "happy",
+       "b148:bad"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b143:weather"
+      ],
+      [
+       "tight",
+       "b144:tired"
+      ],
+      [
+       "o",
+       "b146:hungry"
+      ],
+      [
+       "frown",
+       "b147:wrong"
+      ],
+      [
+       "smile",
+       "b148:bad"
+      ]
+     ],
+     "out": "b149"
+    },
+    {
+     "t": "icon",
+     "id": "wsun",
+     "name": "sun",
+     "x": 1200,
+     "y": 400,
+     "size": 130,
+     "from": "pop",
+     "at": "b143:weather",
+     "out": "b144"
+    },
+    {
+     "t": "icon",
+     "id": "wm",
+     "name": "moon",
+     "x": 1200,
+     "y": 520,
+     "size": 160,
+     "from": "pop",
+     "at": "b144:tired",
+     "out": "b145"
+    },
+    {
+     "t": "icon",
+     "id": "wb",
+     "name": "rain",
+     "x": 1200,
+     "y": 520,
+     "size": 180,
+     "from": "pop",
+     "at": "b145:stressed",
+     "out": "b146"
+    },
+    {
+     "t": "icon",
+     "id": "wp",
+     "name": "plate",
+     "x": 1200,
+     "y": 520,
+     "size": 170,
+     "from": "pop",
+     "at": "b146:hungry",
+     "out": "b147"
+    },
+    {
+     "t": "icon",
+     "id": "wx",
+     "name": "cross",
+     "x": 1200,
+     "y": 520,
+     "size": 150,
+     "from": "pop",
+     "at": "b147:wrong",
+     "out": "b148",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "wc",
+     "name": "cloud",
+     "x": 1200,
+     "y": 520,
+     "size": 190,
+     "from": "pop",
+     "at": "b148:bad",
+     "out": "b149"
+    },
+    {
+     "t": "text",
+     "id": "r2b",
+     "text": "know them on a *bad* day",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b148:bad",
+     "out": "b149"
+    },
+    {
+     "t": "text",
+     "id": "r3",
+     "text": "rule 3 · keep your *own* life",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b149:rule",
+     "out": "b152"
+    },
+    {
+     "t": "stick",
+     "id": "o",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b149:keep",
+     "poses": [
+      [
+       "happy",
+       "b149:keep"
+      ],
+      [
+       "headDown",
+       "b151:fall"
+      ],
+      [
+       "proud",
+       "b152:don't"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b149:keep"
+      ],
+      [
+       "frown",
+       "b151:fall"
+      ],
+      [
+       "smile",
+       "b152:don't"
+      ]
+     ],
+     "out": "b153"
+    },
+    {
+     "t": "icon",
+     "id": "of",
+     "name": "people",
+     "x": 600,
+     "y": 460,
+     "size": 160,
+     "from": "pop",
+     "at": "b150:friends",
+     "out": "b152",
+     "move": [
+      [
+       600,
+       900,
+       "b151:away",
+       0.9
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "oh",
+     "name": "book",
+     "x": 1320,
+     "y": 440,
+     "size": 150,
+     "from": "pop",
+     "at": "b150:hobbies",
+     "out": "b152",
+     "move": [
+      [
+       1320,
+       900,
+       "b151:away",
+       0.9
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "orr",
+     "name": "calendar",
+     "x": 1320,
+     "y": 700,
+     "size": 140,
+     "from": "pop",
+     "at": "b150:routines",
+     "out": "b152",
+     "move": [
+      [
+       1320,
+       1000,
+       "b151:fall",
+       0.9
+      ]
+     ]
+    },
+    {
+     "t": "stamp",
+     "id": "dont",
+     "text": "DON'T",
+     "x": 960,
+     "y": 400,
+     "size": 100,
+     "from": "slam",
+     "at": "b152:don't",
+     "out": "b153"
+    },
+    {
+     "t": "text",
+     "id": "r4",
+     "text": "rule 4 · actions over *words*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b153:rule",
+     "out": "b154"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 620,
+     "y": 560,
+     "size": 180,
+     "from": "pop",
+     "at": "b153:actions",
+     "out": "b157",
+     "sway": 6,
+     "period": 0.5
+    },
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 1300,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b153:feelings",
+     "out": "b157"
+    },
+    {
+     "t": "text",
+     "id": "r4b",
+     "text": "words: *fast*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b154:words",
+     "out": "b155"
+    },
+    {
+     "t": "text",
+     "id": "r4c",
+     "text": "consistency: *slow*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b155:consistency",
+     "out": "b156"
+    },
+    {
+     "t": "text",
+     "id": "r4d",
+     "text": "week after *week*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b156:week",
+     "out": "b157"
+    },
+    {
+     "t": "text",
+     "id": "r5",
+     "text": "rule 5 · give it *time*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b157:rule",
+     "out": "b159"
+    },
+    {
+     "t": "icon",
+     "id": "hg",
+     "name": "hourglass",
+     "x": 960,
+     "y": 580,
+     "size": 280,
+     "from": "pop",
+     "at": "b157:time"
+    },
+    {
+     "t": "icon",
+     "id": "h5",
+     "name": "heart",
+     "x": 1180,
+     "y": 460,
+     "size": 100,
+     "from": "pop",
+     "at": "b158:rush",
+     "color": "accent",
+     "pulse": 1.12
+    },
+    {
+     "t": "text",
+     "id": "r5b",
+     "text": "let it *settle*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b159:settle"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b160",
+     "say": "So here's the twist."
+    },
+    {
+     "id": "b161",
+     "say": "Falling fast, isn't a flaw."
+    },
+    {
+     "id": "b162",
+     "say": "If you fall fast, it often means you have a big heart."
+    },
+    {
+     "id": "b163",
+     "say": "And a brain doing exactly what it evolved to do."
+    },
+    {
+     "id": "b164",
+     "say": "You love with your whole chest."
+    },
+    {
+     "id": "b165",
+     "say": "That's worth keeping."
+    },
+    {
+     "id": "b166",
+     "say": "Just add a little patience."
+    },
+    {
+     "id": "b167",
+     "say": "The problem isn't how fast you fall."
+    },
+    {
+     "id": "b168",
+     "say": "It's how fast you decide."
+    },
+    {
+     "id": "b169",
+     "say": "The men on that bridge, felt something real."
+    },
+    {
+     "id": "b170",
+     "say": "They just didn't know, where it was coming from."
+    },
+    {
+     "id": "b171",
+     "say": "So the next time your heart is pounding, take one more step, before you jump."
+    },
+    {
+     "id": "b172",
+     "say": "Make sure it's them, not the bridge."
+    },
+    {
+     "id": "b173",
+     "say": "So here's your challenge for this week."
+    },
+    {
+     "id": "b174",
+     "say": "Think about the last time, you fell for someone fast."
+    },
+    {
+     "id": "b175",
+     "say": "Ask yourself honestly: was it them, or the bridge?"
+    },
+    {
+     "id": "b176",
+     "say": "No judgement here."
+    },
+    {
+     "id": "b177",
+     "say": "Then come back and tell me what you found."
+    },
+    {
+     "id": "b178",
+     "say": "Are you someone who falls fast, or someone who takes their time?"
+    },
+    {
+     "id": "b179",
+     "say": "Tell me in the comments."
+    },
+    {
+     "id": "b180",
+     "say": "Which habit should we cover next?"
+    },
+    {
+     "id": "b181",
+     "say": "Drop it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the twist",
+     "x": 960,
+     "y": 170,
+     "size": 110,
+     "from": "slam",
+     "at": "b160:twist",
+     "out": "b161",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b161:falling",
+     "poses": [
+      [
+       "happy",
+       "b161:falling"
+      ],
+      [
+       "victory",
+       "b164:whole"
+      ],
+      [
+       "happy",
+       "b166:patience"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b161:falling"
+      ]
+     ],
+     "out": "b169"
+    },
+    {
+     "t": "icon",
+     "id": "bh",
+     "name": "heart",
+     "x": 960,
+     "y": 600,
+     "size": 90,
+     "from": "pop",
+     "at": "b162:big",
+     "out": "b169",
+     "color": "accent",
+     "pulse": 1.2,
+     "beat": 0.9
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "falling fast isn't a *flaw*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b161:flaw",
+     "out": "b162"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "a *big* heart",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b162:big",
+     "out": "b164"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "you love with your *whole chest*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b164:whole",
+     "out": "b166"
+    },
+    {
+     "t": "icon",
+     "id": "hg",
+     "name": "hourglass",
+     "x": 1280,
+     "y": 560,
+     "size": 160,
+     "from": "pop",
+     "at": "b166:patience",
+     "out": "b169"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "just add *patience*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b166:patience",
+     "out": "b167"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "not how fast you fall…",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b167:fast",
+     "out": "b168",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "…how fast you !decide!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b168:decide",
+     "out": "b169"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "bridge",
+     "x": 760,
+     "y": 640,
+     "size": 1000,
+     "from": "pop",
+     "at": "b169:bridge",
+     "out": "b173",
+     "sway": 1.1
+    },
+    {
+     "t": "icon",
+     "id": "lo",
+     "name": "bridgeLow",
+     "x": 1620,
+     "y": 700,
+     "size": 520,
+     "from": "pop",
+     "at": "b169:bridge",
+     "out": "b173"
+    },
+    {
+     "t": "stick",
+     "id": "w",
+     "x": 760,
+     "y": 560,
+     "from": "bottom",
+     "at": "b169:men",
+     "poses": [
+      [
+       "holdHead",
+       "b169:men"
+      ],
+      [
+       "idle",
+       "b171:step"
+      ],
+      [
+       "happy",
+       "b172:them"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b169:men"
+      ],
+      [
+       "smile",
+       "b172:them"
+      ]
+     ],
+     "out": "b173",
+     "scale": 0.42,
+     "move": [
+      [
+       1520,
+       585,
+       "b171:step",
+       2.2
+      ]
+     ]
+    },
+    {
+     "t": "stick",
+     "id": "pt",
+     "x": 1720,
+     "y": 585,
+     "from": "right",
+     "at": "b171:time",
+     "poses": [
+      [
+       "happy",
+       "b172:them"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b171:time"
+      ]
+     ],
+     "out": "b173",
+     "scale": 0.42,
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "they felt something *real*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b169:real",
+     "out": "b171"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "one more *step*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b171:step",
+     "out": "b172"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "make sure it's them, not the !bridge!",
+     "x": 960,
+     "y": 170,
+     "size": 60,
+     "from": "top",
+     "at": "b172:sure",
+     "out": "b173"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "your *challenge* this week",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b173:challenge",
+     "out": "b178"
+    },
+    {
+     "t": "icon",
+     "id": "cb",
+     "name": "bridge",
+     "x": 760,
+     "y": 640,
+     "size": 800,
+     "from": "pop",
+     "at": "b173:challenge",
+     "out": "b178",
+     "sway": 1.1
+    },
+    {
+     "t": "icon",
+     "id": "cq",
+     "name": "question",
+     "x": 1320,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b174:fast",
+     "out": "b178"
+    },
+    {
+     "t": "stick",
+     "id": "rf",
+     "x": 640,
+     "y": 690,
+     "from": "left",
+     "at": "b178:fast",
+     "poses": [
+      [
+       "victory",
+       "b178:fast"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b178:fast"
+      ]
+     ],
+     "out": "b180:habit"
+    },
+    {
+     "t": "stick",
+     "id": "rs",
+     "x": 1280,
+     "y": 690,
+     "from": "right",
+     "at": "b178:or",
+     "poses": [
+      [
+       "idle",
+       "b178:or"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b178:or"
+      ]
+     ],
+     "out": "b180:habit",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "rh",
+     "name": "heart",
+     "x": 640,
+     "y": 340,
+     "size": 80,
+     "from": "pop",
+     "at": "b178:fast",
+     "out": "b180:habit",
+     "color": "accent",
+     "pulse": 1.2,
+     "beat": 0.5
+    },
+    {
+     "t": "icon",
+     "id": "rt",
+     "name": "hourglass",
+     "x": 1280,
+     "y": 360,
+     "size": 100,
+     "from": "pop",
+     "at": "b178:time",
+     "out": "b180:habit"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "fast… or *slow*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b178:fast",
+     "out": "b180:habit"
+    },
+    {
+     "t": "icon",
+     "id": "end",
+     "name": "heart",
+     "x": 960,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b180:habit",
+     "color": "accent",
+     "pulse": 1.08,
+     "beat": 1.2
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "which habit *next*?",
+     "x": 960,
+     "y": 170,
+     "size": 80,
+     "from": "top",
+     "at": "b180:habit",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 820,
+     "size": 44,
+     "from": "bottom",
+     "at": "b181:comments",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}
