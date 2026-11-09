@@ -1,0 +1,5 @@
+.hyperframes/
+node_modules/
+renders/coffee-myth.mp4
+renders/work-*
+renders/.*
