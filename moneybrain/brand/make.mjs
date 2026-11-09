@@ -1,4 +1,4 @@
-// Channel art for MONEY BRAIN: profile picture, banner and video watermark.
+// Channel art for PESABRAIN: profile picture, banner and video watermark.
 // Drawn with the same kit as the episodes, then rendered to PNG with Playwright.
 //   node brand/make.mjs
 import { writeFileSync, mkdirSync } from "node:fs";
@@ -29,7 +29,7 @@ function wordmark(scale = 1) {
       <rect x="${-w / 2 + 14}" y="${-h / 2 + 16}" width="${w}" height="${h}" rx="26" fill="${C.ink}" opacity="0.18"/>
       <path d="M ${-w / 2} 0 L ${-w / 2 + 70} ${-h / 2} L ${w / 2} ${-h / 2} L ${w / 2} ${h / 2} L ${-w / 2 + 70} ${h / 2} Z" fill="${C.white}" ${INK} stroke-width="9"/>
       <circle cx="${-w / 2 + 62}" cy="0" r="20" fill="${C.paper}" ${INK} stroke-width="7"/>
-      <text x="${50}" y="12" font-family="Archivo Black" font-size="124" text-anchor="middle" dominant-baseline="middle" fill="${C.ink}">MONEY<tspan fill="${C.terra}"> BRAIN</tspan></text>
+      <text x="${50}" y="12" font-family="Archivo Black" font-size="124" text-anchor="middle" dominant-baseline="middle" fill="${C.ink}">PESA<tspan fill="${C.terra}">BRAIN</tspan></text>
     </g></g>`;
 }
 function receiptStrip(text, w = 900) {

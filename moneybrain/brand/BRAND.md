@@ -1,13 +1,12 @@
-# MONEY BRAIN — brand kit
+# PESABRAIN — brand kit
 
 ## Name
-**Money Brain**
+**PesaBrain**, written as one word with a capital P and B. In the logo it's PESA in ink and BRAIN in terracotta.
 
-The name says what the channel does: money, seen through the brain. It's two short words, reads well on a
-phone and fits the cast, since your brain (Impulse) is a character. The word "BRAIN" is always terracotta in the logo.
+*Pesa* is Swahili for money, so the name literally means "money brain". It's short, unusual (so easier to own in
+search) and gives the channel a story worth telling once, in the About.
 
-**Handle:** pick the first one that's free, in this order: `@MoneyBrain` → `@TheMoneyBrain` → `@MoneyBrainToons` → `@MoneyBrainExplained`.
-(I couldn't check YouTube from here. Search the name too, and if a big channel is already called "Money Brain", tell me and we'll adjust.)
+**Handle:** `@PesaBrain` (fallbacks: `@PesaBrainTV`, `@ThePesaBrain`). I couldn't check availability from here, so search the name too.
 
 ## Tagline
 **The psychology of your money.**
@@ -21,7 +20,7 @@ Why smart people make bad money moves, and the simple math that fixes them, expl
 >
 > It's not you. It's your brain.
 >
-> Money Brain explains the psychology of money in short animated videos. Meet the crew:
+> *Pesa* means money in Swahili. PesaBrain explains the psychology of money in short animated videos. Meet the crew:
 > 🫘 **Bean**: that's you, trying to do the right thing.
 > 🧠 **Impulse**: your brain, who always has a "great" idea for your paycheck.
 > 🧮 **Prof. Calc**: the one who actually does the math.

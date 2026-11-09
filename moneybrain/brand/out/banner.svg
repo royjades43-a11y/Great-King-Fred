@@ -71,7 +71,7 @@
       <rect x="-566" y="-84" width="1160" height="200" rx="26" fill="#231F1C" opacity="0.18"/>
       <path d="M -580 0 L -510 -100 L 580 -100 L 580 100 L -510 100 Z" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/>
       <circle cx="-518" cy="0" r="20" fill="#F4EBD5" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
-      <text x="50" y="12" font-family="Archivo Black" font-size="124" text-anchor="middle" dominant-baseline="middle" fill="#231F1C">MONEY<tspan fill="#B8704F"> BRAIN</tspan></text>
+      <text x="50" y="12" font-family="Archivo Black" font-size="124" text-anchor="middle" dominant-baseline="middle" fill="#231F1C">PESA<tspan fill="#B8704F">BRAIN</tspan></text>
     </g></g></g>
   <g transform="translate(1285 820) rotate(0) scale(1)"><path d="M -450 -40 L 450 -40 L 450 64 L 450 66 L 420 52 L 390 66 L 360 52 L 330 66 L 300 52 L 270 66 L 240 52 L 210 66 L 180 52 L 150 66 L 120 52 L 90 66 L 60 52 L 30 66 L 0 52 L -30 66 L -60 52 L -90 66 L -120 52 L -150 66 L -180 52 L -210 66 L -240 52 L -270 66 L -300 52 L -330 66 L -360 52 L -390 66 L -420 52 L -450 66 Z" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
     <path d="M -470 -44 L 470 -44" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"/>

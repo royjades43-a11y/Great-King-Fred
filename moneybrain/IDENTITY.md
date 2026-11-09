@@ -1,4 +1,4 @@
-# MONEY BRAIN — channel identity
+# PESABRAIN — channel identity
 
 **What the channel is:** the psychology of money, explained by three characters. It shares the muted, warm palette of
 stickman explainers but nothing else. There's no round-headed stickman, no marker-caps title across the top and no plain cream wall.
@@ -32,4 +32,4 @@ Bean, Impulse and Prof. Calc are names for the channel bible. The narration alwa
 - Receipts and screens: **Space Mono**
 
 ## End card
-A thumbnail for the next video ("Why You'll Never Feel Rich") with a play button, plus the MONEY BRAIN wordmark next to Bean and Impulse.
+A thumbnail for the next video ("Why You'll Never Feel Rich") with a play button, plus the PESABRAIN wordmark next to Bean and Impulse.

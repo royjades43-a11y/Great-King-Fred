@@ -1,4 +1,4 @@
-// MONEY BRAIN drawing kit.
+// PESABRAIN drawing kit.
 // Identity: ledger-paper world, flat muted palette, ink outlines that "boil",
 // and a cast of three: BEAN (you), IMPULSE (your brain), PROF. CALC (the math).
 // Every function returns an SVG string. Characters and most props stand on (0,0).

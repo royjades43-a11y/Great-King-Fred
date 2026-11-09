@@ -467,5 +467,5 @@ export const BEATS = [
       at(-220, 230, 0.6, bean({ pose: "shrug", face: "sad", noShadow: true })) + at(220, 230, 0.6, brain({ face: "sly", noShadow: true })) +
       `<rect x="-420" y="-230" width="840" height="120" fill="${C.ink}" opacity="0.4"/>` + txt(0, -170, "WHY YOU'LL NEVER", 56, C.white, { font: "bold" }) + txt(0, -100, "FEEL RICH", 70, C.gold, { font: "bold" }) +
       `<circle r="70" fill="${C.red}" stroke="${C.ink}" stroke-width="6" cx="0" cy="40"/><path d="M -20 10 L 34 40 L -20 70 Z" fill="${C.white}"/>`, 960, 520, 1, { anim: "grow" }) +
-      S.put(at(-70, 0, 0.32, bean({ face: "happy", noShadow: true })) + at(10, 0, 0.26, brain({ face: "grin", noShadow: true })) + txt(70, -60, "MONEY BRAIN", 64, C.ink, { font: "bold", anchor: "start" }), 760, 960, 1, { anim: "rise", at: 0.6 }) },
+      S.put(at(-70, 0, 0.32, bean({ face: "happy", noShadow: true })) + at(10, 0, 0.26, brain({ face: "grin", noShadow: true })) + `<text x="70" y="-60" font-family="Archivo Black" font-size="64" fill="${C.ink}" dominant-baseline="middle">PESA<tspan fill="${C.terra}">BRAIN</tspan></text>`, 760, 960, 1, { anim: "rise", at: 0.6 }) },
 ];

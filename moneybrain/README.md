@@ -1,4 +1,4 @@
-# MONEY BRAIN — "The $5 Coffee Myth Is Wrong"
+# PESABRAIN — "The $5 Coffee Myth Is Wrong"
 
 A 6:53 HyperFrames episode built on your four ElevenLabs voiceover parts. There are 155 drawn scenes, and each
 one starts on the exact word it illustrates. On average the picture changes every 2.7 s.
