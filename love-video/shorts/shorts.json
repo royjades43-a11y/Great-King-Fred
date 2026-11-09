@@ -1,0 +1,11 @@
+[
+  {"id": "01-same-woman-different-bridge", "from": "b25", "to": "b39", "title": ["Same woman.", "Different !bridge!."]},
+  {"id": "02-fear-feels-like-love", "from": "b41", "to": "b47", "title": ["Fear can feel", "like !love!"]},
+  {"id": "03-hot-and-cold", "from": "b88", "to": "b101", "title": ["Hot and cold", "isn't !chemistry!"]},
+  {"id": "04-who-says-it-first", "from": "b105", "to": "b110", "title": ["Who says", "“I love you” !first!?"]},
+  {"id": "05-love-at-first-sight", "from": "b111", "to": "b118", "title": ["Love at first sight?", "Science has !doubts!"]},
+  {"id": "06-its-chemistry", "from": "b63", "to": "b71", "title": ["Can't stop thinking", "about them?"]},
+  {"id": "07-three-dates-in", "from": "b00", "to": "b14", "title": ["3 dates in.", "Already !sure!?"]},
+  {"id": "08-five-rules", "from": "b139", "to": "b159", "title": ["Fall in love at", "the !right speed!"]},
+  {"id": "09-not-a-flaw", "from": "b160", "to": "b172", "title": ["Falling fast", "isn't a !flaw!"]}
+]
