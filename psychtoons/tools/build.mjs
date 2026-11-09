@@ -1,0 +1,119 @@
+// Generates compositions/sNN.html (one per idea) and index.html from tools/scenes.mjs.
+// Run: node tools/build.mjs   (re-run after editing a scene; hand edits to generated files are overwritten)
+import { writeFileSync, mkdirSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { SCENES } from "./scenes.mjs";
+import { C } from "./draw.mjs";
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+const BEAT = 2.5; // seconds per idea
+const BOIL = 0.125; // line-boil step: 8 redraws a second
+mkdirSync(join(ROOT, "compositions"), { recursive: true });
+
+const fontFace = `@font-face { font-family: "Gochi Hand"; src: url("assets/fonts/GochiHand.woff2") format("woff2"); font-display: block; }`;
+
+function sceneFile(s) {
+  const p = s.id;
+  const svg = `${s.bg(p)}${s.body(p)}`.replaceAll("url(#HEAD)", `url(#${p}-head)`);
+  const boils = Array.from({ length: Math.round(BEAT / BOIL) }, (_, i) => `tl.set("#${p}-turb", { attr: { seed: ${(i % 4) + 1} } }, ${(i * BOIL).toFixed(3)});`).join("\n    ");
+  const titleCss = s.titleOnBoard
+    ? `top: 214px; color: #F3EFE6; font-size: 104px;`
+    : `top: 52px; color: ${s.titleColor || C.ink}; font-size: 112px;`;
+  return `<template>
+  <style>
+    ${fontFace}
+    #root { position: absolute; inset: 0; overflow: hidden; background: ${C.paper}; }
+    #${p}-cam { position: absolute; inset: 0; }
+    #${p}-cam svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    #${p}-title {
+      position: absolute; left: 0; right: 0; ${titleCss}
+      text-align: center; font-family: "Gochi Hand", cursive; letter-spacing: 0.03em; line-height: 1;
+    }
+  </style>
+  <div id="root" data-composition-id="${p}" data-width="1920" data-height="1080"
+    data-composition-variables='[{"id":"title","type":"string","label":"Title","default":"${s.title}"}]'>
+    <!-- VO: ${s.line} -->
+    <div id="${p}-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="${p}-head" cx="40%" cy="36%" r="68%">
+            <stop offset="72%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#E2DCCF"/>
+          </radialGradient>
+          <filter id="${p}-rough" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence id="${p}-turb" type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="1" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+        <g filter="url(#${p}-rough)">
+${svg}
+        </g>
+      </svg>
+    </div>
+    <div id="${p}-title" data-var-text="title">${s.title}</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#${p}-cam", { scale: 1 }, { scale: 1.035, duration: ${BEAT}, ease: "none", transformOrigin: "50% 55%" }, 0);
+    tl.fromTo("#${p}-title", { opacity: 0, y: -16, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 0.02);
+    ${s.anim(p).trim()}
+    ${boils}
+    window.__timelines["${p}"] = tl;
+  </script>
+</template>
+`;
+}
+
+for (const s of SCENES) writeFileSync(join(ROOT, "compositions", `${s.id}.html`), sceneFile(s));
+
+const total = SCENES.length * BEAT;
+const hosts = SCENES.map(
+  (s, i) => `      <!-- ${s.title}: ${s.line} -->
+      <div id="${s.id}" class="clip" data-composition-id="${s.id}" data-composition-src="compositions/${s.id}.html"
+        data-start="${(i * BEAT).toFixed(2)}" data-duration="${BEAT}" data-track-index="1" data-track-kind="graphics"
+        data-width="1920" data-height="1080"></div>`,
+).join("\n");
+
+// a soft whoosh on every cut, a pop when each scene's key element lands
+const KEY_POP = { s01: 0.35, s02: 1.05, s03: 0.9, s04: 0.5, s05: 0.55, s06: 1.0, s07: 0.15, s08: 1.35, s09: 0.7, s10: 1.4, s11: 1.05, s12: 0.8 };
+const sfx = SCENES.map((s, i) => {
+  const t = i * BEAT;
+  return `      <audio id="${s.id}-cut" class="clip" src="assets/sfx/whoosh-short.mp3" data-start="${t.toFixed(2)}" data-duration="0.6" data-track-index="2" data-volume="0.25"></audio>
+      <audio id="${s.id}-hit" class="clip" src="assets/sfx/pop.mp3" data-start="${(t + KEY_POP[s.id]).toFixed(2)}" data-duration="0.5" data-track-index="3" data-volume="0.35"></audio>`;
+}).join("\n");
+
+const index = `<!doctype html>
+<html lang="en" data-resolution="landscape">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="assets/vendor/gsap-3.15.0.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1920px; height: 1080px; overflow: hidden; background: ${C.paper}; }
+      #root { position: relative; width: 100%; height: 100%; }
+    </style>
+  </head>
+  <body>
+    <!-- Stickman psychology explainer: one drawn still per idea, a new one every ${BEAT}s. Generated by tools/build.mjs -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="${total}" data-width="1920" data-height="1080">
+${hosts}
+      <!-- Voiceover: drop a narration file in assets/ and uncomment.
+      <audio id="voiceover" class="clip" src="assets/voiceover.mp3" data-start="0" data-track-index="4" data-volume="1"></audio> -->
+${sfx}
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
+`;
+writeFileSync(join(ROOT, "index.html"), index);
+
+// the narration script, one line per scene, with its window
+const script = ["# Script", "", `${SCENES.length} ideas × ${BEAT}s = ${total}s. Each line is read inside its window; the scene title is the line's key idea.`, "",
+  "| # | Time | Title on screen | Voiceover line |", "|---|------|-----------------|----------------|",
+  ...SCENES.map((s, i) => `| ${i + 1} | ${(i * BEAT).toFixed(1)}–${((i + 1) * BEAT).toFixed(1)}s | ${s.title} | ${s.line} |`)].join("\n") + "\n";
+writeFileSync(join(ROOT, "SCRIPT.md"), script);
+console.log(`built ${SCENES.length} scenes, ${total}s`);

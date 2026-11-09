@@ -1,0 +1,100 @@
+<template>
+  <style>
+    @font-face { font-family: "Gochi Hand"; src: url("assets/fonts/GochiHand.woff2") format("woff2"); font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #F4EBD5; }
+    #s10-cam { position: absolute; inset: 0; }
+    #s10-cam svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    #s10-title {
+      position: absolute; left: 0; right: 0; top: 52px; color: #231F1C; font-size: 112px;
+      text-align: center; font-family: "Gochi Hand", cursive; letter-spacing: 0.03em; line-height: 1;
+    }
+  </style>
+  <div id="root" data-composition-id="s10" data-width="1920" data-height="1080"
+    data-composition-variables='[{"id":"title","type":"string","label":"Title","default":"SMALL CHOICES"}]'>
+    <!-- VO: The fix isn't a big gesture. It's small choices. -->
+    <div id="s10-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="s10-head" cx="40%" cy="36%" r="68%">
+            <stop offset="72%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#E2DCCF"/>
+          </radialGradient>
+          <filter id="s10-rough" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence id="s10-turb" type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="1" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+        <g filter="url(#s10-rough)">
+<rect x="0" y="0" width="1920" height="1080" fill="#F4EBD5"/>
+  <rect x="0" y="900" width="1920" height="180" fill="#C68A5B"/>
+  <path d="M -20 930 C 120 920 200 946 300 934" fill="none" stroke="#A56C43" stroke-width="3" opacity="0.6"/><path d="M 280 970 C 420 960 500 986 600 974" fill="none" stroke="#A56C43" stroke-width="3" opacity="0.6"/><path d="M 580 1010 C 720 1000 800 1026 900 1014" fill="none" stroke="#A56C43" stroke-width="3" opacity="0.6"/><path d="M 880 930 C 1020 920 1100 946 1200 934" fill="none" stroke="#A56C43" stroke-width="3" opacity="0.6"/><path d="M 1180 970 C 1320 960 1400 986 1500 974" fill="none" stroke="#A56C43" stroke-width="3" opacity="0.6"/><path d="M 1480 1010 C 1620 1000 1700 1026 1800 1014" fill="none" stroke="#A56C43" stroke-width="3" opacity="0.6"/><path d="M 1780 930 C 1920 920 2000 946 2100 934" fill="none" stroke="#A56C43" stroke-width="3" opacity="0.6"/><path d="M -10 900 L 1930 900" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 360 690 L 1480 690 L 1520 750 L 320 750 Z" fill="#C68A5B" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 370 750 L 370 960 M 1470 750 L 1470 960" stroke="#231F1C" stroke-width="14" stroke-linecap="round"/>
+        <path d="M 370 750 L 370 960 M 1470 750 L 1470 960" stroke="#A56C43" stroke-width="8" stroke-linecap="round"/>
+        <ellipse cx="920" cy="970" rx="620" ry="24" fill="#231F1C" opacity="0.13"/>
+        <g transform="translate(520 690) rotate(0) scale(1)"><g id="s10-k0" class="s10-card">
+        <path d="M -78 0 L -70 -150 L 70 -150 L 78 0 Z" fill="#EFE3C6" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M -70 -150 L -84 4 M 70 -150 L 84 4" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="0" cy="-70" r="42" fill="#F4EBD5" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 0 -70 L 0 -97.3 M 0 -70 L 21 -61.6" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(720 690) rotate(0) scale(1)"><g id="s10-k1" class="s10-card">
+        <path d="M -78 0 L -70 -150 L 70 -150 L 78 0 Z" fill="#EFE3C6" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M -70 -150 L -84 4 M 70 -150 L 84 4" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(0 -66)" d="M 0 24 C -52.8 -9.6 -36 -50.4 0 -26.4 C 36 -50.4 52.8 -9.6 0 24 Z" fill="#B8704F" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(920 690) rotate(0) scale(1)"><g id="s10-k2" class="s10-card">
+        <path d="M -78 0 L -70 -150 L 70 -150 L 78 0 Z" fill="#EFE3C6" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M -70 -150 L -84 4 M 70 -150 L 84 4" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="-43" y="-106.55" width="86" height="73.1" rx="4" fill="#FFFFFF" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="-43" y="-106.55" width="86" height="14" fill="#6F8CA0" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="-35" y="-84.55" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/><rect x="-17.5" y="-84.55" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/><rect x="0" y="-84.55" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/><rect x="17.5" y="-84.55" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/><rect x="-35" y="-70.18333333333334" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/><rect x="-17.5" y="-70.18333333333334" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/><rect x="0" y="-70.18333333333334" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/><rect x="17.5" y="-70.18333333333334" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/><rect x="-35" y="-55.81666666666666" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/><rect x="-17.5" y="-55.81666666666666" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/><rect x="0" y="-55.81666666666666" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/><rect x="17.5" y="-55.81666666666666" width="13.5" height="9.033333333333331" fill="#231F1C" opacity="0.55"/></g></g><g transform="translate(1120 690) rotate(0) scale(1)"><g id="s10-k3" class="s10-card">
+        <path d="M -78 0 L -70 -150 L 70 -150 L 78 0 Z" fill="#EFE3C6" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M -70 -150 L -84 4 M 70 -150 L 84 4" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 0.0 -120.0 L 12.7 -89.5 L 45.7 -86.8 L 20.5 -65.3 L 28.2 -33.2 L 0.0 -50.4 L -28.2 -33.2 L -20.5 -65.3 L -45.7 -86.8 L -12.7 -89.5 Z" fill="#D3A43F" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(1320 690) rotate(0) scale(1)"><g id="s10-k4" class="s10-card">
+        <path d="M -78 0 L -70 -150 L 70 -150 L 78 0 Z" fill="#EFE3C6" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M -70 -150 L -84 4 M 70 -150 L 84 4" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path transform="translate(0 -70) scale(1.3) rotate(-20)" d="M -14 -34 Q -30 -30 -30 -16 Q -26 14 6 32 Q 22 38 30 26 L 22 12 Q 18 8 12 12 L 4 16 Q -10 8 -14 -8 L -8 -16 Q -4 -22 -8 -26 Z" fill="#7D8A5B" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+        <g transform="translate(0 0) rotate(0) scale(1)"><g id="s10-few" class="s10-pop"><text x="1320" y="300" font-family="Gochi Hand" font-size="46" fill="#231F1C" text-anchor="middle" dominant-baseline="middle" >JUST ONE</text><path d="M 1320 332 L 1320 400" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path transform="rotate(90 1320 430)" d="M 1280 418 L 1328 418 L 1328 398 L 1360 430 L 1328 462 L 1328 442 L 1280 442 Z" fill="#6F8CA0"/></g></g>
+        <g transform="translate(1650 950) rotate(0) scale(1)"><g id="s10-man" class="s10-pop"><ellipse cx="0" cy="0" rx="90" ry="16" fill="#231F1C" opacity="0.13"/>
+  <path d="M -16 -132 L -22 -10 M 16 -132 L 22 -10" fill="none" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="-30" cy="-6" rx="18" ry="8" fill="#FFFFFF" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="30" cy="-6" rx="18" ry="8" fill="#FFFFFF" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M -40 -258 Q 0 -266 40 -258 L 52 -200 L 38 -196 L 44 -128 L -44 -128 L -38 -196 L -52 -200 Z" fill="#D3A43F" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <g transform="translate(0 -330) rotate(-8)">
+    <circle cx="0" cy="0" r="72" fill="url(#s10-head)" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M -14 -70 Q -12 -98 4 -80 M 0 -72 Q 10 -100 22 -76" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <g transform="translate(-6 0)"><path d="M -36 -24 Q -24 -32 -12 -24 M 12 -24 Q 24 -32 36 -24" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="-22" cy="-4" r="6" fill="#231F1C"/><circle cx="22" cy="-4" r="6" fill="#231F1C"/>
+    <path d="M -18 24 Q 0 42 20 22" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </g>
+  <path d="M -38 -245 Q -60 -190 -66 -138" fill="none" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="-66" cy="-138" r="10" fill="#FFFFFF" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M 38 -245 Q 100 -190 150 -150" fill="none" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="150" cy="-150" r="10" fill="#FFFFFF" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  </g></g>
+      
+        </g>
+      </svg>
+    </div>
+    <div id="s10-title" data-var-text="title">SMALL CHOICES</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s10-cam", { scale: 1 }, { scale: 1.035, duration: 2.5, ease: "none", transformOrigin: "50% 55%" }, 0);
+    tl.fromTo("#s10-title", { opacity: 0, y: -16, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 0.02);
+    tl.fromTo(".s10-card", { opacity: 0, scale: 0.6, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.28, ease: "back.out(2)", stagger: 0.08 }, 0.1);
+      tl.fromTo("#s10-man", { opacity: 0, scale: 0.6, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.28, ease: "back.out(2)", stagger: 0 }, 0.3);
+      tl.fromTo("#s10-few", { opacity: 0, scale: 0.6, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.28, ease: "back.out(2)", stagger: 0 }, 0.9);
+      tl.fromTo("#s10-k4", { y: 0, rotation: 0, transformOrigin: "50% 100%" }, { y: -90, rotation: -8, duration: 0.45, ease: "back.out(2)" }, 1.4);
+    tl.set("#s10-turb", { attr: { seed: 1 } }, 0.000);
+    tl.set("#s10-turb", { attr: { seed: 2 } }, 0.125);
+    tl.set("#s10-turb", { attr: { seed: 3 } }, 0.250);
+    tl.set("#s10-turb", { attr: { seed: 4 } }, 0.375);
+    tl.set("#s10-turb", { attr: { seed: 1 } }, 0.500);
+    tl.set("#s10-turb", { attr: { seed: 2 } }, 0.625);
+    tl.set("#s10-turb", { attr: { seed: 3 } }, 0.750);
+    tl.set("#s10-turb", { attr: { seed: 4 } }, 0.875);
+    tl.set("#s10-turb", { attr: { seed: 1 } }, 1.000);
+    tl.set("#s10-turb", { attr: { seed: 2 } }, 1.125);
+    tl.set("#s10-turb", { attr: { seed: 3 } }, 1.250);
+    tl.set("#s10-turb", { attr: { seed: 4 } }, 1.375);
+    tl.set("#s10-turb", { attr: { seed: 1 } }, 1.500);
+    tl.set("#s10-turb", { attr: { seed: 2 } }, 1.625);
+    tl.set("#s10-turb", { attr: { seed: 3 } }, 1.750);
+    tl.set("#s10-turb", { attr: { seed: 4 } }, 1.875);
+    tl.set("#s10-turb", { attr: { seed: 1 } }, 2.000);
+    tl.set("#s10-turb", { attr: { seed: 2 } }, 2.125);
+    tl.set("#s10-turb", { attr: { seed: 3 } }, 2.250);
+    tl.set("#s10-turb", { attr: { seed: 4 } }, 2.375);
+    window.__timelines["s10"] = tl;
+  </script>
+</template>

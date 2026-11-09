@@ -1,0 +1,87 @@
+<template>
+  <style>
+    @font-face { font-family: "Gochi Hand"; src: url("assets/fonts/GochiHand.woff2") format("woff2"); font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #F4EBD5; }
+    #s04-cam { position: absolute; inset: 0; }
+    #s04-cam svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    #s04-title {
+      position: absolute; left: 0; right: 0; top: 52px; color: #231F1C; font-size: 112px;
+      text-align: center; font-family: "Gochi Hand", cursive; letter-spacing: 0.03em; line-height: 1;
+    }
+  </style>
+  <div id="root" data-composition-id="s04" data-width="1920" data-height="1080"
+    data-composition-variables='[{"id":"title","type":"string","label":"Title","default":"QUIETLY"}]'>
+    <!-- VO: And the years drift by, quietly. -->
+    <div id="s04-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="s04-head" cx="40%" cy="36%" r="68%">
+            <stop offset="72%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#E2DCCF"/>
+          </radialGradient>
+          <filter id="s04-rough" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence id="s04-turb" type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="1" result="n"/>
+            <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+        <g filter="url(#s04-rough)">
+<rect x="0" y="0" width="1920" height="300" fill="#A9BCC5"/><rect x="0" y="300" width="1920" height="110" fill="#F4EBD5"/><rect x="0" y="410" width="1920" height="150" fill="#8E9B6A"/><rect x="0" y="560" width="1920" height="340" fill="#7F9BAE"/><rect x="0" y="900" width="1920" height="180" fill="#8E9B6A"/><path d="M 0 560 L 1920 560 M 0 900 L 1920 900" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <g id="s04-waves"><path d="M -200 620 C 200 608 500 632 900 620 C 1200 610 1500 630 2100 620" fill="none" stroke="#5F7C90" stroke-width="3"/><path d="M -130 700 C 200 688 500 712 940 700 C 1200 690 1500 710 2100 700" fill="none" stroke="#5F7C90" stroke-width="3"/><path d="M -60 780 C 200 768 500 792 980 780 C 1200 770 1500 790 2100 780" fill="none" stroke="#5F7C90" stroke-width="3"/><path d="M 10 850 C 200 838 500 862 1020 850 C 1200 840 1500 860 2100 850" fill="none" stroke="#5F7C90" stroke-width="3"/></g>
+        <g transform="translate(640 830) rotate(-6) scale(1)"><g id="s04-note" class="s04-pop"><rect x="-110" y="-34" width="220" height="68" fill="#F7F1E2" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><text x="0" y="4" font-family="Gochi Hand" font-size="38" fill="#231F1C" text-anchor="middle" dominant-baseline="middle" >SO SMOOTH</text></g></g>
+        <g transform="translate(1220 700) rotate(0) scale(1)"><g id="s04-leaf0" class="s04-leaf"><path d="M -16 0 Q 0 -14 16 0 Q 0 14 -16 0 Z" fill="#B8704F" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(540 660) rotate(40) scale(1)"><g id="s04-leaf1" class="s04-leaf"><path d="M -16 0 Q 0 -14 16 0 Q 0 14 -16 0 Z" fill="#B8704F" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g></g><g transform="translate(1380 820) rotate(80) scale(1)"><g id="s04-leaf2" class="s04-leaf"><path d="M -16 0 Q 0 -14 16 0 Q 0 14 -16 0 Z" fill="#B8704F" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+        <g transform="translate(960 720) rotate(0) scale(0.95)"><g id="s04-boat" class="s04-pop"><g transform="translate(-60 40)">
+        <path d="M -40 -258 Q 0 -266 40 -258 L 52 -150 L -52 -150 Z" fill="#7D8A5B" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M -6 -256 L 6 -256 L 10 -200 L 0 -186 L -10 -200 Z" fill="#231F1C"/>
+        <path d="M -24 -258 L 0 -236 L 24 -258" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 30 -160 L 150 -200 L 230 -150" fill="none" stroke="#231F1C" stroke-width="30" stroke-linecap="round"/>
+        <path d="M 30 -160 L 150 -200 L 230 -150" fill="none" stroke="#7D8A5B" stroke-width="22" stroke-linecap="round"/>
+        <g transform="translate(-6 -330) rotate(-14)">
+          <circle r="72" fill="url(#s04-head)" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M -14 -70 Q -12 -98 4 -80 M 0 -72 Q 10 -100 22 -76" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M -32 -4 Q -22 6 -12 -4 M 12 -4 Q 22 6 32 -4" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M -14 26 Q 2 38 18 24" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <path d="M -38 -245 Q -110 -300 -70 -360 M 38 -245 Q 100 -310 50 -372" fill="none" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
+        <path d="M -270 -40 L 270 -80 Q 262 20 180 50 L -190 50 Q -262 24 -270 -40 Z" fill="#B8704F" stroke="#231F1C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M -262 -30 L 264 -68" fill="none" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M -230 10 Q 0 22 230 -6" fill="none" stroke="#8F4F31" stroke-width="3"/>
+        <rect x="150" y="-82" width="90" height="22" fill="#D3A43F" stroke="#231F1C" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></g></g>
+      
+        </g>
+      </svg>
+    </div>
+    <div id="s04-title" data-var-text="title">QUIETLY</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#s04-cam", { scale: 1 }, { scale: 1.035, duration: 2.5, ease: "none", transformOrigin: "50% 55%" }, 0);
+    tl.fromTo("#s04-title", { opacity: 0, y: -16, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.3, ease: "back.out(2.2)" }, 0.02);
+    tl.fromTo("#s04-boat", { opacity: 0, scale: 0.6, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.28, ease: "back.out(2)", stagger: 0 }, 0.1);
+      tl.fromTo("#s04-note", { opacity: 0, scale: 0.6, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.28, ease: "back.out(2)", stagger: 0 }, 0.5);
+      tl.fromTo(".s04-leaf", { opacity: 0, scale: 0.6, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.28, ease: "back.out(2)", stagger: 0.12 }, 0.6);
+      tl.fromTo("#s04-boat", { y: 0, rotation: 0, transformOrigin: "50% 100%" }, { y: 10, rotation: 1.2, immediateRender: false, duration: 0.55, ease: "sine.inOut", yoyo: true, repeat: 3 }, 0.4);
+      tl.fromTo("#s04-waves", { x: 0 }, { x: -60, duration: 2.5, ease: "none" }, 0);
+      tl.fromTo(".s04-leaf", { x: 0 }, { x: -70, duration: 2.0, ease: "none" }, 0.5);
+      tl.fromTo("#s04-note", { x: 0, rotation: 0, transformOrigin: "50% 100%" }, { x: -40, rotation: 3, immediateRender: false, duration: 2.0, ease: "sine.inOut" }, 0.5);
+    tl.set("#s04-turb", { attr: { seed: 1 } }, 0.000);
+    tl.set("#s04-turb", { attr: { seed: 2 } }, 0.125);
+    tl.set("#s04-turb", { attr: { seed: 3 } }, 0.250);
+    tl.set("#s04-turb", { attr: { seed: 4 } }, 0.375);
+    tl.set("#s04-turb", { attr: { seed: 1 } }, 0.500);
+    tl.set("#s04-turb", { attr: { seed: 2 } }, 0.625);
+    tl.set("#s04-turb", { attr: { seed: 3 } }, 0.750);
+    tl.set("#s04-turb", { attr: { seed: 4 } }, 0.875);
+    tl.set("#s04-turb", { attr: { seed: 1 } }, 1.000);
+    tl.set("#s04-turb", { attr: { seed: 2 } }, 1.125);
+    tl.set("#s04-turb", { attr: { seed: 3 } }, 1.250);
+    tl.set("#s04-turb", { attr: { seed: 4 } }, 1.375);
+    tl.set("#s04-turb", { attr: { seed: 1 } }, 1.500);
+    tl.set("#s04-turb", { attr: { seed: 2 } }, 1.625);
+    tl.set("#s04-turb", { attr: { seed: 3 } }, 1.750);
+    tl.set("#s04-turb", { attr: { seed: 4 } }, 1.875);
+    tl.set("#s04-turb", { attr: { seed: 1 } }, 2.000);
+    tl.set("#s04-turb", { attr: { seed: 2 } }, 2.125);
+    tl.set("#s04-turb", { attr: { seed: 3 } }, 2.250);
+    tl.set("#s04-turb", { attr: { seed: 4 } }, 2.375);
+    window.__timelines["s04"] = tl;
+  </script>
+</template>
