@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720"><rect width="1280" height="720" fill="#F4EBD5"/><path d="M 0 48 L 1280 48" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 96 L 1280 96" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 144 L 1280 144" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 192 L 1280 192" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 240 L 1280 240" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 288 L 1280 288" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 336 L 1280 336" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 384 L 1280 384" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 432 L 1280 432" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 480 L 1280 480" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 528 L 1280 528" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 576 L 1280 576" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 624 L 1280 624" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 672 L 1280 672" stroke="#D8CDB0" stroke-width="2"/><path d="M 0 720 L 1280 720" stroke="#D8CDB0" stroke-width="2"/>
+    <g transform="translate(610 120) rotate(5)"><path d="M 0 0 L 470 0 L 470 268 L 470 256 L 446 256 L 422 256 L 398 256 L 374 256 L 350 256 L 326 256 L 302 256 L 278 256 L 254 256 L 230 256 L 206 256 L 182 256 L 158 256 L 134 256 L 110 256 L 86 256 L 62 256 L 38 256 L 14 256 Z" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+    <text x="24" y="50" font-family="Space Mono" font-weight="700" font-size="30" fill="#231F1C" text-anchor="start" dominant-baseline="middle">LATTE</text><text x="446" y="50" font-family="Space Mono" font-weight="700" font-size="30" fill="#231F1C" text-anchor="end" dominant-baseline="middle">$5</text><text x="24" y="94" font-family="Space Mono" font-weight="700" font-size="30" fill="#231F1C" text-anchor="start" dominant-baseline="middle">x 365 x 30 YRS</text><text x="446" y="94" font-family="Space Mono" font-weight="700" font-size="30" fill="#231F1C" text-anchor="end" dominant-baseline="middle"></text>
+    <path d="M 20 142 L 450 142" stroke="#231F1C" stroke-width="4" stroke-dasharray="10 8"/>
+    <text x="235" y="198" font-family="Archivo Black" font-size="66" fill="#C4553F" text-anchor="middle" dominant-baseline="middle">$172,000</text></g>
+    <g transform="translate(1040 150) rotate(0) scale(1)"><g transform="rotate(12)" opacity="0.92"><rect x="-135.8" y="-59.5" width="271.6" height="119" rx="12" fill="none" stroke="#C4553F" stroke-width="10"/>
+  <rect x="-123.80000000000001" y="-47.5" width="247.60000000000002" height="95" rx="6" fill="none" stroke="#C4553F" stroke-width="4"/><text x="0" y="4" font-family="Archivo Black" font-size="70" fill="#C4553F" text-anchor="middle" dominant-baseline="middle">MYTH</text></g></g>
+    <g transform="translate(330 820) rotate(0) scale(1.55)">
+  <path d="M -28 -78 L -32 -14 M 28 -78 L 32 -14" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M -62 -2 Q -64 -22 -36 -20 Q -18 -18 -18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 62 -2 Q 64 -22 36 -20 Q 18 -18 18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  
+  <path d="M 6 -372 Q 2 -392 4 -408" fill="none" stroke="#6F7C52" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 4 -404 Q -26 -420 -34 -398 Q -12 -388 4 -404 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 4 -400 Q 30 -424 40 -402 Q 18 -388 4 -400 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M -78 -250 C -80 -330 -40 -372 6 -372 C 56 -372 86 -330 82 -260 L 80 -150 C 82 -95 50 -70 0 -70 C -50 -70 -80 -95 -78 -150 Z" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M -56 -296 Q -50 -334 -18 -348" fill="none" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+  
+  
+  <ellipse cx="-22" cy="-288" rx="15" ry="19" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><ellipse cx="28" cy="-288" rx="15" ry="19" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="-22" cy="-288" r="4" fill="#231F1C"/><circle cx="28" cy="-288" r="4" fill="#231F1C"/><path d="M -40 -326 Q -26 -336 -10 -330 M 14 -330 Q 30 -336 44 -326" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><ellipse cx="2" cy="-240" rx="12" ry="16" fill="#231F1C"/>
+  
+  
+  <path d="M -74 -190 Q -130 -220 -86 -272" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M 78 -190 Q 134 -220 90 -272" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  
+  <circle cx="-86" cy="-272" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="90" cy="-272" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  </g>
+    <g transform="translate(560 610) rotate(-3)">
+    <path d="M 10 84.68 L 70 12 L 652 12 L 652 157.36 L 70 157.36 Z" transform="translate(0 -72.68)" fill="#231F1C" opacity="0.25"/>
+    <path d="M 0 0 L 60 -72.68 L 640 -72.68 L 640 72.68 L 60 72.68 Z" fill="#C4553F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+    <circle cx="48" cy="0" r="15" fill="#F4EBD5" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+    <text x="355" y="6" font-family="Archivo Black" font-size="92" fill="#FFFDF7" text-anchor="middle" dominant-baseline="middle">THE $5 LIE</text>
+  </g></svg>
