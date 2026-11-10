@@ -7,6 +7,17 @@ To A/B test:
 - Your Brain Moves the Finish Line Every Time You Get a Raise
 - 3 Tricks Your Brain Plays So You Never Feel Rich
 
+## Thumbnails (1280×720, in `brand/out/`)
+| File | Idea | Use |
+|---|---|---|
+| `ep02-thumb-B-its-a-trick.png` | Dark magic-show stage: Impulse in a top hat pulls a RICH sign out of the hat. Tag: IT'S A TRICK | **Recommended main.** The dark stage stands out in a cream-coloured feed and from EP01 |
+| `ep02-thumb-A-it-moved.png` | Bean lunges for the RICH finish line as Impulse drags it away. Tag: IT MOVED AGAIN. | Strongest story; test against B |
+| `ep02-thumb-C-never-rich.png` | Bean sprints on a treadmill after a RICH sign dangling from Impulse's fishing rod. Tag: NEVER RICH? | Shows the hedonic treadmill instantly |
+| `ep02-thumb-D-fake-rich.png` | A beach post next to an $18,400 card statement stamped REALITY, Bean shocked. Tag: FAKE RICH | Comparison angle; good for a third test slot |
+
+Upload B, A and C to Test & Compare. `ep02-thumbs-feed-preview.png` shows them in a feed and next to EP01's thumbnail.
+Rebuild with `node brand/thumbs.mjs`.
+
 ## Description
 ```
 You earn more than you used to. So why don't you feel rich? Your brain is running three tricks on you, and there's one money number that matters more than your salary.
