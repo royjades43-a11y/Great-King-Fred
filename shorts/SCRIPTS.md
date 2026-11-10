@@ -1,6 +1,6 @@
 # PesaBrain Shorts — batch 1: "The Tricks Stores Play on Your Brain"
 
-Six vertical Shorts (1080×1920), each 35–45 seconds, on new topics in the channel's niche: the psychology of spending.
+Six vertical Shorts (1080×1920), each about 40–50 seconds, on new topics in the channel's niche: the psychology of spending.
 They share the same cast and look as the long videos, but each one is self-contained.
 
 ## How every Short is built for engagement
@@ -182,7 +182,7 @@ Because two hundred dollars feels expensive...
 
 ## Recording notes (ElevenLabs)
 - Use the same voice as the long videos, slightly faster: about 1.1× speed, or Stability around 40%.
-- Each Short is one file: about 100–115 words, 35–45 seconds.
+- Each Short is one file: about 120–140 words, roughly 40–50 seconds at 1.1× speed.
 - **Keep the last line trailing off** ("Because the next time you see a price ending in ninety-nine...") with no final pause, so the loop is seamless.
 - **Add one extra file per Short:** the first line on its own. If the loop seam sounds off, I can crossfade it in.
 
