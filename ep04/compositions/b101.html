@@ -1,0 +1,79 @@
+<template>
+  <style>
+    @font-face { font-family: "Patrick Hand"; src: url("assets/fonts/PatrickHand.woff2") format("woff2"); font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #b101-cam { position: absolute; inset: 0; }
+    #b101-cam > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .tag-wrap { position: absolute; left: 0; right: 0; text-align: center; }
+    .tag { display: inline-block; position: relative; font-family: "Archivo Black"; letter-spacing: 0.01em; line-height: 1;
+      padding: 20px 44px 20px 76px; border: 5px solid #231F1C; border-radius: 10px 18px 18px 10px;
+      box-shadow: 8px 8px 0 rgba(35,31,28,0.18); }
+    .tag::before { content: ""; position: absolute; left: 30px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: #F4EBD5; border: 4px solid #231F1C; }
+    .tag::after { content: ""; position: absolute; left: 36px; bottom: 50%; width: 4px; height: 90px; background: #231F1C; transform-origin: 50% 100%; transform: rotate(-28deg); margin-bottom: 8px; }
+    .rcpt-wrap { position: absolute; }
+    .rcpt-slot { height: 22px; background: #231F1C; border-radius: 11px; margin: 0 -18px; position: relative; z-index: 2; }
+    .rcpt-clip { overflow: hidden; margin-top: -8px; }
+    .rcpt { background: #FFFDF7; border: 4px solid #231F1C; border-top: none; padding: 26px 30px 40px; font-family: "Space Mono"; font-weight: 700; color: #231F1C;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 97%, 90% 100%, 85% 97%, 80% 100%, 75% 97%, 70% 100%, 65% 97%, 60% 100%, 55% 97%, 50% 100%, 45% 97%, 40% 100%, 35% 97%, 30% 100%, 25% 97%, 20% 100%, 15% 97%, 10% 100%, 5% 97%, 0 100%); }
+    .rt { text-align: center; font-family: "Archivo Black"; font-size: 34px; border-bottom: 3px dashed #231F1C; padding-bottom: 12px; margin-bottom: 14px; }
+    .rl { display: flex; justify-content: space-between; font-size: 30px; line-height: 1.5; }
+    .rtot { display: flex; justify-content: space-between; align-items: baseline; border-top: 3px dashed #231F1C; margin-top: 14px; padding-top: 14px; font-size: 34px; }
+    .rtot span:last-child { font-family: "Archivo Black"; font-size: 60px; color: #C4553F; }
+    .rf { text-align: center; font-size: 22px; margin-top: 12px; opacity: 0.7; }
+    .chap-wrap { position: absolute; left: 0; right: 0; top: 70px; text-align: center; }
+    .chap { display: inline-block; font-family: "Archivo Black"; font-size: 78px; line-height: 1.05; padding: 18px 46px 22px; border: 10px double; border-radius: 14px; background: rgba(244,235,213,0.6); }
+    .chap small { display: block; font-size: 34px; letter-spacing: 0.2em; }
+  </style>
+  <div id="root" data-composition-id="b101" data-width="1920" data-height="1080">
+    <!-- Three steps down -->
+    <div id="b101-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs><filter id="b101-rough" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence id="b101-turb" type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1"/>
+          <feDisplacementMap in="SourceGraphic" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+        <g filter="url(#b101-rough)">
+<g transform="translate(560 940) rotate(0) scale(0.95)"><g id="b101-e0"><g id="b101-e0-i"><rect x="0" y="-110" width="230" height="110" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="32" y="-86" font-family="Archivo Black" font-size="28" fill="#FFFDF7" text-anchor="middle" dominant-baseline="middle">1</text>
+      <text x="115" y="-20" font-family="Archivo Black" font-size="30" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">MATCH</text><rect x="230" y="-220" width="230" height="220" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="262" y="-196" font-family="Archivo Black" font-size="28" fill="#FFFDF7" text-anchor="middle" dominant-baseline="middle">2</text>
+      <text x="345" y="-130" font-family="Archivo Black" font-size="30" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">PROTECT</text><rect x="460" y="-330" width="230" height="330" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="492" y="-306" font-family="Archivo Black" font-size="28" fill="#FFFDF7" text-anchor="middle" dominant-baseline="middle">3</text>
+      <text x="575" y="-240" font-family="Archivo Black" font-size="30" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">ROTH IRA</text><rect x="690" y="-440" width="230" height="440" fill="#EBDFC2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="722" y="-416" font-family="Archivo Black" font-size="28" fill="#C9C3B6" text-anchor="middle" dominant-baseline="middle">4</text>
+      <text x="805" y="-350" font-family="Archivo Black" font-size="30" fill="#C9C3B6" text-anchor="middle" dominant-baseline="middle">401(K)</text><rect x="920" y="-550" width="230" height="550" fill="#EBDFC2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="952" y="-526" font-family="Archivo Black" font-size="28" fill="#C9C3B6" text-anchor="middle" dominant-baseline="middle">5</text>
+      <text x="1035" y="-460" font-family="Archivo Black" font-size="30" fill="#C9C3B6" text-anchor="middle" dominant-baseline="middle">BROKERAGE</text></g></g></g><g transform="translate(1106.25 626.5) rotate(0) scale(0.55)"><g id="b101-e1"><g id="b101-e1-i">
+  <path d="M -28 -78 L -32 -14 M 28 -78 L 32 -14" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M -62 -2 Q -64 -22 -36 -20 Q -18 -18 -18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 62 -2 Q 64 -22 36 -20 Q 18 -18 18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  
+  <path d="M 6 -372 Q 2 -392 4 -408" fill="none" stroke="#6F7C52" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 4 -404 Q -26 -420 -34 -398 Q -12 -388 4 -404 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 4 -400 Q 30 -424 40 -402 Q 18 -388 4 -400 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M -78 -250 C -80 -330 -40 -372 6 -372 C 56 -372 86 -330 82 -260 L 80 -150 C 82 -95 50 -70 0 -70 C -50 -70 -80 -95 -78 -150 Z" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M -56 -296 Q -50 -334 -18 -348" fill="none" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+  
+  
+  <path d="M -36 -288 Q -22 -276 -8 -288 M 14 -288 Q 28 -276 42 -288" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M -24 -254 Q 2 -218 28 -254 Z" fill="#231F1C" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <ellipse cx="-50" cy="-252" rx="12" ry="7" fill="#E7958C" opacity="0.7"/><ellipse cx="56" cy="-252" rx="12" ry="7" fill="#E7958C" opacity="0.7"/>
+  
+  <path d="M -74 -190 Q -140 -240 -128 -322" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M 78 -190 Q 144 -240 132 -322" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  
+  <circle cx="-128" cy="-322" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="132" cy="-322" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  </g></g></g>
+        </g>
+      </svg>
+      
+    </div>
+    <div class="tag-wrap" style="top:56px"><div id="b101-tag" class="tag" style="background:#8E9B6A; color:#231F1C; font-size:64px">3 STEPS DOWN...</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#b101-cam", { scale: 1 }, { scale: 1.03, duration: 1.44, ease: "none", transformOrigin: "50% 60%" }, 0);
+    tl.fromTo("#b101-tag", { opacity: 0, rotation: -16, transformOrigin: "34px 50%" }, { opacity: 1, rotation: 0, duration: 0.9, ease: "elastic.out(1, 0.45)" }, 0.04);
+    
+    tl.fromTo("#b101-e1", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out" }, 0.26);
+    [[0.000,1],[0.125,2],[0.250,3],[0.375,4],[0.500,1],[0.625,2],[0.750,3],[0.875,4],[1.000,1],[1.125,2],[1.250,3],[1.375,4]].forEach(([t, s]) => tl.set("#b101-turb", { attr: { seed: s } }, t));
+    window.__timelines["b101"] = tl;
+  </script>
+</template>

@@ -1,0 +1,102 @@
+<template>
+  <style>
+    @font-face { font-family: "Patrick Hand"; src: url("assets/fonts/PatrickHand.woff2") format("woff2"); font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #b131-cam { position: absolute; inset: 0; }
+    #b131-cam > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .tag-wrap { position: absolute; left: 0; right: 0; text-align: center; }
+    .tag { display: inline-block; position: relative; font-family: "Archivo Black"; letter-spacing: 0.01em; line-height: 1;
+      padding: 20px 44px 20px 76px; border: 5px solid #231F1C; border-radius: 10px 18px 18px 10px;
+      box-shadow: 8px 8px 0 rgba(35,31,28,0.18); }
+    .tag::before { content: ""; position: absolute; left: 30px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: #F4EBD5; border: 4px solid #231F1C; }
+    .tag::after { content: ""; position: absolute; left: 36px; bottom: 50%; width: 4px; height: 90px; background: #231F1C; transform-origin: 50% 100%; transform: rotate(-28deg); margin-bottom: 8px; }
+    .rcpt-wrap { position: absolute; }
+    .rcpt-slot { height: 22px; background: #231F1C; border-radius: 11px; margin: 0 -18px; position: relative; z-index: 2; }
+    .rcpt-clip { overflow: hidden; margin-top: -8px; }
+    .rcpt { background: #FFFDF7; border: 4px solid #231F1C; border-top: none; padding: 26px 30px 40px; font-family: "Space Mono"; font-weight: 700; color: #231F1C;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 97%, 90% 100%, 85% 97%, 80% 100%, 75% 97%, 70% 100%, 65% 97%, 60% 100%, 55% 97%, 50% 100%, 45% 97%, 40% 100%, 35% 97%, 30% 100%, 25% 97%, 20% 100%, 15% 97%, 10% 100%, 5% 97%, 0 100%); }
+    .rt { text-align: center; font-family: "Archivo Black"; font-size: 34px; border-bottom: 3px dashed #231F1C; padding-bottom: 12px; margin-bottom: 14px; }
+    .rl { display: flex; justify-content: space-between; font-size: 30px; line-height: 1.5; }
+    .rtot { display: flex; justify-content: space-between; align-items: baseline; border-top: 3px dashed #231F1C; margin-top: 14px; padding-top: 14px; font-size: 34px; }
+    .rtot span:last-child { font-family: "Archivo Black"; font-size: 60px; color: #C4553F; }
+    .rf { text-align: center; font-size: 22px; margin-top: 12px; opacity: 0.7; }
+    .chap-wrap { position: absolute; left: 0; right: 0; top: 70px; text-align: center; }
+    .chap { display: inline-block; font-family: "Archivo Black"; font-size: 78px; line-height: 1.05; padding: 18px 46px 22px; border: 10px double; border-radius: 14px; background: rgba(244,235,213,0.6); }
+    .chap small { display: block; font-size: 34px; letter-spacing: 0.2em; }
+  </style>
+  <div id="root" data-composition-id="b131" data-width="1920" data-height="1080">
+    <!-- And in the next video -->
+    <div id="b131-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs><filter id="b131-rough" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence id="b131-turb" type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1"/>
+          <feDisplacementMap in="SourceGraphic" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+        <g filter="url(#b131-rough)">
+<g transform="translate(960 500) rotate(0) scale(1)"><g id="b131-e0"><g id="b131-e0-i"><rect x="-440" y="-250" width="880" height="500" rx="18" fill="#C4553F" stroke="#231F1C" stroke-width="8"/><rect x="-420" y="-230" width="840" height="120" fill="#231F1C" opacity="0.4"/><text x="0" y="-170" font-family="Archivo Black" font-size="56" fill="#FFFDF7" text-anchor="middle" dominant-baseline="middle">BREAK THE</text><text x="0" y="-100" font-family="Archivo Black" font-size="70" fill="#E9C25B" text-anchor="middle" dominant-baseline="middle">DEBT TRAP</text><g transform="translate(-260 220) rotate(0) scale(0.55)">
+  <path d="M -28 -78 L -32 -14 M 28 -78 L 32 -14" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M -62 -2 Q -64 -22 -36 -20 Q -18 -18 -18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 62 -2 Q 64 -22 36 -20 Q 18 -18 18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  
+  <path d="M 6 -372 Q 2 -392 4 -408" fill="none" stroke="#6F7C52" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 4 -404 Q -26 -420 -34 -398 Q -12 -388 4 -404 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 4 -400 Q 30 -424 40 -402 Q 18 -388 4 -400 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M -78 -250 C -80 -330 -40 -372 6 -372 C 56 -372 86 -330 82 -260 L 80 -150 C 82 -95 50 -70 0 -70 C -50 -70 -80 -95 -78 -150 Z" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M -56 -296 Q -50 -334 -18 -348" fill="none" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+  
+  
+  <ellipse cx="-22" cy="-288" rx="15" ry="19" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><ellipse cx="28" cy="-288" rx="15" ry="19" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="-22" cy="-286" r="7" fill="#231F1C"/><circle cx="28" cy="-286" r="7" fill="#231F1C"/><path d="M -40 -326 L -12 -316 M 16 -316 L 44 -326" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M -16 -244 L 22 -244" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  
+  
+  <path d="M -74 -190 Q -40 -200 120 -196" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M 78 -190 Q 130 -180 160 -170" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  
+  <circle cx="120" cy="-196" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="160" cy="-170" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  </g><g transform="translate(80 160) rotate(0) scale(0.9)"><rect x="-130" y="-82" width="260" height="164" rx="16" fill="#5F7C90" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <rect x="-100" y="-40" width="46" height="34" rx="6" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <text x="-100" y="30" font-family="Space Mono" font-weight="700" font-size="26" fill="#FFFDF7" text-anchor="start" dominant-baseline="middle">•••• 4021</text>
+  
+  <path d="M -60 50 Q 0 110 60 50 Z" fill="#231F1C" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M -40 56 l 10 14 l 10 -14 l 10 14 l 10 -14 l 10 14 l 10 -14" fill="#FFFDF7" stroke="#FFFDF7" stroke-width="2"/><circle cx="-40" cy="-12" r="12" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="40" cy="-12" r="12" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="-36" cy="-10" r="5" fill="#231F1C"/><circle cx="44" cy="-10" r="5" fill="#231F1C"/></g><circle r="56" fill="#FFFDF7" stroke="#231F1C" stroke-width="6" cx="320" cy="150"/><path d="M 304 126 L 348 150 L 304 174 Z" fill="#C4553F"/></g></g></g><g transform="translate(760 960) rotate(0) scale(1)"><g id="b131-e1"><g id="b131-e1-i"><g transform="translate(-70 0) rotate(0) scale(0.32)">
+  <path d="M -28 -78 L -32 -14 M 28 -78 L 32 -14" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M -62 -2 Q -64 -22 -36 -20 Q -18 -18 -18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 62 -2 Q 64 -22 36 -20 Q 18 -18 18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  
+  <path d="M 6 -372 Q 2 -392 4 -408" fill="none" stroke="#6F7C52" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 4 -404 Q -26 -420 -34 -398 Q -12 -388 4 -404 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 4 -400 Q 30 -424 40 -402 Q 18 -388 4 -400 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M -78 -250 C -80 -330 -40 -372 6 -372 C 56 -372 86 -330 82 -260 L 80 -150 C 82 -95 50 -70 0 -70 C -50 -70 -80 -95 -78 -150 Z" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M -56 -296 Q -50 -334 -18 -348" fill="none" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+  
+  
+  <ellipse cx="-22" cy="-288" rx="15" ry="19" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><ellipse cx="28" cy="-288" rx="15" ry="19" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="-22" cy="-286" r="7" fill="#231F1C"/><circle cx="28" cy="-286" r="7" fill="#231F1C"/><path d="M -24 -254 Q 2 -218 28 -254 Z" fill="#231F1C" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M -8 -236 Q 4 -228 14 -236" fill="#E7958C"/>
+  <ellipse cx="-50" cy="-252" rx="12" ry="7" fill="#E7958C" opacity="0.7"/><ellipse cx="56" cy="-252" rx="12" ry="7" fill="#E7958C" opacity="0.7"/>
+  
+  <path d="M -74 -190 Q -104 -150 -100 -104" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M 78 -190 Q 108 -150 104 -104" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  
+  <circle cx="-100" cy="-104" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="104" cy="-104" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  </g><g transform="translate(10 0) rotate(0) scale(0.26)">
+  <path d="M -36 -82 L -40 -14 M 36 -82 L 40 -14" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M -70 -2 Q -72 -26 -40 -24 Q -18 -22 -16 -2 Z" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M 70 -2 Q 72 -26 40 -24 Q 18 -22 16 -2 Z" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M -60 -10 L -30 -10 M 60 -10 L 30 -10" stroke="#5F7C90" stroke-width="3"/>
+  <path d="M -120 -150 C -150 -210 -120 -280 -60 -286 C -40 -320 30 -320 50 -290 C 120 -290 150 -220 124 -160 C 140 -100 90 -76 40 -84 C 10 -66 -30 -66 -50 -84 C -110 -76 -146 -110 -120 -150 Z" fill="#E7958C" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M -96 -236 q 22 -26 46 -6 q 18 -24 44 -8 M 10 -276 q 26 -10 44 12 q 30 -6 40 22 M -110 -166 q 10 -20 30 -10 M 92 -150 q 20 -6 26 14 M 0 -296 L 2 -240" fill="none" stroke="#B9665E" stroke-width="4" stroke-linecap="round"/>
+  <g transform="translate(0 -276) rotate(-6)"><rect x="-74" y="-18" width="60" height="34" rx="12" fill="#231F1C"/><rect x="12" y="-18" width="60" height="34" rx="12" fill="#231F1C"/><path d="M -14 -6 L 12 -6" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><path d="M -60 -8 L -40 -8" stroke="#C9C3B6" stroke-width="4"/></g>
+  <ellipse cx="-34" cy="-196" rx="20" ry="22" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="-28" cy="-192" r="8" fill="#231F1C"/><ellipse cx="34" cy="-196" rx="20" ry="22" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="40" cy="-192" r="8" fill="#231F1C"/><path d="M -55 -200 Q -34 -208 -13 -200 L -14 -208 Q -34 -226 -54 -208 Z" fill="#E7958C" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M 13 -200 Q 34 -208 55 -200 L 54 -208 Q 34 -226 14 -208 Z" fill="#E7958C" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M -50 -150 Q 0 -96 50 -150 Z" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M -24 -140 L -24 -118 M 0 -136 L 0 -112 M 24 -140 L 24 -118" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"/>
+  
+  <path d="M -104 -170 Q -130 -130 -120 -92" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M 104 -170 Q 130 -130 120 -92" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  
+  <circle cx="-120" cy="-92" r="11" fill="#E7958C" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="120" cy="-92" r="11" fill="#E7958C" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  </g><text x="70" y="-60" font-family="Archivo Black" font-size="64" fill="#231F1C" dominant-baseline="middle">PESA<tspan fill="#B8704F">BRAIN</tspan></text></g></g></g>
+        </g>
+      </svg>
+      
+    </div>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#b131-cam", { scale: 1 }, { scale: 1, duration: 6.59, ease: "none", transformOrigin: "50% 60%" }, 0);
+    tl.fromTo("#b131-e0", { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.6)" }, 2.56);
+    tl.fromTo("#b131-e1", { opacity: 0, y: 160 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 3.26);
+    [[0.000,1],[0.125,2],[0.250,3],[0.375,4],[0.500,1],[0.625,2],[0.750,3],[0.875,4],[1.000,1],[1.125,2],[1.250,3],[1.375,4],[1.500,1],[1.625,2],[1.750,3],[1.875,4],[2.000,1],[2.125,2],[2.250,3],[2.375,4],[2.500,1],[2.625,2],[2.750,3],[2.875,4],[3.000,1],[3.125,2],[3.250,3],[3.375,4],[3.500,1],[3.625,2],[3.750,3],[3.875,4],[4.000,1],[4.125,2],[4.250,3],[4.375,4],[4.500,1],[4.625,2],[4.750,3],[4.875,4],[5.000,1],[5.125,2],[5.250,3],[5.375,4],[5.500,1],[5.625,2],[5.750,3],[5.875,4],[6.000,1],[6.125,2],[6.250,3],[6.375,4],[6.500,1]].forEach(([t, s]) => tl.set("#b131-turb", { attr: { seed: s } }, t));
+    window.__timelines["b131"] = tl;
+  </script>
+</template>

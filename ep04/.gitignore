@@ -1,0 +1,5 @@
+.hyperframes/
+node_modules/
+renders/which-account.mp4
+renders/work-*
+renders/.*
