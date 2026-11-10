@@ -45,6 +45,20 @@ Waiting ten years didn't cost you a third of your money. It cost you more than h
 
 Because the most powerful years of the snowball are the last ones. And you only get them if you start early.
 
+Here's an even stranger example. Meet two friends. Ava and Leo.
+
+Ava starts investing three hundred dollars a month at twenty-five. She keeps it up for just ten years... and at thirty-five, she stops. Never adds another cent.
+
+Leo waits. He starts at thirty-five, right when Ava stops. And he invests three hundred dollars a month for thirty straight years, all the way to sixty-five.
+
+Ava put in thirty-six thousand dollars. Leo put in a hundred and eight thousand. Three times as much.
+
+So who has more at sixty-five?
+
+Ava. With about four hundred and twenty thousand dollars. Leo ends up with around three hundred and sixty-six thousand.
+
+Ava invested for ten years. Leo invested for thirty. And Ava still wins... because her snowball had a ten-year head start.
+
 That's ingredient number one. Time. And it's the only one you can never buy back.
 ```
 
@@ -78,7 +92,9 @@ Same people. Same paychecks. Same choices. The only difference was what happened
 
 That's how powerful the default is. So make investing your default.
 
-Set up an automatic transfer for payday. Use your employer's retirement plan, and at the very least, get the full match, like we talked about in the coffee video. And every time you get a raise, bump the amount up... before your brain notices the extra money.
+And don't wait until you can invest a lot. If three hundred dollars a month sounds impossible right now, start with fifty. Or twenty-five. The amount matters less than the habit. A small snowball that's rolling beats a big one that's still sitting at the top of the hill.
+
+Set up an automatic transfer for payday. Use your employer's retirement plan, and at the very least, get the full match, like we talked about in the coffee video. And every time you get a raise, bump the amount up... before your brain notices the extra money. Even one percent more each year adds up to a lot over time... and you'll barely feel it.
 
 Then comes the hard part. Forget about it.
 
@@ -100,6 +116,10 @@ Nine out of ten professionals. So what are the odds for someone picking stocks o
 So here's ingredient number three. Don't try to find the needle. Buy the whole haystack.
 
 That's what an index fund does. Instead of betting on one company, you own a small slice of hundreds of them. When a few do badly, others pick up the slack. You don't need to know which company will win. You just own all of them.
+
+An index is just a list. The S and P five hundred, for example, is a list of about five hundred of the largest companies in America. An index fund simply buys everything on the list. No genius manager. No guessing. That's exactly why it's cheap.
+
+And if even choosing a fund feels like too much, many retirement plans offer something called a target-date fund. You pick the year you expect to retire, and it spreads your money across stocks and bonds for you... and slowly gets more careful as that year gets closer. One decision. Then you're done.
 
 And this isn't some fringe idea. In his two thousand and thirteen letter to shareholders, Warren Buffett, one of the most successful investors in history, described the instructions he left for his own family's money. Put ninety percent of it in a very low-cost index fund that tracks the S and P five hundred.
 
@@ -142,6 +162,8 @@ So the plan for a scary market is... the same plan as always. Keep the automatic
 
 That's why it's called the boring way. Not because it doesn't work. Because once it's set up... there's almost nothing left to do.
 
+Honestly, once a year is plenty. Check that your transfers are still running. Raise the amount if you got a raise. Make sure your fees are still low. That's it. Fifteen minutes a year. Then close the app and go live your life.
+
 Now, before you start, two quick rules. Build your cash buffer first, so an emergency never forces you to sell. And pay off high-interest debt, like credit cards, because no index fund reliably beats a twenty percent interest rate working against you.
 
 So here's the whole recipe. Start early. Automate it. Buy the whole market, cheaply. And leave it alone.
@@ -162,6 +184,8 @@ And if you want to know which account to put all this in first... a four-oh-one-
 ## Fact notes (check before recording)
 - $300/month for 30 years at 7%, compounded monthly ≈ $366,000 on $108,000 contributed. Over 20 years ≈ $156,000.
   At 6% (a 1% fee) over 30 years ≈ $301,000, about $65,000 less.
+- Ava vs Leo: $300/month at 7% from 25 to 35 (≈ $52,000 at 35), then left alone for 30 years ≈ $421,000 at 65.
+  Leo, $300/month from 35 to 65 ≈ $366,000.
 - Madrian & Shea (2001), "The Power of Suggestion," *Quarterly Journal of Economics*: 401(k) participation among new hires
   went from about 37% to about 86% after automatic enrollment.
 - S&P Dow Jones Indices, SPIVA U.S. Scorecard: roughly 9 in 10 actively managed U.S. large-cap funds trailed the S&P 500 over 15 years.
