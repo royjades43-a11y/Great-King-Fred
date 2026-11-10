@@ -7,6 +7,16 @@ To A/B test:
 - The Boring Way to Get Rich
 - 4 Boring Habits That Quietly Make You Rich
 
+## Thumbnails (1280×720, in `brand/out/`)
+| File | Idea | Use |
+|---|---|---|
+| `ep03-thumb-C-10-beats-30.png` | Ava's big snowball (10 YRS) > Leo's small one (30 YRS), on slate blue. Tag: START EARLY | **Recommended main.** The surprise ("10 beats 30?") makes people click |
+| `ep03-thumb-A-boring-rich.png` | Bean naps in a hammock while a giant $ snowball rolls down the hill. Tag: BORING = RICH | Matches the title best; test against C |
+| `ep03-thumb-B-the-recipe.png` | Chef Bean beside a bowl overflowing with gold coins. Tag: THE RICH RECIPE | The episode's cooking-show look |
+| `ep03-thumb-D-boring-wins.png` | The BORING-O-METER maxed out, a $$$ bag, Impulse yawning. Tag: BORING WINS. | Spare / later test |
+
+Upload C, A and B to Test & Compare. `ep03-thumbs-feed-preview.png` shows them in a feed and next to EP02. Rebuild with `node brand/thumbs.mjs`.
+
 ## Mid-roll ads (the video is 10:59)
 Place ad breaks on the cliffhangers, where viewers are least likely to leave:
 - **3:16** · "So if time is the engine... why doesn't everyone just start?"
