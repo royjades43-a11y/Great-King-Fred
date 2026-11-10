@@ -1,0 +1,617 @@
+[
+{
+"s": 0.0,
+"e": 3.54,
+"t": "Somebody once told you that your morning coffee is why you're broke."
+},
+{
+"s": 4.18,
+"e": 5.32,
+"t": "$5 a day."
+},
+{
+"s": 5.9,
+"e": 13.04,
+"t": "Invested instead, at 7% a year, for 30 years, that's about $172,000."
+},
+{
+"s": 13.96,
+"e": 15.3,
+"t": "And here's the strange part."
+},
+{
+"s": 15.98,
+"e": 19.06,
+"t": "That math is correct, but it's also one of"
+},
+{
+"s": 19.06,
+"e": 21.8,
+"t": "the most misleading ideas in personal finance,"
+},
+{
+"s": 22.4,
+"e": 26.62,
+"t": "and believing it may be costing you far more than the coffee ever could."
+},
+{
+"s": 26.62,
+"e": 29.34,
+"t": "In the next few minutes, I'll show you the numbers"
+},
+{
+"s": 29.34,
+"e": 31.84,
+"t": "that actually decide whether you build wealth."
+},
+{
+"s": 32.36,
+"e": 35.86,
+"t": "They're much bigger than a latte, and one of them is probably"
+},
+{
+"s": 35.86,
+"e": 39.86,
+"t": "sitting on your phone right now, and most people never look at it."
+},
+{
+"s": 40.22,
+"e": 42.64,
+"t": "But first, let's talk about why your brain"
+},
+{
+"s": 42.64,
+"e": 44.82,
+"t": "fell for the coffee story in the first place."
+},
+{
+"s": 45.5,
+"e": 46.26,
+"t": "Meet your brain."
+},
+{
+"s": 46.78,
+"e": 49.58,
+"t": "It loves the coffee story, for three reasons."
+},
+{
+"s": 50.16,
+"e": 51.72,
+"t": "One, you can see it."
+},
+{
+"s": 52.1,
+"e": 54.8,
+"t": "You buy coffee every day, with your own hands."
+},
+{
+"s": 54.8,
+"e": 59.78,
+"t": "A car payment leaves your account automatically once a month, and you barely notice."
+},
+{
+"s": 60.46,
+"e": 62.9,
+"t": "Two, skipping it feels like progress."
+},
+{
+"s": 63.54,
+"e": 67.6,
+"t": "You say no to a latte, and you get a small hit of, I'm being responsible."
+},
+{
+"s": 68.2,
+"e": 71.52,
+"t": "Your brain counts that as a win, even if nothing else changes."
+},
+{
+"s": 72.18,
+"e": 73.64,
+"t": "Three, it's easy."
+},
+{
+"s": 74.1,
+"e": 76.3,
+"t": "Cutting coffee asks nothing hard of you."
+},
+{
+"s": 76.6,
+"e": 80.0,
+"t": "No awkward talks, no moving house, no selling the car."
+},
+{
+"s": 80.44,
+"e": 82.5,
+"t": "Your brain always picks the easy fight."
+},
+{
+"s": 82.5,
+"e": 85.52,
+"t": "Psychologists call part of this mental accounting."
+},
+{
+"s": 86.0,
+"e": 90.14,
+"t": "We sort money into separate mental buckets, and judge each one on its own."
+},
+{
+"s": 90.56,
+"e": 91.98,
+"t": "The coffee bucket looks guilty."
+},
+{
+"s": 92.5,
+"e": 96.12,
+"t": "Meanwhile, the bucket that's actually draining you never gets checked."
+},
+{
+"s": 96.6,
+"e": 97.72,
+"t": "So, let's check it."
+},
+{
+"s": 98.1,
+"e": 100.44,
+"t": "According to the U.S. Bureau of Labor Statistics,"
+},
+{
+"s": 101.04,
+"e": 104.82,
+"t": "the average American household spends about a third of its budget on housing."
+},
+{
+"s": 105.3,
+"e": 107.92,
+"t": "Transportation takes about one dollar in six."
+},
+{
+"s": 108.22,
+"e": 109.08,
+"t": "Food is next."
+},
+{
+"s": 109.58,
+"e": 110.2,
+"t": "Daily coffee?"
+},
+{
+"s": 110.66,
+"e": 111.98,
+"t": "It doesn't even make the chart."
+},
+{
+"s": 111.98,
+"e": 114.6,
+"t": "Here's the key idea, so remember it."
+},
+{
+"s": 114.9,
+"e": 118.04,
+"t": "Cutting your biggest expense by 10% usually"
+},
+{
+"s": 118.04,
+"e": 120.78,
+"t": "beats cutting your smallest expense by 100%."
+},
+{
+"s": 121.34,
+"e": 125.1,
+"t": "Save 10% on rent, and you could free up more money than giving"
+},
+{
+"s": 125.1,
+"e": 128.36,
+"t": "up coffee completely, without changing a single morning."
+},
+{
+"s": 128.82,
+"e": 131.48,
+"t": "But housing isn't the one I'm most worried about for you."
+},
+{
+"s": 131.86,
+"e": 132.78,
+"t": "This next one is."
+},
+{
+"s": 133.668,
+"e": 139.668,
+"t": "Experian reports that the average new car payment in America is over $700 a month."
+},
+{
+"s": 140.368,
+"e": 144.52800000000002,
+"t": "Now imagine a reliable used car with a payment closer to $400."
+},
+{
+"s": 145.108,
+"e": 148.508,
+"t": "That's about $340 a month back in your pocket."
+},
+{
+"s": 149.18800000000002,
+"e": 151.368,
+"t": "That's over $4,000 a year."
+},
+{
+"s": 152.048,
+"e": 153.828,
+"t": "More than two years of daily coffee."
+},
+{
+"s": 154.368,
+"e": 155.888,
+"t": "Every single year."
+},
+{
+"s": 156.648,
+"e": 163.108,
+"t": "Invest that difference at the same 7% for 30 years and you get roughly $380,000."
+},
+{
+"s": 163.808,
+"e": 168.328,
+"t": "That's more than double the coffee fortune and you never gave up a latte."
+},
+{
+"s": 169.008,
+"e": 170.548,
+"t": "So why do we do it?"
+},
+{
+"s": 171.12800000000001,
+"e": 175.248,
+"t": "Because your brain prices the car by the monthly payment, not the total."
+},
+{
+"s": 175.888,
+"e": 179.90800000000002,
+"t": "It's only $700 a month feels a lot like it's only five bucks."
+},
+{
+"s": 180.288,
+"e": 182.608,
+"t": "It's the same trick, just bigger."
+},
+{
+"s": 183.348,
+"e": 186.668,
+"t": "And if the car feels expensive, the next one is"
+},
+{
+"s": 186.668,
+"e": 190.18800000000002,
+"t": "worse because you pay for it and get nothing back."
+},
+{
+"s": 190.848,
+"e": 193.328,
+"t": "Picture paying for coffee every morning for"
+},
+{
+"s": 193.328,
+"e": 196.40800000000002,
+"t": "nine months and never getting a single cup."
+},
+{
+"s": 197.168,
+"e": 199.508,
+"t": "That's roughly what credit card interest looks like."
+},
+{
+"s": 200.108,
+"e": 204.58800000000002,
+"t": "Average credit card interest rates in the U.S. are now above 20%."
+},
+{
+"s": 204.58800000000002,
+"e": 209.048,
+"t": "Carry a $6,000 balance at around 22% and you're"
+},
+{
+"s": 209.048,
+"e": 213.108,
+"t": "paying about $1,300 a year in interest alone."
+},
+{
+"s": 213.96800000000002,
+"e": 216.608,
+"t": "That's around 264 coffees."
+},
+{
+"s": 217.168,
+"e": 218.40800000000002,
+"t": "Roughly nine months of them."
+},
+{
+"s": 218.888,
+"e": 219.128,
+"t": "Gone."
+},
+{
+"s": 219.668,
+"e": 221.168,
+"t": "With nothing to show for it."
+},
+{
+"s": 221.728,
+"e": 223.788,
+"t": "And your brain has a favorite phrase here."
+},
+{
+"s": 224.428,
+"e": 225.328,
+"t": "Just pay the minimum."
+},
+{
+"s": 225.928,
+"e": 226.948,
+"t": "It feels responsible."
+},
+{
+"s": 227.64800000000002,
+"e": 230.58800000000002,
+"t": "It's actually the most expensive habit on this list."
+},
+{
+"s": 231.20800000000003,
+"e": 233.58800000000002,
+"t": "Now here's the one most people never notice."
+},
+{
+"s": 234.20800000000003,
+"e": 235.808,
+"t": "It doesn't take money from you."
+},
+{
+"s": 236.228,
+"e": 238.40800000000002,
+"t": "It takes the money you were about to have."
+},
+{
+"s": 239.35899999999998,
+"e": 240.13899999999998,
+"t": "You get a raise!"
+},
+{
+"s": 240.599,
+"e": 240.99899999999997,
+"t": "Congratulations!"
+},
+{
+"s": 241.79899999999998,
+"e": 242.63899999999998,
+"t": "You earned it!"
+},
+{
+"s": 243.13899999999998,
+"e": 248.13899999999998,
+"t": "Then, slowly, quietly, everything upgrades."
+},
+{
+"s": 248.939,
+"e": 251.599,
+"t": "A slightly bigger place, a nicer car."
+},
+{
+"s": 252.29899999999998,
+"e": 254.69899999999998,
+"t": "More takeout because you're busy now."
+},
+{
+"s": 255.33899999999997,
+"e": 257.139,
+"t": "A year later, you earn more."
+},
+{
+"s": 257.75899999999996,
+"e": 260.239,
+"t": "But your savings look exactly the same."
+},
+{
+"s": 260.779,
+"e": 264.81899999999996,
+"t": "This is why so many people with good salaries still feel broke."
+},
+{
+"s": 265.419,
+"e": 266.49899999999997,
+"t": "Your income went up."
+},
+{
+"s": 266.49899999999997,
+"e": 268.839,
+"t": "But so did your idea of normal."
+},
+{
+"s": 269.55899999999997,
+"e": 272.359,
+"t": "Your brain adjusts to every upgrade within months."
+},
+{
+"s": 272.719,
+"e": 274.69899999999996,
+"t": "And then, it wants the next one."
+},
+{
+"s": 275.339,
+"e": 276.31899999999996,
+"t": "Here's a simple fix."
+},
+{
+"s": 276.93899999999996,
+"e": 281.679,
+"t": "The next time you get a raise, save at least half of it before you get used to it."
+},
+{
+"s": 282.019,
+"e": 286.359,
+"t": "You'll still feel richer, and your future self will actually be richer."
+},
+{
+"s": 286.979,
+"e": 290.19899999999996,
+"t": "And speaking of free money, this last one is the"
+},
+{
+"s": 290.19899999999996,
+"e": 293.279,
+"t": "most painful because you could fix it this week."
+},
+{
+"s": 293.839,
+"e": 297.11899999999997,
+"t": "Many U.S. employers offer a 401(k) match."
+},
+{
+"s": 297.739,
+"e": 301.159,
+"t": "If you put in a few percent of your pay, they add money on top."
+},
+{
+"s": 301.719,
+"e": 306.239,
+"t": "With a dollar-for-dollar match, every dollar you put in instantly becomes two."
+},
+{
+"s": 306.779,
+"e": 309.859,
+"t": "No investment you'll ever find reliably does that."
+},
+{
+"s": 310.31899999999996,
+"e": 314.259,
+"t": "And yet, plenty of people don't put in enough to get the full match."
+},
+{
+"s": 314.659,
+"e": 319.099,
+"t": "They're turning down part of their own pay while feeling guilty about a latte."
+},
+{
+"s": 319.659,
+"e": 321.43899999999996,
+"t": "Check your benefits page this week."
+},
+{
+"s": 321.43899999999996,
+"e": 324.11899999999997,
+"t": "That's the number I said might be sitting on your phone."
+},
+{
+"s": 325.118,
+"e": 327.598,
+"t": "So does the coffee not matter at all?"
+},
+{
+"s": 328.278,
+"e": 329.478,
+"t": "Here's the honest answer."
+},
+{
+"s": 330.158,
+"e": 334.098,
+"t": "The coffee isn't the problem, but it can be a symptom."
+},
+{
+"s": 334.838,
+"e": 339.378,
+"t": "If you buy coffee on autopilot, you're probably spending on autopilot everywhere."
+},
+{
+"s": 340.338,
+"e": 343.318,
+"t": "Subscriptions you forgot about, fees you never check,"
+},
+{
+"s": 343.83799999999997,
+"e": 345.95799999999997,
+"t": "apps that charge you every single month."
+},
+{
+"s": 346.578,
+"e": 349.33799999999997,
+"t": "So keep the coffee, just choose it on purpose."
+},
+{
+"s": 350.078,
+"e": 354.638,
+"t": "Spend freely on what you love and cut hard on what you don't even notice."
+},
+{
+"s": 355.518,
+"e": 359.518,
+"t": "Here are three moves for this week and none of them involve giving up coffee."
+},
+{
+"s": 360.33799999999997,
+"e": 364.918,
+"t": "One, look at your three biggest bills, housing, car, food."
+},
+{
+"s": 365.558,
+"e": 368.078,
+"t": "Find a 10% cut in just one of them."
+},
+{
+"s": 368.658,
+"e": 372.758,
+"t": "Two, list every debt with an interest rate above 10%."
+},
+{
+"s": 372.758,
+"e": 375.038,
+"t": "That's your enemy, not your barista."
+},
+{
+"s": 375.758,
+"e": 379.918,
+"t": "Three, make sure you're getting your full employer match and set your"
+},
+{
+"s": 379.918,
+"e": 384.118,
+"t": "savings to go out automatically on payday before your brain can spend it."
+},
+{
+"s": 384.618,
+"e": 385.738,
+"t": "So here's the truth."
+},
+{
+"s": 386.33799999999997,
+"e": 388.718,
+"t": "Your coffee was never what was keeping you broke."
+},
+{
+"s": 389.278,
+"e": 392.678,
+"t": "The quiet stuff was, the car payment, the interest,"
+},
+{
+"s": 393.238,
+"e": 396.298,
+"t": "the raise you never saw, the free money you never claimed."
+},
+{
+"s": 396.918,
+"e": 400.758,
+"t": "Fix those and you can enjoy every cup without the guilt."
+},
+{
+"s": 401.278,
+"e": 404.398,
+"t": "And if you've ever wondered why, even when you earn more,"
+},
+{
+"s": 404.598,
+"e": 409.118,
+"t": "you still never feel rich, that's a whole different trick your brain plays on you."
+},
+{
+"s": 409.118,
+"e": 410.45799999999997,
+"t": "Watch this one next."
+}
+]
