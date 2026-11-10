@@ -137,9 +137,9 @@ Your credit card balance doesn't shrink... because the system is designed around
 
 The minimum payment is an anchor. The interest is a snowball rolling the wrong way. And looking away only makes it bigger.
 
-Here's what it can look like. Bean has three cards and six thousand dollars of debt. He calls each card company and gets one rate lowered. He takes the cards out of his phone. He picks a fixed three hundred dollars a month, and goes snowball, smallest first.
+Here's what it can look like. Bean has three cards and six thousand dollars of debt. He takes the cards out of his phone. He picks a fixed three hundred dollars a month, and goes snowball, smallest first.
 
-Month five, the first card hits zero. He cuts it in half. Month fourteen, the second one. A couple of years later... the last payment. And for the first time in years, the statement says zero.
+Month five, the first card hits zero. He cuts it in half. Month sixteen, the second one. A little over two years in... the last payment. And for the first time in years, the statement says zero.
 
 So pick a fixed payment, bigger than the minimum. Pick a method, avalanche or snowball. Make the phone call. And stop feeding the pile.
 
