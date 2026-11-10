@@ -1,0 +1,75 @@
+<template>
+  <style>
+    @font-face { font-family: "Patrick Hand"; src: url("assets/fonts/PatrickHand.woff2") format("woff2"); font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #b169-cam { position: absolute; inset: 0; }
+    #b169-cam > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .tag-wrap { position: absolute; left: 0; right: 0; text-align: center; }
+    .tag { display: inline-block; position: relative; font-family: "Archivo Black"; letter-spacing: 0.01em; line-height: 1;
+      padding: 20px 44px 20px 76px; border: 5px solid #231F1C; border-radius: 10px 18px 18px 10px;
+      box-shadow: 8px 8px 0 rgba(35,31,28,0.18); }
+    .tag::before { content: ""; position: absolute; left: 30px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: #F4EBD5; border: 4px solid #231F1C; }
+    .tag::after { content: ""; position: absolute; left: 36px; bottom: 50%; width: 4px; height: 90px; background: #231F1C; transform-origin: 50% 100%; transform: rotate(-28deg); margin-bottom: 8px; }
+    .rcpt-wrap { position: absolute; }
+    .rcpt-slot { height: 22px; background: #231F1C; border-radius: 11px; margin: 0 -18px; position: relative; z-index: 2; }
+    .rcpt-clip { overflow: hidden; margin-top: -8px; }
+    .rcpt { background: #FFFDF7; border: 4px solid #231F1C; border-top: none; padding: 26px 30px 40px; font-family: "Space Mono"; font-weight: 700; color: #231F1C;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 97%, 90% 100%, 85% 97%, 80% 100%, 75% 97%, 70% 100%, 65% 97%, 60% 100%, 55% 97%, 50% 100%, 45% 97%, 40% 100%, 35% 97%, 30% 100%, 25% 97%, 20% 100%, 15% 97%, 10% 100%, 5% 97%, 0 100%); }
+    .rt { text-align: center; font-family: "Archivo Black"; font-size: 34px; border-bottom: 3px dashed #231F1C; padding-bottom: 12px; margin-bottom: 14px; }
+    .rl { display: flex; justify-content: space-between; font-size: 30px; line-height: 1.5; }
+    .rtot { display: flex; justify-content: space-between; align-items: baseline; border-top: 3px dashed #231F1C; margin-top: 14px; padding-top: 14px; font-size: 34px; }
+    .rtot span:last-child { font-family: "Archivo Black"; font-size: 60px; color: #C4553F; }
+    .rf { text-align: center; font-size: 22px; margin-top: 12px; opacity: 0.7; }
+    .chap-wrap { position: absolute; left: 0; right: 0; top: 70px; text-align: center; }
+    .chap { display: inline-block; font-family: "Archivo Black"; font-size: 78px; line-height: 1.05; padding: 18px 46px 22px; border: 10px double; border-radius: 14px; background: rgba(244,235,213,0.6); }
+    .chap small { display: block; font-size: 34px; letter-spacing: 0.2em; }
+  </style>
+  <div id="root" data-composition-id="b169" data-width="1920" data-height="1080">
+    <!-- The exciting part comes later -->
+    <div id="b169-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs><filter id="b169-rough" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence id="b169-turb" type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1"/>
+          <feDisplacementMap in="SourceGraphic" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+        <g filter="url(#b169-rough)">
+<g transform="translate(0 0) rotate(0) scale(1)"><g id="b169-e0"><g id="b169-e0-i"><path d="M -20 360 C 300 380 600 560 1000 720 C 1300 830 1600 900 1940 920 L 1940 1080 L -20 1080 Z" fill="#F7F7F2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+    <path d="M 200 440 C 450 500 700 640 980 760" fill="none" stroke="#D9E2E6" stroke-width="10" stroke-linecap="round"/>
+    <path d="M 300 470 l 30 -70 l 30 70 Z M 310 440 l 20 -50 l 20 50 Z" fill="#6F7C52" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M 700 640 l 30 -70 l 30 70 Z M 710 610 l 20 -50 l 20 50 Z" fill="#6F7C52" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M 1200 830 l 30 -70 l 30 70 Z M 1210 800 l 20 -50 l 20 50 Z" fill="#6F7C52" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M 1650 900 l 30 -70 l 30 70 Z M 1660 870 l 20 -50 l 20 50 Z" fill="#6F7C52" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/></g></g></g><g transform="translate(1450 640) rotate(0) scale(2.4)"><g id="b169-e1"><g id="b169-e1-i"><circle r="100" fill="#F7F7F2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><path d="M -60 40 Q 0 90 70 40" fill="none" stroke="#D9E2E6" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="-40" cy="-40" r="14" fill="#D9E2E6"/><circle cx="45" cy="-55" r="10" fill="#D9E2E6"/>
+    <text x="0" y="8" font-family="Archivo Black" font-size="120" fill="#6F7C52" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(960 760) rotate(0) scale(1)"><g id="b169-e2"><g id="b169-e2-i"><rect x="112" y="-537" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(0 112 -537)"/><rect x="330" y="-228" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(37 330 -228)"/><rect x="-263" y="-257" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(74 -263 -257)"/><rect x="-581" y="-278" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(111 -581 -278)"/><rect x="-487" y="-438" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(148 -487 -438)"/><rect x="-77" y="-132" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(5 -77 -132)"/><rect x="488" y="-492" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(42 488 -492)"/><rect x="637" y="-109" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(79 637 -109)"/><rect x="93" y="-90" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(116 93 -90)"/><rect x="654" y="-245" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(153 654 -245)"/><rect x="-565" y="-409" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(10 -565 -409)"/><rect x="782" y="-600" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(47 782 -600)"/><rect x="449" y="-5" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(84 449 -5)"/><rect x="-360" y="-405" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(121 -360 -405)"/><rect x="-677" y="-27" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(158 -677 -27)"/><rect x="408" y="-238" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(15 408 -238)"/><rect x="186" y="-562" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(52 186 -562)"/><rect x="-550" y="-239" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(89 -550 -239)"/><rect x="-538" y="-11" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(126 -538 -11)"/><rect x="6" y="-649" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(163 6 -649)"/><rect x="94" y="-302" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(20 94 -302)"/><rect x="-254" y="-491" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(57 -254 -491)"/><rect x="-366" y="-430" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(94 -366 -430)"/><rect x="191" y="-682" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(131 191 -682)"/><rect x="194" y="-44" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(168 194 -44)"/><rect x="-398" y="-374" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(25 -398 -374)"/><rect x="273" y="-446" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(62 273 -446)"/><rect x="-263" y="-536" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(99 -263 -536)"/><rect x="444" y="-246" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(136 444 -246)"/><rect x="-727" y="-61" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(173 -727 -61)"/><rect x="510" y="-335" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(30 510 -335)"/><rect x="-506" y="-514" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(67 -506 -514)"/><rect x="-675" y="-694" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(104 -675 -694)"/><rect x="-154" y="-607" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(141 -154 -607)"/><rect x="484" y="-244" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(178 484 -244)"/><rect x="-637" y="-11" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(35 -637 -11)"/><rect x="-121" y="-419" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(72 -121 -419)"/><rect x="749" y="-603" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(109 749 -603)"/><rect x="-82" y="-580" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(146 -82 -580)"/><rect x="-459" y="-237" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(3 -459 -237)"/></g></g></g><g transform="translate(900 674) rotate(0) scale(0.7)"><g id="b169-e3"><g id="b169-e3-i">
+  <path d="M -28 -78 L -32 -14 M 28 -78 L 32 -14" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M -62 -2 Q -64 -22 -36 -20 Q -18 -18 -18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 62 -2 Q 64 -22 36 -20 Q 18 -18 18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  
+  <path d="M 6 -372 Q 2 -392 4 -408" fill="none" stroke="#6F7C52" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 4 -404 Q -26 -420 -34 -398 Q -12 -388 4 -404 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 4 -400 Q 30 -424 40 -402 Q 18 -388 4 -400 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M -78 -250 C -80 -330 -40 -372 6 -372 C 56 -372 86 -330 82 -260 L 80 -150 C 82 -95 50 -70 0 -70 C -50 -70 -80 -95 -78 -150 Z" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M -56 -296 Q -50 -334 -18 -348" fill="none" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+  
+  
+  <path d="M -36 -288 Q -22 -276 -8 -288 M 14 -288 Q 28 -276 42 -288" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M -24 -254 Q 2 -218 28 -254 Z" fill="#231F1C" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <ellipse cx="-50" cy="-252" rx="12" ry="7" fill="#E7958C" opacity="0.7"/><ellipse cx="56" cy="-252" rx="12" ry="7" fill="#E7958C" opacity="0.7"/>
+  
+  <path d="M -74 -190 Q -140 -240 -128 -322" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M 78 -190 Q 144 -240 132 -322" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  
+  <circle cx="-128" cy="-322" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="132" cy="-322" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  </g></g></g>
+        </g>
+      </svg>
+      
+    </div>
+    <div class="tag-wrap" style="top:56px"><div id="b169-tag" class="tag" style="background:#D3A43F; color:#231F1C; font-size:52px">THE EXCITING PART COMES LATER</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#b169-cam", { scale: 1 }, { scale: 1.03, duration: 2.24, ease: "none", transformOrigin: "50% 60%" }, 0);
+    tl.fromTo("#b169-tag", { opacity: 0, rotation: -16, transformOrigin: "34px 50%" }, { opacity: 1, rotation: 0, duration: 0.9, ease: "elastic.out(1, 0.45)" }, 0.04);
+    
+    tl.fromTo("#b169-e1", { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(2.6)" }, 0.26);
+    tl.fromTo("#b169-e2", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out" }, 1.42);
+    tl.fromTo("#b169-e3", { opacity: 0, scale: 0.55, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.32, ease: "back.out(2.2)" }, 0.3);
+    [[0.000,1],[0.125,2],[0.250,3],[0.375,4],[0.500,1],[0.625,2],[0.750,3],[0.875,4],[1.000,1],[1.125,2],[1.250,3],[1.375,4],[1.500,1],[1.625,2],[1.750,3],[1.875,4],[2.000,1],[2.125,2]].forEach(([t, s]) => tl.set("#b169-turb", { attr: { seed: s } }, t));
+    window.__timelines["b169"] = tl;
+  </script>
+</template>

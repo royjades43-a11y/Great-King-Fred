@@ -1,0 +1,5 @@
+.hyperframes/
+node_modules/
+renders/boring-way.mp4
+renders/work-*
+renders/.*

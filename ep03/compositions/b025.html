@@ -1,0 +1,64 @@
+<template>
+  <style>
+    @font-face { font-family: "Patrick Hand"; src: url("assets/fonts/PatrickHand.woff2") format("woff2"); font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #b025-cam { position: absolute; inset: 0; }
+    #b025-cam > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .tag-wrap { position: absolute; left: 0; right: 0; text-align: center; }
+    .tag { display: inline-block; position: relative; font-family: "Archivo Black"; letter-spacing: 0.01em; line-height: 1;
+      padding: 20px 44px 20px 76px; border: 5px solid #231F1C; border-radius: 10px 18px 18px 10px;
+      box-shadow: 8px 8px 0 rgba(35,31,28,0.18); }
+    .tag::before { content: ""; position: absolute; left: 30px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: #F4EBD5; border: 4px solid #231F1C; }
+    .tag::after { content: ""; position: absolute; left: 36px; bottom: 50%; width: 4px; height: 90px; background: #231F1C; transform-origin: 50% 100%; transform: rotate(-28deg); margin-bottom: 8px; }
+    .rcpt-wrap { position: absolute; }
+    .rcpt-slot { height: 22px; background: #231F1C; border-radius: 11px; margin: 0 -18px; position: relative; z-index: 2; }
+    .rcpt-clip { overflow: hidden; margin-top: -8px; }
+    .rcpt { background: #FFFDF7; border: 4px solid #231F1C; border-top: none; padding: 26px 30px 40px; font-family: "Space Mono"; font-weight: 700; color: #231F1C;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 97%, 90% 100%, 85% 97%, 80% 100%, 75% 97%, 70% 100%, 65% 97%, 60% 100%, 55% 97%, 50% 100%, 45% 97%, 40% 100%, 35% 97%, 30% 100%, 25% 97%, 20% 100%, 15% 97%, 10% 100%, 5% 97%, 0 100%); }
+    .rt { text-align: center; font-family: "Archivo Black"; font-size: 34px; border-bottom: 3px dashed #231F1C; padding-bottom: 12px; margin-bottom: 14px; }
+    .rl { display: flex; justify-content: space-between; font-size: 30px; line-height: 1.5; }
+    .rtot { display: flex; justify-content: space-between; align-items: baseline; border-top: 3px dashed #231F1C; margin-top: 14px; padding-top: 14px; font-size: 34px; }
+    .rtot span:last-child { font-family: "Archivo Black"; font-size: 60px; color: #C4553F; }
+    .rf { text-align: center; font-size: 22px; margin-top: 12px; opacity: 0.7; }
+    .chap-wrap { position: absolute; left: 0; right: 0; top: 70px; text-align: center; }
+    .chap { display: inline-block; font-family: "Archivo Black"; font-size: 78px; line-height: 1.05; padding: 18px 46px 22px; border: 10px double; border-radius: 14px; background: rgba(244,235,213,0.6); }
+    .chap small { display: block; font-size: 34px; letter-spacing: 0.2em; }
+  </style>
+  <div id="root" data-composition-id="b025" data-width="1920" data-height="1080">
+    <!-- and then the return on the return -->
+    <div id="b025-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs><filter id="b025-rough" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence id="b025-turb" type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1"/>
+          <feDisplacementMap in="SourceGraphic" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+        <g filter="url(#b025-rough)">
+<g transform="translate(792 860) rotate(0) scale(1)"><g id="b025-e0"><g id="b025-e0-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(876 860) rotate(0) scale(1)"><g id="b025-e1"><g id="b025-e1-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(960 860) rotate(0) scale(1)"><g id="b025-e2"><g id="b025-e2-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(1044 860) rotate(0) scale(1)"><g id="b025-e3"><g id="b025-e3-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(1128 860) rotate(0) scale(1)"><g id="b025-e4"><g id="b025-e4-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(834 784) rotate(0) scale(1)"><g id="b025-e5"><g id="b025-e5-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(918 784) rotate(0) scale(1)"><g id="b025-e6"><g id="b025-e6-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(1002 784) rotate(0) scale(1)"><g id="b025-e7"><g id="b025-e7-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(1086 784) rotate(0) scale(1)"><g id="b025-e8"><g id="b025-e8-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(876 708) rotate(0) scale(1)"><g id="b025-e9"><g id="b025-e9-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(960 708) rotate(0) scale(1)"><g id="b025-e10"><g id="b025-e10-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(1044 708) rotate(0) scale(1)"><g id="b025-e11"><g id="b025-e11-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(918 632) rotate(0) scale(1)"><g id="b025-e12"><g id="b025-e12-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(1002 632) rotate(0) scale(1)"><g id="b025-e13"><g id="b025-e13-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g><g transform="translate(960 556) rotate(0) scale(1)"><g id="b025-e14"><g id="b025-e14-i"><circle r="36" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle r="25.919999999999998" fill="none" stroke="#D3A43F" stroke-width="3"/><text x="0" y="2" font-family="Archivo Black" font-size="39.6" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">$</text></g></g></g>
+        </g>
+      </svg>
+      
+    </div>
+    <div class="tag-wrap" style="top:56px"><div id="b025-tag" class="tag" style="background:#8E9B6A; color:#231F1C; font-size:52px">...AND THOSE RETURNS EARN TOO</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#b025-cam", { scale: 1 }, { scale: 1.03, duration: 3.96, ease: "none", transformOrigin: "50% 60%" }, 0);
+    tl.fromTo("#b025-tag", { opacity: 0, rotation: -16, transformOrigin: "34px 50%" }, { opacity: 1, rotation: 0, duration: 0.9, ease: "elastic.out(1, 0.45)" }, 0.04);
+    tl.fromTo("#b025-e0", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.1);
+    tl.fromTo("#b025-e1", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.18);
+    tl.fromTo("#b025-e2", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.26);
+    tl.fromTo("#b025-e3", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.34);
+    tl.fromTo("#b025-e4", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.42);
+    tl.fromTo("#b025-e5", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.5);
+    tl.fromTo("#b025-e6", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.58);
+    tl.fromTo("#b025-e7", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.66);
+    tl.fromTo("#b025-e8", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.74);
+    tl.fromTo("#b025-e9", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.82);
+    tl.fromTo("#b025-e10", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.9);
+    tl.fromTo("#b025-e11", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.98);
+    tl.fromTo("#b025-e12", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 1.06);
+    tl.fromTo("#b025-e13", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 1.14);
+    tl.fromTo("#b025-e14", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 1.22);
+    [[0.000,1],[0.125,2],[0.250,3],[0.375,4],[0.500,1],[0.625,2],[0.750,3],[0.875,4],[1.000,1],[1.125,2],[1.250,3],[1.375,4],[1.500,1],[1.625,2],[1.750,3],[1.875,4],[2.000,1],[2.125,2],[2.250,3],[2.375,4],[2.500,1],[2.625,2],[2.750,3],[2.875,4],[3.000,1],[3.125,2],[3.250,3],[3.375,4],[3.500,1],[3.625,2],[3.750,3],[3.875,4]].forEach(([t, s]) => tl.set("#b025-turb", { attr: { seed: s } }, t));
+    window.__timelines["b025"] = tl;
+  </script>
+</template>
