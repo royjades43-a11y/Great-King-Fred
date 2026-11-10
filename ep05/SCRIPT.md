@@ -1,6 +1,6 @@
 # PesaBrain EP05 — "Why Your Credit Card Balance Never Shrinks (And How to Break the Trap)"
 
-Voiceover script for ElevenLabs, in 4 parts. About 1,550 words, roughly 9:30 at your usual pace. Each part ends on a hook,
+Voiceover script for ElevenLabs, in 4 parts. About 1,500 words, roughly 9 minutes at your usual pace. Each part ends on a hook,
 so the breaks between parts are natural mid-roll ad slots.
 It picks up EP04's last line ("...a credit card balance that never seems to shrink...").
 
@@ -31,6 +31,12 @@ If you only ever pay the minimum on that card... and the minimum keeps shrinking
 And you'll pay almost sixteen thousand dollars. For six thousand dollars of stuff.
 
 Ten thousand dollars... just for the privilege of paying slowly.
+
+Think about what that six thousand dollars probably was. A laptop. A trip. A couple of emergencies. Some dinners out. Normal life.
+
+But by the time it's paid off... that laptop cost you almost three times its price. You might be on your fourth laptop before you've finished paying for the first one.
+
+And here's the part nobody says out loud. For the card company, you're not a problem customer. You're the perfect customer. Someone who always pays... and never finishes.
 
 The law actually makes card companies print a warning about this on your statement. A little box that shows how long the minimum will take. Most people never read it.
 
@@ -64,6 +70,8 @@ So when you pay a hundred and seventy dollars, a big chunk of it never touches y
 You're running. You're sweating. You're paying every month. And you're standing in the same place.
 
 That's why the balance never seems to shrink. It's not bad luck. It's math, plus a brain that trusts the wrong number.
+
+And there's something else making it worse. Card debt doesn't feel like real money. It's a number on a screen. It doesn't weigh anything. It doesn't sit in your wallet. Remember the pain of paying from our Shorts? Swiping on a card removes the pain when you buy... and the debt keeps that pain hidden for years.
 
 And there's a third trick that keeps people stuck. Your brain hates looking at debt. It feels like a failure. So it does the comfortable thing. It looks away.
 
@@ -102,6 +110,8 @@ Researchers at Northwestern University, Kellogg School of Management, studied re
 
 Small wins keep you going. Your brain needs proof that it's working.
 
+Think of it like climbing out of a hole with a ladder. The avalanche gives you the shortest ladder. The snowball gives you a ladder where you can see each step working. If you keep falling off the short ladder... the longer one that you actually climb is better.
+
 So which one should you pick? If you're motivated by numbers, go avalanche. If you've tried before and quit... go snowball. The best method is the one you'll actually finish.
 
 But both methods have the same enemy. That twenty-two percent interest rate. And there's a way to attack it directly.
@@ -126,6 +136,10 @@ So here's the truth.
 Your credit card balance doesn't shrink... because the system is designed around a small, friendly number that your brain trusts.
 
 The minimum payment is an anchor. The interest is a snowball rolling the wrong way. And looking away only makes it bigger.
+
+Here's what it can look like. Bean has three cards and six thousand dollars of debt. He calls each card company and gets one rate lowered. He takes the cards out of his phone. He picks a fixed three hundred dollars a month, and goes snowball, smallest first.
+
+Month five, the first card hits zero. He cuts it in half. Month fourteen, the second one. A couple of years later... the last payment. And for the first time in years, the statement says zero.
 
 So pick a fixed payment, bigger than the minimum. Pick a method, avalanche or snowball. Make the phone call. And stop feeding the pile.
 
