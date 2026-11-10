@@ -1,0 +1,74 @@
+<template>
+  <style>
+    @font-face { font-family: "Patrick Hand"; src: url("assets/fonts/PatrickHand.woff2") format("woff2"); font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #b105-cam { position: absolute; inset: 0; }
+    #b105-cam > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .tag-wrap { position: absolute; left: 0; right: 0; text-align: center; }
+    .tag { display: inline-block; position: relative; font-family: "Archivo Black"; letter-spacing: 0.01em; line-height: 1;
+      padding: 20px 44px 20px 76px; border: 5px solid #231F1C; border-radius: 10px 18px 18px 10px;
+      box-shadow: 8px 8px 0 rgba(35,31,28,0.18); }
+    .tag::before { content: ""; position: absolute; left: 30px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: #F4EBD5; border: 4px solid #231F1C; }
+    .tag::after { content: ""; position: absolute; left: 36px; bottom: 50%; width: 4px; height: 90px; background: #231F1C; transform-origin: 50% 100%; transform: rotate(-28deg); margin-bottom: 8px; }
+    .rcpt-wrap { position: absolute; }
+    .rcpt-slot { height: 22px; background: #231F1C; border-radius: 11px; margin: 0 -18px; position: relative; z-index: 2; }
+    .rcpt-clip { overflow: hidden; margin-top: -8px; }
+    .rcpt { background: #FFFDF7; border: 4px solid #231F1C; border-top: none; padding: 26px 30px 40px; font-family: "Space Mono"; font-weight: 700; color: #231F1C;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 97%, 90% 100%, 85% 97%, 80% 100%, 75% 97%, 70% 100%, 65% 97%, 60% 100%, 55% 97%, 50% 100%, 45% 97%, 40% 100%, 35% 97%, 30% 100%, 25% 97%, 20% 100%, 15% 97%, 10% 100%, 5% 97%, 0 100%); }
+    .rt { text-align: center; font-family: "Archivo Black"; font-size: 34px; border-bottom: 3px dashed #231F1C; padding-bottom: 12px; margin-bottom: 14px; }
+    .rl { display: flex; justify-content: space-between; font-size: 30px; line-height: 1.5; }
+    .rtot { display: flex; justify-content: space-between; align-items: baseline; border-top: 3px dashed #231F1C; margin-top: 14px; padding-top: 14px; font-size: 34px; }
+    .rtot span:last-child { font-family: "Archivo Black"; font-size: 60px; color: #C4553F; }
+    .rf { text-align: center; font-size: 22px; margin-top: 12px; opacity: 0.7; }
+    .chap-wrap { position: absolute; left: 0; right: 0; top: 70px; text-align: center; }
+    .chap { display: inline-block; font-family: "Archivo Black"; font-size: 78px; line-height: 1.05; padding: 18px 46px 22px; border: 10px double; border-radius: 14px; background: rgba(244,235,213,0.6); }
+    .chap small { display: block; font-size: 34px; letter-spacing: 0.2em; }
+  </style>
+  <div id="root" data-composition-id="b105" data-width="1920" data-height="1080">
+    <!-- You'll probably never feel rich by earning more -->
+    <div id="b105-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs><filter id="b105-rough" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence id="b105-turb" type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1"/>
+          <feDisplacementMap in="SourceGraphic" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+        <g filter="url(#b105-rough)">
+<g transform="translate(960 910) rotate(0) scale(1.2)"><g id="b105-e0"><g id="b105-e0-i"><path d="M -240 -30 L 220 -30 Q 250 -30 250 0 Q 250 30 220 30 L -240 30 Q -270 30 -270 0 Q -270 -30 -240 -30 Z" fill="#231F1C"/>
+  <path d="M -220 -16 L 210 -16" stroke="#C9C3B6" stroke-width="4" stroke-dasharray="20 18"/>
+  <path d="M 200 -30 L 250 -330 L 290 -330" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/><rect x="230" y="-370" width="110" height="60" rx="8" fill="#5F7C90" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/></g></g></g><g transform="translate(920 940) rotate(0) scale(1)"><g id="b105-e1"><g id="b105-e1-i"><ellipse cx="0" cy="0" rx="100" ry="15" fill="#231F1C" opacity="0.12"/>
+  <path d="M -28 -78 L -32 -14 M 28 -78 L 32 -14" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M -62 -2 Q -64 -22 -36 -20 Q -18 -18 -18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 62 -2 Q 64 -22 36 -20 Q 18 -18 18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  
+  <path d="M 6 -372 Q 2 -392 4 -408" fill="none" stroke="#6F7C52" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 4 -404 Q -26 -420 -34 -398 Q -12 -388 4 -404 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 4 -400 Q 30 -424 40 -402 Q 18 -388 4 -400 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M -78 -250 C -80 -330 -40 -372 6 -372 C 56 -372 86 -330 82 -260 L 80 -150 C 82 -95 50 -70 0 -70 C -50 -70 -80 -95 -78 -150 Z" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M -56 -296 Q -50 -334 -18 -348" fill="none" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+  
+  
+  <ellipse cx="-22" cy="-288" rx="15" ry="19" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><ellipse cx="28" cy="-288" rx="15" ry="19" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="-22" cy="-286" r="7" fill="#231F1C"/><circle cx="28" cy="-286" r="7" fill="#231F1C"/><path d="M -40 -318 L -12 -326 M 16 -326 L 44 -318" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M -18 -240 Q -9 -250 0 -242 Q 9 -234 20 -244" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  
+  <path d="M -96 -330 Q -104 -312 -96 -306 Q -88 -312 -96 -330 Z" fill="#8FA7B4" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M 104 -310 Q 96 -292 104 -286 Q 112 -292 104 -310 Z" fill="#8FA7B4" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M -74 -190 Q -140 -240 -128 -322" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M 78 -190 Q 144 -240 132 -322" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  
+  <circle cx="-128" cy="-322" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="132" cy="-322" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  </g></g></g><g transform="translate(1400 640) rotate(0) scale(1)"><g id="b105-e2"><g id="b105-e2-i"><rect x="-90" y="-180" width="180" height="180" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <text x="0" y="-114" font-family="Archivo Black" font-size="30" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">RAISE</text><text x="0" y="-70" font-family="Archivo Black" font-size="30" fill="#6F7C52" text-anchor="middle" dominant-baseline="middle">+$$$</text></g></g></g>
+        </g>
+      </svg>
+      
+    </div>
+    <div class="tag-wrap" style="top:56px"><div id="b105-tag" class="tag" style="background:#FFFDF7; color:#231F1C; font-size:52px">EARNING MORE WON'T DO IT</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#b105-cam", { scale: 1 }, { scale: 1.03, duration: 3.32, ease: "none", transformOrigin: "50% 60%" }, 0);
+    tl.fromTo("#b105-tag", { opacity: 0, rotation: -16, transformOrigin: "34px 50%" }, { opacity: 1, rotation: 0, duration: 0.9, ease: "elastic.out(1, 0.45)" }, 0.04);
+    
+    tl.fromTo("#b105-e1", { opacity: 0, scale: 0.55, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.32, ease: "back.out(2.2)" }, 0.26);
+    tl.fromTo("#b105-e1-i", { y: 0 }, { y: -8, duration: 0.15, ease: "sine.inOut", yoyo: true, repeat: 13 }, 0.610);
+    tl.fromTo("#b105-e2", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out" }, 2.42);
+    [[0.000,1],[0.125,2],[0.250,3],[0.375,4],[0.500,1],[0.625,2],[0.750,3],[0.875,4],[1.000,1],[1.125,2],[1.250,3],[1.375,4],[1.500,1],[1.625,2],[1.750,3],[1.875,4],[2.000,1],[2.125,2],[2.250,3],[2.375,4],[2.500,1],[2.625,2],[2.750,3],[2.875,4],[3.000,1],[3.125,2],[3.250,3]].forEach(([t, s]) => tl.set("#b105-turb", { attr: { seed: s } }, t));
+    window.__timelines["b105"] = tl;
+  </script>
+</template>

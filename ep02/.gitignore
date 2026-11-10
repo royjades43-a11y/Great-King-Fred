@@ -1,0 +1,5 @@
+.hyperframes/
+node_modules/
+renders/never-feel-rich.mp4
+renders/work-*
+renders/.*
