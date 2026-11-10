@@ -7,6 +7,16 @@ To A/B test:
 - Which Retirement Account First? (Most People Get This Wrong)
 - 401(k) vs IRA vs Roth, Explained in Plain English
 
+## Thumbnails (1280×720, in `brand/out/`)
+| File | Idea | Use |
+|---|---|---|
+| `ep04-thumb-A-which-box.png` | 401(K), IRA and a glowing open ROTH box with a big "?", Bean holding the snowball, on slate blue. Tag: WHICH BOX FIRST? | **Recommended main.** Asks the exact question viewers search for |
+| `ep04-thumb-D-dont-cash-out.png` | Impulse with heart eyes, the OLD 401(K) $48,000 letter, a STOP sign. Tag: DON'T CASH OUT | Strongest warning / loss-aversion click; test against A |
+| `ep04-thumb-C-tax-now-or-later.png` | Farmer Bean: a small seed bag bitten by TAX NOW vs. a big harvest bitten by TAX LATER. Tag: TAX NOW OR LATER? | Explains Roth vs. traditional at a glance |
+| `ep04-thumb-B-step-one.png` | Bean on step 1 (MATCH) of the staircase next to a FREE $ gift. Tag: DO THIS FIRST | Spare / later test |
+
+Upload A, D and C to Test & Compare. `ep04-thumbs-feed-preview.png` shows them in a feed and next to EP03. Rebuild with `node brand/thumbs.mjs`.
+
 ## Mid-roll ads (the video is 9:26)
 Put the breaks on the cliffhangers:
 - **2:13** · right after "So which one wins?"
