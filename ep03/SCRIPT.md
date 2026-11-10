@@ -31,7 +31,7 @@ Say you invest three hundred dollars a month. Every month. For thirty years. And
 
 How much did you put in? About one hundred and eight thousand dollars.
 
-How much do you end up with? Roughly three hundred and sixty thousand.
+How much do you end up with? Roughly three hundred and sixty-six thousand.
 
 More than half of that money... you never earned. The snowball made it.
 
