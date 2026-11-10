@@ -1,7 +1,7 @@
 # PesaBrain EP04 — "401(k), IRA or Roth? The Order That Actually Matters"
 
-Voiceover script for ElevenLabs, in 4 parts. About 1,600 words. At your pace in EP03 (about 165 words a minute)
-that's roughly 9:30, comfortably over the 8-minute mid-roll mark. Each part ends on a hook, so the breaks between parts are natural ad slots.
+Voiceover script for ElevenLabs, in 4 parts. About 1,500 words. At your pace in EP03 (about 165 words a minute)
+that's roughly 9:10, comfortably over the 8-minute mid-roll mark. Each part ends on a hook, so the breaks between parts are natural ad slots.
 
 It picks up from EP03's last line ("which account to put all this in first") and ends by teasing EP05 on debt.
 
