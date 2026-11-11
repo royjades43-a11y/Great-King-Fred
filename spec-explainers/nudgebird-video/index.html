@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Nudgebird Explainer</title>
+<style>
+  html,body{margin:0;padding:0;background:#000;overflow:hidden}
+  canvas{display:block;width:1920px;height:1080px}
+  #ui{position:fixed;left:8px;bottom:8px;color:#fff;font:14px Inter,sans-serif;z-index:2}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script src="scene.js"></script>
+<script>
+  // Preview mode: open index.html?play to watch it live in a browser.
+  if (location.search.includes('play')) {
+    const start = performance.now();
+    (function loop(){ draw(((performance.now()-start)/1000) % DURATION); requestAnimationFrame(loop); })();
+  } else {
+    draw(0);
+  }
+</script>
+</body>
+</html>
