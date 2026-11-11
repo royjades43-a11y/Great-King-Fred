@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720"><rect width="1280" height="720" fill="#C4553F"/><path d="M 0 48 L 1280 48" stroke="#D9705E" stroke-width="2"/><path d="M 0 96 L 1280 96" stroke="#D9705E" stroke-width="2"/><path d="M 0 144 L 1280 144" stroke="#D9705E" stroke-width="2"/><path d="M 0 192 L 1280 192" stroke="#D9705E" stroke-width="2"/><path d="M 0 240 L 1280 240" stroke="#D9705E" stroke-width="2"/><path d="M 0 288 L 1280 288" stroke="#D9705E" stroke-width="2"/><path d="M 0 336 L 1280 336" stroke="#D9705E" stroke-width="2"/><path d="M 0 384 L 1280 384" stroke="#D9705E" stroke-width="2"/><path d="M 0 432 L 1280 432" stroke="#D9705E" stroke-width="2"/><path d="M 0 480 L 1280 480" stroke="#D9705E" stroke-width="2"/><path d="M 0 528 L 1280 528" stroke="#D9705E" stroke-width="2"/><path d="M 0 576 L 1280 576" stroke="#D9705E" stroke-width="2"/><path d="M 0 624 L 1280 624" stroke="#D9705E" stroke-width="2"/><path d="M 0 672 L 1280 672" stroke="#D9705E" stroke-width="2"/><path d="M 0 720 L 1280 720" stroke="#D9705E" stroke-width="2"/>
+    <g transform="translate(470 370) rotate(-4)">
+      <path d="M -330 -300 L 330 -300 L 330 280 L 300 310 L 270 280 L 240 310 L 210 280 L 180 310 L 150 280 L 120 310 L 90 280 L 60 310 L 30 280 L 0 310 L -30 280 L -60 310 L -90 280 L -120 310 L -150 280 L -180 310 L -210 280 L -240 310 L -270 280 L -300 310 L -330 280 Z" fill="#231F1C" opacity="0.3" transform="translate(14 16)"/>
+      <path d="M -330 -300 L 330 -300 L 330 280 L 300 310 L 270 280 L 240 310 L 210 280 L 180 310 L 150 280 L 120 310 L 90 280 L 60 310 L 30 280 L 0 310 L -30 280 L -60 310 L -90 280 L -120 310 L -150 280 L -180 310 L -210 280 L -240 310 L -270 280 L -300 310 L -330 280 Z" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+      <text x="0" y="-230" font-family="Space Mono" font-size="40" fill="#231F1C" text-anchor="middle" dominant-baseline="middle" >5 YEARS OF PAYMENTS</text>
+      <path d="M -290 -180 L 290 -180" stroke="#231F1C" stroke-width="4" stroke-dasharray="14 10"/>
+      <text x="-290" y="-100" font-family="Archivo Black" font-size="56" fill="#231F1C" text-anchor="start" dominant-baseline="middle" >PAID</text><text x="290" y="-100" font-family="Archivo Black" font-size="72" fill="#6F7C52" text-anchor="end" dominant-baseline="middle" >$7,700</text>
+      <path d="M -290 -20 L 290 -20" stroke="#231F1C" stroke-width="4" stroke-dasharray="14 10"/>
+      <text x="-290" y="60" font-family="Archivo Black" font-size="56" fill="#231F1C" text-anchor="start" dominant-baseline="middle" >STILL OWE</text>
+      <text x="0" y="190" font-family="Archivo Black" font-size="150" fill="#C4553F" text-anchor="middle" dominant-baseline="middle" >$3,300</text>
+    </g>
+    <g transform="translate(1060 720) rotate(0) scale(1.05)">
+  <path d="M -28 -78 L -32 -14 M 28 -78 L 32 -14" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M -62 -2 Q -64 -22 -36 -20 Q -18 -18 -18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 62 -2 Q 64 -22 36 -20 Q 18 -18 18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  
+  <path d="M 6 -372 Q 2 -392 4 -408" fill="none" stroke="#6F7C52" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 4 -404 Q -26 -420 -34 -398 Q -12 -388 4 -404 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 4 -400 Q 30 -424 40 -402 Q 18 -388 4 -400 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M -78 -250 C -80 -330 -40 -372 6 -372 C 56 -372 86 -330 82 -260 L 80 -150 C 82 -95 50 -70 0 -70 C -50 -70 -80 -95 -78 -150 Z" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M -56 -296 Q -50 -334 -18 -348" fill="none" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+  
+  
+  <ellipse cx="-22" cy="-288" rx="15" ry="19" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><ellipse cx="28" cy="-288" rx="15" ry="19" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="-22" cy="-288" r="4" fill="#231F1C"/><circle cx="28" cy="-288" r="4" fill="#231F1C"/><path d="M -40 -326 Q -26 -336 -10 -330 M 14 -330 Q 30 -336 44 -326" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><ellipse cx="2" cy="-240" rx="12" ry="16" fill="#231F1C"/>
+  
+  <path d="M -96 -330 Q -104 -312 -96 -306 Q -88 -312 -96 -330 Z" fill="#8FA7B4" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M 104 -310 Q 96 -292 104 -286 Q 112 -292 104 -310 Z" fill="#8FA7B4" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M -74 -190 Q -130 -220 -86 -272" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M 78 -190 Q 134 -220 90 -272" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  
+  <circle cx="-86" cy="-272" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="90" cy="-272" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  </g>
+    <text x="1060" y="120" font-family="Archivo Black" font-size="110" fill="#E9C25B" text-anchor="middle" dominant-baseline="middle" stroke="#231F1C" stroke-width="10" paint-order="stroke" stroke-linejoin="round">HOW?!</text></svg>

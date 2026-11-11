@@ -7,11 +7,19 @@ To A/B test:
 - The $170 Number That Keeps You in Debt
 - You Pay Every Month. So Why Is Your Card Balance Still the Same?
 
-## Thumbnails
-Not made yet. Ask for them when you're ready (same style as EP01–EP04). Ideas that fit this episode:
-- **The anchor:** a giant MINIMUM anchor dragging Bean's card statement under water. Tag: STILL $6,000?
-- **The statement:** the gold MINIMUM DUE $170 box circled in red with "= 20 YEARS". Tag: DON'T PAY THIS
-- **The phone call:** Bean on the red telephone, card rate 22% → 16%. Tag: 1 CALL
+## Thumbnails (1280×720, in `brand/out/`)
+The rule for this set: **one idea, at most three things on screen, one short phrase**, and every thumbnail leaves a question unanswered.
+
+| File | What it shows | The question it plants | Use |
+|---|---|---|---|
+| `ep05-thumb-A-dont-pay-this.png` | The giant gold MINIMUM DUE $170 box, circled in red marker. Impulse hugs itself with heart eyes. Tag: DON'T PAY THIS | "Wait, I pay that every month. What's wrong with it?" Everyone with a card recognises the box | **Recommended main** |
+| `ep05-thumb-C-five-years.png` | A receipt on red: 5 YEARS OF PAYMENTS · PAID $7,700 · STILL OWE $3,300. Bean shocked. HOW?! | A paradox: the numbers don't add up, so the viewer clicks to find out why. Strongest "pause" thumbnail | Test against A |
+| `ep05-thumb-B-anchor.png` | Underwater: Bean tied to the MINIMUM anchor, bubbles rising. Tag: STILL $6,000? | Feels like the viewer's own situation; very different colour from the feed | Test against A |
+| `ep05-thumb-D-one-call.png` | A huge red telephone, the card's 22% struck out. Tag: 1 CALL | "Which call?" Can only be answered by watching | Spare / later test |
+
+Upload **A, C and B** to Test & Compare. `ep05-thumbs-feed-preview.png` shows them at feed size and next to EP04.
+The C numbers are real: $6,000 at 22% paying only the minimum (interest + 1%) for 60 months pays about $7,700 and still owes about $3,300.
+Rebuild with `node brand/thumbs.mjs`.
 
 ## Mid-roll ads (the video is 8:59)
 Put the breaks on the cliffhangers:
