@@ -1,5 +1,7 @@
 # Nudgebird — Voiceover Script (for ElevenLabs)
 
+> **Status:** recorded. The ElevenLabs take ("Josh", eleven_v4) is in `assets/voice/source/vo-full-josh.mp3`. It was loudness-normalized to about −16 LUFS (true peak −1.5 dB), cut into `vo-01…vo-15.mp3` at the pauses between lines, and retimed in `build.py` to the real line lengths. To swap a single line, replace its `vo-XX.mp3` and update its length in the `VO` table.
+
 **Voice direction:** Warm, confident, slightly wry narrator, about 30–40 years old. Conversational, not "announcer". The tone is a smart friend explaining something, with a hint of a smile on the funny lines (*"a very awkward meeting"*, *"Meet Nudgebird."*). Medium pace, about 2.6 words per second. Real pauses where you see "…".
 
 **Suggested ElevenLabs settings:** Stability about 45%, Similarity about 75%, Style about 20%, Speaker Boost on. Export **MP3, 44.1 kHz**.

@@ -12,23 +12,24 @@ SCENES = [
     ("steps", 52, 10), ("healthy", 62, 10), ("relax", 72, 8), ("outro", 80, 10),
 ]
 
-# ---- voiceover: (id, start, max seconds, line). *word* = highlighted in captions.
+# ---- voiceover: (id, start, clip seconds, line). *word* = highlighted in captions.
+# Lines are cut from assets/voice/source/vo-full-josh.mp3 (ElevenLabs, "Josh"); clip seconds = file length.
 VO = [
-    ("vo-01", 0.8, 4.2, "Every day, your team sends *hundreds* of these."),
-    ("vo-02", 5.5, 6.0, "Requests. Approvals. Little “can you take a look at this?”s."),
-    ("vo-03", 13.0, 6.5, "And somewhere in there… one of them *stalls.*"),
-    ("vo-04", 20.3, 3.4, "No one dropped it on purpose. It just… *slipped.*"),
-    ("vo-05", 23.8, 5.8, "Three days later, it’s a *missed* deadline, an *angry* customer… and a very *awkward* meeting."),
-    ("vo-06", 37.6, 3.2, "Meet *Nudgebird.*"),
-    ("vo-07", 42.6, 4.4, "Nudgebird watches the work flowing through your tools…"),
-    ("vo-08", 47.1, 4.6, "…and catches the moment something starts to *stall.*"),
-    ("vo-09", 52.3, 3.0, "*Connect* your tools in two minutes."),
-    ("vo-10", 55.4, 3.2, "It learns what normal looks like, and *flags* what isn’t."),
-    ("vo-11", 58.7, 3.7, "Then it *nudges* exactly the right person. No nagging. No blame."),
-    ("vo-12", 62.6, 3.6, "Loops close *faster.*"),
-    ("vo-13", 66.6, 5.0, "And nobody spends their week *chasing people.*"),
-    ("vo-14", 72.6, 6.8, "So you can stop babysitting tasks, and get back to the work that actually *matters.*"),
-    ("vo-15", 83.4, 4.6, "Nudgebird. Nothing falls through the *cracks.*"),
+    ("vo-01", 0.75, 3.09, "Every day, your team sends *hundreds* of these."),
+    ("vo-02", 5.45, 4.32, "Requests. Approvals. Little “can you take a look at this?”s."),
+    ("vo-03", 12.95, 3.27, "And somewhere in there… one of them *stalls.*"),
+    ("vo-04", 19.95, 3.23, "No one dropped it on purpose. It just… *slipped.*"),
+    ("vo-05", 23.2, 5.8, "Three days later, it’s a *missed* deadline, an *angry* customer… and a very *awkward* meeting."),
+    ("vo-06", 37.85, 1.39, "Meet *Nudgebird.*"),
+    ("vo-07", 42.55, 2.99, "Nudgebird watches the work flowing through your tools…"),
+    ("vo-08", 46.85, 2.88, "…and catches the moment something starts to *stall.*"),
+    ("vo-09", 52.25, 2.15, "*Connect* your tools in two minutes."),
+    ("vo-10", 55.35, 3.27, "It learns what normal looks like, and *flags* what isn’t."),
+    ("vo-11", 58.65, 4.85, "Then it *nudges* exactly the right person. No nagging. No blame."),
+    ("vo-12", 63.55, 1.56, "Loops close *faster.*"),
+    ("vo-13", 66.55, 2.52, "And nobody spends their week *chasing people.*"),
+    ("vo-14", 72.55, 4.81, "So you can stop babysitting tasks, and get back to the work that actually *matters.*"),
+    ("vo-15", 83.35, 2.82, "Nudgebird. Nothing falls through the *cracks.*"),
 ]
 CAPTION_SKIP = {"vo-15"}  # the end card already prints the tagline
 
@@ -99,9 +100,11 @@ def caption_words(line):
 
 def captions_html():
     groups, tweens = [], []
-    for vid, start, mx, line in VO:
+    for i, (vid, start, clip, line) in enumerate(VO):
         if vid in CAPTION_SKIP:
             continue
+        nxt = VO[i + 1][1] if i + 1 < len(VO) else ROOT_DUR
+        mx = round(min(clip + 0.8, nxt - start - 0.1), 2)
         cid = vid.replace("vo", "cap")
         groups.append(
             f'    <div id="{cid}" class="clip cap" data-start="{start}" data-duration="{mx}">'
@@ -198,6 +201,6 @@ for sid, start, dur in SCENES:
     open(os.path.join(here, "compositions", f"{sid}.html"), "w").write(scene_html(sid, start, dur))
 open(os.path.join(here, "compositions", "captions.html"), "w").write(captions_html())
 open(os.path.join(here, "index.html"), "w").write(index_html())
-json.dump([{"id": v, "start": s, "max_seconds": m, "line": l.replace("*", "")} for v, s, m, l in VO],
+json.dump([{"id": v, "start": s, "clip_seconds": m, "line": l.replace("*", "")} for v, s, m, l in VO],
           open(os.path.join(here, "voiceover-lines.json"), "w"), indent=2, ensure_ascii=False)
 print("built", len(SCENES), "scenes,", len(VO), "VO slots,", len(SFX), "sfx")

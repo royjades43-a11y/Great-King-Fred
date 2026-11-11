@@ -1,92 +1,92 @@
 [
   {
     "id": "vo-01",
-    "start": 0.8,
-    "max_seconds": 4.2,
+    "start": 0.75,
+    "clip_seconds": 3.09,
     "line": "Every day, your team sends hundreds of these."
   },
   {
     "id": "vo-02",
-    "start": 5.5,
-    "max_seconds": 6.0,
+    "start": 5.45,
+    "clip_seconds": 4.32,
     "line": "Requests. Approvals. Little “can you take a look at this?”s."
   },
   {
     "id": "vo-03",
-    "start": 13.0,
-    "max_seconds": 6.5,
+    "start": 12.95,
+    "clip_seconds": 3.27,
     "line": "And somewhere in there… one of them stalls."
   },
   {
     "id": "vo-04",
-    "start": 20.3,
-    "max_seconds": 3.4,
+    "start": 19.95,
+    "clip_seconds": 3.23,
     "line": "No one dropped it on purpose. It just… slipped."
   },
   {
     "id": "vo-05",
-    "start": 23.8,
-    "max_seconds": 5.8,
+    "start": 23.2,
+    "clip_seconds": 5.8,
     "line": "Three days later, it’s a missed deadline, an angry customer… and a very awkward meeting."
   },
   {
     "id": "vo-06",
-    "start": 37.6,
-    "max_seconds": 3.2,
+    "start": 37.85,
+    "clip_seconds": 1.39,
     "line": "Meet Nudgebird."
   },
   {
     "id": "vo-07",
-    "start": 42.6,
-    "max_seconds": 4.4,
+    "start": 42.55,
+    "clip_seconds": 2.99,
     "line": "Nudgebird watches the work flowing through your tools…"
   },
   {
     "id": "vo-08",
-    "start": 47.1,
-    "max_seconds": 4.6,
+    "start": 46.85,
+    "clip_seconds": 2.88,
     "line": "…and catches the moment something starts to stall."
   },
   {
     "id": "vo-09",
-    "start": 52.3,
-    "max_seconds": 3.0,
+    "start": 52.25,
+    "clip_seconds": 2.15,
     "line": "Connect your tools in two minutes."
   },
   {
     "id": "vo-10",
-    "start": 55.4,
-    "max_seconds": 3.2,
+    "start": 55.35,
+    "clip_seconds": 3.27,
     "line": "It learns what normal looks like, and flags what isn’t."
   },
   {
     "id": "vo-11",
-    "start": 58.7,
-    "max_seconds": 3.7,
+    "start": 58.65,
+    "clip_seconds": 4.85,
     "line": "Then it nudges exactly the right person. No nagging. No blame."
   },
   {
     "id": "vo-12",
-    "start": 62.6,
-    "max_seconds": 3.6,
+    "start": 63.55,
+    "clip_seconds": 1.56,
     "line": "Loops close faster."
   },
   {
     "id": "vo-13",
-    "start": 66.6,
-    "max_seconds": 5.0,
+    "start": 66.55,
+    "clip_seconds": 2.52,
     "line": "And nobody spends their week chasing people."
   },
   {
     "id": "vo-14",
-    "start": 72.6,
-    "max_seconds": 6.8,
+    "start": 72.55,
+    "clip_seconds": 4.81,
     "line": "So you can stop babysitting tasks, and get back to the work that actually matters."
   },
   {
     "id": "vo-15",
-    "start": 83.4,
-    "max_seconds": 4.6,
+    "start": 83.35,
+    "clip_seconds": 2.82,
     "line": "Nudgebird. Nothing falls through the cracks."
   }
 ]
