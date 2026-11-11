@@ -1,0 +1,58 @@
+<template>
+  <style>
+    @font-face { font-family: "Patrick Hand"; src: url("assets/fonts/PatrickHand.woff2") format("woff2"); font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #b019-cam { position: absolute; inset: 0; }
+    #b019-cam > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .tag-wrap { position: absolute; left: 0; right: 0; text-align: center; }
+    .tag { display: inline-block; position: relative; font-family: "Archivo Black"; letter-spacing: 0.01em; line-height: 1;
+      padding: 20px 44px 20px 76px; border: 5px solid #231F1C; border-radius: 10px 18px 18px 10px;
+      box-shadow: 8px 8px 0 rgba(35,31,28,0.18); }
+    .tag::before { content: ""; position: absolute; left: 30px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: #F4EBD5; border: 4px solid #231F1C; }
+    .tag::after { content: ""; position: absolute; left: 36px; bottom: 50%; width: 4px; height: 90px; background: #231F1C; transform-origin: 50% 100%; transform: rotate(-28deg); margin-bottom: 8px; }
+    .rcpt-wrap { position: absolute; }
+    .rcpt-slot { height: 22px; background: #231F1C; border-radius: 11px; margin: 0 -18px; position: relative; z-index: 2; }
+    .rcpt-clip { overflow: hidden; margin-top: -8px; }
+    .rcpt { background: #FFFDF7; border: 4px solid #231F1C; border-top: none; padding: 26px 30px 40px; font-family: "Space Mono"; font-weight: 700; color: #231F1C;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 97%, 90% 100%, 85% 97%, 80% 100%, 75% 97%, 70% 100%, 65% 97%, 60% 100%, 55% 97%, 50% 100%, 45% 97%, 40% 100%, 35% 97%, 30% 100%, 25% 97%, 20% 100%, 15% 97%, 10% 100%, 5% 97%, 0 100%); }
+    .rt { text-align: center; font-family: "Archivo Black"; font-size: 34px; border-bottom: 3px dashed #231F1C; padding-bottom: 12px; margin-bottom: 14px; }
+    .rl { display: flex; justify-content: space-between; font-size: 30px; line-height: 1.5; }
+    .rtot { display: flex; justify-content: space-between; align-items: baseline; border-top: 3px dashed #231F1C; margin-top: 14px; padding-top: 14px; font-size: 34px; }
+    .rtot span:last-child { font-family: "Archivo Black"; font-size: 60px; color: #C4553F; }
+    .rf { text-align: center; font-size: 22px; margin-top: 12px; opacity: 0.7; }
+    .chap-wrap { position: absolute; left: 0; right: 0; top: 70px; text-align: center; }
+    .chap { display: inline-block; font-family: "Archivo Black"; font-size: 78px; line-height: 1.05; padding: 18px 46px 22px; border: 10px double; border-radius: 14px; background: rgba(244,235,213,0.6); }
+    .chap small { display: block; font-size: 34px; letter-spacing: 0.2em; }
+  </style>
+  <div id="root" data-composition-id="b019" data-width="1920" data-height="1080">
+    <!-- and you'll pay almost $16 -->
+    <div id="b019-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs><filter id="b019-rough" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence id="b019-turb" type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1"/>
+          <feDisplacementMap in="SourceGraphic" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+        <g filter="url(#b019-rough)">
+
+        </g>
+      </svg>
+      <div class="rcpt-wrap" style="left:620px; top:170px; width:680px">
+        <div class="rcpt-slot"></div><div class="rcpt-clip"><div id="b019-rc" class="rcpt">
+        <div class="rt">MINIMUM ONLY</div><div class="rl"><span>BORROWED</span><span>$6,000</span></div><div class="rl"><span>TIME</span><span>20+ YEARS</span></div>
+        <div class="rtot"><span>YOU PAY</span><span id="b019-rn">$15,900</span></div>
+        </div></div></div>
+    </div>
+    
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#b019-cam", { scale: 1 }, { scale: 1.03, duration: 2.54, ease: "none", transformOrigin: "50% 60%" }, 0);
+    tl.fromTo("#b019-rc", { yPercent: -101 }, { yPercent: 0, duration: 0.7, ease: "steps(9)" }, 0.05);
+    (() => { const el = document.querySelector("#b019-rn"); const o = { v: 6000 };
+          const f = (v) => "$" + Math.round(v).toLocaleString("en-US") + "";
+          el.textContent = f(15900);
+          tl.fromTo(o, { v: 6000 }, { v: 15900, duration: 1.1, ease: "power2.out", onUpdate: () => { el.textContent = f(o.v); } }, 0.650);
+          tl.set(o, { v: 6000, onUpdate: () => { el.textContent = f(o.v); } }, 0); })();
+    [[0.000,1],[0.125,2],[0.250,3],[0.375,4],[0.500,1],[0.625,2],[0.750,3],[0.875,4],[1.000,1],[1.125,2],[1.250,3],[1.375,4],[1.500,1],[1.625,2],[1.750,3],[1.875,4],[2.000,1],[2.125,2],[2.250,3],[2.375,4],[2.500,1]].forEach(([t, s]) => tl.set("#b019-turb", { attr: { seed: s } }, t));
+    window.__timelines["b019"] = tl;
+  </script>
+</template>

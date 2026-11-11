@@ -1,0 +1,5 @@
+.hyperframes/
+node_modules/
+renders/credit-trap.mp4
+renders/work-*
+renders/.*
