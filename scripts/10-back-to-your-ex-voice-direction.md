@@ -43,7 +43,9 @@ A real smile on "Sound familiar?". Energy 2, rising to 4 by the promise.
 
 (slower) It's **late**. | You're lying in bed, | **scrolling**. ||
 (lean in) And there it **is**. | Their **name**. ||
-You open the **chat**. | (character) You type, | "Hey, **stranger**." ||
+You open the **chat**. |
+(light) You check when they were last **online**. | (lean in) Three minutes **ago**. ||
+(character) You type, | "Hey, **stranger**." ||
 You know how this ended **last** time. |
 You remember the **fights**, | the **silence**, | the night one of you finally said, | (character) "I'm **done**." ||
 (lean in) But for **you**, | it doesn't feel like going **back**. | (warm) It feels like going **home**. ||
@@ -136,7 +138,7 @@ People who are struggling | may simply check **more**. |
 (warm) But it's hard to heal a wound | you **reopen** every night. |
 Every scroll through their photos | adds another clip | to the **highlight** reel. ||
 
-## 5 · What happens when people go back (4:50–5:55)
+## 5 · What happens when people go back (4:50–6:00)
 **Direction:** calm and fair, like laying the facts on the table. Clear on the numbers. "They argued more"
 is a short, plain beat. Slow down on the last two lines, and give "But it wasn't over yet." a real lift.
 Energy 2–3.
@@ -144,7 +146,8 @@ Energy 2–3.
 (lean in) So what happens | when people **do** go back? ↗ ||
 In twenty thirteen, | a team led by sociologist Sarah **Halpern-Meekin** | studied almost eight **hundred** young adults. |
 More than **four** in ten | had broken up and got back together | at least **once**. |
-The researchers called it | relationship **churning**. ||
+The researchers called it | relationship **churning**. |
+(smile) Think about your own **friends**. | You can probably name a couple like **that**. ||
 And it doesn't stop at **dating**. |
 In twenty fourteen, | Amber **Vennum** and her colleagues | studied more than a **thousand** couples | who lived together or were married. |
 Over a **third** of the couples living together | had broken up and made up. |
@@ -158,7 +161,7 @@ In twenty eighteen, | a study led by Kale **Monk** | linked more on-off cycling 
 Even when each reunion | feels like coming **home**. ||
 (lean in) But it wasn't over **yet**. ||
 
-## 6 · When going back works (5:55–7:15)
+## 6 · When going back works (6:00–7:20)
 **Direction:** hopeful but clear-eyed. Lift on "But some of them do well." Act the sliding line lightly
 (it's late, you're lonely). The promised question is the centre of the video: slow down and give it room.
 "Not how you feel. What's different." is two firm beats. Energy 3, rising to 4.
@@ -172,7 +175,8 @@ Some couples split over **distance**, | bad **timing** | or a job in another **c
 If that problem is **gone**, | going back can make **sense**. ||
 Researchers who study couples | talk about **sliding** | versus **deciding**. |
 (light) Sliding is drifting back | because it's **late**, | you're **lonely**, | and they texted **first**. |
-(land it) Deciding is choosing it | with your eyes **open**. ||
+(land it) Deciding is choosing it | with your eyes **open**. |
+(lean in) So be **honest**. | Are you **deciding** right now, | or **sliding**? ↗ ||
 Vennum's team found | that cycling couples tended to **rush** into big steps, | like moving in **together**. ||
 (lean in) So here's the **one** question | I promised you. ||
 (slower) What's **different** | this time? ↗ ||
@@ -184,7 +188,7 @@ New **habits**, | not new **promises**. |
 Time apart | that you both actually **used**. ||
 (brisk) So how do you know | which one you're **in**? ↗ ||
 
-## 7 · Five rules (7:15–8:15)
+## 7 · Five rules (7:20–8:25)
 **Direction:** a bright, practical coach. Each "Rule…" is a clean new step with a smile. The rule names are
 said like titles. Energy 4.
 
@@ -204,6 +208,7 @@ Every look | **reopens** the wound. ||
 
 (brisk) Rule **four**: | ride out the **craving**. |
 Remember the brain **scans**. | The pull gets **weaker** with time. |
+Cravings come in **waves**. | Most waves **pass**. |
 When the urge hits, | wait twenty **minutes**. |
 (warm) Call a **friend** instead. ||
 
@@ -212,7 +217,7 @@ When the urge hits, | wait twenty **minutes**. |
 In one study, | psychologists Ty **Tashiro** and Patricia **Frazier** | found that growth after a breakup | was **common**. |
 Many people said they'd become | more **confident** | and more **independent**. ||
 
-## 8 · The twist and the ending (8:15–8:50)
+## 8 · The twist and the ending (8:25–9:10)
 **Direction:** the softest part. Slow and sure on the twist. "Very often, they're loyal." is warm and
 generous. The last line before the challenge lands gently, not as a verdict. The challenge and CTA are
 friendly and upbeat. Energy 2, then 4 for the challenge.
@@ -223,7 +228,8 @@ Missing your ex | doesn't mean you should go **back**. |
 And your brain is doing **exactly** what brains do | after a **loss**. ||
 People who keep going back | usually aren't **weak**. |
 (warm) Very often, | they're **loyal**. |
-They hold **on**, | because holding on | is what they do **best**. ||
+They hold **on**, | because holding on | is what they do **best**. |
+(warm) Loyalty is a **good** thing. | (slower) Pointed at the **wrong** person, | it keeps you **stuck**. ||
 (lean in) Just make sure you're holding on to a **person**, | not a highlight **reel**. ||
 The next time their name | lights up your **phone**, | remember the **whole** movie. |
 Then ask what's **different** this time. |

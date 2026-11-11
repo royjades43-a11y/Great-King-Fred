@@ -1,7 +1,7 @@
 # Video 10: The Psychology of People Who Keep Going Back to Their Ex
 
 **Title:** The Psychology of People Who Keep Going Back to Their Ex
-**Length:** about 8:50 at the channel's pace (1,427 words); over 8:00 so mid-roll ads are possible
+**Length:** about 9:05 at the channel's pace (1,481 words); over 8:00 so mid-roll ads are possible
 
 **How it differs from competitors:** most videos on this topic are either "how to get your ex back" or "never
 go back, they're toxic". This one shows what researchers measured: brain scans of heartbreak, how memory
@@ -13,7 +13,7 @@ reason on its own. Ask what's different this time.
 - **Talks straight to the viewer throughout:** "but for you", "if that's you", "be honest", "your ex already
   knows your coffee order".
 - **Opens on the viewer's own late-night moment:** "Hey, stranger."
-- **An open loop paid off later:** "the one question that tells a second chance from a second mistake" is answered at 6:40, then
+- **An open loop paid off later:** "the one question that tells a second chance from a second mistake" is answered at 6:50, then
   again in rule one and the ending.
 - **A running image:** the highlight reel. It opens in the memory section, returns with the profile-checking
   and "that's the highlight reel talking", and closes the video ("a person, not a highlight reel").
@@ -38,6 +38,8 @@ And there it is.
 Their name.
 *[a notification pops up on the phone: just a name, with a red dot]*
 You open the chat.
+You check when they were last online.
+Three minutes ago.
 You type, "Hey, stranger."
 *[the message types out letter by letter in a chat bubble]*
 You know how this ended last time.
@@ -162,7 +164,7 @@ But it's hard to heal a wound you reopen every night.
 *[a bandage on a heart peels back each time the phone lights up]*
 Every scroll through their photos adds another clip to the highlight reel.
 
-## [4:50–5:55] WHAT HAPPENS WHEN PEOPLE GO BACK
+## [4:50–6:00] WHAT HAPPENS WHEN PEOPLE GO BACK
 
 So what happens when people do go back?
 In twenty thirteen, a team led by sociologist Sarah Halpern-Meekin studied almost eight hundred young adults.
@@ -170,6 +172,8 @@ In twenty thirteen, a team led by sociologist Sarah Halpern-Meekin studied almos
 More than four in ten had broken up and got back together at least once.
 *[ten stick figures; just over four of them turn red, each with a little loop arrow]*
 The researchers called it relationship churning.
+Think about your own friends.
+You can probably name a couple like that.
 And it doesn't stop at dating.
 In twenty fourteen, Amber Vennum and her colleagues studied more than a thousand couples who lived together or were married.
 *[label: STUDY · Vennum et al., 2014 · 1,000+ couples]*
@@ -187,7 +191,7 @@ So the pattern can wear you down.
 Even when each reunion feels like coming home.
 But it wasn't over yet.
 
-## [5:55–7:15] WHEN GOING BACK WORKS
+## [6:00–7:20] WHEN GOING BACK WORKS
 
 Because not every couple who goes back ends up where they started.
 On average, on-again, off-again couples report lower satisfaction and more uncertainty.
@@ -202,6 +206,8 @@ Researchers who study couples talk about sliding versus deciding.
 Sliding is drifting back because it's late, you're lonely, and they texted first.
 *[a stick figure slides down a slope towards a phone]*
 Deciding is choosing it with your eyes open.
+So be honest.
+Are you deciding right now, or sliding?
 *[the figure stands at a fork with a checklist, eyes wide open]*
 Vennum's team found that cycling couples tended to rush into big steps, like moving in together.
 *[a house with a moving box that arrives far too fast]*
@@ -219,7 +225,7 @@ Time apart that you both actually used.
 *[three ticks appear: a talk bubble, a calendar with habits, an hourglass]*
 So how do you know which one you're in?
 
-## [7:15–8:15] FIVE RULES
+## [7:20–8:25] FIVE RULES
 
 Rule one: ask the question.
 Before you reply, write down what's different this time.
@@ -242,6 +248,8 @@ Every look reopens the wound.
 Rule four: ride out the craving.
 Remember the brain scans.
 The pull gets weaker with time.
+Cravings come in waves.
+Most waves pass.
 When the urge hits, wait twenty minutes.
 Call a friend instead.
 *[a timer counts down; the stick figure calls a friend and both smile]*
@@ -253,7 +261,7 @@ In one study, psychologists Ty Tashiro and Patricia Frazier found that growth af
 Many people said they'd become more confident and more independent.
 *[label: STUDY · Tashiro & Frazier, 2003]*
 
-## [8:15–8:50] THE TWIST AND THE ENDING
+## [8:25–9:10] THE TWIST AND THE ENDING
 
 So here's the twist.
 Missing your ex doesn't mean you should go back.
@@ -262,6 +270,8 @@ And your brain is doing exactly what brains do after a loss.
 People who keep going back usually aren't weak.
 Very often, they're loyal.
 They hold on, because holding on is what they do best.
+Loyalty is a good thing.
+Pointed at the wrong person, it keeps you stuck.
 *[two hands holding a rope; the rope turns into a film strip]*
 Just make sure you're holding on to a person, not a highlight reel.
 The next time their name lights up your phone, remember the whole movie.
