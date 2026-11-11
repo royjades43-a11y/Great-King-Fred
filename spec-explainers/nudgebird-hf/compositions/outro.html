@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; background: #0A1430; overflow: hidden; }
+    #root .nb-canvas { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  </style>
+  <div id="root" data-composition-id="outro" data-width="1920" data-height="1080">
+    <canvas id="outro-canvas" class="nb-canvas" width="1920" height="1080"></canvas>
+  </div>
+  <script src="assets/lib/nudgebird.js"></script>
+  <script>
+    (function () {
+      // Film time 80s–90s. The canvas engine draws any film time; this scene owns this window.
+      const FILM_START = 80, DUR = 10;
+      const nb = NB.create(document.getElementById("outro-canvas"));
+      const clock = { t: FILM_START };
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(clock, { t: FILM_START }, {
+        t: FILM_START + DUR, duration: DUR, ease: "none",
+        onUpdate: () => nb.draw(Math.min(clock.t, FILM_START + DUR - 0.001)),
+      }, 0);
+      nb.draw(FILM_START);
+      window.__timelines["outro"] = tl;
+    })();
+  </script>
+</template>

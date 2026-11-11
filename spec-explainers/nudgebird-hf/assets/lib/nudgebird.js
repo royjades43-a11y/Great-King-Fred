@@ -1,7 +1,11 @@
+// Nudgebird explainer: shared canvas drawing engine.
+// NB.create(canvas).draw(t) paints the frame for film time t (seconds). Pure function of t.
+(function () {
+  if (window.NB) return;
+  window.NB = { create: function (canvas) {
 // Nudgebird — spec explainer. Deterministic motion graphics: draw(t) renders frame at time t (seconds).
 const W = 1920, H = 1080, DURATION = 90;
-const cv = document.getElementById('c'); cv.width = W; cv.height = H;
-const ctx = cv.getContext('2d');
+const ctx = canvas.getContext('2d');
 
 // ---------- palette ----------
 const C = {
@@ -41,10 +45,10 @@ function rr(x, y, w, h, r) { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x 
 function circle(x, y, r) { ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); }
 function ellipse(x, y, rx, ry, rot = 0) { ctx.beginPath(); ctx.ellipse(x, y, rx, ry, rot, 0, Math.PI * 2); }
 function tri(a, b, c) { ctx.beginPath(); ctx.moveTo(a[0], a[1]); ctx.lineTo(b[0], b[1]); ctx.lineTo(c[0], c[1]); ctx.closePath(); }
-function font(size, weight = 700, fam = 'Inter Display') { return `${weight} ${size}px "${fam}"`; }
+function font(size, weight = 700) { const w = weight <= 550 ? 400 : weight <= 750 ? 700 : 900; return `${w} ${size}px "Inter", sans-serif`; }
 function text(str, x, y, o = {}) {
-  const { size = 48, weight = 700, color = C.white, align = 'center', alpha = 1, base = 'middle', spacing = 0, fam = 'Inter Display' } = o;
-  ctx.save(); ctx.globalAlpha *= alpha; ctx.font = font(size, weight, fam); ctx.textAlign = align; ctx.textBaseline = base; ctx.fillStyle = color;
+  const { size = 48, weight = 700, color = C.white, align = 'center', alpha = 1, base = 'middle', spacing = 0 } = o;
+  ctx.save(); ctx.globalAlpha *= alpha; ctx.font = font(size, weight); ctx.textAlign = align; ctx.textBaseline = base; ctx.fillStyle = color;
   if (spacing) ctx.letterSpacing = spacing + 'px';
   ctx.fillText(str, x, y); ctx.restore();
 }
@@ -492,10 +496,14 @@ function sceneReveal(t) { // 35–42
   if (t < 35.7) { // freeze-frame + whip pan
     ctx.save();
     const k = inv(35.25, 35.7, t, E.inCubic);
-    ctx.filter = `grayscale(${inv(35, 35.2, t)}) brightness(${1 - 0.4 * inv(35, 35.2, t)}) blur(${k * 30}px)`;
-    ctx.translate(-E.inCubic(k) * 1400, 0);
-    sceneOffice(34.99);
-    ctx.restore(); ctx.filter = 'none';
+    const shift = -E.inCubic(k) * 1400;
+    for (let i = 0; i < (k > 0 ? 4 : 1); i++) {
+      ctx.save(); ctx.globalAlpha = i === 0 ? 1 : 0.35; ctx.translate(shift + i * 90 * k, 0); sceneOffice(34.99); ctx.restore();
+    }
+    ctx.restore();
+    const g = inv(35, 35.2, t);
+    ctx.save(); ctx.globalCompositeOperation = 'saturation'; ctx.fillStyle = `rgba(128,128,128,${g})`; ctx.fillRect(0, 0, W, H); ctx.restore();
+    ctx.fillStyle = `rgba(0,0,0,${0.4 * g})`; ctx.fillRect(0, 0, W, H);
     // streaks
     const r = mulberry(11);
     for (let i = 0; i < 30; i++) { ctx.fillStyle = rgba(C.teal, 0.25 * k * r()); ctx.fillRect(0, r() * H, W, 2 + r() * 6); }
@@ -666,12 +674,12 @@ function sceneSteps(t) { // 52–62
     const bk = prog(t, 59.1, 59.5, E.outBack);
     if (bk > 0) {
       ctx.save(); ctx.translate(X[2] + 60, p3.y - 140); ctx.scale(bk, bk);
-      ctx.fillStyle = C.white; rr(-190, -110, 380, 220, 26); ctx.fill();
-      tri([-150, 100], [-110, 100], [-180, 150]); ctx.fill();
-      bird(-140, -66, 0.22, { lid: 0.3 });
-      text('Nudgebird', -110, -66, { size: 24, weight: 800, color: C.tealDark, align: 'left' });
-      text('Hey! The Q3 budget approval', -160, -18, { size: 25, weight: 600, color: C.ink, align: 'left' });
-      text('has waited 2 days. Take a look?', -160, 16, { size: 25, weight: 600, color: C.ink, align: 'left' });
+      ctx.fillStyle = C.white; rr(-225, -110, 450, 220, 26); ctx.fill();
+      tri([-185, 100], [-145, 100], [-215, 150]); ctx.fill();
+      bird(-175, -66, 0.22, { lid: 0.3 });
+      text('Nudgebird', -145, -66, { size: 24, weight: 800, color: C.tealDark, align: 'left' });
+      text('Hey! The Q3 budget approval', -195, -18, { size: 24, weight: 600, color: C.ink, align: 'left' });
+      text('has waited 2 days. Take a look?', -195, 16, { size: 24, weight: 600, color: C.ink, align: 'left' });
       const press = t > 60.5 && t < 60.75 ? 0.92 : 1;
       ctx.save(); ctx.translate(100, 66); ctx.scale(press, press);
       ctx.fillStyle = t > 60.6 ? C.tealDark : C.teal; rr(-70, -24, 140, 48, 24); ctx.fill();
@@ -855,7 +863,9 @@ function draw(t) {
   else if (t < 80) sceneRelax(t);
   else sceneOutro(t);
   ctx.globalAlpha = 1; ctx.filter = 'none';
-  captions(t);
   ctx.restore();
 }
-window.draw = draw; window.DURATION = DURATION;
+
+  return { draw: draw };
+  } };
+})();

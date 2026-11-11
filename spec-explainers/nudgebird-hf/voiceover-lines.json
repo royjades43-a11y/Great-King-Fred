@@ -1,0 +1,92 @@
+[
+  {
+    "id": "vo-01",
+    "start": 0.8,
+    "max_seconds": 4.2,
+    "line": "Every day, your team sends hundreds of these."
+  },
+  {
+    "id": "vo-02",
+    "start": 5.5,
+    "max_seconds": 6.0,
+    "line": "Requests. Approvals. Little “can you take a look at this?”s."
+  },
+  {
+    "id": "vo-03",
+    "start": 13.0,
+    "max_seconds": 6.5,
+    "line": "And somewhere in there… one of them stalls."
+  },
+  {
+    "id": "vo-04",
+    "start": 20.3,
+    "max_seconds": 3.4,
+    "line": "No one dropped it on purpose. It just… slipped."
+  },
+  {
+    "id": "vo-05",
+    "start": 23.8,
+    "max_seconds": 5.8,
+    "line": "Three days later, it’s a missed deadline, an angry customer… and a very awkward meeting."
+  },
+  {
+    "id": "vo-06",
+    "start": 37.6,
+    "max_seconds": 3.2,
+    "line": "Meet Nudgebird."
+  },
+  {
+    "id": "vo-07",
+    "start": 42.6,
+    "max_seconds": 4.4,
+    "line": "Nudgebird watches the work flowing through your tools…"
+  },
+  {
+    "id": "vo-08",
+    "start": 47.1,
+    "max_seconds": 4.6,
+    "line": "…and catches the moment something starts to stall."
+  },
+  {
+    "id": "vo-09",
+    "start": 52.3,
+    "max_seconds": 3.0,
+    "line": "Connect your tools in two minutes."
+  },
+  {
+    "id": "vo-10",
+    "start": 55.4,
+    "max_seconds": 3.2,
+    "line": "It learns what normal looks like, and flags what isn’t."
+  },
+  {
+    "id": "vo-11",
+    "start": 58.7,
+    "max_seconds": 3.7,
+    "line": "Then it nudges exactly the right person. No nagging. No blame."
+  },
+  {
+    "id": "vo-12",
+    "start": 62.6,
+    "max_seconds": 3.6,
+    "line": "Loops close faster."
+  },
+  {
+    "id": "vo-13",
+    "start": 66.6,
+    "max_seconds": 5.0,
+    "line": "And nobody spends their week chasing people."
+  },
+  {
+    "id": "vo-14",
+    "start": 72.6,
+    "max_seconds": 6.8,
+    "line": "So you can stop babysitting tasks, and get back to the work that actually matters."
+  },
+  {
+    "id": "vo-15",
+    "start": 83.4,
+    "max_seconds": 4.6,
+    "line": "Nudgebird. Nothing falls through the cracks."
+  }
+]
