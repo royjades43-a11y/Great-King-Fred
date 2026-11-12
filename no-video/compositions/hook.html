@@ -1,0 +1,269 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1920" data-height="1080">
+    <div id="hook-acc" class="clip el" data-start="0" data-duration="19.621" data-track-index="1" style="position:absolute;left:0px;top:320px;width:1920px;height:760px;z-index:2" data-layout-allow-overlap><div id="hook-acc-in" class="in"><div class="ico" style="width:520px;height:520px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 104 L30 78 Q30 64 44 64 L156 64 Q170 64 170 78 L170 104"/><path class="s" pathLength="1" d="M14 112 Q14 96 28 96 Q42 96 42 112 L42 128 L158 128 L158 112 Q158 96 172 96 Q186 96 186 112 L186 160 L14 160 Z"/><path class="s" pathLength="1" d="M30 160 L30 178 M170 160 L170 178"/></svg></div></div></div>
+    <div id="hook-ame" class="clip el" data-start="0" data-duration="19.671" data-track-index="2" style="position:absolute;left:0px;top:330px;width:1740px;height:750px;z-index:3"><div id="hook-ame-in" class="in"><svg class="stick" id="hook-ame-svg" width="210" height="364" viewBox="0 0 300 520">
+  
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L104 332 L100 424"/><path class="s" d="M150 300 L196 332 L200 424"/>
+    <g id="hook-ame-aLu"><path class="s" d="M150 160 L150 255"/><g id="hook-ame-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-ame-aRu"><path class="s" d="M150 160 L150 255"/><g id="hook-ame-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-ame-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="hook-ame-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="hook-ame-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="hook-ame-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="hook-ame-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="hook-ame-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="hook-moon" class="clip el" data-start="0.27" data-duration="19.351" data-track-index="3" style="position:absolute;left:0px;top:0px;width:840px;height:660px;z-index:4" data-layout-allow-overlap><div id="hook-moon-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M128 26 A78 78 0 1 0 174 142 A62 62 0 1 1 128 26 Z"/><path class="s acc-s" pathLength="1" d="M150 50 L150 66 M142 58 L158 58"/></svg></div></div></div>
+    <div id="hook-t0" class="clip el" data-start="0" data-duration="1.17" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:5"><div id="hook-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t0-w0" class="w">thursday</span> <span id="hook-t0-w1" class="w acc">night</span></div></div></div>
+    <div id="hook-t1" class="clip el" data-start="1.07" data-duration="1.94" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:6"><div id="hook-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t1-w0" class="w">finally</span> <span id="hook-t1-w1" class="w">on</span> <span id="hook-t1-w2" class="w">the</span> <span id="hook-t1-w3" class="w acc">couch</span></div></div></div>
+    <div id="hook-ph" class="clip el" data-start="3.21" data-duration="16.411" data-track-index="6" style="position:absolute;left:260px;top:140px;width:1660px;height:940px;z-index:7" data-layout-allow-overlap><div id="hook-ph-in" class="in"><div class="ico" style="width:90px;height:90px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="hook-bell" class="clip el" data-start="3.49" data-duration="1.77" data-track-index="7" style="position:absolute;left:440px;top:0px;width:1480px;height:940px;z-index:8" data-layout-allow-overlap><div id="hook-bell-in" class="in"><div class="ico" style="width:90px;height:90px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 24 L100 40"/><path class="s" pathLength="1" d="M68 40 L132 40 L152 150 L48 150 Z"/><path class="s" pathLength="1" d="M100 150 L100 170"/><circle class="f" cx="100" cy="176" r="10"/><path class="s alm-s" pathLength="1" d="M26 70 Q14 100 26 130 M174 70 Q186 100 174 130"/></svg></div></div></div>
+    <div id="hook-t2" class="clip el" data-start="2.91" data-duration="1.6" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:9"><div id="hook-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t2-w0" class="w">your</span> <span id="hook-t2-w1" class="w">phone</span> <span id="hook-t2-w2" class="w acc">buzzes</span></div></div></div>
+    <div id="hook-rq" class="clip el" data-start="5.21" data-duration="6.691" data-track-index="9" style="position:absolute;left:1000px;top:0px;width:920px;height:860px;z-index:10" data-layout-allow-overlap><div id="hook-rq-in" class="in"><div class="ico bub" style="width:364px;height:260px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:34px">Help me move on Saturday?</div></div></div></div>
+    <div id="hook-bx" class="clip el" data-start="6.31" data-duration="5.591" data-track-index="10" style="position:absolute;left:1200px;top:200px;width:720px;height:880px;z-index:11" data-layout-allow-overlap><div id="hook-bx-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 76 L170 76 L170 182 L30 182 Z"/><path class="s" pathLength="1" d="M30 76 L56 44 L144 44 L170 76"/><path class="s acc-s" pathLength="1" d="M80 76 L120 76 M100 76 L100 118"/></svg></div></div></div>
+    <div id="hook-t3" class="clip el" data-start="6.07" data-duration="1.74" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:12"><div id="hook-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t3-w0" class="w">help</span> <span id="hook-t3-w1" class="w">me</span> <span id="hook-t3-w2" class="w acc">move<span class="tail">?</span></span></div></div></div>
+    <div id="hook-th" class="clip el" data-start="8.43" data-duration="3.471" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1120px;height:760px;z-index:13" data-layout-allow-overlap><div id="hook-th-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="hook-tb" class="clip el" data-start="8.43" data-duration="3.471" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1120px;height:740px;z-index:14" data-layout-allow-overlap><div id="hook-tb-in" class="in"><div class="ico" style="width:140px;height:140px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M14 70 L14 172 M186 120 L186 172"/><path class="s" pathLength="1" d="M14 120 L186 120 M14 150 L186 150"/><path class="s" pathLength="1" d="M26 102 Q26 88 40 88 L72 88 Q86 88 86 102 Q86 116 72 116 L40 116 Q26 116 26 102 Z"/><path class="s acc-s" pathLength="1" d="M96 120 Q96 100 116 100 L186 100 L186 120"/></svg></div></div></div>
+    <div id="hook-t4" class="clip el" data-start="8.171" data-duration="1.44" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="hook-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t4-w0" class="w">sleep</span> <span id="hook-t4-w1" class="w acc">in</span></div></div></div>
+    <div id="hook-t5" class="clip el" data-start="9.911000000000001" data-duration="2.04" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:16"><div id="hook-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t5-w0" class="w">do</span> <span id="hook-t5-w1" class="w acc">nothing</span> <span id="hook-t5-w2" class="w">at</span> <span id="hook-t5-w3" class="w">all</span></div></div></div>
+    <div id="hook-sr" class="clip el" data-start="12.591" data-duration="7.03" data-track-index="16" style="position:absolute;left:1000px;top:0px;width:920px;height:860px;z-index:17" data-layout-allow-overlap><div id="hook-sr-in" class="in"><div class="ico bub" style="width:322px;height:230px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:40px">Sure! What time?</div></div></div></div>
+    <div id="hook-t6" class="clip el" data-start="11.931" data-duration="2.36" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:18"><div id="hook-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t6-w0" class="w">you</span> <span id="hook-t6-w1" class="w">type:</span> <span id="hook-t6-w2" class="w acc">sure!</span></div></div></div>
+    <div id="hook-t7" class="clip el" data-start="17.031000000000002" data-duration="2.64" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:19"><div id="hook-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t7-w0" class="w">why</span> <span id="hook-t7-w1" class="w">did</span> <span id="hook-t7-w2" class="w">I</span> <span id="hook-t7-w3" class="w">just</span> <span id="hook-t7-w4" class="w acc">do</span> <span id="hook-t7-w5" class="w">that?</span></div></div></div>
+    <div id="hook-t8" class="clip el" data-start="19.571" data-duration="1.378" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:20"><div id="hook-t8-in" class="in"><div class="txt hero" style="font-size:100px;font-weight:800;color:var(--ink)"><span id="hook-t8-w0" class="w">sound</span> <span id="hook-t8-w1" class="w">familiar?</span></div></div></div>
+    <div id="hook-me2" class="clip el" data-start="21.119" data-duration="8.6" data-track-index="20" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:21"><div id="hook-me2-in" class="in"><svg class="stick" id="hook-me2-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="hook-me2-aLu"><path class="s" d="M150 160 L150 255"/><g id="hook-me2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-me2-aRu"><path class="s" d="M150 160 L150 255"/><g id="hook-me2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-me2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="hook-me2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="hook-me2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="hook-me2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="hook-me2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="hook-me2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="hook-t9" class="clip el" data-start="21.299" data-duration="2.58" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:22"><div id="hook-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t9-w0" class="w">not</span> <span id="hook-t9-w1" class="w">lazy</span> <span id="hook-t9-w2" class="w">·</span> <span id="hook-t9-w3" class="w">not</span> <span id="hook-t9-w4" class="w acc">selfish</span></div></div></div>
+    <div id="hook-no" class="clip el" data-start="24.739" data-duration="4.93" data-track-index="22" style="position:absolute;left:100px;top:0px;width:1820px;height:720px;z-index:23" data-layout-allow-overlap><div id="hook-no-in" class="in"><div class="ico bub" style="width:210px;height:150px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:56px">No.</div></div></div></div>
+    <div id="hook-bo" class="clip el" data-start="28.119" data-duration="1.55" data-track-index="23" style="position:absolute;left:840px;top:0px;width:1080px;height:880px;z-index:24" data-layout-allow-overlap><div id="hook-bo-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M118 14 L52 112 L100 112 L82 186 L150 82 L102 82 Z"/></svg></div></div></div>
+    <div id="hook-t10" class="clip el" data-start="24.059" data-duration="3.46" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:25"><div id="hook-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t10-w0" class="w">for</span> <span id="hook-t10-w1" class="w acc">you<span class="tail">,</span></span> <span id="hook-t10-w2" class="w">no</span> <span id="hook-t10-w3" class="w">doesn't</span> <span id="hook-t10-w4" class="w">feel</span> <span id="hook-t10-w5" class="w">small</span></div></div></div>
+    <div id="hook-t11" class="clip el" data-start="27.419" data-duration="2.3" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:26"><div id="hook-t11-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t11-w0" class="w">it</span> <span id="hook-t11-w1" class="w">feels</span> <span id="hook-t11-w2" class="w">like</span> <span id="hook-t11-w3" class="w">a</span> <span id="hook-t11-w4" class="w acc">fight</span></div></div></div>
+    <div id="hook-co" class="clip el" data-start="31.199" data-duration="1" data-track-index="26" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:27" data-layout-allow-overlap><div id="hook-co-in" class="in"><div class="ico" style="width:280px;height:280px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M60 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 M140 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s" pathLength="1" d="M22 176 Q22 112 60 112 Q98 112 98 176 M102 176 Q102 112 140 112 Q178 112 178 176"/></svg></div></div></div>
+    <div id="hook-t12" class="clip el" data-start="30.209000000000003" data-duration="2.04" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:28"><div id="hook-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t12-w0" class="w">you're</span> <span id="hook-t12-w1" class="w">in</span> <span id="hook-t12-w2" class="w">good</span> <span id="hook-t12-w3" class="w acc">company</span></div></div></div>
+    <div id="hook-i1" class="clip el" data-start="37.789" data-duration="7.078" data-track-index="28" style="position:absolute;left:0px;top:80px;width:1120px;height:1000px;z-index:29" data-layout-allow-overlap><div id="hook-i1-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 52 Q60 32 18 46 L18 168 Q60 154 100 174 Q140 154 182 168 L182 46 Q140 32 100 52 Z"/><path class="s" pathLength="1" d="M100 52 L100 174"/><path class="s acc-s" pathLength="1" d="M40 80 L80 86 M40 108 L80 114 M120 86 L160 80 M120 114 L160 108"/></svg></div></div></div>
+    <div id="hook-i1p" class="clip el" data-start="37.309" data-duration="7.558" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1300px;height:1000px;z-index:30" data-layout-allow-overlap><div id="hook-i1p-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M150 24 L176 50 L76 150 L42 160 L52 126 Z"/><path class="s" pathLength="1" d="M136 38 L162 64"/><path class="s acc-s" pathLength="1" d="M52 126 L76 150"/></svg></div></div></div>
+    <div id="hook-i2" class="clip el" data-start="39.649" data-duration="5.218" data-track-index="30" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:31" data-layout-allow-overlap><div id="hook-i2-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 30 L120 30 Q134 30 134 44 L134 96 Q134 110 120 110 L60 110 L36 132 L40 110 L34 110 Q20 110 20 96 L20 44 Q20 30 34 30 Z"/><path class="s acc-s" pathLength="1" d="M80 128 L80 120 Q80 106 94 106 L166 106 Q180 106 180 120 L180 160 Q180 174 166 174 L160 174 L164 194 L140 174 L94 174 Q80 174 80 160 Z"/></svg></div></div></div>
+    <div id="hook-i3" class="clip el" data-start="43.317" data-duration="1.55" data-track-index="31" style="position:absolute;left:800px;top:80px;width:1120px;height:1000px;z-index:32" data-layout-allow-overlap><div id="hook-i3-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M60 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 M140 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s" pathLength="1" d="M22 176 Q22 112 60 112 Q98 112 98 176 M102 176 Q102 112 140 112 Q178 112 178 176"/></svg></div></div></div>
+    <div id="hook-t13" class="clip el" data-start="33.409" data-duration="2.94" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:33"><div id="hook-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t13-w0" class="w">why</span> <span id="hook-t13-w1" class="w">no</span> <span id="hook-t13-w2" class="w">is</span> <span id="hook-t13-w3" class="w">so</span> <span id="hook-t13-w4" class="w">hard</span> <span id="hook-t13-w5" class="w">to</span> <span id="hook-t13-w6" class="w acc">say</span></div></div></div>
+    <div id="hook-lk" class="clip el" data-start="32.149" data-duration="4.15" data-track-index="33" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:34" data-layout-allow-overlap><div id="hook-lk-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 92 L156 92 L156 182 L44 182 Z"/><path class="s" pathLength="1" d="M66 92 L66 62 Q66 24 100 24 Q134 24 134 62 L134 92"/><path class="s" pathLength="1" d="M100 126 L100 150"/></svg></div></div></div>
+    <div id="hook-t14" class="clip el" data-start="37.129" data-duration="1.74" data-track-index="34" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:35"><div id="hook-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t14-w0" class="w">a</span> <span id="hook-t14-w1" class="w">library</span> <span id="hook-t14-w2" class="w acc">book</span></div></div></div>
+    <div id="hook-t15" class="clip el" data-start="39.649" data-duration="2.108" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:36"><div id="hook-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t15-w0" class="w">which</span> <span id="hook-t15-w1" class="w">refusals</span> <span id="hook-t15-w2" class="w acc">work</span></div></div></div>
+    <div id="hook-t16" class="clip el" data-start="42.577" data-duration="2.34" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:37"><div id="hook-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t16-w0" class="w">who</span> <span id="hook-t16-w1" class="w">gets</span> <span id="hook-t16-w2" class="w">asked</span> <span id="hook-t16-w3" class="w">the</span> <span id="hook-t16-w4" class="w acc">most</span></div></div></div>
+    <div id="hook-me3" class="clip el" data-start="44.817" data-duration="4.941" data-track-index="37" style="position:absolute;left:0px;top:300px;width:1920px;height:780px;z-index:38"><div id="hook-me3-in" class="in"><svg class="stick" id="hook-me3-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="hook-me3-aLu"><path class="s" d="M150 160 L150 255"/><g id="hook-me3-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-me3-aRu"><path class="s" d="M150 160 L150 255"/><g id="hook-me3-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-me3-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="hook-me3-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="hook-me3-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="hook-me3-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="hook-me3-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="hook-me3-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="hook-t17" class="clip el" data-start="46.817" data-duration="2.941" data-track-index="38" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:39"><div id="hook-t17-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t17-w0" class="w">why</span> <span id="hook-t17-w1" class="w">yes</span> <span id="hook-t17-w2" class="w">slips</span> <span id="hook-t17-w3" class="w acc">out</span></div></div></div>
+    <div id="hook-q" class="clip el" data-start="51.358" data-duration="2.83" data-track-index="39" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:40" data-layout-allow-overlap><div id="hook-q-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="hook-t18" class="clip el" data-start="50.198" data-duration="4.04" data-track-index="40" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:41"><div id="hook-t18-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t18-w0" class="w">the</span> <span id="hook-t18-w1" class="w">one</span> <span id="hook-t18-w2" class="w">small</span> <span id="hook-t18-w3" class="w">word</span> <span id="hook-t18-w4" class="w acc">swap</span></div></div></div>
+    <div id="hook-al" class="clip el" data-start="56.398" data-duration="0.89" data-track-index="41" style="position:absolute;left:0px;top:60px;width:1920px;height:1020px;z-index:42" data-layout-allow-overlap><div id="hook-al-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M100 30 Q150 30 150 96 L150 136 L168 156 L32 156 L50 136 L50 96 Q50 30 100 30 Z"/><path class="s alm-s" pathLength="1" d="M84 172 Q100 188 116 172"/><path class="s alm-s" pathLength="1" d="M24 46 L10 34 M176 46 L190 34 M16 92 L2 92 M184 92 L198 92"/></svg></div></div></div>
+    <div id="hook-t19" class="clip el" data-start="54.818" data-duration="2.535" data-track-index="42" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:43"><div id="hook-t19-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t19-w0" class="w">why</span> <span id="hook-t19-w1" class="w">no</span> <span id="hook-t19-w2" class="w">feels</span> <span id="hook-t19-w3" class="w">so</span> <span id="hook-t19-w4" class="w acc">dangerous</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"hook-acc","t":"icon","from":"pop","exit":null,"in":0,"out":19.331000000000003,"outDur":0.25},{"id":"hook-ame","t":"stick","from":"bottom","exit":null,"in":0,"out":19.331000000000003,"outDur":0.3,"poses":[["idle",0],["give",11.931]],"mouth":[["neutral",0],["o",4.41],["frown",8.43],["smile",11.931],["o",17.471]]},{"id":"hook-moon","t":"icon","from":"pop","exit":null,"in":0.27,"out":19.331000000000003,"outDur":0.25},{"id":"hook-t0","t":"text","from":"top","exit":null,"in":0,"out":0.8300000000000001,"outDur":0.3,"words":[-0.01,0.27]},{"id":"hook-t1","t":"text","from":"top","exit":null,"in":1.07,"out":2.67,"outDur":0.3,"words":[1.27,1.81,2.09,2.21]},{"id":"hook-ph","t":"icon","from":"pop","exit":null,"in":3.21,"out":19.331000000000003,"outDur":0.25,"sway":8,"period":0.25},{"id":"hook-bell","t":"icon","from":"pop","exit":null,"in":3.49,"out":4.97,"outDur":0.25,"sway":12,"period":0.35},{"id":"hook-t2","t":"text","from":"top","exit":null,"in":2.91,"out":4.17,"outDur":0.3,"words":[2.91,3.21,3.49]},{"id":"hook-rq","t":"bubble","from":"pop","exit":null,"in":5.21,"out":11.611,"outDur":0.25},{"id":"hook-bx","t":"icon","from":"pop","exit":null,"in":6.31,"out":11.611,"outDur":0.25},{"id":"hook-t3","t":"text","from":"top","exit":null,"in":6.07,"out":7.47,"outDur":0.3,"words":[5.99,6.15,6.31]},{"id":"hook-th","t":"icon","from":"pop","exit":null,"in":8.43,"out":11.611,"outDur":0.25},{"id":"hook-tb","t":"icon","from":"pop","exit":null,"in":8.43,"out":11.611,"outDur":0.25},{"id":"hook-t4","t":"text","from":"top","exit":null,"in":8.171,"out":9.270999999999999,"outDur":0.3,"words":[8.43,8.75]},{"id":"hook-t5","t":"text","from":"top","exit":null,"in":9.911000000000001,"out":11.611,"outDur":0.3,"words":[10.131,10.251,10.731,10.951]},{"id":"hook-sr","t":"bubble","from":"pop","exit":null,"in":12.591,"out":19.331000000000003,"outDur":0.25},{"id":"hook-t6","t":"text","from":"top","exit":null,"in":11.931,"out":13.951,"outDur":0.3,"words":[11.851,11.931,12.591]},{"id":"hook-t7","t":"text","from":"top","exit":null,"in":17.031000000000002,"out":19.331000000000003,"outDur":0.3,"words":[17.471,17.931,18.071,18.211,18.411,18.691]},{"id":"hook-t8","t":"text","from":"slam","exit":null,"in":19.571,"out":20.659000000000002,"outDur":0.25,"words":[19.571,19.871]},{"id":"hook-me2","t":"stick","from":"left","exit":null,"in":21.119,"out":29.379,"outDur":0.3,"poses":[["shrug",21.119],["headDown",28.119]],"mouth":[["neutral",21.119],["frown",28.119]]},{"id":"hook-t9","t":"text","from":"top","exit":null,"in":21.299,"out":23.539,"outDur":0.3,"words":[21.119,21.299,22.559,22.559,22.699]},{"id":"hook-no","t":"bubble","from":"pop","exit":null,"in":24.739,"out":29.379,"outDur":0.25},{"id":"hook-bo","t":"icon","from":"pop","exit":null,"in":28.119,"out":29.379,"outDur":0.25},{"id":"hook-t10","t":"text","from":"top","exit":null,"in":24.059,"out":27.179000000000002,"outDur":0.3,"words":[23.879,24.059,24.739,25.059,25.719,26.279]},{"id":"hook-t11","t":"text","from":"top","exit":null,"in":27.419,"out":29.379,"outDur":0.3,"words":[27.419,27.539,27.799,27.999,28.119]},{"id":"hook-co","t":"icon","from":"pop","exit":null,"in":31.199,"out":31.909000000000002,"outDur":0.25},{"id":"hook-t12","t":"text","from":"top","exit":null,"in":30.209000000000003,"out":31.909000000000002,"outDur":0.3,"words":[30.719,30.859,30.979,31.199]},{"id":"hook-i1","t":"icon","from":"pop","exit":null,"in":37.789,"out":44.577,"outDur":0.25},{"id":"hook-i1p","t":"icon","from":"pop","exit":null,"in":37.309,"out":44.577,"outDur":0.25},{"id":"hook-i2","t":"icon","from":"pop","exit":null,"in":39.649,"out":44.577,"outDur":0.25},{"id":"hook-i3","t":"icon","from":"pop","exit":null,"in":43.317,"out":44.577,"outDur":0.25},{"id":"hook-t13","t":"text","from":"top","exit":null,"in":33.409,"out":36.009,"outDur":0.3,"words":[33.489,33.909,34.309,34.669,35.009,35.309,35.469]},{"id":"hook-lk","t":"icon","from":"pop","exit":null,"in":32.149,"out":36.009,"outDur":0.25},{"id":"hook-t14","t":"text","from":"top","exit":null,"in":37.129,"out":38.528999999999996,"outDur":0.3,"words":[37.709,37.789,38.069]},{"id":"hook-t15","t":"text","from":"top","exit":null,"in":39.649,"out":41.416999999999994,"outDur":0.3,"words":[39.369,39.649,40.809]},{"id":"hook-t16","t":"text","from":"top","exit":null,"in":42.577,"out":44.577,"outDur":0.3,"words":[42.797,43.117,43.317,43.717,43.897]},{"id":"hook-me3","t":"stick","from":"bottom","exit":null,"in":44.817,"out":49.418,"outDur":0.3,"poses":[["shrug",46.817]],"mouth":[["o",46.817]]},{"id":"hook-t17","t":"text","from":"top","exit":null,"in":46.817,"out":49.418,"outDur":0.3,"words":[46.537,46.817,47.257,47.897]},{"id":"hook-q","t":"icon","from":"pop","exit":null,"in":51.358,"out":53.897999999999996,"outDur":0.25},{"id":"hook-t18","t":"text","from":"top","exit":null,"in":50.198,"out":53.897999999999996,"outDur":0.3,"words":[49.998,50.198,50.478,50.978,51.358]},{"id":"hook-al","t":"icon","from":"pop","exit":null,"in":56.398,"out":56.998000000000005,"outDur":0.25},{"id":"hook-t19","t":"text","from":"top","exit":null,"in":54.818,"out":57.013,"outDur":0.3,"words":[54.818,55.198,55.498,55.938,56.398]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

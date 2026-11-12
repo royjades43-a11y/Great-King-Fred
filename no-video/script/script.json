@@ -1,0 +1,5938 @@
+{
+ "title": "The Psychology of People Who Can't Say No",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "It's Thursday night."
+    },
+    {
+     "id": "b01",
+     "say": "You're finally on the couch."
+    },
+    {
+     "id": "b02",
+     "say": "Your phone buzzes."
+    },
+    {
+     "id": "b03",
+     "say": "\"Hey!"
+    },
+    {
+     "id": "b04",
+     "say": "Any chance you could help me move on Saturday?\""
+    },
+    {
+     "id": "b05",
+     "say": "You were going to sleep in."
+    },
+    {
+     "id": "b06",
+     "say": "You were going to do nothing at all."
+    },
+    {
+     "id": "b07",
+     "say": "You type, \"Sure!"
+    },
+    {
+     "id": "b08",
+     "say": "What time?\""
+    },
+    {
+     "id": "b09",
+     "say": "And the second you hit send, a tiny voice says, \"Why did I just do that?\""
+    },
+    {
+     "id": "b10",
+     "say": "Sound familiar?"
+    },
+    {
+     "id": "b11",
+     "say": "You're not lazy, and you're not selfish."
+    },
+    {
+     "id": "b12",
+     "say": "But for you, no doesn't feel like a small word."
+    },
+    {
+     "id": "b13",
+     "say": "It feels like a fight you're starting."
+    },
+    {
+     "id": "b14",
+     "say": "If that's you, you're in good company."
+    },
+    {
+     "id": "b15",
+     "say": "Psychologists have studied why no is so hard to say."
+    },
+    {
+     "id": "b16",
+     "say": "They've asked strangers to write in a library book."
+    },
+    {
+     "id": "b17",
+     "say": "They've tested which refusals actually work."
+    },
+    {
+     "id": "b18",
+     "say": "And they've found out who gets asked the most."
+    },
+    {
+     "id": "b19",
+     "say": "By the end of this video, you'll know why yes slips out, before you can stop it."
+    },
+    {
+     "id": "b20",
+     "say": "And the one small word swap, that makes no much easier."
+    },
+    {
+     "id": "b21",
+     "say": "Let's start with why no feels so dangerous."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "acc",
+     "name": "couch",
+     "x": 960,
+     "y": 700,
+     "size": 520,
+     "from": "pop",
+     "at": "b00:thursday",
+     "out": "b10"
+    },
+    {
+     "t": "stick",
+     "id": "ame",
+     "x": 870,
+     "y": 705,
+     "from": "bottom",
+     "at": "b00:thursday",
+     "poses": [
+      [
+       "idle",
+       "b00:thursday"
+      ],
+      [
+       "give",
+       "b07:type"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:thursday"
+      ],
+      [
+       "o",
+       "b03:hey"
+      ],
+      [
+       "frown",
+       "b05:sleep"
+      ],
+      [
+       "smile",
+       "b07:type"
+      ],
+      [
+       "o",
+       "b09:why"
+      ]
+     ],
+     "out": "b10",
+     "scale": 0.7,
+     "sit": true
+    },
+    {
+     "t": "icon",
+     "id": "moon",
+     "name": "moon",
+     "x": 420,
+     "y": 330,
+     "size": 110,
+     "from": "pop",
+     "at": "b00:night",
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "thursday *night*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b00:thursday",
+     "out": "b01"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "finally on the *couch*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b01:finally",
+     "out": "b02"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 1090,
+     "y": 610,
+     "size": 90,
+     "from": "pop",
+     "at": "b02:phone",
+     "out": "b10",
+     "sway": 8,
+     "period": 0.25
+    },
+    {
+     "t": "icon",
+     "id": "bell",
+     "name": "bell",
+     "x": 1180,
+     "y": 470,
+     "size": 90,
+     "from": "pop",
+     "at": "b02:buzzes",
+     "out": "b04",
+     "color": "accent",
+     "sway": 12,
+     "period": 0.35
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "your phone *buzzes*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b02:buzzes",
+     "out": "b03"
+    },
+    {
+     "t": "bubble",
+     "id": "rq",
+     "text": "Help me move on Saturday?",
+     "x": 1460,
+     "y": 430,
+     "size": 260,
+     "from": "pop",
+     "at": "b04:any",
+     "fontSize": 34,
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "bx",
+     "name": "box",
+     "x": 1560,
+     "y": 640,
+     "size": 130,
+     "from": "pop",
+     "at": "b04:move",
+     "out": "b07"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "help me *move*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b04:move",
+     "out": "b05"
+    },
+    {
+     "t": "icon",
+     "id": "th",
+     "name": "thought",
+     "x": 560,
+     "y": 380,
+     "size": 300,
+     "from": "pop",
+     "at": "b05:sleep",
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "tb",
+     "name": "bed",
+     "x": 560,
+     "y": 370,
+     "size": 140,
+     "from": "pop",
+     "at": "b05:sleep",
+     "out": "b07"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "sleep *in*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b05:sleep",
+     "out": "b06"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "do *nothing* at all",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b06:nothing",
+     "out": "b07"
+    },
+    {
+     "t": "bubble",
+     "id": "sr",
+     "text": "Sure! What time?",
+     "x": 1460,
+     "y": 430,
+     "size": 230,
+     "from": "pop",
+     "at": "b07:sure",
+     "fontSize": 40,
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "you type: *sure!*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b07:type",
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "why did I just *do* that?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b09:why",
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "sound familiar?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b10:sound",
+     "out": "b11",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "me2",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b11:not",
+     "poses": [
+      [
+       "shrug",
+       "b11:not"
+      ],
+      [
+       "headDown",
+       "b13:fight"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b11:not"
+      ],
+      [
+       "frown",
+       "b13:fight"
+      ]
+     ],
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "not lazy · not *selfish*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b11:lazy",
+     "out": "b12"
+    },
+    {
+     "t": "bubble",
+     "id": "no",
+     "text": "No.",
+     "x": 1010,
+     "y": 360,
+     "size": 150,
+     "from": "pop",
+     "at": "b12:no",
+     "fontSize": 56,
+     "out": "b14"
+    },
+    {
+     "t": "icon",
+     "id": "bo",
+     "name": "bolt",
+     "x": 1380,
+     "y": 440,
+     "size": 130,
+     "from": "pop",
+     "at": "b13:fight",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "for *you*, no doesn't feel small",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b12:you",
+     "out": "b13"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "it feels like a *fight*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b13:feels",
+     "out": "b14"
+    },
+    {
+     "t": "icon",
+     "id": "co",
+     "name": "people",
+     "x": 960,
+     "y": 580,
+     "size": 280,
+     "from": "pop",
+     "at": "b14:company",
+     "out": "b15"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "you're in good *company*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b14:company",
+     "out": "b15"
+    },
+    {
+     "t": "icon",
+     "id": "i1",
+     "name": "book",
+     "x": 560,
+     "y": 580,
+     "size": 220,
+     "from": "pop",
+     "at": "b16:library",
+     "out": "b19"
+    },
+    {
+     "t": "icon",
+     "id": "i1p",
+     "name": "pen",
+     "x": 650,
+     "y": 500,
+     "size": 100,
+     "from": "pop",
+     "at": "b16:write",
+     "out": "b19"
+    },
+    {
+     "t": "icon",
+     "id": "i2",
+     "name": "chat",
+     "x": 960,
+     "y": 580,
+     "size": 220,
+     "from": "pop",
+     "at": "b17:refusals",
+     "out": "b19"
+    },
+    {
+     "t": "icon",
+     "id": "i3",
+     "name": "people",
+     "x": 1360,
+     "y": 580,
+     "size": 220,
+     "from": "pop",
+     "at": "b18:asked",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "why no is so hard to *say*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b15:why",
+     "out": "b16"
+    },
+    {
+     "t": "icon",
+     "id": "lk",
+     "name": "lock",
+     "x": 960,
+     "y": 580,
+     "size": 220,
+     "from": "pop",
+     "at": "b15:psychologists",
+     "out": "b16"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "a library *book*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b16:library",
+     "out": "b17"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "which refusals *work*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b17:refusals",
+     "out": "b18"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "who gets asked the *most*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b18:who",
+     "out": "b19"
+    },
+    {
+     "t": "stick",
+     "id": "me3",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b19:by",
+     "poses": [
+      [
+       "shrug",
+       "b19:yes"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b19:yes"
+      ]
+     ],
+     "out": "b20"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "why yes slips *out*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b19:yes",
+     "out": "b20"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b20:swap",
+     "out": "b21"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "the one small word *swap*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b20:one",
+     "out": "b21"
+    },
+    {
+     "t": "icon",
+     "id": "al",
+     "name": "alarm",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b21:dangerous"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "why no feels so *dangerous*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b21:why"
+    }
+   ]
+  },
+  {
+   "id": "belong",
+   "beats": [
+    {
+     "id": "b22",
+     "say": "For most of human history, being pushed out of the group, was dangerous."
+    },
+    {
+     "id": "b23",
+     "say": "Alone, you were far less likely to survive."
+    },
+    {
+     "id": "b24",
+     "say": "In nineteen ninety-five, psychologists Roy Baumeister and Mark Leary, called this the need to belong."
+    },
+    {
+     "id": "b25",
+     "say": "They argued it's one of our most basic human drives."
+    },
+    {
+     "id": "b26",
+     "say": "So when someone asks you for something, part of your brain hears a different question."
+    },
+    {
+     "id": "b27",
+     "say": "Do you still want to be part of the group?"
+    },
+    {
+     "id": "b28",
+     "say": "No can feel like the wrong answer."
+    },
+    {
+     "id": "b29",
+     "say": "Even when the request is just a Saturday."
+    },
+    {
+     "id": "b30",
+     "say": "But here's the thing."
+    },
+    {
+     "id": "b31",
+     "say": "The fear is usually much bigger, than the fallout."
+    },
+    {
+     "id": "b32",
+     "say": "In twenty twenty-three, marketing professors Julian Givi and Colleen Kirk, ran five experiments, with more than two thousand people."
+    },
+    {
+     "id": "b33",
+     "say": "Some imagined being invited to something."
+    },
+    {
+     "id": "b34",
+     "say": "A museum exhibit."
+    },
+    {
+     "id": "b35",
+     "say": "A dinner with a celebrity chef."
+    },
+    {
+     "id": "b36",
+     "say": "Others imagined being the one who sent the invitation."
+    },
+    {
+     "id": "b37",
+     "say": "The people saying no, expected the worst."
+    },
+    {
+     "id": "b38",
+     "say": "They thought their friend would be angry, hurt, and less likely to invite them again."
+    },
+    {
+     "id": "b39",
+     "say": "The people who got the no?"
+    },
+    {
+     "id": "b40",
+     "say": "Mostly, they were fine."
+    },
+    {
+     "id": "b41",
+     "say": "Here's the irony."
+    },
+    {
+     "id": "b42",
+     "say": "We all know how little a no bothers us, when we're the one asking."
+    },
+    {
+     "id": "b43",
+     "say": "We just forget it, the moment we're the one saying it."
+    },
+    {
+     "id": "b44",
+     "say": "In one experiment, people first got turned down themselves."
+    },
+    {
+     "id": "b45",
+     "say": "After that, they worried less about saying no to others."
+    },
+    {
+     "id": "b46",
+     "say": "So why does yes keep slipping out anyway?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "g0",
+     "x": 560,
+     "y": 690,
+     "from": "bottom",
+     "at": "b22:most",
+     "poses": [
+      [
+       "happy",
+       "b22:most"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b22:most"
+      ]
+     ],
+     "out": "b24",
+     "scale": 0.75
+    },
+    {
+     "t": "stick",
+     "id": "g1",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b22:most",
+     "poses": [
+      [
+       "happy",
+       "b22:most"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b22:most"
+      ]
+     ],
+     "out": "b24",
+     "scale": 0.75
+    },
+    {
+     "t": "stick",
+     "id": "g2",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b22:most",
+     "poses": [
+      [
+       "happy",
+       "b22:most"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b22:most"
+      ]
+     ],
+     "out": "b24",
+     "scale": 0.75
+    },
+    {
+     "t": "stick",
+     "id": "lo",
+     "x": 1160,
+     "y": 690,
+     "from": "bottom",
+     "at": "b22:most",
+     "poses": [
+      [
+       "idle",
+       "b22:pushed"
+      ],
+      [
+       "headDown",
+       "b23:alone"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b22:most"
+      ],
+      [
+       "frown",
+       "b22:pushed"
+      ]
+     ],
+     "out": "b24",
+     "scale": 0.75,
+     "move": [
+      [
+       1560,
+       690,
+       "b22:pushed",
+       1.4
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "pushed out of the *group*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b22:pushed",
+     "out": "b23"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "alone: less likely to *survive*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b23:alone",
+     "out": "b24"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "1995 · THE NEED TO BELONG",
+     "text": "One of our most basic drives",
+     "sub": "Baumeister & Leary",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b24:baumeister",
+     "out": "b26"
+    },
+    {
+     "t": "icon",
+     "id": "bp",
+     "name": "people",
+     "x": 960,
+     "y": 620,
+     "size": 300,
+     "from": "pop",
+     "at": "b24:baumeister",
+     "out": "b26"
+    },
+    {
+     "t": "icon",
+     "id": "bh",
+     "name": "heart",
+     "x": 960,
+     "y": 440,
+     "size": 100,
+     "from": "pop",
+     "at": "b25:basic",
+     "out": "b26",
+     "color": "accent",
+     "pulse": 1.12,
+     "beat": 0.9
+    },
+    {
+     "t": "stick",
+     "id": "ak",
+     "x": 640,
+     "y": 690,
+     "from": "left",
+     "at": "b26:someone",
+     "poses": [
+      [
+       "point",
+       "b26:asks"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b26:asks"
+      ]
+     ],
+     "out": "b30"
+    },
+    {
+     "t": "stick",
+     "id": "yu",
+     "x": 1280,
+     "y": 690,
+     "from": "right",
+     "at": "b26:someone",
+     "poses": [
+      [
+       "idle",
+       "b26:asks"
+      ],
+      [
+       "headDown",
+       "b28:wrong"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b26:asks"
+      ],
+      [
+       "frown",
+       "b28:wrong"
+      ]
+     ],
+     "out": "b30",
+     "flip": true
+    },
+    {
+     "t": "bubble",
+     "id": "hq",
+     "text": "Can you help?",
+     "x": 700,
+     "y": 335,
+     "size": 200,
+     "from": "pop",
+     "at": "b26:asks",
+     "fontSize": 32,
+     "out": "b30"
+    },
+    {
+     "t": "bubble",
+     "id": "gq",
+     "text": "Still one of us?",
+     "x": 1220,
+     "y": 335,
+     "size": 200,
+     "from": "pop",
+     "at": "b27:still",
+     "fontSize": 30,
+     "out": "b30"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "a *different* question",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b26:different",
+     "out": "b27"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "still part of the *group*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b27:still",
+     "out": "b28"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "no feels *wrong*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b28:wrong",
+     "out": "b29"
+    },
+    {
+     "t": "icon",
+     "id": "sat",
+     "name": "calendar",
+     "x": 960,
+     "y": 500,
+     "size": 150,
+     "from": "pop",
+     "at": "b29:saturday",
+     "out": "b30"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "even just a *Saturday*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b29:saturday",
+     "out": "b30"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "but here's the *thing*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b30:thing",
+     "out": "b31"
+    },
+    {
+     "t": "icon",
+     "id": "fr",
+     "name": "rain",
+     "x": 700,
+     "y": 560,
+     "size": 320,
+     "from": "pop",
+     "at": "b31:fear",
+     "out": "b32"
+    },
+    {
+     "t": "icon",
+     "id": "fo",
+     "name": "cloud",
+     "x": 1260,
+     "y": 620,
+     "size": 160,
+     "from": "pop",
+     "at": "b31:fallout",
+     "out": "b32"
+    },
+    {
+     "t": "text",
+     "id": "frl",
+     "text": "fear",
+     "x": 700,
+     "y": 800,
+     "size": 44,
+     "from": "bottom",
+     "at": "b31:fear",
+     "out": "b32",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "fol",
+     "text": "fallout",
+     "x": 1260,
+     "y": 800,
+     "size": 44,
+     "from": "bottom",
+     "at": "b31:fallout",
+     "out": "b32",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "the fear is much bigger than the *fallout*",
+     "x": 960,
+     "y": 170,
+     "size": 56,
+     "from": "top",
+     "at": "b31:fear",
+     "out": "b32"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "2023 · 5 EXPERIMENTS",
+     "text": "More than 2,000 people",
+     "sub": "Givi & Kirk",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b32:givi",
+     "out": "b33"
+    },
+    {
+     "t": "icon",
+     "id": "gp",
+     "name": "people",
+     "x": 960,
+     "y": 620,
+     "size": 300,
+     "from": "pop",
+     "at": "b32:experiments",
+     "out": "b33"
+    },
+    {
+     "t": "stick",
+     "id": "ir",
+     "x": 620,
+     "y": 690,
+     "from": "left",
+     "at": "b33:some",
+     "poses": [
+      [
+       "give",
+       "b33:invited"
+      ],
+      [
+       "shrug",
+       "b39:people"
+      ],
+      [
+       "happy",
+       "b40:fine"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b33:some"
+      ],
+      [
+       "neutral",
+       "b39:people"
+      ],
+      [
+       "smile",
+       "b40:fine"
+      ]
+     ],
+     "out": "b41"
+    },
+    {
+     "t": "icon",
+     "id": "lt",
+     "name": "letter",
+     "x": 850,
+     "y": 520,
+     "size": 140,
+     "from": "pop",
+     "at": "b33:invited",
+     "out": "b37"
+    },
+    {
+     "t": "stick",
+     "id": "iv",
+     "x": 1300,
+     "y": 690,
+     "from": "right",
+     "at": "b33:some",
+     "poses": [
+      [
+       "idle",
+       "b33:some"
+      ],
+      [
+       "headDown",
+       "b37:worst"
+      ],
+      [
+       "happy",
+       "b40:fine"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b33:some"
+      ],
+      [
+       "frown",
+       "b37:worst"
+      ],
+      [
+       "smile",
+       "b40:fine"
+      ]
+     ],
+     "out": "b41",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "mu",
+     "name": "frame",
+     "x": 960,
+     "y": 340,
+     "size": 150,
+     "from": "pop",
+     "at": "b34:museum",
+     "out": "b35"
+    },
+    {
+     "t": "icon",
+     "id": "cf",
+     "name": "chef",
+     "x": 960,
+     "y": 340,
+     "size": 160,
+     "from": "pop",
+     "at": "b35:chef",
+     "out": "b36"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "*invited* to something",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b33:invited",
+     "out": "b34"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "a museum *exhibit*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b34:museum",
+     "out": "b35"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "a celebrity *chef*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b35:celebrity",
+     "out": "b36"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "the one who *sent* the invitation",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b36:sent",
+     "out": "b37"
+    },
+    {
+     "t": "icon",
+     "id": "wt",
+     "name": "thought",
+     "x": 1460,
+     "y": 360,
+     "size": 300,
+     "from": "pop",
+     "at": "b37:worst",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "wr",
+     "name": "rain",
+     "x": 1440,
+     "y": 350,
+     "size": 120,
+     "from": "pop",
+     "at": "b37:worst",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "wb",
+     "name": "broken",
+     "x": 1530,
+     "y": 380,
+     "size": 70,
+     "from": "pop",
+     "at": "b38:hurt",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "they expected the *worst*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b37:expected",
+     "out": "b38"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "angry · hurt · less likely to *invite*",
+     "x": 960,
+     "y": 170,
+     "size": 56,
+     "from": "top",
+     "at": "b38:angry",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "the people who got the no?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b39:people",
+     "out": "b40",
+     "color": "muted"
+    },
+    {
+     "t": "bubble",
+     "id": "ok",
+     "text": "ok!",
+     "x": 700,
+     "y": 370,
+     "size": 140,
+     "from": "pop",
+     "at": "b40:fine",
+     "fontSize": 50,
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "mostly… !fine!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b40:mostly",
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "the irony",
+     "x": 960,
+     "y": 170,
+     "size": 110,
+     "from": "slam",
+     "at": "b41:irony",
+     "out": "b42",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "pa",
+     "x": 700,
+     "y": 690,
+     "from": "left",
+     "at": "b42:all",
+     "poses": [
+      [
+       "point",
+       "b42:asking"
+      ],
+      [
+       "idle",
+       "b43:saying"
+      ],
+      [
+       "sorry",
+       "b44:turned"
+      ],
+      [
+       "happy",
+       "b45:less"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b42:all"
+      ],
+      [
+       "frown",
+       "b43:saying"
+      ],
+      [
+       "neutral",
+       "b44:turned"
+      ],
+      [
+       "smile",
+       "b45:less"
+      ]
+     ],
+     "out": "b46"
+    },
+    {
+     "t": "stick",
+     "id": "pb",
+     "x": 1220,
+     "y": 690,
+     "from": "right",
+     "at": "b42:all",
+     "poses": [
+      [
+       "shrug",
+       "b42:bothers"
+      ],
+      [
+       "point",
+       "b43:saying"
+      ],
+      [
+       "armsCrossed",
+       "b44:turned"
+      ],
+      [
+       "happy",
+       "b45:less"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b42:all"
+      ],
+      [
+       "neutral",
+       "b43:saying"
+      ],
+      [
+       "tight",
+       "b44:turned"
+      ],
+      [
+       "smile",
+       "b45:less"
+      ]
+     ],
+     "out": "b46",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "how little a no *bothers* us",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b42:how",
+     "out": "b43"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "we just *forget* it",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b43:forget",
+     "out": "b44"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "turned down *themselves*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b44:turned",
+     "out": "b45"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "→ worried *less*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b45:worried",
+     "out": "b46"
+    },
+    {
+     "t": "icon",
+     "id": "wq",
+     "name": "question",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b46:why"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "why does *yes* keep slipping out?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b46:why"
+    }
+   ]
+  },
+  {
+   "id": "autopilot",
+   "beats": [
+    {
+     "id": "b47",
+     "say": "Part of it is speed."
+    },
+    {
+     "id": "b48",
+     "say": "Most yeses aren't decisions."
+    },
+    {
+     "id": "b49",
+     "say": "They're reflexes."
+    },
+    {
+     "id": "b50",
+     "say": "In the late nineteen seventies, psychologist Ellen Langer and her colleagues, ran a sneaky experiment, at a university copy machine."
+    },
+    {
+     "id": "b51",
+     "say": "A stranger walked up to someone about to make copies, and asked to go first."
+    },
+    {
+     "id": "b52",
+     "say": "\"Excuse me, I have five pages."
+    },
+    {
+     "id": "b53",
+     "say": "May I use the copy machine?\""
+    },
+    {
+     "id": "b54",
+     "say": "About sixty percent let them."
+    },
+    {
+     "id": "b55",
+     "say": "Then the stranger added a reason."
+    },
+    {
+     "id": "b56",
+     "say": "\"Because I'm in a rush.\""
+    },
+    {
+     "id": "b57",
+     "say": "About ninety-four percent said yes."
+    },
+    {
+     "id": "b58",
+     "say": "Now the funny part."
+    },
+    {
+     "id": "b59",
+     "say": "Another version used a reason, that wasn't a reason at all."
+    },
+    {
+     "id": "b60",
+     "say": "\"May I use the copy machine, because I have to make copies?\""
+    },
+    {
+     "id": "b61",
+     "say": "Of course they had to make copies."
+    },
+    {
+     "id": "b62",
+     "say": "Everyone at the machine had to make copies."
+    },
+    {
+     "id": "b63",
+     "say": "It still got a yes, about ninety-three percent of the time."
+    },
+    {
+     "id": "b64",
+     "say": "The word because, did most of the work."
+    },
+    {
+     "id": "b65",
+     "say": "Your brain heard the shape of a reason, and it said yes on autopilot."
+    },
+    {
+     "id": "b66",
+     "say": "And that autopilot goes further than you'd think."
+    },
+    {
+     "id": "b67",
+     "say": "In twenty fourteen, psychologist Vanessa Bohns and her colleagues, sent students out with an odd request."
+    },
+    {
+     "id": "b68",
+     "say": "They asked strangers to write one word in pen, in a library book."
+    },
+    {
+     "id": "b69",
+     "say": "The word was pickle."
+    },
+    {
+     "id": "b70",
+     "say": "Before they started, the students guessed, that about twenty-eight percent would agree."
+    },
+    {
+     "id": "b71",
+     "say": "In fact, more than sixty-four percent, wrote pickle in the book."
+    },
+    {
+     "id": "b72",
+     "say": "Many of them hesitated."
+    },
+    {
+     "id": "b73",
+     "say": "Some even called it vandalism."
+    },
+    {
+     "id": "b74",
+     "say": "And then they did it anyway."
+    },
+    {
+     "id": "b75",
+     "say": "Because saying no to someone's face is awkward."
+    },
+    {
+     "id": "b76",
+     "say": "And for a lot of us, awkward feels worse than wrong."
+    },
+    {
+     "id": "b77",
+     "say": "So think about the last time you said yes."
+    },
+    {
+     "id": "b78",
+     "say": "Did you decide, or did your mouth decide for you?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "part of it is *speed*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b47:part",
+     "out": "b48"
+    },
+    {
+     "t": "stick",
+     "id": "rf",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b47:part",
+     "poses": [
+      [
+       "idle",
+       "b47:part"
+      ],
+      [
+       "shrug",
+       "b48:decisions"
+      ],
+      [
+       "victory",
+       "b49:reflexes"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b47:part"
+      ],
+      [
+       "o",
+       "b49:reflexes"
+      ]
+     ],
+     "out": "b50"
+    },
+    {
+     "t": "icon",
+     "id": "sp",
+     "name": "bolt",
+     "x": 1260,
+     "y": 440,
+     "size": 130,
+     "from": "pop",
+     "at": "b49:reflexes",
+     "out": "b50"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "yeses aren't *decisions*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b48:yeses",
+     "out": "b49"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "they're !reflexes!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b49:reflexes",
+     "out": "b50"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "LATE 1970s · COPY MACHINE",
+     "text": "A sneaky experiment",
+     "sub": "Langer et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b50:langer",
+     "out": "b51"
+    },
+    {
+     "t": "icon",
+     "id": "cpx",
+     "name": "copier",
+     "x": 960,
+     "y": 610,
+     "size": 300,
+     "from": "pop",
+     "at": "b50:copy",
+     "out": "b51"
+    },
+    {
+     "t": "icon",
+     "id": "cp",
+     "name": "copier",
+     "x": 1100,
+     "y": 610,
+     "size": 280,
+     "from": "pop",
+     "at": "b51:stranger",
+     "out": "b54"
+    },
+    {
+     "t": "stick",
+     "id": "us",
+     "x": 1380,
+     "y": 690,
+     "from": "right",
+     "at": "b51:stranger",
+     "poses": [
+      [
+       "give",
+       "b51:stranger"
+      ],
+      [
+       "shrug",
+       "b53:may"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b51:stranger"
+      ],
+      [
+       "o",
+       "b53:machine"
+      ]
+     ],
+     "out": "b54",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "stick",
+     "id": "st",
+     "x": 640,
+     "y": 690,
+     "from": "left",
+     "at": "b51:stranger",
+     "poses": [
+      [
+       "idle",
+       "b51:walked"
+      ],
+      [
+       "point",
+       "b52:excuse"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b51:walked"
+      ]
+     ],
+     "out": "b54"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "asked to go *first*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b51:first",
+     "out": "b52"
+    },
+    {
+     "t": "bubble",
+     "id": "sb",
+     "text": "May I use the copy machine?",
+     "x": 730,
+     "y": 335,
+     "size": 210,
+     "from": "pop",
+     "at": "b52:excuse",
+     "fontSize": 28,
+     "out": "b54"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "*5* pages",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b52:five",
+     "out": "b53"
+    },
+    {
+     "t": "text",
+     "id": "t4b",
+     "text": "may I use the copy *machine*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b53:may",
+     "out": "b54"
+    },
+    {
+     "t": "bar",
+     "id": "k1",
+     "x": 600,
+     "y": 860,
+     "w": 170,
+     "h": 300,
+     "color": "muted",
+     "label": "just asking",
+     "from": "draw",
+     "at": "b54:sixty",
+     "out": "b64"
+    },
+    {
+     "t": "text",
+     "id": "p1",
+     "text": "60%",
+     "x": 600,
+     "y": 510,
+     "size": 52,
+     "from": "bottom",
+     "at": "b54:sixty",
+     "out": "b64",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "about *60%* let them",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b54:about",
+     "out": "b55"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "add a *reason*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b55:reason",
+     "out": "b56"
+    },
+    {
+     "t": "bubble",
+     "id": "ru",
+     "text": "Because I'm in a rush.",
+     "x": 960,
+     "y": 420,
+     "size": 240,
+     "from": "pop",
+     "at": "b56:because",
+     "fontSize": 34,
+     "out": "b57"
+    },
+    {
+     "t": "bar",
+     "id": "k2",
+     "x": 960,
+     "y": 860,
+     "w": 170,
+     "h": 470,
+     "color": "accent",
+     "label": "in a rush",
+     "from": "draw",
+     "at": "b57:ninety-four",
+     "out": "b64"
+    },
+    {
+     "t": "text",
+     "id": "p2",
+     "text": "94%",
+     "x": 960,
+     "y": 340,
+     "size": 52,
+     "from": "bottom",
+     "at": "b57:ninety-four",
+     "out": "b64",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "*94%* said yes",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b57:about",
+     "out": "b58"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "now the *funny* part",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b58:funny",
+     "out": "b59"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "a reason that wasn't a *reason*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b59:reason",
+     "out": "b60"
+    },
+    {
+     "t": "bubble",
+     "id": "cq",
+     "text": "…because I have to make copies?",
+     "x": 1380,
+     "y": 420,
+     "size": 240,
+     "from": "pop",
+     "at": "b60:because",
+     "fontSize": 30,
+     "out": "b61"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "because I have to make *copies*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b60:because",
+     "out": "b61"
+    },
+    {
+     "t": "icon",
+     "id": "cp2",
+     "name": "copier",
+     "x": 1600,
+     "y": 600,
+     "size": 180,
+     "from": "pop",
+     "at": "b61:course",
+     "out": "b63"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "*of course* they had to make copies",
+     "x": 960,
+     "y": 170,
+     "size": 56,
+     "from": "top",
+     "at": "b61:course",
+     "out": "b62"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "*everyone* had to make copies",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b62:everyone",
+     "out": "b63"
+    },
+    {
+     "t": "bar",
+     "id": "k3",
+     "x": 1320,
+     "y": 860,
+     "w": 170,
+     "h": 465,
+     "color": "accent",
+     "label": "make copies",
+     "from": "draw",
+     "at": "b63:ninety-three",
+     "out": "b64"
+    },
+    {
+     "t": "text",
+     "id": "p3",
+     "text": "93%",
+     "x": 1320,
+     "y": 345,
+     "size": 52,
+     "from": "bottom",
+     "at": "b63:ninety-three",
+     "out": "b64",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "still *93%*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b63:still",
+     "out": "b64"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "because…",
+     "x": 960,
+     "y": 480,
+     "size": 130,
+     "from": "slam",
+     "at": "b64:because",
+     "out": "b65",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "ab",
+     "name": "brain",
+     "x": 760,
+     "y": 580,
+     "size": 260,
+     "from": "pop",
+     "at": "b65:brain",
+     "out": "b66"
+    },
+    {
+     "t": "icon",
+     "id": "ap",
+     "name": "plane",
+     "x": 1220,
+     "y": 560,
+     "size": 220,
+     "from": "pop",
+     "at": "b65:autopilot",
+     "out": "b66"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "yes on *autopilot*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b65:autopilot",
+     "out": "b66"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "it goes *further*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b66:further",
+     "out": "b67"
+    },
+    {
+     "t": "icon",
+     "id": "fs",
+     "name": "signpost",
+     "x": 960,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b66:autopilot",
+     "out": "b67"
+    },
+    {
+     "t": "icon",
+     "id": "bk0",
+     "name": "book",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b67:students",
+     "out": "b68"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "2014 · AN ODD REQUEST",
+     "text": "Write one word in a library book",
+     "sub": "Bohns et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b67:bohns",
+     "out": "b68"
+    },
+    {
+     "t": "icon",
+     "id": "bk",
+     "name": "book",
+     "x": 960,
+     "y": 600,
+     "size": 340,
+     "from": "pop",
+     "at": "b68:asked",
+     "out": "b70"
+    },
+    {
+     "t": "icon",
+     "id": "pn",
+     "name": "pen",
+     "x": 1160,
+     "y": 520,
+     "size": 150,
+     "from": "pop",
+     "at": "b68:pen",
+     "out": "b70"
+    },
+    {
+     "t": "text",
+     "id": "pk",
+     "text": "“pickle”",
+     "x": 960,
+     "y": 820,
+     "size": 64,
+     "from": "bottom",
+     "at": "b69:pickle",
+     "out": "b70",
+     "color": "accent",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "one word, in *pen*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b68:pen",
+     "out": "b69"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "the word: !pickle!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b69:pickle",
+     "out": "b70"
+    },
+    {
+     "t": "bar",
+     "id": "g1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 140,
+     "color": "muted",
+     "label": "guessed",
+     "from": "draw",
+     "at": "b70:twenty-eight",
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "q1",
+     "text": "28%",
+     "x": 760,
+     "y": 670,
+     "size": 52,
+     "from": "bottom",
+     "at": "b70:twenty-eight",
+     "out": "b72",
+     "weight": 600
+    },
+    {
+     "t": "bar",
+     "id": "g2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 320,
+     "color": "accent",
+     "label": "did it",
+     "from": "draw",
+     "at": "b71:sixty-four",
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "q2",
+     "text": "64%",
+     "x": 1160,
+     "y": 490,
+     "size": 52,
+     "from": "bottom",
+     "at": "b71:sixty-four",
+     "out": "b72",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "they guessed *28%*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b70:guessed",
+     "out": "b71"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "*64%* wrote pickle",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b71:sixty-four",
+     "out": "b72"
+    },
+    {
+     "t": "stick",
+     "id": "hz",
+     "x": 860,
+     "y": 690,
+     "from": "bottom",
+     "at": "b72:many",
+     "poses": [
+      [
+       "shrug",
+       "b72:hesitated"
+      ],
+      [
+       "sorry",
+       "b73:vandalism"
+      ],
+      [
+       "give",
+       "b74:did"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b72:hesitated"
+      ],
+      [
+       "tight",
+       "b73:vandalism"
+      ],
+      [
+       "neutral",
+       "b74:did"
+      ]
+     ],
+     "out": "b75"
+    },
+    {
+     "t": "icon",
+     "id": "hb",
+     "name": "book",
+     "x": 1180,
+     "y": 620,
+     "size": 200,
+     "from": "pop",
+     "at": "b74:did",
+     "out": "b75"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "many *hesitated*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b72:hesitated",
+     "out": "b73"
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "“*vandalism*”",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b73:vandalism",
+     "out": "b74"
+    },
+    {
+     "t": "text",
+     "id": "t23",
+     "text": "…and did it *anyway*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b74:did",
+     "out": "b75"
+    },
+    {
+     "t": "stick",
+     "id": "fa",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b75:because",
+     "poses": [
+      [
+       "point",
+       "b75:saying"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b75:saying"
+      ]
+     ],
+     "out": "b77"
+    },
+    {
+     "t": "stick",
+     "id": "fb",
+     "x": 1160,
+     "y": 690,
+     "from": "right",
+     "at": "b75:because",
+     "poses": [
+      [
+       "sorry",
+       "b75:awkward"
+      ],
+      [
+       "shrug",
+       "b76:worse"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b75:awkward"
+      ],
+      [
+       "frown",
+       "b76:worse"
+      ]
+     ],
+     "out": "b77",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t24",
+     "text": "no to someone's *face* is awkward",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b75:no",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "t25",
+     "text": "awkward feels worse than *wrong*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b76:awkward",
+     "out": "b77"
+    },
+    {
+     "t": "stick",
+     "id": "dc",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b77:think",
+     "poses": [
+      [
+       "idle",
+       "b77:think"
+      ],
+      [
+       "shrug",
+       "b78:decide"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b77:think"
+      ],
+      [
+       "o",
+       "b78:mouth"
+      ]
+     ]
+    },
+    {
+     "t": "bubble",
+     "id": "ys",
+     "text": "yes!",
+     "x": 1150,
+     "y": 400,
+     "size": 140,
+     "from": "pop",
+     "at": "b78:mouth",
+     "fontSize": 48
+    },
+    {
+     "t": "text",
+     "id": "t26",
+     "text": "the last time you said *yes*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b77:last",
+     "out": "b78"
+    },
+    {
+     "t": "text",
+     "id": "t27",
+     "text": "did *you* decide?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b78:you"
+    }
+   ]
+  },
+  {
+   "id": "future",
+   "beats": [
+    {
+     "id": "b79",
+     "say": "There's another trap, and it's hiding in your calendar."
+    },
+    {
+     "id": "b80",
+     "say": "In two thousand five, marketing researchers Gal Zauberman and John Lynch, studied how people think about future time."
+    },
+    {
+     "id": "b81",
+     "say": "They asked people how much spare time they'd have today."
+    },
+    {
+     "id": "b82",
+     "say": "And how much they'd have a month from now."
+    },
+    {
+     "id": "b83",
+     "say": "Most people expected to have more free time, in the future."
+    },
+    {
+     "id": "b84",
+     "say": "They were more optimistic about future time, than about future money."
+    },
+    {
+     "id": "b85",
+     "say": "But next month always arrives, just as busy as this one."
+    },
+    {
+     "id": "b86",
+     "say": "So a favor in five weeks, feels free."
+    },
+    {
+     "id": "b87",
+     "say": "It's a problem for future you."
+    },
+    {
+     "id": "b88",
+     "say": "Then future you shows up, and future you, is just you."
+    },
+    {
+     "id": "b89",
+     "say": "Same job."
+    },
+    {
+     "id": "b90",
+     "say": "Same tiredness."
+    },
+    {
+     "id": "b91",
+     "say": "Same Saturday you wanted to yourself."
+    },
+    {
+     "id": "b92",
+     "say": "It's been nicknamed, the \"Yes, damn\" effect."
+    },
+    {
+     "id": "b93",
+     "say": "You say yes."
+    },
+    {
+     "id": "b94",
+     "say": "Then the day comes, and you say damn."
+    },
+    {
+     "id": "b95",
+     "say": "How many things on your calendar right now, did past you agree to?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 960,
+     "y": 590,
+     "size": 300,
+     "from": "pop",
+     "at": "b79:trap",
+     "out": "b80"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "another *trap*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b79:trap",
+     "out": "b79:hiding"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "hiding in your *calendar*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b79:hiding",
+     "out": "b80"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2005 · FUTURE TIME",
+     "text": "How much spare time will you have?",
+     "sub": "Zauberman & Lynch",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b80:zauberman",
+     "out": "b81"
+    },
+    {
+     "t": "icon",
+     "id": "hg",
+     "name": "hourglass",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b80:future",
+     "out": "b81"
+    },
+    {
+     "t": "icon",
+     "id": "td",
+     "name": "grid",
+     "x": 640,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b81:spare",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "tdl",
+     "text": "today",
+     "x": 640,
+     "y": 790,
+     "size": 46,
+     "from": "bottom",
+     "at": "b81:spare",
+     "out": "b85",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "nm",
+     "name": "calendar",
+     "x": 1280,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b82:month",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "nml",
+     "text": "next month",
+     "x": 1280,
+     "y": 790,
+     "size": 46,
+     "from": "bottom",
+     "at": "b82:month",
+     "out": "b85",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "ns",
+     "name": "sun",
+     "x": 1420,
+     "y": 420,
+     "size": 110,
+     "from": "pop",
+     "at": "b83:free",
+     "out": "b85"
+    },
+    {
+     "t": "icon",
+     "id": "nmo",
+     "name": "money",
+     "x": 960,
+     "y": 430,
+     "size": 110,
+     "from": "pop",
+     "at": "b84:money",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "spare time *today*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b81:spare",
+     "out": "b82"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "…a month from *now*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b82:month",
+     "out": "b83"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "more free time in the *future*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b83:more",
+     "out": "b84"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "more optimistic about *time*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b84:optimistic",
+     "out": "b85"
+    },
+    {
+     "t": "icon",
+     "id": "nf",
+     "name": "grid",
+     "x": 960,
+     "y": 590,
+     "size": 300,
+     "from": "pop",
+     "at": "b85:busy",
+     "out": "b86"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "just as *busy*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b85:busy",
+     "out": "b86"
+    },
+    {
+     "t": "icon",
+     "id": "gf",
+     "name": "gift",
+     "x": 960,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b86:favor",
+     "out": "b88"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "a favor in five weeks feels *free*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b86:favor",
+     "out": "b87"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "a problem for *future* you",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b87:problem",
+     "out": "b88"
+    },
+    {
+     "t": "stick",
+     "id": "nw",
+     "x": 700,
+     "y": 690,
+     "from": "left",
+     "at": "b88:then",
+     "poses": [
+      [
+       "idle",
+       "b88:then"
+      ],
+      [
+       "shrug",
+       "b89:job"
+      ],
+      [
+       "headDown",
+       "b90:tiredness"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b88:then"
+      ],
+      [
+       "frown",
+       "b90:tiredness"
+      ]
+     ],
+     "out": "b92"
+    },
+    {
+     "t": "stick",
+     "id": "fu",
+     "x": 1220,
+     "y": 690,
+     "from": "right",
+     "at": "b88:shows",
+     "poses": [
+      [
+       "idle",
+       "b88:then"
+      ],
+      [
+       "shrug",
+       "b89:job"
+      ],
+      [
+       "headDown",
+       "b90:tiredness"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b88:then"
+      ],
+      [
+       "frown",
+       "b90:tiredness"
+      ]
+     ],
+     "out": "b92",
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "nwl",
+     "text": "you",
+     "x": 700,
+     "y": 290,
+     "size": 44,
+     "from": "bottom",
+     "at": "b88:then",
+     "out": "b92",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "ful",
+     "text": "future you",
+     "x": 1220,
+     "y": 290,
+     "size": 44,
+     "from": "bottom",
+     "at": "b88:shows",
+     "out": "b92",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "j1",
+     "name": "briefcase",
+     "x": 960,
+     "y": 470,
+     "size": 110,
+     "from": "pop",
+     "at": "b89:job",
+     "out": "b90"
+    },
+    {
+     "t": "icon",
+     "id": "j2",
+     "name": "moon",
+     "x": 960,
+     "y": 470,
+     "size": 110,
+     "from": "pop",
+     "at": "b90:tiredness",
+     "out": "b91"
+    },
+    {
+     "t": "icon",
+     "id": "j3",
+     "name": "calendar",
+     "x": 960,
+     "y": 470,
+     "size": 110,
+     "from": "pop",
+     "at": "b91:saturday",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "future you is just *you*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b88:just",
+     "out": "b89"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "same *job*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b89:job",
+     "out": "b90"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "same *tiredness*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b90:tiredness",
+     "out": "b91"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "same *Saturday*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b91:saturday",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "the “yes… *damn*” effect",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b92:yes",
+     "out": "b93"
+    },
+    {
+     "t": "stick",
+     "id": "yd",
+     "x": 860,
+     "y": 690,
+     "from": "bottom",
+     "at": "b92:nicknamed",
+     "poses": [
+      [
+       "happy",
+       "b93:yes"
+      ],
+      [
+       "holdHead",
+       "b94:damn"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b93:yes"
+      ],
+      [
+       "frown",
+       "b94:damn"
+      ]
+     ],
+     "out": "b95"
+    },
+    {
+     "t": "bubble",
+     "id": "yy",
+     "text": "yes!",
+     "x": 1060,
+     "y": 400,
+     "size": 140,
+     "from": "pop",
+     "at": "b93:yes",
+     "fontSize": 48,
+     "out": "b94"
+    },
+    {
+     "t": "icon",
+     "id": "yc",
+     "name": "calendar",
+     "x": 1200,
+     "y": 560,
+     "size": 160,
+     "from": "pop",
+     "at": "b94:day",
+     "out": "b95"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "you say *yes*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b93:yes",
+     "out": "b94"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "…you say !damn!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b94:damn",
+     "out": "b95"
+    },
+    {
+     "t": "icon",
+     "id": "pc",
+     "name": "calendar",
+     "x": 960,
+     "y": 590,
+     "size": 280,
+     "from": "pop",
+     "at": "b95:calendar"
+    },
+    {
+     "t": "icon",
+     "id": "pq",
+     "name": "question",
+     "x": 1220,
+     "y": 440,
+     "size": 120,
+     "from": "pop",
+     "at": "b95:past"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "how many did *past* you agree to?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b95:how"
+    }
+   ]
+  },
+  {
+   "id": "asked",
+   "beats": [
+    {
+     "id": "b96",
+     "say": "And here's something even less fair."
+    },
+    {
+     "id": "b97",
+     "say": "The people who say yes the most, get asked the most."
+    },
+    {
+     "id": "b98",
+     "say": "In twenty seventeen, economist Linda Babcock and her colleagues, studied tasks nobody wants."
+    },
+    {
+     "id": "b99",
+     "say": "The ones that need doing, but never get you promoted."
+    },
+    {
+     "id": "b100",
+     "say": "Taking notes."
+    },
+    {
+     "id": "b101",
+     "say": "Planning the office party."
+    },
+    {
+     "id": "b102",
+     "say": "Sitting on one more committee."
+    },
+    {
+     "id": "b103",
+     "say": "In their experiments, women volunteered for these tasks, more than men."
+    },
+    {
+     "id": "b104",
+     "say": "And when they were asked directly, women said yes, about seventy-six percent of the time."
+    },
+    {
+     "id": "b105",
+     "say": "Men said yes, about fifty-one percent of the time."
+    },
+    {
+     "id": "b106",
+     "say": "But it wasn't just about who volunteered."
+    },
+    {
+     "id": "b107",
+     "say": "Both men and women, were more likely to ask a woman."
+    },
+    {
+     "id": "b108",
+     "say": "People asked the person, they expected to say yes."
+    },
+    {
+     "id": "b109",
+     "say": "Think about your own workplace."
+    },
+    {
+     "id": "b110",
+     "say": "Your own family."
+    },
+    {
+     "id": "b111",
+     "say": "Your own group chat."
+    },
+    {
+     "id": "b112",
+     "say": "Who always gets asked, to organize, cover, or fix it?"
+    },
+    {
+     "id": "b113",
+     "say": "If it's you, it may not be because you're the best at it."
+    },
+    {
+     "id": "b114",
+     "say": "It may be because everyone knows, you won't say no."
+    },
+    {
+     "id": "b115",
+     "say": "That's the irony of being reliable."
+    },
+    {
+     "id": "b116",
+     "say": "The reward for helping, is more requests."
+    },
+    {
+     "id": "b117",
+     "say": "But it wasn't over yet."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "even less *fair*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b96:fair",
+     "out": "b97"
+    },
+    {
+     "t": "stick",
+     "id": "rl",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b96:here's",
+     "poses": [
+      [
+       "happy",
+       "b97:say"
+      ],
+      [
+       "strain",
+       "b97:asked"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b97:say"
+      ],
+      [
+       "o",
+       "b97:asked"
+      ]
+     ],
+     "out": "b98"
+    },
+    {
+     "t": "icon",
+     "id": "r1",
+     "name": "chat",
+     "x": 680,
+     "y": 420,
+     "size": 130,
+     "from": "pop",
+     "at": "b97:asked",
+     "out": "b98"
+    },
+    {
+     "t": "icon",
+     "id": "r2",
+     "name": "letter",
+     "x": 1240,
+     "y": 420,
+     "size": 130,
+     "from": "pop",
+     "at": "b97:most#2",
+     "out": "b98"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "who say yes the most, get asked the *most*",
+     "x": 960,
+     "y": 170,
+     "size": 56,
+     "from": "top",
+     "at": "b97:who",
+     "out": "b98"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2017 · TASKS NOBODY WANTS",
+     "text": "Work that never gets you promoted",
+     "sub": "Babcock et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b98:babcock",
+     "out": "b99"
+    },
+    {
+     "t": "icon",
+     "id": "cb",
+     "name": "briefcase",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b98:babcock",
+     "out": "b100"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "never get you *promoted*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b99:promoted",
+     "out": "b100"
+    },
+    {
+     "t": "icon",
+     "id": "n1",
+     "name": "clipboard",
+     "x": 560,
+     "y": 590,
+     "size": 220,
+     "from": "pop",
+     "at": "b100:notes",
+     "out": "b103"
+    },
+    {
+     "t": "icon",
+     "id": "n2",
+     "name": "partyhat",
+     "x": 960,
+     "y": 590,
+     "size": 220,
+     "from": "pop",
+     "at": "b101:party",
+     "out": "b103"
+    },
+    {
+     "t": "icon",
+     "id": "n3",
+     "name": "chair",
+     "x": 1360,
+     "y": 600,
+     "size": 220,
+     "from": "pop",
+     "at": "b102:committee",
+     "out": "b103"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "taking *notes*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b100:taking",
+     "out": "b101"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "the office *party*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b101:office",
+     "out": "b102"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "one more *committee*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b102:one",
+     "out": "b103"
+    },
+    {
+     "t": "stick",
+     "id": "wm",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b103:women",
+     "poses": [
+      [
+       "victory",
+       "b103:volunteered"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b103:volunteered"
+      ]
+     ],
+     "out": "b104",
+     "variant": "bow"
+    },
+    {
+     "t": "stick",
+     "id": "mn",
+     "x": 1160,
+     "y": 690,
+     "from": "right",
+     "at": "b103:women",
+     "poses": [
+      [
+       "idle",
+       "b103:women"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b103:women"
+      ]
+     ],
+     "out": "b104",
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "women volunteered *more*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b103:volunteered",
+     "out": "b104"
+    },
+    {
+     "t": "bar",
+     "id": "k1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 380,
+     "color": "accent",
+     "label": "women",
+     "from": "draw",
+     "at": "b104:seventy-six",
+     "out": "b107"
+    },
+    {
+     "t": "text",
+     "id": "p1",
+     "text": "76%",
+     "x": 760,
+     "y": 430,
+     "size": 52,
+     "from": "bottom",
+     "at": "b104:seventy-six",
+     "out": "b107",
+     "weight": 600
+    },
+    {
+     "t": "bar",
+     "id": "k2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 255,
+     "color": "muted",
+     "label": "men",
+     "from": "draw",
+     "at": "b105:fifty-one",
+     "out": "b107"
+    },
+    {
+     "t": "text",
+     "id": "p2",
+     "text": "51%",
+     "x": 1160,
+     "y": 555,
+     "size": 52,
+     "from": "bottom",
+     "at": "b105:fifty-one",
+     "out": "b107",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "asked directly: women *76%*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b104:asked",
+     "out": "b105"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "men: *51%*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b105:fifty-one",
+     "out": "b106"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "not just who *volunteered*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b106:volunteered",
+     "out": "b107"
+    },
+    {
+     "t": "stick",
+     "id": "x0",
+     "x": 480,
+     "y": 690,
+     "from": "left",
+     "at": "b107:both",
+     "poses": [
+      [
+       "idle",
+       "b107:both"
+      ],
+      [
+       "point",
+       "b107:ask"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b107:both"
+      ]
+     ],
+     "out": "b109",
+     "scale": 0.7
+    },
+    {
+     "t": "stick",
+     "id": "x1",
+     "x": 700,
+     "y": 690,
+     "from": "left",
+     "at": "b107:both",
+     "poses": [
+      [
+       "idle",
+       "b107:both"
+      ],
+      [
+       "point",
+       "b107:ask"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b107:both"
+      ]
+     ],
+     "out": "b109",
+     "scale": 0.7
+    },
+    {
+     "t": "stick",
+     "id": "x2",
+     "x": 920,
+     "y": 690,
+     "from": "left",
+     "at": "b107:both",
+     "poses": [
+      [
+       "idle",
+       "b107:both"
+      ],
+      [
+       "point",
+       "b107:ask"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b107:both"
+      ]
+     ],
+     "out": "b109",
+     "scale": 0.7
+    },
+    {
+     "t": "stick",
+     "id": "tg",
+     "x": 1360,
+     "y": 690,
+     "from": "right",
+     "at": "b107:both",
+     "poses": [
+      [
+       "idle",
+       "b107:both"
+      ],
+      [
+       "shrug",
+       "b108:yes"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b107:both"
+      ],
+      [
+       "o",
+       "b107:woman"
+      ]
+     ],
+     "out": "b109",
+     "scale": 0.7,
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "more likely to ask a *woman*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b107:likely",
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "who they expected to say *yes*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b108:expected",
+     "out": "b109"
+    },
+    {
+     "t": "icon",
+     "id": "w1",
+     "name": "laptop",
+     "x": 560,
+     "y": 590,
+     "size": 220,
+     "from": "pop",
+     "at": "b109:workplace",
+     "out": "b112"
+    },
+    {
+     "t": "icon",
+     "id": "w2",
+     "name": "house",
+     "x": 960,
+     "y": 590,
+     "size": 220,
+     "from": "pop",
+     "at": "b110:family",
+     "out": "b112"
+    },
+    {
+     "t": "icon",
+     "id": "w3",
+     "name": "chat",
+     "x": 1360,
+     "y": 590,
+     "size": 220,
+     "from": "pop",
+     "at": "b111:chat",
+     "out": "b112"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "your *workplace*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b109:workplace",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "your *family*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b110:family",
+     "out": "b111"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "your group *chat*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b111:group",
+     "out": "b112"
+    },
+    {
+     "t": "icon",
+     "id": "wq",
+     "name": "question",
+     "x": 960,
+     "y": 580,
+     "size": 240,
+     "from": "pop",
+     "at": "b112:who",
+     "out": "b113"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "who always gets *asked*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b112:who",
+     "out": "b113"
+    },
+    {
+     "t": "stick",
+     "id": "yo",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b113:if",
+     "poses": [
+      [
+       "shrug",
+       "b113:best"
+      ],
+      [
+       "headDown",
+       "b114:no"
+      ],
+      [
+       "strain",
+       "b115:reliable"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b113:if"
+      ],
+      [
+       "frown",
+       "b114:no"
+      ],
+      [
+       "o",
+       "b116:requests"
+      ]
+     ],
+     "out": "b117"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "not because you're the *best*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b113:not",
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "…because you won't say !no!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b114:because",
+     "out": "b115"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "the irony of being *reliable*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b115:irony",
+     "out": "b116"
+    },
+    {
+     "t": "icon",
+     "id": "s1",
+     "name": "box",
+     "x": 1220,
+     "y": 640,
+     "size": 130,
+     "from": "pop",
+     "at": "b116:reward",
+     "out": "b117"
+    },
+    {
+     "t": "icon",
+     "id": "s2",
+     "name": "box",
+     "x": 1220,
+     "y": 520,
+     "size": 120,
+     "from": "pop",
+     "at": "b116:helping",
+     "out": "b117"
+    },
+    {
+     "t": "icon",
+     "id": "s3",
+     "name": "box",
+     "x": 1220,
+     "y": 410,
+     "size": 110,
+     "from": "pop",
+     "at": "b116:requests",
+     "out": "b117"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "the reward: more !requests!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b116:reward",
+     "out": "b117"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "But it wasn't over yet.",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "slam",
+     "at": "b117:but",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "cost",
+   "beats": [
+    {
+     "id": "b118",
+     "say": "Because all those yeses add up."
+    },
+    {
+     "id": "b119",
+     "say": "In two thousand five, management researchers Mark Bolino and William Turnley, studied employees who regularly went above and beyond."
+    },
+    {
+     "id": "b120",
+     "say": "Staying late."
+    },
+    {
+     "id": "b121",
+     "say": "Taking on extra work."
+    },
+    {
+     "id": "b122",
+     "say": "Helping without being asked."
+    },
+    {
+     "id": "b123",
+     "say": "Going the extra mile was linked, to more overload, and more job stress."
+    },
+    {
+     "id": "b124",
+     "say": "And more conflict, between work and home."
+    },
+    {
+     "id": "b125",
+     "say": "Of course, helping isn't the problem."
+    },
+    {
+     "id": "b126",
+     "say": "Helping is one of the best things people do."
+    },
+    {
+     "id": "b127",
+     "say": "The problem is the yes, you didn't choose."
+    },
+    {
+     "id": "b128",
+     "say": "Every yes to something you don't want, is a no to something you do."
+    },
+    {
+     "id": "b129",
+     "say": "Your sleep."
+    },
+    {
+     "id": "b130",
+     "say": "Your family."
+    },
+    {
+     "id": "b131",
+     "say": "The project you keep pushing to next month."
+    },
+    {
+     "id": "b132",
+     "say": "So how do you actually say no?"
+    },
+    {
+     "id": "b133",
+     "say": "In twenty twelve, marketing professors Vanessa Patrick and Henrik Hagtvedt, tested two tiny phrases."
+    },
+    {
+     "id": "b134",
+     "say": "\"I can't,\" and \"I don't.\""
+    },
+    {
+     "id": "b135",
+     "say": "In one study, people practiced saying one of them."
+    },
+    {
+     "id": "b136",
+     "say": "Then, on their way out, they were offered a thank-you snack."
+    },
+    {
+     "id": "b137",
+     "say": "A chocolate bar, or a granola bar."
+    },
+    {
+     "id": "b138",
+     "say": "About sixty-four percent of the \"I don't\" group, picked the granola bar."
+    },
+    {
+     "id": "b139",
+     "say": "Only about thirty-nine percent of the \"I can't\" group did."
+    },
+    {
+     "id": "b140",
+     "say": "\"I can't\" sounds like a rule someone gave you."
+    },
+    {
+     "id": "b141",
+     "say": "So it invites a negotiation."
+    },
+    {
+     "id": "b142",
+     "say": "\"Can't you just this once?\""
+    },
+    {
+     "id": "b143",
+     "say": "\"I don't\" sounds like who you are."
+    },
+    {
+     "id": "b144",
+     "say": "In a second paper, the same researchers found that \"I don't\" refusals, persuaded other people too."
+    },
+    {
+     "id": "b145",
+     "say": "They signaled conviction."
+    },
+    {
+     "id": "b146",
+     "say": "People don't usually argue, with who you are."
+    },
+    {
+     "id": "b147",
+     "say": "So here's what you can do with all this."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "a1",
+     "name": "box",
+     "x": 760,
+     "y": 620,
+     "size": 150,
+     "from": "pop",
+     "at": "b118:yeses",
+     "out": "b119"
+    },
+    {
+     "t": "icon",
+     "id": "a2",
+     "name": "box",
+     "x": 960,
+     "y": 620,
+     "size": 150,
+     "from": "pop",
+     "at": "b118:add",
+     "out": "b119"
+    },
+    {
+     "t": "icon",
+     "id": "a3",
+     "name": "box",
+     "x": 1160,
+     "y": 620,
+     "size": 150,
+     "from": "pop",
+     "at": "b118:up",
+     "out": "b119"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "all those yeses add *up*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b118:all",
+     "out": "b119"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2005 · ABOVE AND BEYOND",
+     "text": "Going the extra mile at work",
+     "sub": "Bolino & Turnley",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b119:bolino",
+     "out": "b120"
+    },
+    {
+     "t": "icon",
+     "id": "cb",
+     "name": "briefcase",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b119:employees",
+     "out": "b120"
+    },
+    {
+     "t": "stick",
+     "id": "wk",
+     "x": 820,
+     "y": 690,
+     "from": "left",
+     "at": "b120:staying",
+     "poses": [
+      [
+       "give",
+       "b120:staying"
+      ],
+      [
+       "strain",
+       "b123:overload"
+      ],
+      [
+       "holdHead",
+       "b124:conflict"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b120:staying"
+      ],
+      [
+       "frown",
+       "b123:stress"
+      ]
+     ],
+     "out": "b125"
+    },
+    {
+     "t": "icon",
+     "id": "lp",
+     "name": "laptop",
+     "x": 1120,
+     "y": 600,
+     "size": 220,
+     "from": "pop",
+     "at": "b120:staying",
+     "out": "b125"
+    },
+    {
+     "t": "icon",
+     "id": "lm",
+     "name": "moon",
+     "x": 1460,
+     "y": 330,
+     "size": 110,
+     "from": "pop",
+     "at": "b120:late",
+     "out": "b123"
+    },
+    {
+     "t": "icon",
+     "id": "lb",
+     "name": "box",
+     "x": 1460,
+     "y": 560,
+     "size": 130,
+     "from": "pop",
+     "at": "b121:extra",
+     "out": "b123"
+    },
+    {
+     "t": "icon",
+     "id": "lh",
+     "name": "heart",
+     "x": 1460,
+     "y": 440,
+     "size": 100,
+     "from": "pop",
+     "at": "b122:helping",
+     "out": "b123",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "staying *late*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b120:staying",
+     "out": "b121"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "extra *work*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b121:extra",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "helping without being *asked*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b122:helping",
+     "out": "b123"
+    },
+    {
+     "t": "icon",
+     "id": "ls",
+     "name": "bolt",
+     "x": 1460,
+     "y": 420,
+     "size": 120,
+     "from": "pop",
+     "at": "b123:stress",
+     "out": "b125"
+    },
+    {
+     "t": "icon",
+     "id": "lho",
+     "name": "house",
+     "x": 1460,
+     "y": 620,
+     "size": 170,
+     "from": "pop",
+     "at": "b124:home",
+     "out": "b125"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "more overload · more *stress*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b123:overload",
+     "out": "b124"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "conflict between work and *home*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b124:conflict",
+     "out": "b125"
+    },
+    {
+     "t": "stick",
+     "id": "hp",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b125:course",
+     "poses": [
+      [
+       "happy",
+       "b125:course"
+      ],
+      [
+       "give",
+       "b126:best"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b125:course"
+      ]
+     ],
+     "out": "b127"
+    },
+    {
+     "t": "icon",
+     "id": "hh",
+     "name": "heart",
+     "x": 1200,
+     "y": 470,
+     "size": 110,
+     "from": "pop",
+     "at": "b126:best",
+     "out": "b127",
+     "color": "accent",
+     "pulse": 1.12,
+     "beat": 0.9
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "helping isn't the *problem*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b125:helping",
+     "out": "b126"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "one of the *best* things people do",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b126:best",
+     "out": "b127"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "the yes you didn't *choose*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b127:yes",
+     "out": "b128"
+    },
+    {
+     "t": "icon",
+     "id": "yc",
+     "name": "check",
+     "x": 960,
+     "y": 590,
+     "size": 220,
+     "from": "pop",
+     "at": "b127:yes",
+     "out": "b128"
+    },
+    {
+     "t": "icon",
+     "id": "ye",
+     "name": "check",
+     "x": 520,
+     "y": 590,
+     "size": 200,
+     "from": "pop",
+     "at": "b128:every",
+     "out": "b132"
+    },
+    {
+     "t": "text",
+     "id": "yel",
+     "text": "yes",
+     "x": 520,
+     "y": 790,
+     "size": 46,
+     "from": "bottom",
+     "at": "b128:every",
+     "out": "b132",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "x1",
+     "name": "moon",
+     "x": 960,
+     "y": 590,
+     "size": 170,
+     "from": "pop",
+     "at": "b129:sleep",
+     "out": "b132"
+    },
+    {
+     "t": "icon",
+     "id": "x2",
+     "name": "house",
+     "x": 1220,
+     "y": 590,
+     "size": 180,
+     "from": "pop",
+     "at": "b130:family",
+     "out": "b132"
+    },
+    {
+     "t": "icon",
+     "id": "x3",
+     "name": "notebook",
+     "x": 1480,
+     "y": 590,
+     "size": 180,
+     "from": "pop",
+     "at": "b131:project",
+     "out": "b132"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "every yes is a no to *something*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b128:every",
+     "out": "b129"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "your *sleep*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b129:sleep",
+     "out": "b130"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "your *family*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b130:family",
+     "out": "b131"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "the project you keep *pushing*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b131:project",
+     "out": "b132"
+    },
+    {
+     "t": "icon",
+     "id": "hq",
+     "name": "question",
+     "x": 960,
+     "y": 580,
+     "size": 240,
+     "from": "pop",
+     "at": "b132:how",
+     "out": "b133"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "so how do you say *no*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b132:how",
+     "out": "b133"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "2012 · TWO TINY PHRASES",
+     "text": "“I can't” vs “I don't”",
+     "sub": "Patrick & Hagtvedt",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b133:patrick",
+     "out": "b134"
+    },
+    {
+     "t": "icon",
+     "id": "cc",
+     "name": "chat",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b133:patrick",
+     "out": "b134"
+    },
+    {
+     "t": "bubble",
+     "id": "b1",
+     "text": "I can't.",
+     "x": 640,
+     "y": 500,
+     "size": 200,
+     "from": "pop",
+     "at": "b134:can't",
+     "fontSize": 52,
+     "out": "b137"
+    },
+    {
+     "t": "bubble",
+     "id": "b2",
+     "text": "I don't.",
+     "x": 1280,
+     "y": 500,
+     "size": 200,
+     "from": "pop",
+     "at": "b134:don't",
+     "fontSize": 52,
+     "out": "b137"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "“I *can't*” · “I *don't*”",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b134:can't",
+     "out": "b135"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "people *practiced* one",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b135:practiced",
+     "out": "b136"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "a thank-you *snack*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b136:snack",
+     "out": "b137"
+    },
+    {
+     "t": "icon",
+     "id": "ch",
+     "name": "choc",
+     "x": 760,
+     "y": 600,
+     "size": 230,
+     "from": "pop",
+     "at": "b137:chocolate",
+     "out": "b138"
+    },
+    {
+     "t": "icon",
+     "id": "gr",
+     "name": "granola",
+     "x": 1160,
+     "y": 600,
+     "size": 240,
+     "from": "pop",
+     "at": "b137:granola",
+     "out": "b138"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "chocolate or *granola*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b137:chocolate",
+     "out": "b138"
+    },
+    {
+     "t": "bar",
+     "id": "k1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 380,
+     "color": "accent",
+     "label": "I don't",
+     "from": "draw",
+     "at": "b138:sixty-four",
+     "out": "b140"
+    },
+    {
+     "t": "text",
+     "id": "p1",
+     "text": "64%",
+     "x": 760,
+     "y": 430,
+     "size": 52,
+     "from": "bottom",
+     "at": "b138:sixty-four",
+     "out": "b140",
+     "weight": 600
+    },
+    {
+     "t": "bar",
+     "id": "k2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 230,
+     "color": "muted",
+     "label": "I can't",
+     "from": "draw",
+     "at": "b139:thirty-nine",
+     "out": "b140"
+    },
+    {
+     "t": "text",
+     "id": "p2",
+     "text": "39%",
+     "x": 1160,
+     "y": 580,
+     "size": 52,
+     "from": "bottom",
+     "at": "b139:thirty-nine",
+     "out": "b140",
+     "weight": 600
+    },
+    {
+     "t": "icon",
+     "id": "gi",
+     "name": "granola",
+     "x": 1520,
+     "y": 520,
+     "size": 170,
+     "from": "pop",
+     "at": "b138:granola",
+     "out": "b140"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "*64%* of “I don't” picked granola",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b138:sixty-four",
+     "out": "b139"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "only *39%* of “I can't”",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b139:only",
+     "out": "b140"
+    },
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b140:can't",
+     "poses": [
+      [
+       "sorry",
+       "b140:rule"
+      ],
+      [
+       "shrug",
+       "b142:once"
+      ],
+      [
+       "proud",
+       "b143:don't"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b140:rule"
+      ],
+      [
+       "frown",
+       "b142:once"
+      ],
+      [
+       "smile",
+       "b143:are"
+      ]
+     ],
+     "out": "b147"
+    },
+    {
+     "t": "stick",
+     "id": "ot",
+     "x": 1160,
+     "y": 690,
+     "from": "right",
+     "at": "b140:can't",
+     "poses": [
+      [
+       "idle",
+       "b140:rule"
+      ],
+      [
+       "point",
+       "b142:can't"
+      ],
+      [
+       "idle",
+       "b143:are"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b140:rule"
+      ],
+      [
+       "neutral",
+       "b143:are"
+      ]
+     ],
+     "out": "b147",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "bubble",
+     "id": "ob",
+     "text": "Can't you just this once?",
+     "x": 1400,
+     "y": 400,
+     "size": 220,
+     "from": "pop",
+     "at": "b142:can't",
+     "fontSize": 30,
+     "out": "b144"
+    },
+    {
+     "t": "icon",
+     "id": "sh",
+     "name": "shield",
+     "x": 520,
+     "y": 430,
+     "size": 120,
+     "from": "pop",
+     "at": "b145:conviction",
+     "out": "b147"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "“I can't” = a *rule*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b140:rule",
+     "out": "b141"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "it invites a *negotiation*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b141:invites",
+     "out": "b142"
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "“I don't” = who you *are*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b143:don't",
+     "out": "b144"
+    },
+    {
+     "t": "text",
+     "id": "t23",
+     "text": "persuaded *other* people too",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b144:persuaded",
+     "out": "b145"
+    },
+    {
+     "t": "text",
+     "id": "t24",
+     "text": "!conviction!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b145:conviction",
+     "out": "b146"
+    },
+    {
+     "t": "text",
+     "id": "t25",
+     "text": "people don't argue with who you *are*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b146:people",
+     "out": "b147"
+    },
+    {
+     "t": "icon",
+     "id": "ck",
+     "name": "checklist",
+     "x": 960,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b147:here's"
+    },
+    {
+     "t": "text",
+     "id": "t26",
+     "text": "here's what you can *do*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b147:here's"
+    }
+   ]
+  },
+  {
+   "id": "rules",
+   "beats": [
+    {
+     "id": "b148",
+     "say": "Rule one: buy yourself time."
+    },
+    {
+     "id": "b149",
+     "say": "Your first answer doesn't have to be yes or no."
+    },
+    {
+     "id": "b150",
+     "say": "Try, \"Let me check, and get back to you.\""
+    },
+    {
+     "id": "b151",
+     "say": "That one sentence turns a reflex, into a decision."
+    },
+    {
+     "id": "b152",
+     "say": "Rule two: make it tomorrow."
+    },
+    {
+     "id": "b153",
+     "say": "Before you say yes to something next month, ask one question."
+    },
+    {
+     "id": "b154",
+     "say": "Would I say yes, if it were tomorrow?"
+    },
+    {
+     "id": "b155",
+     "say": "If the answer is no, the answer is no."
+    },
+    {
+     "id": "b156",
+     "say": "Rule three: say \"I don't,\" not \"I can't.\""
+    },
+    {
+     "id": "b157",
+     "say": "\"I don't take on new projects on weekends.\""
+    },
+    {
+     "id": "b158",
+     "say": "\"I don't lend money to friends.\""
+    },
+    {
+     "id": "b159",
+     "say": "It sounds like a value, not an excuse."
+    },
+    {
+     "id": "b160",
+     "say": "Rule four: keep it short and kind."
+    },
+    {
+     "id": "b161",
+     "say": "You don't need a three-paragraph excuse."
+    },
+    {
+     "id": "b162",
+     "say": "Long excuses invite people, to solve your problem for you."
+    },
+    {
+     "id": "b163",
+     "say": "\"Thank you for asking."
+    },
+    {
+     "id": "b164",
+     "say": "I'm going to pass this time.\""
+    },
+    {
+     "id": "b165",
+     "say": "That's enough."
+    },
+    {
+     "id": "b166",
+     "say": "And rule five: remember the other side."
+    },
+    {
+     "id": "b167",
+     "say": "When you hesitate, picture being the one who asked."
+    },
+    {
+     "id": "b168",
+     "say": "If a friend said no to you, would you stop being their friend?"
+    },
+    {
+     "id": "b169",
+     "say": "Probably not."
+    },
+    {
+     "id": "b170",
+     "say": "They won't either."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "rule 1: buy yourself *time*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b148:rule",
+     "out": "b149"
+    },
+    {
+     "t": "icon",
+     "id": "hg",
+     "name": "hourglass",
+     "x": 960,
+     "y": 580,
+     "size": 260,
+     "from": "pop",
+     "at": "b148:time",
+     "out": "b150"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "your first *answer*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b149:first",
+     "out": "b150"
+    },
+    {
+     "t": "bubble",
+     "id": "lm",
+     "text": "Let me check and get back to you.",
+     "x": 960,
+     "y": 500,
+     "size": 300,
+     "from": "pop",
+     "at": "b150:let",
+     "fontSize": 38,
+     "out": "b152"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "“let me *check*”",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b150:let",
+     "out": "b151"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "a reflex → a *decision*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b151:reflex",
+     "out": "b152"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "rule 2: make it *tomorrow*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b152:rule",
+     "out": "b153"
+    },
+    {
+     "t": "icon",
+     "id": "cl",
+     "name": "calendar",
+     "x": 960,
+     "y": 590,
+     "size": 280,
+     "from": "pop",
+     "at": "b152:tomorrow",
+     "out": "b156"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "next month? ask one *question*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b153:month",
+     "out": "b154"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "would I say yes *tomorrow*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b154:would",
+     "out": "b155"
+    },
+    {
+     "t": "icon",
+     "id": "nx",
+     "name": "cross",
+     "x": 1260,
+     "y": 450,
+     "size": 110,
+     "from": "pop",
+     "at": "b155:no#2",
+     "out": "b156"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "if no, the answer is !no!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b155:if",
+     "out": "b156"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "rule 3: “I *don't*,” not “I can't”",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b156:rule",
+     "out": "b157"
+    },
+    {
+     "t": "stick",
+     "id": "r3",
+     "x": 640,
+     "y": 690,
+     "from": "left",
+     "at": "b156:rule",
+     "poses": [
+      [
+       "proud",
+       "b156:don't"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b156:don't"
+      ]
+     ],
+     "out": "b160"
+    },
+    {
+     "t": "bubble",
+     "id": "d1",
+     "text": "I don't take on new projects on weekends.",
+     "x": 1100,
+     "y": 420,
+     "size": 260,
+     "from": "pop",
+     "at": "b157:take",
+     "fontSize": 32,
+     "out": "b158"
+    },
+    {
+     "t": "bubble",
+     "id": "d2",
+     "text": "I don't lend money to friends.",
+     "x": 1100,
+     "y": 420,
+     "size": 240,
+     "from": "pop",
+     "at": "b158:lend",
+     "fontSize": 34,
+     "out": "b160"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "a *value*, not an excuse",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b159:value",
+     "out": "b160"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "rule 4: short and *kind*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b160:rule",
+     "out": "b161"
+    },
+    {
+     "t": "icon",
+     "id": "pp",
+     "name": "paper",
+     "x": 960,
+     "y": 580,
+     "size": 300,
+     "from": "pop",
+     "at": "b160:short",
+     "out": "b163"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "no three-paragraph *excuse*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b161:three-paragraph",
+     "out": "b162"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "solve your problem *for* you",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b162:solve",
+     "out": "b163"
+    },
+    {
+     "t": "bubble",
+     "id": "ty",
+     "text": "Thank you for asking. I'm going to pass this time.",
+     "x": 960,
+     "y": 520,
+     "size": 320,
+     "from": "pop",
+     "at": "b163:thank",
+     "fontSize": 34,
+     "out": "b166"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "“thank you for *asking*”",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b163:thank",
+     "out": "b164"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "“I'm going to *pass*”",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b164:pass",
+     "out": "b165"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "that's !enough!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b165:enough",
+     "out": "b166"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "rule 5: the other *side*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b166:rule",
+     "out": "b167"
+    },
+    {
+     "t": "stick",
+     "id": "sa",
+     "x": 700,
+     "y": 690,
+     "from": "left",
+     "at": "b166:rule",
+     "poses": [
+      [
+       "point",
+       "b167:asked"
+      ],
+      [
+       "sorry",
+       "b168:no"
+      ],
+      [
+       "happy",
+       "b169:probably"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b166:rule"
+      ],
+      [
+       "neutral",
+       "b168:no"
+      ],
+      [
+       "smile",
+       "b169:probably"
+      ]
+     ],
+     "move": [
+      [
+       1220,
+       690,
+       "b167:picture",
+       1.2
+      ]
+     ]
+    },
+    {
+     "t": "stick",
+     "id": "sb",
+     "x": 1220,
+     "y": 690,
+     "from": "right",
+     "at": "b166:rule",
+     "poses": [
+      [
+       "idle",
+       "b167:asked"
+      ],
+      [
+       "shrug",
+       "b168:no"
+      ],
+      [
+       "happy",
+       "b169:probably"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b166:rule"
+      ],
+      [
+       "neutral",
+       "b168:no"
+      ],
+      [
+       "smile",
+       "b169:probably"
+      ]
+     ],
+     "flip": true,
+     "variant": "bow",
+     "move": [
+      [
+       700,
+       690,
+       "b167:picture",
+       1.2
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "picture being the one who *asked*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b167:picture",
+     "out": "b168"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "would you stop being their *friend*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b168:stop",
+     "out": "b169"
+    },
+    {
+     "t": "icon",
+     "id": "fh",
+     "name": "heart",
+     "x": 960,
+     "y": 440,
+     "size": 120,
+     "from": "pop",
+     "at": "b169:probably",
+     "color": "accent",
+     "pulse": 1.12,
+     "beat": 0.9
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "probably *not*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b169:probably",
+     "out": "b170"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "they won't *either*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b170:won't"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b171",
+     "say": "So here's the twist."
+    },
+    {
+     "id": "b172",
+     "say": "People who can't say no, aren't weak."
+    },
+    {
+     "id": "b173",
+     "say": "Very often, they're the kindest people in the room."
+    },
+    {
+     "id": "b174",
+     "say": "They notice what others need."
+    },
+    {
+     "id": "b175",
+     "say": "They hate letting anyone down."
+    },
+    {
+     "id": "b176",
+     "say": "That's a beautiful thing."
+    },
+    {
+     "id": "b177",
+     "say": "But a yes only means something, if a no was possible."
+    },
+    {
+     "id": "b178",
+     "say": "If you say yes to everything, your yes stops being a gift."
+    },
+    {
+     "id": "b179",
+     "say": "It becomes a reflex."
+    },
+    {
+     "id": "b180",
+     "say": "Saying no sometimes, is what makes your yes worth something."
+    },
+    {
+     "id": "b181",
+     "say": "The next time your phone buzzes, take a breath."
+    },
+    {
+     "id": "b182",
+     "say": "Ask yourself if it were tomorrow."
+    },
+    {
+     "id": "b183",
+     "say": "And if the honest answer is no, say it kindly, and let it go."
+    },
+    {
+     "id": "b184",
+     "say": "So here's your challenge for this week."
+    },
+    {
+     "id": "b185",
+     "say": "Say one small no."
+    },
+    {
+     "id": "b186",
+     "say": "Something easy."
+    },
+    {
+     "id": "b187",
+     "say": "Then notice what happens."
+    },
+    {
+     "id": "b188",
+     "say": "Come back and tell me if anyone even minded."
+    },
+    {
+     "id": "b189",
+     "say": "What's the hardest thing you've ever said yes to?"
+    },
+    {
+     "id": "b190",
+     "say": "Tell me in the comments."
+    },
+    {
+     "id": "b191",
+     "say": "Which habit should we cover next?"
+    },
+    {
+     "id": "b192",
+     "say": "Drop it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "here's the !twist!",
+     "x": 960,
+     "y": 170,
+     "size": 80,
+     "from": "top",
+     "at": "b171:twist",
+     "out": "b172"
+    },
+    {
+     "t": "stick",
+     "id": "kd",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b171:twist",
+     "poses": [
+      [
+       "idle",
+       "b172:people"
+      ],
+      [
+       "happy",
+       "b173:kindest"
+      ],
+      [
+       "give",
+       "b174:notice"
+      ],
+      [
+       "proud",
+       "b176:beautiful"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b172:people"
+      ],
+      [
+       "smile",
+       "b173:kindest"
+      ]
+     ],
+     "out": "b177"
+    },
+    {
+     "t": "icon",
+     "id": "kh",
+     "name": "heart",
+     "x": 960,
+     "y": 330,
+     "size": 100,
+     "from": "pop",
+     "at": "b173:kindest",
+     "out": "b177",
+     "color": "accent",
+     "pulse": 1.12,
+     "beat": 0.9
+    },
+    {
+     "t": "icon",
+     "id": "ke",
+     "name": "eye",
+     "x": 1300,
+     "y": 470,
+     "size": 130,
+     "from": "pop",
+     "at": "b174:notice",
+     "out": "b175"
+    },
+    {
+     "t": "icon",
+     "id": "kp",
+     "name": "people",
+     "x": 1320,
+     "y": 580,
+     "size": 200,
+     "from": "pop",
+     "at": "b175:letting",
+     "out": "b176"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "aren't *weak*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b172:weak",
+     "out": "b173"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "the *kindest* people in the room",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b173:kindest",
+     "out": "b174"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "they notice what others *need*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b174:notice",
+     "out": "b175"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "they hate letting anyone *down*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b175:hate",
+     "out": "b176"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "a beautiful *thing*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b176:beautiful",
+     "out": "b177"
+    },
+    {
+     "t": "icon",
+     "id": "gf",
+     "name": "gift",
+     "x": 960,
+     "y": 590,
+     "size": 280,
+     "from": "pop",
+     "at": "b177:yes",
+     "out": "b179"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "yes means something if no was *possible*",
+     "x": 960,
+     "y": 170,
+     "size": 56,
+     "from": "top",
+     "at": "b177:yes",
+     "out": "b178"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "your yes stops being a *gift*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b178:stops",
+     "out": "b179"
+    },
+    {
+     "t": "icon",
+     "id": "gb",
+     "name": "bolt",
+     "x": 960,
+     "y": 590,
+     "size": 240,
+     "from": "pop",
+     "at": "b179:reflex",
+     "out": "b180"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "it becomes a *reflex*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b179:becomes",
+     "out": "b180"
+    },
+    {
+     "t": "icon",
+     "id": "gf2",
+     "name": "gift",
+     "x": 960,
+     "y": 590,
+     "size": 280,
+     "from": "pop",
+     "at": "b180:worth",
+     "out": "b181"
+    },
+    {
+     "t": "icon",
+     "id": "gh",
+     "name": "heart",
+     "x": 1140,
+     "y": 440,
+     "size": 100,
+     "from": "pop",
+     "at": "b180:worth",
+     "out": "b181",
+     "color": "accent",
+     "pulse": 1.12,
+     "beat": 0.9
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "saying no makes your yes *worth* something",
+     "x": 960,
+     "y": 170,
+     "size": 56,
+     "from": "top",
+     "at": "b180:saying",
+     "out": "b181"
+    },
+    {
+     "t": "icon",
+     "id": "zcc",
+     "name": "couch",
+     "x": 960,
+     "y": 700,
+     "size": 520,
+     "from": "pop",
+     "at": "b181:next",
+     "out": "b184"
+    },
+    {
+     "t": "stick",
+     "id": "zme",
+     "x": 870,
+     "y": 705,
+     "from": "bottom",
+     "at": "b181:next",
+     "poses": [
+      [
+       "idle",
+       "b181:next"
+      ],
+      [
+       "give",
+       "b183:say"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b181:next"
+      ],
+      [
+       "smile",
+       "b183:kindly"
+      ]
+     ],
+     "out": "b184",
+     "scale": 0.7,
+     "sit": true
+    },
+    {
+     "t": "icon",
+     "id": "zp",
+     "name": "phone",
+     "x": 1090,
+     "y": 610,
+     "size": 90,
+     "from": "pop",
+     "at": "b181:phone",
+     "out": "b184",
+     "sway": 8,
+     "period": 0.25
+    },
+    {
+     "t": "bubble",
+     "id": "zb",
+     "text": "I'm going to pass this time.",
+     "x": 1460,
+     "y": 430,
+     "size": 240,
+     "from": "pop",
+     "at": "b183:kindly",
+     "fontSize": 34,
+     "out": "b184"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "your phone *buzzes*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b181:next",
+     "out": "b181:take"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "take a *breath*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b181:take",
+     "out": "b182"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "if it were *tomorrow*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b182:if",
+     "out": "b183"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "say it kindly, let it *go*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b183:say",
+     "out": "b184"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "your *challenge* this week",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b184:challenge",
+     "out": "b185"
+    },
+    {
+     "t": "icon",
+     "id": "nb",
+     "name": "notebook",
+     "x": 960,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b184:so",
+     "out": "b185"
+    },
+    {
+     "t": "stick",
+     "id": "cn",
+     "x": 800,
+     "y": 690,
+     "from": "left",
+     "at": "b185:say",
+     "poses": [
+      [
+       "proud",
+       "b185:no"
+      ],
+      [
+       "shrug",
+       "b188:minded"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b185:no"
+      ]
+     ],
+     "out": "b189"
+    },
+    {
+     "t": "bubble",
+     "id": "cb",
+     "text": "No, thanks.",
+     "x": 1090,
+     "y": 380,
+     "size": 170,
+     "from": "pop",
+     "at": "b185:no",
+     "fontSize": 34,
+     "out": "b189"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "say one small !no!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b185:say",
+     "out": "b186"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "something *easy*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b186:easy",
+     "out": "b187"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "notice what *happens*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b187:notice",
+     "out": "b188"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "did anyone even *mind*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b188:anyone",
+     "out": "b189"
+    },
+    {
+     "t": "icon",
+     "id": "eq",
+     "name": "question",
+     "x": 960,
+     "y": 570,
+     "size": 220,
+     "from": "pop",
+     "at": "b189:hardest",
+     "out": "b191:habit"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "the hardest thing you said *yes* to?",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b189:hardest",
+     "out": "b190"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "tell me in the *comments*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b190:tell",
+     "out": "b191:habit"
+    },
+    {
+     "t": "icon",
+     "id": "end",
+     "name": "heart",
+     "x": 960,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b191:habit",
+     "color": "accent",
+     "pulse": 1.08,
+     "beat": 1.2
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "which habit *next*?",
+     "x": 960,
+     "y": 170,
+     "size": 80,
+     "from": "top",
+     "at": "b191:habit",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 820,
+     "size": 44,
+     "from": "bottom",
+     "at": "b192:comments",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,304 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="cost" data-width="1920" data-height="1080">
+    <div id="cost-a1" class="clip el" data-start="0.98" data-duration="1.59" data-track-index="1" style="position:absolute;left:0px;top:160px;width:1520px;height:920px;z-index:2" data-layout-allow-overlap><div id="cost-a1-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 76 L170 76 L170 182 L30 182 Z"/><path class="s" pathLength="1" d="M30 76 L56 44 L144 44 L170 76"/><path class="s acc-s" pathLength="1" d="M80 76 L120 76 M100 76 L100 118"/></svg></div></div></div>
+    <div id="cost-a2" class="clip el" data-start="1.54" data-duration="1.03" data-track-index="2" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:3" data-layout-allow-overlap><div id="cost-a2-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 76 L170 76 L170 182 L30 182 Z"/><path class="s" pathLength="1" d="M30 76 L56 44 L144 44 L170 76"/><path class="s acc-s" pathLength="1" d="M80 76 L120 76 M100 76 L100 118"/></svg></div></div></div>
+    <div id="cost-a3" class="clip el" data-start="1.8" data-duration="0.89" data-track-index="3" style="position:absolute;left:400px;top:160px;width:1520px;height:920px;z-index:4" data-layout-allow-overlap><div id="cost-a3-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 76 L170 76 L170 182 L30 182 Z"/><path class="s" pathLength="1" d="M30 76 L56 44 L144 44 L170 76"/><path class="s acc-s" pathLength="1" d="M80 76 L120 76 M100 76 L100 118"/></svg></div></div></div>
+    <div id="cost-t0" class="clip el" data-start="0.28000000000000025" data-duration="2.34" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:5"><div id="cost-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t0-w0" class="w">all</span> <span id="cost-t0-w1" class="w">those</span> <span id="cost-t0-w2" class="w">yeses</span> <span id="cost-t0-w3" class="w">add</span> <span id="cost-t0-w4" class="w acc">up</span></div></div></div>
+    <div id="cost-c1" class="clip el" data-start="5.304" data-duration="5.72" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:6"><div id="cost-c1-in" class="in"><div class="card"><div class="card-k">2005 · ABOVE AND BEYOND</div><div class="card-t">Going the extra mile at work</div><div class="card-s">Bolino &amp; Turnley</div></div></div></div>
+    <div id="cost-cb" class="clip el" data-start="7.544" data-duration="3.43" data-track-index="6" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:7" data-layout-allow-overlap><div id="cost-cb-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 70 L176 70 L176 172 L24 172 Z"/><path class="s" pathLength="1" d="M74 70 L74 46 L126 46 L126 70"/><path class="s" pathLength="1" d="M24 112 L176 112"/></svg></div></div></div>
+    <div id="cost-wk" class="clip el" data-start="10.924" data-duration="11.806" data-track-index="7" style="position:absolute;left:0px;top:300px;width:1640px;height:780px;z-index:8"><div id="cost-wk-in" class="in"><svg class="stick" id="cost-wk-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="cost-wk-aLu"><path class="s" d="M150 160 L150 255"/><g id="cost-wk-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="cost-wk-aRu"><path class="s" d="M150 160 L150 255"/><g id="cost-wk-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="cost-wk-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="cost-wk-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="cost-wk-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="cost-wk-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="cost-wk-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="cost-wk-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="cost-lp" class="clip el" data-start="10.924" data-duration="11.756" data-track-index="8" style="position:absolute;left:320px;top:120px;width:1600px;height:960px;z-index:9" data-layout-allow-overlap><div id="cost-lp-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 40 L164 40 Q172 40 172 48 L172 136 L28 136 L28 48 Q28 40 36 40 Z"/><path class="s acc-s" pathLength="1" d="M46 58 L154 58 L154 120 L46 120 Z"/><path class="s" pathLength="1" d="M8 146 L192 146 Q192 162 176 162 L24 162 Q8 162 8 146 Z"/></svg></div></div></div>
+    <div id="cost-lm" class="clip el" data-start="11.124" data-duration="4.056" data-track-index="9" style="position:absolute;left:1000px;top:0px;width:920px;height:660px;z-index:10" data-layout-allow-overlap><div id="cost-lm-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M128 26 A78 78 0 1 0 174 142 A62 62 0 1 1 128 26 Z"/><path class="s acc-s" pathLength="1" d="M150 50 L150 66 M142 58 L158 58"/></svg></div></div></div>
+    <div id="cost-lb" class="clip el" data-start="12.304" data-duration="2.876" data-track-index="10" style="position:absolute;left:1000px;top:40px;width:920px;height:1040px;z-index:11" data-layout-allow-overlap><div id="cost-lb-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 76 L170 76 L170 182 L30 182 Z"/><path class="s" pathLength="1" d="M30 76 L56 44 L144 44 L170 76"/><path class="s acc-s" pathLength="1" d="M80 76 L120 76 M100 76 L100 118"/></svg></div></div></div>
+    <div id="cost-lh" class="clip el" data-start="13.324" data-duration="1.856" data-track-index="11" style="position:absolute;left:1000px;top:0px;width:920px;height:880px;z-index:12" data-layout-allow-overlap><div id="cost-lh-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="cost-t1" class="clip el" data-start="10.924" data-duration="1.1" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:13"><div id="cost-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t1-w0" class="w">staying</span> <span id="cost-t1-w1" class="w acc">late</span></div></div></div>
+    <div id="cost-t2" class="clip el" data-start="11.984" data-duration="1.44" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:14"><div id="cost-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t2-w0" class="w">extra</span> <span id="cost-t2-w1" class="w acc">work</span></div></div></div>
+    <div id="cost-t3" class="clip el" data-start="13.324" data-duration="1.906" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="cost-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t3-w0" class="w">helping</span> <span id="cost-t3-w1" class="w">without</span> <span id="cost-t3-w2" class="w">being</span> <span id="cost-t3-w3" class="w acc">asked</span></div></div></div>
+    <div id="cost-ls" class="clip el" data-start="18.79" data-duration="3.89" data-track-index="15" style="position:absolute;left:1000px;top:0px;width:920px;height:840px;z-index:16" data-layout-allow-overlap><div id="cost-ls-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M118 14 L52 112 L100 112 L82 186 L150 82 L102 82 Z"/></svg></div></div></div>
+    <div id="cost-lho" class="clip el" data-start="21.79" data-duration="0.89" data-track-index="16" style="position:absolute;left:1000px;top:160px;width:920px;height:920px;z-index:17" data-layout-allow-overlap><div id="cost-lho-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 96 L100 30 L176 96 M44 80 L44 178 L156 178 L156 80"/></svg></div></div></div>
+    <div id="cost-t4" class="clip el" data-start="16.87" data-duration="2.34" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:18"><div id="cost-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t4-w0" class="w">more</span> <span id="cost-t4-w1" class="w">overload</span> <span id="cost-t4-w2" class="w">·</span> <span id="cost-t4-w3" class="w">more</span> <span id="cost-t4-w4" class="w acc">stress</span></div></div></div>
+    <div id="cost-t5" class="clip el" data-start="20.23" data-duration="2.5" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:19"><div id="cost-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t5-w0" class="w">conflict</span> <span id="cost-t5-w1" class="w">between</span> <span id="cost-t5-w2" class="w">work</span> <span id="cost-t5-w3" class="w">and</span> <span id="cost-t5-w4" class="w acc">home</span></div></div></div>
+    <div id="cost-hp" class="clip el" data-start="22.73" data-duration="5.095" data-track-index="19" style="position:absolute;left:0px;top:300px;width:1920px;height:780px;z-index:20"><div id="cost-hp-in" class="in"><svg class="stick" id="cost-hp-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="cost-hp-aLu"><path class="s" d="M150 160 L150 255"/><g id="cost-hp-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="cost-hp-aRu"><path class="s" d="M150 160 L150 255"/><g id="cost-hp-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="cost-hp-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="cost-hp-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="cost-hp-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="cost-hp-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="cost-hp-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="cost-hp-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="cost-hh" class="clip el" data-start="26.085" data-duration="1.69" data-track-index="20" style="position:absolute;left:480px;top:0px;width:1440px;height:940px;z-index:21" data-layout-allow-overlap><div id="cost-hh-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="cost-t6" class="clip el" data-start="23.070000000000004" data-duration="2.04" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:22"><div id="cost-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t6-w0" class="w">helping</span> <span id="cost-t6-w1" class="w">isn't</span> <span id="cost-t6-w2" class="w">the</span> <span id="cost-t6-w3" class="w acc">problem</span></div></div></div>
+    <div id="cost-t7" class="clip el" data-start="25.01" data-duration="2.815" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:23"><div id="cost-t7-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="cost-t7-w0" class="w">one</span> <span id="cost-t7-w1" class="w">of</span> <span id="cost-t7-w2" class="w">the</span> <span id="cost-t7-w3" class="w acc">best</span> <span id="cost-t7-w4" class="w">things</span> <span id="cost-t7-w5" class="w">people</span> <span id="cost-t7-w6" class="w">do</span></div></div></div>
+    <div id="cost-t8" class="clip el" data-start="28.445" data-duration="2.34" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:24"><div id="cost-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t8-w0" class="w">the</span> <span id="cost-t8-w1" class="w">yes</span> <span id="cost-t8-w2" class="w">you</span> <span id="cost-t8-w3" class="w">didn't</span> <span id="cost-t8-w4" class="w acc">choose</span></div></div></div>
+    <div id="cost-yc" class="clip el" data-start="28.825" data-duration="1.91" data-track-index="24" style="position:absolute;left:0px;top:100px;width:1920px;height:980px;z-index:25" data-layout-allow-overlap><div id="cost-yc-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M30 104 L80 154 L172 50"/></svg></div></div></div>
+    <div id="cost-ye" class="clip el" data-start="30.685" data-duration="8.743" data-track-index="25" style="position:absolute;left:0px;top:100px;width:1040px;height:980px;z-index:26" data-layout-allow-overlap><div id="cost-ye-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M30 104 L80 154 L172 50"/></svg></div></div></div>
+    <div id="cost-yel" class="clip el" data-start="30.685" data-duration="8.793" data-track-index="26" style="position:absolute;left:0px;top:500px;width:1040px;height:580px;z-index:27"><div id="cost-yel-in" class="in"><div class="txt" style="font-size:46px;font-weight:800;color:var(--muted)"><span id="cost-yel-w0" class="w">yes</span></div></div></div>
+    <div id="cost-x1" class="clip el" data-start="35.065" data-duration="4.363" data-track-index="27" style="position:absolute;left:0px;top:100px;width:1920px;height:980px;z-index:28" data-layout-allow-overlap><div id="cost-x1-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M128 26 A78 78 0 1 0 174 142 A62 62 0 1 1 128 26 Z"/><path class="s acc-s" pathLength="1" d="M150 50 L150 66 M142 58 L158 58"/></svg></div></div></div>
+    <div id="cost-x2" class="clip el" data-start="36.005" data-duration="3.423" data-track-index="28" style="position:absolute;left:520px;top:100px;width:1400px;height:980px;z-index:29" data-layout-allow-overlap><div id="cost-x2-in" class="in"><div class="ico" style="width:180px;height:180px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 96 L100 30 L176 96 M44 80 L44 178 L156 178 L156 80"/></svg></div></div></div>
+    <div id="cost-x3" class="clip el" data-start="36.938" data-duration="2.49" data-track-index="29" style="position:absolute;left:1040px;top:100px;width:880px;height:980px;z-index:30" data-layout-allow-overlap><div id="cost-x3-in" class="in"><div class="ico" style="width:180px;height:180px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 20 L156 20 L156 184 L44 184 Z"/><path class="s" pathLength="1" d="M44 20 L44 184 M60 20 L60 184"/><path class="s acc-s" pathLength="1" d="M76 60 L140 60 M76 90 L140 90 M76 120 L124 120"/></svg></div></div></div>
+    <div id="cost-t9" class="clip el" data-start="30.685" data-duration="3.88" data-track-index="30" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:31"><div id="cost-t9-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="cost-t9-w0" class="w">every</span> <span id="cost-t9-w1" class="w">yes</span> <span id="cost-t9-w2" class="w">is</span> <span id="cost-t9-w3" class="w">a</span> <span id="cost-t9-w4" class="w">no</span> <span id="cost-t9-w5" class="w">to</span> <span id="cost-t9-w6" class="w acc">something</span></div></div></div>
+    <div id="cost-t10" class="clip el" data-start="34.465" data-duration="1.02" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:32"><div id="cost-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t10-w0" class="w">your</span> <span id="cost-t10-w1" class="w acc">sleep</span></div></div></div>
+    <div id="cost-t11" class="clip el" data-start="35.477999999999994" data-duration="1.44" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:33"><div id="cost-t11-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t11-w0" class="w">your</span> <span id="cost-t11-w1" class="w acc">family</span></div></div></div>
+    <div id="cost-t12" class="clip el" data-start="36.938" data-duration="2.54" data-track-index="33" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:34"><div id="cost-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t12-w0" class="w">the</span> <span id="cost-t12-w1" class="w">project</span> <span id="cost-t12-w2" class="w">you</span> <span id="cost-t12-w3" class="w">keep</span> <span id="cost-t12-w4" class="w acc">pushing</span></div></div></div>
+    <div id="cost-hq" class="clip el" data-start="39.598" data-duration="2.47" data-track-index="34" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:35" data-layout-allow-overlap><div id="cost-hq-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="cost-t13" class="clip el" data-start="39.478" data-duration="2.64" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:36"><div id="cost-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t13-w0" class="w">so</span> <span id="cost-t13-w1" class="w">how</span> <span id="cost-t13-w2" class="w">do</span> <span id="cost-t13-w3" class="w">you</span> <span id="cost-t13-w4" class="w">say</span> <span id="cost-t13-w5" class="w acc">no<span class="tail">?</span></span></div></div></div>
+    <div id="cost-c2" class="clip el" data-start="44.378" data-duration="4.352" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:37"><div id="cost-c2-in" class="in"><div class="card"><div class="card-k">2012 · TWO TINY PHRASES</div><div class="card-t">“I can't” vs “I don't”</div><div class="card-s">Patrick &amp; Hagtvedt</div></div></div></div>
+    <div id="cost-cc" class="clip el" data-start="44.378" data-duration="4.302" data-track-index="37" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:38" data-layout-allow-overlap><div id="cost-cc-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 30 L120 30 Q134 30 134 44 L134 96 Q134 110 120 110 L60 110 L36 132 L40 110 L34 110 Q20 110 20 96 L20 44 Q20 30 34 30 Z"/><path class="s acc-s" pathLength="1" d="M80 128 L80 120 Q80 106 94 106 L166 106 Q180 106 180 120 L180 160 Q180 174 166 174 L160 174 L164 194 L140 174 L94 174 Q80 174 80 160 Z"/></svg></div></div></div>
+    <div id="cost-b1" class="clip el" data-start="48.69" data-duration="8.627" data-track-index="38" style="position:absolute;left:0px;top:0px;width:1280px;height:1000px;z-index:39" data-layout-allow-overlap><div id="cost-b1-in" class="in"><div class="ico bub" style="width:280px;height:200px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:52px">I can't.</div></div></div></div>
+    <div id="cost-b2" class="clip el" data-start="50.25" data-duration="7.067" data-track-index="39" style="position:absolute;left:640px;top:0px;width:1280px;height:1000px;z-index:40" data-layout-allow-overlap><div id="cost-b2-in" class="in"><div class="ico bub" style="width:280px;height:200px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:52px">I don't.</div></div></div></div>
+    <div id="cost-t14" class="clip el" data-start="48.69" data-duration="2.38" data-track-index="40" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:41"><div id="cost-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t14-w0" class="w">“I</span> <span id="cost-t14-w1" class="w acc">can't<span class="tail">”</span></span> <span id="cost-t14-w2" class="w">·</span> <span id="cost-t14-w3" class="w">“I</span> <span id="cost-t14-w4" class="w acc">don't<span class="tail">”</span></span></div></div></div>
+    <div id="cost-t15" class="clip el" data-start="52.29" data-duration="1.82" data-track-index="41" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:42"><div id="cost-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t15-w0" class="w">people</span> <span id="cost-t15-w1" class="w acc">practiced</span> <span id="cost-t15-w2" class="w">one</span></div></div></div>
+    <div id="cost-t16" class="clip el" data-start="55.627" data-duration="1.74" data-track-index="42" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:43"><div id="cost-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t16-w0" class="w">a</span> <span id="cost-t16-w1" class="w">thank-you</span> <span id="cost-t16-w2" class="w acc">snack</span></div></div></div>
+    <div id="cost-ch" class="clip el" data-start="57.427" data-duration="2.15" data-track-index="43" style="position:absolute;left:0px;top:120px;width:1520px;height:960px;z-index:44" data-layout-allow-overlap><div id="cost-ch-in" class="in"><div class="ico" style="width:230px;height:230px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="f" d="M44 44 L156 44 L156 168 L44 168 Z"/><path class="s" style="stroke:var(--paper);stroke-width:6" d="M50 85 L150 85 M50 126 L150 126 M100 50 L100 162"/></svg></div></div></div>
+    <div id="cost-gr" class="clip el" data-start="58.587" data-duration="0.99" data-track-index="44" style="position:absolute;left:400px;top:120px;width:1520px;height:960px;z-index:45" data-layout-allow-overlap><div id="cost-gr-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M38 70 L162 70 Q176 70 176 84 L176 116 Q176 130 162 130 L38 130 Q24 130 24 116 L24 84 Q24 70 38 70 Z"/><path class="s acc-s" pathLength="1" d="M58 92 L66 98 M88 110 L98 104 M118 90 L126 98 M146 110 L154 102 M72 116 L80 112 M132 118 L140 114"/></svg></div></div></div>
+    <div id="cost-t17" class="clip el" data-start="57.427" data-duration="2.2" data-track-index="45" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:46"><div id="cost-t17-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t17-w0" class="w">chocolate</span> <span id="cost-t17-w1" class="w">or</span> <span id="cost-t17-w2" class="w acc">granola<span class="tail">?</span></span></div></div></div>
+    <div id="cost-k1" class="clip el" data-start="59.707" data-duration="7.712" data-track-index="46" style="position:absolute;left:0px;top:640px;width:1520px;height:440px;z-index:47"><div id="cost-k1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:380px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">I don't</div></div></div></div>
+    <div id="cost-p1" class="clip el" data-start="59.707" data-duration="7.762" data-track-index="47" style="position:absolute;left:0px;top:0px;width:1520px;height:860px;z-index:48"><div id="cost-p1-in" class="in"><div class="txt" style="font-size:52px;font-weight:600;color:var(--ink)"><span id="cost-p1-w0" class="w">64%</span></div></div></div>
+    <div id="cost-k2" class="clip el" data-start="64.327" data-duration="3.092" data-track-index="48" style="position:absolute;left:400px;top:640px;width:1520px;height:440px;z-index:49"><div id="cost-k2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:230px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">I can't</div></div></div></div>
+    <div id="cost-p2" class="clip el" data-start="64.327" data-duration="3.142" data-track-index="49" style="position:absolute;left:400px;top:80px;width:1520px;height:1000px;z-index:50"><div id="cost-p2-in" class="in"><div class="txt" style="font-size:52px;font-weight:600;color:var(--ink)"><span id="cost-p2-w0" class="w">39%</span></div></div></div>
+    <div id="cost-gi" class="clip el" data-start="62.807" data-duration="4.612" data-track-index="50" style="position:absolute;left:1120px;top:0px;width:800px;height:1040px;z-index:51" data-layout-allow-overlap><div id="cost-gi-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M38 70 L162 70 Q176 70 176 84 L176 116 Q176 130 162 130 L38 130 Q24 130 24 116 L24 84 Q24 70 38 70 Z"/><path class="s acc-s" pathLength="1" d="M58 92 L66 98 M88 110 L98 104 M118 90 L126 98 M146 110 L154 102 M72 116 L80 112 M132 118 L140 114"/></svg></div></div></div>
+    <div id="cost-t18" class="clip el" data-start="59.707" data-duration="4.22" data-track-index="51" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:52"><div id="cost-t18-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="cost-t18-w0" class="w acc">64%</span> <span id="cost-t18-w1" class="w">of</span> <span id="cost-t18-w2" class="w">“I</span> <span id="cost-t18-w3" class="w">don't”</span> <span id="cost-t18-w4" class="w">picked</span> <span id="cost-t18-w5" class="w">granola</span></div></div></div>
+    <div id="cost-t19" class="clip el" data-start="63.827" data-duration="3.642" data-track-index="52" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:53"><div id="cost-t19-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t19-w0" class="w">only</span> <span id="cost-t19-w1" class="w acc">39%</span> <span id="cost-t19-w2" class="w">of</span> <span id="cost-t19-w3" class="w">“I</span> <span id="cost-t19-w4" class="w">can't”</span></div></div></div>
+    <div id="cost-me" class="clip el" data-start="67.569" data-duration="19.998" data-track-index="53" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:54"><div id="cost-me-in" class="in"><svg class="stick" id="cost-me-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="cost-me-aLu"><path class="s" d="M150 160 L150 255"/><g id="cost-me-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="cost-me-aRu"><path class="s" d="M150 160 L150 255"/><g id="cost-me-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="cost-me-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="cost-me-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="cost-me-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="cost-me-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="cost-me-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="cost-me-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="cost-ot" class="clip el" data-start="67.569" data-duration="19.998" data-track-index="54" style="position:absolute;left:400px;top:300px;width:1520px;height:780px;z-index:55"><div id="cost-ot-in" class="in"><svg class="stick" id="cost-ot-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="cost-ot-aLu"><path class="s" d="M150 160 L150 255"/><g id="cost-ot-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="cost-ot-aRu"><path class="s" d="M150 160 L150 255"/><g id="cost-ot-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="cost-ot-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="cost-ot-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="cost-ot-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="cost-ot-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="cost-ot-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="cost-ot-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="cost-ob" class="clip el" data-start="72.669" data-duration="4.45" data-track-index="55" style="position:absolute;left:880px;top:0px;width:1040px;height:800px;z-index:56" data-layout-allow-overlap><div id="cost-ob-in" class="in"><div class="ico bub" style="width:308px;height:220px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:30px">Can't you just this once?</div></div></div></div>
+    <div id="cost-sh" class="clip el" data-start="83.707" data-duration="3.81" data-track-index="56" style="position:absolute;left:0px;top:0px;width:1040px;height:860px;z-index:57" data-layout-allow-overlap><div id="cost-sh-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M100 18 L168 44 Q170 124 100 184 Q30 124 32 44 Z"/><path class="s acc-s" pathLength="1" d="M70 100 L92 122 L134 78"/></svg></div></div></div>
+    <div id="cost-t20" class="clip el" data-start="68.289" data-duration="2.34" data-track-index="57" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:58"><div id="cost-t20-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t20-w0" class="w">“I</span> <span id="cost-t20-w1" class="w">can't”</span> <span id="cost-t20-w2" class="w">=</span> <span id="cost-t20-w3" class="w">a</span> <span id="cost-t20-w4" class="w acc">rule</span></div></div></div>
+    <div id="cost-t21" class="clip el" data-start="70.729" data-duration="2.04" data-track-index="58" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:59"><div id="cost-t21-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t21-w0" class="w">it</span> <span id="cost-t21-w1" class="w">invites</span> <span id="cost-t21-w2" class="w">a</span> <span id="cost-t21-w3" class="w acc">negotiation</span></div></div></div>
+    <div id="cost-t22" class="clip el" data-start="74.469" data-duration="2.7" data-track-index="59" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:60"><div id="cost-t22-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t22-w0" class="w">“I</span> <span id="cost-t22-w1" class="w">don't”</span> <span id="cost-t22-w2" class="w">=</span> <span id="cost-t22-w3" class="w">who</span> <span id="cost-t22-w4" class="w">you</span> <span id="cost-t22-w5" class="w acc">are</span></div></div></div>
+    <div id="cost-t23" class="clip el" data-start="80.807" data-duration="2.38" data-track-index="60" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:61"><div id="cost-t23-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t23-w0" class="w">persuaded</span> <span id="cost-t23-w1" class="w acc">other</span> <span id="cost-t23-w2" class="w">people</span> <span id="cost-t23-w3" class="w">too</span></div></div></div>
+    <div id="cost-t24" class="clip el" data-start="83.707" data-duration="1.16" data-track-index="61" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:62"><div id="cost-t24-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t24-w0" class="w alm">conviction</span></div></div></div>
+    <div id="cost-t25" class="clip el" data-start="84.767" data-duration="2.8" data-track-index="62" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:63"><div id="cost-t25-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="cost-t25-w0" class="w">people</span> <span id="cost-t25-w1" class="w">don't</span> <span id="cost-t25-w2" class="w">argue</span> <span id="cost-t25-w3" class="w">with</span> <span id="cost-t25-w4" class="w">who</span> <span id="cost-t25-w5" class="w">you</span> <span id="cost-t25-w6" class="w acc">are</span></div></div></div>
+    <div id="cost-ck" class="clip el" data-start="87.945" data-duration="1.74" data-track-index="63" style="position:absolute;left:0px;top:100px;width:1920px;height:980px;z-index:64" data-layout-allow-overlap><div id="cost-ck-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 20 L164 20 Q176 20 176 32 L176 176 Q176 186 164 186 L36 186 Q24 186 24 176 L24 32 Q24 20 36 20 Z"/><path class="s acc-s" pathLength="1" d="M48 66 L60 78 L82 54"/><path class="s" pathLength="1" d="M100 66 L150 66"/><path class="s acc-s" pathLength="1" d="M48 112 L60 124 L82 100"/><path class="s" pathLength="1" d="M100 112 L150 112"/><path class="s acc-s" pathLength="1" d="M48 158 L60 170 L82 146"/><path class="s" pathLength="1" d="M100 158 L150 158"/></svg></div></div></div>
+    <div id="cost-t26" class="clip el" data-start="87.467" data-duration="2.293" data-track-index="64" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:65"><div id="cost-t26-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="cost-t26-w0" class="w">here's</span> <span id="cost-t26-w1" class="w">what</span> <span id="cost-t26-w2" class="w">you</span> <span id="cost-t26-w3" class="w">can</span> <span id="cost-t26-w4" class="w acc">do</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"cost-a1","t":"icon","from":"pop","exit":null,"in":0.98,"out":2.2800000000000002,"outDur":0.25},{"id":"cost-a2","t":"icon","from":"pop","exit":null,"in":1.54,"out":2.2800000000000002,"outDur":0.25},{"id":"cost-a3","t":"icon","from":"pop","exit":null,"in":1.8,"out":2.4,"outDur":0.25},{"id":"cost-t0","t":"text","from":"top","exit":null,"in":0.28000000000000025,"out":2.2800000000000002,"outDur":0.3,"words":[0.38,0.7,0.98,1.54,1.8]},{"id":"cost-c1","t":"card","from":"top","exit":null,"in":5.304,"out":10.684,"outDur":0.3},{"id":"cost-cb","t":"icon","from":"pop","exit":null,"in":7.544,"out":10.684,"outDur":0.25},{"id":"cost-wk","t":"stick","from":"left","exit":null,"in":10.924,"out":22.39,"outDur":0.3,"poses":[["give",10.924],["strain",17.33],["holdHead",20.23]],"mouth":[["neutral",10.924],["frown",18.79]]},{"id":"cost-lp","t":"icon","from":"pop","exit":null,"in":10.924,"out":22.39,"outDur":0.25},{"id":"cost-lm","t":"icon","from":"pop","exit":null,"in":11.124,"out":14.89,"outDur":0.25},{"id":"cost-lb","t":"icon","from":"pop","exit":null,"in":12.304,"out":14.89,"outDur":0.25},{"id":"cost-lh","t":"icon","from":"pop","exit":null,"in":13.324,"out":14.89,"outDur":0.25},{"id":"cost-t1","t":"text","from":"top","exit":null,"in":10.924,"out":11.684,"outDur":0.3,"words":[10.924,11.124]},{"id":"cost-t2","t":"text","from":"top","exit":null,"in":11.984,"out":13.084,"outDur":0.3,"words":[12.304,12.564]},{"id":"cost-t3","t":"text","from":"top","exit":null,"in":13.324,"out":14.89,"outDur":0.3,"words":[13.324,13.704,14.044,14.324]},{"id":"cost-ls","t":"icon","from":"pop","exit":null,"in":18.79,"out":22.39,"outDur":0.25},{"id":"cost-lho","t":"icon","from":"pop","exit":null,"in":21.79,"out":22.39,"outDur":0.25},{"id":"cost-t4","t":"text","from":"top","exit":null,"in":16.87,"out":18.87,"outDur":0.3,"words":[17.05,17.33,18.23,18.23,18.79]},{"id":"cost-t5","t":"text","from":"top","exit":null,"in":20.23,"out":22.39,"outDur":0.3,"words":[20.23,20.81,21.19,21.55,21.79]},{"id":"cost-hp","t":"stick","from":"bottom","exit":null,"in":22.73,"out":27.485000000000003,"outDur":0.3,"poses":[["happy",22.73],["give",26.085]],"mouth":[["smile",22.73]]},{"id":"cost-hh","t":"icon","from":"pop","exit":null,"in":26.085,"out":27.485000000000003,"outDur":0.25,"pulse":1.12,"beat":0.9},{"id":"cost-t6","t":"text","from":"top","exit":null,"in":23.070000000000004,"out":24.770000000000003,"outDur":0.3,"words":[23.27,23.57,24.07,24.17]},{"id":"cost-t7","t":"text","from":"top","exit":null,"in":25.01,"out":27.485000000000003,"outDur":0.3,"words":[25.57,25.75,25.85,26.085,26.345,26.625,26.945]},{"id":"cost-t8","t":"text","from":"top","exit":null,"in":28.445,"out":30.445,"outDur":0.3,"words":[27.725,28.825,29.105,29.385,29.845]},{"id":"cost-yc","t":"icon","from":"pop","exit":null,"in":28.825,"out":30.445,"outDur":0.25},{"id":"cost-ye","t":"icon","from":"pop","exit":null,"in":30.685,"out":39.138,"outDur":0.25},{"id":"cost-yel","t":"text","from":"bottom","exit":null,"in":30.685,"out":39.138,"outDur":0.3,"words":[30.945]},{"id":"cost-x1","t":"icon","from":"pop","exit":null,"in":35.065,"out":39.138,"outDur":0.25},{"id":"cost-x2","t":"icon","from":"pop","exit":null,"in":36.005,"out":39.138,"outDur":0.25},{"id":"cost-x3","t":"icon","from":"pop","exit":null,"in":36.938,"out":39.138,"outDur":0.25},{"id":"cost-t9","t":"text","from":"top","exit":null,"in":30.685,"out":34.225,"outDur":0.3,"words":[30.685,30.945,32.625,32.965,33.065,33.365,33.645]},{"id":"cost-t10","t":"text","from":"top","exit":null,"in":34.465,"out":35.144999999999996,"outDur":0.3,"words":[34.465,35.065]},{"id":"cost-t11","t":"text","from":"top","exit":null,"in":35.477999999999994,"out":36.577999999999996,"outDur":0.3,"words":[35.385,36.005]},{"id":"cost-t12","t":"text","from":"top","exit":null,"in":36.938,"out":39.138,"outDur":0.3,"words":[36.818,36.938,37.298,37.518,37.818]},{"id":"cost-hq","t":"icon","from":"pop","exit":null,"in":39.598,"out":41.778,"outDur":0.25},{"id":"cost-t13","t":"text","from":"top","exit":null,"in":39.478,"out":41.778,"outDur":0.3,"words":[39.378,39.598,40.118,40.218,40.818,41.158]},{"id":"cost-c2","t":"card","from":"top","exit":null,"in":44.378,"out":48.39,"outDur":0.3},{"id":"cost-cc","t":"icon","from":"pop","exit":null,"in":44.378,"out":48.39,"outDur":0.25},{"id":"cost-b1","t":"bubble","from":"pop","exit":null,"in":48.69,"out":57.027,"outDur":0.25},{"id":"cost-b2","t":"bubble","from":"pop","exit":null,"in":50.25,"out":57.027,"outDur":0.25},{"id":"cost-t14","t":"text","from":"top","exit":null,"in":48.69,"out":50.73,"outDur":0.3,"words":[48.63,48.69,49.83,49.83,50.25]},{"id":"cost-t15","t":"text","from":"top","exit":null,"in":52.29,"out":53.769999999999996,"outDur":0.3,"words":[52.09,52.29,53.01]},{"id":"cost-t16","t":"text","from":"top","exit":null,"in":55.627,"out":57.027,"outDur":0.3,"words":[55.97,56.19,56.63]},{"id":"cost-ch","t":"icon","from":"pop","exit":null,"in":57.427,"out":59.287,"outDur":0.25},{"id":"cost-gr","t":"icon","from":"pop","exit":null,"in":58.587,"out":59.287,"outDur":0.25},{"id":"cost-t17","t":"text","from":"top","exit":null,"in":57.427,"out":59.287,"outDur":0.3,"words":[57.427,57.907,58.587]},{"id":"cost-k1","t":"bar","from":"draw","exit":null,"in":59.707,"out":67.129,"outDur":0.25},{"id":"cost-p1","t":"text","from":"bottom","exit":null,"in":59.707,"out":67.129,"outDur":0.3,"words":[59.807]},{"id":"cost-k2","t":"bar","from":"draw","exit":null,"in":64.327,"out":67.129,"outDur":0.25},{"id":"cost-p2","t":"text","from":"bottom","exit":null,"in":64.327,"out":67.129,"outDur":0.3,"words":[64.427]},{"id":"cost-gi","t":"icon","from":"pop","exit":null,"in":62.807,"out":67.129,"outDur":0.25},{"id":"cost-t18","t":"text","from":"top","exit":null,"in":59.707,"out":63.586999999999996,"outDur":0.3,"words":[60.827,60.827,61.207,61.467,62.167,62.807]},{"id":"cost-t19","t":"text","from":"top","exit":null,"in":63.827,"out":67.129,"outDur":0.3,"words":[63.827,65.407,65.407,65.787,66.007]},{"id":"cost-me","t":"stick","from":"left","exit":null,"in":67.569,"out":87.227,"outDur":0.3,"poses":[["sorry",68.889],["shrug",73.449],["proud",74.469]],"mouth":[["neutral",68.889],["frown",73.449],["smile",76.309]]},{"id":"cost-ot","t":"stick","from":"right","exit":null,"in":67.569,"out":87.227,"outDur":0.3,"poses":[["idle",68.889],["point",72.669],["idle",76.309]],"mouth":[["smile",68.889],["neutral",76.309]]},{"id":"cost-ob","t":"bubble","from":"pop","exit":null,"in":72.669,"out":76.82900000000001,"outDur":0.25},{"id":"cost-sh","t":"icon","from":"pop","exit":null,"in":83.707,"out":87.227,"outDur":0.25},{"id":"cost-t20","t":"text","from":"top","exit":null,"in":68.289,"out":70.289,"outDur":0.3,"words":[67.369,67.569,68.769,68.769,68.889]},{"id":"cost-t21","t":"text","from":"top","exit":null,"in":70.729,"out":72.429,"outDur":0.3,"words":[70.649,70.929,71.269,71.469]},{"id":"cost-t22","t":"text","from":"top","exit":null,"in":74.469,"out":76.82900000000001,"outDur":0.3,"words":[74.349,74.469,75.769,75.769,76.069,76.309]},{"id":"cost-t23","t":"text","from":"top","exit":null,"in":80.807,"out":82.84700000000001,"outDur":0.3,"words":[80.807,81.607,81.947,82.287]},{"id":"cost-t24","t":"text","from":"top","exit":null,"in":83.707,"out":84.527,"outDur":0.3,"words":[83.707]},{"id":"cost-t25","t":"text","from":"top","exit":null,"in":84.767,"out":87.227,"outDur":0.3,"words":[84.767,85.007,85.787,86.207,86.487,86.687,86.867]},{"id":"cost-ck","t":"icon","from":"pop","exit":null,"in":87.945,"out":89.395,"outDur":0.25},{"id":"cost-t26","t":"text","from":"top","exit":null,"in":87.467,"out":89.41999999999999,"outDur":0.3,"words":[87.945,88.305,88.385,88.505,88.645]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["cost"] = tl;
+    })();
+  </script>
+</template>

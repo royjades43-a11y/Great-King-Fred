@@ -1,0 +1,267 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="future" data-width="1920" data-height="1080">
+    <div id="future-cal" class="clip el" data-start="0.68" data-duration="2.85" data-track-index="1" style="position:absolute;left:0px;top:100px;width:1920px;height:980px;z-index:2" data-layout-allow-overlap><div id="future-cal-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="future-t0" class="clip el" data-start="0.3599999999999999" data-duration="1.44" data-track-index="2" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:3"><div id="future-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t0-w0" class="w">another</span> <span id="future-t0-w1" class="w acc">trap</span></div></div></div>
+    <div id="future-t1" class="clip el" data-start="1.5400000000000003" data-duration="2.04" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:4"><div id="future-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t1-w0" class="w">hiding</span> <span id="future-t1-w1" class="w">in</span> <span id="future-t1-w2" class="w">your</span> <span id="future-t1-w3" class="w acc">calendar</span></div></div></div>
+    <div id="future-c1" class="clip el" data-start="6.037" data-duration="4.629" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:5"><div id="future-c1-in" class="in"><div class="card"><div class="card-k">2005 · FUTURE TIME</div><div class="card-t">How much spare time will you have?</div><div class="card-s">Zauberman &amp; Lynch</div></div></div></div>
+    <div id="future-hg" class="clip el" data-start="9.366" data-duration="1.25" data-track-index="5" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:6" data-layout-allow-overlap><div id="future-hg-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M50 20 L150 20 M50 180 L150 180 M60 20 Q60 80 100 100 Q140 120 140 180 M140 20 Q140 80 100 100 Q60 120 60 180"/></svg></div></div></div>
+    <div id="future-td" class="clip el" data-start="12.006" data-duration="11.867" data-track-index="6" style="position:absolute;left:0px;top:100px;width:1280px;height:980px;z-index:7" data-layout-allow-overlap><div id="future-td-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 30 L70 30 L70 70 L20 70 Z M80 30 L130 30 L130 70 L80 70 Z M140 30 L190 30 L190 70 L140 70 Z M20 82 L70 82 L70 122 L20 122 Z M80 82 L130 82 L130 122 L80 122 Z M140 82 L190 82 L190 122 L140 122 Z M20 134 L70 134 L70 174 L20 174 Z M80 134 L130 134 L130 174 L80 174 Z M140 134 L190 134 L190 174 L140 174 Z"/></svg></div></div></div>
+    <div id="future-tdl" class="clip el" data-start="12.006" data-duration="11.917" data-track-index="7" style="position:absolute;left:0px;top:500px;width:1280px;height:580px;z-index:8"><div id="future-tdl-in" class="in"><div class="txt" style="font-size:46px;font-weight:800;color:var(--muted)"><span id="future-tdl-w0" class="w">today</span></div></div></div>
+    <div id="future-nm" class="clip el" data-start="15.146" data-duration="8.727" data-track-index="8" style="position:absolute;left:640px;top:100px;width:1280px;height:980px;z-index:9" data-layout-allow-overlap><div id="future-nm-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="future-nml" class="clip el" data-start="15.146" data-duration="8.777" data-track-index="9" style="position:absolute;left:640px;top:500px;width:1280px;height:580px;z-index:10"><div id="future-nml-in" class="in"><div class="txt" style="font-size:46px;font-weight:800;color:var(--muted)"><span id="future-nml-w0" class="w">next</span> <span id="future-nml-w1" class="w">month</span></div></div></div>
+    <div id="future-ns" class="clip el" data-start="18.163" data-duration="5.71" data-track-index="10" style="position:absolute;left:920px;top:0px;width:1000px;height:840px;z-index:11" data-layout-allow-overlap><div id="future-ns-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M100 100 m-38 0 a38 38 0 1 0 76 0 a38 38 0 1 0 -76 0"/><path class="s" pathLength="1" d="M100 18 L100 40 M100 160 L100 182 M18 100 L40 100 M160 100 L182 100 M42 42 L58 58 M142 142 L158 158 M158 42 L142 58 M58 142 L42 158"/></svg></div></div></div>
+    <div id="future-nmo" class="clip el" data-start="22.943" data-duration="0.93" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:860px;z-index:12" data-layout-allow-overlap><div id="future-nmo-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M14 64 L186 64 L186 150 L14 150 Z"/><path class="s" pathLength="1" d="M24 160 L196 160 M34 172 L196 172"/><path class="s acc-s" pathLength="1" d="M118 86 Q100 76 86 86 Q76 98 100 107 Q124 115 114 128 Q100 138 80 128 M100 72 L100 142"/></svg></div></div></div>
+    <div id="future-t2" class="clip el" data-start="11.686" data-duration="1.74" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:13"><div id="future-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t2-w0" class="w">spare</span> <span id="future-t2-w1" class="w">time</span> <span id="future-t2-w2" class="w acc">today<span class="tail">?</span></span></div></div></div>
+    <div id="future-t3" class="clip el" data-start="14.263" data-duration="2.04" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:14"><div id="future-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t3-w0" class="w">…a</span> <span id="future-t3-w1" class="w">month</span> <span id="future-t3-w2" class="w">from</span> <span id="future-t3-w3" class="w acc">now<span class="tail">?</span></span></div></div></div>
+    <div id="future-t4" class="clip el" data-start="17.283" data-duration="2.64" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="future-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t4-w0" class="w">more</span> <span id="future-t4-w1" class="w">free</span> <span id="future-t4-w2" class="w">time</span> <span id="future-t4-w3" class="w">in</span> <span id="future-t4-w4" class="w">the</span> <span id="future-t4-w5" class="w acc">future</span></div></div></div>
+    <div id="future-t5" class="clip el" data-start="20.343" data-duration="3.58" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:16"><div id="future-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t5-w0" class="w">more</span> <span id="future-t5-w1" class="w">optimistic</span> <span id="future-t5-w2" class="w">about</span> <span id="future-t5-w3" class="w acc">time</span></div></div></div>
+    <div id="future-nf" class="clip el" data-start="26.243" data-duration="1.313" data-track-index="16" style="position:absolute;left:0px;top:100px;width:1920px;height:980px;z-index:17" data-layout-allow-overlap><div id="future-nf-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 30 L70 30 L70 70 L20 70 Z M80 30 L130 30 L130 70 L80 70 Z M140 30 L190 30 L190 70 L140 70 Z M20 82 L70 82 L70 122 L20 122 Z M80 82 L130 82 L130 122 L80 122 Z M140 82 L190 82 L190 122 L140 122 Z M20 134 L70 134 L70 174 L20 174 Z M80 134 L130 134 L130 174 L80 174 Z M140 134 L190 134 L190 174 L140 174 Z"/></svg></div></div></div>
+    <div id="future-t6" class="clip el" data-start="25.866000000000003" data-duration="1.74" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:18"><div id="future-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t6-w0" class="w">just</span> <span id="future-t6-w1" class="w">as</span> <span id="future-t6-w2" class="w acc">busy</span></div></div></div>
+    <div id="future-gf" class="clip el" data-start="28.066" data-duration="4.49" data-track-index="18" style="position:absolute;left:0px;top:100px;width:1920px;height:980px;z-index:19" data-layout-allow-overlap><div id="future-gf-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 92 L170 92 L170 182 L30 182 Z"/><path class="s" pathLength="1" d="M20 64 L180 64 L180 92 L20 92 Z"/><path class="s acc-s" pathLength="1" d="M100 64 L100 182"/><path class="s acc-s" pathLength="1" d="M100 64 Q66 26 56 48 Q52 66 100 64 Q148 66 144 48 Q134 26 100 64"/></svg></div></div></div>
+    <div id="future-t7" class="clip el" data-start="27.726" data-duration="2.94" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="future-t7-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="future-t7-w0" class="w">a</span> <span id="future-t7-w1" class="w">favor</span> <span id="future-t7-w2" class="w">in</span> <span id="future-t7-w3" class="w">five</span> <span id="future-t7-w4" class="w">weeks</span> <span id="future-t7-w5" class="w">feels</span> <span id="future-t7-w6" class="w acc">free</span></div></div></div>
+    <div id="future-t8" class="clip el" data-start="30.566" data-duration="2.04" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:21"><div id="future-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t8-w0" class="w">a</span> <span id="future-t8-w1" class="w">problem</span> <span id="future-t8-w2" class="w">for</span> <span id="future-t8-w3" class="w acc">future</span> <span id="future-t8-w4" class="w">you</span></div></div></div>
+    <div id="future-nw" class="clip el" data-start="32.506" data-duration="9.537" data-track-index="21" style="position:absolute;left:0px;top:300px;width:1400px;height:780px;z-index:22"><div id="future-nw-in" class="in"><svg class="stick" id="future-nw-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="future-nw-aLu"><path class="s" d="M150 160 L150 255"/><g id="future-nw-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="future-nw-aRu"><path class="s" d="M150 160 L150 255"/><g id="future-nw-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="future-nw-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="future-nw-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="future-nw-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="future-nw-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="future-nw-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="future-nw-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="future-fu" class="clip el" data-start="33.686" data-duration="8.357" data-track-index="22" style="position:absolute;left:520px;top:300px;width:1400px;height:780px;z-index:23"><div id="future-fu-in" class="in"><svg class="stick" id="future-fu-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="future-fu-aLu"><path class="s" d="M150 160 L150 255"/><g id="future-fu-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="future-fu-aRu"><path class="s" d="M150 160 L150 255"/><g id="future-fu-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="future-fu-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="future-fu-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="future-fu-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="future-fu-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="future-fu-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="future-fu-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="future-nwl" class="clip el" data-start="32.506" data-duration="9.537" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1400px;height:580px;z-index:24"><div id="future-nwl-in" class="in"><div class="txt" style="font-size:44px;font-weight:800;color:var(--muted)"><span id="future-nwl-w0" class="w">you</span></div></div></div>
+    <div id="future-ful" class="clip el" data-start="33.686" data-duration="8.357" data-track-index="24" style="position:absolute;left:520px;top:0px;width:1400px;height:580px;z-index:25"><div id="future-ful-in" class="in"><div class="txt" style="font-size:44px;font-weight:800;color:var(--muted)"><span id="future-ful-w0" class="w">future</span> <span id="future-ful-w1" class="w">you</span></div></div></div>
+    <div id="future-j1" class="clip el" data-start="37.466" data-duration="0.89" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:940px;z-index:26" data-layout-allow-overlap><div id="future-j1-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 70 L176 70 L176 172 L24 172 Z"/><path class="s" pathLength="1" d="M74 70 L74 46 L126 46 L126 70"/><path class="s" pathLength="1" d="M24 112 L176 112"/></svg></div></div></div>
+    <div id="future-j2" class="clip el" data-start="38.503" data-duration="1.03" data-track-index="26" style="position:absolute;left:0px;top:0px;width:1920px;height:940px;z-index:27" data-layout-allow-overlap><div id="future-j2-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M128 26 A78 78 0 1 0 174 142 A62 62 0 1 1 128 26 Z"/><path class="s acc-s" pathLength="1" d="M150 50 L150 66 M142 58 L158 58"/></svg></div></div></div>
+    <div id="future-j3" class="clip el" data-start="39.723" data-duration="2.27" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:940px;z-index:28" data-layout-allow-overlap><div id="future-j3-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="future-t9" class="clip el" data-start="35.006" data-duration="2.34" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:29"><div id="future-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t9-w0" class="w">future</span> <span id="future-t9-w1" class="w">you</span> <span id="future-t9-w2" class="w">is</span> <span id="future-t9-w3" class="w">just</span> <span id="future-t9-w4" class="w acc">you</span></div></div></div>
+    <div id="future-t10" class="clip el" data-start="37.246" data-duration="0.977" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:30"><div id="future-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t10-w0" class="w">same</span> <span id="future-t10-w1" class="w acc">job</span></div></div></div>
+    <div id="future-t11" class="clip el" data-start="38.142999999999994" data-duration="1.44" data-track-index="30" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:31"><div id="future-t11-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t11-w0" class="w">same</span> <span id="future-t11-w1" class="w acc">tiredness</span></div></div></div>
+    <div id="future-t12" class="clip el" data-start="39.723" data-duration="2.32" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:32"><div id="future-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t12-w0" class="w">same</span> <span id="future-t12-w1" class="w acc">Saturday</span></div></div></div>
+    <div id="future-t13" class="clip el" data-start="43.022999999999996" data-duration="2.04" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:33"><div id="future-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t13-w0" class="w">the</span> <span id="future-t13-w1" class="w">“yes…</span> <span id="future-t13-w2" class="w acc">damn<span class="tail">”</span></span> <span id="future-t13-w3" class="w">effect</span></div></div></div>
+    <div id="future-yd" class="clip el" data-start="42.223" data-duration="6.856" data-track-index="33" style="position:absolute;left:0px;top:300px;width:1720px;height:780px;z-index:34"><div id="future-yd-in" class="in"><svg class="stick" id="future-yd-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="future-yd-aLu"><path class="s" d="M150 160 L150 255"/><g id="future-yd-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="future-yd-aRu"><path class="s" d="M150 160 L150 255"/><g id="future-yd-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="future-yd-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="future-yd-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="future-yd-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="future-yd-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="future-yd-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="future-yd-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="future-yy" class="clip el" data-start="45.323" data-duration="0.89" data-track-index="34" style="position:absolute;left:200px;top:0px;width:1720px;height:800px;z-index:35" data-layout-allow-overlap><div id="future-yy-in" class="in"><div class="ico bub" style="width:196px;height:140px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:48px">yes!</div></div></div></div>
+    <div id="future-yc" class="clip el" data-start="46.303" data-duration="2.726" data-track-index="35" style="position:absolute;left:480px;top:40px;width:1440px;height:1040px;z-index:36" data-layout-allow-overlap><div id="future-yc-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="future-t14" class="clip el" data-start="44.963" data-duration="1.12" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:37"><div id="future-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t14-w0" class="w">you</span> <span id="future-t14-w1" class="w">say</span> <span id="future-t14-w2" class="w acc">yes</span></div></div></div>
+    <div id="future-t15" class="clip el" data-start="47.339" data-duration="1.74" data-track-index="37" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:38"><div id="future-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t15-w0" class="w">…you</span> <span id="future-t15-w1" class="w">say</span> <span id="future-t15-w2" class="w alm">damn</span></div></div></div>
+    <div id="future-pc" class="clip el" data-start="49.939" data-duration="2.875" data-track-index="38" style="position:absolute;left:0px;top:100px;width:1920px;height:980px;z-index:39" data-layout-allow-overlap><div id="future-pc-in" class="in"><div class="ico" style="width:280px;height:280px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="future-pq" class="clip el" data-start="51.399" data-duration="1.44" data-track-index="39" style="position:absolute;left:520px;top:0px;width:1400px;height:880px;z-index:40" data-layout-allow-overlap><div id="future-pq-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="future-t16" class="clip el" data-start="48.979" data-duration="3.935" data-track-index="40" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:41"><div id="future-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="future-t16-w0" class="w">how</span> <span id="future-t16-w1" class="w">many</span> <span id="future-t16-w2" class="w">did</span> <span id="future-t16-w3" class="w acc">past</span> <span id="future-t16-w4" class="w">you</span> <span id="future-t16-w5" class="w">agree</span> <span id="future-t16-w6" class="w">to?</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"future-cal","t":"icon","from":"pop","exit":null,"in":0.68,"out":3.24,"outDur":0.25},{"id":"future-t0","t":"text","from":"top","exit":null,"in":0.3599999999999999,"out":1.46,"outDur":0.3,"words":[0.4,0.68]},{"id":"future-t1","t":"text","from":"top","exit":null,"in":1.5400000000000003,"out":3.24,"outDur":0.3,"words":[1.7,2,2.3,2.44]},{"id":"future-c1","t":"card","from":"top","exit":null,"in":6.037,"out":10.326,"outDur":0.3},{"id":"future-hg","t":"icon","from":"pop","exit":null,"in":9.366,"out":10.326,"outDur":0.25},{"id":"future-td","t":"icon","from":"pop","exit":null,"in":12.006,"out":23.583000000000002,"outDur":0.25},{"id":"future-tdl","t":"text","from":"bottom","exit":null,"in":12.006,"out":23.583000000000002,"outDur":0.3,"words":[12.946]},{"id":"future-nm","t":"icon","from":"pop","exit":null,"in":15.146,"out":23.583000000000002,"outDur":0.25},{"id":"future-nml","t":"text","from":"bottom","exit":null,"in":15.146,"out":23.583000000000002,"outDur":0.3,"words":[15.146,15.146]},{"id":"future-ns","t":"icon","from":"pop","exit":null,"in":18.163,"out":23.583000000000002,"outDur":0.25},{"id":"future-nmo","t":"icon","from":"pop","exit":null,"in":22.943,"out":23.583000000000002,"outDur":0.25},{"id":"future-t2","t":"text","from":"top","exit":null,"in":11.686,"out":13.086,"outDur":0.3,"words":[12.006,12.286,12.946]},{"id":"future-t3","t":"text","from":"top","exit":null,"in":14.263,"out":15.963,"outDur":0.3,"words":[14.966,15.146,15.306,15.526]},{"id":"future-t4","t":"text","from":"top","exit":null,"in":17.283,"out":19.583000000000002,"outDur":0.3,"words":[17.823,18.163,18.503,18.743,18.923,19.023]},{"id":"future-t5","t":"text","from":"top","exit":null,"in":20.343,"out":23.583000000000002,"outDur":0.3,"words":[20.123,20.343,20.783,21.563]},{"id":"future-nf","t":"icon","from":"pop","exit":null,"in":26.243,"out":27.266000000000002,"outDur":0.25},{"id":"future-t6","t":"text","from":"top","exit":null,"in":25.866000000000003,"out":27.266000000000002,"outDur":0.3,"words":[25.543,26.003,26.243]},{"id":"future-gf","t":"icon","from":"pop","exit":null,"in":28.066,"out":32.266,"outDur":0.25},{"id":"future-t7","t":"text","from":"top","exit":null,"in":27.726,"out":30.326,"outDur":0.3,"words":[27.786,28.066,28.386,28.586,28.906,29.226,29.646]},{"id":"future-t8","t":"text","from":"top","exit":null,"in":30.566,"out":32.266,"outDur":0.3,"words":[30.726,30.786,31.166,31.426,31.826]},{"id":"future-nw","t":"stick","from":"left","exit":null,"in":32.506,"out":41.702999999999996,"outDur":0.3,"poses":[["idle",32.506],["shrug",37.466],["headDown",38.503]],"mouth":[["neutral",32.506],["frown",38.503]]},{"id":"future-fu","t":"stick","from":"right","exit":null,"in":33.686,"out":41.702999999999996,"outDur":0.3,"poses":[["idle",33.686],["shrug",37.466],["headDown",38.503]],"mouth":[["neutral",33.686],["frown",38.503]]},{"id":"future-nwl","t":"text","from":"bottom","exit":null,"in":32.506,"out":41.702999999999996,"outDur":0.3,"words":[33.446]},{"id":"future-ful","t":"text","from":"bottom","exit":null,"in":33.686,"out":41.702999999999996,"outDur":0.3,"words":[32.866,33.446]},{"id":"future-j1","t":"icon","from":"pop","exit":null,"in":37.466,"out":38.066,"outDur":0.25},{"id":"future-j2","t":"icon","from":"pop","exit":null,"in":38.503,"out":39.242999999999995,"outDur":0.25},{"id":"future-j3","t":"icon","from":"pop","exit":null,"in":39.723,"out":41.702999999999996,"outDur":0.25},{"id":"future-t9","t":"text","from":"top","exit":null,"in":35.006,"out":37.006,"outDur":0.3,"words":[32.866,33.446,35.586,36.026,36.326]},{"id":"future-t10","t":"text","from":"top","exit":null,"in":37.246,"out":37.882999999999996,"outDur":0.3,"words":[37.246,37.466]},{"id":"future-t11","t":"text","from":"top","exit":null,"in":38.142999999999994,"out":39.242999999999995,"outDur":0.3,"words":[38.123,38.503]},{"id":"future-t12","t":"text","from":"top","exit":null,"in":39.723,"out":41.702999999999996,"outDur":0.3,"words":[39.483,39.723]},{"id":"future-t13","t":"text","from":"top","exit":null,"in":43.022999999999996,"out":44.723,"outDur":0.3,"words":[42.823,43.083,43.583,43.963]},{"id":"future-yd","t":"stick","from":"bottom","exit":null,"in":42.223,"out":48.739,"outDur":0.3,"poses":[["happy",45.323],["holdHead",47.703]],"mouth":[["smile",45.323],["frown",47.703]]},{"id":"future-yy","t":"bubble","from":"pop","exit":null,"in":45.323,"out":45.923,"outDur":0.25},{"id":"future-yc","t":"icon","from":"pop","exit":null,"in":46.303,"out":48.739,"outDur":0.25},{"id":"future-t14","t":"text","from":"top","exit":null,"in":44.963,"out":45.742999999999995,"outDur":0.3,"words":[44.963,45.143,45.323]},{"id":"future-t15","t":"text","from":"top","exit":null,"in":47.339,"out":48.739,"outDur":0.3,"words":[47.303,47.443,47.703]},{"id":"future-pc","t":"icon","from":"pop","exit":null,"in":49.939,"out":52.523999999999994,"outDur":0.25},{"id":"future-pq","t":"icon","from":"pop","exit":null,"in":51.399,"out":52.549,"outDur":0.25},{"id":"future-t16","t":"text","from":"top","exit":null,"in":48.979,"out":52.574,"outDur":0.3,"words":[48.979,49.199,51.139,51.399,51.759,52.079,52.379]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["future"] = tl;
+    })();
+  </script>
+</template>

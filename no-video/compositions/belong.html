@@ -1,0 +1,370 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="belong" data-width="1920" data-height="1080">
+    <div id="belong-g0" class="clip el" data-start="0.34" data-duration="7.175" data-track-index="1" style="position:absolute;left:0px;top:300px;width:1120px;height:780px;z-index:2"><div id="belong-g0-in" class="in"><svg class="stick" id="belong-g0-svg" width="225" height="390" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="belong-g0-aLu"><path class="s" d="M150 160 L150 255"/><g id="belong-g0-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-g0-aRu"><path class="s" d="M150 160 L150 255"/><g id="belong-g0-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-g0-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="belong-g0-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="belong-g0-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="belong-g0-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="belong-g0-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="belong-g0-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="belong-g1" class="clip el" data-start="0.34" data-duration="7.175" data-track-index="2" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:3"><div id="belong-g1-in" class="in"><svg class="stick" id="belong-g1-svg" width="225" height="390" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="belong-g1-aLu"><path class="s" d="M150 160 L150 255"/><g id="belong-g1-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-g1-aRu"><path class="s" d="M150 160 L150 255"/><g id="belong-g1-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-g1-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="belong-g1-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="belong-g1-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="belong-g1-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="belong-g1-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="belong-g1-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="belong-g2" class="clip el" data-start="0.34" data-duration="7.175" data-track-index="3" style="position:absolute;left:0px;top:300px;width:1920px;height:780px;z-index:4"><div id="belong-g2-in" class="in"><svg class="stick" id="belong-g2-svg" width="225" height="390" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="belong-g2-aLu"><path class="s" d="M150 160 L150 255"/><g id="belong-g2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-g2-aRu"><path class="s" d="M150 160 L150 255"/><g id="belong-g2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-g2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="belong-g2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="belong-g2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="belong-g2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="belong-g2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="belong-g2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="belong-lo" class="clip el" data-start="0.34" data-duration="7.175" data-track-index="4" style="position:absolute;left:400px;top:300px;width:1520px;height:780px;z-index:5"><div id="belong-lo-in" class="in"><svg class="stick" id="belong-lo-svg" width="225" height="390" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="belong-lo-aLu"><path class="s" d="M150 160 L150 255"/><g id="belong-lo-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-lo-aRu"><path class="s" d="M150 160 L150 255"/><g id="belong-lo-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-lo-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="belong-lo-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="belong-lo-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="belong-lo-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="belong-lo-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="belong-lo-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="belong-t0" class="clip el" data-start="1.963" data-duration="2.58" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:6"><div id="belong-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t0-w0" class="w">pushed</span> <span id="belong-t0-w1" class="w">out</span> <span id="belong-t0-w2" class="w">of</span> <span id="belong-t0-w3" class="w">the</span> <span id="belong-t0-w4" class="w acc">group</span></div></div></div>
+    <div id="belong-t1" class="clip el" data-start="4.443" data-duration="3.072" data-track-index="6" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:7"><div id="belong-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t1-w0" class="w">alone:</span> <span id="belong-t1-w1" class="w">less</span> <span id="belong-t1-w2" class="w">likely</span> <span id="belong-t1-w3" class="w">to</span> <span id="belong-t1-w4" class="w acc">survive</span></div></div></div>
+    <div id="belong-c1" class="clip el" data-start="9.795" data-duration="7.368" data-track-index="7" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:8"><div id="belong-c1-in" class="in"><div class="card"><div class="card-k">1995 · THE NEED TO BELONG</div><div class="card-t">One of our most basic drives</div><div class="card-s">Baumeister &amp; Leary</div></div></div></div>
+    <div id="belong-bp" class="clip el" data-start="9.795" data-duration="7.318" data-track-index="8" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:9" data-layout-allow-overlap><div id="belong-bp-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M60 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 M140 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s" pathLength="1" d="M22 176 Q22 112 60 112 Q98 112 98 176 M102 176 Q102 112 140 112 Q178 112 178 176"/></svg></div></div></div>
+    <div id="belong-bh" class="clip el" data-start="15.275" data-duration="1.838" data-track-index="9" style="position:absolute;left:0px;top:0px;width:1920px;height:880px;z-index:10" data-layout-allow-overlap><div id="belong-bh-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="belong-ak" class="clip el" data-start="17.643" data-duration="11.772" data-track-index="10" style="position:absolute;left:0px;top:300px;width:1280px;height:780px;z-index:11"><div id="belong-ak-in" class="in"><svg class="stick" id="belong-ak-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="belong-ak-aLu"><path class="s" d="M150 160 L150 255"/><g id="belong-ak-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-ak-aRu"><path class="s" d="M150 160 L150 255"/><g id="belong-ak-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-ak-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="belong-ak-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="belong-ak-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="belong-ak-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="belong-ak-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="belong-ak-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="belong-yu" class="clip el" data-start="17.643" data-duration="11.772" data-track-index="11" style="position:absolute;left:640px;top:300px;width:1280px;height:780px;z-index:12"><div id="belong-yu-in" class="in"><svg class="stick" id="belong-yu-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="belong-yu-aLu"><path class="s" d="M150 160 L150 255"/><g id="belong-yu-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-yu-aRu"><path class="s" d="M150 160 L150 255"/><g id="belong-yu-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-yu-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="belong-yu-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="belong-yu-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="belong-yu-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="belong-yu-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="belong-yu-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="belong-hq" class="clip el" data-start="17.963" data-duration="11.402" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1400px;height:670px;z-index:13" data-layout-allow-overlap><div id="belong-hq-in" class="in"><div class="ico bub" style="width:280px;height:200px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:32px">Can you help?</div></div></div></div>
+    <div id="belong-gq" class="clip el" data-start="22.223" data-duration="7.142" data-track-index="13" style="position:absolute;left:520px;top:0px;width:1400px;height:670px;z-index:14" data-layout-allow-overlap><div id="belong-gq-in" class="in"><div class="ico bub" style="width:280px;height:200px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:30px">Still one of us?</div></div></div></div>
+    <div id="belong-t2" class="clip el" data-start="20.283" data-duration="1.74" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="belong-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t2-w0" class="w">a</span> <span id="belong-t2-w1" class="w acc">different</span> <span id="belong-t2-w2" class="w">question</span></div></div></div>
+    <div id="belong-t3" class="clip el" data-start="21.983" data-duration="2.34" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:16"><div id="belong-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t3-w0" class="w">still</span> <span id="belong-t3-w1" class="w">part</span> <span id="belong-t3-w2" class="w">of</span> <span id="belong-t3-w3" class="w">the</span> <span id="belong-t3-w4" class="w acc">group<span class="tail">?</span></span></div></div></div>
+    <div id="belong-t4" class="clip el" data-start="24.963000000000005" data-duration="1.74" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:17"><div id="belong-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t4-w0" class="w">no</span> <span id="belong-t4-w1" class="w">feels</span> <span id="belong-t4-w2" class="w acc">wrong</span></div></div></div>
+    <div id="belong-sat" class="clip el" data-start="28.355" data-duration="1.01" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:1000px;z-index:18" data-layout-allow-overlap><div id="belong-sat-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="belong-t5" class="clip el" data-start="27.375000000000004" data-duration="2.04" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:19"><div id="belong-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t5-w0" class="w">even</span> <span id="belong-t5-w1" class="w">just</span> <span id="belong-t5-w2" class="w">a</span> <span id="belong-t5-w3" class="w acc">Saturday</span></div></div></div>
+    <div id="belong-t6" class="clip el" data-start="29.315" data-duration="1.5" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="belong-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t6-w0" class="w">but</span> <span id="belong-t6-w1" class="w">here's</span> <span id="belong-t6-w2" class="w">the</span> <span id="belong-t6-w3" class="w acc">thing</span></div></div></div>
+    <div id="belong-fr" class="clip el" data-start="30.815" data-duration="3.17" data-track-index="20" style="position:absolute;left:0px;top:40px;width:1400px;height:1040px;z-index:21" data-layout-allow-overlap><div id="belong-fr-in" class="in"><div class="ico" style="width:320px;height:320px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 108 Q18 106 22 80 Q20 54 50 54 Q58 24 92 28 Q118 10 142 32 Q178 30 178 64 Q196 78 182 98 Q176 110 156 108 Z"/><path class="s acc-s" pathLength="1" d="M60 132 L52 156 M100 132 L92 156 M140 132 L132 156 M80 164 L74 182 M120 164 L114 182"/></svg></div></div></div>
+    <div id="belong-fo" class="clip el" data-start="32.975" data-duration="1.01" data-track-index="21" style="position:absolute;left:600px;top:160px;width:1320px;height:920px;z-index:22" data-layout-allow-overlap><div id="belong-fo-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 128 Q18 126 22 100 Q20 74 50 74 Q58 44 92 48 Q118 30 142 52 Q178 50 178 84 Q196 98 182 118 Q176 130 156 128 Z"/></svg></div></div></div>
+    <div id="belong-frl" class="clip el" data-start="30.815" data-duration="3.22" data-track-index="22" style="position:absolute;left:0px;top:520px;width:1400px;height:560px;z-index:23"><div id="belong-frl-in" class="in"><div class="txt" style="font-size:44px;font-weight:800;color:var(--muted)"><span id="belong-frl-w0" class="w">fear</span></div></div></div>
+    <div id="belong-fol" class="clip el" data-start="32.895" data-duration="1.14" data-track-index="23" style="position:absolute;left:600px;top:520px;width:1320px;height:560px;z-index:24"><div id="belong-fol-in" class="in"><div class="txt" style="font-size:44px;font-weight:800;color:var(--muted)"><span id="belong-fol-w0" class="w">fallout</span></div></div></div>
+    <div id="belong-t7" class="clip el" data-start="30.815" data-duration="3.22" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:25"><div id="belong-t7-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="belong-t7-w0" class="w">the</span> <span id="belong-t7-w1" class="w">fear</span> <span id="belong-t7-w2" class="w">is</span> <span id="belong-t7-w3" class="w">much</span> <span id="belong-t7-w4" class="w">bigger</span> <span id="belong-t7-w5" class="w">than</span> <span id="belong-t7-w6" class="w">the</span> <span id="belong-t7-w7" class="w acc">fallout</span></div></div></div>
+    <div id="belong-c2" class="clip el" data-start="36.448" data-duration="5.12" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:26"><div id="belong-c2-in" class="in"><div class="card"><div class="card-k">2023 · 5 EXPERIMENTS</div><div class="card-t">More than 2,000 people</div><div class="card-s">Givi &amp; Kirk</div></div></div></div>
+    <div id="belong-gp" class="clip el" data-start="38.688" data-duration="2.83" data-track-index="26" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:27" data-layout-allow-overlap><div id="belong-gp-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M60 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 M140 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s" pathLength="1" d="M22 176 Q22 112 60 112 Q98 112 98 176 M102 176 Q102 112 140 112 Q178 112 178 176"/></svg></div></div></div>
+    <div id="belong-ir" class="clip el" data-start="41.468" data-duration="20.141" data-track-index="27" style="position:absolute;left:0px;top:300px;width:1240px;height:780px;z-index:28"><div id="belong-ir-in" class="in"><svg class="stick" id="belong-ir-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="belong-ir-aLu"><path class="s" d="M150 160 L150 255"/><g id="belong-ir-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-ir-aRu"><path class="s" d="M150 160 L150 255"/><g id="belong-ir-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-ir-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="belong-ir-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="belong-ir-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="belong-ir-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="belong-ir-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="belong-ir-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="belong-lt" class="clip el" data-start="42.588" data-duration="8.005" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1700px;height:1040px;z-index:29" data-layout-allow-overlap><div id="belong-lt-in" class="in"><div class="ico" style="width:140px;height:140px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 50 L180 50 L180 160 L20 160 Z"/><path class="s" pathLength="1" d="M20 50 L100 112 L180 50"/><path class="alm-f" d="M100 150 C78 134 80 116 92 116 Q98 116 100 124 Q102 116 108 116 C120 116 122 134 100 150 Z"/></svg></div></div></div>
+    <div id="belong-iv" class="clip el" data-start="41.468" data-duration="20.141" data-track-index="29" style="position:absolute;left:680px;top:300px;width:1240px;height:780px;z-index:30"><div id="belong-iv-in" class="in"><svg class="stick" id="belong-iv-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="belong-iv-aLu"><path class="s" d="M150 160 L150 255"/><g id="belong-iv-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-iv-aRu"><path class="s" d="M150 160 L150 255"/><g id="belong-iv-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-iv-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="belong-iv-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="belong-iv-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="belong-iv-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="belong-iv-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="belong-iv-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="belong-mu" class="clip el" data-start="44.208" data-duration="1.145" data-track-index="30" style="position:absolute;left:0px;top:0px;width:1920px;height:680px;z-index:31" data-layout-allow-overlap><div id="belong-mu-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M26 34 L174 34 L174 172 L26 172 Z"/><path class="s" pathLength="1" d="M46 54 L154 54 L154 152 L46 152 Z"/><path class="s acc-s" pathLength="1" d="M50 148 L84 104 L108 130 L126 110 L150 148"/><circle class="alm-f" cx="78" cy="78" r="9"/></svg></div></div></div>
+    <div id="belong-cf" class="clip el" data-start="46.383" data-duration="0.95" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:680px;z-index:32" data-layout-allow-overlap><div id="belong-cf-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M62 122 Q22 112 32 76 Q40 50 68 58 Q78 22 108 28 Q138 20 146 58 Q176 50 172 88 Q168 116 138 122 Z"/><path class="s" pathLength="1" d="M62 122 L62 164 L138 164 L138 122"/><path class="s acc-s" pathLength="1" d="M62 144 L138 144"/></svg></div></div></div>
+    <div id="belong-t8" class="clip el" data-start="42.467999999999996" data-duration="1.74" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:33"><div id="belong-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t8-w0" class="w acc">invited</span> <span id="belong-t8-w1" class="w">to</span> <span id="belong-t8-w2" class="w">something</span></div></div></div>
+    <div id="belong-t9" class="clip el" data-start="44.108" data-duration="1.295" data-track-index="33" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:34"><div id="belong-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t9-w0" class="w">a</span> <span id="belong-t9-w1" class="w">museum</span> <span id="belong-t9-w2" class="w acc">exhibit</span></div></div></div>
+    <div id="belong-t10" class="clip el" data-start="45.643" data-duration="1.74" data-track-index="34" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:35"><div id="belong-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t10-w0" class="w">a</span> <span id="belong-t10-w1" class="w">celebrity</span> <span id="belong-t10-w2" class="w acc">chef</span></div></div></div>
+    <div id="belong-t11" class="clip el" data-start="48.003" data-duration="2.64" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:36"><div id="belong-t11-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t11-w0" class="w">the</span> <span id="belong-t11-w1" class="w">one</span> <span id="belong-t11-w2" class="w">who</span> <span id="belong-t11-w3" class="w acc">sent</span> <span id="belong-t11-w4" class="w">the</span> <span id="belong-t11-w5" class="w">invitation</span></div></div></div>
+    <div id="belong-wt" class="clip el" data-start="52.663" data-duration="5.556" data-track-index="36" style="position:absolute;left:1000px;top:0px;width:920px;height:720px;z-index:37" data-layout-allow-overlap><div id="belong-wt-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="belong-wr" class="clip el" data-start="52.663" data-duration="5.556" data-track-index="37" style="position:absolute;left:960px;top:0px;width:960px;height:700px;z-index:38" data-layout-allow-overlap><div id="belong-wr-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 108 Q18 106 22 80 Q20 54 50 54 Q58 24 92 28 Q118 10 142 32 Q178 30 178 64 Q196 78 182 98 Q176 110 156 108 Z"/><path class="s acc-s" pathLength="1" d="M60 132 L52 156 M100 132 L92 156 M140 132 L132 156 M80 164 L74 182 M120 164 L114 182"/></svg></div></div></div>
+    <div id="belong-wb" class="clip el" data-start="55.523" data-duration="2.696" data-track-index="38" style="position:absolute;left:1140px;top:0px;width:780px;height:760px;z-index:39" data-layout-allow-overlap><div id="belong-wb-in" class="in"><div class="ico" style="width:70px;height:70px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="alm-f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/><path class="s" style="stroke:var(--paper)" d="M100 48 L86 84 L112 106 L92 146"/></svg></div></div></div>
+    <div id="belong-t12" class="clip el" data-start="51.602999999999994" data-duration="2.04" data-track-index="39" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:40"><div id="belong-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t12-w0" class="w">they</span> <span id="belong-t12-w1" class="w">expected</span> <span id="belong-t12-w2" class="w">the</span> <span id="belong-t12-w3" class="w acc">worst</span></div></div></div>
+    <div id="belong-t13" class="clip el" data-start="54.623" data-duration="3.646" data-track-index="40" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:41"><div id="belong-t13-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="belong-t13-w0" class="w">angry</span> <span id="belong-t13-w1" class="w">·</span> <span id="belong-t13-w2" class="w">hurt</span> <span id="belong-t13-w3" class="w">·</span> <span id="belong-t13-w4" class="w">less</span> <span id="belong-t13-w5" class="w">likely</span> <span id="belong-t13-w6" class="w">to</span> <span id="belong-t13-w7" class="w acc">invite</span></div></div></div>
+    <div id="belong-t14" class="clip el" data-start="58.169" data-duration="1.62" data-track-index="41" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:42"><div id="belong-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--muted)"><span id="belong-t14-w0" class="w">the</span> <span id="belong-t14-w1" class="w">people</span> <span id="belong-t14-w2" class="w">who</span> <span id="belong-t14-w3" class="w">got</span> <span id="belong-t14-w4" class="w">the</span> <span id="belong-t14-w5" class="w">no?</span></div></div></div>
+    <div id="belong-ok" class="clip el" data-start="60.609" data-duration="0.95" data-track-index="42" style="position:absolute;left:0px;top:0px;width:1400px;height:740px;z-index:43" data-layout-allow-overlap><div id="belong-ok-in" class="in"><div class="ico bub" style="width:196px;height:140px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:50px">ok!</div></div></div></div>
+    <div id="belong-t15" class="clip el" data-start="59.689" data-duration="1.92" data-track-index="43" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:44"><div id="belong-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t15-w0" class="w">mostly…</span> <span id="belong-t15-w1" class="w alm">fine</span></div></div></div>
+    <div id="belong-t16" class="clip el" data-start="61.509" data-duration="1.31" data-track-index="44" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:45"><div id="belong-t16-in" class="in"><div class="txt hero" style="font-size:110px;font-weight:800;color:var(--ink)"><span id="belong-t16-w0" class="w">the</span> <span id="belong-t16-w1" class="w">irony</span></div></div></div>
+    <div id="belong-pa" class="clip el" data-start="62.869" data-duration="14.038" data-track-index="45" style="position:absolute;left:0px;top:300px;width:1400px;height:780px;z-index:46"><div id="belong-pa-in" class="in"><svg class="stick" id="belong-pa-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="belong-pa-aLu"><path class="s" d="M150 160 L150 255"/><g id="belong-pa-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-pa-aRu"><path class="s" d="M150 160 L150 255"/><g id="belong-pa-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-pa-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="belong-pa-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="belong-pa-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="belong-pa-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="belong-pa-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="belong-pa-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="belong-pb" class="clip el" data-start="62.869" data-duration="14.038" data-track-index="46" style="position:absolute;left:520px;top:300px;width:1400px;height:780px;z-index:47"><div id="belong-pb-in" class="in"><svg class="stick" id="belong-pb-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="belong-pb-aLu"><path class="s" d="M150 160 L150 255"/><g id="belong-pb-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-pb-aRu"><path class="s" d="M150 160 L150 255"/><g id="belong-pb-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="belong-pb-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="belong-pb-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="belong-pb-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="belong-pb-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="belong-pb-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="belong-pb-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="belong-t17" class="clip el" data-start="63.489" data-duration="3.593" data-track-index="47" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:48"><div id="belong-t17-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t17-w0" class="w">how</span> <span id="belong-t17-w1" class="w">little</span> <span id="belong-t17-w2" class="w">a</span> <span id="belong-t17-w3" class="w">no</span> <span id="belong-t17-w4" class="w acc">bothers</span> <span id="belong-t17-w5" class="w">us</span></div></div></div>
+    <div id="belong-t18" class="clip el" data-start="67.262" data-duration="2.66" data-track-index="48" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:49"><div id="belong-t18-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t18-w0" class="w">we</span> <span id="belong-t18-w1" class="w">just</span> <span id="belong-t18-w2" class="w acc">forget</span> <span id="belong-t18-w3" class="w">it</span></div></div></div>
+    <div id="belong-t19" class="clip el" data-start="71.682" data-duration="1.74" data-track-index="49" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:50"><div id="belong-t19-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t19-w0" class="w">turned</span> <span id="belong-t19-w1" class="w">down</span> <span id="belong-t19-w2" class="w acc">themselves</span></div></div></div>
+    <div id="belong-t20" class="clip el" data-start="74.302" data-duration="2.605" data-track-index="50" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:51"><div id="belong-t20-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t20-w0" class="w">→</span> <span id="belong-t20-w1" class="w">worried</span> <span id="belong-t20-w2" class="w acc">less</span></div></div></div>
+    <div id="belong-wq" class="clip el" data-start="77.087" data-duration="2.4" data-track-index="51" style="position:absolute;left:0px;top:60px;width:1920px;height:1020px;z-index:52" data-layout-allow-overlap><div id="belong-wq-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="belong-t21" class="clip el" data-start="76.922" data-duration="2.64" data-track-index="52" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:53"><div id="belong-t21-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="belong-t21-w0" class="w">why</span> <span id="belong-t21-w1" class="w">does</span> <span id="belong-t21-w2" class="w acc">yes</span> <span id="belong-t21-w3" class="w">keep</span> <span id="belong-t21-w4" class="w">slipping</span> <span id="belong-t21-w5" class="w">out?</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"belong-g0","t":"stick","from":"bottom","exit":null,"in":0.34,"out":7.175,"outDur":0.3,"poses":[["happy",0.34]],"mouth":[["smile",0.34]]},{"id":"belong-g1","t":"stick","from":"bottom","exit":null,"in":0.34,"out":7.175,"outDur":0.3,"poses":[["happy",0.34]],"mouth":[["smile",0.34]]},{"id":"belong-g2","t":"stick","from":"bottom","exit":null,"in":0.34,"out":7.175,"outDur":0.3,"poses":[["happy",0.34]],"mouth":[["smile",0.34]]},{"id":"belong-lo","t":"stick","from":"bottom","exit":null,"in":0.34,"out":7.175,"outDur":0.3,"poses":[["idle",1.963],["headDown",4.443]],"mouth":[["smile",0.34],["frown",1.963]],"move":[[400,0,1.963,1.4]]},{"id":"belong-t0","t":"text","from":"top","exit":null,"in":1.963,"out":4.202999999999999,"outDur":0.3,"words":[1.963,2.323,2.523,2.623,2.723]},{"id":"belong-t1","t":"text","from":"top","exit":null,"in":4.443,"out":7.175,"outDur":0.3,"words":[4.443,5.723,5.943,6.283,6.443]},{"id":"belong-c1","t":"card","from":"top","exit":null,"in":9.795,"out":16.823,"outDur":0.3},{"id":"belong-bp","t":"icon","from":"pop","exit":null,"in":9.795,"out":16.823,"outDur":0.25},{"id":"belong-bh","t":"icon","from":"pop","exit":null,"in":15.275,"out":16.823,"outDur":0.25,"pulse":1.12,"beat":0.9},{"id":"belong-ak","t":"stick","from":"left","exit":null,"in":17.643,"out":29.075000000000003,"outDur":0.3,"poses":[["point",17.963]],"mouth":[["smile",17.963]]},{"id":"belong-yu","t":"stick","from":"right","exit":null,"in":17.643,"out":29.075000000000003,"outDur":0.3,"poses":[["idle",17.963],["headDown",25.503]],"mouth":[["neutral",17.963],["frown",25.503]]},{"id":"belong-hq","t":"bubble","from":"pop","exit":null,"in":17.963,"out":29.075000000000003,"outDur":0.25},{"id":"belong-gq","t":"bubble","from":"pop","exit":null,"in":22.223,"out":29.075000000000003,"outDur":0.25},{"id":"belong-t2","t":"text","from":"top","exit":null,"in":20.283,"out":21.683,"outDur":0.3,"words":[20.383,20.563,20.903]},{"id":"belong-t3","t":"text","from":"top","exit":null,"in":21.983,"out":23.983,"outDur":0.3,"words":[22.223,22.963,23.203,23.303,23.423]},{"id":"belong-t4","t":"text","from":"top","exit":null,"in":24.963000000000005,"out":26.363000000000003,"outDur":0.3,"words":[24.223,24.883,25.503]},{"id":"belong-sat","t":"icon","from":"pop","exit":null,"in":28.355,"out":29.075000000000003,"outDur":0.25},{"id":"belong-t5","t":"text","from":"top","exit":null,"in":27.375000000000004,"out":29.075000000000003,"outDur":0.3,"words":[26.603,27.895,28.155,28.355]},{"id":"belong-t6","t":"text","from":"top","exit":null,"in":29.315,"out":30.475,"outDur":0.3,"words":[29.315,29.475,29.935,30.035]},{"id":"belong-fr","t":"icon","from":"pop","exit":null,"in":30.815,"out":33.695,"outDur":0.25},{"id":"belong-fo","t":"icon","from":"pop","exit":null,"in":32.975,"out":33.695,"outDur":0.25},{"id":"belong-frl","t":"text","from":"bottom","exit":null,"in":30.815,"out":33.695,"outDur":0.3,"words":[30.815]},{"id":"belong-fol","t":"text","from":"bottom","exit":null,"in":32.895,"out":33.695,"outDur":0.3,"words":[32.975]},{"id":"belong-t7","t":"text","from":"top","exit":null,"in":30.815,"out":33.695,"outDur":0.3,"words":[30.715,30.815,31.215,31.915,32.275,32.695,32.855,32.975]},{"id":"belong-c2","t":"card","from":"top","exit":null,"in":36.448,"out":41.228,"outDur":0.3},{"id":"belong-gp","t":"icon","from":"pop","exit":null,"in":38.688,"out":41.228,"outDur":0.25},{"id":"belong-ir","t":"stick","from":"left","exit":null,"in":41.468,"out":61.269,"outDur":0.3,"poses":[["give",42.588],["shrug",58.229],["happy",60.609]],"mouth":[["smile",41.468],["neutral",58.229],["smile",60.609]]},{"id":"belong-lt","t":"icon","from":"pop","exit":null,"in":42.588,"out":50.303,"outDur":0.25},{"id":"belong-iv","t":"stick","from":"right","exit":null,"in":41.468,"out":61.269,"outDur":0.3,"poses":[["idle",41.468],["headDown",52.663],["happy",60.609]],"mouth":[["smile",41.468],["frown",52.663],["smile",60.609]]},{"id":"belong-mu","t":"icon","from":"pop","exit":null,"in":44.208,"out":45.062999999999995,"outDur":0.25},{"id":"belong-cf","t":"icon","from":"pop","exit":null,"in":46.383,"out":47.043,"outDur":0.25},{"id":"belong-t8","t":"text","from":"top","exit":null,"in":42.467999999999996,"out":43.867999999999995,"outDur":0.3,"words":[42.588,43.168,43.328]},{"id":"belong-t9","t":"text","from":"top","exit":null,"in":44.108,"out":45.062999999999995,"outDur":0.3,"words":[44.108,44.208,44.528]},{"id":"belong-t10","t":"text","from":"top","exit":null,"in":45.643,"out":47.043,"outDur":0.3,"words":[45.303,46.003,46.383]},{"id":"belong-t11","t":"text","from":"top","exit":null,"in":48.003,"out":50.303,"outDur":0.3,"words":[48.343,48.543,48.723,48.943,49.223,49.443]},{"id":"belong-wt","t":"icon","from":"pop","exit":null,"in":52.663,"out":57.928999999999995,"outDur":0.25},{"id":"belong-wr","t":"icon","from":"pop","exit":null,"in":52.663,"out":57.928999999999995,"outDur":0.25},{"id":"belong-wb","t":"icon","from":"pop","exit":null,"in":55.523,"out":57.928999999999995,"outDur":0.25},{"id":"belong-t12","t":"text","from":"top","exit":null,"in":51.602999999999994,"out":53.303,"outDur":0.3,"words":[51.623,51.623,52.303,52.663]},{"id":"belong-t13","t":"text","from":"top","exit":null,"in":54.623,"out":57.928999999999995,"outDur":0.3,"words":[54.623,55.523,55.523,56.169,56.169,56.369,56.709,56.909]},{"id":"belong-t14","t":"text","from":"top","exit":null,"in":58.169,"out":59.449,"outDur":0.3,"words":[58.169,58.229,58.449,58.629,58.809,58.989]},{"id":"belong-ok","t":"bubble","from":"pop","exit":null,"in":60.609,"out":61.269,"outDur":0.25},{"id":"belong-t15","t":"text","from":"top","exit":null,"in":59.689,"out":61.269,"outDur":0.3,"words":[59.689,60.609]},{"id":"belong-t16","t":"text","from":"slam","exit":null,"in":61.509,"out":62.528999999999996,"outDur":0.25,"words":[61.829,61.949]},{"id":"belong-pa","t":"stick","from":"left","exit":null,"in":62.869,"out":76.56700000000001,"outDur":0.3,"poses":[["point",66.109],["idle",68.782],["sorry",71.782],["happy",74.562]],"mouth":[["smile",62.869],["frown",68.782],["neutral",71.782],["smile",74.562]]},{"id":"belong-pb","t":"stick","from":"right","exit":null,"in":62.869,"out":76.56700000000001,"outDur":0.3,"poses":[["shrug",64.609],["point",68.782],["armsCrossed",71.782],["happy",74.562]],"mouth":[["smile",62.869],["neutral",68.782],["tight",71.782],["smile",74.562]]},{"id":"belong-t17","t":"text","from":"top","exit":null,"in":63.489,"out":66.742,"outDur":0.3,"words":[63.489,63.809,64.169,64.389,64.609,65.029]},{"id":"belong-t18","t":"text","from":"top","exit":null,"in":67.262,"out":69.58200000000001,"outDur":0.3,"words":[66.982,67.122,67.262,67.622]},{"id":"belong-t19","t":"text","from":"top","exit":null,"in":71.682,"out":73.08200000000001,"outDur":0.3,"words":[71.782,72.042,72.342]},{"id":"belong-t20","t":"text","from":"top","exit":null,"in":74.302,"out":76.56700000000001,"outDur":0.3,"words":[74.302,74.302,74.562]},{"id":"belong-wq","t":"icon","from":"pop","exit":null,"in":77.087,"out":79.197,"outDur":0.25},{"id":"belong-t21","t":"text","from":"top","exit":null,"in":76.922,"out":79.222,"outDur":0.3,"words":[77.087,77.567,77.767,77.987,78.247,78.647]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["belong"] = tl;
+    })();
+  </script>
+</template>
