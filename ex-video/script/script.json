@@ -1,0 +1,5661 @@
+{
+ "title": "The Psychology of People Who Keep Going Back to Their Ex",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "It's late."
+    },
+    {
+     "id": "b01",
+     "say": "You're lying in bed, scrolling."
+    },
+    {
+     "id": "b02",
+     "say": "And there it is."
+    },
+    {
+     "id": "b03",
+     "say": "Their name."
+    },
+    {
+     "id": "b04",
+     "say": "You open the chat."
+    },
+    {
+     "id": "b05",
+     "say": "You check when they were last online."
+    },
+    {
+     "id": "b06",
+     "say": "Three minutes ago."
+    },
+    {
+     "id": "b07",
+     "say": "You type, \"Hey, stranger.\""
+    },
+    {
+     "id": "b08",
+     "say": "You know how this ended last time."
+    },
+    {
+     "id": "b09",
+     "say": "You remember the fights, the silence, the night one of you finally said \"I'm done.\""
+    },
+    {
+     "id": "b10",
+     "say": "But for you, it doesn't feel like going back."
+    },
+    {
+     "id": "b11",
+     "say": "It feels like going home."
+    },
+    {
+     "id": "b12",
+     "say": "If that's you, you're far from alone."
+    },
+    {
+     "id": "b13",
+     "say": "Breaking up and making up, is much more common than most people think."
+    },
+    {
+     "id": "b14",
+     "say": "And for some of us, it happens again and again."
+    },
+    {
+     "id": "b15",
+     "say": "Sound familiar?"
+    },
+    {
+     "id": "b16",
+     "say": "Psychologists have scanned the brains, of people who just got dumped."
+    },
+    {
+     "id": "b17",
+     "say": "They've followed couples, who break up and make up."
+    },
+    {
+     "id": "b18",
+     "say": "And they've studied what happens, when you keep checking your ex's profile."
+    },
+    {
+     "id": "b19",
+     "say": "By the end of this video, you'll know why your ex, is so hard to quit."
+    },
+    {
+     "id": "b20",
+     "say": "And the one question, that tells a second chance, from a second mistake."
+    },
+    {
+     "id": "b21",
+     "say": "Let's start with what a breakup does, to your brain."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "abed",
+     "name": "bed",
+     "x": 960,
+     "y": 720,
+     "size": 560,
+     "from": "pop",
+     "at": "b00:late",
+     "out": "b09"
+    },
+    {
+     "t": "stick",
+     "id": "ame",
+     "x": 940,
+     "y": 630,
+     "from": "bottom",
+     "at": "b00:late",
+     "poses": [
+      [
+       "idle",
+       "b00:late"
+      ],
+      [
+       "give",
+       "b01:scrolling"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:late"
+      ],
+      [
+       "o",
+       "b06:three"
+      ],
+      [
+       "smile",
+       "b07:type"
+      ]
+     ],
+     "out": "b09",
+     "scale": 0.62,
+     "sit": true
+    },
+    {
+     "t": "icon",
+     "id": "aph",
+     "name": "phone",
+     "x": 1110,
+     "y": 545,
+     "size": 100,
+     "from": "pop",
+     "at": "b00:late",
+     "out": "b09"
+    },
+    {
+     "t": "icon",
+     "id": "agl",
+     "name": "glow",
+     "x": 1110,
+     "y": 545,
+     "size": 150,
+     "from": "pop",
+     "at": "b00:late",
+     "out": "b09",
+     "pulse": 1.08,
+     "beat": 1.6
+    },
+    {
+     "t": "icon",
+     "id": "amn",
+     "name": "moon",
+     "x": 1480,
+     "y": 330,
+     "size": 120,
+     "from": "pop",
+     "at": "b00:late",
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "it's *late*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b00:late",
+     "out": "b01"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "scrolling…",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b01:scrolling",
+     "out": "b02",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "bell",
+     "name": "bell",
+     "x": 1220,
+     "y": 400,
+     "size": 110,
+     "from": "pop",
+     "at": "b02:there",
+     "out": "b04",
+     "color": "accent",
+     "sway": 12,
+     "period": 0.35
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "and there it *is*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b02:there",
+     "out": "b03"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "their !name!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b03:name",
+     "out": "b04"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "you open the *chat*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b04:open",
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "last *online*…",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b05:online",
+     "out": "b06"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "*3 minutes* ago",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b06:three",
+     "out": "b07"
+    },
+    {
+     "t": "bubble",
+     "id": "hs",
+     "text": "Hey, stranger.",
+     "x": 1300,
+     "y": 360,
+     "size": 340,
+     "from": "pop",
+     "at": "b07:type",
+     "fontSize": 48,
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "you know how this *ended*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b08:know",
+     "out": "b09"
+    },
+    {
+     "t": "icon",
+     "id": "f1",
+     "name": "rain",
+     "x": 560,
+     "y": 560,
+     "size": 220,
+     "from": "pop",
+     "at": "b09:fights",
+     "out": "b10"
+    },
+    {
+     "t": "icon",
+     "id": "f2",
+     "name": "chair",
+     "x": 960,
+     "y": 560,
+     "size": 220,
+     "from": "pop",
+     "at": "b09:silence",
+     "out": "b10"
+    },
+    {
+     "t": "icon",
+     "id": "f3",
+     "name": "door",
+     "x": 1360,
+     "y": 560,
+     "size": 230,
+     "from": "pop",
+     "at": "b09:night",
+     "out": "b10"
+    },
+    {
+     "t": "bubble",
+     "id": "dn",
+     "text": "I'm done.",
+     "x": 1360,
+     "y": 330,
+     "size": 260,
+     "from": "pop",
+     "at": "b09:finally",
+     "fontSize": 46,
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "the fights · the *silence*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b09:fights",
+     "out": "b10"
+    },
+    {
+     "t": "stick",
+     "id": "me2",
+     "x": 740,
+     "y": 690,
+     "from": "left",
+     "at": "b10:you",
+     "poses": [
+      [
+       "idle",
+       "b10:you"
+      ],
+      [
+       "happy",
+       "b11:home"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b10:you"
+      ],
+      [
+       "smile",
+       "b11:home"
+      ]
+     ],
+     "out": "b12"
+    },
+    {
+     "t": "icon",
+     "id": "hs2",
+     "name": "house",
+     "x": 1220,
+     "y": 560,
+     "size": 280,
+     "from": "pop",
+     "at": "b11:home",
+     "out": "b12"
+    },
+    {
+     "t": "icon",
+     "id": "hg",
+     "name": "glow",
+     "x": 1220,
+     "y": 590,
+     "size": 110,
+     "from": "pop",
+     "at": "b11:home",
+     "out": "b12",
+     "pulse": 1.15,
+     "beat": 1.0
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "but for *you*, it doesn't feel like going back",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b10:you",
+     "out": "b11"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "it feels like going !home!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b11:feels",
+     "out": "b12"
+    },
+    {
+     "t": "stick",
+     "id": "pa",
+     "x": 560,
+     "y": 690,
+     "from": "left",
+     "at": "b12:that",
+     "poses": [
+      [
+       "idle",
+       "b12:alone"
+      ],
+      [
+       "happy",
+       "b13:making"
+      ],
+      [
+       "headDown",
+       "b14:again"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b12:alone"
+      ]
+     ],
+     "out": "b15",
+     "move": [
+      [
+       820,
+       690,
+       "b13:making",
+       1.0
+      ],
+      [
+       560,
+       690,
+       "b14:again",
+       1.0
+      ]
+     ]
+    },
+    {
+     "t": "stick",
+     "id": "pb",
+     "x": 1360,
+     "y": 690,
+     "from": "right",
+     "at": "b12:that",
+     "poses": [
+      [
+       "idle",
+       "b12:alone"
+      ],
+      [
+       "happy",
+       "b13:making"
+      ],
+      [
+       "headDown",
+       "b14:again"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b12:alone"
+      ]
+     ],
+     "out": "b15",
+     "flip": true,
+     "variant": "bow",
+     "move": [
+      [
+       1100,
+       690,
+       "b13:making",
+       1.0
+      ],
+      [
+       1360,
+       690,
+       "b14:again",
+       1.0
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "lp",
+     "name": "loop",
+     "x": 960,
+     "y": 380,
+     "size": 150,
+     "from": "pop",
+     "at": "b14:again",
+     "out": "b15"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "you're far from *alone*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b12:alone",
+     "out": "b13"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "break up · make *up*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b13:breaking",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "again… and *again*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b14:again",
+     "out": "b15"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "sound familiar?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b15:sound",
+     "out": "b16",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "i1",
+     "name": "brain",
+     "x": 520,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b16:brains",
+     "out": "b19"
+    },
+    {
+     "t": "icon",
+     "id": "i2",
+     "name": "loop",
+     "x": 960,
+     "y": 560,
+     "size": 220,
+     "from": "pop",
+     "at": "b17:couples",
+     "out": "b19"
+    },
+    {
+     "t": "icon",
+     "id": "i3",
+     "name": "phone",
+     "x": 1400,
+     "y": 580,
+     "size": 210,
+     "from": "pop",
+     "at": "b18:checking",
+     "out": "b19"
+    },
+    {
+     "t": "icon",
+     "id": "i4",
+     "name": "eye",
+     "x": 1400,
+     "y": 400,
+     "size": 120,
+     "from": "pop",
+     "at": "b18:profile",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "brains · couples · *profiles*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b16:scanned",
+     "out": "b19"
+    },
+    {
+     "t": "icon",
+     "id": "mg",
+     "name": "heart",
+     "x": 960,
+     "y": 560,
+     "size": 230,
+     "from": "pop",
+     "at": "b19:ex",
+     "out": "b20",
+     "color": "accent",
+     "pulse": 1.12,
+     "beat": 0.8
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "why your ex is so hard to *quit*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b19:why",
+     "out": "b20"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 960,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b20:question",
+     "out": "b21"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "the !one question!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b20:one",
+     "out": "b21"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "broken",
+     "x": 960,
+     "y": 580,
+     "size": 280,
+     "from": "pop",
+     "at": "b21:breakup",
+     "pulse": 1.06,
+     "beat": 1.2
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "what a breakup does to your *brain*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b21:breakup"
+    }
+   ]
+  },
+  {
+   "id": "brain",
+   "beats": [
+    {
+     "id": "b22",
+     "say": "In twenty eleven, psychologist Ethan Kross and his team, recruited forty people."
+    },
+    {
+     "id": "b23",
+     "say": "All of them had been through an unwanted breakup, in the last six months."
+    },
+    {
+     "id": "b24",
+     "say": "Inside a brain scanner, they looked at a photo of their ex, and thought about the breakup."
+    },
+    {
+     "id": "b25",
+     "say": "In a separate task, the researchers pressed a hot probe, against their forearm."
+    },
+    {
+     "id": "b26",
+     "say": "Painful, but bearable."
+    },
+    {
+     "id": "b27",
+     "say": "Then they compared the two."
+    },
+    {
+     "id": "b28",
+     "say": "Some of the same areas, lit up for both."
+    },
+    {
+     "id": "b29",
+     "say": "Areas linked to the physical feeling of pain."
+    },
+    {
+     "id": "b30",
+     "say": "So when you say a breakup hurts, it may be more than a figure of speech."
+    },
+    {
+     "id": "b31",
+     "say": "A year earlier, anthropologist Helen Fisher and her team, scanned fifteen people, who'd just been dumped."
+    },
+    {
+     "id": "b32",
+     "say": "They were still intensely in love."
+    },
+    {
+     "id": "b33",
+     "say": "On average, the breakup was about two months old."
+    },
+    {
+     "id": "b34",
+     "say": "When they saw their ex's photo, the brain's reward system lit up."
+    },
+    {
+     "id": "b35",
+     "say": "Including areas linked to craving, and addiction."
+    },
+    {
+     "id": "b36",
+     "say": "The researchers described romantic rejection, as a kind of addiction."
+    },
+    {
+     "id": "b37",
+     "say": "And here's the irony."
+    },
+    {
+     "id": "b38",
+     "say": "Being rejected didn't make them want their ex less."
+    },
+    {
+     "id": "b39",
+     "say": "In many ways, it made them want them more."
+    },
+    {
+     "id": "b40",
+     "say": "Fisher called it, frustration attraction."
+    },
+    {
+     "id": "b41",
+     "say": "The person who caused the pain, becomes the one thing your brain wants, to stop it."
+    },
+    {
+     "id": "b42",
+     "say": "So is it any wonder, you reach for your phone at one in the morning?"
+    },
+    {
+     "id": "b43",
+     "say": "But there was good news, hidden in that study too."
+    },
+    {
+     "id": "b44",
+     "say": "The longer it had been since the breakup, the weaker the activity, in an area linked to attachment."
+    },
+    {
+     "id": "b45",
+     "say": "The craving fades."
+    },
+    {
+     "id": "b46",
+     "say": "It just doesn't fade on your schedule."
+    }
+   ],
+   "elements": [
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2011 · BRAIN SCANS",
+     "text": "40 people, recently dumped",
+     "sub": "Kross et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b22:recruited",
+     "out": "b24"
+    },
+    {
+     "t": "icon",
+     "id": "ppl",
+     "name": "people",
+     "x": 960,
+     "y": 600,
+     "size": 280,
+     "from": "pop",
+     "at": "b22:forty",
+     "out": "b24"
+    },
+    {
+     "t": "icon",
+     "id": "sc",
+     "name": "scanner",
+     "x": 760,
+     "y": 600,
+     "size": 380,
+     "from": "pop",
+     "at": "b24:scanner",
+     "out": "b25"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "broken",
+     "x": 1260,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b24:photo",
+     "out": "b25"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "a photo of their *ex*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b24:photo",
+     "out": "b25"
+    },
+    {
+     "t": "stick",
+     "id": "arm",
+     "x": 820,
+     "y": 690,
+     "from": "left",
+     "at": "b25:task",
+     "poses": [
+      [
+       "give",
+       "b25:probe"
+      ],
+      [
+       "strain",
+       "b26:painful"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b25:task"
+      ],
+      [
+       "o",
+       "b26:painful"
+      ]
+     ],
+     "out": "b27"
+    },
+    {
+     "t": "icon",
+     "id": "pr",
+     "name": "probe",
+     "x": 1180,
+     "y": 520,
+     "size": 220,
+     "from": "right",
+     "at": "b25:pressed",
+     "out": "b27"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "a hot *probe*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b25:probe",
+     "out": "b26"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "painful, but *bearable*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b26:painful",
+     "out": "b27"
+    },
+    {
+     "t": "icon",
+     "id": "b1",
+     "name": "brain",
+     "x": 640,
+     "y": 590,
+     "size": 300,
+     "from": "pop",
+     "at": "b27:compared",
+     "out": "b30"
+    },
+    {
+     "t": "icon",
+     "id": "b2",
+     "name": "brain",
+     "x": 1280,
+     "y": 590,
+     "size": 300,
+     "from": "pop",
+     "at": "b27:two",
+     "out": "b30"
+    },
+    {
+     "t": "text",
+     "id": "l1",
+     "text": "ex",
+     "x": 640,
+     "y": 790,
+     "size": 46,
+     "from": "bottom",
+     "at": "b27:compared",
+     "out": "b30",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "l2",
+     "text": "heat",
+     "x": 1280,
+     "y": 790,
+     "size": 46,
+     "from": "bottom",
+     "at": "b27:two",
+     "out": "b30",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "g1",
+     "name": "glow",
+     "x": 690,
+     "y": 570,
+     "size": 90,
+     "from": "pop",
+     "at": "b28:same",
+     "out": "b30",
+     "pulse": 1.2,
+     "beat": 0.8
+    },
+    {
+     "t": "icon",
+     "id": "g2",
+     "name": "glow",
+     "x": 1330,
+     "y": 570,
+     "size": 90,
+     "from": "pop",
+     "at": "b28:both",
+     "out": "b30",
+     "pulse": 1.2,
+     "beat": 0.8
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "the *same* areas",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b28:same",
+     "out": "b29"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "the *physical* feeling of pain",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b29:physical",
+     "out": "b30"
+    },
+    {
+     "t": "icon",
+     "id": "bh",
+     "name": "broken",
+     "x": 960,
+     "y": 570,
+     "size": 280,
+     "from": "pop",
+     "at": "b30:hurts",
+     "out": "b31",
+     "pulse": 1.1,
+     "beat": 0.9
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "more than a figure of *speech*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b30:more",
+     "out": "b31"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "2010 · BRAIN SCANS",
+     "text": "15 people, just dumped",
+     "sub": "Fisher et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b31:fisher",
+     "out": "b32"
+    },
+    {
+     "t": "icon",
+     "id": "fp",
+     "name": "broken",
+     "x": 960,
+     "y": 600,
+     "size": 220,
+     "from": "pop",
+     "at": "b31:earlier",
+     "out": "b32"
+    },
+    {
+     "t": "stick",
+     "id": "lv",
+     "x": 860,
+     "y": 690,
+     "from": "bottom",
+     "at": "b32:still",
+     "poses": [
+      [
+       "headDown",
+       "b32:love"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b32:love"
+      ]
+     ],
+     "out": "b34"
+    },
+    {
+     "t": "icon",
+     "id": "lh",
+     "name": "heart",
+     "x": 1120,
+     "y": 470,
+     "size": 130,
+     "from": "pop",
+     "at": "b32:intensely",
+     "out": "b34",
+     "color": "accent",
+     "pulse": 1.15,
+     "beat": 0.7
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "still *intensely* in love",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b32:intensely",
+     "out": "b33"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "the breakup: about *2 months* old",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b33:two",
+     "out": "b34"
+    },
+    {
+     "t": "icon",
+     "id": "rb",
+     "name": "brain",
+     "x": 960,
+     "y": 620,
+     "size": 340,
+     "from": "pop",
+     "at": "b34:photo",
+     "out": "b37"
+    },
+    {
+     "t": "icon",
+     "id": "rg",
+     "name": "glow",
+     "x": 1010,
+     "y": 640,
+     "size": 120,
+     "from": "pop",
+     "at": "b34:reward",
+     "out": "b37",
+     "pulse": 1.25,
+     "beat": 0.9
+    },
+    {
+     "t": "icon",
+     "id": "rc",
+     "name": "bolt",
+     "x": 1330,
+     "y": 460,
+     "size": 140,
+     "from": "pop",
+     "at": "b35:craving",
+     "out": "b37",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "the *reward* system lights up",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b34:reward",
+     "out": "b35"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "craving · *addiction*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b35:craving",
+     "out": "b36"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "rejection ≈ a kind of *addiction*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b36:rejection",
+     "out": "b37"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "the irony",
+     "x": 960,
+     "y": 170,
+     "size": 110,
+     "from": "slam",
+     "at": "b37:irony",
+     "out": "b38",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "ex",
+     "x": 1260,
+     "y": 690,
+     "from": "right",
+     "at": "b37:irony",
+     "poses": [
+      [
+       "idle",
+       "b38:rejected"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b38:rejected"
+      ]
+     ],
+     "out": "b42",
+     "flip": true,
+     "variant": "bow",
+     "move": [
+      [
+       1700,
+       690,
+       "b38:want",
+       2.0
+      ]
+     ]
+    },
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 700,
+     "y": 690,
+     "from": "left",
+     "at": "b37:irony",
+     "poses": [
+      [
+       "idle",
+       "b37:irony"
+      ],
+      [
+       "point",
+       "b38:want"
+      ],
+      [
+       "holdHead",
+       "b41:pain"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b38:rejected"
+      ],
+      [
+       "frown",
+       "b41:pain"
+      ]
+     ],
+     "out": "b42"
+    },
+    {
+     "t": "icon",
+     "id": "mh",
+     "name": "heart",
+     "x": 940,
+     "y": 440,
+     "size": 110,
+     "from": "pop",
+     "at": "b39:more",
+     "out": "b42",
+     "color": "accent",
+     "pulse": 1.3,
+     "beat": 0.55
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "rejected…",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b38:rejected",
+     "out": "b39",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "…wanted !more!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b39:more",
+     "out": "b40"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "frustration *attraction*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b40:frustration",
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "the one thing your brain wants to *stop* it",
+     "x": 960,
+     "y": 170,
+     "size": 56,
+     "from": "top",
+     "at": "b41:person",
+     "out": "b42"
+    },
+    {
+     "t": "icon",
+     "id": "nbed",
+     "name": "bed",
+     "x": 960,
+     "y": 720,
+     "size": 560,
+     "from": "pop",
+     "at": "b42:wonder",
+     "out": "b43"
+    },
+    {
+     "t": "stick",
+     "id": "nme",
+     "x": 940,
+     "y": 630,
+     "from": "bottom",
+     "at": "b42:wonder",
+     "poses": [
+      [
+       "give",
+       "b42:reach"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b42:reach"
+      ]
+     ],
+     "out": "b43",
+     "scale": 0.62,
+     "sit": true
+    },
+    {
+     "t": "icon",
+     "id": "nph",
+     "name": "phone",
+     "x": 1110,
+     "y": 545,
+     "size": 100,
+     "from": "pop",
+     "at": "b42:wonder",
+     "out": "b43"
+    },
+    {
+     "t": "icon",
+     "id": "ngl",
+     "name": "glow",
+     "x": 1110,
+     "y": 545,
+     "size": 150,
+     "from": "pop",
+     "at": "b42:wonder",
+     "out": "b43",
+     "pulse": 1.08,
+     "beat": 1.6
+    },
+    {
+     "t": "icon",
+     "id": "nmn",
+     "name": "moon",
+     "x": 1480,
+     "y": 330,
+     "size": 120,
+     "from": "pop",
+     "at": "b42:wonder",
+     "out": "b43"
+    },
+    {
+     "t": "icon",
+     "id": "ck",
+     "name": "clock",
+     "x": 1240,
+     "y": 380,
+     "size": 130,
+     "from": "pop",
+     "at": "b42:reach",
+     "out": "b43"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "*one* in the morning",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b42:one",
+     "out": "b43"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "the good *news*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b43:good",
+     "out": "b44"
+    },
+    {
+     "t": "icon",
+     "id": "gn",
+     "name": "sun",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b43:good",
+     "out": "b44"
+    },
+    {
+     "t": "bar",
+     "id": "k1",
+     "x": 640,
+     "y": 900,
+     "w": 150,
+     "h": 330,
+     "color": "accent",
+     "label": "",
+     "from": "draw",
+     "at": "b44:longer",
+     "out": "b46"
+    },
+    {
+     "t": "bar",
+     "id": "k2",
+     "x": 960,
+     "y": 900,
+     "w": 150,
+     "h": 200,
+     "color": "accent",
+     "label": "",
+     "from": "draw",
+     "at": "b44:weaker",
+     "out": "b46"
+    },
+    {
+     "t": "bar",
+     "id": "k3",
+     "x": 1280,
+     "y": 900,
+     "w": 150,
+     "h": 90,
+     "color": "muted",
+     "label": "",
+     "from": "draw",
+     "at": "b44:attachment",
+     "out": "b46"
+    },
+    {
+     "t": "icon",
+     "id": "cal",
+     "name": "calendar",
+     "x": 1560,
+     "y": 520,
+     "size": 180,
+     "from": "pop",
+     "at": "b44:longer",
+     "out": "b46"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "time *weakens* the pull",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b44:longer",
+     "out": "b45"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "the craving *fades*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b45:fades",
+     "out": "b46"
+    },
+    {
+     "t": "icon",
+     "id": "hg",
+     "name": "hourglass",
+     "x": 960,
+     "y": 580,
+     "size": 260,
+     "from": "pop",
+     "at": "b46:schedule"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "…just not on *your* schedule",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b46:schedule"
+    }
+   ]
+  },
+  {
+   "id": "reel",
+   "beats": [
+    {
+     "id": "b47",
+     "say": "So the pain is real."
+    },
+    {
+     "id": "b48",
+     "say": "But why does going back, feel like such a good idea?"
+    },
+    {
+     "id": "b49",
+     "say": "Part of the answer, is your memory."
+    },
+    {
+     "id": "b50",
+     "say": "Psychologists have found, that the feelings attached to bad memories, usually fade faster, than the feelings attached to good ones."
+    },
+    {
+     "id": "b51",
+     "say": "It's called, the fading affect bias."
+    },
+    {
+     "id": "b52",
+     "say": "Most of the time, that's a gift."
+    },
+    {
+     "id": "b53",
+     "say": "It's how we move on from bad days."
+    },
+    {
+     "id": "b54",
+     "say": "But after a breakup, it plays a trick on you."
+    },
+    {
+     "id": "b55",
+     "say": "Your mind starts cutting, a highlight reel."
+    },
+    {
+     "id": "b56",
+     "say": "The road trip."
+    },
+    {
+     "id": "b57",
+     "say": "The inside jokes."
+    },
+    {
+     "id": "b58",
+     "say": "The way they said your name."
+    },
+    {
+     "id": "b59",
+     "say": "Not the fight in the car, on that same road trip."
+    },
+    {
+     "id": "b60",
+     "say": "You might even miss the things, you used to complain about."
+    },
+    {
+     "id": "b61",
+     "say": "The snoring."
+    },
+    {
+     "id": "b62",
+     "say": "The terrible playlist."
+    },
+    {
+     "id": "b63",
+     "say": "You remember why you loved them."
+    },
+    {
+     "id": "b64",
+     "say": "You forget why you left."
+    },
+    {
+     "id": "b65",
+     "say": "Then loneliness adds its own voice."
+    },
+    {
+     "id": "b66",
+     "say": "Psychologist Stephanie Spielmann and her colleagues, studied people's longing for their exes."
+    },
+    {
+     "id": "b67",
+     "say": "People with a stronger fear of being single, longed for their ex more."
+    },
+    {
+     "id": "b68",
+     "say": "They were also more likely, to try to get back together."
+    },
+    {
+     "id": "b69",
+     "say": "It didn't matter, who ended it."
+    },
+    {
+     "id": "b70",
+     "say": "And there's one more pull."
+    },
+    {
+     "id": "b71",
+     "say": "Communication researcher René Dailey, has studied on-again, off-again couples for years."
+    },
+    {
+     "id": "b72",
+     "say": "One of the most common reasons people give for going back, is simple."
+    },
+    {
+     "id": "b73",
+     "say": "Lingering feelings."
+    },
+    {
+     "id": "b74",
+     "say": "Another is familiarity."
+    },
+    {
+     "id": "b75",
+     "say": "Starting over with someone new, is hard work."
+    },
+    {
+     "id": "b76",
+     "say": "Your ex already knows, your coffee order."
+    },
+    {
+     "id": "b77",
+     "say": "So here's a question, worth asking yourself."
+    },
+    {
+     "id": "b78",
+     "say": "Do you miss them, or do you miss being known?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the pain is *real*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b47:pain",
+     "out": "b48"
+    },
+    {
+     "t": "icon",
+     "id": "bk",
+     "name": "broken",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b47:pain",
+     "out": "b48"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "so why go *back*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b48:why",
+     "out": "b49"
+    },
+    {
+     "t": "icon",
+     "id": "bq",
+     "name": "question",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b48:why",
+     "out": "b49"
+    },
+    {
+     "t": "icon",
+     "id": "th",
+     "name": "thought",
+     "x": 960,
+     "y": 540,
+     "size": 380,
+     "from": "pop",
+     "at": "b49:memory",
+     "out": "b50"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "your *memory*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b49:memory",
+     "out": "b50"
+    },
+    {
+     "t": "icon",
+     "id": "gm",
+     "name": "heart",
+     "x": 700,
+     "y": 570,
+     "size": 220,
+     "from": "pop",
+     "at": "b50:than",
+     "out": "b52",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "bm",
+     "name": "rain",
+     "x": 1240,
+     "y": 570,
+     "size": 230,
+     "from": "pop",
+     "at": "b50:bad",
+     "out": "b50:good"
+    },
+    {
+     "t": "text",
+     "id": "gl",
+     "text": "good",
+     "x": 700,
+     "y": 780,
+     "size": 44,
+     "from": "bottom",
+     "at": "b50:than",
+     "out": "b52",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "bl",
+     "text": "bad",
+     "x": 1240,
+     "y": 780,
+     "size": 44,
+     "from": "bottom",
+     "at": "b50:bad",
+     "out": "b50:good",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "bad memories fade *faster*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b50:bad",
+     "out": "b51"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "the fading affect *bias*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b51:fading",
+     "out": "b52"
+    },
+    {
+     "t": "icon",
+     "id": "sn",
+     "name": "sun",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b52:most",
+     "out": "b54"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "most of the time: a *gift*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b52:most",
+     "out": "b54"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "after a breakup: a *trick*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b54:breakup",
+     "out": "b55"
+    },
+    {
+     "t": "icon",
+     "id": "tk",
+     "name": "thought",
+     "x": 960,
+     "y": 540,
+     "size": 360,
+     "from": "pop",
+     "at": "b54:breakup",
+     "out": "b55"
+    },
+    {
+     "t": "icon",
+     "id": "fm",
+     "name": "film",
+     "x": 970,
+     "y": 560,
+     "size": 900,
+     "from": "draw",
+     "at": "b55:highlight",
+     "out": "b65"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "the *highlight* reel",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b55:highlight",
+     "out": "b56"
+    },
+    {
+     "t": "icon",
+     "id": "r1",
+     "name": "car",
+     "x": 690,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b56:road",
+     "out": "b60"
+    },
+    {
+     "t": "icon",
+     "id": "r2",
+     "name": "people",
+     "x": 960,
+     "y": 560,
+     "size": 140,
+     "from": "pop",
+     "at": "b57:jokes",
+     "out": "b60"
+    },
+    {
+     "t": "icon",
+     "id": "r3",
+     "name": "heart",
+     "x": 1252,
+     "y": 560,
+     "size": 120,
+     "from": "pop",
+     "at": "b58:name",
+     "out": "b60",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "the road trip · the jokes · your *name*",
+     "x": 960,
+     "y": 170,
+     "size": 56,
+     "from": "top",
+     "at": "b56:road",
+     "out": "b59"
+    },
+    {
+     "t": "icon",
+     "id": "rf",
+     "name": "rain",
+     "x": 690,
+     "y": 400,
+     "size": 110,
+     "from": "pop",
+     "at": "b59:fight",
+     "out": "b60"
+    },
+    {
+     "t": "icon",
+     "id": "ss",
+     "name": "scissors",
+     "x": 690,
+     "y": 790,
+     "size": 150,
+     "from": "pop",
+     "at": "b59:same",
+     "out": "b60"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "*not* the fight in the car",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b59:fight",
+     "out": "b60"
+    },
+    {
+     "t": "text",
+     "id": "zz",
+     "text": "z z z",
+     "x": 690,
+     "y": 560,
+     "size": 56,
+     "from": "pop",
+     "at": "b61:snoring",
+     "out": "b65"
+    },
+    {
+     "t": "icon",
+     "id": "nt",
+     "name": "note",
+     "x": 960,
+     "y": 560,
+     "size": 130,
+     "from": "pop",
+     "at": "b62:playlist",
+     "out": "b65"
+    },
+    {
+     "t": "icon",
+     "id": "lh",
+     "name": "heart",
+     "x": 1252,
+     "y": 560,
+     "size": 120,
+     "from": "pop",
+     "at": "b63:loved",
+     "out": "b65",
+     "color": "accent",
+     "pulse": 1.15
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "you miss the *complaints*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b60:miss",
+     "out": "b61"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "the snoring · the *terrible* playlist",
+     "x": 960,
+     "y": 170,
+     "size": 56,
+     "from": "top",
+     "at": "b61:snoring",
+     "out": "b63"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "why you *loved* them",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b63:loved",
+     "out": "b64"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "…not why you *left*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b64:left",
+     "out": "b65"
+    },
+    {
+     "t": "icon",
+     "id": "bn",
+     "name": "couch",
+     "x": 960,
+     "y": 700,
+     "size": 520,
+     "from": "pop",
+     "at": "b65:loneliness",
+     "out": "b70"
+    },
+    {
+     "t": "stick",
+     "id": "lo",
+     "x": 840,
+     "y": 705,
+     "from": "bottom",
+     "at": "b65:loneliness",
+     "poses": [
+      [
+       "headDown",
+       "b65:loneliness"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b65:loneliness"
+      ]
+     ],
+     "out": "b70",
+     "scale": 0.7,
+     "sit": true
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "loneliness adds its *voice*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b65:voice",
+     "out": "b66"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "FEAR OF BEING SINGLE",
+     "text": "Longing for ex-partners",
+     "sub": "Spielmann et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b66:spielmann",
+     "out": "b67"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "fear of being single → more *longing*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b67:fear",
+     "out": "b68"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "more likely to try *again*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b68:likely",
+     "out": "b69"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "no matter who *ended* it",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b69:matter",
+     "out": "b70"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "one more *pull*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b70:pull",
+     "out": "b71"
+    },
+    {
+     "t": "icon",
+     "id": "mg",
+     "name": "loop",
+     "x": 960,
+     "y": 570,
+     "size": 220,
+     "from": "pop",
+     "at": "b70:pull",
+     "out": "b73"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "ON-AGAIN, OFF-AGAIN",
+     "text": "René Dailey",
+     "sub": "communication researcher",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b71:dailey",
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "the most common *reasons*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b72:common",
+     "out": "b73"
+    },
+    {
+     "t": "icon",
+     "id": "lf",
+     "name": "heart",
+     "x": 760,
+     "y": 570,
+     "size": 200,
+     "from": "pop",
+     "at": "b73:lingering",
+     "out": "b75",
+     "color": "accent",
+     "pulse": 1.1
+    },
+    {
+     "t": "icon",
+     "id": "fa",
+     "name": "house",
+     "x": 1160,
+     "y": 570,
+     "size": 210,
+     "from": "pop",
+     "at": "b74:familiarity",
+     "out": "b75"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "*lingering* feelings",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b73:lingering",
+     "out": "b74"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "*familiarity*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b74:familiarity",
+     "out": "b75"
+    },
+    {
+     "t": "icon",
+     "id": "mt",
+     "name": "mountain",
+     "x": 960,
+     "y": 570,
+     "size": 280,
+     "from": "pop",
+     "at": "b75:starting",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "starting over is *hard*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b75:starting",
+     "out": "b76"
+    },
+    {
+     "t": "stick",
+     "id": "cy",
+     "x": 700,
+     "y": 690,
+     "from": "left",
+     "at": "b76:ex",
+     "poses": [
+      [
+       "idle",
+       "b76:ex"
+      ],
+      [
+       "happy",
+       "b76:coffee"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b76:coffee"
+      ]
+     ],
+     "out": "b77"
+    },
+    {
+     "t": "stick",
+     "id": "cx",
+     "x": 1240,
+     "y": 690,
+     "from": "right",
+     "at": "b76:ex",
+     "poses": [
+      [
+       "give",
+       "b76:knows"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b76:ex"
+      ]
+     ],
+     "out": "b77",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "cf",
+     "name": "coffee",
+     "x": 1060,
+     "y": 500,
+     "size": 130,
+     "from": "pop",
+     "at": "b76:knows",
+     "out": "b77",
+     "move": [
+      [
+       880,
+       500,
+       "b76:coffee",
+       0.9
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t23",
+     "text": "they know your *coffee order*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b76:knows",
+     "out": "b77"
+    },
+    {
+     "t": "text",
+     "id": "t24",
+     "text": "a question worth *asking*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b77:question",
+     "out": "b78"
+    },
+    {
+     "t": "icon",
+     "id": "qq",
+     "name": "question",
+     "x": 960,
+     "y": 570,
+     "size": 220,
+     "from": "pop",
+     "at": "b77:question",
+     "out": "b78"
+    },
+    {
+     "t": "icon",
+     "id": "mh",
+     "name": "heart",
+     "x": 760,
+     "y": 570,
+     "size": 190,
+     "from": "pop",
+     "at": "b78:miss",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "me",
+     "name": "people",
+     "x": 1160,
+     "y": 570,
+     "size": 200,
+     "from": "pop",
+     "at": "b78:miss"
+    },
+    {
+     "t": "text",
+     "id": "t25",
+     "text": "miss *them*… or being !known!?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b78:miss"
+    }
+   ]
+  },
+  {
+   "id": "checking",
+   "beats": [
+    {
+     "id": "b79",
+     "say": "Now, maybe you haven't texted them."
+    },
+    {
+     "id": "b80",
+     "say": "But be honest."
+    },
+    {
+     "id": "b81",
+     "say": "Do you check their profile?"
+    },
+    {
+     "id": "b82",
+     "say": "In twenty twelve, psychologist Tara Marshall surveyed, four hundred and sixty-four people, about their exes on Facebook."
+    },
+    {
+     "id": "b83",
+     "say": "The more people checked their ex's page, the worse they were doing."
+    },
+    {
+     "id": "b84",
+     "say": "More distress about the breakup."
+    },
+    {
+     "id": "b85",
+     "say": "More longing for their ex."
+    },
+    {
+     "id": "b86",
+     "say": "And less personal growth."
+    },
+    {
+     "id": "b87",
+     "say": "Seeing an ex in person, had a similar link."
+    },
+    {
+     "id": "b88",
+     "say": "More contact, more longing."
+    },
+    {
+     "id": "b89",
+     "say": "Now, these were correlations."
+    },
+    {
+     "id": "b90",
+     "say": "People who are struggling, may simply check more."
+    },
+    {
+     "id": "b91",
+     "say": "But it's hard to heal a wound, you reopen every night."
+    },
+    {
+     "id": "b92",
+     "say": "Every scroll through their photos, adds another clip, to the highlight reel."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b79:maybe",
+     "poses": [
+      [
+       "idle",
+       "b79:maybe"
+      ],
+      [
+       "give",
+       "b81:check"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b79:maybe"
+      ],
+      [
+       "smile",
+       "b80:honest"
+      ],
+      [
+       "o",
+       "b81:check"
+      ]
+     ],
+     "out": "b82"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 1000,
+     "y": 560,
+     "size": 160,
+     "from": "pop",
+     "at": "b81:check",
+     "out": "b82",
+     "sway": 6,
+     "period": 0.5
+    },
+    {
+     "t": "icon",
+     "id": "ey",
+     "name": "eye",
+     "x": 1220,
+     "y": 420,
+     "size": 130,
+     "from": "pop",
+     "at": "b81:profile",
+     "out": "b82"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "maybe you haven't *texted*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b79:texted",
+     "out": "b80"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "but be *honest*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b80:honest",
+     "out": "b81"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "do you check their *profile*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b81:check",
+     "out": "b82"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2012 · 464 PEOPLE",
+     "text": "Exes on Facebook",
+     "sub": "Tara Marshall",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b82:marshall",
+     "out": "b83"
+    },
+    {
+     "t": "icon",
+     "id": "fb",
+     "name": "phone",
+     "x": 960,
+     "y": 580,
+     "size": 220,
+     "from": "pop",
+     "at": "b82:surveyed",
+     "out": "b84"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "more checking → *worse*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b83:more",
+     "out": "b84"
+    },
+    {
+     "t": "bar",
+     "id": "d1",
+     "x": 600,
+     "y": 960,
+     "w": 170,
+     "h": 300,
+     "color": "accent",
+     "label": "distress ↑",
+     "from": "draw",
+     "at": "b84:distress",
+     "out": "b87"
+    },
+    {
+     "t": "bar",
+     "id": "d2",
+     "x": 960,
+     "y": 960,
+     "w": 170,
+     "h": 300,
+     "color": "accent",
+     "label": "longing ↑",
+     "from": "draw",
+     "at": "b85:longing",
+     "out": "b87"
+    },
+    {
+     "t": "bar",
+     "id": "d3",
+     "x": 1320,
+     "y": 960,
+     "w": 170,
+     "h": 90,
+     "color": "muted",
+     "label": "growth ↓",
+     "from": "draw",
+     "at": "b86:growth",
+     "out": "b87"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "more *distress*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b84:distress",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "more *longing*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b85:longing",
+     "out": "b86"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "less *growth*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b86:growth",
+     "out": "b87"
+    },
+    {
+     "t": "stick",
+     "id": "pa",
+     "x": 700,
+     "y": 690,
+     "from": "left",
+     "at": "b87:person",
+     "poses": [
+      [
+       "idle",
+       "b87:person"
+      ],
+      [
+       "give",
+       "b88:contact"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b87:person"
+      ]
+     ],
+     "out": "b89"
+    },
+    {
+     "t": "stick",
+     "id": "pb",
+     "x": 1220,
+     "y": 690,
+     "from": "right",
+     "at": "b87:person",
+     "poses": [
+      [
+       "idle",
+       "b87:person"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b87:person"
+      ]
+     ],
+     "out": "b89",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "ph2",
+     "name": "heart",
+     "x": 960,
+     "y": 440,
+     "size": 120,
+     "from": "pop",
+     "at": "b88:longing",
+     "out": "b89",
+     "color": "accent",
+     "pulse": 1.2,
+     "beat": 0.6
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "in person: a *similar* link",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b87:person",
+     "out": "b88"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "more contact, more *longing*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b88:contact",
+     "out": "b89"
+    },
+    {
+     "t": "icon",
+     "id": "cq",
+     "name": "question",
+     "x": 960,
+     "y": 570,
+     "size": 220,
+     "from": "pop",
+     "at": "b89:correlations",
+     "out": "b91"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "these were *correlations*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b89:correlations",
+     "out": "b90"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "strugglers may check *more*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b90:struggling",
+     "out": "b91"
+    },
+    {
+     "t": "icon",
+     "id": "wd",
+     "name": "broken",
+     "x": 960,
+     "y": 580,
+     "size": 260,
+     "from": "pop",
+     "at": "b91:wound",
+     "out": "b92",
+     "pulse": 1.08,
+     "beat": 1.0
+    },
+    {
+     "t": "icon",
+     "id": "bd",
+     "name": "bandage",
+     "x": 960,
+     "y": 580,
+     "size": 200,
+     "from": "pop",
+     "at": "b91:heal",
+     "out": "b91:reopen"
+    },
+    {
+     "t": "icon",
+     "id": "wp",
+     "name": "phone",
+     "x": 1300,
+     "y": 520,
+     "size": 130,
+     "from": "pop",
+     "at": "b91:reopen",
+     "out": "b92",
+     "sway": 6,
+     "period": 0.5
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "a wound you *reopen*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b91:wound",
+     "out": "b92"
+    },
+    {
+     "t": "icon",
+     "id": "fm",
+     "name": "film",
+     "x": 960,
+     "y": 570,
+     "size": 720,
+     "from": "draw",
+     "at": "b92:scroll"
+    },
+    {
+     "t": "icon",
+     "id": "fh",
+     "name": "heart",
+     "x": 960,
+     "y": 570,
+     "size": 110,
+     "from": "pop",
+     "at": "b92:clip",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "another clip for the *reel*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b92:clip"
+    }
+   ]
+  },
+  {
+   "id": "back",
+   "beats": [
+    {
+     "id": "b93",
+     "say": "So what happens, when people do go back?"
+    },
+    {
+     "id": "b94",
+     "say": "In twenty thirteen, a team led by sociologist Sarah Halpern-Meekin, studied almost eight hundred young adults."
+    },
+    {
+     "id": "b95",
+     "say": "More than four in ten, had broken up and got back together, at least once."
+    },
+    {
+     "id": "b96",
+     "say": "The researchers called it, relationship churning."
+    },
+    {
+     "id": "b97",
+     "say": "Think about your own friends."
+    },
+    {
+     "id": "b98",
+     "say": "You can probably name a couple like that."
+    },
+    {
+     "id": "b99",
+     "say": "And it doesn't stop at dating."
+    },
+    {
+     "id": "b100",
+     "say": "In twenty fourteen, Amber Vennum and her colleagues, studied more than a thousand couples, who lived together or were married."
+    },
+    {
+     "id": "b101",
+     "say": "Over a third of the couples living together, had broken up and made up."
+    },
+    {
+     "id": "b102",
+     "say": "So had about one in five, married couples."
+    },
+    {
+     "id": "b103",
+     "say": "Couples who'd cycled before the wedding, started their marriages less satisfied."
+    },
+    {
+     "id": "b104",
+     "say": "They argued more."
+    },
+    {
+     "id": "b105",
+     "say": "And they were more likely to have a trial separation, in the first three years."
+    },
+    {
+     "id": "b106",
+     "say": "Couples who'd cycled once, were also more likely to cycle again."
+    },
+    {
+     "id": "b107",
+     "say": "In twenty eighteen, a study led by Kale Monk, linked more on-off cycling, to more psychological distress."
+    },
+    {
+     "id": "b108",
+     "say": "So the pattern, can wear you down."
+    },
+    {
+     "id": "b109",
+     "say": "Even when each reunion, feels like coming home."
+    },
+    {
+     "id": "b110",
+     "say": "But it wasn't over yet."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "what happens when people go *back*?",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b93:happens",
+     "out": "b94"
+    },
+    {
+     "t": "icon",
+     "id": "lp",
+     "name": "loop",
+     "x": 960,
+     "y": 570,
+     "size": 220,
+     "from": "pop",
+     "at": "b93:happens",
+     "out": "b94"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2013 · 792 YOUNG ADULTS",
+     "text": "Relationship churning",
+     "sub": "Halpern-Meekin et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b94:team",
+     "out": "b95"
+    },
+    {
+     "t": "stick",
+     "id": "p0",
+     "x": 360,
+     "y": 720,
+     "from": "bottom",
+     "at": "b95:four",
+     "poses": [
+      [
+       "idle",
+       "b95:four"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b95:four"
+      ]
+     ],
+     "out": "b97",
+     "scale": 0.42
+    },
+    {
+     "t": "stick",
+     "id": "p1",
+     "x": 493,
+     "y": 720,
+     "from": "bottom",
+     "at": "b95:four",
+     "poses": [
+      [
+       "idle",
+       "b95:four"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b95:four"
+      ]
+     ],
+     "out": "b97",
+     "scale": 0.42,
+     "variant": "bow"
+    },
+    {
+     "t": "stick",
+     "id": "p2",
+     "x": 626,
+     "y": 720,
+     "from": "bottom",
+     "at": "b95:four",
+     "poses": [
+      [
+       "idle",
+       "b95:four"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b95:four"
+      ]
+     ],
+     "out": "b97",
+     "scale": 0.42
+    },
+    {
+     "t": "stick",
+     "id": "p3",
+     "x": 759,
+     "y": 720,
+     "from": "bottom",
+     "at": "b95:four",
+     "poses": [
+      [
+       "idle",
+       "b95:four"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b95:four"
+      ]
+     ],
+     "out": "b97",
+     "scale": 0.42,
+     "variant": "bow"
+    },
+    {
+     "t": "stick",
+     "id": "p4",
+     "x": 892,
+     "y": 720,
+     "from": "bottom",
+     "at": "b95:four",
+     "poses": [
+      [
+       "idle",
+       "b95:four"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b95:four"
+      ]
+     ],
+     "out": "b97",
+     "scale": 0.42
+    },
+    {
+     "t": "stick",
+     "id": "p5",
+     "x": 1025,
+     "y": 720,
+     "from": "bottom",
+     "at": "b95:four",
+     "poses": [
+      [
+       "idle",
+       "b95:four"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b95:four"
+      ]
+     ],
+     "out": "b97",
+     "scale": 0.42,
+     "variant": "bow"
+    },
+    {
+     "t": "stick",
+     "id": "p6",
+     "x": 1158,
+     "y": 720,
+     "from": "bottom",
+     "at": "b95:four",
+     "poses": [
+      [
+       "idle",
+       "b95:four"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b95:four"
+      ]
+     ],
+     "out": "b97",
+     "scale": 0.42
+    },
+    {
+     "t": "stick",
+     "id": "p7",
+     "x": 1291,
+     "y": 720,
+     "from": "bottom",
+     "at": "b95:four",
+     "poses": [
+      [
+       "idle",
+       "b95:four"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b95:four"
+      ]
+     ],
+     "out": "b97",
+     "scale": 0.42,
+     "variant": "bow"
+    },
+    {
+     "t": "stick",
+     "id": "p8",
+     "x": 1424,
+     "y": 720,
+     "from": "bottom",
+     "at": "b95:four",
+     "poses": [
+      [
+       "idle",
+       "b95:four"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b95:four"
+      ]
+     ],
+     "out": "b97",
+     "scale": 0.42
+    },
+    {
+     "t": "stick",
+     "id": "p9",
+     "x": 1557,
+     "y": 720,
+     "from": "bottom",
+     "at": "b95:four",
+     "poses": [
+      [
+       "idle",
+       "b95:four"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b95:four"
+      ]
+     ],
+     "out": "b97",
+     "scale": 0.42,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "l0",
+     "name": "loop",
+     "x": 360,
+     "y": 470,
+     "size": 80,
+     "from": "pop",
+     "at": "b95:ten",
+     "out": "b97",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "l1",
+     "name": "loop",
+     "x": 493,
+     "y": 470,
+     "size": 80,
+     "from": "pop",
+     "at": "b95:ten",
+     "out": "b97",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "l2",
+     "name": "loop",
+     "x": 626,
+     "y": 470,
+     "size": 80,
+     "from": "pop",
+     "at": "b95:ten",
+     "out": "b97",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "l3",
+     "name": "loop",
+     "x": 759,
+     "y": 470,
+     "size": 80,
+     "from": "pop",
+     "at": "b95:ten",
+     "out": "b97",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "more than *4 in 10*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b95:four",
+     "out": "b96"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "relationship *churning*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b96:churning",
+     "out": "b97"
+    },
+    {
+     "t": "stick",
+     "id": "fa",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b97:friends",
+     "poses": [
+      [
+       "idle",
+       "b97:friends"
+      ],
+      [
+       "happy",
+       "b98:couple"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b97:friends"
+      ]
+     ],
+     "out": "b99"
+    },
+    {
+     "t": "stick",
+     "id": "fb",
+     "x": 1160,
+     "y": 690,
+     "from": "right",
+     "at": "b97:friends",
+     "poses": [
+      [
+       "idle",
+       "b97:friends"
+      ],
+      [
+       "happy",
+       "b98:couple"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b97:friends"
+      ]
+     ],
+     "out": "b99",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "fl",
+     "name": "loop",
+     "x": 960,
+     "y": 400,
+     "size": 130,
+     "from": "pop",
+     "at": "b98:couple",
+     "out": "b99"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "think of your own *friends*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b97:friends",
+     "out": "b98"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "you can name a couple like *that*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b98:name",
+     "out": "b99"
+    },
+    {
+     "t": "icon",
+     "id": "rg",
+     "name": "rings",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b99:dating",
+     "out": "b100"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "not just *dating*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b99:dating",
+     "out": "b100"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "2014 · 1,000+ COUPLES",
+     "text": "Living together & married",
+     "sub": "Vennum et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b100:vennum",
+     "out": "b101"
+    },
+    {
+     "t": "icon",
+     "id": "vh",
+     "name": "house",
+     "x": 760,
+     "y": 600,
+     "size": 220,
+     "from": "pop",
+     "at": "b100:lived",
+     "out": "b101"
+    },
+    {
+     "t": "icon",
+     "id": "vr",
+     "name": "rings",
+     "x": 1160,
+     "y": 600,
+     "size": 220,
+     "from": "pop",
+     "at": "b100:couples",
+     "out": "b101"
+    },
+    {
+     "t": "bar",
+     "id": "v1",
+     "x": 760,
+     "y": 960,
+     "w": 180,
+     "h": 330,
+     "color": "accent",
+     "label": "together · 1 in 3",
+     "from": "draw",
+     "at": "b101:third",
+     "out": "b103"
+    },
+    {
+     "t": "bar",
+     "id": "v2",
+     "x": 1160,
+     "y": 960,
+     "w": 180,
+     "h": 200,
+     "color": "muted",
+     "label": "married · 1 in 5",
+     "from": "draw",
+     "at": "b102:five",
+     "out": "b103"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "over *a third* living together",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b101:third",
+     "out": "b102"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "about *1 in 5* married",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b102:five",
+     "out": "b103"
+    },
+    {
+     "t": "icon",
+     "id": "rr",
+     "name": "rings",
+     "x": 960,
+     "y": 570,
+     "size": 280,
+     "from": "pop",
+     "at": "b103:wedding",
+     "out": "b106"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "cycled before the wedding: *less* satisfied",
+     "x": 960,
+     "y": 170,
+     "size": 54,
+     "from": "top",
+     "at": "b103:cycled",
+     "out": "b104"
+    },
+    {
+     "t": "icon",
+     "id": "ab",
+     "name": "bolt",
+     "x": 1240,
+     "y": 420,
+     "size": 120,
+     "from": "pop",
+     "at": "b104:argued",
+     "out": "b106",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "more *arguments*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b104:argued",
+     "out": "b105"
+    },
+    {
+     "t": "strike",
+     "id": "kr",
+     "x": 960,
+     "y": 570,
+     "w": 320,
+     "at": "b105:separation",
+     "out": "b106"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "more trial *separations*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b105:separation",
+     "out": "b106"
+    },
+    {
+     "t": "icon",
+     "id": "cl",
+     "name": "loop",
+     "x": 960,
+     "y": 570,
+     "size": 260,
+     "from": "pop",
+     "at": "b106:once",
+     "out": "b107",
+     "sway": 20,
+     "period": 0.8
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "once → more likely *again*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b106:once",
+     "out": "b107"
+    },
+    {
+     "t": "card",
+     "id": "c3",
+     "kicker": "2018 · ON-OFF CYCLING",
+     "text": "More psychological distress",
+     "sub": "Monk et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b107:monk",
+     "out": "b108"
+    },
+    {
+     "t": "icon",
+     "id": "ml",
+     "name": "loop",
+     "x": 760,
+     "y": 600,
+     "size": 200,
+     "from": "pop",
+     "at": "b107:study",
+     "out": "b108"
+    },
+    {
+     "t": "icon",
+     "id": "mb",
+     "name": "broken",
+     "x": 1160,
+     "y": 600,
+     "size": 200,
+     "from": "pop",
+     "at": "b107:distress",
+     "out": "b108"
+    },
+    {
+     "t": "stick",
+     "id": "td",
+     "x": 860,
+     "y": 690,
+     "from": "bottom",
+     "at": "b108:pattern",
+     "poses": [
+      [
+       "headDown",
+       "b108:pattern"
+      ],
+      [
+       "idle",
+       "b109:home"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b108:pattern"
+      ],
+      [
+       "smile",
+       "b109:home"
+      ]
+     ],
+     "out": "b110"
+    },
+    {
+     "t": "icon",
+     "id": "hh",
+     "name": "house",
+     "x": 1220,
+     "y": 560,
+     "size": 220,
+     "from": "pop",
+     "at": "b109:reunion",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "it can wear you *down*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b108:wear",
+     "out": "b109"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "even when it feels like *home*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b109:feels",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "but it wasn't over yet",
+     "x": 960,
+     "y": 480,
+     "size": 96,
+     "from": "slam",
+     "at": "b110:over",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "works",
+   "beats": [
+    {
+     "id": "b111",
+     "say": "Because not every couple who goes back, ends up where they started."
+    },
+    {
+     "id": "b112",
+     "say": "On average, on-again, off-again couples, report lower satisfaction, and more uncertainty."
+    },
+    {
+     "id": "b113",
+     "say": "But some of them, do well."
+    },
+    {
+     "id": "b114",
+     "say": "The difference often comes down to, one thing."
+    },
+    {
+     "id": "b115",
+     "say": "Whether anything actually changed."
+    },
+    {
+     "id": "b116",
+     "say": "Some couples split over distance, bad timing, or a job in another city."
+    },
+    {
+     "id": "b117",
+     "say": "If that problem is gone, going back can make sense."
+    },
+    {
+     "id": "b118",
+     "say": "Researchers who study couples, talk about sliding, versus deciding."
+    },
+    {
+     "id": "b119",
+     "say": "Sliding is drifting back, because it's late, you're lonely, and they texted first."
+    },
+    {
+     "id": "b120",
+     "say": "Deciding is choosing it, with your eyes open."
+    },
+    {
+     "id": "b121",
+     "say": "So be honest."
+    },
+    {
+     "id": "b122",
+     "say": "Are you deciding right now, or sliding?"
+    },
+    {
+     "id": "b123",
+     "say": "Vennum's team found, that cycling couples tended to rush into big steps, like moving in together."
+    },
+    {
+     "id": "b124",
+     "say": "So here's the one question, I promised you."
+    },
+    {
+     "id": "b125",
+     "say": "What's different, this time?"
+    },
+    {
+     "id": "b126",
+     "say": "Not how you feel."
+    },
+    {
+     "id": "b127",
+     "say": "What's different."
+    },
+    {
+     "id": "b128",
+     "say": "If the honest answer is \"I missed them,\" that's the highlight reel talking."
+    },
+    {
+     "id": "b129",
+     "say": "If you can both name what changed, and you can see it, that's a second chance."
+    },
+    {
+     "id": "b130",
+     "say": "Real change looks like, a hard conversation, about why it ended."
+    },
+    {
+     "id": "b131",
+     "say": "New habits, not new promises."
+    },
+    {
+     "id": "b132",
+     "say": "Time apart, that you both actually used."
+    },
+    {
+     "id": "b133",
+     "say": "So how do you know, which one you're in?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "not every couple ends up where they *started*",
+     "x": 960,
+     "y": 170,
+     "size": 54,
+     "from": "top",
+     "at": "b111:couple",
+     "out": "b112"
+    },
+    {
+     "t": "icon",
+     "id": "st",
+     "name": "signpost",
+     "x": 960,
+     "y": 570,
+     "size": 260,
+     "from": "pop",
+     "at": "b111:couple",
+     "out": "b113"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "on average: *lower* satisfaction",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b112:average",
+     "out": "b113"
+    },
+    {
+     "t": "stick",
+     "id": "wa",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b113:some",
+     "poses": [
+      [
+       "happy",
+       "b113:well"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b113:some"
+      ]
+     ],
+     "out": "b114"
+    },
+    {
+     "t": "stick",
+     "id": "wb",
+     "x": 1160,
+     "y": 690,
+     "from": "right",
+     "at": "b113:some",
+     "poses": [
+      [
+       "happy",
+       "b113:well"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b113:some"
+      ]
+     ],
+     "out": "b114",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "wh",
+     "name": "heart",
+     "x": 960,
+     "y": 430,
+     "size": 110,
+     "from": "pop",
+     "at": "b113:well",
+     "out": "b114",
+     "color": "accent",
+     "pulse": 1.12
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "but some do *well*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b113:some",
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "it comes down to *one* thing",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b114:one",
+     "out": "b115"
+    },
+    {
+     "t": "icon",
+     "id": "one",
+     "name": "puzzle",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b114:difference",
+     "out": "b115"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "did anything change?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b115:changed",
+     "out": "b116",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "u1",
+     "name": "plane",
+     "x": 600,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b116:distance",
+     "out": "b117"
+    },
+    {
+     "t": "icon",
+     "id": "u2",
+     "name": "clock",
+     "x": 960,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b116:timing",
+     "out": "b117"
+    },
+    {
+     "t": "icon",
+     "id": "u3",
+     "name": "briefcase",
+     "x": 1320,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b116:job",
+     "out": "b117"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "distance · timing · a *job*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b116:distance",
+     "out": "b117"
+    },
+    {
+     "t": "stick",
+     "id": "ga",
+     "x": 560,
+     "y": 690,
+     "from": "left",
+     "at": "b117:problem",
+     "poses": [
+      [
+       "idle",
+       "b117:problem"
+      ],
+      [
+       "happy",
+       "b117:sense"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b117:problem"
+      ]
+     ],
+     "out": "b118",
+     "move": [
+      [
+       820,
+       690,
+       "b117:gone",
+       1.2
+      ]
+     ]
+    },
+    {
+     "t": "stick",
+     "id": "gb",
+     "x": 1360,
+     "y": 690,
+     "from": "right",
+     "at": "b117:problem",
+     "poses": [
+      [
+       "idle",
+       "b117:problem"
+      ],
+      [
+       "happy",
+       "b117:sense"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b117:problem"
+      ]
+     ],
+     "out": "b118",
+     "flip": true,
+     "variant": "bow",
+     "move": [
+      [
+       1100,
+       690,
+       "b117:gone",
+       1.2
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "problem gone? it can make *sense*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b117:problem",
+     "out": "b118"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "*sliding* versus deciding",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b118:sliding",
+     "out": "b119"
+    },
+    {
+     "t": "icon",
+     "id": "sd",
+     "name": "signpost",
+     "x": 960,
+     "y": 570,
+     "size": 260,
+     "from": "pop",
+     "at": "b118:sliding",
+     "out": "b119"
+    },
+    {
+     "t": "stick",
+     "id": "sl",
+     "x": 560,
+     "y": 600,
+     "from": "left",
+     "at": "b119:sliding",
+     "poses": [
+      [
+       "shrug",
+       "b119:sliding"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b119:sliding"
+      ]
+     ],
+     "out": "b120",
+     "move": [
+      [
+       880,
+       690,
+       "b119:drifting",
+       2.4
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "sm",
+     "name": "moon",
+     "x": 1300,
+     "y": 380,
+     "size": 110,
+     "from": "pop",
+     "at": "b119:late",
+     "out": "b120"
+    },
+    {
+     "t": "icon",
+     "id": "sp",
+     "name": "phone",
+     "x": 1300,
+     "y": 600,
+     "size": 150,
+     "from": "pop",
+     "at": "b119:texted",
+     "out": "b120",
+     "sway": 6,
+     "period": 0.5
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "late · lonely · they texted *first*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b119:late",
+     "out": "b120"
+    },
+    {
+     "t": "stick",
+     "id": "de",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b120:deciding",
+     "poses": [
+      [
+       "proud",
+       "b120:deciding"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b120:deciding"
+      ]
+     ],
+     "out": "b123"
+    },
+    {
+     "t": "icon",
+     "id": "dp",
+     "name": "signpost",
+     "x": 1200,
+     "y": 580,
+     "size": 260,
+     "from": "pop",
+     "at": "b120:choosing",
+     "out": "b123"
+    },
+    {
+     "t": "icon",
+     "id": "de2",
+     "name": "eye",
+     "x": 760,
+     "y": 360,
+     "size": 100,
+     "from": "pop",
+     "at": "b120:eyes",
+     "out": "b121"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "deciding: eyes *open*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b120:deciding",
+     "out": "b121"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "so be *honest*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b121:honest",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "deciding… or !sliding!?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b122:deciding",
+     "out": "b123"
+    },
+    {
+     "t": "icon",
+     "id": "mh",
+     "name": "house",
+     "x": 760,
+     "y": 570,
+     "size": 260,
+     "from": "pop",
+     "at": "b123:steps",
+     "out": "b124"
+    },
+    {
+     "t": "icon",
+     "id": "mb",
+     "name": "box",
+     "x": 1700,
+     "y": 620,
+     "size": 180,
+     "from": "right",
+     "at": "b123:rush",
+     "out": "b124",
+     "move": [
+      [
+       1100,
+       620,
+       "b123:rush",
+       0.5
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "rushing into big *steps*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b123:rush",
+     "out": "b124"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "the question I *promised*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b124:promised",
+     "out": "b125"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "what's different this time?",
+     "x": 960,
+     "y": 480,
+     "size": 96,
+     "from": "slam",
+     "at": "b125:different",
+     "out": "b126",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "not how you *feel*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b126:feel",
+     "out": "b127",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "what's !different!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b127:different",
+     "out": "b128"
+    },
+    {
+     "t": "icon",
+     "id": "q2",
+     "name": "question",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b126:feel",
+     "out": "b128"
+    },
+    {
+     "t": "icon",
+     "id": "tc",
+     "name": "thought",
+     "x": 960,
+     "y": 560,
+     "size": 400,
+     "from": "pop",
+     "at": "b128:missed",
+     "out": "b129"
+    },
+    {
+     "t": "icon",
+     "id": "tf",
+     "name": "film",
+     "x": 970,
+     "y": 530,
+     "size": 230,
+     "from": "pop",
+     "at": "b128:highlight",
+     "out": "b129"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "“I missed them” = the *highlight reel*",
+     "x": 960,
+     "y": 170,
+     "size": 56,
+     "from": "top",
+     "at": "b128:missed",
+     "out": "b129"
+    },
+    {
+     "t": "stick",
+     "id": "sa",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b129:name",
+     "poses": [
+      [
+       "idle",
+       "b129:name"
+      ],
+      [
+       "happy",
+       "b129:chance"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b129:name"
+      ]
+     ],
+     "out": "b130"
+    },
+    {
+     "t": "stick",
+     "id": "sb",
+     "x": 1160,
+     "y": 690,
+     "from": "right",
+     "at": "b129:name",
+     "poses": [
+      [
+       "idle",
+       "b129:name"
+      ],
+      [
+       "happy",
+       "b129:chance"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b129:name"
+      ]
+     ],
+     "out": "b130",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "sk",
+     "name": "check",
+     "x": 960,
+     "y": 420,
+     "size": 120,
+     "from": "pop",
+     "at": "b129:see",
+     "out": "b130",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "you can both *see* it: a second chance",
+     "x": 960,
+     "y": 170,
+     "size": 56,
+     "from": "top",
+     "at": "b129:name",
+     "out": "b130"
+    },
+    {
+     "t": "icon",
+     "id": "c1",
+     "name": "chat",
+     "x": 600,
+     "y": 570,
+     "size": 200,
+     "from": "pop",
+     "at": "b130:conversation",
+     "out": "b133"
+    },
+    {
+     "t": "icon",
+     "id": "c2",
+     "name": "calendar",
+     "x": 960,
+     "y": 570,
+     "size": 200,
+     "from": "pop",
+     "at": "b131:habits",
+     "out": "b133"
+    },
+    {
+     "t": "icon",
+     "id": "c3",
+     "name": "hourglass",
+     "x": 1320,
+     "y": 570,
+     "size": 200,
+     "from": "pop",
+     "at": "b132:apart",
+     "out": "b133"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "a *hard* conversation",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b130:hard",
+     "out": "b131"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "new habits, not new *promises*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b131:habits",
+     "out": "b132"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "time apart, actually *used*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b132:time",
+     "out": "b133"
+    },
+    {
+     "t": "icon",
+     "id": "q3",
+     "name": "question",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b133:know"
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "which one are *you* in?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b133:know"
+    }
+   ]
+  },
+  {
+   "id": "rules",
+   "beats": [
+    {
+     "id": "b134",
+     "say": "Rule one: ask the question."
+    },
+    {
+     "id": "b135",
+     "say": "Before you reply, write down what's different this time."
+    },
+    {
+     "id": "b136",
+     "say": "If you can't fill one line, don't send the text."
+    },
+    {
+     "id": "b137",
+     "say": "Rule two: watch the whole movie."
+    },
+    {
+     "id": "b138",
+     "say": "Write down why it ended."
+    },
+    {
+     "id": "b139",
+     "say": "The real reasons, not the polished version."
+    },
+    {
+     "id": "b140",
+     "say": "Read it when the highlight reel, starts playing."
+    },
+    {
+     "id": "b141",
+     "say": "Rule three: mute, don't monitor."
+    },
+    {
+     "id": "b142",
+     "say": "You don't have to block them."
+    },
+    {
+     "id": "b143",
+     "say": "But stop checking."
+    },
+    {
+     "id": "b144",
+     "say": "Mute them, so their life isn't the first thing you see, each morning."
+    },
+    {
+     "id": "b145",
+     "say": "Every look, reopens the wound."
+    },
+    {
+     "id": "b146",
+     "say": "Rule four: ride out the craving."
+    },
+    {
+     "id": "b147",
+     "say": "Remember the brain scans."
+    },
+    {
+     "id": "b148",
+     "say": "The pull gets weaker with time."
+    },
+    {
+     "id": "b149",
+     "say": "Cravings come in waves."
+    },
+    {
+     "id": "b150",
+     "say": "Most waves pass."
+    },
+    {
+     "id": "b151",
+     "say": "When the urge hits, wait twenty minutes."
+    },
+    {
+     "id": "b152",
+     "say": "Call a friend instead."
+    },
+    {
+     "id": "b153",
+     "say": "And rule five: fill the space they left."
+    },
+    {
+     "id": "b154",
+     "say": "Your friends, your plans, the parts of you that went quiet."
+    },
+    {
+     "id": "b155",
+     "say": "In one study, psychologists Ty Tashiro and Patricia Frazier, found that growth after a breakup, was common."
+    },
+    {
+     "id": "b156",
+     "say": "Many people said they'd become, more confident, and more independent."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "r1",
+     "text": "rule 1 · ask the *question*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b134:rule",
+     "out": "b136"
+    },
+    {
+     "t": "icon",
+     "id": "n1",
+     "name": "notebook",
+     "x": 760,
+     "y": 570,
+     "size": 260,
+     "from": "pop",
+     "at": "b135:write",
+     "out": "b137"
+    },
+    {
+     "t": "icon",
+     "id": "p1",
+     "name": "phone",
+     "x": 1200,
+     "y": 570,
+     "size": 200,
+     "from": "pop",
+     "at": "b134:question",
+     "out": "b137"
+    },
+    {
+     "t": "icon",
+     "id": "x1",
+     "name": "cross",
+     "x": 1200,
+     "y": 570,
+     "size": 150,
+     "from": "pop",
+     "at": "b136:send",
+     "out": "b137",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "r1b",
+     "text": "can't fill one line? don't *send*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b136:fill",
+     "out": "b137"
+    },
+    {
+     "t": "text",
+     "id": "r2",
+     "text": "rule 2 · watch the *whole* movie",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b137:rule",
+     "out": "b139"
+    },
+    {
+     "t": "icon",
+     "id": "fm",
+     "name": "film",
+     "x": 970,
+     "y": 560,
+     "size": 1000,
+     "from": "draw",
+     "at": "b137:rule",
+     "out": "b141"
+    },
+    {
+     "t": "icon",
+     "id": "f1",
+     "name": "heart",
+     "x": 670,
+     "y": 560,
+     "size": 120,
+     "from": "pop",
+     "at": "b137:whole",
+     "out": "b141",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "f2",
+     "name": "car",
+     "x": 970,
+     "y": 560,
+     "size": 140,
+     "from": "pop",
+     "at": "b137:whole",
+     "out": "b141"
+    },
+    {
+     "t": "icon",
+     "id": "f3",
+     "name": "rain",
+     "x": 1295,
+     "y": 560,
+     "size": 140,
+     "from": "pop",
+     "at": "b138:ended",
+     "out": "b141"
+    },
+    {
+     "t": "text",
+     "id": "r2b",
+     "text": "the *real* reasons",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b139:real",
+     "out": "b140"
+    },
+    {
+     "t": "text",
+     "id": "r2c",
+     "text": "read it when the reel *plays*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b140:read",
+     "out": "b141"
+    },
+    {
+     "t": "text",
+     "id": "r3",
+     "text": "rule 3 · mute, don't *monitor*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b141:rule",
+     "out": "b142:block"
+    },
+    {
+     "t": "icon",
+     "id": "mu",
+     "name": "mute",
+     "x": 760,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b141:mute",
+     "out": "b146"
+    },
+    {
+     "t": "icon",
+     "id": "mp",
+     "name": "phone",
+     "x": 1200,
+     "y": 570,
+     "size": 200,
+     "from": "pop",
+     "at": "b141:mute",
+     "out": "b146"
+    },
+    {
+     "t": "text",
+     "id": "r3b",
+     "text": "no need to *block*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b142:block",
+     "out": "b143"
+    },
+    {
+     "t": "text",
+     "id": "r3c",
+     "text": "just stop *checking*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b143:stop",
+     "out": "b144"
+    },
+    {
+     "t": "icon",
+     "id": "ms",
+     "name": "sun",
+     "x": 1200,
+     "y": 380,
+     "size": 120,
+     "from": "pop",
+     "at": "b144:morning",
+     "out": "b146"
+    },
+    {
+     "t": "text",
+     "id": "r3d",
+     "text": "not the first thing you *see*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b144:first",
+     "out": "b145"
+    },
+    {
+     "t": "text",
+     "id": "r3e",
+     "text": "every look reopens the *wound*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b145:look",
+     "out": "b146"
+    },
+    {
+     "t": "text",
+     "id": "r4",
+     "text": "rule 4 · ride out the *craving*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b146:rule",
+     "out": "b147"
+    },
+    {
+     "t": "icon",
+     "id": "bs",
+     "name": "brain",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b146:rule",
+     "out": "b149"
+    },
+    {
+     "t": "text",
+     "id": "r4b",
+     "text": "the pull gets *weaker*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b148:pull",
+     "out": "b149"
+    },
+    {
+     "t": "icon",
+     "id": "wv",
+     "name": "wave",
+     "x": 400,
+     "y": 570,
+     "size": 340,
+     "from": "left",
+     "at": "b149:waves",
+     "out": "b151",
+     "move": [
+      [
+       960,
+       570,
+       "b149:waves",
+       1.0
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "r4c",
+     "text": "cravings come in *waves*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b149:waves",
+     "out": "b150"
+    },
+    {
+     "t": "text",
+     "id": "r4d",
+     "text": "most waves *pass*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b150:pass",
+     "out": "b151"
+    },
+    {
+     "t": "icon",
+     "id": "sw",
+     "name": "stopwatch",
+     "x": 760,
+     "y": 570,
+     "size": 230,
+     "from": "pop",
+     "at": "b151:wait",
+     "out": "b153"
+    },
+    {
+     "t": "text",
+     "id": "r4e",
+     "text": "wait *20 minutes*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b151:twenty",
+     "out": "b152"
+    },
+    {
+     "t": "icon",
+     "id": "cp",
+     "name": "phone",
+     "x": 1010,
+     "y": 560,
+     "size": 100,
+     "from": "pop",
+     "at": "b152:call",
+     "out": "b153"
+    },
+    {
+     "t": "stick",
+     "id": "cf",
+     "x": 1200,
+     "y": 690,
+     "from": "right",
+     "at": "b152:call",
+     "poses": [
+      [
+       "give",
+       "b152:call"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b152:friend"
+      ]
+     ],
+     "out": "b153",
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "r4f",
+     "text": "call a *friend*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b152:call",
+     "out": "b153"
+    },
+    {
+     "t": "text",
+     "id": "r5",
+     "text": "rule 5 · fill the *space*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b153:rule",
+     "out": "b154:friends"
+    },
+    {
+     "t": "icon",
+     "id": "bn",
+     "name": "couch",
+     "x": 960,
+     "y": 700,
+     "size": 520,
+     "from": "pop",
+     "at": "b153:space",
+     "out": "b155"
+    },
+    {
+     "t": "stick",
+     "id": "s1",
+     "x": 840,
+     "y": 705,
+     "from": "bottom",
+     "at": "b153:space",
+     "poses": [
+      [
+       "idle",
+       "b153:space"
+      ],
+      [
+       "happy",
+       "b154:friends"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b153:space"
+      ],
+      [
+       "smile",
+       "b154:friends"
+      ]
+     ],
+     "out": "b155",
+     "scale": 0.7,
+     "sit": true
+    },
+    {
+     "t": "stick",
+     "id": "s2",
+     "x": 1080,
+     "y": 705,
+     "from": "bottom",
+     "at": "b154:friends",
+     "poses": [
+      [
+       "happy",
+       "b154:friends"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b154:friends"
+      ]
+     ],
+     "out": "b155",
+     "scale": 0.7,
+     "sit": true,
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "pn",
+     "name": "note",
+     "x": 1420,
+     "y": 420,
+     "size": 120,
+     "from": "pop",
+     "at": "b154:plans",
+     "out": "b155",
+     "bob": 8
+    },
+    {
+     "t": "text",
+     "id": "r5b",
+     "text": "friends · plans · the *quiet* parts",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b154:friends",
+     "out": "b155"
+    },
+    {
+     "t": "card",
+     "id": "c5",
+     "kicker": "2003 · GROWTH AFTER BREAKUPS",
+     "text": "Growth was common",
+     "sub": "Tashiro & Frazier",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b155:tashiro",
+     "out": "b156"
+    },
+    {
+     "t": "stick",
+     "id": "gr",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b155:growth",
+     "poses": [
+      [
+       "happy",
+       "b155:growth"
+      ],
+      [
+       "proud",
+       "b156:confident"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b155:growth"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "r5c",
+     "text": "more *confident* · more independent",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b156:confident"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b157",
+     "say": "So here's the twist."
+    },
+    {
+     "id": "b158",
+     "say": "Missing your ex, doesn't mean you should go back."
+    },
+    {
+     "id": "b159",
+     "say": "It means you loved someone."
+    },
+    {
+     "id": "b160",
+     "say": "And your brain is doing exactly what brains do, after a loss."
+    },
+    {
+     "id": "b161",
+     "say": "People who keep going back, usually aren't weak."
+    },
+    {
+     "id": "b162",
+     "say": "Very often, they're loyal."
+    },
+    {
+     "id": "b163",
+     "say": "They hold on, because holding on, is what they do best."
+    },
+    {
+     "id": "b164",
+     "say": "Loyalty is a good thing."
+    },
+    {
+     "id": "b165",
+     "say": "Pointed at the wrong person, it keeps you stuck."
+    },
+    {
+     "id": "b166",
+     "say": "Just make sure you're holding on to a person, not a highlight reel."
+    },
+    {
+     "id": "b167",
+     "say": "The next time their name, lights up your phone, remember the whole movie."
+    },
+    {
+     "id": "b168",
+     "say": "Then ask what's different this time."
+    },
+    {
+     "id": "b169",
+     "say": "If nothing is, you already have your answer."
+    },
+    {
+     "id": "b170",
+     "say": "So here's your challenge for this week."
+    },
+    {
+     "id": "b171",
+     "say": "Write down three real reasons it ended."
+    },
+    {
+     "id": "b172",
+     "say": "Keep the list somewhere you'll see it."
+    },
+    {
+     "id": "b173",
+     "say": "Then come back and tell me if it helped."
+    },
+    {
+     "id": "b174",
+     "say": "Have you ever gone back to an ex?"
+    },
+    {
+     "id": "b175",
+     "say": "Did it work?"
+    },
+    {
+     "id": "b176",
+     "say": "Tell me in the comments."
+    },
+    {
+     "id": "b177",
+     "say": "Which habit should we cover next?"
+    },
+    {
+     "id": "b178",
+     "say": "Drop it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the twist",
+     "x": 960,
+     "y": 170,
+     "size": 110,
+     "from": "slam",
+     "at": "b157:twist",
+     "out": "b158",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b158:missing",
+     "poses": [
+      [
+       "headDown",
+       "b158:missing"
+      ],
+      [
+       "happy",
+       "b159:loved"
+      ],
+      [
+       "proud",
+       "b162:loyal"
+      ],
+      [
+       "idle",
+       "b165:wrong"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b158:missing"
+      ],
+      [
+       "smile",
+       "b159:loved"
+      ],
+      [
+       "tight",
+       "b165:stuck"
+      ]
+     ],
+     "out": "b166"
+    },
+    {
+     "t": "icon",
+     "id": "ch",
+     "name": "heart",
+     "x": 960,
+     "y": 625,
+     "size": 70,
+     "from": "pop",
+     "at": "b159:loved",
+     "out": "b166",
+     "color": "accent",
+     "pulse": 1.2,
+     "beat": 0.9
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "missing your ex ≠ going *back*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b158:missing",
+     "out": "b159"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "it means you *loved*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b159:loved",
+     "out": "b160"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "your brain is doing what brains *do*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b160:brain",
+     "out": "b161"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "usually aren't *weak*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b161:usually",
+     "out": "b162"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "!loyal!",
+     "x": 960,
+     "y": 170,
+     "size": 80,
+     "from": "top",
+     "at": "b162:loyal",
+     "out": "b163"
+    },
+    {
+     "t": "icon",
+     "id": "sh",
+     "name": "shield",
+     "x": 1300,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b162:loyal",
+     "out": "b165"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "they hold *on*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b163:hold",
+     "out": "b164"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "loyalty is *good*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b164:loyalty",
+     "out": "b165"
+    },
+    {
+     "t": "icon",
+     "id": "lk",
+     "name": "lock",
+     "x": 1300,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b165:pointed",
+     "out": "b166"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "the wrong person: *stuck*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b165:wrong",
+     "out": "b166"
+    },
+    {
+     "t": "stick",
+     "id": "pa",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b166:person",
+     "poses": [
+      [
+       "happy",
+       "b166:person"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b166:person"
+      ]
+     ],
+     "out": "b167"
+    },
+    {
+     "t": "stick",
+     "id": "pb",
+     "x": 1160,
+     "y": 690,
+     "from": "right",
+     "at": "b166:person",
+     "poses": [
+      [
+       "happy",
+       "b166:person"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b166:person"
+      ]
+     ],
+     "out": "b167",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "pf",
+     "name": "film",
+     "x": 1600,
+     "y": 430,
+     "size": 260,
+     "from": "pop",
+     "at": "b166:highlight",
+     "out": "b167"
+    },
+    {
+     "t": "strike",
+     "id": "pk",
+     "x": 1600,
+     "y": 430,
+     "w": 280,
+     "at": "b166:reel",
+     "out": "b167"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "a !person!, not a highlight reel",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b166:person",
+     "out": "b167"
+    },
+    {
+     "t": "icon",
+     "id": "zbed",
+     "name": "bed",
+     "x": 860,
+     "y": 720,
+     "size": 560,
+     "from": "pop",
+     "at": "b167:next",
+     "out": "b170"
+    },
+    {
+     "t": "stick",
+     "id": "zme",
+     "x": 840,
+     "y": 630,
+     "from": "bottom",
+     "at": "b167:next",
+     "poses": [
+      [
+       "give",
+       "b167:phone"
+      ],
+      [
+       "idle",
+       "b169:nothing"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b167:next"
+      ],
+      [
+       "smile",
+       "b169:answer"
+      ]
+     ],
+     "out": "b170",
+     "scale": 0.62,
+     "sit": true
+    },
+    {
+     "t": "icon",
+     "id": "zph",
+     "name": "phone",
+     "x": 1010,
+     "y": 545,
+     "size": 100,
+     "from": "pop",
+     "at": "b167:next",
+     "out": "b170"
+    },
+    {
+     "t": "icon",
+     "id": "zgl",
+     "name": "glow",
+     "x": 1010,
+     "y": 545,
+     "size": 150,
+     "from": "pop",
+     "at": "b167:next",
+     "out": "b170",
+     "pulse": 1.08,
+     "beat": 1.6
+    },
+    {
+     "t": "icon",
+     "id": "zmn",
+     "name": "moon",
+     "x": 1380,
+     "y": 330,
+     "size": 120,
+     "from": "pop",
+     "at": "b167:next",
+     "out": "b170"
+    },
+    {
+     "t": "icon",
+     "id": "zb",
+     "name": "bell",
+     "x": 1060,
+     "y": 400,
+     "size": 100,
+     "from": "pop",
+     "at": "b167:lights",
+     "out": "b168",
+     "color": "accent",
+     "sway": 12,
+     "period": 0.35
+    },
+    {
+     "t": "icon",
+     "id": "zw",
+     "name": "window",
+     "x": 1560,
+     "y": 520,
+     "size": 260,
+     "from": "pop",
+     "at": "b169:nothing",
+     "out": "b170"
+    },
+    {
+     "t": "icon",
+     "id": "zs",
+     "name": "sun",
+     "x": 1560,
+     "y": 460,
+     "size": 120,
+     "from": "pop",
+     "at": "b169:answer",
+     "out": "b170"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "remember the *whole* movie",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b167:whole",
+     "out": "b168"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "what's *different* this time?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b168:different",
+     "out": "b169"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "nothing? that's your *answer*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b169:nothing",
+     "out": "b170"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "your *challenge* this week",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b170:challenge",
+     "out": "b171"
+    },
+    {
+     "t": "icon",
+     "id": "nb",
+     "name": "notebook",
+     "x": 960,
+     "y": 580,
+     "size": 280,
+     "from": "pop",
+     "at": "b170:challenge",
+     "out": "b174"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "*3* real reasons it ended",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b171:three",
+     "out": "b172"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "keep the *list* somewhere you'll see it",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b172:keep",
+     "out": "b173"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "did it *help*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b173:helped",
+     "out": "b174"
+    },
+    {
+     "t": "icon",
+     "id": "el",
+     "name": "loop",
+     "x": 760,
+     "y": 570,
+     "size": 220,
+     "from": "pop",
+     "at": "b174:back",
+     "out": "b177:habit"
+    },
+    {
+     "t": "icon",
+     "id": "eq",
+     "name": "question",
+     "x": 1160,
+     "y": 570,
+     "size": 220,
+     "from": "pop",
+     "at": "b175:work",
+     "out": "b177:habit"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "ever gone *back*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b174:back",
+     "out": "b175"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "did it *work*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b175:work",
+     "out": "b176"
+    },
+    {
+     "t": "text",
+     "id": "t18b",
+     "text": "tell me in the *comments*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b176:tell",
+     "out": "b177:habit"
+    },
+    {
+     "t": "icon",
+     "id": "end",
+     "name": "heart",
+     "x": 960,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b177:habit",
+     "color": "accent",
+     "pulse": 1.08,
+     "beat": 1.2
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "which habit *next*?",
+     "x": 960,
+     "y": 170,
+     "size": 80,
+     "from": "top",
+     "at": "b177:habit",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 820,
+     "size": 44,
+     "from": "bottom",
+     "at": "b178:comments",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}

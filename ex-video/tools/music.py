@@ -121,6 +121,13 @@ PROG.update({
     "rules":   ["C", "G", "Am", "F"],
 })
 DYN.update({"bridge": 0.85, "brain": 0.85, "quiz": 0.8, "sight": 0.85, "numbers": 0.75, "rules": 0.9})
+PROG.update({
+    "reel":     ["F", "C", "G", "Am", "F", "C", "E", "E"],
+    "checking": ["Dm", "F", "E", "Am"],
+    "back":     ["Dm", "Am", "E", "Am", "F", "C", "E", "E"],
+    "works":    ["C", "G", "Am", "F"],
+})
+DYN.update({"reel": 0.85, "checking": 0.75, "back": 0.75, "works": 0.85})
 
 def scenes():
     html = (ROOT / "index.html").read_text()

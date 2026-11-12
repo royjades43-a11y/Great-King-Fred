@@ -1,0 +1,285 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="reel" data-width="1920" data-height="1080">
+    <div id="reel-t0" class="clip el" data-start="0.3800000000000001" data-duration="2.04" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:2"><div id="reel-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t0-w0" class="w">the</span> <span id="reel-t0-w1" class="w">pain</span> <span id="reel-t0-w2" class="w">is</span> <span id="reel-t0-w3" class="w acc">real</span></div></div></div>
+    <div id="reel-bk" class="clip el" data-start="0.8" data-duration="1.57" data-track-index="2" style="position:absolute;left:0px;top:60px;width:1920px;height:1020px;z-index:3" data-layout-allow-overlap><div id="reel-bk-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="alm-f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/><path class="s" style="stroke:var(--paper)" d="M100 48 L86 84 L112 106 L92 146"/></svg></div></div></div>
+    <div id="reel-t1" class="clip el" data-start="2.6" data-duration="3.56" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:4"><div id="reel-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t1-w0" class="w">so</span> <span id="reel-t1-w1" class="w">why</span> <span id="reel-t1-w2" class="w">go</span> <span id="reel-t1-w3" class="w acc">back<span class="tail">?</span></span></div></div></div>
+    <div id="reel-bq" class="clip el" data-start="2.6" data-duration="3.51" data-track-index="4" style="position:absolute;left:0px;top:60px;width:1920px;height:1020px;z-index:5" data-layout-allow-overlap><div id="reel-bq-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="reel-th" class="clip el" data-start="7.42" data-duration="1.135" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:6" data-layout-allow-overlap><div id="reel-th-in" class="in"><div class="ico" style="width:380px;height:380px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="reel-t2" class="clip el" data-start="7.165000000000001" data-duration="1.44" data-track-index="6" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:7"><div id="reel-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t2-w0" class="w">your</span> <span id="reel-t2-w1" class="w acc">memory</span></div></div></div>
+    <div id="reel-gm" class="clip el" data-start="13.805" data-duration="5.466" data-track-index="7" style="position:absolute;left:0px;top:60px;width:1400px;height:1020px;z-index:8" data-layout-allow-overlap><div id="reel-gm-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="reel-bm" class="clip el" data-start="11.245" data-duration="3.93" data-track-index="8" style="position:absolute;left:560px;top:60px;width:1360px;height:1020px;z-index:9" data-layout-allow-overlap><div id="reel-bm-in" class="in"><div class="ico" style="width:230px;height:230px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 108 Q18 106 22 80 Q20 54 50 54 Q58 24 92 28 Q118 10 142 32 Q178 30 178 64 Q196 78 182 98 Q176 110 156 108 Z"/><path class="s acc-s" pathLength="1" d="M60 132 L52 156 M100 132 L92 156 M140 132 L132 156 M80 164 L74 182 M120 164 L114 182"/></svg></div></div></div>
+    <div id="reel-gl" class="clip el" data-start="13.805" data-duration="5.516" data-track-index="9" style="position:absolute;left:0px;top:480px;width:1400px;height:600px;z-index:10"><div id="reel-gl-in" class="in"><div class="txt" style="font-size:44px;font-weight:800;color:var(--muted)"><span id="reel-gl-w0" class="w">good</span></div></div></div>
+    <div id="reel-bl" class="clip el" data-start="11.245" data-duration="3.98" data-track-index="10" style="position:absolute;left:560px;top:480px;width:1360px;height:600px;z-index:11"><div id="reel-bl-in" class="in"><div class="txt" style="font-size:44px;font-weight:800;color:var(--muted)"><span id="reel-bl-w0" class="w">bad</span></div></div></div>
+    <div id="reel-t3" class="clip el" data-start="11.245" data-duration="5.08" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:12"><div id="reel-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t3-w0" class="w">bad</span> <span id="reel-t3-w1" class="w">memories</span> <span id="reel-t3-w2" class="w">fade</span> <span id="reel-t3-w3" class="w acc">faster</span></div></div></div>
+    <div id="reel-t4" class="clip el" data-start="17.145" data-duration="2.176" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:13"><div id="reel-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t4-w0" class="w">the</span> <span id="reel-t4-w1" class="w">fading</span> <span id="reel-t4-w2" class="w">affect</span> <span id="reel-t4-w3" class="w acc">bias</span></div></div></div>
+    <div id="reel-sn" class="clip el" data-start="19.221" data-duration="4.99" data-track-index="13" style="position:absolute;left:0px;top:60px;width:1920px;height:1020px;z-index:14" data-layout-allow-overlap><div id="reel-sn-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M100 100 m-38 0 a38 38 0 1 0 76 0 a38 38 0 1 0 -76 0"/><path class="s" pathLength="1" d="M100 18 L100 40 M100 160 L100 182 M18 100 L40 100 M160 100 L182 100 M42 42 L58 58 M142 142 L158 158 M158 42 L142 58 M58 142 L42 158"/></svg></div></div></div>
+    <div id="reel-t5" class="clip el" data-start="19.221" data-duration="5.04" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="reel-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t5-w0" class="w">most</span> <span id="reel-t5-w1" class="w">of</span> <span id="reel-t5-w2" class="w">the</span> <span id="reel-t5-w3" class="w">time:</span> <span id="reel-t5-w4" class="w">a</span> <span id="reel-t5-w5" class="w acc">gift</span></div></div></div>
+    <div id="reel-t6" class="clip el" data-start="24.761" data-duration="2.76" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:16"><div id="reel-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t6-w0" class="w">after</span> <span id="reel-t6-w1" class="w">a</span> <span id="reel-t6-w2" class="w">breakup:</span> <span id="reel-t6-w3" class="w">a</span> <span id="reel-t6-w4" class="w acc">trick</span></div></div></div>
+    <div id="reel-tk" class="clip el" data-start="24.761" data-duration="2.71" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:1080px;z-index:17" data-layout-allow-overlap><div id="reel-tk-in" class="in"><div class="ico" style="width:360px;height:360px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="reel-fm" class="clip el" data-start="28.881" data-duration="19.771" data-track-index="17" style="position:absolute;left:20px;top:40px;width:1900px;height:1040px;z-index:18" data-layout-allow-overlap><div id="reel-fm-in" class="in"><div class="ico" style="width:900px;height:900px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M6 54 L194 54 L194 146 L6 146 Z"/><path class="s thin" pathLength="1" d="M6 70 L194 70 M6 130 L194 130"/><path class="s thin" pathLength="1" d="M70 70 L70 130 M130 70 L130 130"/><path class="s thin" pathLength="1" d="M18 58 L28 58 M48 58 L58 58 M78 58 L88 58 M108 58 L118 58 M138 58 L148 58 M168 58 L178 58 M18 140 L28 140 M48 140 L58 140 M78 140 L88 140 M108 140 L118 140 M138 140 L148 140 M168 140 L178 140"/></svg></div></div></div>
+    <div id="reel-t7" class="clip el" data-start="28.626" data-duration="1.74" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:19"><div id="reel-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t7-w0" class="w">the</span> <span id="reel-t7-w1" class="w acc">highlight</span> <span id="reel-t7-w2" class="w">reel</span></div></div></div>
+    <div id="reel-r1" class="clip el" data-start="30.406" data-duration="7.63" data-track-index="19" style="position:absolute;left:0px;top:40px;width:1380px;height:1040px;z-index:20" data-layout-allow-overlap><div id="reel-r1-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M18 132 L18 106 Q18 96 30 94 L56 90 L80 62 Q86 56 96 56 L136 56 Q146 56 152 64 L172 92 Q184 96 184 108 L184 132 Z"/><path class="s acc-s" pathLength="1" d="M88 70 L82 90 L118 90 L118 70 Z M130 70 L130 90 L160 90 L148 70 Z"/><path class="s" pathLength="1" d="M58 136 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 M146 136 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0"/></svg></div></div></div>
+    <div id="reel-r2" class="clip el" data-start="31.886" data-duration="6.15" data-track-index="20" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:21" data-layout-allow-overlap><div id="reel-r2-in" class="in"><div class="ico" style="width:140px;height:140px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M60 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 M140 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s" pathLength="1" d="M22 176 Q22 112 60 112 Q98 112 98 176 M102 176 Q102 112 140 112 Q178 112 178 176"/></svg></div></div></div>
+    <div id="reel-r3" class="clip el" data-start="33.826" data-duration="4.21" data-track-index="21" style="position:absolute;left:584px;top:40px;width:1336px;height:1040px;z-index:22" data-layout-allow-overlap><div id="reel-r3-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="reel-t8" class="clip el" data-start="30.406" data-duration="4.46" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:23"><div id="reel-t8-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="reel-t8-w0" class="w">the</span> <span id="reel-t8-w1" class="w">road</span> <span id="reel-t8-w2" class="w">trip</span> <span id="reel-t8-w3" class="w">·</span> <span id="reel-t8-w4" class="w">the</span> <span id="reel-t8-w5" class="w">jokes</span> <span id="reel-t8-w6" class="w">·</span> <span id="reel-t8-w7" class="w">your</span> <span id="reel-t8-w8" class="w acc">name</span></div></div></div>
+    <div id="reel-rf" class="clip el" data-start="35.326" data-duration="2.71" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1380px;height:800px;z-index:24" data-layout-allow-overlap><div id="reel-rf-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 108 Q18 106 22 80 Q20 54 50 54 Q58 24 92 28 Q118 10 142 32 Q178 30 178 64 Q196 78 182 98 Q176 110 156 108 Z"/><path class="s acc-s" pathLength="1" d="M60 132 L52 156 M100 132 L92 156 M140 132 L132 156 M80 164 L74 182 M120 164 L114 182"/></svg></div></div></div>
+    <div id="reel-ss" class="clip el" data-start="36.426" data-duration="1.61" data-track-index="24" style="position:absolute;left:0px;top:500px;width:1380px;height:580px;z-index:25" data-layout-allow-overlap><div id="reel-ss-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M62 150 m-24 0 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0 M138 150 m-24 0 a24 24 0 1 0 48 0 a24 24 0 1 0 -48 0"/><path class="s acc-s" pathLength="1" d="M78 132 L152 22 M122 132 L48 22"/></svg></div></div></div>
+    <div id="reel-t9" class="clip el" data-start="35.326" data-duration="2.76" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:26"><div id="reel-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t9-w0" class="w acc">not</span> <span id="reel-t9-w1" class="w">the</span> <span id="reel-t9-w2" class="w">fight</span> <span id="reel-t9-w3" class="w">in</span> <span id="reel-t9-w4" class="w">the</span> <span id="reel-t9-w5" class="w">car</span></div></div></div>
+    <div id="reel-zz" class="clip el" data-start="41.202" data-duration="7.45" data-track-index="26" style="position:absolute;left:0px;top:40px;width:1380px;height:1040px;z-index:27"><div id="reel-zz-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="reel-zz-w0" class="w">z</span> <span id="reel-zz-w1" class="w">z</span> <span id="reel-zz-w2" class="w">z</span></div></div></div>
+    <div id="reel-nt" class="clip el" data-start="42.822" data-duration="5.83" data-track-index="27" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:28" data-layout-allow-overlap><div id="reel-nt-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M78 152 m-24 0 a24 18 0 1 0 48 0 a24 18 0 1 0 -48 0"/><path class="s" pathLength="1" d="M102 152 L102 42 L164 28 L164 128"/><path class="s" pathLength="1" d="M140 128 m-24 0 a24 18 0 1 0 48 0 a24 18 0 1 0 -48 0"/><path class="s acc-s" pathLength="1" d="M102 70 L164 56"/></svg></div></div></div>
+    <div id="reel-lh" class="clip el" data-start="45.202" data-duration="3.45" data-track-index="28" style="position:absolute;left:584px;top:40px;width:1336px;height:1040px;z-index:29" data-layout-allow-overlap><div id="reel-lh-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="reel-t10" class="clip el" data-start="38.606" data-duration="2.556" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:30"><div id="reel-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t10-w0" class="w">you</span> <span id="reel-t10-w1" class="w">miss</span> <span id="reel-t10-w2" class="w">the</span> <span id="reel-t10-w3" class="w acc">complaints</span></div></div></div>
+    <div id="reel-t11" class="clip el" data-start="41.202" data-duration="2.88" data-track-index="30" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:31"><div id="reel-t11-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="reel-t11-w0" class="w">the</span> <span id="reel-t11-w1" class="w">snoring</span> <span id="reel-t11-w2" class="w">·</span> <span id="reel-t11-w3" class="w">the</span> <span id="reel-t11-w4" class="w acc">terrible</span> <span id="reel-t11-w5" class="w">playlist</span></div></div></div>
+    <div id="reel-t12" class="clip el" data-start="44.501999999999995" data-duration="2.04" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:32"><div id="reel-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t12-w0" class="w">why</span> <span id="reel-t12-w1" class="w">you</span> <span id="reel-t12-w2" class="w acc">loved</span> <span id="reel-t12-w3" class="w">them</span></div></div></div>
+    <div id="reel-t13" class="clip el" data-start="46.66199999999999" data-duration="2.04" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:33"><div id="reel-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t13-w0" class="w">…not</span> <span id="reel-t13-w1" class="w">why</span> <span id="reel-t13-w2" class="w">you</span> <span id="reel-t13-w3" class="w acc">left</span></div></div></div>
+    <div id="reel-bn" class="clip el" data-start="48.942" data-duration="18.204" data-track-index="33" style="position:absolute;left:0px;top:320px;width:1920px;height:760px;z-index:34" data-layout-allow-overlap><div id="reel-bn-in" class="in"><div class="ico" style="width:520px;height:520px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 104 L30 78 Q30 64 44 64 L156 64 Q170 64 170 78 L170 104"/><path class="s" pathLength="1" d="M14 112 Q14 96 28 96 Q42 96 42 112 L42 128 L158 128 L158 112 Q158 96 172 96 Q186 96 186 112 L186 160 L14 160 Z"/><path class="s" pathLength="1" d="M30 160 L30 178 M170 160 L170 178"/></svg></div></div></div>
+    <div id="reel-lo" class="clip el" data-start="48.942" data-duration="18.254" data-track-index="34" style="position:absolute;left:0px;top:330px;width:1680px;height:750px;z-index:35"><div id="reel-lo-in" class="in"><svg class="stick" id="reel-lo-svg" width="210" height="364" viewBox="0 0 300 520">
+  
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L104 332 L100 424"/><path class="s" d="M150 300 L196 332 L200 424"/>
+    <g id="reel-lo-aLu"><path class="s" d="M150 160 L150 255"/><g id="reel-lo-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="reel-lo-aRu"><path class="s" d="M150 160 L150 255"/><g id="reel-lo-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="reel-lo-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="reel-lo-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="reel-lo-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="reel-lo-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="reel-lo-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="reel-lo-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="reel-t14" class="clip el" data-start="49.727" data-duration="2.04" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:36"><div id="reel-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t14-w0" class="w">loneliness</span> <span id="reel-t14-w1" class="w">adds</span> <span id="reel-t14-w2" class="w">its</span> <span id="reel-t14-w3" class="w acc">voice</span></div></div></div>
+    <div id="reel-c1" class="clip el" data-start="52.827" data-duration="4.38" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:37"><div id="reel-c1-in" class="in"><div class="card"><div class="card-k">FEAR OF BEING SINGLE</div><div class="card-t">Longing for ex-partners</div><div class="card-s">Spielmann et al.</div></div></div></div>
+    <div id="reel-t15" class="clip el" data-start="58.227" data-duration="3.749" data-track-index="37" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:38"><div id="reel-t15-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="reel-t15-w0" class="w">fear</span> <span id="reel-t15-w1" class="w">of</span> <span id="reel-t15-w2" class="w">being</span> <span id="reel-t15-w3" class="w">single</span> <span id="reel-t15-w4" class="w">→</span> <span id="reel-t15-w5" class="w">more</span> <span id="reel-t15-w6" class="w acc">longing</span></div></div></div>
+    <div id="reel-t16" class="clip el" data-start="62.79600000000001" data-duration="2.34" data-track-index="38" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:39"><div id="reel-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t16-w0" class="w">more</span> <span id="reel-t16-w1" class="w">likely</span> <span id="reel-t16-w2" class="w">to</span> <span id="reel-t16-w3" class="w">try</span> <span id="reel-t16-w4" class="w acc">again</span></div></div></div>
+    <div id="reel-t17" class="clip el" data-start="65.036" data-duration="2.16" data-track-index="39" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:40"><div id="reel-t17-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t17-w0" class="w">no</span> <span id="reel-t17-w1" class="w">matter</span> <span id="reel-t17-w2" class="w">who</span> <span id="reel-t17-w3" class="w acc">ended</span> <span id="reel-t17-w4" class="w">it</span></div></div></div>
+    <div id="reel-t18" class="clip el" data-start="67.249" data-duration="1.74" data-track-index="40" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:41"><div id="reel-t18-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t18-w0" class="w">one</span> <span id="reel-t18-w1" class="w">more</span> <span id="reel-t18-w2" class="w acc">pull</span></div></div></div>
+    <div id="reel-mg" class="clip el" data-start="68.056" data-duration="10.723" data-track-index="41" style="position:absolute;left:0px;top:60px;width:1920px;height:1020px;z-index:42" data-layout-allow-overlap><div id="reel-mg-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M150 70 A60 60 0 1 0 160 120"/><path class="s alm-s" pathLength="1" d="M128 64 L152 70 L150 44"/></svg></div></div></div>
+    <div id="reel-c2" class="clip el" data-start="70.589" data-duration="4.22" data-track-index="42" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:43"><div id="reel-c2-in" class="in"><div class="card"><div class="card-k">ON-AGAIN, OFF-AGAIN</div><div class="card-t">René Dailey</div><div class="card-s">communication researcher</div></div></div></div>
+    <div id="reel-t19" class="clip el" data-start="75.249" data-duration="3.58" data-track-index="43" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:44"><div id="reel-t19-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t19-w0" class="w">the</span> <span id="reel-t19-w1" class="w">most</span> <span id="reel-t19-w2" class="w">common</span> <span id="reel-t19-w3" class="w acc">reasons</span></div></div></div>
+    <div id="reel-lf" class="clip el" data-start="78.729" data-duration="3.921" data-track-index="44" style="position:absolute;left:0px;top:60px;width:1520px;height:1020px;z-index:45" data-layout-allow-overlap><div id="reel-lf-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="reel-fa" class="clip el" data-start="81.14" data-duration="1.51" data-track-index="45" style="position:absolute;left:400px;top:60px;width:1520px;height:1020px;z-index:46" data-layout-allow-overlap><div id="reel-fa-in" class="in"><div class="ico" style="width:210px;height:210px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 96 L100 30 L176 96 M44 80 L44 178 L156 178 L156 80"/></svg></div></div></div>
+    <div id="reel-t20" class="clip el" data-start="78.729" data-duration="1.711" data-track-index="46" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:47"><div id="reel-t20-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t20-w0" class="w acc">lingering</span> <span id="reel-t20-w1" class="w">feelings</span></div></div></div>
+    <div id="reel-t21" class="clip el" data-start="81.14" data-duration="1.56" data-track-index="47" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:48"><div id="reel-t21-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t21-w0" class="w acc">familiarity</span></div></div></div>
+    <div id="reel-mt" class="clip el" data-start="82.6" data-duration="2.95" data-track-index="48" style="position:absolute;left:0px;top:60px;width:1920px;height:1020px;z-index:49" data-layout-allow-overlap><div id="reel-mt-in" class="in"><div class="ico" style="width:280px;height:280px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M8 172 L72 64 L106 118 L138 76 L192 172 Z"/><path class="s" pathLength="1" d="M56 92 L72 64 L88 92 L78 86 L66 94 Z"/></svg></div></div></div>
+    <div id="reel-t22" class="clip el" data-start="82.6" data-duration="3" data-track-index="49" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:50"><div id="reel-t22-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t22-w0" class="w">starting</span> <span id="reel-t22-w1" class="w">over</span> <span id="reel-t22-w2" class="w">is</span> <span id="reel-t22-w3" class="w acc">hard</span></div></div></div>
+    <div id="reel-cy" class="clip el" data-start="85.72" data-duration="2.6" data-track-index="50" style="position:absolute;left:0px;top:300px;width:1400px;height:780px;z-index:51"><div id="reel-cy-in" class="in"><svg class="stick" id="reel-cy-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="reel-cy-aLu"><path class="s" d="M150 160 L150 255"/><g id="reel-cy-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="reel-cy-aRu"><path class="s" d="M150 160 L150 255"/><g id="reel-cy-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="reel-cy-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="reel-cy-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="reel-cy-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="reel-cy-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="reel-cy-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="reel-cy-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="reel-cx" class="clip el" data-start="85.72" data-duration="2.6" data-track-index="51" style="position:absolute;left:560px;top:300px;width:1360px;height:780px;z-index:52"><div id="reel-cx-in" class="in"><svg class="stick" id="reel-cx-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="reel-cx-aLu"><path class="s" d="M150 160 L150 255"/><g id="reel-cx-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="reel-cx-aRu"><path class="s" d="M150 160 L150 255"/><g id="reel-cx-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="reel-cx-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="reel-cx-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="reel-cx-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="reel-cx-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="reel-cx-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="reel-cx-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="reel-cf" class="clip el" data-start="86.54" data-duration="1.73" data-track-index="52" style="position:absolute;left:200px;top:0px;width:1720px;height:1000px;z-index:53" data-layout-allow-overlap><div id="reel-cf-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 72 L150 72 L140 172 Q138 182 128 182 L62 182 Q52 182 50 172 Z"/><path class="s" pathLength="1" d="M148 92 Q182 92 178 122 Q174 146 144 142"/><path class="s acc-s" pathLength="1" d="M78 54 Q66 38 78 22 M110 54 Q98 38 110 22"/></svg></div></div></div>
+    <div id="reel-t23" class="clip el" data-start="85.98" data-duration="2.34" data-track-index="53" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:54"><div id="reel-t23-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t23-w0" class="w">they</span> <span id="reel-t23-w1" class="w">know</span> <span id="reel-t23-w2" class="w">your</span> <span id="reel-t23-w3" class="w acc">coffee</span> <span id="reel-t23-w4" class="w acc">order</span></div></div></div>
+    <div id="reel-t24" class="clip el" data-start="89.02" data-duration="2.138" data-track-index="54" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:55"><div id="reel-t24-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t24-w0" class="w">a</span> <span id="reel-t24-w1" class="w">question</span> <span id="reel-t24-w2" class="w">worth</span> <span id="reel-t24-w3" class="w acc">asking</span></div></div></div>
+    <div id="reel-qq" class="clip el" data-start="89.02" data-duration="2.088" data-track-index="55" style="position:absolute;left:0px;top:60px;width:1920px;height:1020px;z-index:56" data-layout-allow-overlap><div id="reel-qq-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="reel-mh" class="clip el" data-start="91.298" data-duration="2.895" data-track-index="56" style="position:absolute;left:0px;top:60px;width:1520px;height:1020px;z-index:57" data-layout-allow-overlap><div id="reel-mh-in" class="in"><div class="ico" style="width:190px;height:190px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="reel-me" class="clip el" data-start="91.298" data-duration="2.92" data-track-index="57" style="position:absolute;left:400px;top:60px;width:1520px;height:1020px;z-index:58" data-layout-allow-overlap><div id="reel-me-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M60 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 M140 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s" pathLength="1" d="M22 176 Q22 112 60 112 Q98 112 98 176 M102 176 Q102 112 140 112 Q178 112 178 176"/></svg></div></div></div>
+    <div id="reel-t25" class="clip el" data-start="91.298" data-duration="2.995" data-track-index="58" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:59"><div id="reel-t25-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="reel-t25-w0" class="w">miss</span> <span id="reel-t25-w1" class="w acc">them<span class="tail">…</span></span> <span id="reel-t25-w2" class="w">or</span> <span id="reel-t25-w3" class="w">being</span> <span id="reel-t25-w4" class="w alm">known<span class="tail">?</span></span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"reel-t0","t":"text","from":"top","exit":null,"in":0.3800000000000001,"out":2.08,"outDur":0.3,"words":[0.48,0.8,1.14,1.36]},{"id":"reel-bk","t":"icon","from":"pop","exit":null,"in":0.8,"out":2.08,"outDur":0.25},{"id":"reel-t1","t":"text","from":"top","exit":null,"in":2.6,"out":5.819999999999999,"outDur":0.3,"words":[2.6,2.6,3.44,3.44]},{"id":"reel-bq","t":"icon","from":"pop","exit":null,"in":2.6,"out":5.819999999999999,"outDur":0.25},{"id":"reel-th","t":"icon","from":"pop","exit":null,"in":7.42,"out":8.265,"outDur":0.25},{"id":"reel-t2","t":"text","from":"top","exit":null,"in":7.165000000000001,"out":8.265,"outDur":0.3,"words":[7.26,7.42]},{"id":"reel-gm","t":"icon","from":"pop","exit":null,"in":13.805,"out":18.981,"outDur":0.25},{"id":"reel-bm","t":"icon","from":"pop","exit":null,"in":11.245,"out":14.885,"outDur":0.25},{"id":"reel-gl","t":"text","from":"bottom","exit":null,"in":13.805,"out":18.981,"outDur":0.3,"words":[15.125]},{"id":"reel-bl","t":"text","from":"bottom","exit":null,"in":11.245,"out":14.885,"outDur":0.3,"words":[11.245]},{"id":"reel-t3","t":"text","from":"top","exit":null,"in":11.245,"out":15.985000000000001,"outDur":0.3,"words":[11.245,11.525,12.785,13.145]},{"id":"reel-t4","t":"text","from":"top","exit":null,"in":17.145,"out":18.981,"outDur":0.3,"words":[16.805,17.145,17.585,18.085]},{"id":"reel-sn","t":"icon","from":"pop","exit":null,"in":19.221,"out":23.921000000000003,"outDur":0.25},{"id":"reel-t5","t":"text","from":"top","exit":null,"in":19.221,"out":23.921000000000003,"outDur":0.3,"words":[19.221,19.541,19.641,19.761,20.601,20.661]},{"id":"reel-t6","t":"text","from":"top","exit":null,"in":24.761,"out":27.181,"outDur":0.3,"words":[24.341,24.621,24.761,26.081,26.201]},{"id":"reel-tk","t":"icon","from":"pop","exit":null,"in":24.761,"out":27.181,"outDur":0.25},{"id":"reel-fm","t":"icon","from":"draw","exit":null,"in":28.881,"out":48.361999999999995,"outDur":0.25},{"id":"reel-t7","t":"text","from":"top","exit":null,"in":28.626,"out":30.026,"outDur":0.3,"words":[28.881,28.881,29.321]},{"id":"reel-r1","t":"icon","from":"pop","exit":null,"in":30.406,"out":37.745999999999995,"outDur":0.25},{"id":"reel-r2","t":"icon","from":"pop","exit":null,"in":31.886,"out":37.745999999999995,"outDur":0.25},{"id":"reel-r3","t":"icon","from":"pop","exit":null,"in":33.826,"out":37.745999999999995,"outDur":0.25},{"id":"reel-t8","t":"text","from":"top","exit":null,"in":30.406,"out":34.525999999999996,"outDur":0.3,"words":[30.266,30.406,30.646,30.746,30.846,30.946,31.046,31.146,31.246]},{"id":"reel-rf","t":"icon","from":"pop","exit":null,"in":35.326,"out":37.745999999999995,"outDur":0.25},{"id":"reel-ss","t":"icon","from":"pop","exit":null,"in":36.426,"out":37.745999999999995,"outDur":0.25},{"id":"reel-t9","t":"text","from":"top","exit":null,"in":35.326,"out":37.745999999999995,"outDur":0.3,"words":[34.766,35.146,35.326,35.566,35.706,35.786]},{"id":"reel-zz","t":"text","from":"pop","exit":null,"in":41.202,"out":48.361999999999995,"outDur":0.25,"words":[41.302,41.402,41.502]},{"id":"reel-nt","t":"icon","from":"pop","exit":null,"in":42.822,"out":48.361999999999995,"outDur":0.25},{"id":"reel-lh","t":"icon","from":"pop","exit":null,"in":45.202,"out":48.361999999999995,"outDur":0.25,"pulse":1.15,"beat":0.9},{"id":"reel-t10","t":"text","from":"top","exit":null,"in":38.606,"out":40.821999999999996,"outDur":0.3,"words":[37.986,38.606,38.826,39.786]},{"id":"reel-t11","t":"text","from":"top","exit":null,"in":41.202,"out":43.742,"outDur":0.3,"words":[41.062,41.202,41.302,41.402,41.502,41.602]},{"id":"reel-t12","t":"text","from":"top","exit":null,"in":44.501999999999995,"out":46.202,"outDur":0.3,"words":[44.582,44.942,45.202,45.562]},{"id":"reel-t13","t":"text","from":"top","exit":null,"in":46.66199999999999,"out":48.361999999999995,"outDur":0.3,"words":[46.942,46.942,47.442,47.622]},{"id":"reel-bn","t":"icon","from":"pop","exit":null,"in":48.942,"out":66.85600000000001,"outDur":0.25},{"id":"reel-lo","t":"stick","from":"bottom","exit":null,"in":48.942,"out":66.85600000000001,"outDur":0.3,"poses":[["headDown",48.942]],"mouth":[["frown",48.942]]},{"id":"reel-t14","t":"text","from":"top","exit":null,"in":49.727,"out":51.427,"outDur":0.3,"words":[48.942,49.722,50.202,50.682]},{"id":"reel-c1","t":"card","from":"top","exit":null,"in":52.827,"out":56.867,"outDur":0.3},{"id":"reel-t15","t":"text","from":"top","exit":null,"in":58.227,"out":61.635999999999996,"outDur":0.3,"words":[58.227,58.627,58.867,59.027,60.787,60.787,60.887]},{"id":"reel-t16","t":"text","from":"top","exit":null,"in":62.79600000000001,"out":64.796,"outDur":0.3,"words":[62.496,62.836,63.176,63.376,63.476]},{"id":"reel-t17","t":"text","from":"top","exit":null,"in":65.036,"out":66.85600000000001,"outDur":0.3,"words":[65.576,65.576,65.816,66.116,66.376]},{"id":"reel-t18","t":"text","from":"top","exit":null,"in":67.249,"out":68.649,"outDur":0.3,"words":[67.496,67.776,68.056]},{"id":"reel-mg","t":"icon","from":"pop","exit":null,"in":68.056,"out":78.489,"outDur":0.25},{"id":"reel-c2","t":"card","from":"top","exit":null,"in":70.589,"out":74.46900000000001,"outDur":0.3},{"id":"reel-t19","t":"text","from":"top","exit":null,"in":75.249,"out":78.489,"outDur":0.3,"words":[74.949,75.049,75.249,75.629]},{"id":"reel-lf","t":"icon","from":"pop","exit":null,"in":78.729,"out":82.36,"outDur":0.25,"pulse":1.1,"beat":0.9},{"id":"reel-fa","t":"icon","from":"pop","exit":null,"in":81.14,"out":82.36,"outDur":0.25},{"id":"reel-t20","t":"text","from":"top","exit":null,"in":78.729,"out":80.10000000000001,"outDur":0.3,"words":[78.729,79.129]},{"id":"reel-t21","t":"text","from":"top","exit":null,"in":81.14,"out":82.36,"outDur":0.3,"words":[81.14]},{"id":"reel-mt","t":"icon","from":"pop","exit":null,"in":82.6,"out":85.26,"outDur":0.25},{"id":"reel-t22","t":"text","from":"top","exit":null,"in":82.6,"out":85.26,"outDur":0.3,"words":[82.6,82.84,83.92,84.26]},{"id":"reel-cy","t":"stick","from":"left","exit":null,"in":85.72,"out":87.98,"outDur":0.3,"poses":[["idle",85.72],["happy",87.1]],"mouth":[["smile",87.1]]},{"id":"reel-cx","t":"stick","from":"right","exit":null,"in":85.72,"out":87.98,"outDur":0.3,"poses":[["give",86.54]],"mouth":[["smile",85.72]]},{"id":"reel-cf","t":"icon","from":"pop","exit":null,"in":86.54,"out":87.98,"outDur":0.25,"move":[[-180,0,87.1,0.9]]},{"id":"reel-t23","t":"text","from":"top","exit":null,"in":85.98,"out":87.98,"outDur":0.3,"words":[86.54,86.54,86.86,87.1,87.38]},{"id":"reel-t24","t":"text","from":"top","exit":null,"in":89.02,"out":90.81800000000001,"outDur":0.3,"words":[88.94,89.02,89.38,89.68]},{"id":"reel-qq","t":"icon","from":"pop","exit":null,"in":89.02,"out":90.81800000000001,"outDur":0.25},{"id":"reel-mh","t":"icon","from":"pop","exit":null,"in":91.298,"out":93.90299999999999,"outDur":0.25},{"id":"reel-me","t":"icon","from":"pop","exit":null,"in":91.298,"out":93.928,"outDur":0.25},{"id":"reel-t25","t":"text","from":"top","exit":null,"in":91.298,"out":93.95299999999999,"outDur":0.3,"words":[91.298,91.538,91.738,93.118,93.398]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["reel"] = tl;
+    })();
+  </script>
+</template>
