@@ -1,0 +1,281 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="loops" data-width="1920" data-height="1080">
+    <div id="loops-th" class="clip el" data-start="0.52" data-duration="5.1" data-track-index="1" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:2"><div id="loops-th-in" class="in"><svg class="stick" id="loops-th-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="loops-th-aLu"><path class="s" d="M150 160 L150 255"/><g id="loops-th-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="loops-th-aRu"><path class="s" d="M150 160 L150 255"/><g id="loops-th-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="loops-th-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="loops-th-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="loops-th-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="loops-th-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="loops-th-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="loops-th-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="loops-pz" class="clip el" data-start="3.94" data-duration="1.63" data-track-index="2" style="position:absolute;left:380px;top:40px;width:1540px;height:1040px;z-index:3" data-layout-allow-overlap><div id="loops-pz-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 62 L80 62 Q78 34 100 34 Q122 34 120 62 L160 62 L160 100 Q188 98 188 120 Q188 142 160 140 L160 180 L40 180 L40 140 Q66 142 66 120 Q66 98 40 100 Z"/></svg></div></div></div>
+    <div id="loops-t0" class="clip el" data-start="1.34" data-duration="1.8" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:4"><div id="loops-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t0-w0" class="w">overthinking</span> <span id="loops-t0-w1" class="w">feels</span> <span id="loops-t0-w2" class="w acc">useful</span></div></div></div>
+    <div id="loops-t1" class="clip el" data-start="3.2799999999999994" data-duration="2.34" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:5"><div id="loops-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t1-w0" class="w">like</span> <span id="loops-t1-w1" class="w acc">working</span> <span id="loops-t1-w2" class="w">on</span> <span id="loops-t1-w3" class="w">the</span> <span id="loops-t1-w4" class="w">problem</span></div></div></div>
+    <div id="loops-t2" class="clip el" data-start="5.52" data-duration="0.953" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:6"><div id="loops-t2-in" class="in"><div class="txt hero" style="font-size:120px;font-weight:800;color:var(--ink)"><span id="loops-t2-w0" class="w">is</span> <span id="loops-t2-w1" class="w">it?</span></div></div></div>
+    <div id="loops-t3" class="clip el" data-start="6.803" data-duration="2.04" data-track-index="6" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:7"><div id="loops-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t3-w0" class="w">a</span> <span id="loops-t3-w1" class="w">word</span> <span id="loops-t3-w2" class="w">for</span> <span id="loops-t3-w3" class="w acc">this</span></div></div></div>
+    <div id="loops-rn" class="clip el" data-start="7.463" data-duration="2.41" data-track-index="7" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:8" data-layout-allow-overlap><div id="loops-rn-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M150 70 A60 60 0 1 0 160 120"/><path class="s alm-s" pathLength="1" d="M128 64 L152 70 L150 44"/></svg></div></div></div>
+    <div id="loops-t4" class="clip el" data-start="8.743" data-duration="1.13" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:9"><div id="loops-t4-in" class="in"><div class="txt hero" style="font-size:110px;font-weight:800;color:var(--ink)"><span id="loops-t4-w0" class="w">rumination</span></div></div></div>
+    <div id="loops-cw" class="clip el" data-start="10.923" data-duration="5.58" data-track-index="9" style="position:absolute;left:0px;top:120px;width:1800px;height:960px;z-index:10" data-layout-allow-overlap><div id="loops-cw-in" class="in"><div class="ico" style="width:380px;height:380px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 70 Q40 58 54 58 L136 58 Q150 58 150 72 L150 118 Q150 130 136 130 L54 130 Q40 130 40 118 Z"/><path class="s" pathLength="1" d="M56 130 L56 172 M80 130 L80 172 M116 130 L116 172 M138 130 L138 172"/><path class="s" pathLength="1" d="M150 46 L184 46 Q196 46 196 58 L196 92 Q196 104 184 104 L162 104 Q150 104 150 92 Z"/><path class="s" pathLength="1" d="M156 46 L148 28 M190 46 L198 28"/><path class="s" pathLength="1" d="M40 74 Q22 84 28 108"/><ellipse class="f" cx="78" cy="86" rx="16" ry="12"/><ellipse class="f" cx="118" cy="106" rx="12" ry="9"/><circle class="f" cx="176" cy="66" r="5"/><path class="s acc-s" pathLength="1" d="M166 90 L186 90"/></svg></div></div></div>
+    <div id="loops-t5" class="clip el" data-start="10.514" data-duration="2.34" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:11"><div id="loops-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t5-w0" class="w">a</span> <span id="loops-t5-w1" class="w">cow</span> <span id="loops-t5-w2" class="w">chewing</span> <span id="loops-t5-w3" class="w">its</span> <span id="loops-t5-w4" class="w acc">cud</span></div></div></div>
+    <div id="loops-cl" class="clip el" data-start="12.754" data-duration="3.749" data-track-index="11" style="position:absolute;left:640px;top:0px;width:1280px;height:840px;z-index:12" data-layout-allow-overlap><div id="loops-cl-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M150 70 A60 60 0 1 0 160 120"/><path class="s alm-s" pathLength="1" d="M128 64 L152 70 L150 44"/></svg></div></div></div>
+    <div id="loops-t6" class="clip el" data-start="12.754" data-duration="3.799" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:13"><div id="loops-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t6-w0" class="w">chew,</span> <span id="loops-t6-w1" class="w">swallow,</span> <span id="loops-t6-w2" class="w">chew</span> <span id="loops-t6-w3" class="w acc">again</span></div></div></div>
+    <div id="loops-c1" class="clip el" data-start="19.073" data-duration="4.28" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:14"><div id="loops-c1-in" class="in"><div class="card"><div class="card-k">1995 · RUMINATION</div><div class="card-t">Does it actually help?</div><div class="card-s">Lyubomirsky &amp; Nolen-Hoeksema</div></div></div></div>
+    <div id="loops-bn" class="clip el" data-start="21.313" data-duration="1.99" data-track-index="14" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:15" data-layout-allow-overlap><div id="loops-bn-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 40 Q70 18 50 44 Q22 50 28 84 Q12 108 34 130 Q36 162 70 162 Q88 182 100 160 Q112 182 130 162 Q164 162 166 130 Q188 108 172 84 Q178 50 150 44 Q130 18 100 40 Z"/><path class="s" pathLength="1" d="M100 40 L100 160 M60 80 Q80 90 70 110 M140 80 Q120 90 130 110"/></svg></div></div></div>
+    <div id="loops-ru" class="clip el" data-start="23.713" data-duration="19.738" data-track-index="15" style="position:absolute;left:0px;top:300px;width:1280px;height:780px;z-index:16"><div id="loops-ru-in" class="in"><svg class="stick" id="loops-ru-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="loops-ru-aLu"><path class="s" d="M150 160 L150 255"/><g id="loops-ru-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="loops-ru-aRu"><path class="s" d="M150 160 L150 255"/><g id="loops-ru-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="loops-ru-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="loops-ru-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="loops-ru-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="loops-ru-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="loops-ru-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="loops-ru-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="loops-di" class="clip el" data-start="23.713" data-duration="19.738" data-track-index="16" style="position:absolute;left:640px;top:300px;width:1280px;height:780px;z-index:17"><div id="loops-di-in" class="in"><svg class="stick" id="loops-di-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="loops-di-aLu"><path class="s" d="M150 160 L150 255"/><g id="loops-di-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="loops-di-aRu"><path class="s" d="M150 160 L150 255"/><g id="loops-di-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="loops-di-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="loops-di-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="loops-di-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="loops-di-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="loops-di-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="loops-di-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="loops-t7" class="clip el" data-start="24.503000000000004" data-duration="1.74" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:18"><div id="loops-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t7-w0" class="w">already</span> <span id="loops-t7-w1" class="w">feeling</span> <span id="loops-t7-w2" class="w acc">down</span></div></div></div>
+    <div id="loops-rc" class="clip el" data-start="27.523" data-duration="15.878" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1280px;height:680px;z-index:19" data-layout-allow-overlap><div id="loops-rc-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 108 Q18 106 22 80 Q20 54 50 54 Q58 24 92 28 Q118 10 142 32 Q178 30 178 64 Q196 78 182 98 Q176 110 156 108 Z"/><path class="s acc-s" pathLength="1" d="M60 132 L52 156 M100 132 L92 156 M140 132 L132 156 M80 164 L74 182 M120 164 L114 182"/></svg></div></div></div>
+    <div id="loops-t8" class="clip el" data-start="27.523" data-duration="3.52" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="loops-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t8-w0" class="w">focus</span> <span id="loops-t8-w1" class="w">on</span> <span id="loops-t8-w2" class="w">your</span> <span id="loops-t8-w3" class="w acc">feelings<span class="tail">…</span></span></div></div></div>
+    <div id="loops-fr" class="clip el" data-start="33.143" data-duration="1.43" data-track-index="20" style="position:absolute;left:1200px;top:0px;width:720px;height:940px;z-index:21" data-layout-allow-overlap><div id="loops-fr-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M26 34 L174 34 L174 172 L26 172 Z"/><path class="s" pathLength="1" d="M46 54 L154 54 L154 152 L46 152 Z"/><path class="s acc-s" pathLength="1" d="M50 148 L84 104 L108 130 L126 110 L150 148"/><circle class="alm-f" cx="78" cy="78" r="9"/></svg></div></div></div>
+    <div id="loops-t9" class="clip el" data-start="32.723" data-duration="1.9" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:22"><div id="loops-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t9-w0" class="w">…or</span> <span id="loops-t9-w1" class="w">something</span> <span id="loops-t9-w2" class="w acc">else</span></div></div></div>
+    <div id="loops-z1" class="clip el" data-start="36.071" data-duration="7.33" data-track-index="22" style="position:absolute;left:0px;top:40px;width:1800px;height:1040px;z-index:23" data-layout-allow-overlap><div id="loops-z1-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 62 L80 62 Q78 34 100 34 Q122 34 120 62 L160 62 L160 100 Q188 98 188 120 Q188 142 160 140 L160 180 L40 180 L40 140 Q66 142 66 120 Q66 98 40 100 Z"/></svg></div></div></div>
+    <div id="loops-z2" class="clip el" data-start="36.071" data-duration="7.33" data-track-index="23" style="position:absolute;left:1200px;top:40px;width:720px;height:1040px;z-index:24" data-layout-allow-overlap><div id="loops-z2-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 62 L80 62 Q78 34 100 34 Q122 34 120 62 L160 62 L160 100 Q188 98 188 120 Q188 142 160 140 L160 180 L40 180 L40 140 Q66 142 66 120 Q66 98 40 100 Z"/></svg></div></div></div>
+    <div id="loops-t10" class="clip el" data-start="36.071" data-duration="2.74" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:25"><div id="loops-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t10-w0" class="w">then:</span> <span id="loops-t10-w1" class="w">solve</span> <span id="loops-t10-w2" class="w acc">problems</span></div></div></div>
+    <div id="loops-x1" class="clip el" data-start="40.151" data-duration="3.25" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1800px;height:840px;z-index:26" data-layout-allow-overlap><div id="loops-x1-in" class="in"><div class="ico" style="width:90px;height:90px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M40 40 L160 160 M160 40 L40 160"/></svg></div></div></div>
+    <div id="loops-t11" class="clip el" data-start="38.791" data-duration="3" data-track-index="26" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:27"><div id="loops-t11-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t11-w0" class="w">ruminators:</span> <span id="loops-t11-w1" class="w acc">worse</span> <span id="loops-t11-w2" class="w">solutions</span></div></div></div>
+    <div id="loops-t12" class="clip el" data-start="41.691" data-duration="1.76" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:28"><div id="loops-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t12-w0" class="w">and</span> <span id="loops-t12-w1" class="w">they</span> <span id="loops-t12-w2" class="w">felt</span> <span id="loops-t12-w3" class="w acc">worse</span></div></div></div>
+    <div id="loops-pg" class="clip el" data-start="44.591" data-duration="1.132" data-track-index="28" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:29" data-layout-allow-overlap><div id="loops-pg-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M8 172 L72 64 L106 118 L138 76 L192 172 Z"/><path class="s" pathLength="1" d="M56 92 L72 64 L88 92 L78 86 L66 94 Z"/></svg></div></div></div>
+    <div id="loops-t13" class="clip el" data-start="43.733" data-duration="2.04" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:30"><div id="loops-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t13-w0" class="w">it</span> <span id="loops-t13-w1" class="w">felt</span> <span id="loops-t13-w2" class="w">like</span> <span id="loops-t13-w3" class="w acc">progress</span></div></div></div>
+    <div id="loops-lo" class="clip el" data-start="46.653" data-duration="0.91" data-track-index="30" style="position:absolute;left:0px;top:60px;width:1920px;height:1020px;z-index:31" data-layout-allow-overlap><div id="loops-lo-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M150 70 A60 60 0 1 0 160 120"/><path class="s alm-s" pathLength="1" d="M128 64 L152 70 L150 44"/></svg></div></div></div>
+    <div id="loops-t14" class="clip el" data-start="45.673" data-duration="1.94" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:32"><div id="loops-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t14-w0" class="w">it</span> <span id="loops-t14-w1" class="w">was</span> <span id="loops-t14-w2" class="w">a</span> <span id="loops-t14-w3" class="w alm">loop</span></div></div></div>
+    <div id="loops-wt" class="clip el" data-start="48.113" data-duration="1.03" data-track-index="32" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:33" data-layout-allow-overlap><div id="loops-wt-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="loops-t15" class="clip el" data-start="47.513" data-duration="1.68" data-track-index="33" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:34"><div id="loops-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t15-w0" class="w">the</span> <span id="loops-t15-w1" class="w">things</span> <span id="loops-t15-w2" class="w">you</span> <span id="loops-t15-w3" class="w acc">worry</span> <span id="loops-t15-w4" class="w">about?</span></div></div></div>
+    <div id="loops-c2" class="clip el" data-start="51.213" data-duration="3.596" data-track-index="34" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:35"><div id="loops-c2-in" class="in"><div class="card"><div class="card-k">2020 · A WORRY DIARY</div><div class="card-t">Did the worries come true?</div><div class="card-s">LaFreniere &amp; Newman</div></div></div></div>
+    <div id="loops-nb" class="clip el" data-start="53.873" data-duration="0.89" data-track-index="35" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:36" data-layout-allow-overlap><div id="loops-nb-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 20 L156 20 L156 184 L44 184 Z"/><path class="s" pathLength="1" d="M44 20 L44 184 M60 20 L60 184"/><path class="s acc-s" pathLength="1" d="M76 60 L140 60 M76 90 L140 90 M76 120 L124 120"/></svg></div></div></div>
+    <div id="loops-nb2" class="clip el" data-start="55.669" data-duration="5.91" data-track-index="36" style="position:absolute;left:0px;top:100px;width:1520px;height:980px;z-index:37" data-layout-allow-overlap><div id="loops-nb2-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 20 L156 20 L156 184 L44 184 Z"/><path class="s" pathLength="1" d="M44 20 L44 184 M60 20 L60 184"/><path class="s acc-s" pathLength="1" d="M76 60 L140 60 M76 90 L140 90 M76 120 L124 120"/></svg></div></div></div>
+    <div id="loops-ca" class="clip el" data-start="57.069" data-duration="1.21" data-track-index="37" style="position:absolute;left:440px;top:100px;width:1480px;height:980px;z-index:38" data-layout-allow-overlap><div id="loops-ca-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="loops-cal" class="clip el" data-start="56.888999999999996" data-duration="1.44" data-track-index="38" style="position:absolute;left:440px;top:520px;width:1480px;height:560px;z-index:39"><div id="loops-cal-in" class="in"><div class="txt" style="font-size:46px;font-weight:800;color:var(--muted)"><span id="loops-cal-w0" class="w">10</span> <span id="loops-cal-w1" class="w">days</span></div></div></div>
+    <div id="loops-t16" class="clip el" data-start="56.288999999999994" data-duration="2.04" data-track-index="39" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:40"><div id="loops-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t16-w0" class="w">worries</span> <span id="loops-t16-w1" class="w">for</span> <span id="loops-t16-w2" class="w acc">ten</span> <span id="loops-t16-w3" class="w">days</span></div></div></div>
+    <div id="loops-cc" class="clip el" data-start="58.969" data-duration="2.61" data-track-index="40" style="position:absolute;left:440px;top:100px;width:1480px;height:980px;z-index:41" data-layout-allow-overlap><div id="loops-cc-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 20 L164 20 Q176 20 176 32 L176 176 Q176 186 164 186 L36 186 Q24 186 24 176 L24 32 Q24 20 36 20 Z"/><path class="s acc-s" pathLength="1" d="M48 66 L60 78 L82 54"/><path class="s" pathLength="1" d="M100 66 L150 66"/><path class="s acc-s" pathLength="1" d="M48 112 L60 124 L82 100"/><path class="s" pathLength="1" d="M100 112 L150 112"/><path class="s acc-s" pathLength="1" d="M48 158 L60 170 L82 146"/><path class="s" pathLength="1" d="M100 158 L150 158"/></svg></div></div></div>
+    <div id="loops-t17" class="clip el" data-start="59.229" data-duration="2.4" data-track-index="41" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:42"><div id="loops-t17-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t17-w0" class="w">which</span> <span id="loops-t17-w1" class="w">ones</span> <span id="loops-t17-w2" class="w">came</span> <span id="loops-t17-w3" class="w acc">true<span class="tail">?</span></span></div></div></div>
+    <div id="loops-k1" class="clip el" data-start="61.749" data-duration="5.605" data-track-index="42" style="position:absolute;left:0px;top:640px;width:1520px;height:440px;z-index:43"><div id="loops-k1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:420px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">didn't happen</div></div></div></div>
+    <div id="loops-p1" class="clip el" data-start="61.749" data-duration="5.655" data-track-index="43" style="position:absolute;left:0px;top:0px;width:1520px;height:780px;z-index:44"><div id="loops-p1-in" class="in"><div class="txt" style="font-size:52px;font-weight:600;color:var(--ink)"><span id="loops-p1-w0" class="w">91%</span></div></div></div>
+    <div id="loops-k2" class="clip el" data-start="62.969" data-duration="4.385" data-track-index="44" style="position:absolute;left:400px;top:640px;width:1520px;height:440px;z-index:45"><div id="loops-k2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:45px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">came true</div></div></div></div>
+    <div id="loops-p2" class="clip el" data-start="62.969" data-duration="4.435" data-track-index="45" style="position:absolute;left:400px;top:450px;width:1520px;height:630px;z-index:46"><div id="loops-p2-in" class="in"><div class="txt" style="font-size:52px;font-weight:600;color:var(--ink)"><span id="loops-p2-w0" class="w">9%</span></div></div></div>
+    <div id="loops-t18" class="clip el" data-start="61.529" data-duration="2.68" data-track-index="46" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:47"><div id="loops-t18-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t18-w0" class="w">about</span> <span id="loops-t18-w1" class="w acc">91%</span> <span id="loops-t18-w2" class="w">hadn't</span></div></div></div>
+    <div id="loops-t19" class="clip el" data-start="64.76400000000001" data-duration="2.64" data-track-index="47" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:48"><div id="loops-t19-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t19-w0" class="w">for</span> <span id="loops-t19-w1" class="w">many:</span> <span id="loops-t19-w2" class="w">not</span> <span id="loops-t19-w3" class="w">a</span> <span id="loops-t19-w4" class="w acc">single</span> <span id="loops-t19-w5" class="w">one</span></div></div></div>
+    <div id="loops-al" class="clip el" data-start="68.604" data-duration="2.87" data-track-index="48" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:49" data-layout-allow-overlap><div id="loops-al-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M100 30 Q150 30 150 96 L150 136 L168 156 L32 156 L50 136 L50 96 Q50 30 100 30 Z"/><path class="s alm-s" pathLength="1" d="M84 172 Q100 188 116 172"/><path class="s alm-s" pathLength="1" d="M24 46 L10 34 M176 46 L190 34 M16 92 L2 92 M184 92 L198 92"/></svg></div></div></div>
+    <div id="loops-t20" class="clip el" data-start="67.444" data-duration="2.34" data-track-index="49" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:50"><div id="loops-t20-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t20-w0" class="w">each</span> <span id="loops-t20-w1" class="w">felt</span> <span id="loops-t20-w2" class="w">like</span> <span id="loops-t20-w3" class="w">an</span> <span id="loops-t20-w4" class="w acc">emergency</span></div></div></div>
+    <div id="loops-ax" class="clip el" data-start="70.264" data-duration="1.21" data-track-index="50" style="position:absolute;left:480px;top:0px;width:1440px;height:840px;z-index:51" data-layout-allow-overlap><div id="loops-ax-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M40 40 L160 160 M160 40 L40 160"/></svg></div></div></div>
+    <div id="loops-t21" class="clip el" data-start="69.684" data-duration="1.84" data-track-index="51" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:52"><div id="loops-t21-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="loops-t21-w0" class="w">mostly</span> <span id="loops-t21-w1" class="w alm">false</span> <span id="loops-t21-w2" class="w alm">alarms</span></div></div></div>
+    <div id="loops-wk" class="clip el" data-start="72.724" data-duration="2.685" data-track-index="52" style="position:absolute;left:0px;top:100px;width:1920px;height:980px;z-index:53" data-layout-allow-overlap><div id="loops-wk-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="loops-wq" class="clip el" data-start="74.504" data-duration="0.93" data-track-index="53" style="position:absolute;left:520px;top:0px;width:1400px;height:880px;z-index:54" data-layout-allow-overlap><div id="loops-wq-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="loops-t22" class="clip el" data-start="71.724" data-duration="3.785" data-track-index="54" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:55"><div id="loops-t22-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="loops-t22-w0" class="w">your</span> <span id="loops-t22-w1" class="w">week,</span> <span id="loops-t22-w2" class="w">on</span> <span id="loops-t22-w3" class="w">what</span> <span id="loops-t22-w4" class="w">never</span> <span id="loops-t22-w5" class="w acc">happened<span class="tail">?</span></span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"loops-th","t":"stick","from":"bottom","exit":null,"in":0.52,"out":5.279999999999999,"outDur":0.3,"poses":[["give",1.96]],"mouth":[["neutral",0.52]]},{"id":"loops-pz","t":"icon","from":"pop","exit":null,"in":3.94,"out":5.279999999999999,"outDur":0.25},{"id":"loops-t0","t":"text","from":"top","exit":null,"in":1.34,"out":2.8,"outDur":0.3,"words":[0.52,1.34,1.96]},{"id":"loops-t1","t":"text","from":"top","exit":null,"in":3.2799999999999994,"out":5.279999999999999,"outDur":0.3,"words":[3.5,3.94,4.32,4.48,4.6]},{"id":"loops-t2","t":"text","from":"slam","exit":null,"in":5.52,"out":6.183,"outDur":0.25,"words":[5.52,5.76]},{"id":"loops-t3","t":"text","from":"top","exit":null,"in":6.803,"out":8.503,"outDur":0.3,"words":[7.343,7.463,7.683,7.883]},{"id":"loops-rn","t":"icon","from":"pop","exit":null,"in":7.463,"out":9.583,"outDur":0.25},{"id":"loops-t4","t":"text","from":"slam","exit":null,"in":8.743,"out":9.583,"outDur":0.25,"words":[8.743]},{"id":"loops-cw","t":"icon","from":"pop","exit":null,"in":10.923,"out":16.213,"outDur":0.25},{"id":"loops-t5","t":"text","from":"top","exit":null,"in":10.514,"out":12.514,"outDur":0.3,"words":[10.743,10.923,11.763,11.763,12.063]},{"id":"loops-cl","t":"icon","from":"pop","exit":null,"in":12.754,"out":16.213,"outDur":0.25,"pulse":1.08,"beat":0.6},{"id":"loops-t6","t":"text","from":"top","exit":null,"in":12.754,"out":16.213,"outDur":0.3,"words":[12.754,13.583,15.323,15.643]},{"id":"loops-c1","t":"card","from":"top","exit":null,"in":19.073,"out":23.013,"outDur":0.3},{"id":"loops-bn","t":"icon","from":"pop","exit":null,"in":21.313,"out":23.013,"outDur":0.25},{"id":"loops-ru","t":"stick","from":"left","exit":null,"in":23.713,"out":43.111,"outDur":0.3,"poses":[["headDown",25.293],["holdHead",27.523],["give",36.071],["headDown",40.151]],"mouth":[["frown",25.293],["tight",40.151]]},{"id":"loops-di","t":"stick","from":"right","exit":null,"in":23.713,"out":43.111,"outDur":0.3,"poses":[["headDown",25.293],["idle",33.143],["give",36.071],["happy",40.151]],"mouth":[["frown",25.293],["neutral",33.143],["smile",40.151]]},{"id":"loops-t7","t":"text","from":"top","exit":null,"in":24.503000000000004,"out":25.903000000000002,"outDur":0.3,"words":[24.413,24.853,25.293]},{"id":"loops-rc","t":"icon","from":"pop","exit":null,"in":27.523,"out":43.111,"outDur":0.25},{"id":"loops-t8","t":"text","from":"top","exit":null,"in":27.523,"out":30.703000000000003,"outDur":0.3,"words":[27.523,27.963,28.423,28.423]},{"id":"loops-fr","t":"icon","from":"pop","exit":null,"in":33.143,"out":34.283,"outDur":0.25},{"id":"loops-t9","t":"text","from":"top","exit":null,"in":32.723,"out":34.283,"outDur":0.3,"words":[32.723,32.723,33.143]},{"id":"loops-z1","t":"icon","from":"pop","exit":null,"in":36.071,"out":43.111,"outDur":0.25},{"id":"loops-z2","t":"icon","from":"pop","exit":null,"in":36.071,"out":43.111,"outDur":0.25},{"id":"loops-t10","t":"text","from":"top","exit":null,"in":36.071,"out":38.471,"outDur":0.3,"words":[34.523,36.071,36.751]},{"id":"loops-x1","t":"icon","from":"pop","exit":null,"in":40.151,"out":43.111,"outDur":0.25},{"id":"loops-t11","t":"text","from":"top","exit":null,"in":38.791,"out":41.451,"outDur":0.3,"words":[38.791,40.151,40.511]},{"id":"loops-t12","t":"text","from":"top","exit":null,"in":41.691,"out":43.111,"outDur":0.3,"words":[41.691,41.691,41.831,42.151]},{"id":"loops-pg","t":"icon","from":"pop","exit":null,"in":44.591,"out":45.433,"outDur":0.25},{"id":"loops-t13","t":"text","from":"top","exit":null,"in":43.733,"out":45.433,"outDur":0.3,"words":[43.831,43.831,44.331,44.591]},{"id":"loops-lo","t":"icon","from":"pop","exit":null,"in":46.653,"out":47.272999999999996,"outDur":0.25,"pulse":1.06,"beat":0.7},{"id":"loops-t14","t":"text","from":"top","exit":null,"in":45.673,"out":47.272999999999996,"outDur":0.3,"words":[45.673,45.793,46.393,46.653]},{"id":"loops-wt","t":"icon","from":"pop","exit":null,"in":48.113,"out":48.853,"outDur":0.25},{"id":"loops-t15","t":"text","from":"top","exit":null,"in":47.513,"out":48.853,"outDur":0.3,"words":[47.593,47.693,48.333,48.333,48.333]},{"id":"loops-c2","t":"card","from":"top","exit":null,"in":51.213,"out":54.469,"outDur":0.3},{"id":"loops-nb","t":"icon","from":"pop","exit":null,"in":53.873,"out":54.473,"outDur":0.25},{"id":"loops-nb2","t":"icon","from":"pop","exit":null,"in":55.669,"out":61.289,"outDur":0.25},{"id":"loops-ca","t":"icon","from":"pop","exit":null,"in":57.069,"out":57.989,"outDur":0.25},{"id":"loops-cal","t":"text","from":"bottom","exit":null,"in":56.888999999999996,"out":57.989,"outDur":0.3,"words":[57.389,57.389]},{"id":"loops-t16","t":"text","from":"top","exit":null,"in":56.288999999999994,"out":57.989,"outDur":0.3,"words":[56.509,56.809,57.069,57.389]},{"id":"loops-cc","t":"icon","from":"pop","exit":null,"in":58.969,"out":61.289,"outDur":0.25},{"id":"loops-t17","t":"text","from":"top","exit":null,"in":59.229,"out":61.289,"outDur":0.3,"words":[59.229,59.509,60.729,60.729]},{"id":"loops-k1","t":"bar","from":"draw","exit":null,"in":61.749,"out":67.06400000000001,"outDur":0.25},{"id":"loops-p1","t":"text","from":"bottom","exit":null,"in":61.749,"out":67.06400000000001,"outDur":0.3,"words":[61.849]},{"id":"loops-k2","t":"bar","from":"draw","exit":null,"in":62.969,"out":67.06400000000001,"outDur":0.25},{"id":"loops-p2","t":"text","from":"bottom","exit":null,"in":62.969,"out":67.06400000000001,"outDur":0.3,"words":[63.069]},{"id":"loops-t18","t":"text","from":"top","exit":null,"in":61.529,"out":63.86899999999999,"outDur":0.3,"words":[61.529,62.969,62.969]},{"id":"loops-t19","t":"text","from":"top","exit":null,"in":64.76400000000001,"out":67.06400000000001,"outDur":0.3,"words":[64.109,64.209,65.044,65.244,65.384,65.484]},{"id":"loops-al","t":"icon","from":"pop","exit":null,"in":68.604,"out":71.18400000000001,"outDur":0.25,"sway":10,"period":0.3},{"id":"loops-t20","t":"text","from":"top","exit":null,"in":67.444,"out":69.444,"outDur":0.3,"words":[67.304,67.884,68.244,68.464,68.604]},{"id":"loops-ax","t":"icon","from":"pop","exit":null,"in":70.264,"out":71.18400000000001,"outDur":0.25},{"id":"loops-t21","t":"text","from":"top","exit":null,"in":69.684,"out":71.18400000000001,"outDur":0.3,"words":[69.684,70.264,70.584]},{"id":"loops-wk","t":"icon","from":"pop","exit":null,"in":72.724,"out":75.119,"outDur":0.25},{"id":"loops-wq","t":"icon","from":"pop","exit":null,"in":74.504,"out":75.144,"outDur":0.25},{"id":"loops-t22","t":"text","from":"top","exit":null,"in":71.724,"out":75.169,"outDur":0.3,"words":[72.504,72.724,73.684,74.504,74.504,74.844]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["loops"] = tl;
+    })();
+  </script>
+</template>

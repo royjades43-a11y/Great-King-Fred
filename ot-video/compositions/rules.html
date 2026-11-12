@@ -1,0 +1,286 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="rules" data-width="1920" data-height="1080">
+    <div id="rules-cl" class="clip el" data-start="1.194" data-duration="2.29" data-track-index="1" style="position:absolute;left:0px;top:100px;width:1920px;height:980px;z-index:2" data-layout-allow-overlap><div id="rules-cl-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 20 L164 20 Q176 20 176 32 L176 176 Q176 186 164 186 L36 186 Q24 186 24 176 L24 32 Q24 20 36 20 Z"/><path class="s acc-s" pathLength="1" d="M48 66 L60 78 L82 54"/><path class="s" pathLength="1" d="M100 66 L150 66"/><path class="s acc-s" pathLength="1" d="M48 112 L60 124 L82 100"/><path class="s" pathLength="1" d="M100 112 L150 112"/><path class="s acc-s" pathLength="1" d="M48 158 L60 170 L82 146"/><path class="s" pathLength="1" d="M100 158 L150 158"/></svg></div></div></div>
+    <div id="rules-t0" class="clip el" data-start="1.194" data-duration="2.34" data-track-index="2" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:3"><div id="rules-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t0-w0" class="w">here's</span> <span id="rules-t0-w1" class="w">what</span> <span id="rules-t0-w2" class="w">you</span> <span id="rules-t0-w3" class="w">can</span> <span id="rules-t0-w4" class="w acc">do</span></div></div></div>
+    <div id="rules-t1" class="clip el" data-start="3.434" data-duration="7.34" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:4"><div id="rules-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t1-w0" class="w">rule</span> <span id="rules-t1-w1" class="w">1:</span> <span id="rules-t1-w2" class="w">worry</span> <span id="rules-t1-w3" class="w">→</span> <span id="rules-t1-w4" class="w acc">plan</span></div></div></div>
+    <div id="rules-wc" class="clip el" data-start="4.834" data-duration="5.89" data-track-index="4" style="position:absolute;left:0px;top:80px;width:1240px;height:1000px;z-index:5" data-layout-allow-overlap><div id="rules-wc-in" class="in"><div class="ico" style="width:270px;height:270px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="rules-wp" class="clip el" data-start="5.714" data-duration="10.157" data-track-index="5" style="position:absolute;left:680px;top:120px;width:1240px;height:960px;z-index:6" data-layout-allow-overlap><div id="rules-wp-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L150 20 L176 46 L176 168 L64 168 Z"/><path class="s" pathLength="1" d="M150 20 L150 46 L176 46"/><path class="s" pathLength="1" d="M44 40 L44 184 L156 184"/><path class="s" pathLength="1" d="M24 60 L24 198 L136 198"/><path class="s acc-s" pathLength="1" d="M88 76 L152 76 M88 104 L152 104 M88 132 L132 132"/></svg></div></div></div>
+    <div id="rules-ns" class="clip el" data-start="8.414" data-duration="2.31" data-track-index="6" style="position:absolute;left:0px;top:0px;width:1920px;height:760px;z-index:7" data-layout-allow-overlap><div id="rules-ns-in" class="in"><div class="ico bub" style="width:266px;height:190px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:32px">What's the next step?</div></div></div></div>
+    <div id="rules-t2" class="clip el" data-start="10.721" data-duration="2.64" data-track-index="7" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:8"><div id="rules-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t2-w0" class="w">with</span> <span id="rules-t2-w1" class="w">a</span> <span id="rules-t2-w2" class="w acc">when</span> <span id="rules-t2-w3" class="w">and</span> <span id="rules-t2-w4" class="w">a</span> <span id="rules-t2-w5" class="w acc">where</span></div></div></div>
+    <div id="rules-od" class="clip el" data-start="13.261" data-duration="2.66" data-track-index="8" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:9"><div id="rules-od-in" class="in"><svg class="stick" id="rules-od-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="rules-od-aLu"><path class="s" d="M150 160 L150 255"/><g id="rules-od-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-od-aRu"><path class="s" d="M150 160 L150 255"/><g id="rules-od-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-od-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="rules-od-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="rules-od-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="rules-od-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="rules-od-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="rules-od-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="rules-t3" class="clip el" data-start="13.581" data-duration="2.34" data-track-index="9" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:10"><div id="rules-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t3-w0" class="w">brain:</span> <span id="rules-t3-w1" class="w">off</span> <span id="rules-t3-w2" class="w acc">duty</span></div></div></div>
+    <div id="rules-t4" class="clip el" data-start="15.821" data-duration="2.98" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:11"><div id="rules-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t4-w0" class="w">rule</span> <span id="rules-t4-w1" class="w">2:</span> <span id="rules-t4-w2" class="w">a</span> <span id="rules-t4-w3" class="w">worry</span> <span id="rules-t4-w4" class="w acc">receipt</span></div></div></div>
+    <div id="rules-rc" class="clip el" data-start="17.581" data-duration="14.967" data-track-index="11" style="position:absolute;left:0px;top:100px;width:1920px;height:980px;z-index:12" data-layout-allow-overlap><div id="rules-rc-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M50 16 L150 16 L150 172 L138 186 L126 172 L113 186 L100 172 L87 186 L74 172 L62 186 L50 172 Z"/><path class="s" pathLength="1" d="M70 48 L130 48 M70 76 L130 76 M70 104 L110 104"/><path class="s acc-s" pathLength="1" d="M106 124 L136 154 M136 124 L106 154"/></svg></div></div></div>
+    <div id="rules-rw" class="clip el" data-start="18.701" data-duration="13.897" data-track-index="12" style="position:absolute;left:0px;top:300px;width:1200px;height:780px;z-index:13"><div id="rules-rw-in" class="in"><svg class="stick" id="rules-rw-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="rules-rw-aLu"><path class="s" d="M150 160 L150 255"/><g id="rules-rw-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-rw-aRu"><path class="s" d="M150 160 L150 255"/><g id="rules-rw-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-rw-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="rules-rw-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="rules-rw-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="rules-rw-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="rules-rw-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="rules-rw-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="rules-t5" class="clip el" data-start="18.701" data-duration="1.84" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:14"><div id="rules-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t5-w0" class="w">write</span> <span id="rules-t5-w1" class="w">it</span> <span id="rules-t5-w2" class="w acc">down</span></div></div></div>
+    <div id="rules-rk" class="clip el" data-start="21.021" data-duration="1.747" data-track-index="14" style="position:absolute;left:800px;top:40px;width:1120px;height:1040px;z-index:15" data-layout-allow-overlap><div id="rules-rk-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="rules-t6" class="clip el" data-start="20.441" data-duration="1.34" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:16"><div id="rules-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t6-w0" class="w">check</span> <span id="rules-t6-w1" class="w">it</span> <span id="rules-t6-w2" class="w">in</span> <span id="rules-t6-w3" class="w">a</span> <span id="rules-t6-w4" class="w acc">week</span></div></div></div>
+    <div id="rules-t7" class="clip el" data-start="21.681" data-duration="1.137" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:17"><div id="rules-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t7-w0" class="w">did</span> <span id="rules-t7-w1" class="w">it</span> <span id="rules-t7-w2" class="w acc">happen<span class="tail">?</span></span></div></div></div>
+    <div id="rules-t8" class="clip el" data-start="22.718" data-duration="2.18" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:18"><div id="rules-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t8-w0" class="w">usually:</span> <span id="rules-t8-w1" class="w alm">no</span></div></div></div>
+    <div id="rules-t9" class="clip el" data-start="26.038000000000004" data-duration="2.04" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:19"><div id="rules-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t9-w0" class="w">see</span> <span id="rules-t9-w1" class="w">it</span> <span id="rules-t9-w2" class="w">in</span> <span id="rules-t9-w3" class="w acc">writing</span></div></div></div>
+    <div id="rules-t10" class="clip el" data-start="28.698000000000004" data-duration="2.04" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="rules-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t10-w0" class="w">a</span> <span id="rules-t10-w1" class="w acc">terrible</span> <span id="rules-t10-w2" class="w">track</span> <span id="rules-t10-w3" class="w">record</span></div></div></div>
+    <div id="rules-t11" class="clip el" data-start="30.638" data-duration="1.96" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:21"><div id="rules-t11-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t11-w0" class="w">make</span> <span id="rules-t11-w1" class="w">it</span> <span id="rules-t11-w2" class="w">show</span> <span id="rules-t11-w3" class="w">its</span> <span id="rules-t11-w4" class="w acc">receipts</span></div></div></div>
+    <div id="rules-t12" class="clip el" data-start="32.498" data-duration="3.099" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:22"><div id="rules-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t12-w0" class="w">rule</span> <span id="rules-t12-w1" class="w">3:</span> <span id="rules-t12-w2" class="w">use</span> <span id="rules-t12-w3" class="w">your</span> <span id="rules-t12-w4" class="w acc">name</span></div></div></div>
+    <div id="rules-nm" class="clip el" data-start="33.457" data-duration="9.1" data-track-index="22" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:23"><div id="rules-nm-in" class="in"><svg class="stick" id="rules-nm-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="rules-nm-aLu"><path class="s" d="M150 160 L150 255"/><g id="rules-nm-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-nm-aRu"><path class="s" d="M150 160 L150 255"/><g id="rules-nm-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-nm-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="rules-nm-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="rules-nm-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="rules-nm-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="rules-nm-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="rules-nm-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="rules-ok" class="clip el" data-start="35.497" data-duration="3.19" data-track-index="23" style="position:absolute;left:440px;top:0px;width:1480px;height:800px;z-index:24" data-layout-allow-overlap><div id="rules-ok-in" class="in"><div class="ico bub" style="width:336px;height:240px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:30px">Okay, Sam. What would you tell a friend?</div></div></div></div>
+    <div id="rules-t13" class="clip el" data-start="38.637" data-duration="1.7" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:25"><div id="rules-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t13-w0" class="w">it</span> <span id="rules-t13-w1" class="w">sounds</span> <span id="rules-t13-w2" class="w acc">strange</span></div></div></div>
+    <div id="rules-t14" class="clip el" data-start="40.317" data-duration="2.24" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:26"><div id="rules-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t14-w0" class="w">it</span> <span id="rules-t14-w1" class="w">works</span> <span id="rules-t14-w2" class="w acc">better</span></div></div></div>
+    <div id="rules-t15" class="clip el" data-start="42.457" data-duration="3.172" data-track-index="26" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:27"><div id="rules-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t15-w0" class="w">rule</span> <span id="rules-t15-w1" class="w">4:</span> <span id="rules-t15-w2" class="w">good</span> <span id="rules-t15-w3" class="w acc">enough</span></div></div></div>
+    <div id="rules-ge" class="clip el" data-start="42.457" data-duration="3.122" data-track-index="27" style="position:absolute;left:0px;top:100px;width:1920px;height:980px;z-index:28" data-layout-allow-overlap><div id="rules-ge-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M30 104 L80 154 L172 50"/></svg></div></div></div>
+    <div id="rules-ln" class="clip el" data-start="47.189" data-duration="8.375" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:1040px;z-index:50" data-layout-allow-overlap data-layout-allow-occlusion><div id="rules-ln-in" class="in"><div class="strike" style="width:1000px"></div></div></div>
+    <div id="rules-o0" class="clip el" data-start="45.949" data-duration="9.565" data-track-index="29" style="position:absolute;left:0px;top:200px;width:1120px;height:880px;z-index:30" data-layout-allow-overlap><div id="rules-o0-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-62 0 a62 62 0 1 0 124 0 a62 62 0 1 0 -124 0"/><path class="s" pathLength="1" d="M100 100 m-36 0 a36 36 0 1 0 72 0 a36 36 0 1 0 -72 0"/><path class="s" pathLength="1" d="M18 40 L18 80 M10 40 L10 62 Q10 72 18 74 Q26 72 26 62 L26 40 M18 80 L18 170 M182 40 Q168 70 182 100 L182 170"/></svg></div></div></div>
+    <div id="rules-o1" class="clip el" data-start="45.949" data-duration="9.565" data-track-index="30" style="position:absolute;left:0px;top:200px;width:1920px;height:880px;z-index:31" data-layout-allow-overlap><div id="rules-o1-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-62 0 a62 62 0 1 0 124 0 a62 62 0 1 0 -124 0"/><path class="s" pathLength="1" d="M100 100 m-36 0 a36 36 0 1 0 72 0 a36 36 0 1 0 -72 0"/><path class="s" pathLength="1" d="M18 40 L18 80 M10 40 L10 62 Q10 72 18 74 Q26 72 26 62 L26 40 M18 80 L18 170 M182 40 Q168 70 182 100 L182 170"/></svg></div></div></div>
+    <div id="rules-o2" class="clip el" data-start="45.949" data-duration="9.565" data-track-index="31" style="position:absolute;left:800px;top:200px;width:1120px;height:880px;z-index:32" data-layout-allow-overlap><div id="rules-o2-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-62 0 a62 62 0 1 0 124 0 a62 62 0 1 0 -124 0"/><path class="s" pathLength="1" d="M100 100 m-36 0 a36 36 0 1 0 72 0 a36 36 0 1 0 -72 0"/><path class="s" pathLength="1" d="M18 40 L18 80 M10 40 L10 62 Q10 72 18 74 Q26 72 26 62 L26 40 M18 80 L18 170 M182 40 Q168 70 182 100 L182 170"/></svg></div></div></div>
+    <div id="rules-t16" class="clip el" data-start="46.929" data-duration="2.1" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:33"><div id="rules-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t16-w0" class="w">set</span> <span id="rules-t16-w1" class="w">the</span> <span id="rules-t16-w2" class="w">bar</span> <span id="rules-t16-w3" class="w acc">first</span></div></div></div>
+    <div id="rules-ok1" class="clip el" data-start="49.069" data-duration="6.445" data-track-index="33" style="position:absolute;left:0px;top:0px;width:1120px;height:840px;z-index:34" data-layout-allow-overlap><div id="rules-ok1-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M30 104 L80 154 L172 50"/></svg></div></div></div>
+    <div id="rules-t17" class="clip el" data-start="49.069" data-duration="2.6" data-track-index="34" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:35"><div id="rules-t17-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t17-w0" class="w">first</span> <span id="rules-t17-w1" class="w">to</span> <span id="rules-t17-w2" class="w">clear</span> <span id="rules-t17-w3" class="w">it</span> <span id="rules-t17-w4" class="w acc">wins</span></div></div></div>
+    <div id="rules-lm" class="clip el" data-start="54.369" data-duration="1.145" data-track-index="35" style="position:absolute;left:1080px;top:0px;width:840px;height:720px;z-index:36" data-layout-allow-overlap><div id="rules-lm-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M128 26 A78 78 0 1 0 174 142 A62 62 0 1 1 128 26 Z"/><path class="s acc-s" pathLength="1" d="M150 50 L150 66 M142 58 L158 58"/></svg></div></div></div>
+    <div id="rules-t18" class="clip el" data-start="51.669" data-duration="3.895" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:37"><div id="rules-t18-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t18-w0" class="w">good</span> <span id="rules-t18-w1" class="w">tonight</span> <span id="rules-t18-w2" class="w">&gt;</span> <span id="rules-t18-w3" class="w">perfect</span> <span id="rules-t18-w4" class="w">at</span> <span id="rules-t18-w5" class="w acc">ten</span></div></div></div>
+    <div id="rules-t19" class="clip el" data-start="55.644" data-duration="3.5" data-track-index="37" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:38"><div id="rules-t19-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t19-w0" class="w">rule</span> <span id="rules-t19-w1" class="w">5:</span> <span id="rules-t19-w2" class="w">a</span> <span id="rules-t19-w3" class="w">real</span> <span id="rules-t19-w4" class="w acc">job</span></div></div></div>
+    <div id="rules-jb" class="clip el" data-start="55.644" data-duration="12.1" data-track-index="38" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:39"><div id="rules-jb-in" class="in"><svg class="stick" id="rules-jb-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="rules-jb-aLu"><path class="s" d="M150 160 L150 255"/><g id="rules-jb-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-jb-aRu"><path class="s" d="M150 160 L150 255"/><g id="rules-jb-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-jb-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="rules-jb-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="rules-jb-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="rules-jb-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="rules-jb-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="rules-jb-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="rules-rl" class="clip el" data-start="59.044" data-duration="2.81" data-track-index="39" style="position:absolute;left:280px;top:0px;width:1640px;height:840px;z-index:40" data-layout-allow-overlap><div id="rules-rl-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M150 70 A60 60 0 1 0 160 120"/><path class="s alm-s" pathLength="1" d="M128 64 L152 70 L150 44"/></svg></div></div></div>
+    <div id="rules-t20" class="clip el" data-start="59.044" data-duration="2.86" data-track-index="40" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:41"><div id="rules-t20-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t20-w0" class="w">rumination</span> <span id="rules-t20-w1" class="w">loves</span> <span id="rules-t20-w2" class="w">an</span> <span id="rules-t20-w3" class="w acc">idle</span> <span id="rules-t20-w4" class="w">mind</span></div></div></div>
+    <div id="rules-t21" class="clip el" data-start="61.804" data-duration="1.06" data-track-index="41" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:42"><div id="rules-t21-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t21-w0" class="w">take</span> <span id="rules-t21-w1" class="w">a</span> <span id="rules-t21-w2" class="w acc">walk</span></div></div></div>
+    <div id="rules-cp" class="clip el" data-start="62.764" data-duration="1.15" data-track-index="42" style="position:absolute;left:880px;top:0px;width:1040px;height:1040px;z-index:43" data-layout-allow-overlap><div id="rules-cp-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="rules-t22" class="clip el" data-start="62.764" data-duration="1.2" data-track-index="43" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:44"><div id="rules-t22-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t22-w0" class="w">call</span> <span id="rules-t22-w1" class="w acc">someone</span></div></div></div>
+    <div id="rules-ck" class="clip el" data-start="63.864" data-duration="1.09" data-track-index="44" style="position:absolute;left:880px;top:40px;width:1040px;height:1040px;z-index:45" data-layout-allow-overlap><div id="rules-ck-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-62 0 a62 62 0 1 0 124 0 a62 62 0 1 0 -124 0"/><path class="s" pathLength="1" d="M100 100 m-36 0 a36 36 0 1 0 72 0 a36 36 0 1 0 -72 0"/><path class="s" pathLength="1" d="M18 40 L18 80 M10 40 L10 62 Q10 72 18 74 Q26 72 26 62 L26 40 M18 80 L18 170 M182 40 Q168 70 182 100 L182 170"/></svg></div></div></div>
+    <div id="rules-t23" class="clip el" data-start="63.864" data-duration="1.14" data-track-index="45" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:46"><div id="rules-t23-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t23-w0" class="w">cook</span> <span id="rules-t23-w1" class="w acc">something</span></div></div></div>
+    <div id="rules-t24" class="clip el" data-start="65.204" data-duration="2.74" data-track-index="46" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:47"><div id="rules-t24-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t24-w0" class="w">then</span> <span id="rules-t24-w1" class="w">come</span> <span id="rules-t24-w2" class="w acc">back</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"rules-cl","t":"icon","from":"pop","exit":null,"in":1.194,"out":3.194,"outDur":0.25},{"id":"rules-t0","t":"text","from":"top","exit":null,"in":1.194,"out":3.194,"outDur":0.3,"words":[1.194,1.554,1.654,1.774,1.894]},{"id":"rules-t1","t":"text","from":"top","exit":null,"in":3.434,"out":10.434,"outDur":0.3,"words":[3.434,4.834,4.834,5.714,5.714]},{"id":"rules-wc","t":"icon","from":"pop","exit":null,"in":4.834,"out":10.434,"outDur":0.25},{"id":"rules-wp","t":"icon","from":"pop","exit":null,"in":5.714,"out":15.581,"outDur":0.25},{"id":"rules-ns","t":"bubble","from":"pop","exit":null,"in":8.414,"out":10.434,"outDur":0.25},{"id":"rules-t2","t":"text","from":"top","exit":null,"in":10.721,"out":13.020999999999999,"outDur":0.3,"words":[11.561,11.741,11.861,12.081,12.461,12.561]},{"id":"rules-od","t":"stick","from":"bottom","exit":null,"in":13.261,"out":15.581,"outDur":0.3,"poses":[["happy",14.921]],"mouth":[["smile",14.921]]},{"id":"rules-t3","t":"text","from":"top","exit":null,"in":13.581,"out":15.581,"outDur":0.3,"words":[14.121,14.701,14.921]},{"id":"rules-t4","t":"text","from":"top","exit":null,"in":15.821,"out":18.461000000000002,"outDur":0.3,"words":[15.821,17.061,17.061,17.321,17.581]},{"id":"rules-rc","t":"icon","from":"pop","exit":null,"in":17.581,"out":32.257999999999996,"outDur":0.25},{"id":"rules-rw","t":"stick","from":"left","exit":null,"in":18.701,"out":32.257999999999996,"outDur":0.3,"poses":[["give",18.701],["shrug",21.681],["happy",22.718]],"mouth":[["neutral",18.701],["smile",22.718]]},{"id":"rules-t5","t":"text","from":"top","exit":null,"in":18.701,"out":20.201,"outDur":0.3,"words":[18.701,19.641,19.641]},{"id":"rules-rk","t":"icon","from":"pop","exit":null,"in":21.021,"out":22.478,"outDur":0.25},{"id":"rules-t6","t":"text","from":"top","exit":null,"in":20.441,"out":21.441000000000003,"outDur":0.3,"words":[20.441,20.621,20.761,20.921,21.021]},{"id":"rules-t7","t":"text","from":"top","exit":null,"in":21.681,"out":22.478,"outDur":0.3,"words":[21.681,21.761,21.841]},{"id":"rules-t8","t":"text","from":"top","exit":null,"in":22.718,"out":24.558,"outDur":0.3,"words":[24.398,24.398]},{"id":"rules-t9","t":"text","from":"top","exit":null,"in":26.038000000000004,"out":27.738000000000003,"outDur":0.3,"words":[26.458,26.898,26.898,27.078]},{"id":"rules-t10","t":"text","from":"top","exit":null,"in":28.698000000000004,"out":30.398000000000003,"outDur":0.3,"words":[28.758,28.918,29.458,29.758]},{"id":"rules-t11","t":"text","from":"top","exit":null,"in":30.638,"out":32.257999999999996,"outDur":0.3,"words":[30.638,30.718,30.878,31.098,31.318]},{"id":"rules-t12","t":"text","from":"top","exit":null,"in":32.498,"out":35.257,"outDur":0.3,"words":[32.498,33.857,33.857,33.857,34.517]},{"id":"rules-nm","t":"stick","from":"bottom","exit":null,"in":33.457,"out":42.217,"outDur":0.3,"poses":[["idle",33.457],["shrug",39.037],["proud",40.317]],"mouth":[["smile",33.457]]},{"id":"rules-ok","t":"bubble","from":"pop","exit":null,"in":35.497,"out":38.397,"outDur":0.25},{"id":"rules-t13","t":"text","from":"top","exit":null,"in":38.637,"out":39.997,"outDur":0.3,"words":[38.637,38.717,39.037]},{"id":"rules-t14","t":"text","from":"top","exit":null,"in":40.317,"out":42.217,"outDur":0.3,"words":[40.237,40.317,40.577]},{"id":"rules-t15","t":"text","from":"top","exit":null,"in":42.457,"out":45.289,"outDur":0.3,"words":[42.457,44.449,44.449,44.629]},{"id":"rules-ge","t":"icon","from":"pop","exit":null,"in":42.457,"out":45.289,"outDur":0.25},{"id":"rules-ln","t":"strike","from":"pop","exit":null,"in":47.189,"out":55.224,"outDur":0.3},{"id":"rules-o0","t":"icon","from":"pop","exit":null,"in":45.949,"out":55.224,"outDur":0.25},{"id":"rules-o1","t":"icon","from":"pop","exit":null,"in":45.949,"out":55.224,"outDur":0.25},{"id":"rules-o2","t":"icon","from":"pop","exit":null,"in":45.949,"out":55.224,"outDur":0.25},{"id":"rules-t16","t":"text","from":"top","exit":null,"in":46.929,"out":48.689,"outDur":0.3,"words":[46.929,47.189,47.189,47.289]},{"id":"rules-ok1","t":"icon","from":"pop","exit":null,"in":49.069,"out":55.224,"outDur":0.25},{"id":"rules-t17","t":"text","from":"top","exit":null,"in":49.069,"out":51.329,"outDur":0.3,"words":[49.069,49.869,49.869,50.189,50.389]},{"id":"rules-lm","t":"icon","from":"pop","exit":null,"in":54.369,"out":55.224,"outDur":0.25},{"id":"rules-t18","t":"text","from":"top","exit":null,"in":51.669,"out":55.224,"outDur":0.3,"words":[51.669,52.129,53.349,53.349,54.149,54.369]},{"id":"rules-t19","t":"text","from":"top","exit":null,"in":55.644,"out":58.803999999999995,"outDur":0.3,"words":[55.644,57.484,57.484,57.744,58.084]},{"id":"rules-jb","t":"stick","from":"bottom","exit":null,"in":55.644,"out":67.404,"outDur":0.3,"poses":[["idle",55.644],["happy",62.104],["give",63.864],["proud",65.444]],"mouth":[["neutral",55.644],["smile",62.104]],"move":[[340,0,62.104,1.4],[0,0,65.444,1.2]]},{"id":"rules-rl","t":"icon","from":"pop","exit":null,"in":59.044,"out":61.564,"outDur":0.25},{"id":"rules-t20","t":"text","from":"top","exit":null,"in":59.044,"out":61.564,"outDur":0.3,"words":[59.044,59.584,60.224,60.564,60.844]},{"id":"rules-t21","t":"text","from":"top","exit":null,"in":61.804,"out":62.524,"outDur":0.3,"words":[61.804,61.944,62.104]},{"id":"rules-cp","t":"icon","from":"pop","exit":null,"in":62.764,"out":63.623999999999995,"outDur":0.25,"sway":8,"period":0.3},{"id":"rules-t22","t":"text","from":"top","exit":null,"in":62.764,"out":63.623999999999995,"outDur":0.3,"words":[62.764,63.024]},{"id":"rules-ck","t":"icon","from":"pop","exit":null,"in":63.864,"out":64.664,"outDur":0.25},{"id":"rules-t23","t":"text","from":"top","exit":null,"in":63.864,"out":64.664,"outDur":0.3,"words":[63.864,64.004]},{"id":"rules-t24","t":"text","from":"top","exit":null,"in":65.204,"out":67.60399999999998,"outDur":0.3,"words":[64.904,65.204,65.444]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["rules"] = tl;
+    })();
+  </script>
+</template>

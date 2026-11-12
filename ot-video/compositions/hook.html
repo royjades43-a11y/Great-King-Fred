@@ -1,0 +1,292 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1920" data-height="1080">
+    <div id="hook-abed" class="clip el" data-start="0.01" data-duration="23.244" data-track-index="1" style="position:absolute;left:0px;top:360px;width:1400px;height:720px;z-index:2" data-layout-allow-overlap><div id="hook-abed-in" class="in"><div class="ico" style="width:560px;height:560px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M14 70 L14 172 M186 120 L186 172"/><path class="s" pathLength="1" d="M14 120 L186 120 M14 150 L186 150"/><path class="s" pathLength="1" d="M26 102 Q26 88 40 88 L72 88 Q86 88 86 102 Q86 116 72 116 L40 116 Q26 116 26 102 Z"/><path class="s acc-s" pathLength="1" d="M96 120 Q96 100 116 100 L186 100 L186 120"/></svg></div></div></div>
+    <div id="hook-ame" class="clip el" data-start="0.01" data-duration="23.294" data-track-index="2" style="position:absolute;left:0px;top:180px;width:1360px;height:900px;z-index:3"><div id="hook-ame-in" class="in"><svg class="stick" id="hook-ame-svg" width="186" height="322.4" viewBox="0 0 300 520">
+  
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L104 332 L100 424"/><path class="s" d="M150 300 L196 332 L200 424"/>
+    <g id="hook-ame-aLu"><path class="s" d="M150 160 L150 255"/><g id="hook-ame-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-ame-aRu"><path class="s" d="M150 160 L150 255"/><g id="hook-ame-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-ame-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="hook-ame-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="hook-ame-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="hook-ame-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="hook-ame-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="hook-ame-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="hook-aph" class="clip el" data-start="0.01" data-duration="23.244" data-track-index="3" style="position:absolute;left:0px;top:10px;width:1700px;height:1070px;z-index:4" data-layout-allow-overlap><div id="hook-aph-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="hook-agl" class="clip el" data-start="0.01" data-duration="23.244" data-track-index="4" style="position:absolute;left:0px;top:10px;width:1700px;height:1070px;z-index:5" data-layout-allow-overlap><div id="hook-agl-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><circle class="alm-f" cx="100" cy="100" r="34" opacity="0.9"/><path class="s acc-s" pathLength="1" d="M100 100 m-56 0 a56 56 0 1 0 112 0 a56 56 0 1 0 -112 0"/></svg></div></div></div>
+    <div id="hook-amn" class="clip el" data-start="0.01" data-duration="23.244" data-track-index="5" style="position:absolute;left:0px;top:0px;width:680px;height:660px;z-index:6" data-layout-allow-overlap><div id="hook-amn-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M128 26 A78 78 0 1 0 174 142 A62 62 0 1 1 128 26 Z"/><path class="s acc-s" pathLength="1" d="M150 50 L150 66 M142 58 L158 58"/></svg></div></div></div>
+    <div id="hook-t0" class="clip el" data-start="0" data-duration="0.95" data-track-index="6" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:7"><div id="hook-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t0-w0" class="w">it's</span> <span id="hook-t0-w1" class="w acc">late</span></div></div></div>
+    <div id="hook-t1" class="clip el" data-start="0.85" data-duration="1.56" data-track-index="7" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:8"><div id="hook-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t1-w0" class="w">you</span> <span id="hook-t1-w1" class="w">should</span> <span id="hook-t1-w2" class="w">be</span> <span id="hook-t1-w3" class="w acc">asleep</span></div></div></div>
+    <div id="hook-t2" class="clip el" data-start="3.23" data-duration="2.08" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:9"><div id="hook-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t2-w0" class="w">staring</span> <span id="hook-t2-w1" class="w">at</span> <span id="hook-t2-w2" class="w acc">one</span> <span id="hook-t2-w3" class="w">text</span></div></div></div>
+    <div id="hook-s1" class="clip el" data-start="5.39" data-duration="9.314" data-track-index="9" style="position:absolute;left:1040px;top:0px;width:880px;height:760px;z-index:10" data-layout-allow-overlap><div id="hook-s1-in" class="in"><div class="ico bub" style="width:280px;height:200px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:34px">Sounds good! Can't wait!</div></div></div></div>
+    <div id="hook-t3" class="clip el" data-start="5.39" data-duration="2.72" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:11"><div id="hook-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--muted)"><span id="hook-t3-w0" class="w">you</span> <span id="hook-t3-w1" class="w">wrote…</span></div></div></div>
+    <div id="hook-r1" class="clip el" data-start="8.63" data-duration="10.834" data-track-index="11" style="position:absolute;left:1040px;top:120px;width:880px;height:960px;z-index:12" data-layout-allow-overlap><div id="hook-r1-in" class="in"><div class="ico bub" style="width:196px;height:140px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:56px">ok.</div></div></div></div>
+    <div id="hook-t4" class="clip el" data-start="8.074" data-duration="2.04" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:13"><div id="hook-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t4-w0" class="w">they</span> <span id="hook-t4-w1" class="w">wrote</span> <span id="hook-t4-w2" class="w">back:</span> <span id="hook-t4-w3" class="w acc">ok.</span></div></div></div>
+    <div id="hook-t5" class="clip el" data-start="10.014" data-duration="1.48" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:14"><div id="hook-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t5-w0" class="w">no</span> <span id="hook-t5-w1" class="w">capital</span> <span id="hook-t5-w2" class="w acc">letter</span></div></div></div>
+    <div id="hook-t6" class="clip el" data-start="11.394" data-duration="1.46" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="hook-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t6-w0" class="w">no</span> <span id="hook-t6-w1" class="w">exclamation</span> <span id="hook-t6-w2" class="w acc">mark</span></div></div></div>
+    <div id="hook-t7" class="clip el" data-start="12.754" data-duration="2" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:16"><div id="hook-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t7-w0" class="w">just</span> <span id="hook-t7-w1" class="w alm">ok.</span></div></div></div>
+    <div id="hook-qa" class="clip el" data-start="14.894" data-duration="4.57" data-track-index="16" style="position:absolute;left:600px;top:0px;width:1320px;height:660px;z-index:17" data-layout-allow-overlap><div id="hook-qa-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="hook-qb" class="clip el" data-start="16.594" data-duration="2.87" data-track-index="17" style="position:absolute;left:1040px;top:0px;width:880px;height:600px;z-index:18" data-layout-allow-overlap><div id="hook-qb-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="hook-qc" class="clip el" data-start="18.774" data-duration="0.89" data-track-index="18" style="position:absolute;left:1480px;top:0px;width:440px;height:660px;z-index:19" data-layout-allow-overlap><div id="hook-qc-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="hook-t8" class="clip el" data-start="14.654" data-duration="1.34" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="hook-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t8-w0" class="w">are</span> <span id="hook-t8-w1" class="w">they</span> <span id="hook-t8-w2" class="w acc">mad<span class="tail">?</span></span></div></div></div>
+    <div id="hook-t9" class="clip el" data-start="15.894" data-duration="1.76" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:21"><div id="hook-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t9-w0" class="w">did</span> <span id="hook-t9-w1" class="w">I</span> <span id="hook-t9-w2" class="w">say</span> <span id="hook-t9-w3" class="w">something</span> <span id="hook-t9-w4" class="w acc">wrong<span class="tail">?</span></span></div></div></div>
+    <div id="hook-t10" class="clip el" data-start="17.554" data-duration="1.96" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:22"><div id="hook-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t10-w0" class="w">was</span> <span id="hook-t10-w1" class="w">the</span> <span id="hook-t10-w2" class="w">!</span> <span id="hook-t10-w3" class="w">too</span> <span id="hook-t10-w4" class="w acc">much<span class="tail">?</span></span></div></div></div>
+    <div id="hook-ck" class="clip el" data-start="19.414" data-duration="3.84" data-track-index="22" style="position:absolute;left:1040px;top:0px;width:880px;height:900px;z-index:23" data-layout-allow-overlap><div id="hook-ck-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-80 0 a80 80 0 1 0 160 0 a80 80 0 1 0 -160 0"/><path class="s" pathLength="1" d="M100 100 L100 50"/><path class="s alm-s" pathLength="1" d="M100 100 L140 120"/><circle class="f" cx="100" cy="100" r="8"/></svg></div></div></div>
+    <div id="hook-ckl" class="clip el" data-start="19.414" data-duration="3.89" data-track-index="23" style="position:absolute;left:1040px;top:100px;width:880px;height:980px;z-index:24"><div id="hook-ckl-in" class="in"><div class="txt" style="font-size:52px;font-weight:600;color:var(--accent)"><span id="hook-ckl-w0" class="w">+40</span> <span id="hook-ckl-w1" class="w">min</span></div></div></div>
+    <div id="hook-t11" class="clip el" data-start="19.414" data-duration="3.89" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:25"><div id="hook-t11-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t11-w0" class="w acc">40</span> <span id="hook-t11-w1" class="w">minutes</span> <span id="hook-t11-w2" class="w">later</span></div></div></div>
+    <div id="hook-ob" class="clip el" data-start="24.024" data-duration="0.89" data-track-index="25" style="position:absolute;left:0px;top:360px;width:1920px;height:720px;z-index:26" data-layout-allow-overlap><div id="hook-ob-in" class="in"><div class="ico" style="width:560px;height:560px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M14 70 L14 172 M186 120 L186 172"/><path class="s" pathLength="1" d="M14 120 L186 120 M14 150 L186 150"/><path class="s" pathLength="1" d="M26 102 Q26 88 40 88 L72 88 Q86 88 86 102 Q86 116 72 116 L40 116 Q26 116 26 102 Z"/><path class="s acc-s" pathLength="1" d="M96 120 Q96 100 116 100 L186 100 L186 120"/></svg></div></div></div>
+    <div id="hook-sl" class="clip el" data-start="24.024" data-duration="0.94" data-track-index="26" style="position:absolute;left:0px;top:180px;width:1880px;height:900px;z-index:27"><div id="hook-sl-in" class="in"><svg class="stick" id="hook-sl-svg" width="186" height="322.4" viewBox="0 0 300 520">
+  
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L104 332 L100 424"/><path class="s" d="M150 300 L196 332 L200 424"/>
+    <g id="hook-sl-aLu"><path class="s" d="M150 160 L150 255"/><g id="hook-sl-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-sl-aRu"><path class="s" d="M150 160 L150 255"/><g id="hook-sl-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-sl-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="hook-sl-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="hook-sl-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="hook-sl-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="hook-sl-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="hook-sl-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="hook-zz" class="clip el" data-start="23.204" data-duration="1.62" data-track-index="27" style="position:absolute;left:200px;top:0px;width:1720px;height:940px;z-index:28"><div id="hook-zz-in" class="in"><div class="txt" style="font-size:64px;font-weight:600;color:var(--muted)"><span id="hook-zz-w0" class="w">z</span> <span id="hook-zz-w1" class="w">z</span> <span id="hook-zz-w2" class="w">z</span></div></div></div>
+    <div id="hook-t12" class="clip el" data-start="23.204" data-duration="1.62" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:29"><div id="hook-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t12-w0" class="w">…and</span> <span id="hook-t12-w1" class="w">they're</span> <span id="hook-t12-w2" class="w alm">asleep</span></div></div></div>
+    <div id="hook-t13" class="clip el" data-start="24.724" data-duration="1.31" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:30"><div id="hook-t13-in" class="in"><div class="txt hero" style="font-size:100px;font-weight:800;color:var(--ink)"><span id="hook-t13-w0" class="w">sound</span> <span id="hook-t13-w1" class="w">familiar?</span></div></div></div>
+    <div id="hook-me" class="clip el" data-start="26.244" data-duration="12.173" data-track-index="30" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:31"><div id="hook-me-in" class="in"><svg class="stick" id="hook-me-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="hook-me-aLu"><path class="s" d="M150 160 L150 255"/><g id="hook-me-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-me-aRu"><path class="s" d="M150 160 L150 255"/><g id="hook-me-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-me-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="hook-me-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="hook-me-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="hook-me-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="hook-me-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="hook-me-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="hook-t14" class="clip el" data-start="26.484" data-duration="2.764" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:32"><div id="hook-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t14-w0" class="w">not</span> <span id="hook-t14-w1" class="w">crazy</span> <span id="hook-t14-w2" class="w">·</span> <span id="hook-t14-w3" class="w">not</span> <span id="hook-t14-w4" class="w acc">dramatic</span></div></div></div>
+    <div id="hook-br" class="clip el" data-start="29.308" data-duration="9.059" data-track-index="32" style="position:absolute;left:480px;top:0px;width:1440px;height:940px;z-index:33" data-layout-allow-overlap><div id="hook-br-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 40 Q70 18 50 44 Q22 50 28 84 Q12 108 34 130 Q36 162 70 162 Q88 182 100 160 Q112 182 130 162 Q164 162 166 130 Q188 108 172 84 Q178 50 150 44 Q130 18 100 40 Z"/><path class="s" pathLength="1" d="M100 40 L100 160 M60 80 Q80 90 70 110 M140 80 Q120 90 130 110"/></svg></div></div></div>
+    <div id="hook-t15" class="clip el" data-start="29.188000000000002" data-duration="2.64" data-track-index="33" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:34"><div id="hook-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t15-w0" class="w">your</span> <span id="hook-t15-w1" class="w">brain</span> <span id="hook-t15-w2" class="w">is</span> <span id="hook-t15-w3" class="w">doing</span> <span id="hook-t15-w4" class="w">its</span> <span id="hook-t15-w5" class="w acc">job</span></div></div></div>
+    <div id="hook-lp" class="clip el" data-start="34.228" data-duration="4.139" data-track-index="34" style="position:absolute;left:480px;top:0px;width:1440px;height:940px;z-index:35" data-layout-allow-overlap><div id="hook-lp-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M150 70 A60 60 0 1 0 160 120"/><path class="s alm-s" pathLength="1" d="M128 64 L152 70 L150 44"/></svg></div></div></div>
+    <div id="hook-t16" class="clip el" data-start="34.168" data-duration="1.74" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:36"><div id="hook-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t16-w0" class="w">one</span> <span id="hook-t16-w1" class="w">more</span> <span id="hook-t16-w2" class="w acc">time</span></div></div></div>
+    <div id="hook-t17" class="clip el" data-start="36.088" data-duration="2.329" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:37"><div id="hook-t17-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t17-w0" class="w">…and</span> <span id="hook-t17-w1" class="w">one</span> <span id="hook-t17-w2" class="w">more</span> <span id="hook-t17-w3" class="w acc">time</span></div></div></div>
+    <div id="hook-bk" class="clip el" data-start="38.317" data-duration="3.99" data-track-index="37" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:38" data-layout-allow-overlap><div id="hook-bk-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 40 Q70 18 50 44 Q22 50 28 84 Q12 108 34 130 Q36 162 70 162 Q88 182 100 160 Q112 182 130 162 Q164 162 166 130 Q188 108 172 84 Q178 50 150 44 Q130 18 100 40 Z"/><path class="s" pathLength="1" d="M100 40 L100 160 M60 80 Q80 90 70 110 M140 80 Q120 90 130 110"/></svg></div></div></div>
+    <div id="hook-t18" class="clip el" data-start="39.277" data-duration="3.08" data-track-index="38" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:39"><div id="hook-t18-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t18-w0" class="w">what</span> <span id="hook-t18-w1" class="w">all</span> <span id="hook-t18-w2" class="w">that</span> <span id="hook-t18-w3" class="w">thinking</span> <span id="hook-t18-w4" class="w acc">does</span></div></div></div>
+    <div id="hook-i1" class="clip el" data-start="42.577" data-duration="9.39" data-track-index="39" style="position:absolute;left:0px;top:80px;width:1120px;height:1000px;z-index:40" data-layout-allow-overlap><div id="hook-i1-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="hook-i2" class="clip el" data-start="47.557" data-duration="4.41" data-track-index="40" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:41" data-layout-allow-overlap><div id="hook-i2-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M70 24 L40 34 L10 70 L38 92 L52 78 L52 184 L148 184 L148 78 L162 92 L190 70 L160 34 L130 24 Q100 52 70 24 Z"/><circle class="alm-f" cx="100" cy="118" r="30"/></svg></div></div></div>
+    <div id="hook-i3" class="clip el" data-start="50.157" data-duration="1.81" data-track-index="41" style="position:absolute;left:800px;top:80px;width:1120px;height:1000px;z-index:42" data-layout-allow-overlap><div id="hook-i3-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 20 L164 20 Q176 20 176 32 L176 176 Q176 186 164 186 L36 186 Q24 186 24 176 L24 32 Q24 20 36 20 Z"/><path class="s acc-s" pathLength="1" d="M48 66 L60 78 L82 54"/><path class="s" pathLength="1" d="M100 66 L150 66"/><path class="s acc-s" pathLength="1" d="M48 112 L60 124 L82 100"/><path class="s" pathLength="1" d="M100 112 L150 112"/><path class="s acc-s" pathLength="1" d="M48 158 L60 170 L82 146"/><path class="s" pathLength="1" d="M100 158 L150 158"/></svg></div></div></div>
+    <div id="hook-t19" class="clip el" data-start="42.577" data-duration="3.36" data-track-index="42" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:43"><div id="hook-t19-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t19-w0" class="w">pinged</span> <span id="hook-t19-w1" class="w acc">thousands</span> <span id="hook-t19-w2" class="w">of</span> <span id="hook-t19-w3" class="w">people</span></div></div></div>
+    <div id="hook-t20" class="clip el" data-start="47.057" data-duration="1.74" data-track-index="43" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:44"><div id="hook-t20-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t20-w0" class="w">an</span> <span id="hook-t20-w1" class="w">embarrassing</span> <span id="hook-t20-w2" class="w acc">T-shirt</span></div></div></div>
+    <div id="hook-t21" class="clip el" data-start="49.677" data-duration="2.34" data-track-index="44" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:45"><div id="hook-t21-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t21-w0" class="w">how</span> <span id="hook-t21-w1" class="w">many</span> <span id="hook-t21-w2" class="w">worries</span> <span id="hook-t21-w3" class="w">come</span> <span id="hook-t21-w4" class="w acc">true</span></div></div></div>
+    <div id="hook-me2" class="clip el" data-start="51.917" data-duration="8.64" data-track-index="45" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:46"><div id="hook-me2-in" class="in"><svg class="stick" id="hook-me2-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="hook-me2-aLu"><path class="s" d="M150 160 L150 255"/><g id="hook-me2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-me2-aRu"><path class="s" d="M150 160 L150 255"/><g id="hook-me2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="hook-me2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="hook-me2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="hook-me2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="hook-me2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="hook-me2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="hook-me2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="hook-rp" class="clip el" data-start="55.257" data-duration="1.03" data-track-index="46" style="position:absolute;left:480px;top:0px;width:1440px;height:940px;z-index:47" data-layout-allow-overlap><div id="hook-rp-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M150 70 A60 60 0 1 0 160 120"/><path class="s alm-s" pathLength="1" d="M128 64 L152 70 L150 44"/></svg></div></div></div>
+    <div id="hook-t22" class="clip el" data-start="53.997" data-duration="2.34" data-track-index="47" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:48"><div id="hook-t22-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t22-w0" class="w">why</span> <span id="hook-t22-w1" class="w">your</span> <span id="hook-t22-w2" class="w">mind</span> <span id="hook-t22-w3" class="w">keeps</span> <span id="hook-t22-w4" class="w acc">replaying</span></div></div></div>
+    <div id="hook-lb" class="clip el" data-start="59.157" data-duration="1.35" data-track-index="48" style="position:absolute;left:480px;top:0px;width:1440px;height:940px;z-index:49" data-layout-allow-overlap><div id="hook-lb-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 112 Q42 78 92 80 Q98 50 128 50 Q154 50 154 78 Q154 100 140 112 Q122 150 80 150 Q46 150 36 112 Z"/><path class="s acc-s" pathLength="1" d="M154 68 L184 80 L152 90 Z"/><path class="s" pathLength="1" d="M38 110 L10 92 M38 116 L12 124"/><path class="alm-f" d="M58 108 Q90 92 120 112 Q94 136 58 108 Z"/><circle class="f" cx="136" cy="70" r="7"/><path class="s" pathLength="1" d="M84 150 L78 180 M106 148 L110 180"/></svg></div></div></div>
+    <div id="hook-t23" class="clip el" data-start="57.217" data-duration="3.34" data-track-index="49" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:50"><div id="hook-t23-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="hook-t23-w0" class="w">the</span> <span id="hook-t23-w1" class="w">one</span> <span id="hook-t23-w2" class="w">move</span> <span id="hook-t23-w3" class="w">that</span> <span id="hook-t23-w4" class="w">helps</span> <span id="hook-t23-w5" class="w">it</span> <span id="hook-t23-w6" class="w acc">let</span> <span id="hook-t23-w7" class="w acc">go</span></div></div></div>
+    <div id="hook-wh" class="clip el" data-start="61.697" data-duration="1.695" data-track-index="50" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:51" data-layout-allow-overlap><div id="hook-wh-in" class="in"><div class="ico" style="width:320px;height:320px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="hook-wq" class="clip el" data-start="62.937" data-duration="0.58" data-track-index="51" style="position:absolute;left:40px;top:10px;width:1880px;height:1070px;z-index:52" data-layout-allow-overlap><div id="hook-wq-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="hook-t24" class="clip el" data-start="61.152" data-duration="2.34" data-track-index="52" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:53"><div id="hook-t24-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="hook-t24-w0" class="w">where</span> <span id="hook-t24-w1" class="w">does</span> <span id="hook-t24-w2" class="w">your</span> <span id="hook-t24-w3" class="w">mind</span> <span id="hook-t24-w4" class="w acc">go<span class="tail">?</span></span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"hook-abed","t":"icon","from":"pop","exit":null,"in":0.01,"out":22.964000000000002,"outDur":0.25},{"id":"hook-ame","t":"stick","from":"bottom","exit":null,"in":0.01,"out":22.964000000000002,"outDur":0.3,"poses":[["give",0.01]],"mouth":[["neutral",0.01],["o",8.63],["frown",14.894],["tight",19.414]]},{"id":"hook-aph","t":"icon","from":"pop","exit":null,"in":0.01,"out":22.964000000000002,"outDur":0.25},{"id":"hook-agl","t":"icon","from":"pop","exit":null,"in":0.01,"out":22.964000000000002,"outDur":0.25,"pulse":1.08,"beat":1.6},{"id":"hook-amn","t":"icon","from":"pop","exit":null,"in":0.01,"out":22.964000000000002,"outDur":0.25},{"id":"hook-t0","t":"text","from":"top","exit":null,"in":0,"out":0.61,"outDur":0.3,"words":[-0.25,0.01]},{"id":"hook-t1","t":"text","from":"top","exit":null,"in":0.85,"out":2.0700000000000003,"outDur":0.3,"words":[0.85,0.95,1.09,1.25]},{"id":"hook-t2","t":"text","from":"top","exit":null,"in":3.23,"out":4.97,"outDur":0.3,"words":[3.23,3.67,3.81,4.13]},{"id":"hook-s1","t":"bubble","from":"pop","exit":null,"in":5.39,"out":14.414,"outDur":0.25},{"id":"hook-t3","t":"text","from":"top","exit":null,"in":5.39,"out":7.77,"outDur":0.3,"words":[5.21,5.39]},{"id":"hook-r1","t":"bubble","from":"pop","exit":null,"in":8.63,"out":19.174000000000003,"outDur":0.25},{"id":"hook-t4","t":"text","from":"top","exit":null,"in":8.074,"out":9.774,"outDur":0.3,"words":[8.01,8.27,8.39,8.63]},{"id":"hook-t5","t":"text","from":"top","exit":null,"in":10.014,"out":11.154,"outDur":0.3,"words":[10.014,10.314,10.634]},{"id":"hook-t6","t":"text","from":"top","exit":null,"in":11.394,"out":12.514,"outDur":0.3,"words":[11.394,11.634,12.214]},{"id":"hook-t7","t":"text","from":"top","exit":null,"in":12.754,"out":14.414,"outDur":0.3,"words":[12.754,13.074]},{"id":"hook-qa","t":"icon","from":"pop","exit":null,"in":14.894,"out":19.174000000000003,"outDur":0.25},{"id":"hook-qb","t":"icon","from":"pop","exit":null,"in":16.594,"out":19.174000000000003,"outDur":0.25},{"id":"hook-qc","t":"icon","from":"pop","exit":null,"in":18.774,"out":19.374000000000002,"outDur":0.25},{"id":"hook-t8","t":"text","from":"top","exit":null,"in":14.654,"out":15.654,"outDur":0.3,"words":[14.654,14.794,14.894]},{"id":"hook-t9","t":"text","from":"top","exit":null,"in":15.894,"out":17.314,"outDur":0.3,"words":[15.894,16.154,16.154,16.314,16.594]},{"id":"hook-t10","t":"text","from":"top","exit":null,"in":17.554,"out":19.174000000000003,"outDur":0.3,"words":[17.554,17.674,18.774,18.774,19.014]},{"id":"hook-ck","t":"icon","from":"pop","exit":null,"in":19.414,"out":22.964000000000002,"outDur":0.25,"sway":8,"period":0.5},{"id":"hook-ckl","t":"text","from":"bottom","exit":null,"in":19.414,"out":22.964000000000002,"outDur":0.3,"words":[19.514,19.614]},{"id":"hook-t11","t":"text","from":"top","exit":null,"in":19.414,"out":22.964000000000002,"outDur":0.3,"words":[20.424,20.424,20.644]},{"id":"hook-ob","t":"icon","from":"pop","exit":null,"in":24.024,"out":24.624000000000002,"outDur":0.25},{"id":"hook-sl","t":"stick","from":"bottom","exit":null,"in":24.024,"out":24.624000000000002,"outDur":0.3,"poses":[["headDown",24.024]],"mouth":[["neutral",24.024]]},{"id":"hook-zz","t":"text","from":"bottom","exit":null,"in":23.204,"out":24.484,"outDur":0.3,"words":[24.124,24.224,24.324]},{"id":"hook-t12","t":"text","from":"top","exit":null,"in":23.204,"out":24.484,"outDur":0.3,"words":[23.204,23.324,24.024]},{"id":"hook-t13","t":"text","from":"slam","exit":null,"in":24.724,"out":25.744000000000003,"outDur":0.25,"words":[24.724,24.984]},{"id":"hook-me","t":"stick","from":"bottom","exit":null,"in":26.244,"out":38.077,"outDur":0.3,"poses":[["shrug",26.244],["idle",29.308],["holdHead",34.228]],"mouth":[["neutral",26.244],["smile",29.308],["tight",34.228]]},{"id":"hook-t14","t":"text","from":"top","exit":null,"in":26.484,"out":28.908,"outDur":0.3,"words":[26.244,26.484,27.824,27.824,28.064]},{"id":"hook-br","t":"icon","from":"pop","exit":null,"in":29.308,"out":38.077,"outDur":0.25},{"id":"hook-t15","t":"text","from":"top","exit":null,"in":29.188000000000002,"out":31.488000000000003,"outDur":0.3,"words":[29.148,29.308,30.408,30.408,30.608,30.828]},{"id":"hook-lp","t":"icon","from":"pop","exit":null,"in":34.228,"out":38.077,"outDur":0.25,"pulse":1.06,"beat":0.8},{"id":"hook-t16","t":"text","from":"top","exit":null,"in":34.168,"out":35.568,"outDur":0.3,"words":[34.228,34.628,34.848]},{"id":"hook-t17","t":"text","from":"top","exit":null,"in":36.088,"out":38.077,"outDur":0.3,"words":[35.808,36.088,36.628,36.808]},{"id":"hook-bk","t":"icon","from":"pop","exit":null,"in":38.317,"out":42.016999999999996,"outDur":0.25},{"id":"hook-t18","t":"text","from":"top","exit":null,"in":39.277,"out":42.016999999999996,"outDur":0.3,"words":[39.677,39.897,40.197,40.377,41.297]},{"id":"hook-i1","t":"icon","from":"pop","exit":null,"in":42.577,"out":51.677,"outDur":0.25,"sway":8,"period":0.3},{"id":"hook-i2","t":"icon","from":"pop","exit":null,"in":47.557,"out":51.677,"outDur":0.25},{"id":"hook-i3","t":"icon","from":"pop","exit":null,"in":50.157,"out":51.677,"outDur":0.25},{"id":"hook-t19","t":"text","from":"top","exit":null,"in":42.577,"out":45.597,"outDur":0.3,"words":[42.577,42.817,43.337,43.577]},{"id":"hook-t20","t":"text","from":"top","exit":null,"in":47.057,"out":48.457,"outDur":0.3,"words":[46.937,47.057,47.557]},{"id":"hook-t21","t":"text","from":"top","exit":null,"in":49.677,"out":51.677,"outDur":0.3,"words":[49.557,49.897,50.157,50.897,51.177]},{"id":"hook-me2","t":"stick","from":"bottom","exit":null,"in":51.917,"out":60.217,"outDur":0.3,"poses":[["idle",51.917],["happy",59.157]],"mouth":[["neutral",51.917],["smile",59.157]]},{"id":"hook-rp","t":"icon","from":"pop","exit":null,"in":55.257,"out":55.997,"outDur":0.25},{"id":"hook-t22","t":"text","from":"top","exit":null,"in":53.997,"out":55.997,"outDur":0.3,"words":[54.017,54.357,54.577,54.837,55.257]},{"id":"hook-lb","t":"icon","from":"pop","exit":null,"in":59.157,"out":60.217,"outDur":0.25,"move":[[360,-170,59.377,1.4]]},{"id":"hook-t23","t":"text","from":"top","exit":null,"in":57.217,"out":60.217,"outDur":0.3,"words":[56.857,57.217,58.057,58.457,58.677,58.937,59.157,59.377]},{"id":"hook-wh","t":"icon","from":"pop","exit":null,"in":61.697,"out":63.102,"outDur":0.25},{"id":"hook-wq","t":"icon","from":"pop","exit":null,"in":62.937,"out":63.537,"outDur":0.25},{"id":"hook-t24","t":"text","from":"top","exit":null,"in":61.152,"out":63.152,"outDur":0.3,"words":[61.237,61.537,61.537,61.697,61.797]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>

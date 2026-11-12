@@ -1,0 +1,6088 @@
+{
+ "title": "The Psychology of People Who Overthink Everything",
+ "scenes": [
+  {
+   "id": "hook",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "It's late."
+    },
+    {
+     "id": "b01",
+     "say": "You should be asleep."
+    },
+    {
+     "id": "b02",
+     "say": "Instead, you're staring at one text."
+    },
+    {
+     "id": "b03",
+     "say": "You wrote, \"Sounds good!"
+    },
+    {
+     "id": "b04",
+     "say": "Can't wait!\""
+    },
+    {
+     "id": "b05",
+     "say": "They wrote back, \"ok.\""
+    },
+    {
+     "id": "b06",
+     "say": "No capital letter."
+    },
+    {
+     "id": "b07",
+     "say": "No exclamation mark."
+    },
+    {
+     "id": "b08",
+     "say": "Just \"ok.\""
+    },
+    {
+     "id": "b09",
+     "say": "Are they mad?"
+    },
+    {
+     "id": "b10",
+     "say": "Did you say something wrong?"
+    },
+    {
+     "id": "b11",
+     "say": "Was the exclamation mark too much?"
+    },
+    {
+     "id": "b12",
+     "say": "Forty minutes later, you're still thinking about it."
+    },
+    {
+     "id": "b13",
+     "say": "And they're asleep."
+    },
+    {
+     "id": "b14",
+     "say": "Sound familiar?"
+    },
+    {
+     "id": "b15",
+     "say": "You're not crazy, and you're not dramatic."
+    },
+    {
+     "id": "b16",
+     "say": "Your brain thinks it's doing its job."
+    },
+    {
+     "id": "b17",
+     "say": "It's trying to keep you safe by thinking it through one more time."
+    },
+    {
+     "id": "b18",
+     "say": "And then one more time after that."
+    },
+    {
+     "id": "b19",
+     "say": "Psychologists have studied what all that thinking actually does."
+    },
+    {
+     "id": "b20",
+     "say": "They've pinged thousands of people to ask what's on their minds."
+    },
+    {
+     "id": "b21",
+     "say": "They've made students wear an embarrassing T-shirt."
+    },
+    {
+     "id": "b22",
+     "say": "And they've checked how many worries ever come true."
+    },
+    {
+     "id": "b23",
+     "say": "By the end of this video, you'll know why your mind keeps replaying things."
+    },
+    {
+     "id": "b24",
+     "say": "And the one simple move that helps it let go."
+    },
+    {
+     "id": "b25",
+     "say": "Let's start with where your mind goes when you're not looking."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "abed",
+     "name": "bed",
+     "x": 700,
+     "y": 720,
+     "size": 560,
+     "from": "pop",
+     "at": "b00:late",
+     "out": "b13"
+    },
+    {
+     "t": "stick",
+     "id": "ame",
+     "x": 680,
+     "y": 630,
+     "from": "bottom",
+     "at": "b00:late",
+     "poses": [
+      [
+       "give",
+       "b00:late"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:late"
+      ],
+      [
+       "o",
+       "b05:ok"
+      ],
+      [
+       "frown",
+       "b09:mad"
+      ],
+      [
+       "tight",
+       "b12:forty"
+      ]
+     ],
+     "out": "b13",
+     "scale": 0.62,
+     "sit": true
+    },
+    {
+     "t": "icon",
+     "id": "aph",
+     "name": "phone",
+     "x": 850,
+     "y": 545,
+     "size": 100,
+     "from": "pop",
+     "at": "b00:late",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "agl",
+     "name": "glow",
+     "x": 850,
+     "y": 545,
+     "size": 150,
+     "from": "pop",
+     "at": "b00:late",
+     "out": "b13",
+     "pulse": 1.08,
+     "beat": 1.6
+    },
+    {
+     "t": "icon",
+     "id": "amn",
+     "name": "moon",
+     "x": 340,
+     "y": 330,
+     "size": 110,
+     "from": "pop",
+     "at": "b00:late",
+     "out": "b13"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "it's *late*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b00:late",
+     "out": "b01"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "you should be *asleep*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b01:should",
+     "out": "b02"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "staring at *one* text",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b02:staring",
+     "out": "b03"
+    },
+    {
+     "t": "bubble",
+     "id": "s1",
+     "text": "Sounds good! Can't wait!",
+     "x": 1480,
+     "y": 380,
+     "size": 200,
+     "from": "pop",
+     "at": "b03:wrote",
+     "fontSize": 34,
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "you wrote…",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b03:wrote",
+     "out": "b05",
+     "color": "muted"
+    },
+    {
+     "t": "bubble",
+     "id": "r1",
+     "text": "ok.",
+     "x": 1480,
+     "y": 600,
+     "size": 140,
+     "from": "pop",
+     "at": "b05:ok",
+     "fontSize": 56,
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "they wrote back: *ok.*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b05:wrote",
+     "out": "b06"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "no capital *letter*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b06:capital",
+     "out": "b07"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "no exclamation *mark*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b07:exclamation",
+     "out": "b08"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "just !ok.!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b08:just",
+     "out": "b09"
+    },
+    {
+     "t": "icon",
+     "id": "qa",
+     "name": "question",
+     "x": 1260,
+     "y": 330,
+     "size": 100,
+     "from": "pop",
+     "at": "b09:mad",
+     "out": "b12"
+    },
+    {
+     "t": "icon",
+     "id": "qb",
+     "name": "question",
+     "x": 1480,
+     "y": 300,
+     "size": 100,
+     "from": "pop",
+     "at": "b10:wrong",
+     "out": "b12"
+    },
+    {
+     "t": "icon",
+     "id": "qc",
+     "name": "question",
+     "x": 1700,
+     "y": 330,
+     "size": 100,
+     "from": "pop",
+     "at": "b11:too",
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "are they *mad*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b09:mad",
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "did I say something *wrong*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b10:say",
+     "out": "b11"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "was the ! too *much*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b11:exclamation",
+     "out": "b12"
+    },
+    {
+     "t": "icon",
+     "id": "ck",
+     "name": "clock",
+     "x": 1480,
+     "y": 450,
+     "size": 170,
+     "from": "pop",
+     "at": "b12:forty",
+     "out": "b13",
+     "sway": 8,
+     "period": 0.5
+    },
+    {
+     "t": "text",
+     "id": "ckl",
+     "text": "+40 min",
+     "x": 1480,
+     "y": 590,
+     "size": 52,
+     "from": "bottom",
+     "at": "b12:forty",
+     "out": "b13",
+     "color": "accent",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "*40* minutes later",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b12:forty",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "ob",
+     "name": "bed",
+     "x": 960,
+     "y": 720,
+     "size": 560,
+     "from": "pop",
+     "at": "b13:asleep",
+     "out": "b14"
+    },
+    {
+     "t": "stick",
+     "id": "sl",
+     "x": 940,
+     "y": 630,
+     "from": "bottom",
+     "at": "b13:asleep",
+     "poses": [
+      [
+       "headDown",
+       "b13:asleep"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b13:asleep"
+      ]
+     ],
+     "out": "b14",
+     "scale": 0.62,
+     "sit": true
+    },
+    {
+     "t": "text",
+     "id": "zz",
+     "text": "z z z",
+     "x": 1060,
+     "y": 470,
+     "size": 64,
+     "from": "bottom",
+     "at": "b13:asleep",
+     "out": "b14",
+     "color": "muted",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "…and they're !asleep!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b13:and",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "sound familiar?",
+     "x": 960,
+     "y": 480,
+     "size": 100,
+     "from": "slam",
+     "at": "b14:sound",
+     "out": "b15",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b15:not",
+     "poses": [
+      [
+       "shrug",
+       "b15:not"
+      ],
+      [
+       "idle",
+       "b16:brain"
+      ],
+      [
+       "holdHead",
+       "b17:one"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b15:not"
+      ],
+      [
+       "smile",
+       "b16:brain"
+      ],
+      [
+       "tight",
+       "b17:one"
+      ]
+     ],
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "not crazy · not *dramatic*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b15:crazy",
+     "out": "b16"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "brain",
+     "x": 1200,
+     "y": 470,
+     "size": 170,
+     "from": "pop",
+     "at": "b16:brain",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "your brain is doing its *job*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b16:brain",
+     "out": "b17"
+    },
+    {
+     "t": "icon",
+     "id": "lp",
+     "name": "loop",
+     "x": 1200,
+     "y": 470,
+     "size": 300,
+     "from": "pop",
+     "at": "b17:one",
+     "out": "b19",
+     "pulse": 1.06,
+     "beat": 0.8
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "one more *time*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b17:one",
+     "out": "b18"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "…and one more *time*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b18:one",
+     "out": "b19"
+    },
+    {
+     "t": "icon",
+     "id": "bk",
+     "name": "brain",
+     "x": 960,
+     "y": 580,
+     "size": 240,
+     "from": "pop",
+     "at": "b19:psychologists",
+     "out": "b20"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "what all that thinking *does*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b19:studied",
+     "out": "b20"
+    },
+    {
+     "t": "icon",
+     "id": "i1",
+     "name": "phone",
+     "x": 560,
+     "y": 580,
+     "size": 200,
+     "from": "pop",
+     "at": "b20:pinged",
+     "out": "b23",
+     "sway": 8,
+     "period": 0.3
+    },
+    {
+     "t": "icon",
+     "id": "i2",
+     "name": "shirt",
+     "x": 960,
+     "y": 580,
+     "size": 220,
+     "from": "pop",
+     "at": "b21:t-shirt",
+     "out": "b23"
+    },
+    {
+     "t": "icon",
+     "id": "i3",
+     "name": "checklist",
+     "x": 1360,
+     "y": 580,
+     "size": 220,
+     "from": "pop",
+     "at": "b22:worries",
+     "out": "b23"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "pinged *thousands* of people",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b20:pinged",
+     "out": "b21"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "an embarrassing *T-shirt*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b21:embarrassing",
+     "out": "b22"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "how many worries come *true*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b22:worries",
+     "out": "b23"
+    },
+    {
+     "t": "stick",
+     "id": "me2",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b23:by",
+     "poses": [
+      [
+       "idle",
+       "b23:by"
+      ],
+      [
+       "happy",
+       "b24:let"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b23:by"
+      ],
+      [
+       "smile",
+       "b24:let"
+      ]
+     ],
+     "out": "b25"
+    },
+    {
+     "t": "icon",
+     "id": "rp",
+     "name": "loop",
+     "x": 1200,
+     "y": 470,
+     "size": 200,
+     "from": "pop",
+     "at": "b23:replaying",
+     "out": "b24"
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "why your mind keeps *replaying*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b23:why",
+     "out": "b24"
+    },
+    {
+     "t": "icon",
+     "id": "lb",
+     "name": "bird",
+     "x": 1200,
+     "y": 470,
+     "size": 150,
+     "from": "pop",
+     "at": "b24:let",
+     "out": "b25",
+     "move": [
+      [
+       1560,
+       300,
+       "b24:go",
+       1.4
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t23",
+     "text": "the one move that helps it *let go*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b24:one",
+     "out": "b25"
+    },
+    {
+     "t": "icon",
+     "id": "wh",
+     "name": "thought",
+     "x": 960,
+     "y": 560,
+     "size": 320,
+     "from": "pop",
+     "at": "b25:mind"
+    },
+    {
+     "t": "icon",
+     "id": "wq",
+     "name": "question",
+     "x": 980,
+     "y": 545,
+     "size": 110,
+     "from": "pop",
+     "at": "b25:looking"
+    },
+    {
+     "t": "text",
+     "id": "t24",
+     "text": "where does your mind *go*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b25:where"
+    }
+   ]
+  },
+  {
+   "id": "wander",
+   "beats": [
+    {
+     "id": "b26",
+     "say": "In two thousand ten, Harvard psychologists Matthew Killingsworth and Daniel Gilbert built an iPhone app."
+    },
+    {
+     "id": "b27",
+     "say": "It pinged people at random moments during their day."
+    },
+    {
+     "id": "b28",
+     "say": "It asked three things."
+    },
+    {
+     "id": "b29",
+     "say": "What are you doing?"
+    },
+    {
+     "id": "b30",
+     "say": "What are you thinking about?"
+    },
+    {
+     "id": "b31",
+     "say": "How do you feel?"
+    },
+    {
+     "id": "b32",
+     "say": "More than two thousand people answered."
+    },
+    {
+     "id": "b33",
+     "say": "Their minds were somewhere else almost half the time."
+    },
+    {
+     "id": "b34",
+     "say": "Forty-six point nine percent, to be exact."
+    },
+    {
+     "id": "b35",
+     "say": "In the shower."
+    },
+    {
+     "id": "b36",
+     "say": "At work."
+    },
+    {
+     "id": "b37",
+     "say": "Even in the middle of a conversation."
+    },
+    {
+     "id": "b38",
+     "say": "And when their minds wandered, people were less happy."
+    },
+    {
+     "id": "b39",
+     "say": "Even pleasant daydreams didn't make them any happier than staying present."
+    },
+    {
+     "id": "b40",
+     "say": "The researchers put it right in their title."
+    },
+    {
+     "id": "b41",
+     "say": "\"A wandering mind is an unhappy mind.\""
+    },
+    {
+     "id": "b42",
+     "say": "For an overthinker, the mind doesn't just wander."
+    },
+    {
+     "id": "b43",
+     "say": "It wanders back to the same spot."
+    },
+    {
+     "id": "b44",
+     "say": "The text."
+    },
+    {
+     "id": "b45",
+     "say": "The meeting."
+    },
+    {
+     "id": "b46",
+     "say": "The thing you said at a party six years ago."
+    },
+    {
+     "id": "b47",
+     "say": "So what's it looking for back there?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2010 · HARVARD",
+     "text": "An app that pinged people",
+     "sub": "Killingsworth & Gilbert",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b26:killingsworth",
+     "out": "b27"
+    },
+    {
+     "t": "icon",
+     "id": "ip",
+     "name": "phone",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b26:iphone",
+     "out": "b27"
+    },
+    {
+     "t": "stick",
+     "id": "pp",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b27:pinged",
+     "poses": [
+      [
+       "idle",
+       "b27:pinged"
+      ],
+      [
+       "give",
+       "b29:what"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b27:pinged"
+      ],
+      [
+       "o",
+       "b29:what"
+      ]
+     ],
+     "out": "b32"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 1020,
+     "y": 560,
+     "size": 110,
+     "from": "pop",
+     "at": "b27:pinged",
+     "out": "b32",
+     "sway": 8,
+     "period": 0.3
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "at *random* moments",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b27:random",
+     "out": "b28"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "three *questions*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b28:three",
+     "out": "b32"
+    },
+    {
+     "t": "bubble",
+     "id": "q1",
+     "text": "What are you doing?",
+     "x": 1420,
+     "y": 400,
+     "size": 190,
+     "from": "pop",
+     "at": "b29:what",
+     "fontSize": 32,
+     "out": "b30"
+    },
+    {
+     "t": "bubble",
+     "id": "q2",
+     "text": "What are you thinking about?",
+     "x": 1420,
+     "y": 400,
+     "size": 210,
+     "from": "pop",
+     "at": "b30:what",
+     "fontSize": 30,
+     "out": "b31"
+    },
+    {
+     "t": "bubble",
+     "id": "q3",
+     "text": "How do you feel?",
+     "x": 1420,
+     "y": 400,
+     "size": 190,
+     "from": "pop",
+     "at": "b31:how",
+     "fontSize": 32,
+     "out": "b32"
+    },
+    {
+     "t": "icon",
+     "id": "pe",
+     "name": "people",
+     "x": 960,
+     "y": 600,
+     "size": 320,
+     "from": "pop",
+     "at": "b32:more",
+     "out": "b33"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "*2,000+* people",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b32:thousand",
+     "out": "b33"
+    },
+    {
+     "t": "stick",
+     "id": "wd",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b33:minds",
+     "poses": [
+      [
+       "idle",
+       "b33:minds"
+      ],
+      [
+       "headDown",
+       "b38:less"
+      ],
+      [
+       "idle",
+       "b39:pleasant"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b33:minds"
+      ],
+      [
+       "frown",
+       "b38:less"
+      ],
+      [
+       "neutral",
+       "b39:pleasant"
+      ]
+     ],
+     "out": "b40"
+    },
+    {
+     "t": "icon",
+     "id": "wt",
+     "name": "thought",
+     "x": 1180,
+     "y": 400,
+     "size": 240,
+     "from": "pop",
+     "at": "b33:else",
+     "out": "b40",
+     "bob": 8
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "minds *somewhere else*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b33:somewhere",
+     "out": "b34"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "*46.9%* of the time",
+     "x": 960,
+     "y": 170,
+     "size": 80,
+     "from": "top",
+     "at": "b34:forty-six",
+     "out": "b35"
+    },
+    {
+     "t": "icon",
+     "id": "s1",
+     "name": "rain",
+     "x": 1180,
+     "y": 385,
+     "size": 110,
+     "from": "pop",
+     "at": "b35:shower",
+     "out": "b36"
+    },
+    {
+     "t": "icon",
+     "id": "s2",
+     "name": "briefcase",
+     "x": 1180,
+     "y": 385,
+     "size": 110,
+     "from": "pop",
+     "at": "b36:work",
+     "out": "b37"
+    },
+    {
+     "t": "icon",
+     "id": "s3",
+     "name": "chat",
+     "x": 1180,
+     "y": 385,
+     "size": 110,
+     "from": "pop",
+     "at": "b37:conversation",
+     "out": "b38"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "in the *shower*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b35:shower",
+     "out": "b36"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "at *work*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b36:work",
+     "out": "b37"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "mid-*conversation*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b37:middle",
+     "out": "b38"
+    },
+    {
+     "t": "icon",
+     "id": "s4",
+     "name": "cloud",
+     "x": 1180,
+     "y": 385,
+     "size": 110,
+     "from": "pop",
+     "at": "b38:wandered",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "wandering → less *happy*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b38:wandered",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "s5",
+     "name": "sun",
+     "x": 1180,
+     "y": 385,
+     "size": 110,
+     "from": "pop",
+     "at": "b39:pleasant",
+     "out": "b40"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "even pleasant *daydreams*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b39:pleasant",
+     "out": "b40"
+    },
+    {
+     "t": "icon",
+     "id": "ti",
+     "name": "paper",
+     "x": 960,
+     "y": 600,
+     "size": 260,
+     "from": "pop",
+     "at": "b40:title",
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "right in their *title*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b40:title",
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "a wandering mind is an *unhappy* mind",
+     "x": 960,
+     "y": 480,
+     "size": 70,
+     "from": "slam",
+     "at": "b41:wandering",
+     "out": "b42",
+     "hero": true
+    },
+    {
+     "t": "stick",
+     "id": "ov",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b42:overthinker",
+     "poses": [
+      [
+       "idle",
+       "b42:overthinker"
+      ],
+      [
+       "holdHead",
+       "b46:party"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b42:overthinker"
+      ],
+      [
+       "tight",
+       "b46:party"
+      ]
+     ],
+     "out": "b47"
+    },
+    {
+     "t": "icon",
+     "id": "oc",
+     "name": "thought",
+     "x": 1180,
+     "y": 400,
+     "size": 260,
+     "from": "pop",
+     "at": "b42:wander",
+     "out": "b47"
+    },
+    {
+     "t": "icon",
+     "id": "o1",
+     "name": "loop",
+     "x": 1190,
+     "y": 385,
+     "size": 110,
+     "from": "pop",
+     "at": "b43:wanders",
+     "out": "b44"
+    },
+    {
+     "t": "icon",
+     "id": "o2",
+     "name": "phone",
+     "x": 1190,
+     "y": 385,
+     "size": 100,
+     "from": "pop",
+     "at": "b44:text",
+     "out": "b45"
+    },
+    {
+     "t": "icon",
+     "id": "o3",
+     "name": "table",
+     "x": 1190,
+     "y": 390,
+     "size": 130,
+     "from": "pop",
+     "at": "b45:meeting",
+     "out": "b46"
+    },
+    {
+     "t": "icon",
+     "id": "o4",
+     "name": "partyhat",
+     "x": 1190,
+     "y": 385,
+     "size": 100,
+     "from": "pop",
+     "at": "b46:party",
+     "out": "b47"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "it doesn't just *wander*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b42:doesn't",
+     "out": "b43"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "back to the *same spot*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b43:back",
+     "out": "b44"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "the *text*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b44:text",
+     "out": "b45"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "the *meeting*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b45:meeting",
+     "out": "b46"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "a party, six years *ago*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b46:party",
+     "out": "b47"
+    },
+    {
+     "t": "icon",
+     "id": "lq",
+     "name": "question",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b47:looking"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "what's it *looking* for?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b47:what"
+    }
+   ]
+  },
+  {
+   "id": "spot",
+   "beats": [
+    {
+     "id": "b48",
+     "say": "Usually, it's looking for one thing."
+    },
+    {
+     "id": "b49",
+     "say": "What other people think of you."
+    },
+    {
+     "id": "b50",
+     "say": "And here's the problem."
+    },
+    {
+     "id": "b51",
+     "say": "You think they're thinking about you much more than they are."
+    },
+    {
+     "id": "b52",
+     "say": "In two thousand, psychologist Thomas Gilovich and his colleagues ran a slightly cruel experiment."
+    },
+    {
+     "id": "b53",
+     "say": "They had college students put on a T-shirt with Barry Manilow's face on it."
+    },
+    {
+     "id": "b54",
+     "say": "For those students, that was deeply embarrassing."
+    },
+    {
+     "id": "b55",
+     "say": "Then each student walked into a room full of their peers."
+    },
+    {
+     "id": "b56",
+     "say": "Afterward, the wearers guessed that about half the room had noticed the shirt."
+    },
+    {
+     "id": "b57",
+     "say": "In reality, only about a quarter had."
+    },
+    {
+     "id": "b58",
+     "say": "Psychologists call this the spotlight effect."
+    },
+    {
+     "id": "b59",
+     "say": "You feel like you're on stage."
+    },
+    {
+     "id": "b60",
+     "say": "Everyone else is busy feeling like they're on stage too."
+    },
+    {
+     "id": "b61",
+     "say": "And it doesn't stop at T-shirts."
+    },
+    {
+     "id": "b62",
+     "say": "In two thousand eighteen, psychologist Erica Boothby and her colleagues paired up strangers for a chat."
+    },
+    {
+     "id": "b63",
+     "say": "Afterward, each person guessed how much the other one liked them."
+    },
+    {
+     "id": "b64",
+     "say": "Most people guessed too low."
+    },
+    {
+     "id": "b65",
+     "say": "Their partners liked them more, and enjoyed the talk more, than they realized."
+    },
+    {
+     "id": "b66",
+     "say": "The researchers called it the liking gap."
+    },
+    {
+     "id": "b67",
+     "say": "Between new college roommates, it lasted for months."
+    },
+    {
+     "id": "b68",
+     "say": "So that conversation you've been replaying all week?"
+    },
+    {
+     "id": "b69",
+     "say": "The other person probably walked away thinking it went fine."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "yo",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b48:usually",
+     "poses": [
+      [
+       "idle",
+       "b48:usually"
+      ],
+      [
+       "shrug",
+       "b51:think"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b48:usually"
+      ],
+      [
+       "o",
+       "b51:think"
+      ]
+     ],
+     "out": "b52"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "it's looking for *one* thing",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b48:looking",
+     "out": "b49"
+    },
+    {
+     "t": "icon",
+     "id": "ey",
+     "name": "eye",
+     "x": 1200,
+     "y": 460,
+     "size": 150,
+     "from": "pop",
+     "at": "b49:people",
+     "out": "b52"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "what others think of *you*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b49:what",
+     "out": "b50"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "here's the *problem*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b50:problem",
+     "out": "b51"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "they think about you *less*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b51:think",
+     "out": "b52"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2000 · AN EMBARRASSING SHIRT",
+     "text": "Walk into a room wearing this",
+     "sub": "Gilovich et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b52:gilovich",
+     "out": "b53"
+    },
+    {
+     "t": "icon",
+     "id": "sh",
+     "name": "shirt",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b52:cruel",
+     "out": "b53"
+    },
+    {
+     "t": "stick",
+     "id": "w",
+     "x": 620,
+     "y": 690,
+     "from": "left",
+     "at": "b53:college",
+     "poses": [
+      [
+       "idle",
+       "b53:college"
+      ],
+      [
+       "sorry",
+       "b54:deeply"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b53:college"
+      ],
+      [
+       "tight",
+       "b54:deeply"
+      ]
+     ],
+     "out": "b56",
+     "move": [
+      [
+       860,
+       690,
+       "b55:walked",
+       1.2
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "ws",
+     "name": "shirt",
+     "x": 620,
+     "y": 650,
+     "size": 200,
+     "from": "pop",
+     "at": "b53:t-shirt",
+     "out": "b55:walked"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "a *Barry Manilow* T-shirt",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b53:t-shirt",
+     "out": "b54"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "*deeply* embarrassing",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b54:deeply",
+     "out": "b55"
+    },
+    {
+     "t": "stick",
+     "id": "pr0",
+     "x": 1180,
+     "y": 690,
+     "from": "right",
+     "at": "b55:room",
+     "poses": [
+      [
+       "idle",
+       "b55:room"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b55:room"
+      ]
+     ],
+     "out": "b56",
+     "scale": 0.7,
+     "flip": true
+    },
+    {
+     "t": "stick",
+     "id": "pr1",
+     "x": 1400,
+     "y": 690,
+     "from": "right",
+     "at": "b55:room",
+     "poses": [
+      [
+       "idle",
+       "b55:room"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b55:room"
+      ]
+     ],
+     "out": "b56",
+     "scale": 0.7,
+     "flip": true
+    },
+    {
+     "t": "stick",
+     "id": "pr2",
+     "x": 1620,
+     "y": 690,
+     "from": "right",
+     "at": "b55:room",
+     "poses": [
+      [
+       "idle",
+       "b55:room"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b55:room"
+      ]
+     ],
+     "out": "b56",
+     "scale": 0.7,
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "a room full of *peers*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b55:room",
+     "out": "b56"
+    },
+    {
+     "t": "bar",
+     "id": "k1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 300,
+     "color": "muted",
+     "label": "guessed",
+     "from": "draw",
+     "at": "b56:half",
+     "out": "b58"
+    },
+    {
+     "t": "text",
+     "id": "p1",
+     "text": "~50%",
+     "x": 760,
+     "y": 510,
+     "size": 52,
+     "from": "bottom",
+     "at": "b56:half",
+     "out": "b58",
+     "weight": 600
+    },
+    {
+     "t": "bar",
+     "id": "k2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 150,
+     "color": "accent",
+     "label": "noticed",
+     "from": "draw",
+     "at": "b57:quarter",
+     "out": "b58"
+    },
+    {
+     "t": "text",
+     "id": "p2",
+     "text": "~25%",
+     "x": 1160,
+     "y": 660,
+     "size": 52,
+     "from": "bottom",
+     "at": "b57:quarter",
+     "out": "b58",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "they guessed *half* noticed",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b56:guessed",
+     "out": "b57"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "really: about a *quarter*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b57:reality",
+     "out": "b58"
+    },
+    {
+     "t": "stick",
+     "id": "s0",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b58:psychologists",
+     "poses": [
+      [
+       "idle",
+       "b58:psychologists"
+      ],
+      [
+       "sorry",
+       "b59:stage"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b58:psychologists"
+      ],
+      [
+       "tight",
+       "b59:stage"
+      ]
+     ],
+     "out": "b61"
+    },
+    {
+     "t": "icon",
+     "id": "sp0",
+     "name": "spot",
+     "x": 960,
+     "y": 610,
+     "size": 795,
+     "from": "pop",
+     "at": "b58:spotlight",
+     "out": "b61"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "the *spotlight* effect",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b58:spotlight",
+     "out": "b59"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "you feel *on stage*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b59:feel",
+     "out": "b60"
+    },
+    {
+     "t": "stick",
+     "id": "s1",
+     "x": 420,
+     "y": 690,
+     "from": "left",
+     "at": "b60:everyone",
+     "poses": [
+      [
+       "sorry",
+       "b60:everyone"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b60:everyone"
+      ]
+     ],
+     "out": "b61",
+     "scale": 0.7
+    },
+    {
+     "t": "icon",
+     "id": "sp1",
+     "name": "spot",
+     "x": 420,
+     "y": 699,
+     "size": 566,
+     "from": "pop",
+     "at": "b60:everyone",
+     "out": "b61"
+    },
+    {
+     "t": "stick",
+     "id": "s2",
+     "x": 1500,
+     "y": 690,
+     "from": "right",
+     "at": "b60:everyone",
+     "poses": [
+      [
+       "sorry",
+       "b60:everyone"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b60:everyone"
+      ]
+     ],
+     "out": "b61",
+     "scale": 0.7,
+     "flip": true
+    },
+    {
+     "t": "icon",
+     "id": "sp2",
+     "name": "spot",
+     "x": 1500,
+     "y": 699,
+     "size": 566,
+     "from": "pop",
+     "at": "b60:everyone",
+     "out": "b61"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "everyone feels on stage *too*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b60:everyone",
+     "out": "b61"
+    },
+    {
+     "t": "icon",
+     "id": "sh2",
+     "name": "shirt",
+     "x": 960,
+     "y": 590,
+     "size": 240,
+     "from": "pop",
+     "at": "b61:stop",
+     "out": "b62"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "not just *T-shirts*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b61:stop",
+     "out": "b62"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "2018 · STRANGERS CHAT",
+     "text": "How much did they like you?",
+     "sub": "Boothby et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b62:boothby",
+     "out": "b63"
+    },
+    {
+     "t": "icon",
+     "id": "ch",
+     "name": "chat",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b62:strangers",
+     "out": "b63"
+    },
+    {
+     "t": "stick",
+     "id": "la",
+     "x": 700,
+     "y": 690,
+     "from": "left",
+     "at": "b63:afterward",
+     "poses": [
+      [
+       "idle",
+       "b63:afterward"
+      ],
+      [
+       "shrug",
+       "b64:low"
+      ],
+      [
+       "happy",
+       "b65:more"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b63:afterward"
+      ],
+      [
+       "frown",
+       "b64:low"
+      ],
+      [
+       "smile",
+       "b65:more"
+      ]
+     ],
+     "out": "b67"
+    },
+    {
+     "t": "stick",
+     "id": "lb",
+     "x": 1220,
+     "y": 690,
+     "from": "right",
+     "at": "b63:afterward",
+     "poses": [
+      [
+       "idle",
+       "b63:afterward"
+      ],
+      [
+       "happy",
+       "b65:liked"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b63:afterward"
+      ]
+     ],
+     "out": "b67",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "how much did they *like* me?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b63:guessed",
+     "out": "b64"
+    },
+    {
+     "t": "icon",
+     "id": "h1",
+     "name": "heart",
+     "x": 840,
+     "y": 380,
+     "size": 80,
+     "from": "pop",
+     "at": "b64:low",
+     "out": "b67",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "most guessed too *low*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b64:most",
+     "out": "b65"
+    },
+    {
+     "t": "icon",
+     "id": "h2",
+     "name": "heart",
+     "x": 1080,
+     "y": 360,
+     "size": 150,
+     "from": "pop",
+     "at": "b65:more",
+     "out": "b67",
+     "color": "accent",
+     "pulse": 1.12,
+     "beat": 0.9
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "they liked you *more*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b65:partners",
+     "out": "b66"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "the !liking gap!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b66:liking",
+     "out": "b67"
+    },
+    {
+     "t": "icon",
+     "id": "cl",
+     "name": "calendar",
+     "x": 960,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b67:roommates",
+     "out": "b68"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "it lasted for *months*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b67:lasted",
+     "out": "b68"
+    },
+    {
+     "t": "stick",
+     "id": "rp",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b68:conversation",
+     "poses": [
+      [
+       "holdHead",
+       "b68:replaying"
+      ],
+      [
+       "happy",
+       "b69:fine"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b68:replaying"
+      ],
+      [
+       "smile",
+       "b69:fine"
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "rl",
+     "name": "loop",
+     "x": 1080,
+     "y": 400,
+     "size": 140,
+     "from": "pop",
+     "at": "b68:replaying",
+     "out": "b69"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "that talk you keep *replaying*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b68:conversation",
+     "out": "b69"
+    },
+    {
+     "t": "stick",
+     "id": "op",
+     "x": 1250,
+     "y": 690,
+     "from": "right",
+     "at": "b69:other",
+     "poses": [
+      [
+       "happy",
+       "b69:other"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b69:other"
+      ]
+     ],
+     "flip": true,
+     "variant": "bow",
+     "move": [
+      [
+       1650,
+       690,
+       "b69:walked",
+       1.6
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "it went *fine*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b69:thinking"
+    }
+   ]
+  },
+  {
+   "id": "loops",
+   "beats": [
+    {
+     "id": "b70",
+     "say": "But overthinking feels useful."
+    },
+    {
+     "id": "b71",
+     "say": "It feels like you're working on the problem."
+    },
+    {
+     "id": "b72",
+     "say": "Is it?"
+    },
+    {
+     "id": "b73",
+     "say": "Psychologists have a word for this."
+    },
+    {
+     "id": "b74",
+     "say": "Rumination."
+    },
+    {
+     "id": "b75",
+     "say": "It comes from the way a cow chews its cud."
+    },
+    {
+     "id": "b76",
+     "say": "Chew, swallow, bring it back up, chew it again."
+    },
+    {
+     "id": "b77",
+     "say": "In nineteen ninety-five, psychologists Sonja Lyubomirsky and Susan Nolen-Hoeksema tested whether it helps."
+    },
+    {
+     "id": "b78",
+     "say": "They brought in people who were already feeling down."
+    },
+    {
+     "id": "b79",
+     "say": "Some spent a few minutes focusing on their feelings, and why they felt that way."
+    },
+    {
+     "id": "b80",
+     "say": "Others spent those minutes thinking about something else entirely."
+    },
+    {
+     "id": "b81",
+     "say": "Then everyone tried to solve everyday problems with other people."
+    },
+    {
+     "id": "b82",
+     "say": "The ruminators came up with worse solutions."
+    },
+    {
+     "id": "b83",
+     "say": "They felt worse, too."
+    },
+    {
+     "id": "b84",
+     "say": "The thinking felt like progress."
+    },
+    {
+     "id": "b85",
+     "say": "It was actually a loop."
+    },
+    {
+     "id": "b86",
+     "say": "And the things you're worried about?"
+    },
+    {
+     "id": "b87",
+     "say": "In twenty twenty, psychologists Lucas LaFreniere and Michelle Newman ran a simple test."
+    },
+    {
+     "id": "b88",
+     "say": "People with anxiety wrote down their worries for ten days."
+    },
+    {
+     "id": "b89",
+     "say": "Later, they checked which ones had actually come true."
+    },
+    {
+     "id": "b90",
+     "say": "About ninety-one percent hadn't."
+    },
+    {
+     "id": "b91",
+     "say": "For many people, not a single worry came true."
+    },
+    {
+     "id": "b92",
+     "say": "Each worry felt like an emergency."
+    },
+    {
+     "id": "b93",
+     "say": "Most were false alarms."
+    },
+    {
+     "id": "b94",
+     "say": "So how much of your week have you spent on something that never happened?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "th",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b70:overthinking",
+     "poses": [
+      [
+       "give",
+       "b70:useful"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b70:overthinking"
+      ]
+     ],
+     "out": "b72"
+    },
+    {
+     "t": "icon",
+     "id": "pz",
+     "name": "puzzle",
+     "x": 1150,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b71:working",
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "overthinking feels *useful*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b70:feels",
+     "out": "b71"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "like *working* on the problem",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b71:working",
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "is it?",
+     "x": 960,
+     "y": 480,
+     "size": 120,
+     "from": "slam",
+     "at": "b72:is",
+     "out": "b73",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "a word for *this*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b73:word",
+     "out": "b74"
+    },
+    {
+     "t": "icon",
+     "id": "rn",
+     "name": "loop",
+     "x": 960,
+     "y": 580,
+     "size": 240,
+     "from": "pop",
+     "at": "b73:word",
+     "out": "b75"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "rumination",
+     "x": 960,
+     "y": 170,
+     "size": 110,
+     "from": "slam",
+     "at": "b74:rumination",
+     "out": "b75",
+     "hero": true
+    },
+    {
+     "t": "icon",
+     "id": "cw",
+     "name": "cow",
+     "x": 900,
+     "y": 600,
+     "size": 380,
+     "from": "pop",
+     "at": "b75:cow",
+     "out": "b77"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "a cow chewing its *cud*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b75:cow",
+     "out": "b76"
+    },
+    {
+     "t": "icon",
+     "id": "cl",
+     "name": "loop",
+     "x": 1280,
+     "y": 420,
+     "size": 150,
+     "from": "pop",
+     "at": "b76:chew",
+     "out": "b77",
+     "pulse": 1.08,
+     "beat": 0.6
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "chew, swallow, chew *again*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b76:chew",
+     "out": "b77"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "1995 · RUMINATION",
+     "text": "Does it actually help?",
+     "sub": "Lyubomirsky & Nolen-Hoeksema",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b77:lyubomirsky",
+     "out": "b78"
+    },
+    {
+     "t": "icon",
+     "id": "bn",
+     "name": "brain",
+     "x": 960,
+     "y": 620,
+     "size": 240,
+     "from": "pop",
+     "at": "b77:tested",
+     "out": "b78"
+    },
+    {
+     "t": "stick",
+     "id": "ru",
+     "x": 640,
+     "y": 690,
+     "from": "left",
+     "at": "b78:people",
+     "poses": [
+      [
+       "headDown",
+       "b78:down"
+      ],
+      [
+       "holdHead",
+       "b79:focusing"
+      ],
+      [
+       "give",
+       "b81:solve"
+      ],
+      [
+       "headDown",
+       "b82:worse"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b78:down"
+      ],
+      [
+       "tight",
+       "b82:worse"
+      ]
+     ],
+     "out": "b84"
+    },
+    {
+     "t": "stick",
+     "id": "di",
+     "x": 1280,
+     "y": 690,
+     "from": "right",
+     "at": "b78:people",
+     "poses": [
+      [
+       "headDown",
+       "b78:down"
+      ],
+      [
+       "idle",
+       "b80:else"
+      ],
+      [
+       "give",
+       "b81:solve"
+      ],
+      [
+       "happy",
+       "b82:worse"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b78:down"
+      ],
+      [
+       "neutral",
+       "b80:else"
+      ],
+      [
+       "smile",
+       "b82:worse"
+      ]
+     ],
+     "out": "b84",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "already feeling *down*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b78:down",
+     "out": "b79"
+    },
+    {
+     "t": "icon",
+     "id": "rc",
+     "name": "rain",
+     "x": 640,
+     "y": 340,
+     "size": 130,
+     "from": "pop",
+     "at": "b79:focusing",
+     "out": "b84"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "focus on your *feelings*…",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b79:focusing",
+     "out": "b80"
+    },
+    {
+     "t": "icon",
+     "id": "fr",
+     "name": "frame",
+     "x": 1560,
+     "y": 470,
+     "size": 150,
+     "from": "pop",
+     "at": "b80:else",
+     "out": "b81"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "…or something *else*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b80:something",
+     "out": "b81"
+    },
+    {
+     "t": "icon",
+     "id": "z1",
+     "name": "puzzle",
+     "x": 900,
+     "y": 560,
+     "size": 130,
+     "from": "pop",
+     "at": "b81:solve",
+     "out": "b84"
+    },
+    {
+     "t": "icon",
+     "id": "z2",
+     "name": "puzzle",
+     "x": 1560,
+     "y": 560,
+     "size": 130,
+     "from": "pop",
+     "at": "b81:solve",
+     "out": "b84"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "then: solve *problems*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b81:solve",
+     "out": "b82"
+    },
+    {
+     "t": "icon",
+     "id": "x1",
+     "name": "cross",
+     "x": 900,
+     "y": 420,
+     "size": 90,
+     "from": "pop",
+     "at": "b82:worse",
+     "out": "b84"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "ruminators: *worse* solutions",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b82:ruminators",
+     "out": "b83"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "and they felt *worse*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b83:felt",
+     "out": "b84"
+    },
+    {
+     "t": "icon",
+     "id": "pg",
+     "name": "mountain",
+     "x": 960,
+     "y": 580,
+     "size": 260,
+     "from": "pop",
+     "at": "b84:progress",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "it felt like *progress*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b84:felt",
+     "out": "b85"
+    },
+    {
+     "t": "icon",
+     "id": "lo",
+     "name": "loop",
+     "x": 960,
+     "y": 570,
+     "size": 300,
+     "from": "pop",
+     "at": "b85:loop",
+     "out": "b86",
+     "pulse": 1.06,
+     "beat": 0.7
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "it was a !loop!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b85:loop",
+     "out": "b86"
+    },
+    {
+     "t": "icon",
+     "id": "wt",
+     "name": "thought",
+     "x": 960,
+     "y": 560,
+     "size": 300,
+     "from": "pop",
+     "at": "b86:worried",
+     "out": "b87"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "the things you *worry* about?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b86:things",
+     "out": "b87"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "2020 · A WORRY DIARY",
+     "text": "Did the worries come true?",
+     "sub": "LaFreniere & Newman",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b87:lafreniere",
+     "out": "b88"
+    },
+    {
+     "t": "icon",
+     "id": "nb",
+     "name": "notebook",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b87:test",
+     "out": "b88"
+    },
+    {
+     "t": "icon",
+     "id": "nb2",
+     "name": "notebook",
+     "x": 760,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b88:wrote",
+     "out": "b90"
+    },
+    {
+     "t": "icon",
+     "id": "ca",
+     "name": "calendar",
+     "x": 1180,
+     "y": 590,
+     "size": 220,
+     "from": "pop",
+     "at": "b88:ten",
+     "out": "b89"
+    },
+    {
+     "t": "text",
+     "id": "cal",
+     "text": "10 days",
+     "x": 1180,
+     "y": 800,
+     "size": 46,
+     "from": "bottom",
+     "at": "b88:ten",
+     "out": "b89",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "worries for *ten* days",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b88:worries",
+     "out": "b89"
+    },
+    {
+     "t": "icon",
+     "id": "cc",
+     "name": "checklist",
+     "x": 1180,
+     "y": 590,
+     "size": 220,
+     "from": "pop",
+     "at": "b89:checked",
+     "out": "b90"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "which ones came *true*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b89:which",
+     "out": "b90"
+    },
+    {
+     "t": "bar",
+     "id": "k1",
+     "x": 760,
+     "y": 860,
+     "w": 170,
+     "h": 420,
+     "color": "accent",
+     "label": "didn't happen",
+     "from": "draw",
+     "at": "b90:ninety-one",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "p1",
+     "text": "91%",
+     "x": 760,
+     "y": 390,
+     "size": 52,
+     "from": "bottom",
+     "at": "b90:ninety-one",
+     "out": "b92",
+     "weight": 600
+    },
+    {
+     "t": "bar",
+     "id": "k2",
+     "x": 1160,
+     "y": 860,
+     "w": 170,
+     "h": 45,
+     "color": "muted",
+     "label": "came true",
+     "from": "draw",
+     "at": "b90:hadn't",
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "p2",
+     "text": "9%",
+     "x": 1160,
+     "y": 765,
+     "size": 52,
+     "from": "bottom",
+     "at": "b90:hadn't",
+     "out": "b92",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "about *91%* hadn't",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b90:about",
+     "out": "b91"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "for many: not a *single* one",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b91:single",
+     "out": "b92"
+    },
+    {
+     "t": "icon",
+     "id": "al",
+     "name": "alarm",
+     "x": 960,
+     "y": 580,
+     "size": 240,
+     "from": "pop",
+     "at": "b92:emergency",
+     "out": "b94",
+     "sway": 10,
+     "period": 0.3
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "each felt like an *emergency*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b92:emergency",
+     "out": "b93"
+    },
+    {
+     "t": "icon",
+     "id": "ax",
+     "name": "cross",
+     "x": 1200,
+     "y": 420,
+     "size": 110,
+     "from": "pop",
+     "at": "b93:false",
+     "out": "b94"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "mostly !false alarms!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b93:most",
+     "out": "b94"
+    },
+    {
+     "t": "icon",
+     "id": "wk",
+     "name": "calendar",
+     "x": 960,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b94:week"
+    },
+    {
+     "t": "icon",
+     "id": "wq",
+     "name": "question",
+     "x": 1220,
+     "y": 440,
+     "size": 120,
+     "from": "pop",
+     "at": "b94:never"
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "your week, on what never *happened*?",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b94:how"
+    }
+   ]
+  },
+  {
+   "id": "decide",
+   "beats": [
+    {
+     "id": "b95",
+     "say": "Overthinking hits decisions hardest."
+    },
+    {
+     "id": "b96",
+     "say": "And here, more thinking can lead to a worse choice."
+    },
+    {
+     "id": "b97",
+     "say": "In nineteen ninety-three, psychologist Timothy Wilson and his colleagues let students pick a free poster to take home."
+    },
+    {
+     "id": "b98",
+     "say": "Some just picked the one they liked."
+    },
+    {
+     "id": "b99",
+     "say": "Others first wrote down why they liked or disliked each one."
+    },
+    {
+     "id": "b100",
+     "say": "Weeks later, the researchers called them back."
+    },
+    {
+     "id": "b101",
+     "say": "The students who had analyzed their choice were less happy with their poster."
+    },
+    {
+     "id": "b102",
+     "say": "Writing reasons pushed them toward what was easy to explain, not what they really liked."
+    },
+    {
+     "id": "b103",
+     "say": "In two thousand six, psychologists Sheena Iyengar, Rachael Wells, and Barry Schwartz followed students looking for their first jobs."
+    },
+    {
+     "id": "b104",
+     "say": "Some were maximizers."
+    },
+    {
+     "id": "b105",
+     "say": "They wanted the best possible option, not just a good one."
+    },
+    {
+     "id": "b106",
+     "say": "The maximizers landed jobs paying about twenty percent more."
+    },
+    {
+     "id": "b107",
+     "say": "And yet, they felt worse."
+    },
+    {
+     "id": "b108",
+     "say": "They were less satisfied with the job they chose."
+    },
+    {
+     "id": "b109",
+     "say": "They felt more stressed and anxious along the way."
+    },
+    {
+     "id": "b110",
+     "say": "They did better, and felt worse."
+    },
+    {
+     "id": "b111",
+     "say": "Schwartz had written a whole book about this, called The Paradox of Choice."
+    },
+    {
+     "id": "b112",
+     "say": "More options, he argued, can leave us less satisfied."
+    },
+    {
+     "id": "b113",
+     "say": "Ever spent forty minutes picking a show, and then watched nothing?"
+    },
+    {
+     "id": "b114",
+     "say": "But it wasn't over yet."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "dc",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b95:overthinking",
+     "poses": [
+      [
+       "shrug",
+       "b95:decisions"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b95:decisions"
+      ]
+     ],
+     "out": "b97"
+    },
+    {
+     "t": "icon",
+     "id": "sg",
+     "name": "signpost",
+     "x": 1150,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b95:decisions",
+     "out": "b97"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "it hits *decisions* hardest",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b95:hits",
+     "out": "b96"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "more thinking → a *worse* choice",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b96:more",
+     "out": "b97"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "1993 · A FREE POSTER",
+     "text": "Pick one to take home",
+     "sub": "Wilson et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b97:wilson",
+     "out": "b98"
+    },
+    {
+     "t": "icon",
+     "id": "fp",
+     "name": "frame",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b97:poster",
+     "out": "b98"
+    },
+    {
+     "t": "icon",
+     "id": "f1",
+     "name": "frame",
+     "x": 880,
+     "y": 420,
+     "size": 150,
+     "from": "pop",
+     "at": "b98:picked",
+     "out": "b103"
+    },
+    {
+     "t": "icon",
+     "id": "f2",
+     "name": "frame",
+     "x": 1040,
+     "y": 420,
+     "size": 150,
+     "from": "pop",
+     "at": "b98:picked",
+     "out": "b103"
+    },
+    {
+     "t": "stick",
+     "id": "pa",
+     "x": 640,
+     "y": 690,
+     "from": "left",
+     "at": "b98:some",
+     "poses": [
+      [
+       "point",
+       "b98:picked"
+      ],
+      [
+       "happy",
+       "b101:students"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b98:picked"
+      ]
+     ],
+     "out": "b103"
+    },
+    {
+     "t": "stick",
+     "id": "pb",
+     "x": 1280,
+     "y": 690,
+     "from": "right",
+     "at": "b99:others",
+     "poses": [
+      [
+       "give",
+       "b99:wrote"
+      ],
+      [
+       "headDown",
+       "b101:less"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b99:wrote"
+      ],
+      [
+       "frown",
+       "b101:less"
+      ]
+     ],
+     "out": "b103",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "pw",
+     "name": "paper",
+     "x": 1540,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b99:wrote",
+     "out": "b101"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "some just picked what they *liked*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b98:picked",
+     "out": "b99"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "others wrote down *why*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b99:wrote",
+     "out": "b100"
+    },
+    {
+     "t": "icon",
+     "id": "cp",
+     "name": "phone",
+     "x": 960,
+     "y": 640,
+     "size": 110,
+     "from": "pop",
+     "at": "b100:called",
+     "out": "b101",
+     "sway": 8,
+     "period": 0.3
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "*weeks* later…",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b100:weeks",
+     "out": "b101"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "the analyzers: *less* happy",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b101:less",
+     "out": "b102"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "easy to *explain* ≠ really liked",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b102:explain",
+     "out": "b103"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "2006 · THE FIRST JOB HUNT",
+     "text": "The best, or good enough?",
+     "sub": "Iyengar, Wells & Schwartz",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b103:iyengar",
+     "out": "b104"
+    },
+    {
+     "t": "icon",
+     "id": "bc",
+     "name": "briefcase",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b103:jobs",
+     "out": "b104"
+    },
+    {
+     "t": "stick",
+     "id": "mx",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b104:some",
+     "poses": [
+      [
+       "victory",
+       "b104:maximizers"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b104:maximizers"
+      ]
+     ],
+     "out": "b106"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "the *maximizers*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b104:maximizers",
+     "out": "b105"
+    },
+    {
+     "t": "icon",
+     "id": "md",
+     "name": "medal",
+     "x": 1140,
+     "y": 470,
+     "size": 160,
+     "from": "pop",
+     "at": "b105:best",
+     "out": "b106"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "the *best*, not just good",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b105:best",
+     "out": "b106"
+    },
+    {
+     "t": "bar",
+     "id": "k1",
+     "x": 640,
+     "y": 860,
+     "w": 170,
+     "h": 380,
+     "color": "accent",
+     "label": "maximizers",
+     "from": "draw",
+     "at": "b106:twenty",
+     "out": "b111"
+    },
+    {
+     "t": "text",
+     "id": "p1",
+     "text": "+20%",
+     "x": 640,
+     "y": 430,
+     "size": 52,
+     "from": "bottom",
+     "at": "b106:twenty",
+     "out": "b111",
+     "weight": 600
+    },
+    {
+     "t": "bar",
+     "id": "k2",
+     "x": 1000,
+     "y": 860,
+     "w": 170,
+     "h": 315,
+     "color": "muted",
+     "label": "others",
+     "from": "draw",
+     "at": "b106:twenty",
+     "out": "b111"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "about *20%* more pay",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b106:paying",
+     "out": "b107"
+    },
+    {
+     "t": "stick",
+     "id": "mw",
+     "x": 1440,
+     "y": 690,
+     "from": "right",
+     "at": "b107:worse",
+     "poses": [
+      [
+       "headDown",
+       "b107:worse"
+      ],
+      [
+       "holdHead",
+       "b109:stressed"
+      ],
+      [
+       "shrug",
+       "b110:did"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b107:worse"
+      ],
+      [
+       "tight",
+       "b109:stressed"
+      ]
+     ],
+     "out": "b111",
+     "flip": true
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "…and yet, they felt *worse*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b107:yet",
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "less *satisfied*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b108:satisfied",
+     "out": "b109"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "more stressed and *anxious*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b109:stressed",
+     "out": "b110"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "did *better*, felt !worse!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b110:did",
+     "out": "b111"
+    },
+    {
+     "t": "icon",
+     "id": "bo",
+     "name": "book",
+     "x": 960,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b111:book",
+     "out": "b113"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "*The Paradox of Choice*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b111:paradox",
+     "out": "b112"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "more options, *less* satisfied",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b112:options",
+     "out": "b113"
+    },
+    {
+     "t": "icon",
+     "id": "cu",
+     "name": "couch",
+     "x": 860,
+     "y": 700,
+     "size": 520,
+     "from": "pop",
+     "at": "b113:ever",
+     "out": "b114"
+    },
+    {
+     "t": "stick",
+     "id": "cs",
+     "x": 770,
+     "y": 705,
+     "from": "bottom",
+     "at": "b113:ever",
+     "poses": [
+      [
+       "idle",
+       "b113:ever"
+      ],
+      [
+       "headDown",
+       "b113:watched"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b113:ever"
+      ],
+      [
+       "frown",
+       "b113:watched"
+      ]
+     ],
+     "out": "b114",
+     "scale": 0.7,
+     "sit": true
+    },
+    {
+     "t": "icon",
+     "id": "tv",
+     "name": "tv",
+     "x": 1440,
+     "y": 560,
+     "size": 240,
+     "from": "pop",
+     "at": "b113:show",
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "*40* minutes picking a show",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b113:forty",
+     "out": "b113:watched"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "…then watched *nothing*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b113:watched",
+     "out": "b114"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "But it wasn't over yet.",
+     "x": 960,
+     "y": 480,
+     "size": 90,
+     "from": "slam",
+     "at": "b114:but",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "plan",
+   "beats": [
+    {
+     "id": "b115",
+     "say": "Because there's a reason your brain won't drop a thought."
+    },
+    {
+     "id": "b116",
+     "say": "Unfinished business sticks."
+    },
+    {
+     "id": "b117",
+     "say": "Your mind keeps tapping you on the shoulder about what isn't done."
+    },
+    {
+     "id": "b118",
+     "say": "It's often called the Zeigarnik effect, after psychologist Bluma Zeigarnik."
+    },
+    {
+     "id": "b119",
+     "say": "As the story goes, it started in a restaurant in the nineteen twenties."
+    },
+    {
+     "id": "b120",
+     "say": "The waiters remembered every unpaid order."
+    },
+    {
+     "id": "b121",
+     "say": "Once the bill was paid, the order vanished from their heads."
+    },
+    {
+     "id": "b122",
+     "say": "Her experiments found that people recalled interrupted tasks better than finished ones."
+    },
+    {
+     "id": "b123",
+     "say": "In two thousand eleven, psychologists E. J. Masicampo and Roy Baumeister tested how to make it stop."
+    },
+    {
+     "id": "b124",
+     "say": "They had people think about an important goal they hadn't finished yet."
+    },
+    {
+     "id": "b125",
+     "say": "Then they gave them a passage to read."
+    },
+    {
+     "id": "b126",
+     "say": "Their minds kept drifting back to the goal."
+    },
+    {
+     "id": "b127",
+     "say": "Then some people did one small thing."
+    },
+    {
+     "id": "b128",
+     "say": "They wrote a specific plan for it."
+    },
+    {
+     "id": "b129",
+     "say": "When, where, and how."
+    },
+    {
+     "id": "b130",
+     "say": "They didn't do the task."
+    },
+    {
+     "id": "b131",
+     "say": "They just planned it."
+    },
+    {
+     "id": "b132",
+     "say": "And the intrusive thoughts largely went away."
+    },
+    {
+     "id": "b133",
+     "say": "Your brain doesn't need the problem solved tonight."
+    },
+    {
+     "id": "b134",
+     "say": "It needs to know there's a plan."
+    },
+    {
+     "id": "b135",
+     "say": "There's one more trick, and it sounds a little silly."
+    },
+    {
+     "id": "b136",
+     "say": "In two thousand fourteen, psychologist Ethan Kross and his colleagues gave people five minutes to prepare a speech."
+    },
+    {
+     "id": "b137",
+     "say": "Some talked to themselves as \"I.\""
+    },
+    {
+     "id": "b138",
+     "say": "Others used their own name."
+    },
+    {
+     "id": "b139",
+     "say": "\"Sam, you can do this.\""
+    },
+    {
+     "id": "b140",
+     "say": "The name group felt less anxious."
+    },
+    {
+     "id": "b141",
+     "say": "Judges rated their speeches better."
+    },
+    {
+     "id": "b142",
+     "say": "And afterward, they spent less time beating themselves up."
+    },
+    {
+     "id": "b143",
+     "say": "Using your name puts a little distance between you and the problem."
+    },
+    {
+     "id": "b144",
+     "say": "It's like giving advice to a friend."
+    },
+    {
+     "id": "b145",
+     "say": "Why is it so much easier to fix a friend's problem than your own?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "pl",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b115:because",
+     "poses": [
+      [
+       "idle",
+       "b115:because"
+      ],
+      [
+       "headDown",
+       "b117:tapping"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b115:because"
+      ],
+      [
+       "frown",
+       "b117:tapping"
+      ]
+     ],
+     "out": "b118"
+    },
+    {
+     "t": "icon",
+     "id": "pt",
+     "name": "thought",
+     "x": 1260,
+     "y": 400,
+     "size": 220,
+     "from": "pop",
+     "at": "b115:thought",
+     "out": "b118"
+    },
+    {
+     "t": "icon",
+     "id": "pc",
+     "name": "checklist",
+     "x": 1265,
+     "y": 385,
+     "size": 100,
+     "from": "pop",
+     "at": "b116:unfinished",
+     "out": "b118"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "your brain won't *drop* it",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b115:reason",
+     "out": "b116"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "*unfinished* business sticks",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b116:unfinished",
+     "out": "b117"
+    },
+    {
+     "t": "stick",
+     "id": "tp",
+     "x": 680,
+     "y": 690,
+     "from": "left",
+     "at": "b117:tapping",
+     "poses": [
+      [
+       "point",
+       "b117:tapping"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b117:tapping"
+      ]
+     ],
+     "out": "b118",
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "tap, tap: not *done*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b117:tapping",
+     "out": "b118"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "1920s · THE ZEIGARNIK EFFECT",
+     "text": "Unfinished tasks stay with you",
+     "sub": "Bluma Zeigarnik",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b118:zeigarnik",
+     "out": "b119"
+    },
+    {
+     "t": "icon",
+     "id": "zp",
+     "name": "pause",
+     "x": 960,
+     "y": 620,
+     "size": 240,
+     "from": "pop",
+     "at": "b118:zeigarnik",
+     "out": "b119"
+    },
+    {
+     "t": "stick",
+     "id": "wt",
+     "x": 760,
+     "y": 690,
+     "from": "left",
+     "at": "b119:story",
+     "poses": [
+      [
+       "give",
+       "b119:restaurant"
+      ],
+      [
+       "happy",
+       "b121:paid"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b119:story"
+      ],
+      [
+       "smile",
+       "b121:vanished"
+      ]
+     ],
+     "out": "b122"
+    },
+    {
+     "t": "icon",
+     "id": "np",
+     "name": "notebook",
+     "x": 1000,
+     "y": 560,
+     "size": 110,
+     "from": "pop",
+     "at": "b119:restaurant",
+     "out": "b122"
+    },
+    {
+     "t": "icon",
+     "id": "rt",
+     "name": "plate",
+     "x": 1460,
+     "y": 600,
+     "size": 200,
+     "from": "pop",
+     "at": "b119:restaurant",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "a *restaurant*, 1920s",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b119:restaurant",
+     "out": "b120"
+    },
+    {
+     "t": "icon",
+     "id": "wc",
+     "name": "thought",
+     "x": 1200,
+     "y": 380,
+     "size": 220,
+     "from": "pop",
+     "at": "b120:remembered",
+     "out": "b122"
+    },
+    {
+     "t": "icon",
+     "id": "wo",
+     "name": "plate",
+     "x": 1205,
+     "y": 365,
+     "size": 100,
+     "from": "pop",
+     "at": "b120:unpaid",
+     "out": "b121:vanished"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "every *unpaid* order",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b120:unpaid",
+     "out": "b121"
+    },
+    {
+     "t": "icon",
+     "id": "mo",
+     "name": "money",
+     "x": 1460,
+     "y": 440,
+     "size": 120,
+     "from": "pop",
+     "at": "b121:paid",
+     "out": "b122"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "paid → !gone!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b121:paid",
+     "out": "b122"
+    },
+    {
+     "t": "icon",
+     "id": "ip",
+     "name": "pause",
+     "x": 760,
+     "y": 590,
+     "size": 220,
+     "from": "pop",
+     "at": "b122:interrupted",
+     "out": "b123"
+    },
+    {
+     "t": "icon",
+     "id": "ic",
+     "name": "check",
+     "x": 1160,
+     "y": 590,
+     "size": 200,
+     "from": "pop",
+     "at": "b122:finished",
+     "out": "b123"
+    },
+    {
+     "t": "text",
+     "id": "ipl",
+     "text": "remembered",
+     "x": 760,
+     "y": 800,
+     "size": 46,
+     "from": "bottom",
+     "at": "b122:interrupted",
+     "out": "b123",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "icl",
+     "text": "forgotten",
+     "x": 1160,
+     "y": 800,
+     "size": 46,
+     "from": "bottom",
+     "at": "b122:finished",
+     "out": "b123",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "interrupted tasks *stick*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b122:interrupted",
+     "out": "b123"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "2011 · CONSIDER IT DONE",
+     "text": "How to quiet an unfinished goal",
+     "sub": "Masicampo & Baumeister",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b123:masicampo",
+     "out": "b124"
+    },
+    {
+     "t": "icon",
+     "id": "cd",
+     "name": "checklist",
+     "x": 960,
+     "y": 620,
+     "size": 260,
+     "from": "pop",
+     "at": "b123:stop",
+     "out": "b124"
+    },
+    {
+     "t": "stick",
+     "id": "rd",
+     "x": 700,
+     "y": 690,
+     "from": "left",
+     "at": "b124:people",
+     "poses": [
+      [
+       "idle",
+       "b124:people"
+      ],
+      [
+       "give",
+       "b125:passage"
+      ],
+      [
+       "happy",
+       "b132:went"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b124:people"
+      ],
+      [
+       "o",
+       "b126:drifting"
+      ],
+      [
+       "neutral",
+       "b128:wrote"
+      ],
+      [
+       "smile",
+       "b132:went"
+      ]
+     ],
+     "out": "b133"
+    },
+    {
+     "t": "icon",
+     "id": "gc",
+     "name": "thought",
+     "x": 1200,
+     "y": 380,
+     "size": 230,
+     "from": "pop",
+     "at": "b124:goal",
+     "out": "b132:went"
+    },
+    {
+     "t": "icon",
+     "id": "gs",
+     "name": "checklist",
+     "x": 1205,
+     "y": 365,
+     "size": 100,
+     "from": "pop",
+     "at": "b124:goal",
+     "out": "b132:went"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "an *unfinished* goal",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b124:important",
+     "out": "b125"
+    },
+    {
+     "t": "icon",
+     "id": "bk",
+     "name": "book",
+     "x": 940,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b125:passage",
+     "out": "b127"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "read a *passage*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b125:passage",
+     "out": "b126"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "the mind drifts *back*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b126:drifting",
+     "out": "b127"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "one small *thing*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b127:one",
+     "out": "b128"
+    },
+    {
+     "t": "icon",
+     "id": "pn",
+     "name": "paper",
+     "x": 1460,
+     "y": 600,
+     "size": 230,
+     "from": "pop",
+     "at": "b128:plan",
+     "out": "b133"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "a *specific* plan",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b128:specific",
+     "out": "b129"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "*when*, *where*, *how*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b129:when",
+     "out": "b130"
+    },
+    {
+     "t": "icon",
+     "id": "nx",
+     "name": "cross",
+     "x": 1640,
+     "y": 420,
+     "size": 100,
+     "from": "pop",
+     "at": "b130:do",
+     "out": "b131"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "they didn't *do* the task",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b130:didn't",
+     "out": "b131"
+    },
+    {
+     "t": "icon",
+     "id": "ny",
+     "name": "check",
+     "x": 1640,
+     "y": 420,
+     "size": 100,
+     "from": "pop",
+     "at": "b131:planned",
+     "out": "b133"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "they just !planned! it",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b131:planned",
+     "out": "b132"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "the thoughts went *away*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b132:intrusive",
+     "out": "b133"
+    },
+    {
+     "t": "stick",
+     "id": "cm",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b133:brain",
+     "poses": [
+      [
+       "idle",
+       "b133:brain"
+      ],
+      [
+       "happy",
+       "b134:plan"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b133:brain"
+      ],
+      [
+       "smile",
+       "b134:plan"
+      ]
+     ],
+     "out": "b135"
+    },
+    {
+     "t": "icon",
+     "id": "mn",
+     "name": "moon",
+     "x": 1200,
+     "y": 400,
+     "size": 120,
+     "from": "pop",
+     "at": "b133:tonight",
+     "out": "b134"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "it doesn't need it solved *tonight*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b133:doesn't",
+     "out": "b134"
+    },
+    {
+     "t": "icon",
+     "id": "pp",
+     "name": "paper",
+     "x": 1200,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b134:plan",
+     "out": "b135"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "it needs a !plan!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b134:needs",
+     "out": "b135"
+    },
+    {
+     "t": "icon",
+     "id": "sl",
+     "name": "chat",
+     "x": 960,
+     "y": 580,
+     "size": 240,
+     "from": "pop",
+     "at": "b135:trick",
+     "out": "b136"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "a little *silly*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b135:silly",
+     "out": "b136"
+    },
+    {
+     "t": "card",
+     "id": "c3",
+     "kicker": "2014 · SELF-TALK",
+     "text": "Before a stressful speech",
+     "sub": "Kross et al.",
+     "x": 960,
+     "y": 220,
+     "from": "top",
+     "at": "b136:kross",
+     "out": "b137"
+    },
+    {
+     "t": "icon",
+     "id": "mc",
+     "name": "mic",
+     "x": 960,
+     "y": 620,
+     "size": 240,
+     "from": "pop",
+     "at": "b136:speech",
+     "out": "b137"
+    },
+    {
+     "t": "stick",
+     "id": "i1",
+     "x": 640,
+     "y": 690,
+     "from": "left",
+     "at": "b137:some",
+     "poses": [
+      [
+       "strain",
+       "b137:talked"
+      ],
+      [
+       "holdHead",
+       "b140:anxious"
+      ],
+      [
+       "headDown",
+       "b142:beating"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b137:talked"
+      ],
+      [
+       "frown",
+       "b142:beating"
+      ]
+     ],
+     "out": "b143"
+    },
+    {
+     "t": "bubble",
+     "id": "ib",
+     "text": "I…",
+     "x": 820,
+     "y": 380,
+     "size": 150,
+     "from": "pop",
+     "at": "b137:i",
+     "fontSize": 50,
+     "out": "b143"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "talking to *yourself*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b137:talked",
+     "out": "b138"
+    },
+    {
+     "t": "stick",
+     "id": "i2",
+     "x": 1280,
+     "y": 690,
+     "from": "right",
+     "at": "b138:others",
+     "poses": [
+      [
+       "idle",
+       "b138:others"
+      ],
+      [
+       "proud",
+       "b140:name"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b138:others"
+      ],
+      [
+       "smile",
+       "b139:sam"
+      ]
+     ],
+     "out": "b143",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "or your own *name*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b138:name",
+     "out": "b139"
+    },
+    {
+     "t": "bubble",
+     "id": "sb",
+     "text": "Sam, you can do this.",
+     "x": 1100,
+     "y": 380,
+     "size": 190,
+     "from": "pop",
+     "at": "b139:sam",
+     "fontSize": 30,
+     "out": "b143"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "name group: less *anxious*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b140:less",
+     "out": "b141"
+    },
+    {
+     "t": "icon",
+     "id": "me",
+     "name": "medal",
+     "x": 1560,
+     "y": 480,
+     "size": 130,
+     "from": "pop",
+     "at": "b141:judges",
+     "out": "b143"
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "speeches rated *better*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b141:rated",
+     "out": "b142"
+    },
+    {
+     "t": "text",
+     "id": "t23",
+     "text": "less beating themselves *up*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b142:less",
+     "out": "b143"
+    },
+    {
+     "t": "stick",
+     "id": "d1",
+     "x": 700,
+     "y": 690,
+     "from": "left",
+     "at": "b143:using",
+     "poses": [
+      [
+       "idle",
+       "b143:using"
+      ],
+      [
+       "point",
+       "b144:advice"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b143:using"
+      ]
+     ],
+     "out": "b145"
+    },
+    {
+     "t": "stick",
+     "id": "d2",
+     "x": 1220,
+     "y": 690,
+     "from": "right",
+     "at": "b143:using",
+     "poses": [
+      [
+       "headDown",
+       "b143:using"
+      ],
+      [
+       "happy",
+       "b144:friend"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b143:using"
+      ],
+      [
+       "smile",
+       "b144:friend"
+      ]
+     ],
+     "out": "b145",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "sp",
+     "name": "split",
+     "x": 960,
+     "y": 470,
+     "size": 160,
+     "from": "pop",
+     "at": "b143:distance",
+     "out": "b144"
+    },
+    {
+     "t": "text",
+     "id": "t24",
+     "text": "a little *distance*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b143:distance",
+     "out": "b144"
+    },
+    {
+     "t": "bubble",
+     "id": "ad",
+     "text": "You've got this.",
+     "x": 900,
+     "y": 380,
+     "size": 170,
+     "from": "pop",
+     "at": "b144:advice",
+     "fontSize": 32,
+     "out": "b145"
+    },
+    {
+     "t": "text",
+     "id": "t25",
+     "text": "advice to a *friend*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b144:giving",
+     "out": "b145"
+    },
+    {
+     "t": "icon",
+     "id": "fq",
+     "name": "question",
+     "x": 960,
+     "y": 570,
+     "size": 240,
+     "from": "pop",
+     "at": "b145:why"
+    },
+    {
+     "t": "text",
+     "id": "t26",
+     "text": "easier for a *friend*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b145:easier"
+    }
+   ]
+  },
+  {
+   "id": "rules",
+   "beats": [
+    {
+     "id": "b146",
+     "say": "So here's what you can do with all this."
+    },
+    {
+     "id": "b147",
+     "say": "Rule one: turn the worry into a plan."
+    },
+    {
+     "id": "b148",
+     "say": "When a thought keeps coming back, ask, \"What's the next step?\""
+    },
+    {
+     "id": "b149",
+     "say": "Write it down, with a when and a where."
+    },
+    {
+     "id": "b150",
+     "say": "Then let your brain go off duty."
+    },
+    {
+     "id": "b151",
+     "say": "Rule two: keep a worry receipt."
+    },
+    {
+     "id": "b152",
+     "say": "Write tonight's worry down."
+    },
+    {
+     "id": "b153",
+     "say": "Check it in a week."
+    },
+    {
+     "id": "b154",
+     "say": "Did it happen?"
+    },
+    {
+     "id": "b155",
+     "say": "Most of the time, the answer will be no."
+    },
+    {
+     "id": "b156",
+     "say": "And your brain needs to see that in writing."
+    },
+    {
+     "id": "b157",
+     "say": "Your worry has a terrible track record."
+    },
+    {
+     "id": "b158",
+     "say": "Make it show its receipts."
+    },
+    {
+     "id": "b159",
+     "say": "Rule three: talk to yourself by name."
+    },
+    {
+     "id": "b160",
+     "say": "\"Okay, Sam."
+    },
+    {
+     "id": "b161",
+     "say": "What would you tell a friend right now?\""
+    },
+    {
+     "id": "b162",
+     "say": "It sounds strange."
+    },
+    {
+     "id": "b163",
+     "say": "It works better than it sounds."
+    },
+    {
+     "id": "b164",
+     "say": "Rule four: decide what's good enough."
+    },
+    {
+     "id": "b165",
+     "say": "For small choices, set a bar before you start."
+    },
+    {
+     "id": "b166",
+     "say": "The first option that clears it wins."
+    },
+    {
+     "id": "b167",
+     "say": "A good dinner tonight beats a perfect dinner at ten at night."
+    },
+    {
+     "id": "b168",
+     "say": "And rule five: give your mind a real job."
+    },
+    {
+     "id": "b169",
+     "say": "Rumination loves an idle mind."
+    },
+    {
+     "id": "b170",
+     "say": "Take a walk."
+    },
+    {
+     "id": "b171",
+     "say": "Call someone."
+    },
+    {
+     "id": "b172",
+     "say": "Cook something."
+    },
+    {
+     "id": "b173",
+     "say": "Then come back to the problem, if it still needs you."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "cl",
+     "name": "checklist",
+     "x": 960,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b146:here's",
+     "out": "b147"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "here's what you can *do*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b146:here's",
+     "out": "b147"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "rule 1: worry → *plan*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b147:rule",
+     "out": "b149"
+    },
+    {
+     "t": "icon",
+     "id": "wc",
+     "name": "thought",
+     "x": 620,
+     "y": 580,
+     "size": 270,
+     "from": "pop",
+     "at": "b147:worry",
+     "out": "b149"
+    },
+    {
+     "t": "icon",
+     "id": "wp",
+     "name": "paper",
+     "x": 1300,
+     "y": 600,
+     "size": 240,
+     "from": "pop",
+     "at": "b147:plan",
+     "out": "b151"
+    },
+    {
+     "t": "bubble",
+     "id": "ns",
+     "text": "What's the next step?",
+     "x": 960,
+     "y": 380,
+     "size": 190,
+     "from": "pop",
+     "at": "b148:ask",
+     "fontSize": 32,
+     "out": "b149"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "with a *when* and a *where*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b149:when",
+     "out": "b150"
+    },
+    {
+     "t": "stick",
+     "id": "od",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b150:then",
+     "poses": [
+      [
+       "happy",
+       "b150:duty"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b150:duty"
+      ]
+     ],
+     "out": "b151"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "brain: off *duty*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b150:let",
+     "out": "b151"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "rule 2: a worry *receipt*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b151:rule",
+     "out": "b152"
+    },
+    {
+     "t": "icon",
+     "id": "rc",
+     "name": "receipt",
+     "x": 960,
+     "y": 590,
+     "size": 300,
+     "from": "pop",
+     "at": "b151:receipt",
+     "out": "b159"
+    },
+    {
+     "t": "stick",
+     "id": "rw",
+     "x": 600,
+     "y": 690,
+     "from": "left",
+     "at": "b152:write",
+     "poses": [
+      [
+       "give",
+       "b152:write"
+      ],
+      [
+       "shrug",
+       "b154:did"
+      ],
+      [
+       "happy",
+       "b155:most"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b152:write"
+      ],
+      [
+       "smile",
+       "b155:most"
+      ]
+     ],
+     "out": "b159"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "write it *down*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b152:write",
+     "out": "b153"
+    },
+    {
+     "t": "icon",
+     "id": "rk",
+     "name": "calendar",
+     "x": 1360,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b153:week",
+     "out": "b155"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "check it in a *week*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b153:check",
+     "out": "b154"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "did it *happen*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b154:did",
+     "out": "b155"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "usually: !no!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b155:most",
+     "out": "b156"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "see it in *writing*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b156:see",
+     "out": "b157"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "a *terrible* track record",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b157:terrible",
+     "out": "b158"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "make it show its *receipts*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b158:make",
+     "out": "b159"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "rule 3: use your *name*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b159:rule",
+     "out": "b160"
+    },
+    {
+     "t": "stick",
+     "id": "nm",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b159:talk",
+     "poses": [
+      [
+       "idle",
+       "b159:talk"
+      ],
+      [
+       "shrug",
+       "b162:strange"
+      ],
+      [
+       "proud",
+       "b163:works"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b159:talk"
+      ]
+     ],
+     "out": "b164"
+    },
+    {
+     "t": "bubble",
+     "id": "ok",
+     "text": "Okay, Sam. What would you tell a friend?",
+     "x": 1180,
+     "y": 400,
+     "size": 240,
+     "from": "pop",
+     "at": "b160:okay",
+     "fontSize": 30,
+     "out": "b162"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "it sounds *strange*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b162:sounds",
+     "out": "b163"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "it works *better*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b163:works",
+     "out": "b164"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "rule 4: good *enough*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b164:rule",
+     "out": "b165"
+    },
+    {
+     "t": "icon",
+     "id": "ge",
+     "name": "check",
+     "x": 960,
+     "y": 590,
+     "size": 220,
+     "from": "pop",
+     "at": "b164:rule",
+     "out": "b165"
+    },
+    {
+     "t": "strike",
+     "id": "ln",
+     "x": 960,
+     "y": 520,
+     "w": 1000,
+     "at": "b165:bar",
+     "out": "b168"
+    },
+    {
+     "t": "icon",
+     "id": "o0",
+     "name": "plate",
+     "x": 560,
+     "y": 640,
+     "size": 170,
+     "from": "pop",
+     "at": "b165:choices",
+     "out": "b168"
+    },
+    {
+     "t": "icon",
+     "id": "o1",
+     "name": "plate",
+     "x": 960,
+     "y": 640,
+     "size": 170,
+     "from": "pop",
+     "at": "b165:choices",
+     "out": "b168"
+    },
+    {
+     "t": "icon",
+     "id": "o2",
+     "name": "plate",
+     "x": 1360,
+     "y": 640,
+     "size": 170,
+     "from": "pop",
+     "at": "b165:choices",
+     "out": "b168"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "set the bar *first*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b165:set",
+     "out": "b166"
+    },
+    {
+     "t": "icon",
+     "id": "ok1",
+     "name": "check",
+     "x": 560,
+     "y": 420,
+     "size": 110,
+     "from": "pop",
+     "at": "b166:first",
+     "out": "b168"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "first to clear it *wins*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b166:first",
+     "out": "b167"
+    },
+    {
+     "t": "icon",
+     "id": "lm",
+     "name": "moon",
+     "x": 1500,
+     "y": 360,
+     "size": 100,
+     "from": "pop",
+     "at": "b167:ten",
+     "out": "b168"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "good tonight > perfect at *ten*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b167:good",
+     "out": "b168"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "rule 5: a real *job*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b168:rule",
+     "out": "b169"
+    },
+    {
+     "t": "stick",
+     "id": "jb",
+     "x": 760,
+     "y": 690,
+     "from": "bottom",
+     "at": "b168:rule",
+     "poses": [
+      [
+       "idle",
+       "b168:rule"
+      ],
+      [
+       "happy",
+       "b170:walk"
+      ],
+      [
+       "give",
+       "b172:cook"
+      ],
+      [
+       "proud",
+       "b173:back"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b168:rule"
+      ],
+      [
+       "smile",
+       "b170:walk"
+      ]
+     ],
+     "move": [
+      [
+       1100,
+       690,
+       "b170:walk",
+       1.4
+      ],
+      [
+       760,
+       690,
+       "b173:back",
+       1.2
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "rl",
+     "name": "loop",
+     "x": 1100,
+     "y": 420,
+     "size": 150,
+     "from": "pop",
+     "at": "b169:rumination",
+     "out": "b170"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "rumination loves an *idle* mind",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b169:rumination",
+     "out": "b170"
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "take a *walk*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b170:walk",
+     "out": "b171"
+    },
+    {
+     "t": "icon",
+     "id": "cp",
+     "name": "phone",
+     "x": 1400,
+     "y": 520,
+     "size": 130,
+     "from": "pop",
+     "at": "b171:call",
+     "out": "b172",
+     "sway": 8,
+     "period": 0.3
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "call *someone*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b171:call",
+     "out": "b172"
+    },
+    {
+     "t": "icon",
+     "id": "ck",
+     "name": "plate",
+     "x": 1400,
+     "y": 560,
+     "size": 170,
+     "from": "pop",
+     "at": "b172:cook",
+     "out": "b173"
+    },
+    {
+     "t": "text",
+     "id": "t23",
+     "text": "cook *something*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b172:cook",
+     "out": "b173"
+    },
+    {
+     "t": "text",
+     "id": "t24",
+     "text": "then come *back*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b173:come"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b174",
+     "say": "So here's the twist."
+    },
+    {
+     "id": "b175",
+     "say": "Overthinkers aren't broken."
+    },
+    {
+     "id": "b176",
+     "say": "Very often, they're the most careful people you know."
+    },
+    {
+     "id": "b177",
+     "say": "They remember details."
+    },
+    {
+     "id": "b178",
+     "say": "They think about how others feel."
+    },
+    {
+     "id": "b179",
+     "say": "They see problems coming before anyone else does."
+    },
+    {
+     "id": "b180",
+     "say": "The same mind that replays an awkward text remembers your best friend's coffee order."
+    },
+    {
+     "id": "b181",
+     "say": "That's a real strength."
+    },
+    {
+     "id": "b182",
+     "say": "Thinking isn't the problem."
+    },
+    {
+     "id": "b183",
+     "say": "Thinking in circles is."
+    },
+    {
+     "id": "b184",
+     "say": "So the next time your phone just says \"ok,\" take a breath."
+    },
+    {
+     "id": "b185",
+     "say": "They're probably just busy."
+    },
+    {
+     "id": "b186",
+     "say": "Or asleep."
+    },
+    {
+     "id": "b187",
+     "say": "And you can be too."
+    },
+    {
+     "id": "b188",
+     "say": "So here's your challenge for this week."
+    },
+    {
+     "id": "b189",
+     "say": "Write down one worry tonight."
+    },
+    {
+     "id": "b190",
+     "say": "Then check it in seven days."
+    },
+    {
+     "id": "b191",
+     "say": "Come back and tell me if it came true."
+    },
+    {
+     "id": "b192",
+     "say": "What's the one thing you've overthought the most?"
+    },
+    {
+     "id": "b193",
+     "say": "Tell me in the comments."
+    },
+    {
+     "id": "b194",
+     "say": "Which habit should we cover next?"
+    },
+    {
+     "id": "b195",
+     "say": "Drop it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "here's the !twist!",
+     "x": 960,
+     "y": 170,
+     "size": 80,
+     "from": "top",
+     "at": "b174:twist",
+     "out": "b175"
+    },
+    {
+     "t": "stick",
+     "id": "kd",
+     "x": 960,
+     "y": 690,
+     "from": "bottom",
+     "at": "b174:twist",
+     "poses": [
+      [
+       "idle",
+       "b175:overthinkers"
+      ],
+      [
+       "proud",
+       "b176:careful"
+      ],
+      [
+       "happy",
+       "b177:remember"
+      ],
+      [
+       "give",
+       "b180:coffee"
+      ],
+      [
+       "proud",
+       "b181:strength"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b175:overthinkers"
+      ],
+      [
+       "smile",
+       "b176:careful"
+      ]
+     ],
+     "out": "b182"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "they aren't *broken*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b175:broken",
+     "out": "b176"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "the most *careful* people",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b176:careful",
+     "out": "b177"
+    },
+    {
+     "t": "icon",
+     "id": "dn",
+     "name": "notebook",
+     "x": 1320,
+     "y": 470,
+     "size": 130,
+     "from": "pop",
+     "at": "b177:details",
+     "out": "b182"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "they remember *details*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b177:remember",
+     "out": "b178"
+    },
+    {
+     "t": "icon",
+     "id": "dh",
+     "name": "heart",
+     "x": 600,
+     "y": 440,
+     "size": 110,
+     "from": "pop",
+     "at": "b178:feel",
+     "out": "b182",
+     "color": "accent",
+     "pulse": 1.12,
+     "beat": 0.9
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "how others *feel*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b178:think",
+     "out": "b179"
+    },
+    {
+     "t": "icon",
+     "id": "de",
+     "name": "eye",
+     "x": 1320,
+     "y": 640,
+     "size": 130,
+     "from": "pop",
+     "at": "b179:problems",
+     "out": "b182"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "they see problems *coming*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b179:see",
+     "out": "b180"
+    },
+    {
+     "t": "icon",
+     "id": "dc",
+     "name": "coffee",
+     "x": 600,
+     "y": 630,
+     "size": 140,
+     "from": "pop",
+     "at": "b180:coffee",
+     "out": "b182"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "your friend's *coffee* order",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b180:remembers",
+     "out": "b181"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "a real !strength!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b181:strength",
+     "out": "b182"
+    },
+    {
+     "t": "icon",
+     "id": "lc",
+     "name": "loop",
+     "x": 960,
+     "y": 570,
+     "size": 300,
+     "from": "pop",
+     "at": "b182:thinking",
+     "out": "b183",
+     "pulse": 1.06,
+     "beat": 0.7
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "thinking isn't the *problem*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b182:thinking",
+     "out": "b183"
+    },
+    {
+     "t": "icon",
+     "id": "fw",
+     "name": "signpost",
+     "x": 960,
+     "y": 580,
+     "size": 260,
+     "from": "pop",
+     "at": "b183:circles",
+     "out": "b184"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "thinking in !circles! is",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b183:thinking",
+     "out": "b184"
+    },
+    {
+     "t": "icon",
+     "id": "zbed",
+     "name": "bed",
+     "x": 700,
+     "y": 720,
+     "size": 560,
+     "from": "pop",
+     "at": "b184:next",
+     "out": "b188"
+    },
+    {
+     "t": "stick",
+     "id": "zme",
+     "x": 680,
+     "y": 630,
+     "from": "bottom",
+     "at": "b184:next",
+     "poses": [
+      [
+       "give",
+       "b184:next"
+      ],
+      [
+       "happy",
+       "b185:busy"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b184:next"
+      ],
+      [
+       "smile",
+       "b185:probably"
+      ]
+     ],
+     "out": "b188",
+     "scale": 0.62,
+     "sit": true
+    },
+    {
+     "t": "icon",
+     "id": "zph",
+     "name": "phone",
+     "x": 850,
+     "y": 545,
+     "size": 100,
+     "from": "pop",
+     "at": "b184:next",
+     "out": "b188"
+    },
+    {
+     "t": "icon",
+     "id": "zgl",
+     "name": "glow",
+     "x": 850,
+     "y": 545,
+     "size": 150,
+     "from": "pop",
+     "at": "b184:next",
+     "out": "b188",
+     "pulse": 1.08,
+     "beat": 1.6
+    },
+    {
+     "t": "icon",
+     "id": "zmn",
+     "name": "moon",
+     "x": 340,
+     "y": 330,
+     "size": 110,
+     "from": "pop",
+     "at": "b184:next",
+     "out": "b188"
+    },
+    {
+     "t": "bubble",
+     "id": "zb",
+     "text": "ok.",
+     "x": 1480,
+     "y": 560,
+     "size": 140,
+     "from": "pop",
+     "at": "b184:ok",
+     "fontSize": 56,
+     "out": "b188"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "your phone says *ok.*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b184:next",
+     "out": "b184:take"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "take a *breath*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b184:take",
+     "out": "b185"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "probably just *busy*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b185:probably",
+     "out": "b186"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "or !asleep!",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b186:asleep",
+     "out": "b187"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "and you can be *too*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b187:you",
+     "out": "b188"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "your *challenge* this week",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b188:challenge",
+     "out": "b189"
+    },
+    {
+     "t": "icon",
+     "id": "cn",
+     "name": "notebook",
+     "x": 960,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b188:so",
+     "out": "b190"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "write down *one* worry",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b189:write",
+     "out": "b190"
+    },
+    {
+     "t": "icon",
+     "id": "cc",
+     "name": "calendar",
+     "x": 960,
+     "y": 590,
+     "size": 260,
+     "from": "pop",
+     "at": "b190:check",
+     "out": "b192"
+    },
+    {
+     "t": "text",
+     "id": "ccl",
+     "text": "+7 days",
+     "x": 960,
+     "y": 800,
+     "size": 50,
+     "from": "bottom",
+     "at": "b190:seven",
+     "out": "b192",
+     "color": "accent",
+     "weight": 600
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "check it in *7* days",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b190:check",
+     "out": "b191"
+    },
+    {
+     "t": "icon",
+     "id": "cq",
+     "name": "question",
+     "x": 1250,
+     "y": 440,
+     "size": 120,
+     "from": "pop",
+     "at": "b191:true",
+     "out": "b192"
+    },
+    {
+     "t": "text",
+     "id": "t18",
+     "text": "did it come *true*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b191:came",
+     "out": "b192"
+    },
+    {
+     "t": "icon",
+     "id": "eq",
+     "name": "thought",
+     "x": 960,
+     "y": 560,
+     "size": 300,
+     "from": "pop",
+     "at": "b192:overthought",
+     "out": "b194"
+    },
+    {
+     "t": "text",
+     "id": "t19",
+     "text": "what have you overthought the *most*?",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b192:what",
+     "out": "b193"
+    },
+    {
+     "t": "text",
+     "id": "t20",
+     "text": "tell me in the *comments*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b193:tell",
+     "out": "b194"
+    },
+    {
+     "t": "icon",
+     "id": "tc",
+     "name": "chat",
+     "x": 960,
+     "y": 580,
+     "size": 240,
+     "from": "pop",
+     "at": "b193:tell",
+     "out": "b194"
+    },
+    {
+     "t": "icon",
+     "id": "end",
+     "name": "heart",
+     "x": 960,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b194:habit",
+     "color": "accent",
+     "pulse": 1.08,
+     "beat": 1.2
+    },
+    {
+     "t": "text",
+     "id": "t21",
+     "text": "which habit *next*?",
+     "x": 960,
+     "y": 170,
+     "size": 80,
+     "from": "top",
+     "at": "b194:habit",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t22",
+     "text": "@darealwhy",
+     "x": 960,
+     "y": 820,
+     "size": 44,
+     "from": "bottom",
+     "at": "b195:comments",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}

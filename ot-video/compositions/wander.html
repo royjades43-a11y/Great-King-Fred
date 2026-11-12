@@ -1,0 +1,268 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="wander" data-width="1920" data-height="1080">
+    <div id="wander-c1" class="clip el" data-start="3.36" data-duration="3.12" data-track-index="1" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:2"><div id="wander-c1-in" class="in"><div class="card"><div class="card-k">2010 · HARVARD</div><div class="card-t">An app that pinged people</div><div class="card-s">Killingsworth &amp; Gilbert</div></div></div></div>
+    <div id="wander-ip" class="clip el" data-start="5.62" data-duration="0.89" data-track-index="2" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:3" data-layout-allow-overlap><div id="wander-ip-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="wander-pp" class="clip el" data-start="7.005" data-duration="9.028" data-track-index="3" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:4"><div id="wander-pp-in" class="in"><svg class="stick" id="wander-pp-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="wander-pp-aLu"><path class="s" d="M150 160 L150 255"/><g id="wander-pp-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="wander-pp-aRu"><path class="s" d="M150 160 L150 255"/><g id="wander-pp-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="wander-pp-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="wander-pp-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="wander-pp-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="wander-pp-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="wander-pp-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="wander-pp-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="wander-ph" class="clip el" data-start="7.005" data-duration="8.978" data-track-index="4" style="position:absolute;left:120px;top:40px;width:1800px;height:1040px;z-index:5" data-layout-allow-overlap><div id="wander-ph-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="wander-t0" class="clip el" data-start="7.825" data-duration="2.22" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:6"><div id="wander-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t0-w0" class="w">at</span> <span id="wander-t0-w1" class="w acc">random</span> <span id="wander-t0-w2" class="w">moments</span></div></div></div>
+    <div id="wander-t1" class="clip el" data-start="10.305" data-duration="5.728" data-track-index="6" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:7"><div id="wander-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t1-w0" class="w">three</span> <span id="wander-t1-w1" class="w acc">questions</span></div></div></div>
+    <div id="wander-q1" class="clip el" data-start="11.845" data-duration="1.23" data-track-index="7" style="position:absolute;left:920px;top:0px;width:1000px;height:800px;z-index:8" data-layout-allow-overlap><div id="wander-q1-in" class="in"><div class="ico bub" style="width:266px;height:190px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:32px">What are you doing?</div></div></div></div>
+    <div id="wander-q2" class="clip el" data-start="13.025" data-duration="1.43" data-track-index="8" style="position:absolute;left:920px;top:0px;width:1000px;height:800px;z-index:9" data-layout-allow-overlap><div id="wander-q2-in" class="in"><div class="ico bub" style="width:294px;height:210px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:30px">What are you thinking about?</div></div></div></div>
+    <div id="wander-q3" class="clip el" data-start="14.405" data-duration="1.578" data-track-index="9" style="position:absolute;left:920px;top:0px;width:1000px;height:800px;z-index:10" data-layout-allow-overlap><div id="wander-q3-in" class="in"><div class="ico bub" style="width:266px;height:190px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:32px">How do you feel?</div></div></div></div>
+    <div id="wander-pe" class="clip el" data-start="15.933" data-duration="2.73" data-track-index="10" style="position:absolute;left:0px;top:120px;width:1920px;height:960px;z-index:11" data-layout-allow-overlap><div id="wander-pe-in" class="in"><div class="ico" style="width:320px;height:320px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M60 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0 M140 70 m-22 0 a22 22 0 1 0 44 0 a22 22 0 1 0 -44 0"/><path class="s" pathLength="1" d="M22 176 Q22 112 60 112 Q98 112 98 176 M102 176 Q102 112 140 112 Q178 112 178 176"/></svg></div></div></div>
+    <div id="wander-t2" class="clip el" data-start="16.584" data-duration="2.129" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:12"><div id="wander-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t2-w0" class="w acc">2,000+</span> <span id="wander-t2-w1" class="w">people</span></div></div></div>
+    <div id="wander-wd" class="clip el" data-start="18.693" data-duration="17.933" data-track-index="12" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:13"><div id="wander-wd-in" class="in"><svg class="stick" id="wander-wd-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="wander-wd-aLu"><path class="s" d="M150 160 L150 255"/><g id="wander-wd-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="wander-wd-aRu"><path class="s" d="M150 160 L150 255"/><g id="wander-wd-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="wander-wd-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="wander-wd-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="wander-wd-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="wander-wd-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="wander-wd-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="wander-wd-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="wander-wt" class="clip el" data-start="19.593" data-duration="16.983" data-track-index="13" style="position:absolute;left:440px;top:0px;width:1480px;height:800px;z-index:14" data-layout-allow-overlap><div id="wander-wt-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="wander-t3" class="clip el" data-start="19.193" data-duration="2.2" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="wander-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t3-w0" class="w">minds</span> <span id="wander-t3-w1" class="w acc">somewhere</span> <span id="wander-t3-w2" class="w acc">else</span></div></div></div>
+    <div id="wander-t4" class="clip el" data-start="21.293" data-duration="3.36" data-track-index="15" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:16"><div id="wander-t4-in" class="in"><div class="txt" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="wander-t4-w0" class="w acc">46.9%</span> <span id="wander-t4-w1" class="w">of</span> <span id="wander-t4-w2" class="w">the</span> <span id="wander-t4-w3" class="w">time</span></div></div></div>
+    <div id="wander-s1" class="clip el" data-start="24.813" data-duration="0.89" data-track-index="16" style="position:absolute;left:440px;top:0px;width:1480px;height:770px;z-index:17" data-layout-allow-overlap><div id="wander-s1-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 108 Q18 106 22 80 Q20 54 50 54 Q58 24 92 28 Q118 10 142 32 Q178 30 178 64 Q196 78 182 98 Q176 110 156 108 Z"/><path class="s acc-s" pathLength="1" d="M60 132 L52 156 M100 132 L92 156 M140 132 L132 156 M80 164 L74 182 M120 164 L114 182"/></svg></div></div></div>
+    <div id="wander-s2" class="clip el" data-start="25.693" data-duration="0.89" data-track-index="17" style="position:absolute;left:440px;top:0px;width:1480px;height:770px;z-index:18" data-layout-allow-overlap><div id="wander-s2-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 70 L176 70 L176 172 L24 172 Z"/><path class="s" pathLength="1" d="M74 70 L74 46 L126 46 L126 70"/><path class="s" pathLength="1" d="M24 112 L176 112"/></svg></div></div></div>
+    <div id="wander-s3" class="clip el" data-start="27.441" data-duration="1.19" data-track-index="18" style="position:absolute;left:440px;top:0px;width:1480px;height:770px;z-index:19" data-layout-allow-overlap><div id="wander-s3-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 30 L120 30 Q134 30 134 44 L134 96 Q134 110 120 110 L60 110 L36 132 L40 110 L34 110 Q20 110 20 96 L20 44 Q20 30 34 30 Z"/><path class="s acc-s" pathLength="1" d="M80 128 L80 120 Q80 106 94 106 L166 106 Q180 106 180 120 L180 160 Q180 174 166 174 L160 174 L164 194 L140 174 L94 174 Q80 174 80 160 Z"/></svg></div></div></div>
+    <div id="wander-t5" class="clip el" data-start="24.553" data-duration="1.16" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="wander-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t5-w0" class="w">in</span> <span id="wander-t5-w1" class="w">the</span> <span id="wander-t5-w2" class="w acc">shower</span></div></div></div>
+    <div id="wander-t6" class="clip el" data-start="25.613" data-duration="0.948" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:21"><div id="wander-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t6-w0" class="w">at</span> <span id="wander-t6-w1" class="w acc">work</span></div></div></div>
+    <div id="wander-t7" class="clip el" data-start="26.921" data-duration="1.76" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:22"><div id="wander-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t7-w0" class="w">mid-</span> <span id="wander-t7-w1" class="w acc">conversation</span></div></div></div>
+    <div id="wander-s4" class="clip el" data-start="29.501" data-duration="2.73" data-track-index="22" style="position:absolute;left:440px;top:0px;width:1480px;height:770px;z-index:23" data-layout-allow-overlap><div id="wander-s4-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 128 Q18 126 22 100 Q20 74 50 74 Q58 44 92 48 Q118 30 142 52 Q178 50 178 84 Q196 98 182 118 Q176 130 156 128 Z"/></svg></div></div></div>
+    <div id="wander-t8" class="clip el" data-start="29.501" data-duration="2.78" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:24"><div id="wander-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t8-w0" class="w">wandering</span> <span id="wander-t8-w1" class="w">→</span> <span id="wander-t8-w2" class="w">less</span> <span id="wander-t8-w3" class="w acc">happy</span></div></div></div>
+    <div id="wander-s5" class="clip el" data-start="32.461" data-duration="4.115" data-track-index="24" style="position:absolute;left:440px;top:0px;width:1480px;height:770px;z-index:25" data-layout-allow-overlap><div id="wander-s5-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M100 100 m-38 0 a38 38 0 1 0 76 0 a38 38 0 1 0 -76 0"/><path class="s" pathLength="1" d="M100 18 L100 40 M100 160 L100 182 M18 100 L40 100 M160 100 L182 100 M42 42 L58 58 M142 142 L158 158 M158 42 L142 58 M58 142 L42 158"/></svg></div></div></div>
+    <div id="wander-t9" class="clip el" data-start="32.461" data-duration="4.165" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:26"><div id="wander-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t9-w0" class="w">even</span> <span id="wander-t9-w1" class="w">pleasant</span> <span id="wander-t9-w2" class="w acc">daydreams</span></div></div></div>
+    <div id="wander-ti" class="clip el" data-start="38.206" data-duration="0.97" data-track-index="26" style="position:absolute;left:0px;top:120px;width:1920px;height:960px;z-index:27" data-layout-allow-overlap><div id="wander-ti-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L150 20 L176 46 L176 168 L64 168 Z"/><path class="s" pathLength="1" d="M150 20 L150 46 L176 46"/><path class="s" pathLength="1" d="M44 40 L44 184 L156 184"/><path class="s" pathLength="1" d="M24 60 L24 198 L136 198"/><path class="s acc-s" pathLength="1" d="M88 76 L152 76 M88 104 L152 104 M88 132 L132 132"/></svg></div></div></div>
+    <div id="wander-t10" class="clip el" data-start="37.18599999999999" data-duration="2.04" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:28"><div id="wander-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t10-w0" class="w">right</span> <span id="wander-t10-w1" class="w">in</span> <span id="wander-t10-w2" class="w">their</span> <span id="wander-t10-w3" class="w acc">title</span></div></div></div>
+    <div id="wander-t11" class="clip el" data-start="39.206" data-duration="2.97" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:960px;z-index:29"><div id="wander-t11-in" class="in"><div class="txt hero" style="font-size:70px;font-weight:800;color:var(--ink)"><span id="wander-t11-w0" class="w">a</span> <span id="wander-t11-w1" class="w">wandering</span> <span id="wander-t11-w2" class="w">mind</span> <span id="wander-t11-w3" class="w">is</span> <span id="wander-t11-w4" class="w">an</span> <span id="wander-t11-w5" class="w acc">unhappy</span> <span id="wander-t11-w6" class="w">mind</span></div></div></div>
+    <div id="wander-ov" class="clip el" data-start="42.506" data-duration="10.089" data-track-index="29" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:30"><div id="wander-ov-in" class="in"><svg class="stick" id="wander-ov-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="wander-ov-aLu"><path class="s" d="M150 160 L150 255"/><g id="wander-ov-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="wander-ov-aRu"><path class="s" d="M150 160 L150 255"/><g id="wander-ov-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="wander-ov-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="wander-ov-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="wander-ov-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="wander-ov-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="wander-ov-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="wander-ov-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="wander-oc" class="clip el" data-start="44.546" data-duration="7.999" data-track-index="30" style="position:absolute;left:440px;top:0px;width:1480px;height:800px;z-index:31" data-layout-allow-overlap><div id="wander-oc-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="wander-o1" class="clip el" data-start="45.626" data-duration="2.319" data-track-index="31" style="position:absolute;left:460px;top:0px;width:1460px;height:770px;z-index:32" data-layout-allow-overlap><div id="wander-o1-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M150 70 A60 60 0 1 0 160 120"/><path class="s alm-s" pathLength="1" d="M128 64 L152 70 L150 44"/></svg></div></div></div>
+    <div id="wander-o2" class="clip el" data-start="48.035" data-duration="0.89" data-track-index="32" style="position:absolute;left:460px;top:0px;width:1460px;height:770px;z-index:33" data-layout-allow-overlap><div id="wander-o2-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="wander-o3" class="clip el" data-start="48.875" data-duration="0.89" data-track-index="33" style="position:absolute;left:460px;top:0px;width:1460px;height:780px;z-index:34" data-layout-allow-overlap><div id="wander-o3-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M14 96 L186 96"/><path class="s" pathLength="1" d="M40 96 L28 182 M160 96 L172 182"/><path class="s acc-s" pathLength="1" d="M76 96 L76 70 Q76 60 86 60 L114 60 Q124 60 124 70 L124 96"/><path class="s" pathLength="1" d="M30 76 Q30 46 50 46 M150 50 L150 96 M140 50 L140 66 Q140 74 150 74 Q160 74 160 66 L160 50"/></svg></div></div></div>
+    <div id="wander-o4" class="clip el" data-start="50.515" data-duration="2.03" data-track-index="34" style="position:absolute;left:460px;top:0px;width:1460px;height:770px;z-index:35" data-layout-allow-overlap><div id="wander-o4-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 28 L150 170 L50 170 Z"/><path class="s acc-s" pathLength="1" d="M76 100 L124 100 M62 136 L138 136"/><circle class="alm-f" cx="100" cy="24" r="12"/></svg></div></div></div>
+    <div id="wander-t12" class="clip el" data-start="43.565999999999995" data-duration="2.04" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:36"><div id="wander-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t12-w0" class="w">it</span> <span id="wander-t12-w1" class="w">doesn't</span> <span id="wander-t12-w2" class="w">just</span> <span id="wander-t12-w3" class="w acc">wander</span></div></div></div>
+    <div id="wander-t13" class="clip el" data-start="45.655" data-duration="2.34" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:37"><div id="wander-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t13-w0" class="w">back</span> <span id="wander-t13-w1" class="w">to</span> <span id="wander-t13-w2" class="w">the</span> <span id="wander-t13-w3" class="w acc">same</span> <span id="wander-t13-w4" class="w acc">spot</span></div></div></div>
+    <div id="wander-t14" class="clip el" data-start="47.895" data-duration="1" data-track-index="37" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:38"><div id="wander-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t14-w0" class="w">the</span> <span id="wander-t14-w1" class="w acc">text</span></div></div></div>
+    <div id="wander-t15" class="clip el" data-start="48.795" data-duration="0.98" data-track-index="38" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:39"><div id="wander-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t15-w0" class="w">the</span> <span id="wander-t15-w1" class="w acc">meeting</span></div></div></div>
+    <div id="wander-t16" class="clip el" data-start="50.254999999999995" data-duration="2.34" data-track-index="39" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:40"><div id="wander-t16-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t16-w0" class="w">a</span> <span id="wander-t16-w1" class="w">party,</span> <span id="wander-t16-w2" class="w">six</span> <span id="wander-t16-w3" class="w">years</span> <span id="wander-t16-w4" class="w acc">ago</span></div></div></div>
+    <div id="wander-lq" class="clip el" data-start="53.415" data-duration="1.32" data-track-index="40" style="position:absolute;left:0px;top:60px;width:1920px;height:1020px;z-index:41" data-layout-allow-overlap><div id="wander-lq-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="wander-t17" class="clip el" data-start="52.769999999999996" data-duration="2.04" data-track-index="41" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:42"><div id="wander-t17-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="wander-t17-w0" class="w">what's</span> <span id="wander-t17-w1" class="w">it</span> <span id="wander-t17-w2" class="w acc">looking</span> <span id="wander-t17-w3" class="w">for?</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"wander-c1","t":"card","from":"top","exit":null,"in":3.36,"out":6.14,"outDur":0.3},{"id":"wander-ip","t":"icon","from":"pop","exit":null,"in":5.62,"out":6.22,"outDur":0.25},{"id":"wander-pp","t":"stick","from":"left","exit":null,"in":7.005,"out":15.693,"outDur":0.3,"poses":[["idle",7.005],["give",11.845]],"mouth":[["neutral",7.005],["o",11.845]]},{"id":"wander-ph","t":"icon","from":"pop","exit":null,"in":7.005,"out":15.693,"outDur":0.25,"sway":8,"period":0.3},{"id":"wander-t0","t":"text","from":"top","exit":null,"in":7.825,"out":9.705,"outDur":0.3,"words":[7.645,7.825,8.225]},{"id":"wander-t1","t":"text","from":"top","exit":null,"in":10.305,"out":15.693,"outDur":0.3,"words":[10.305,10.405]},{"id":"wander-q1","t":"bubble","from":"pop","exit":null,"in":11.845,"out":12.785,"outDur":0.25},{"id":"wander-q2","t":"bubble","from":"pop","exit":null,"in":13.025,"out":14.165,"outDur":0.25},{"id":"wander-q3","t":"bubble","from":"pop","exit":null,"in":14.405,"out":15.693,"outDur":0.25},{"id":"wander-pe","t":"icon","from":"pop","exit":null,"in":15.933,"out":18.373,"outDur":0.25},{"id":"wander-t2","t":"text","from":"top","exit":null,"in":16.584,"out":18.373,"outDur":0.3,"words":[17.193,17.193]},{"id":"wander-wd","t":"stick","from":"bottom","exit":null,"in":18.693,"out":36.286,"outDur":0.3,"poses":[["idle",18.693],["headDown",30.881],["idle",32.461]],"mouth":[["neutral",18.693],["frown",30.881],["neutral",32.461]]},{"id":"wander-wt","t":"icon","from":"pop","exit":null,"in":19.593,"out":36.286,"outDur":0.25,"bob":8,"period":2.4},{"id":"wander-t3","t":"text","from":"top","exit":null,"in":19.193,"out":21.053,"outDur":0.3,"words":[18.693,19.193,19.593]},{"id":"wander-t4","t":"text","from":"top","exit":null,"in":21.293,"out":24.313000000000002,"outDur":0.3,"words":[21.393,21.493,21.593,21.693]},{"id":"wander-s1","t":"icon","from":"pop","exit":null,"in":24.813,"out":25.413,"outDur":0.25},{"id":"wander-s2","t":"icon","from":"pop","exit":null,"in":25.693,"out":26.293000000000003,"outDur":0.25},{"id":"wander-s3","t":"icon","from":"pop","exit":null,"in":27.441,"out":28.341,"outDur":0.25},{"id":"wander-t5","t":"text","from":"top","exit":null,"in":24.553,"out":25.373,"outDur":0.3,"words":[24.553,24.713,24.813]},{"id":"wander-t6","t":"text","from":"top","exit":null,"in":25.613,"out":26.221,"outDur":0.3,"words":[25.613,25.693]},{"id":"wander-t7","t":"text","from":"top","exit":null,"in":26.921,"out":28.341,"outDur":0.3,"words":[27.441,27.441]},{"id":"wander-s4","t":"icon","from":"pop","exit":null,"in":29.501,"out":31.941,"outDur":0.25},{"id":"wander-t8","t":"text","from":"top","exit":null,"in":29.501,"out":31.941,"outDur":0.3,"words":[30.881,30.881,30.881,31.181]},{"id":"wander-s5","t":"icon","from":"pop","exit":null,"in":32.461,"out":36.286,"outDur":0.25},{"id":"wander-t9","t":"text","from":"top","exit":null,"in":32.461,"out":36.286,"outDur":0.3,"words":[32.181,32.461,32.901]},{"id":"wander-ti","t":"icon","from":"pop","exit":null,"in":38.206,"out":38.885999999999996,"outDur":0.25},{"id":"wander-t10","t":"text","from":"top","exit":null,"in":37.18599999999999,"out":38.885999999999996,"outDur":0.3,"words":[37.526,37.846,38.066,38.206]},{"id":"wander-t11","t":"text","from":"slam","exit":null,"in":39.206,"out":41.885999999999996,"outDur":0.25,"words":[39.126,39.206,39.586,39.906,40.346,40.486,41.026]},{"id":"wander-ov","t":"stick","from":"bottom","exit":null,"in":42.506,"out":52.254999999999995,"outDur":0.3,"poses":[["idle",42.506],["holdHead",50.515]],"mouth":[["neutral",42.506],["tight",50.515]]},{"id":"wander-oc","t":"icon","from":"pop","exit":null,"in":44.546,"out":52.254999999999995,"outDur":0.25},{"id":"wander-o1","t":"icon","from":"pop","exit":null,"in":45.626,"out":47.655,"outDur":0.25},{"id":"wander-o2","t":"icon","from":"pop","exit":null,"in":48.035,"out":48.635,"outDur":0.25},{"id":"wander-o3","t":"icon","from":"pop","exit":null,"in":48.875,"out":49.475,"outDur":0.25},{"id":"wander-o4","t":"icon","from":"pop","exit":null,"in":50.515,"out":52.254999999999995,"outDur":0.25},{"id":"wander-t12","t":"text","from":"top","exit":null,"in":43.565999999999995,"out":45.266,"outDur":0.3,"words":[43.826,43.826,44.266,44.546]},{"id":"wander-t13","t":"text","from":"top","exit":null,"in":45.655,"out":47.655,"outDur":0.3,"words":[46.046,46.266,46.466,46.586,46.926]},{"id":"wander-t14","t":"text","from":"top","exit":null,"in":47.895,"out":48.555,"outDur":0.3,"words":[47.895,48.035]},{"id":"wander-t15","t":"text","from":"top","exit":null,"in":48.795,"out":49.434999999999995,"outDur":0.3,"words":[48.795,48.875]},{"id":"wander-t16","t":"text","from":"top","exit":null,"in":50.254999999999995,"out":52.254999999999995,"outDur":0.3,"words":[50.455,50.515,50.855,51.255,51.575]},{"id":"wander-lq","t":"icon","from":"pop","exit":null,"in":53.415,"out":54.445,"outDur":0.25},{"id":"wander-t17","t":"text","from":"top","exit":null,"in":52.769999999999996,"out":54.47,"outDur":0.3,"words":[52.815,53.355,53.415,53.715]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["wander"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,373 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="plan" data-width="1920" data-height="1080">
+    <div id="plan-pl" class="clip el" data-start="0.2" data-duration="9.693" data-track-index="1" style="position:absolute;left:0px;top:300px;width:1920px;height:780px;z-index:2"><div id="plan-pl-in" class="in"><svg class="stick" id="plan-pl-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="plan-pl-aLu"><path class="s" d="M150 160 L150 255"/><g id="plan-pl-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-pl-aRu"><path class="s" d="M150 160 L150 255"/><g id="plan-pl-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-pl-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="plan-pl-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="plan-pl-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="plan-pl-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="plan-pl-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="plan-pl-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="plan-pt" class="clip el" data-start="2.68" data-duration="7.163" data-track-index="2" style="position:absolute;left:600px;top:0px;width:1320px;height:800px;z-index:3" data-layout-allow-overlap><div id="plan-pt-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="plan-pc" class="clip el" data-start="3.633" data-duration="6.21" data-track-index="3" style="position:absolute;left:610px;top:0px;width:1310px;height:770px;z-index:4" data-layout-allow-overlap><div id="plan-pc-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 20 L164 20 Q176 20 176 32 L176 176 Q176 186 164 186 L36 186 Q24 186 24 176 L24 32 Q24 20 36 20 Z"/><path class="s acc-s" pathLength="1" d="M48 66 L60 78 L82 54"/><path class="s" pathLength="1" d="M100 66 L150 66"/><path class="s acc-s" pathLength="1" d="M48 112 L60 124 L82 100"/><path class="s" pathLength="1" d="M100 112 L150 112"/><path class="s acc-s" pathLength="1" d="M48 158 L60 170 L82 146"/><path class="s" pathLength="1" d="M100 158 L150 158"/></svg></div></div></div>
+    <div id="plan-t0" class="clip el" data-start="0.94" data-duration="2.793" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:5"><div id="plan-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t0-w0" class="w">your</span> <span id="plan-t0-w1" class="w">brain</span> <span id="plan-t0-w2" class="w">won't</span> <span id="plan-t0-w3" class="w acc">drop</span> <span id="plan-t0-w4" class="w">it</span></div></div></div>
+    <div id="plan-t1" class="clip el" data-start="3.633" data-duration="2.5" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:6"><div id="plan-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t1-w0" class="w acc">unfinished</span> <span id="plan-t1-w1" class="w">business</span> <span id="plan-t1-w2" class="w">sticks</span></div></div></div>
+    <div id="plan-tp" class="clip el" data-start="6.713" data-duration="3.18" data-track-index="6" style="position:absolute;left:0px;top:300px;width:1360px;height:780px;z-index:7"><div id="plan-tp-in" class="in"><svg class="stick" id="plan-tp-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="plan-tp-aLu"><path class="s" d="M150 160 L150 255"/><g id="plan-tp-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-tp-aRu"><path class="s" d="M150 160 L150 255"/><g id="plan-tp-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-tp-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="plan-tp-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="plan-tp-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="plan-tp-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="plan-tp-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="plan-tp-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="plan-t2" class="clip el" data-start="6.713" data-duration="3.18" data-track-index="7" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:8"><div id="plan-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t2-w0" class="w">tap,</span> <span id="plan-t2-w1" class="w">tap:</span> <span id="plan-t2-w2" class="w">not</span> <span id="plan-t2-w3" class="w acc">done</span></div></div></div>
+    <div id="plan-c1" class="clip el" data-start="10.853" data-duration="4.015" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:9"><div id="plan-c1-in" class="in"><div class="card"><div class="card-k">1920s · THE ZEIGARNIK EFFECT</div><div class="card-t">Unfinished tasks stay with you</div><div class="card-s">Bluma Zeigarnik</div></div></div></div>
+    <div id="plan-zp" class="clip el" data-start="10.853" data-duration="3.965" data-track-index="9" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:10" data-layout-allow-overlap><div id="plan-zp-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><rect class="f" style="fill:var(--accent)" x="52" y="36" width="34" height="128" rx="10"/><rect class="f" style="fill:var(--accent)" x="114" y="36" width="34" height="128" rx="10"/></svg></div></div></div>
+    <div id="plan-wt" class="clip el" data-start="15.088" data-duration="10.841" data-track-index="10" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:11"><div id="plan-wt-in" class="in"><svg class="stick" id="plan-wt-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="plan-wt-aLu"><path class="s" d="M150 160 L150 255"/><g id="plan-wt-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-wt-aRu"><path class="s" d="M150 160 L150 255"/><g id="plan-wt-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-wt-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="plan-wt-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="plan-wt-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="plan-wt-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="plan-wt-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="plan-wt-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="plan-np" class="clip el" data-start="16.888" data-duration="8.991" data-track-index="11" style="position:absolute;left:80px;top:40px;width:1840px;height:1040px;z-index:12" data-layout-allow-overlap><div id="plan-np-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 20 L156 20 L156 184 L44 184 Z"/><path class="s" pathLength="1" d="M44 20 L44 184 M60 20 L60 184"/><path class="s acc-s" pathLength="1" d="M76 60 L140 60 M76 90 L140 90 M76 120 L124 120"/></svg></div></div></div>
+    <div id="plan-rt" class="clip el" data-start="16.888" data-duration="8.991" data-track-index="12" style="position:absolute;left:1000px;top:120px;width:920px;height:960px;z-index:13" data-layout-allow-overlap><div id="plan-rt-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-62 0 a62 62 0 1 0 124 0 a62 62 0 1 0 -124 0"/><path class="s" pathLength="1" d="M100 100 m-36 0 a36 36 0 1 0 72 0 a36 36 0 1 0 -72 0"/><path class="s" pathLength="1" d="M18 40 L18 80 M10 40 L10 62 Q10 72 18 74 Q26 72 26 62 L26 40 M18 80 L18 170 M182 40 Q168 70 182 100 L182 170"/></svg></div></div></div>
+    <div id="plan-t3" class="clip el" data-start="16.888" data-duration="2.38" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:14"><div id="plan-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t3-w0" class="w">a</span> <span id="plan-t3-w1" class="w acc">restaurant<span class="tail">,</span></span> <span id="plan-t3-w2" class="w">1920s</span></div></div></div>
+    <div id="plan-wc" class="clip el" data-start="19.688" data-duration="6.191" data-track-index="14" style="position:absolute;left:480px;top:0px;width:1440px;height:760px;z-index:15" data-layout-allow-overlap><div id="plan-wc-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="plan-wo" class="clip el" data-start="20.668" data-duration="3.37" data-track-index="15" style="position:absolute;left:490px;top:0px;width:1430px;height:730px;z-index:16" data-layout-allow-overlap><div id="plan-wo-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-62 0 a62 62 0 1 0 124 0 a62 62 0 1 0 -124 0"/><path class="s" pathLength="1" d="M100 100 m-36 0 a36 36 0 1 0 72 0 a36 36 0 1 0 -72 0"/><path class="s" pathLength="1" d="M18 40 L18 80 M10 40 L10 62 Q10 72 18 74 Q26 72 26 62 L26 40 M18 80 L18 170 M182 40 Q168 70 182 100 L182 170"/></svg></div></div></div>
+    <div id="plan-t4" class="clip el" data-start="20.548000000000002" data-duration="1.74" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:17"><div id="plan-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t4-w0" class="w">every</span> <span id="plan-t4-w1" class="w acc">unpaid</span> <span id="plan-t4-w2" class="w">order</span></div></div></div>
+    <div id="plan-mo" class="clip el" data-start="22.908" data-duration="2.971" data-track-index="17" style="position:absolute;left:1000px;top:0px;width:920px;height:880px;z-index:18" data-layout-allow-overlap><div id="plan-mo-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M14 64 L186 64 L186 150 L14 150 Z"/><path class="s" pathLength="1" d="M24 160 L196 160 M34 172 L196 172"/><path class="s acc-s" pathLength="1" d="M118 86 Q100 76 86 86 Q76 98 100 107 Q124 115 114 128 Q100 138 80 128 M100 72 L100 142"/></svg></div></div></div>
+    <div id="plan-t5" class="clip el" data-start="22.908" data-duration="3.021" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:19"><div id="plan-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t5-w0" class="w">paid</span> <span id="plan-t5-w1" class="w">→</span> <span id="plan-t5-w2" class="w alm">gone</span></div></div></div>
+    <div id="plan-ip" class="clip el" data-start="27.889" data-duration="3.402" data-track-index="19" style="position:absolute;left:0px;top:100px;width:1520px;height:980px;z-index:20" data-layout-allow-overlap><div id="plan-ip-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><rect class="f" style="fill:var(--accent)" x="52" y="36" width="34" height="128" rx="10"/><rect class="f" style="fill:var(--accent)" x="114" y="36" width="34" height="128" rx="10"/></svg></div></div></div>
+    <div id="plan-ic" class="clip el" data-start="29.889" data-duration="1.402" data-track-index="20" style="position:absolute;left:400px;top:100px;width:1520px;height:980px;z-index:21" data-layout-allow-overlap><div id="plan-ic-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M30 104 L80 154 L172 50"/></svg></div></div></div>
+    <div id="plan-ipl" class="clip el" data-start="27.889" data-duration="3.452" data-track-index="21" style="position:absolute;left:0px;top:520px;width:1520px;height:560px;z-index:22"><div id="plan-ipl-in" class="in"><div class="txt" style="font-size:46px;font-weight:800;color:var(--accent)"><span id="plan-ipl-w0" class="w">remembered</span></div></div></div>
+    <div id="plan-icl" class="clip el" data-start="29.889" data-duration="1.452" data-track-index="22" style="position:absolute;left:400px;top:520px;width:1520px;height:560px;z-index:23"><div id="plan-icl-in" class="in"><div class="txt" style="font-size:46px;font-weight:800;color:var(--muted)"><span id="plan-icl-w0" class="w">forgotten</span></div></div></div>
+    <div id="plan-t6" class="clip el" data-start="27.889" data-duration="3.452" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:24"><div id="plan-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t6-w0" class="w">interrupted</span> <span id="plan-t6-w1" class="w">tasks</span> <span id="plan-t6-w2" class="w acc">stick</span></div></div></div>
+    <div id="plan-c2" class="clip el" data-start="33.761" data-duration="4.38" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:25"><div id="plan-c2-in" class="in"><div class="card"><div class="card-k">2011 · CONSIDER IT DONE</div><div class="card-t">How to quiet an unfinished goal</div><div class="card-s">Masicampo &amp; Baumeister</div></div></div></div>
+    <div id="plan-cd" class="clip el" data-start="37.041" data-duration="1.05" data-track-index="25" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:26" data-layout-allow-overlap><div id="plan-cd-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 20 L164 20 Q176 20 176 32 L176 176 Q176 186 164 186 L36 186 Q24 186 24 176 L24 32 Q24 20 36 20 Z"/><path class="s acc-s" pathLength="1" d="M48 66 L60 78 L82 54"/><path class="s" pathLength="1" d="M100 66 L150 66"/><path class="s acc-s" pathLength="1" d="M48 112 L60 124 L82 100"/><path class="s" pathLength="1" d="M100 112 L150 112"/><path class="s acc-s" pathLength="1" d="M48 158 L60 170 L82 146"/><path class="s" pathLength="1" d="M100 158 L150 158"/></svg></div></div></div>
+    <div id="plan-rd" class="clip el" data-start="38.381" data-duration="22.051" data-track-index="26" style="position:absolute;left:0px;top:300px;width:1400px;height:780px;z-index:27"><div id="plan-rd-in" class="in"><svg class="stick" id="plan-rd-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="plan-rd-aLu"><path class="s" d="M150 160 L150 255"/><g id="plan-rd-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-rd-aRu"><path class="s" d="M150 160 L150 255"/><g id="plan-rd-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-rd-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="plan-rd-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="plan-rd-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="plan-rd-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="plan-rd-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="plan-rd-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="plan-gc" class="clip el" data-start="39.861" data-duration="19.181" data-track-index="27" style="position:absolute;left:480px;top:0px;width:1440px;height:760px;z-index:28" data-layout-allow-overlap><div id="plan-gc-in" class="in"><div class="ico" style="width:230px;height:230px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="plan-gs" class="clip el" data-start="39.861" data-duration="19.181" data-track-index="28" style="position:absolute;left:490px;top:0px;width:1430px;height:730px;z-index:29" data-layout-allow-overlap><div id="plan-gs-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 20 L164 20 Q176 20 176 32 L176 176 Q176 186 164 186 L36 186 Q24 186 24 176 L24 32 Q24 20 36 20 Z"/><path class="s acc-s" pathLength="1" d="M48 66 L60 78 L82 54"/><path class="s" pathLength="1" d="M100 66 L150 66"/><path class="s acc-s" pathLength="1" d="M48 112 L60 124 L82 100"/><path class="s" pathLength="1" d="M100 112 L150 112"/><path class="s acc-s" pathLength="1" d="M48 158 L60 170 L82 146"/><path class="s" pathLength="1" d="M100 158 L150 158"/></svg></div></div></div>
+    <div id="plan-t7" class="clip el" data-start="39.401" data-duration="2.612" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:30"><div id="plan-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t7-w0" class="w">an</span> <span id="plan-t7-w1" class="w acc">unfinished</span> <span id="plan-t7-w2" class="w">goal</span></div></div></div>
+    <div id="plan-bk" class="clip el" data-start="42.993" data-duration="4.27" data-track-index="30" style="position:absolute;left:0px;top:40px;width:1880px;height:1040px;z-index:31" data-layout-allow-overlap><div id="plan-bk-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 52 Q60 32 18 46 L18 168 Q60 154 100 174 Q140 154 182 168 L182 46 Q140 32 100 52 Z"/><path class="s" pathLength="1" d="M100 52 L100 174"/><path class="s acc-s" pathLength="1" d="M40 80 L80 86 M40 108 L80 114 M120 86 L160 80 M120 114 L160 108"/></svg></div></div></div>
+    <div id="plan-t8" class="clip el" data-start="42.592999999999996" data-duration="1.74" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:32"><div id="plan-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t8-w0" class="w">read</span> <span id="plan-t8-w1" class="w">a</span> <span id="plan-t8-w2" class="w acc">passage</span></div></div></div>
+    <div id="plan-t9" class="clip el" data-start="45.253" data-duration="2.06" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:33"><div id="plan-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t9-w0" class="w">the</span> <span id="plan-t9-w1" class="w">mind</span> <span id="plan-t9-w2" class="w">drifts</span> <span id="plan-t9-w3" class="w acc">back</span></div></div></div>
+    <div id="plan-t10" class="clip el" data-start="48.553" data-duration="1.74" data-track-index="33" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:34"><div id="plan-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t10-w0" class="w">one</span> <span id="plan-t10-w1" class="w">small</span> <span id="plan-t10-w2" class="w acc">thing</span></div></div></div>
+    <div id="plan-pn" class="clip el" data-start="51.213" data-duration="9.169" data-track-index="34" style="position:absolute;left:1000px;top:120px;width:920px;height:960px;z-index:35" data-layout-allow-overlap><div id="plan-pn-in" class="in"><div class="ico" style="width:230px;height:230px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L150 20 L176 46 L176 168 L64 168 Z"/><path class="s" pathLength="1" d="M150 20 L150 46 L176 46"/><path class="s" pathLength="1" d="M44 40 L44 184 L156 184"/><path class="s" pathLength="1" d="M24 60 L24 198 L136 198"/><path class="s acc-s" pathLength="1" d="M88 76 L152 76 M88 104 L152 104 M88 132 L132 132"/></svg></div></div></div>
+    <div id="plan-t11" class="clip el" data-start="50.693" data-duration="1.74" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:36"><div id="plan-t11-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t11-w0" class="w">a</span> <span id="plan-t11-w1" class="w acc">specific</span> <span id="plan-t11-w2" class="w">plan</span></div></div></div>
+    <div id="plan-t12" class="clip el" data-start="52.333" data-duration="2.239" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:37"><div id="plan-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t12-w0" class="w acc">when<span class="tail">,</span></span> <span id="plan-t12-w1" class="w acc">where<span class="tail">,</span></span> <span id="plan-t12-w2" class="w acc">how</span></div></div></div>
+    <div id="plan-nx" class="clip el" data-start="54.852" data-duration="1.05" data-track-index="37" style="position:absolute;left:1360px;top:0px;width:560px;height:840px;z-index:38" data-layout-allow-overlap><div id="plan-nx-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M40 40 L160 160 M160 40 L40 160"/></svg></div></div></div>
+    <div id="plan-t13" class="clip el" data-start="54.472" data-duration="1.48" data-track-index="38" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:39"><div id="plan-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t13-w0" class="w">they</span> <span id="plan-t13-w1" class="w">didn't</span> <span id="plan-t13-w2" class="w acc">do</span> <span id="plan-t13-w3" class="w">the</span> <span id="plan-t13-w4" class="w">task</span></div></div></div>
+    <div id="plan-ny" class="clip el" data-start="56.132" data-duration="4.25" data-track-index="39" style="position:absolute;left:1360px;top:0px;width:560px;height:840px;z-index:40" data-layout-allow-overlap><div id="plan-ny-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M30 104 L80 154 L172 50"/></svg></div></div></div>
+    <div id="plan-t14" class="clip el" data-start="55.852" data-duration="1.6" data-track-index="40" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:41"><div id="plan-t14-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t14-w0" class="w">they</span> <span id="plan-t14-w1" class="w">just</span> <span id="plan-t14-w2" class="w alm">planned</span> <span id="plan-t14-w3" class="w">it</span></div></div></div>
+    <div id="plan-t15" class="clip el" data-start="57.572" data-duration="2.86" data-track-index="41" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:42"><div id="plan-t15-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t15-w0" class="w">the</span> <span id="plan-t15-w1" class="w">thoughts</span> <span id="plan-t15-w2" class="w">went</span> <span id="plan-t15-w3" class="w acc">away</span></div></div></div>
+    <div id="plan-cm" class="clip el" data-start="60.472" data-duration="4.941" data-track-index="42" style="position:absolute;left:0px;top:300px;width:1520px;height:780px;z-index:43"><div id="plan-cm-in" class="in"><svg class="stick" id="plan-cm-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="plan-cm-aLu"><path class="s" d="M150 160 L150 255"/><g id="plan-cm-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-cm-aRu"><path class="s" d="M150 160 L150 255"/><g id="plan-cm-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-cm-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="plan-cm-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="plan-cm-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="plan-cm-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="plan-cm-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="plan-cm-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="plan-mn" class="clip el" data-start="62.212" data-duration="0.911" data-track-index="43" style="position:absolute;left:480px;top:0px;width:1440px;height:800px;z-index:44" data-layout-allow-overlap><div id="plan-mn-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M128 26 A78 78 0 1 0 174 142 A62 62 0 1 1 128 26 Z"/><path class="s acc-s" pathLength="1" d="M150 50 L150 66 M142 58 L158 58"/></svg></div></div></div>
+    <div id="plan-t16" class="clip el" data-start="60.533" data-duration="2.64" data-track-index="44" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:45"><div id="plan-t16-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="plan-t16-w0" class="w">it</span> <span id="plan-t16-w1" class="w">doesn't</span> <span id="plan-t16-w2" class="w">need</span> <span id="plan-t16-w3" class="w">it</span> <span id="plan-t16-w4" class="w">solved</span> <span id="plan-t16-w5" class="w acc">tonight</span></div></div></div>
+    <div id="plan-pp" class="clip el" data-start="64.333" data-duration="1.03" data-track-index="45" style="position:absolute;left:480px;top:40px;width:1440px;height:1040px;z-index:46" data-layout-allow-overlap><div id="plan-pp-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L150 20 L176 46 L176 168 L64 168 Z"/><path class="s" pathLength="1" d="M150 20 L150 46 L176 46"/><path class="s" pathLength="1" d="M44 40 L44 184 L156 184"/><path class="s" pathLength="1" d="M24 60 L24 198 L136 198"/><path class="s acc-s" pathLength="1" d="M88 76 L152 76 M88 104 L152 104 M88 132 L132 132"/></svg></div></div></div>
+    <div id="plan-t17" class="clip el" data-start="63.233" data-duration="2.18" data-track-index="46" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:47"><div id="plan-t17-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t17-w0" class="w">it</span> <span id="plan-t17-w1" class="w">needs</span> <span id="plan-t17-w2" class="w">a</span> <span id="plan-t17-w3" class="w alm">plan</span></div></div></div>
+    <div id="plan-sl" class="clip el" data-start="66.093" data-duration="2.637" data-track-index="47" style="position:absolute;left:0px;top:80px;width:1920px;height:1000px;z-index:48" data-layout-allow-overlap><div id="plan-sl-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 30 L120 30 Q134 30 134 44 L134 96 Q134 110 120 110 L60 110 L36 132 L40 110 L34 110 Q20 110 20 96 L20 44 Q20 30 34 30 Z"/><path class="s acc-s" pathLength="1" d="M80 128 L80 120 Q80 106 94 106 L166 106 Q180 106 180 120 L180 160 Q180 174 166 174 L160 174 L164 194 L140 174 L94 174 Q80 174 80 160 Z"/></svg></div></div></div>
+    <div id="plan-t18" class="clip el" data-start="67.04" data-duration="1.74" data-track-index="48" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:49"><div id="plan-t18-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t18-w0" class="w">a</span> <span id="plan-t18-w1" class="w">little</span> <span id="plan-t18-w2" class="w acc">silly</span></div></div></div>
+    <div id="plan-c3" class="clip el" data-start="71.08" data-duration="4.24" data-track-index="49" style="position:absolute;left:0px;top:0px;width:1920px;height:440px;z-index:50"><div id="plan-c3-in" class="in"><div class="card"><div class="card-k">2014 · SELF-TALK</div><div class="card-t">Before a stressful speech</div><div class="card-s">Kross et al.</div></div></div></div>
+    <div id="plan-mc" class="clip el" data-start="74.36" data-duration="0.91" data-track-index="50" style="position:absolute;left:0px;top:160px;width:1920px;height:920px;z-index:51" data-layout-allow-overlap><div id="plan-mc-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M76 30 Q76 14 100 14 Q124 14 124 30 L124 100 Q124 118 100 118 Q76 118 76 100 Z"/><path class="s" pathLength="1" d="M52 92 Q52 142 100 142 Q148 142 148 92 M100 142 L100 180 M70 182 L130 182"/><circle class="alm-f" cx="100" cy="56" r="8"/></svg></div></div></div>
+    <div id="plan-i1" class="clip el" data-start="75.22" data-duration="14.764" data-track-index="51" style="position:absolute;left:0px;top:300px;width:1280px;height:780px;z-index:52"><div id="plan-i1-in" class="in"><svg class="stick" id="plan-i1-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="plan-i1-aLu"><path class="s" d="M150 160 L150 255"/><g id="plan-i1-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-i1-aRu"><path class="s" d="M150 160 L150 255"/><g id="plan-i1-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-i1-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="plan-i1-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="plan-i1-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="plan-i1-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="plan-i1-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="plan-i1-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="plan-ib" class="clip el" data-start="76.88" data-duration="13.054" data-track-index="52" style="position:absolute;left:0px;top:0px;width:1640px;height:760px;z-index:53" data-layout-allow-overlap><div id="plan-ib-in" class="in"><div class="ico bub" style="width:210px;height:150px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:50px">I…</div></div></div></div>
+    <div id="plan-t19" class="clip el" data-start="75.58" data-duration="2.4" data-track-index="53" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:54"><div id="plan-t19-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t19-w0" class="w">talking</span> <span id="plan-t19-w1" class="w">to</span> <span id="plan-t19-w2" class="w acc">yourself</span></div></div></div>
+    <div id="plan-i2" class="clip el" data-start="77.88" data-duration="12.104" data-track-index="54" style="position:absolute;left:640px;top:300px;width:1280px;height:780px;z-index:55"><div id="plan-i2-in" class="in"><svg class="stick" id="plan-i2-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="plan-i2-aLu"><path class="s" d="M150 160 L150 255"/><g id="plan-i2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-i2-aRu"><path class="s" d="M150 160 L150 255"/><g id="plan-i2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-i2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="plan-i2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="plan-i2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="plan-i2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="plan-i2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="plan-i2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="plan-t20" class="clip el" data-start="77.88" data-duration="1.969" data-track-index="55" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:56"><div id="plan-t20-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t20-w0" class="w">or</span> <span id="plan-t20-w1" class="w">your</span> <span id="plan-t20-w2" class="w">own</span> <span id="plan-t20-w3" class="w acc">name</span></div></div></div>
+    <div id="plan-sb" class="clip el" data-start="79.749" data-duration="10.185" data-track-index="56" style="position:absolute;left:280px;top:0px;width:1640px;height:760px;z-index:57" data-layout-allow-overlap><div id="plan-sb-in" class="in"><div class="ico bub" style="width:266px;height:190px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:30px">Sam, you can do this.</div></div></div></div>
+    <div id="plan-t21" class="clip el" data-start="82.349" data-duration="2.04" data-track-index="57" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:58"><div id="plan-t21-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t21-w0" class="w">name</span> <span id="plan-t21-w1" class="w">group:</span> <span id="plan-t21-w2" class="w">less</span> <span id="plan-t21-w3" class="w acc">anxious</span></div></div></div>
+    <div id="plan-me" class="clip el" data-start="84.289" data-duration="5.645" data-track-index="58" style="position:absolute;left:1200px;top:0px;width:720px;height:960px;z-index:59" data-layout-allow-overlap><div id="plan-me-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M60 14 L84 76 M140 14 L116 76"/><path class="s" pathLength="1" d="M100 130 m-50 0 a50 50 0 1 0 100 0 a50 50 0 1 0 -100 0"/><path class="s alm-s" pathLength="1" d="M100 104 L108 122 L128 124 L113 137 L118 156 L100 146 L82 156 L87 137 L72 124 L92 122 Z"/></svg></div></div></div>
+    <div id="plan-t22" class="clip el" data-start="84.609" data-duration="1.76" data-track-index="59" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:60"><div id="plan-t22-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t22-w0" class="w">speeches</span> <span id="plan-t22-w1" class="w">rated</span> <span id="plan-t22-w2" class="w acc">better</span></div></div></div>
+    <div id="plan-t23" class="clip el" data-start="87.509" data-duration="2.475" data-track-index="60" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:61"><div id="plan-t23-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t23-w0" class="w">less</span> <span id="plan-t23-w1" class="w">beating</span> <span id="plan-t23-w2" class="w">themselves</span> <span id="plan-t23-w3" class="w acc">up</span></div></div></div>
+    <div id="plan-d1" class="clip el" data-start="89.884" data-duration="6.24" data-track-index="61" style="position:absolute;left:0px;top:300px;width:1400px;height:780px;z-index:62"><div id="plan-d1-in" class="in"><svg class="stick" id="plan-d1-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="plan-d1-aLu"><path class="s" d="M150 160 L150 255"/><g id="plan-d1-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-d1-aRu"><path class="s" d="M150 160 L150 255"/><g id="plan-d1-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-d1-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="plan-d1-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="plan-d1-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="plan-d1-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="plan-d1-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="plan-d1-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="plan-d2" class="clip el" data-start="89.884" data-duration="6.24" data-track-index="62" style="position:absolute;left:520px;top:300px;width:1400px;height:780px;z-index:63"><div id="plan-d2-in" class="in"><svg class="stick" id="plan-d2-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="plan-d2-aLu"><path class="s" d="M150 160 L150 255"/><g id="plan-d2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-d2-aRu"><path class="s" d="M150 160 L150 255"/><g id="plan-d2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="plan-d2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="plan-d2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="plan-d2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="plan-d2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="plan-d2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="plan-d2-m-tight"><path class="s" d="M136 104 L164 100"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="plan-sp" class="clip el" data-start="91.424" data-duration="2.51" data-track-index="63" style="position:absolute;left:0px;top:0px;width:1920px;height:940px;z-index:64" data-layout-allow-overlap><div id="plan-sp-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 40 L100 160"/><path class="s acc-s" pathLength="1" d="M80 100 L20 100 M44 76 L20 100 L44 124"/><path class="s acc-s" pathLength="1" d="M120 100 L180 100 M156 76 L180 100 L156 124"/></svg></div></div></div>
+    <div id="plan-t24" class="clip el" data-start="91.424" data-duration="2.56" data-track-index="64" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:65"><div id="plan-t24-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t24-w0" class="w">a</span> <span id="plan-t24-w1" class="w">little</span> <span id="plan-t24-w2" class="w acc">distance</span></div></div></div>
+    <div id="plan-ad" class="clip el" data-start="94.424" data-duration="1.65" data-track-index="65" style="position:absolute;left:0px;top:0px;width:1800px;height:760px;z-index:66" data-layout-allow-overlap><div id="plan-ad-in" class="in"><div class="ico bub" style="width:237.99999999999997px;height:170px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:32px">You've got this.</div></div></div></div>
+    <div id="plan-t25" class="clip el" data-start="94.084" data-duration="2.04" data-track-index="66" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:67"><div id="plan-t25-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t25-w0" class="w">advice</span> <span id="plan-t25-w1" class="w">to</span> <span id="plan-t25-w2" class="w">a</span> <span id="plan-t25-w3" class="w acc">friend</span></div></div></div>
+    <div id="plan-fq" class="clip el" data-start="96.024" data-duration="2.94" data-track-index="67" style="position:absolute;left:0px;top:60px;width:1920px;height:1020px;z-index:68" data-layout-allow-overlap><div id="plan-fq-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="plan-t26" class="clip el" data-start="96.99899999999998" data-duration="2.04" data-track-index="68" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:69"><div id="plan-t26-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="plan-t26-w0" class="w">easier</span> <span id="plan-t26-w1" class="w">for</span> <span id="plan-t26-w2" class="w">a</span> <span id="plan-t26-w3" class="w acc">friend<span class="tail">?</span></span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"plan-pl","t":"stick","from":"bottom","exit":null,"in":0.2,"out":9.552999999999999,"outDur":0.3,"poses":[["idle",0.2],["headDown",6.713]],"mouth":[["neutral",0.2],["frown",6.713]]},{"id":"plan-pt","t":"icon","from":"pop","exit":null,"in":2.68,"out":9.552999999999999,"outDur":0.25},{"id":"plan-pc","t":"icon","from":"pop","exit":null,"in":3.633,"out":9.552999999999999,"outDur":0.25},{"id":"plan-t0","t":"text","from":"top","exit":null,"in":0.94,"out":3.393,"outDur":0.3,"words":[1.34,1.58,1.82,2.32,2.42]},{"id":"plan-t1","t":"text","from":"top","exit":null,"in":3.633,"out":5.793,"outDur":0.3,"words":[3.633,4.133,4.713]},{"id":"plan-tp","t":"stick","from":"left","exit":null,"in":6.713,"out":9.552999999999999,"outDur":0.3,"poses":[["point",6.713]],"mouth":[["neutral",6.713]]},{"id":"plan-t2","t":"text","from":"top","exit":null,"in":6.713,"out":9.552999999999999,"outDur":0.3,"words":[8.853,8.853,8.853,8.853]},{"id":"plan-c1","t":"card","from":"top","exit":null,"in":10.853,"out":14.528,"outDur":0.3},{"id":"plan-zp","t":"icon","from":"pop","exit":null,"in":10.853,"out":14.528,"outDur":0.25},{"id":"plan-wt","t":"stick","from":"left","exit":null,"in":15.088,"out":25.589000000000002,"outDur":0.3,"poses":[["give",16.888],["happy",22.908]],"mouth":[["neutral",15.088],["smile",23.988]]},{"id":"plan-np","t":"icon","from":"pop","exit":null,"in":16.888,"out":25.589000000000002,"outDur":0.25},{"id":"plan-rt","t":"icon","from":"pop","exit":null,"in":16.888,"out":25.589000000000002,"outDur":0.25},{"id":"plan-t3","t":"text","from":"top","exit":null,"in":16.888,"out":18.928,"outDur":0.3,"words":[16.788,16.888,16.988]},{"id":"plan-wc","t":"icon","from":"pop","exit":null,"in":19.688,"out":25.589000000000002,"outDur":0.25},{"id":"plan-wo","t":"icon","from":"pop","exit":null,"in":20.668,"out":23.748,"outDur":0.25},{"id":"plan-t4","t":"text","from":"top","exit":null,"in":20.548000000000002,"out":21.948,"outDur":0.3,"words":[20.108,20.668,21.168]},{"id":"plan-mo","t":"icon","from":"pop","exit":null,"in":22.908,"out":25.589000000000002,"outDur":0.25},{"id":"plan-t5","t":"text","from":"top","exit":null,"in":22.908,"out":25.589000000000002,"outDur":0.3,"words":[22.908,23.008,23.108]},{"id":"plan-ip","t":"icon","from":"pop","exit":null,"in":27.889,"out":31.001,"outDur":0.25},{"id":"plan-ic","t":"icon","from":"pop","exit":null,"in":29.889,"out":31.001,"outDur":0.25},{"id":"plan-ipl","t":"text","from":"bottom","exit":null,"in":27.889,"out":31.001,"outDur":0.3,"words":[27.989]},{"id":"plan-icl","t":"text","from":"bottom","exit":null,"in":29.889,"out":31.001,"outDur":0.3,"words":[29.989]},{"id":"plan-t6","t":"text","from":"top","exit":null,"in":27.889,"out":31.001,"outDur":0.3,"words":[27.889,28.669,28.769]},{"id":"plan-c2","t":"card","from":"top","exit":null,"in":33.761,"out":37.800999999999995,"outDur":0.3},{"id":"plan-cd","t":"icon","from":"pop","exit":null,"in":37.041,"out":37.800999999999995,"outDur":0.25},{"id":"plan-rd","t":"stick","from":"left","exit":null,"in":38.381,"out":60.092,"outDur":0.3,"poses":[["idle",38.381],["give",42.993],["happy",58.992]],"mouth":[["neutral",38.381],["o",45.253],["neutral",50.353],["smile",58.992]]},{"id":"plan-gc","t":"icon","from":"pop","exit":null,"in":39.861,"out":58.751999999999995,"outDur":0.25},{"id":"plan-gs","t":"icon","from":"pop","exit":null,"in":39.861,"out":58.751999999999995,"outDur":0.25},{"id":"plan-t7","t":"text","from":"top","exit":null,"in":39.401,"out":41.672999999999995,"outDur":0.3,"words":[39.241,39.861,39.861]},{"id":"plan-bk","t":"icon","from":"pop","exit":null,"in":42.993,"out":46.973,"outDur":0.25},{"id":"plan-t8","t":"text","from":"top","exit":null,"in":42.592999999999996,"out":43.992999999999995,"outDur":0.3,"words":[43.493,43.593,43.693]},{"id":"plan-t9","t":"text","from":"top","exit":null,"in":45.253,"out":46.973,"outDur":0.3,"words":[46.233,46.333,46.433,46.533]},{"id":"plan-t10","t":"text","from":"top","exit":null,"in":48.553,"out":49.952999999999996,"outDur":0.3,"words":[48.553,48.893,49.333]},{"id":"plan-pn","t":"icon","from":"pop","exit":null,"in":51.213,"out":60.092,"outDur":0.25},{"id":"plan-t11","t":"text","from":"top","exit":null,"in":50.693,"out":52.092999999999996,"outDur":0.3,"words":[50.533,50.733,51.213]},{"id":"plan-t12","t":"text","from":"top","exit":null,"in":52.333,"out":54.232,"outDur":0.3,"words":[52.333,52.892,53.552]},{"id":"plan-nx","t":"icon","from":"pop","exit":null,"in":54.852,"out":55.611999999999995,"outDur":0.25},{"id":"plan-t13","t":"text","from":"top","exit":null,"in":54.472,"out":55.611999999999995,"outDur":0.3,"words":[54.472,54.572,54.852,55.052,55.212]},{"id":"plan-ny","t":"icon","from":"pop","exit":null,"in":56.132,"out":60.092,"outDur":0.25},{"id":"plan-t14","t":"text","from":"top","exit":null,"in":55.852,"out":57.111999999999995,"outDur":0.3,"words":[55.852,55.972,56.132,56.532]},{"id":"plan-t15","t":"text","from":"top","exit":null,"in":57.572,"out":60.092,"outDur":0.3,"words":[57.452,58.072,58.992,59.252]},{"id":"plan-cm","t":"stick","from":"bottom","exit":null,"in":60.472,"out":65.07300000000001,"outDur":0.3,"poses":[["idle",60.472],["happy",64.333]],"mouth":[["neutral",60.472],["smile",64.333]]},{"id":"plan-mn","t":"icon","from":"pop","exit":null,"in":62.212,"out":62.833,"outDur":0.25},{"id":"plan-t16","t":"text","from":"top","exit":null,"in":60.533,"out":62.833,"outDur":0.3,"words":[60.772,60.772,61.212,61.832,61.832,62.212]},{"id":"plan-pp","t":"icon","from":"pop","exit":null,"in":64.333,"out":65.07300000000001,"outDur":0.25},{"id":"plan-t17","t":"text","from":"top","exit":null,"in":63.233,"out":65.07300000000001,"outDur":0.3,"words":[63.073,63.233,64.253,64.333]},{"id":"plan-sl","t":"icon","from":"pop","exit":null,"in":66.093,"out":68.44000000000001,"outDur":0.25},{"id":"plan-t18","t":"text","from":"top","exit":null,"in":67.04,"out":68.44000000000001,"outDur":0.3,"words":[67.373,67.533,67.753]},{"id":"plan-c3","t":"card","from":"top","exit":null,"in":71.08,"out":74.98,"outDur":0.3},{"id":"plan-mc","t":"icon","from":"pop","exit":null,"in":74.36,"out":74.98,"outDur":0.25},{"id":"plan-i1","t":"stick","from":"left","exit":null,"in":75.22,"out":89.644,"outDur":0.3,"poses":[["strain",75.58],["holdHead",83.249],["headDown",88.189]],"mouth":[["tight",75.58],["frown",88.189]]},{"id":"plan-ib","t":"bubble","from":"pop","exit":null,"in":76.88,"out":89.644,"outDur":0.25},{"id":"plan-t19","t":"text","from":"top","exit":null,"in":75.58,"out":77.64,"outDur":0.3,"words":[75.94,75.94,76.04]},{"id":"plan-i2","t":"stick","from":"right","exit":null,"in":77.88,"out":89.644,"outDur":0.3,"poses":[["idle",77.88],["proud",81.989]],"mouth":[["neutral",77.88],["smile",79.749]]},{"id":"plan-t20","t":"text","from":"top","exit":null,"in":77.88,"out":79.509,"outDur":0.3,"words":[78.8,78.8,78.8,79]},{"id":"plan-sb","t":"bubble","from":"pop","exit":null,"in":79.749,"out":89.644,"outDur":0.25},{"id":"plan-t21","t":"text","from":"top","exit":null,"in":82.349,"out":84.049,"outDur":0.3,"words":[81.989,82.209,82.849,83.249]},{"id":"plan-me","t":"icon","from":"pop","exit":null,"in":84.289,"out":89.644,"outDur":0.25},{"id":"plan-t22","t":"text","from":"top","exit":null,"in":84.609,"out":86.02900000000001,"outDur":0.3,"words":[85.129,85.469,85.469]},{"id":"plan-t23","t":"text","from":"top","exit":null,"in":87.509,"out":89.644,"outDur":0.3,"words":[87.509,88.189,88.549,88.969]},{"id":"plan-d1","t":"stick","from":"left","exit":null,"in":89.884,"out":95.784,"outDur":0.3,"poses":[["idle",89.884],["point",94.424]],"mouth":[["smile",89.884]]},{"id":"plan-d2","t":"stick","from":"right","exit":null,"in":89.884,"out":95.784,"outDur":0.3,"poses":[["headDown",89.884],["happy",95.144]],"mouth":[["frown",89.884],["smile",95.144]]},{"id":"plan-sp","t":"icon","from":"pop","exit":null,"in":91.424,"out":93.644,"outDur":0.25},{"id":"plan-t24","t":"text","from":"top","exit":null,"in":91.424,"out":93.644,"outDur":0.3,"words":[91.024,91.204,91.424]},{"id":"plan-ad","t":"bubble","from":"pop","exit":null,"in":94.424,"out":95.784,"outDur":0.25},{"id":"plan-t25","t":"text","from":"top","exit":null,"in":94.084,"out":95.784,"outDur":0.3,"words":[94.424,94.824,95.064,95.144]},{"id":"plan-fq","t":"icon","from":"pop","exit":null,"in":96.024,"out":98.67399999999999,"outDur":0.25},{"id":"plan-t26","t":"text","from":"top","exit":null,"in":96.99899999999998,"out":98.69899999999998,"outDur":0.3,"words":[97.084,97.804,97.804,97.964]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4}};
+      const MOUTHS = ["neutral","smile","frown","o","tight"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["plan"] = tl;
+    })();
+  </script>
+</template>
