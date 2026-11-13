@@ -216,3 +216,37 @@ export function skeletonCouple() {
   <path d="${HEART(0.42, 550, 130)}" fill="${RED}" stroke="${INK}" stroke-width="9"/>
 </svg>`;
 }
+
+// 06 · up to the nose in water, thumbs up, ignoring the lifebuoy right beside them
+export function imFine() {
+  const wave = (y, a = 26) => `M-1400 ${y} C -1330 ${y - a} -1270 ${y + a} -1200 ${y} S -1070 ${y - a} -1000 ${y} S -870 ${y + a} -800 ${y} S -670 ${y - a} -600 ${y} S -470 ${y + a} -400 ${y} S -270 ${y - a} -200 ${y} S -70 ${y + a} 0 ${y} C 70 ${y - a} 130 ${y + a} 200 ${y} S 330 ${y - a} 400 ${y} S 530 ${y + a} 600 ${y} S 730 ${y - a} 800 ${y} S 930 ${y + a} 1000 ${y}`;
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wf" gradientUnits="userSpaceOnUse" x1="0" x2="1000" y1="0" y2="0"><stop offset="0" stop-color="#DCE6D8" stop-opacity="0"/><stop offset="0.16" stop-color="#DCE6D8"/><stop offset="1" stop-color="#DCE6D8"/></linearGradient>
+    <linearGradient id="ws" gradientUnits="userSpaceOnUse" x1="0" x2="1000" y1="0" y2="0"><stop offset="0" stop-color="${INK}" stop-opacity="0"/><stop offset="0.16" stop-color="${INK}"/><stop offset="1" stop-color="${INK}"/></linearGradient>
+    <linearGradient id="wv" x1="0" x2="0" y1="0" y2="1"><stop offset="0.6" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <mask id="wm"><rect x="0" y="0" width="800" height="1000" fill="url(#wv)"/></mask>
+  </defs>
+  <circle cx="420" cy="520" r="150" fill="${CARD}" stroke="${INK}" stroke-width="13"/>
+  <path d="M335 432 L392 412 M505 432 L448 412" stroke="${INK}" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="372" cy="476" r="25" fill="${INK}"/><circle cx="468" cy="476" r="25" fill="${INK}"/>
+  <circle cx="380" cy="467" r="8" fill="${CARD}"/><circle cx="476" cy="467" r="8" fill="${CARD}"/>
+  <path d="M585 380 C571 410 569 428 585 437 C601 428 599 410 585 380 Z" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/>
+  <path d="M640 640 C650 540 664 420 672 300" fill="none" stroke="${INK}" stroke-width="24" stroke-linecap="round"/>
+  <rect x="632" y="226" width="92" height="78" rx="24" fill="${CARD}" stroke="${INK}" stroke-width="10"/>
+  <path d="M652 230 C648 192 654 150 674 144 C694 140 698 168 688 230" fill="${CARD}" stroke="${INK}" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M662 252 L716 252 M662 276 L716 276" stroke="${INK}" stroke-width="5"/>
+  <g>
+    <path d="${wave(570)} L1000 1200 L-1400 1200 Z" fill="#DCE6D8"/>
+    <path d="${wave(680, 18)}" fill="none" stroke="${INK}" stroke-width="5" opacity="0.35"/>
+    <path d="${wave(790, 14)}" fill="none" stroke="${INK}" stroke-width="5" opacity="0.25"/>
+  </g>
+  <path d="${wave(570)}" fill="none" stroke="${INK}" stroke-width="11"/>
+  <circle cx="318" cy="552" r="11" fill="none" stroke="${INK}" stroke-width="4"/><circle cx="290" cy="524" r="7" fill="none" stroke="${INK}" stroke-width="4"/>
+  <g transform="rotate(-12 175 590)">
+    <circle cx="175" cy="590" r="72" fill="none" stroke="${INK}" stroke-width="60"/>
+    <circle cx="175" cy="590" r="72" fill="none" stroke="#FFFFFF" stroke-width="44"/>
+    <circle cx="175" cy="590" r="72" fill="none" stroke="${RED}" stroke-width="44" stroke-dasharray="56.5 56.5"/>
+  </g>
+</svg>`;
+}

@@ -1,8 +1,8 @@
-// Extra thumbnails (D) for videos 7 to 11, same layout as video 12's: KnowSense-style layout in our brand: one big hand-built ink figure (figures.mjs) on the right, short text on the left with
+// Extra thumbnails (D) for videos 6 to 11, same layout as video 12's: KnowSense-style layout in our brand: one big hand-built ink figure (figures.mjs) on the right, short text on the left with
 // one word in a red box. Each variant is a still HyperFrames composition (1920x1080).
 import { mkdirSync, writeFileSync, copyFileSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { skeletonCouple, nervousPhone, fallingHeart, hookedHeart, marionette } from "./figures.mjs";
+import { imFine, skeletonCouple, nervousPhone, fallingHeart, hookedHeart, marionette } from "./figures.mjs";
 
 const here = new URL(".", import.meta.url).pathname;
 const root = join(here, "..");
@@ -25,6 +25,9 @@ const css = `
 `;
 
 const variants = {
+  v06: { fig: imFine(), box: "left:1060px; top:140px; width:820px; height:1025px",
+         body: `<div class="t" style="top:150px; font-size:140px">Why You<br><span class="box">Never</span><br>Ask for Help</div>
+         <div class="bubble" style="left:1250px; top:150px; font-size:72px">I'm fine.</div>` },
   v07: { fig: skeletonCouple(), box: "left:860px; top:80px; width:1040px; height:946px",
          body: `<div class="t" style="top:300px; font-size:140px">Why Some<br>Couples<br><span class="box">Last</span></div>` },
   v08: { fig: nervousPhone(), box: "left:1080px; top:60px; width:800px; height:1000px",

@@ -73,3 +73,7 @@ Piano samples: Salamander Grand Piano by Alexander Holm (CC BY 3.0). Sound effec
 ## Still to do
 
 Pinned comment, tags and Shorts.
+
+## Thumbnail D (new character style)
+
+`06-thumbnail-D-im-fine.jpg`: someone up to their chin in water, giving a thumbs-up and saying "I'm fine." while a lifebuoy floats right beside them, untouched. It's the person who won't ask for help, in one picture. It uses the locked layout from video 12 on, so it can go into Test & Compare against the current main thumbnail.
