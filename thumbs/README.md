@@ -52,6 +52,13 @@ Designed at 1920×1080 and exported as 1280×720 JPG to `out/`. `out/all-thumbna
 | **B** | A skeleton still holding up its card | [20 years] for $6,000 | "Almost paid off…" | Dark-funny, pause-worthy, true (minimum-only: 20+ years) | 0:56 |
 | **C** | A determined red telephone | One call. [Lower] rate. | "Just ask." | Easy fix; "which call?" | 6:33 |
 
+## 06 · How Much Money Should You Keep in the Bank?
+| | Character and scene | Text | Bubble | Why someone clicks | Paid off at |
+|---|---|---|---|---|---|
+| **A** | A worried car with a bandage and a smoke puff | Could you pay [$1,200] today? | "clunk." | Everyone knows the noise and the stomach drop | 0:00 hook |
+| **B** | A sad, empty wallet with a moth flying out | [1 in 3] can't cover $400 | — | Surprising fact (Fed: only 63% could) | 0:23 |
+| **C** | A calm piggy bank under an umbrella in the rain | How much is [enough]? | — | The question the video answers with a clear number | 4:05 |
+
 EP05's earlier set (`ep05/brand/out/`) is still there. Test the new ones against it if you like.
 
 ---
@@ -66,3 +73,4 @@ Fill this in as results arrive (YouTube shows the watch-time share each thumbnai
 | 03 | | | | | | |
 | 04 | | | | | | |
 | 05 | | | | | | |
+| 06 | | | | | | |

@@ -22,6 +22,7 @@ export function face(type, s = 1) {
   if (type === "sleepy") f = `<path d="M -70 4 Q -46 20 -22 4 M 22 4 Q 46 20 70 4" fill="none" ${I(10)}/><ellipse cx="0" cy="62" rx="14" ry="18" fill="${C.ink}"/>` + blush(84, 34);
   if (type === "shocked") f = eye(-46, { p: 8, ry: 36 }) + eye(46, { p: 8, ry: 36 }) + `<path d="M -76 -64 Q -46 -84 -18 -64 M 76 -64 Q 46 -84 18 -64" fill="none" ${I(9)}/><ellipse cx="0" cy="76" rx="22" ry="28" fill="${C.ink}"/>` + sweat(100, -40);
   if (type === "confident") f = eye(-46, { dy: 6 }) + eye(46, { dy: 6 }) + `<path d="M -76 -46 L -20 -32 M 76 -46 L 20 -32" ${I(10)}/><path d="M -46 48 Q 0 96 46 48 Z" fill="${C.ink}" ${I(8)}/><path d="M -30 56 L 30 56 L 26 66 L -26 66 Z" fill="${C.white}"/>`;
+  if (type === "sad") f = eye(-46, { dy: 10 }) + eye(46, { dy: 10 }) + `<path d="M -76 -40 L -24 -54 M 76 -40 L 24 -54" ${I(9)}/><path d="M -34 84 Q 0 56 34 84" fill="none" ${I(10)}/>`;
   if (type === "hopeful") f = eye(-46, { dy: -8, ry: 34 }) + eye(46, { dy: -8, ry: 34 }) + `<path d="M -74 -60 Q -46 -74 -20 -58 M 74 -60 Q 46 -74 20 -58" fill="none" ${I(9)}/><path d="M -36 54 Q 0 86 36 54" fill="none" ${I(10)}/>` + blush(84, 40);
   return `<g transform="scale(${s})">${f}</g>`;
 }
@@ -195,4 +196,43 @@ export function boldPhone() { // the red telephone, ready to call
     <path d="M -400 -500 Q -400 -640 -260 -640 L 260 -640 Q 400 -640 400 -500 L 290 -470 Q 290 -540 220 -540 L -220 -540 Q -290 -540 -290 -470 Z" fill="${C.red}" ${I()}/>
     <path d="M -330 -200 Q -470 -160 -440 -420" fill="none" ${I(10)}/>
     <path d="M 460 -760 q 60 60 0 130 M 540 -820 q 100 110 0 250" fill="none" ${I(12)}/><path d="M -460 -760 q -60 60 0 130 M -540 -820 q -100 110 0 250" fill="none" ${I(12)}/>`;
+}
+
+// ---------- EP06 ----------
+export function worriedCar() { // the car that just made "the noise"
+  return shadow(380) + `
+    <path d="M -380 -90 L -380 -230 Q -372 -270 -320 -280 L -210 -292 L -120 -420 Q -96 -450 -44 -450 L 150 -450 Q 196 -450 226 -414 L 300 -292 L 370 -280 Q 404 -270 404 -230 L 404 -90 Z" fill="${C.slateDk}" ${I()}/>
+    <path d="M -170 -300 L -96 -404 L 150 -404 Q 180 -404 198 -380 L 262 -300 Z" fill="${C.slate}" ${I(9)}/>
+    <g transform="translate(40 -350) scale(0.85)">${face("worried", 1)}</g>
+    <path d="M -60 -190 Q 0 -215 60 -185" fill="none" ${I(10)}/>
+    <circle cx="-230" cy="-90" r="84" fill="${C.ink}"/><circle cx="-230" cy="-90" r="34" fill="${C.grey}"/>
+    <circle cx="250" cy="-90" r="84" fill="${C.ink}"/><circle cx="250" cy="-90" r="34" fill="${C.grey}"/>
+    <g transform="translate(-140 -230) rotate(-20)"><rect x="-70" y="-24" width="140" height="48" rx="12" fill="#E8CFA0" ${I(7)}/><path d="M -20 -24 L -20 24 M 20 -24 L 20 24" stroke="${C.wood}" stroke-width="5"/></g>
+    <path d="M 420 -180 q 40 -40 0 -80 q -40 -40 0 -80" fill="none" stroke="${C.grey}" stroke-width="24" stroke-linecap="round"/>
+    <circle cx="470" cy="-420" r="40" fill="${C.grey}" opacity="0.8"/><circle cx="520" cy="-480" r="28" fill="${C.grey}" opacity="0.6"/>`;
+}
+export function emptyWallet() { // open, nothing inside, a moth flies out
+  return shadow(300) + `
+    <path d="M -320 -500 L 320 -500 L 320 0 L -320 0 Z" fill="${C.wood}" ${I()}/>
+    <path d="M -300 -500 L -260 -640 L 280 -640 L 300 -500" fill="${C.woodDk}" ${I(10)}/>
+    <path d="M 120 -360 L 340 -360 L 340 -170 L 120 -170 Q 80 -265 120 -360 Z" fill="${C.woodDk}" ${I(10)}/><circle cx="170" cy="-265" r="26" fill="${C.gold}" ${I(8)}/>
+    <g transform="translate(-90 -250)">${face("sad", 1.1)}</g>
+    <g transform="translate(-150 -800)"><ellipse cx="-50" cy="0" rx="60" ry="36" fill="${C.grey}" ${I(7)} transform="rotate(-20 -50 0)"/><ellipse cx="50" cy="0" rx="60" ry="36" fill="${C.grey}" ${I(7)} transform="rotate(20 50 0)"/><ellipse cx="0" cy="6" rx="14" ry="34" fill="${C.ink}"/><path d="M -6 -26 Q -20 -60 -36 -66 M 6 -26 Q 20 -60 36 -66" fill="none" ${I(5)}/></g>
+    <path d="M -150 -740 q 20 60 -20 120 q -30 60 20 100" fill="none" stroke="${C.ink}" stroke-width="5" stroke-dasharray="14 14"/>`;
+}
+export function umbrellaPiggy() { // calm piggy under an umbrella while it pours
+  const drops = [[-420, -900], [-340, -760], [380, -920], [460, -770], [-480, -600], [520, -600], [300, -700], [-260, -620]].map(([x, y]) => `<path d="M ${x} ${y} l -14 50" stroke="${C.slateDk}" stroke-width="12" stroke-linecap="round"/>`).join("");
+  return shadow(340) + drops + `
+    <g transform="translate(0 -80)">
+      <ellipse cx="0" cy="-200" rx="300" ry="200" fill="${C.pink}" ${I()}/>
+      <path d="M -160 -10 L -160 80 M -60 10 L -60 90 M 80 10 L 80 90 M 180 -10 L 180 80" ${I(30)}/>
+      <ellipse cx="280" cy="-210" rx="70" ry="80" fill="${C.pink}" ${I(10)}/><ellipse cx="262" cy="-214" rx="12" ry="16" fill="${C.ink}"/><ellipse cx="300" cy="-214" rx="12" ry="16" fill="${C.ink}"/>
+      <path d="M 120 -370 L 160 -460 L 210 -350 Z" fill="${C.pink}" ${I(10)}/>
+      <rect x="-80" y="-410" width="150" height="26" rx="12" fill="${C.ink}"/>
+      <path d="M -300 -210 q -70 -20 -50 -80 q 40 -20 30 30" fill="none" ${I(10)}/>
+      <g transform="translate(110 -250)">${face("content", 0.9)}</g>
+    </g>
+    <path d="M 0 -390 L 0 -960" ${I(14)}/>
+    <path d="M -480 -820 Q -480 -1080 0 -1100 Q 480 -1080 480 -820 Q 360 -860 240 -820 Q 120 -860 0 -820 Q -120 -860 -240 -820 Q -360 -860 -480 -820 Z" fill="${C.red}" ${I()}/>
+    <path d="M 0 -1100 Q -160 -980 -240 -820 M 0 -1100 Q 160 -980 240 -820" fill="none" ${I(8)}/>`;
 }

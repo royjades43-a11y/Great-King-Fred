@@ -34,6 +34,10 @@ export const THUMBS = [
   { file: "05-thumbnail-A-170-trap", text: ["The [$170]", "trap"], char: K.lureCard, x: 1330, s: 0.82, bubble: { t: "Only $170 a month!", x: 1350, y: 200, w: 600, tail: "d" } },
   { file: "05-thumbnail-B-20-years", text: ["[20 years]", "for $6,000"], char: K.skeletonPayer, x: 1360, s: 0.8, bubble: { t: "Almost paid off…", x: 1590, y: 110, w: 480, tail: "dl" } },
   { file: "05-thumbnail-C-one-call", text: ["One call.", "[Lower] rate."], char: K.boldPhone, x: 1400, s: 0.88, bubble: { t: "Just ask.", x: 1660, y: 150, w: 300, tail: "dl" } },
+  // 06 — How Much Money Should You Keep in the Bank?
+  { file: "06-thumbnail-A-pay-1200-today", text: ["Could you", "pay [$1,200]", "today?"], char: K.worriedCar, x: 1380, y: 900, s: 0.95, size: 140, bubble: { t: "clunk.", x: 1640, y: 220, tail: "dl" } },
+  { file: "06-thumbnail-B-1-in-3", text: ["[1 in 3]", "can't cover", "$400"], char: K.emptyWallet, x: 1470, s: 0.9, size: 140 },
+  { file: "06-thumbnail-C-how-much-enough", text: ["How much", "is [enough]?"], char: K.umbrellaPiggy, x: 1400, y: 990, s: 0.74 },
 ];
 
 function bubbleSvg({ t, x, y, tail = "d" }) {
