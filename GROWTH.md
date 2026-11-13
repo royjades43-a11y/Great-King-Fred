@@ -60,3 +60,84 @@ These are ranges, not promises: most of the outcome is title + thumbnail + first
 - Same visual system every time; change the topic, never the look.
 - No clickbait the video doesn't pay off: it kills retention, and retention drives
   recommendations.
+
+---
+
+## What the 2026 research says, and what we change (Nov 2026)
+
+These are sources read for this update; vidIQ's own pages were read through search, since this environment can't open vidiq.com directly. Treat any single number as a rough guide; our own YouTube Studio data beats all of them.
+
+### 1. The first 30 seconds decide the video
+- vidIQ measures intros by the share of viewers still watching at 0:30 (its "hook score"). In its example,
+  retention falls from about 95% to about 65% by 0:30, then flattens. Slow setup and dead air cause most of that
+  drop. ([vidIQ: retention](https://vidiq.com/blog/post/increase-audience-retention-youtube/),
+  [vidIQ: retention secrets](https://vidiq.com/blog/post/audience-retention-secrets-youtube/))
+- A common hook shape: prove the title is true with one real example, say why it matters to *you*, then say what
+  the video will cover. ([OutlierKit](https://outlierkit.com/resources/youtube-hooks-and-retention/))
+- **Our change:** the video 11 and 12 hooks run about 55–60 s before the first study. From video 13 on:
+  - the relatable "you" moment in the first 10 s (we already do this well)
+  - the promise ("by the end of this video…") by about 0:20
+  - the first real finding or surprising fact by about 0:40
+  - cut the "psychologists have studied X, Y and Z" list down to one teaser line
+
+### 2. Hold attention in the middle
+- Guides recommend 2–3 open loops per video and a re-hook every 60–90 s. Retention often dips around minute 3, so
+  re-open a loop there. ([OutlierKit script writing](https://alpha.outlierkit.com/resources/youtube-script-writing/),
+  [Overseer: script template](https://www.overseeros.com/blog/youtube-script-template))
+- **Our change:** keep the question every ~90 s. Add a deliberate re-hook at 2:30–3:30, such as "But that's not
+  the strangest part." or a teaser of the twist. Write the twist and payoffs first, then the hook last.
+
+### 3. Packaging: thumbnail and title
+- A consistent thumbnail style helps returning viewers spot you. Design for phones first, and judge CTR against
+  your own channel average, not a universal number. A high CTR with a fast drop-off means the thumbnail
+  over-promised. ([vidIQ: thumbnail tips](https://vidiq.com/blog/post/youtube-thumbnail-tips/))
+- Faceless channels: 5 words maximum, and do the one-second glance test.
+  ([Fluxnote](https://fluxnote.io/guides/faceless-channel-thumbnail-optimization))
+- vidIQ's 2026 study of 4M+ titles: specific story promises beat generic formulas, and question-ending titles
+  averaged about 0.82× baseline. ([vidIQ title study](https://vidiq.com/research/youtube-title-formulas-study/))
+  The study is observational, so this is a lead, not a law.
+- **Test & Compare now tests titles as well as thumbnails** (up to 3 variants). It picks the winner by
+  **watch-time share**, not clicks, over up to about 2 weeks.
+  ([YouTube Help](https://support.google.com/youtube/answer/16391400?hl=en))
+- **Our change:**
+  - Thumbnail style is locked (see `STYLE.md`).
+  - Keep "The Psychology of People Who…" as the main title, because it matches searches and doesn't end in "?".
+  - Put our alternate titles into Test & Compare, paired with thumbnails.
+  - Make every video's thumbnail promise something the first 30 s pays off.
+
+### 4. Shorts: the funnel, not the house
+- vidIQ's position: long-form is the foundation (watch time, loyalty, revenue). Shorts expand reach, at roughly a
+  30/70 split. Long-form converts viewers to subscribers far better.
+  ([vidIQ: Shorts vs longs](https://rosetta.to/u/vidiq/shorts-vs-longs-how-to-get-more-views-in-2026),
+  [AIR, 18,000 channels](https://air.io/en/audience-growth/do-youtube-shorts-help-your-long-form-videos-grow-data-from-18000-channels))
+- The Shorts feed tests each Short on a small seed audience and judges **viewed vs swiped away**. A rough target is
+  75%+ viewed, and the hook has to land in the first 1–2 seconds.
+  ([vidIQ: Shorts algorithm](https://vidiq.com/blog/post/youtube-shorts-algorithm/),
+  [Subscribr](https://subscribr.ai/p/youtube-shorts-analytics-metrics-growth))
+- Keep Shorts to about 15–60 s. End on a line that loops back into the first line (replays count as views since
+  March 2025). Use YouTube's **Related Video** link to send viewers to the long video.
+  ([Toptal](https://www.toptal.com/creator/post/youtube-shorts-length),
+  [Adobe length study](https://www.adobe.com/express/learn/blog/youtube-shorts-length-study))
+- New channels: in vidIQ's study of 448k new channels, a typical first Short got about 1,362 views in 30 days,
+  against about 180 for a typical first long video. Shorts are how new channels get seen.
+  ([vidIQ first-10-videos study](https://vidiq.com/research/youtube-first-10-videos-study/))
+- **Our change:** 3 Shorts per long video (about 3 Shorts a week with one long video a week).
+  - **Format:** 9:16, 20–45 s, one finding each, cut from the long video's best moment. The first frame is the
+    hook text, there's no intro, and the last line loops to the first.
+  - **Linking:** each Short links to its long video with Related Video.
+
+### 5. The weekly numbers loop (every Sunday, 10 minutes)
+Send me a screenshot of YouTube Studio for each new video, and I'll turn it into fixes for the next one. I need:
+- impressions CTR vs the channel average
+- retention at 0:30 and the retention graph, with its dips
+- average view duration
+- Shorts: viewed vs swiped away
+- traffic sources
+- Test & Compare results
+
+### Resources that would make me better
+- **Transcripts of videos you admire** (paste them, or attach a .txt or .srt). I'll break down the hook, pacing,
+  loops and CTA, and fold what works into `STYLE.md`.
+- **Your YouTube Studio screenshots** (see section 5). This is the most valuable input by far.
+- **Direct web access:** allowing `vidiq.com` and `www.youtube.com` in this environment's network settings would let
+  me read full articles and pull captions myself.
