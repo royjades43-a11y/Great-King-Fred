@@ -1,7 +1,12 @@
 # Video 12 · YouTube upload copy
 
 - **File:** `12-people-who-overthink-everything-4K-YouTube.mp4` (4K, 9:22, long enough for mid-roll ads).
-- **Thumbnails:** see below. Upload A as the main one and add B and C in Test & Compare.
+- **Thumbnails:**
+  - `12-thumbnail-A-youre-overthinking-it.jpg` (main)
+  - `12-thumbnail-B-why-your-brain-wont-stop.jpg`
+  - `12-thumbnail-C-91-percent-of-worries.jpg`
+
+  Upload A as the main one and add B and C in Test & Compare.
 
 ## Title
 
@@ -14,6 +19,20 @@ Alternates to test later:
 - Why You Overthink Everything (And the One Move That Stops It)
 - Why Your Brain Won't Stop Replaying Things, According to Psychology
 - 91% of Your Worries Never Happen. Here's Why You Still Overthink
+
+## Thumbnails
+
+A new layout, borrowed from channels like KnowSense and kept in our brand: one big, instantly readable character
+on the right, short Montserrat text on the left, and one key word in a red box. The characters are drawn as ink
+illustrations (`ot-video/thumbnail/figures.mjs`), not stick figures, so they stand out in a feed.
+
+- **A · You're Overthinking It** (main): a skeleton still staring at a phone that says "ok.", with a cobweb on its
+  skull and a spider hanging off the phone. It's the "waiting forever for a reply" joke everyone knows, and it
+  matches the video's opening.
+- **B · Why Your Brain Won't Stop**: a head in profile with a red tangled scribble where the thoughts are, and one
+  loose thread. It shows the loop the video explains.
+- **C · 91% of Worries Never Happen**: a sheet ghost whispering "what if…?". Worries are ghosts: loud, scary and
+  mostly not real. The number is from LaFreniere & Newman (2020).
 
 ## Description
 
