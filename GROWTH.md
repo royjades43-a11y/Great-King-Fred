@@ -121,10 +121,15 @@ These are sources read for this update; vidIQ's own pages were read through sear
 - New channels: in vidIQ's study of 448k new channels, a typical first Short got about 1,362 views in 30 days,
   against about 180 for a typical first long video. Shorts are how new channels get seen.
   ([vidIQ first-10-videos study](https://vidiq.com/research/youtube-first-10-videos-study/))
-- **Our change:** 3 Shorts per long video (about 3 Shorts a week with one long video a week).
-  - **Format:** 9:16, 20–45 s, one finding each, cut from the long video's best moment. The first frame is the
-    hook text, there's no intro, and the last line loops to the first.
-  - **Linking:** each Short links to its long video with Related Video.
+- **Our change (owner's decision): Shorts are original, never cut from long videos.**
+  - **Volume:** 3 original Shorts a week next to one long video a week.
+  - **Content:** each Short has its own script and visuals, and one finding.
+  - **Opening:** the hook in the first 2 seconds, with the same words on screen.
+  - **Ending:** the last line loops back to the first.
+  - **Linking:** a Related Video link to the closest long video.
+  - **Topics:** Shorts are also a cheap way to test them. A Short whose topic takes off becomes a candidate for a
+    long video.
+  - **Format:** `STYLE.md` → Shorts.
 
 ### 5. The weekly numbers loop (every Sunday, 10 minutes)
 Send me a screenshot of YouTube Studio for each new video, and I'll turn it into fixes for the next one. I need:
