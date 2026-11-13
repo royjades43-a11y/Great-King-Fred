@@ -1,0 +1,220 @@
+# Footage and image credits
+
+Every visual in this episode, where it came from, and the terms it is used under.
+
+- **cctv-dali-first-blackout** (video): NTSB docket DCA24MM031, CCTV Attachment 4 (N847A6_ch2_main_20240326011501_20240326013001)
+  - Source: https://data.ntsb.gov/Docket/?NTSBNumber=DCA24MM031
+  - Author: Private residential security camera, Dundalk MD; released by NTSB
+  - License: NTSB public docket release (CCTV recorded by a private camera owner; not itself a US Government work - rights flagged)
+- **cctv-dali-lights-restored** (video): NTSB docket DCA24MM031, CCTV Attachment 4 (N847A6_ch2)
+  - Source: https://data.ntsb.gov/Docket/?NTSBNumber=DCA24MM031
+  - Author: Private residential security camera, Dundalk MD; released by NTSB
+  - License: NTSB public docket release (CCTV recorded by a private camera owner; not itself a US Government work - rights flagged)
+- **cctv-dali-second-blackout-drift** (video): NTSB docket DCA24MM031, CCTV Attachment 4 (N847A6_ch2)
+  - Source: https://data.ntsb.gov/Docket/?NTSBNumber=DCA24MM031
+  - Author: Private residential security camera, Dundalk MD; released by NTSB
+  - License: NTSB public docket release (CCTV recorded by a private camera owner; not itself a US Government work - rights flagged)
+- **dock-east-dali-approach-night** (video): NTSB docket DCA24MM031, CCTV Attachment 3 (Dock East_Key Bridge-2024-03-26)
+  - Source: https://data.ntsb.gov/Docket/?NTSBNumber=DCA24MM031
+  - Author: Industrial facility CCTV, west bank of the Patapsco; released by NTSB
+  - License: NTSB public docket release (CCTV recorded by a private camera owner; not itself a US Government work - rights flagged)
+- **dock-east-impact-collapse** (video): NTSB docket DCA24MM031, CCTV Attachment 3 (Dock East_Key Bridge-2024-03-26)
+  - Source: https://data.ntsb.gov/Docket/?NTSBNumber=DCA24MM031
+  - Author: Industrial facility CCTV, west bank of the Patapsco; released by NTSB
+  - License: NTSB public docket release (CCTV recorded by a private camera owner; not itself a US Government work - rights flagged)
+- **dali-arrival-under-bridge-wide** (video): NTSB docket DCA24MM031, CCTV Attachment 1 (1 Bridge March 23 2024 1339-1354)
+  - Source: https://data.ntsb.gov/Docket/?NTSBNumber=DCA24MM031
+  - Author: Industrial facility CCTV, west bank of the Patapsco; released by NTSB
+  - License: NTSB public docket release (CCTV recorded by a private camera owner; not itself a US Government work - rights flagged)
+- **dali-arrival-under-bridge-tight** (video): NTSB docket DCA24MM031, CCTV Attachment 1 (1 Bridge March 23 2024 1339-1354)
+  - Source: https://data.ntsb.gov/Docket/?NTSBNumber=DCA24MM031
+  - Author: Industrial facility CCTV, west bank of the Patapsco; released by NTSB
+  - License: NTSB public docket release (CCTV recorded by a private camera owner; not itself a US Government work - rights flagged)
+- **ecdis-playback-final-track** (video): NTSB docket DCA24MM031, VDR Group Attachment 7, ECDIS playback video
+  - Source: https://data.ntsb.gov/Docket/?NTSBNumber=DCA24MM031
+  - Author: NTSB (Vessel Recorders group)
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **ppu-playback-final-approach** (video): NTSB docket DCA24MM031, VDR Group Attachment 6, Portable Pilot Unit playback video
+  - Source: https://data.ntsb.gov/Docket/?NTSBNumber=DCA24MM031
+  - Author: NTSB (Vessel Recorders group)
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig04-dali-helm** (image): MIR-25-40 Figure 4 (p.29): The Dali's helm and conning area
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig16-plant-0129-09** (image): MIR-25-40 Figure 16 (p.48): Plant at 0129:09, Pier 17 impact
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig19-bow-strikes-pier17** (image): MIR-25-40 Figure 19 (p.57): Dali's starboard bow striking Pier 17
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig21-damage-spans-16-18** (image): MIR-25-40 Figure 21 (p.59): Damage to Spans 16-18 and Pier 17
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig38-sunshine-skyway-1980** (image): MIR-25-40 Figure 38 (p.75): Collapsed western span of the Sunshine Skyway Bridge (1980)
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig40-i40-bridge-collapse** (image): MIR-25-40 Figure 40 (p.77): Collapsed Interstate 40 bridge (2002)
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig51-terminal-block-381-wire1** (image): MIR-25-40 Figure 51 (p.115): Terminal Block 381 and Wire 1
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig53-wire1-wire3-in-block** (image): MIR-25-40 Figure 53 (p.118): Wire 1 and Wire 3 in Terminal Block 381
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig56-terminal-block-xray** (image): MIR-25-40 Figure 56 (p.121): Exemplar terminal block and X-ray of Terminal Block 381
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig62-arcing-damage-gate-face** (image): MIR-25-40 Figure 62 (p.127): Electrical arcing damage
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig64-arcing-gap-diagram** (image): MIR-25-40 Figure 64 (p.146): How arcing could occur in the gap
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-figE1-dali-under-truss** (image): MIR-25-40 Figure E-1 (p.230): Dali with collapsed bridge across its deck, March 28, 2024
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig05-plant-at-departure** (image): MIR-25-40 Figure 5 (p.31): Configuration of Dali plant at departure
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig08-plant-0125-00** (image): MIR-25-40 Figure 8 (p.36): Plant at 0125:00, initial blackout
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig11-plant-0125-58** (image): MIR-25-40 Figure 11 (p.40): Plant at 0125:58, LV power restored
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig13-plant-0127-04** (image): MIR-25-40 Figure 13 (p.43): Plant at 0127:04, second blackout
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig17-worker-vehicle-positions** (image): MIR-25-40 Figure 17 (p.50): Main spans with maintenance vehicle positions
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig36-blue-nagoya-vs-dali** (image): MIR-25-40 Figure 36 (p.73): Blue Nagoya vs Dali size comparison
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig42-hv-lv-switchboards** (image): MIR-25-40 Figure 42 (p.81): The Dali's HV and LV switchboards
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig58-wire1-ferrule-gouges** (image): MIR-25-40 Figure 58 (p.123): Microscope image of the Wire 1 ferrule
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-fig61-ferrule-arcing-depression** (image): MIR-25-40 Figure 61 (p.126): End views of the Wire 1 and Wire 3 ferrules
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **mir-table5-af-summary** (image): MIR-25-40 Table 5 (p.135): AF summary for the Key Bridge
+  - Source: https://www.ntsb.gov/investigations/AccidentReports/Reports/MIR2540.pdf
+  - Author: NTSB, Marine Investigation Report MIR-25-40
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **refloat-damaged-bow-terminal** (video): M/V DALI Refloat and Transit (May 20, 2024)
+  - Source: https://www.dvidshub.net/video/924382/m-v-dali-refloat-and-transit
+  - Author: Christopher Rosario, U.S. Army Corps of Engineers, Baltimore District (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **wreck-site-after-refloat** (video): M/V DALI Refloat and Transit (May 20, 2024)
+  - Source: https://www.dvidshub.net/video/924382/m-v-dali-refloat-and-transit
+  - Author: Christopher Rosario, U.S. Army Corps of Engineers, Baltimore District (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **precision-cutting-animation** (video): Precision Cutting Animation - Francis Scott Key Bridge Response (May 8, 2024), VIRIN 240508-A-ZO053-1001
+  - Source: https://www.dvidshub.net/video/922501/precision-cutting-animation-francis-scott-key-bridge-response
+  - Author: Dakota Pope, U.S. Army Corps of Engineers, Baltimore District (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **prelim-fig07-route-after-blackout** (image): NTSB Preliminary Report DCA24MM031, Figure 7: the Dali's route between the first blackout and the bridge
+  - Source: https://www.ntsb.gov/investigations/Documents/DCA24MM031_PreliminaryReport%203.pdf
+  - Author: NTSB, Marine Investigation Preliminary Report DCA24MM031
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **prelim-fig08-investigator-hv-switchboard** (image): NTSB Preliminary Report DCA24MM031, Figure 8: NTSB investigator at the Dali's HV switchboard
+  - Source: https://www.ntsb.gov/investigations/Documents/DCA24MM031_PreliminaryReport%203.pdf
+  - Author: NTSB, Marine Investigation Preliminary Report DCA24MM031
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **uscg-sunrise-dali-wreck** (video): Key Bridge Response 2024 (March 26, 2024), DVIDS video 919034
+  - Source: https://www.dvidshub.net/video/919034/key-bridge-response-2024
+  - Author: Petty Officer 3rd Class Carmen Caver, U.S. Coast Guard (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **uscg-boats-bow-under-truss** (video): Key Bridge Response 2024 (March 26, 2024), DVIDS video 919034
+  - Source: https://www.dvidshub.net/video/919034/key-bridge-response-2024
+  - Author: Petty Officer 3rd Class Carmen Caver, U.S. Coast Guard (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **channel-reopened-ship-passes-piers** (video): Vessels transit newly reopened Baltimore Federal Channel (June 12, 2024), VIRIN 240613-A-QH057-1003
+  - Source: https://www.dvidshub.net/video/927500/vessels-transit-newly-reopened-baltimore-federal-channel-maryland-fleet-week
+  - Author: Bobby Petty, U.S. Army Corps of Engineers, Baltimore District (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **demolition-side-view-uscg** (video): Key Bridge Unified Command removes portion of bridge on top of M/V Dali with precision charges (May 13, 2024), VIRIN 240513-G-KT616-1002
+  - Source: https://www.dvidshub.net/video/923417/key-bridge-unified-command-removes-portion-bridge-top-m-v-dali-with-precision-charges
+  - Author: Petty Officer 2nd Class Ronald Hodges, U.S. Coast Guard (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **refloat-timelapse** (video): Timelapse: Key Bridge Response Unified Command Moves M/V DALI (May 20, 2024), VIRIN 240520-A-ND890-1101
+  - Source: https://www.dvidshub.net/video/924359/timelapse-key-bridge-response-unified-command-moves-m-v-dali
+  - Author: David Gray, U.S. Army Corps of Engineers, Baltimore District (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **banding-correct-installation** (image): NTSB press release Nov 18, 2025: correct wire-label banding installation (illustration)
+  - Source: https://www.ntsb.gov/news/press-releases/Pages/NR20251118.aspx
+  - Author: NTSB
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **banding-wire1-installation** (image): NTSB press release Nov 18, 2025: wire-label banding installation on Wire 1 (illustration)
+  - Source: https://www.ntsb.gov/news/press-releases/Pages/NR20251118.aspx
+  - Author: NTSB
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **demolition-blast-closeup** (video): Unified Command performs controlled demolition, precision cutting (May 13, 2024), VIRIN 240513-A-ZT698-7081
+  - Source: https://www.dvidshub.net/video/923331/unified-command-performs-controlled-demolition-precision-cutting
+  - Author: Christopher Rosario, U.S. Army Corps of Engineers, Baltimore District (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **drone-truss-on-bow-container-removal** (video): B-roll Container removal from M/V Dali (April 7, 2024), VIRIN 240407-G-DV874-3002
+  - Source: https://www.dvidshub.net/video/918243/b-roll-container-removal-m-v-dali
+  - Author: Petty Officer 3rd Class Mikaela McGee, U.S. Coast Guard (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **refloat-transit-tugs** (video): M/V DALI Refloat and Transit (May 20, 2024)
+  - Source: https://www.dvidshub.net/video/924382/m-v-dali-refloat-and-transit
+  - Author: Christopher Rosario, U.S. Army Corps of Engineers, Baltimore District (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **uscg-dawn-truss-silhouette** (video): Key Bridge Response 2024 (March 26, 2024), DVIDS video 919034
+  - Source: https://www.dvidshub.net/video/919034/key-bridge-response-2024
+  - Author: Petty Officer 3rd Class Carmen Caver, U.S. Coast Guard (via DVIDS)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **ntsb-aerial-severed-roadway** (video): NTSB B-Roll - Aerial Imagery of Francis Scott Key Bridge and Cargo Ship Dali (March 2024)
+  - Source: https://commons.wikimedia.org/wiki/File:NTSB_B-Roll_-_Aerial_Imagery_of_Francis_Scott_Key_Bridge_and_Cargo_Ship_Dali.webm
+  - Author: NTSB (via Wikimedia Commons)
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **ntsb-aerial-pier-stub-truss** (video): NTSB B-Roll - Aerial Imagery of Francis Scott Key Bridge and Cargo Ship Dali (March 2024)
+  - Source: https://commons.wikimedia.org/wiki/File:NTSB_B-Roll_-_Aerial_Imagery_of_Francis_Scott_Key_Bridge_and_Cargo_Ship_Dali.webm
+  - Author: NTSB (via Wikimedia Commons)
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **ntsb-aerial-dali-truss-across-bow** (video): NTSB B-Roll - Aerial Imagery of Francis Scott Key Bridge and Cargo Ship Dali (March 2024)
+  - Source: https://commons.wikimedia.org/wiki/File:NTSB_B-Roll_-_Aerial_Imagery_of_Francis_Scott_Key_Bridge_and_Cargo_Ship_Dali.webm
+  - Author: NTSB (via Wikimedia Commons)
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **ntsb-aerial-stern-span-gap** (video): NTSB B-Roll - Aerial Imagery of Francis Scott Key Bridge and Cargo Ship Dali (March 2024)
+  - Source: https://commons.wikimedia.org/wiki/File:NTSB_B-Roll_-_Aerial_Imagery_of_Francis_Scott_Key_Bridge_and_Cargo_Ship_Dali.webm
+  - Author: NTSB (via Wikimedia Commons)
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **uscg-aerial-wide-dali-wreck** (image): Aerial view of the Dali bridge allision (March 2024)
+  - Source: https://commons.wikimedia.org/wiki/File:Aerial_view_of_the_Dail-bridge-allision-credit-USCG-Petty-Officer-3rd-class-Kimberly-Reeves.jpeg
+  - Author: U.S. Coast Guard Petty Officer 3rd Class Kimberly Reaves (via Wikimedia Commons)
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **navy-3d-sonar-wreck** (image): New Navy 3D sonar images reveal striking details of Baltimore's Francis Scott Key Bridge wreckage site (240409-N-QH057-1101)
+  - Source: https://commons.wikimedia.org/wiki/File:New_Navy_3D_sonar_images_reveal_striking_details_of_Baltimore%27s_Francis_Scott_Key_Bridge_wreckage_site_(240409-N-QH057-1101).jpg
+  - Author: U.S. Navy NAVSEA Supervisor of Salvage and Diving (SUPSALV) (via Wikimedia Commons)
+  - License: Public domain (US Government work) (https://www.usa.gov/government-copyright)
+- **map-collision-location** (image): Map of the MV Dali bridge collision
+  - Source: https://commons.wikimedia.org/wiki/File:Map-mv-dali-bridge-collision.png
+  - Author: Michael.C.Wright (via Wikimedia Commons)
+  - License: CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
