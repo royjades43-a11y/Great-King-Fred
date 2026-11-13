@@ -73,3 +73,7 @@ Piano samples: Salamander Grand Piano by Alexander Holm (CC BY 3.0). Sound effec
 ## Still to do
 
 Pinned comment, tags and Shorts.
+
+## Thumbnail D (new character style)
+
+`09-thumbnail-D-falling-too-fast.jpg`: a heart skydiving with its parachute still packed. It's the feeling of falling for someone too fast, played for a laugh. It uses the layout from video 12 on (one big drawn character, short text, one word in a red box), so it can go into Test & Compare against the current main thumbnail.

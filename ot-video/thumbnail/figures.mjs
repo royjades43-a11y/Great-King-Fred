@@ -96,3 +96,123 @@ export function ghost() {
   <path d="M605 560 C670 590 700 560 720 520" fill="none" stroke="${INK}" stroke-width="16" stroke-linecap="round"/>
 </svg>`;
 }
+
+const HEART = (s = 1, x = 0, y = 0) => `M${x} ${y + 190 * s} C${x - 150 * s} ${y + 90 * s} ${x - 220 * s} ${y + 10 * s} ${x - 220 * s} ${y - 80 * s} C${x - 220 * s} ${y - 150 * s} ${x - 170 * s} ${y - 190 * s} ${x - 110 * s} ${y - 190 * s} C${x - 60 * s} ${y - 190 * s} ${x - 20 * s} ${y - 160 * s} ${x} ${y - 120 * s} C${x + 20 * s} ${y - 160 * s} ${x + 60 * s} ${y - 190 * s} ${x + 110 * s} ${y - 190 * s} C${x + 170 * s} ${y - 190 * s} ${x + 220 * s} ${y - 150 * s} ${x + 220 * s} ${y - 80 * s} C${x + 220 * s} ${y + 10 * s} ${x + 150 * s} ${y + 90 * s} ${x} ${y + 190 * s} Z`;
+
+// 11 · a puppet on red strings, forcing a smile
+export function marionette() {
+  const S = (x1, y1, x2, y2) => `<path d="M${x1} ${y1} L${x2} ${y2}" stroke="${RED}" stroke-width="4"/>`;
+  const limb = (d) => bone(d, 30);
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  ${S(230, 62, 225, 430)}${S(570, 62, 590, 420)}${S(400, 150, 400, 228)}${S(300, 62, 340, 800)}${S(500, 62, 470, 790)}
+  <rect x="210" y="46" width="380" height="32" rx="12" fill="${CARD}" stroke="${INK}" stroke-width="9"/>
+  <rect x="383" y="10" width="34" height="150" rx="12" fill="${CARD}" stroke="${INK}" stroke-width="9"/>
+  ${limb("M360 640 L340 800 L330 935")}${limb("M440 640 L470 790 L485 935")}
+  <ellipse cx="318" cy="945" rx="42" ry="20" fill="${INK}"/><ellipse cx="500" cy="945" rx="42" ry="20" fill="${INK}"/>
+  ${limb("M335 455 L262 525 L225 430")}${limb("M465 455 L545 512 L590 420")}
+  <rect x="318" y="420" width="164" height="230" rx="44" fill="${CARD}" stroke="${INK}" stroke-width="12"/>
+  <path d="M330 520 L470 520" stroke="${RED}" stroke-width="10"/>
+  ${knob(262, 525, 18)}${knob(545, 512, 18)}${knob(340, 800, 18)}${knob(470, 790, 18)}
+  <circle cx="225" cy="430" r="26" fill="${CARD}" stroke="${INK}" stroke-width="8"/><circle cx="590" cy="420" r="26" fill="${CARD}" stroke="${INK}" stroke-width="8"/>
+  <rect x="385" y="395" width="30" height="40" fill="${CARD}" stroke="${INK}" stroke-width="8"/>
+  <circle cx="400" cy="320" r="100" fill="${CARD}" stroke="${INK}" stroke-width="12"/>
+  <path d="M336 282 L382 264 M464 282 L418 264" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+  <ellipse cx="365" cy="310" rx="12" ry="16" fill="${INK}"/><ellipse cx="435" cy="310" rx="12" ry="16" fill="${INK}"/>
+  <path d="M335 345 C360 410 440 410 465 345 Z" fill="${INK}"/>
+  <path d="M352 352 L448 352 L440 366 L360 366 Z" fill="#FFFFFF"/>
+  <path d="M512 250 C500 275 498 290 512 298 C526 290 524 275 512 250 Z" fill="#FFFFFF" stroke="${INK}" stroke-width="5"/>
+</svg>`;
+}
+
+// 10 · a heart on a fishhook, stitched up from the last time
+export function hookedHeart() {
+  let stitches = "";
+  for (let i = 0; i < 5; i++) { const x = 330 + i * 32, y = 430 + i * 30; stitches += `<path d="M${x - 14} ${y + 16} L${x + 14} ${y - 16}" stroke="${INK}" stroke-width="6" stroke-linecap="round"/>`; }
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <path d="M400 0 L400 330" stroke="${INK}" stroke-width="5"/>
+  <path d="M400 330 L400 700" stroke="${INK}" stroke-width="22" stroke-linecap="round"/>
+  <path d="${HEART(1.25, 400, 500)}" fill="${RED}" stroke="${INK}" stroke-width="14" stroke-linejoin="round"/>
+  <path d="M318 448 C360 470 420 540 472 560" fill="none" stroke="${INK}" stroke-width="5" stroke-dasharray="2 0"/>
+  ${stitches}
+  <path d="M400 700 C400 860 210 870 205 700" fill="none" stroke="${INK}" stroke-width="22" stroke-linecap="round"/>
+  <path d="M205 700 L205 640 L245 690" fill="none" stroke="${INK}" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="300" cy="360" rx="34" ry="18" fill="#FFFFFF" opacity="0.5" transform="rotate(-30 300 360)"/>
+  <circle cx="400" cy="330" r="16" fill="${CARD}" stroke="${INK}" stroke-width="8"/>
+</svg>`;
+}
+
+// 09 · a heart skydiving, parachute still in the pack
+export function fallingHeart() {
+  let lines = "";
+  for (const [x, l] of [[250, 170], [330, 240], [420, 200], [500, 150]]) lines += `<path d="M${x} ${40} L${x} ${40 + l}" stroke="${INK}" stroke-width="8" stroke-linecap="round" opacity="0.55"/>`;
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  ${lines}
+  <g transform="rotate(-14 400 560)">
+    <rect x="300" y="235" width="200" height="120" rx="26" fill="${CARD}" stroke="${INK}" stroke-width="10"/>
+    <path d="M330 275 L470 275" stroke="${INK}" stroke-width="6"/>
+    <path d="M480 340 C540 380 560 430 540 470" fill="none" stroke="${RED}" stroke-width="6"/><circle cx="540" cy="475" r="13" fill="${RED}" stroke="${INK}" stroke-width="5"/>
+    <path d="M215 560 C150 520 120 470 130 420" fill="none" stroke="${INK}" stroke-width="16" stroke-linecap="round"/>
+    <path d="M585 560 C650 520 680 470 670 420" fill="none" stroke="${INK}" stroke-width="16" stroke-linecap="round"/>
+    <path d="M330 760 C310 820 290 860 250 880 M470 760 C490 820 520 850 560 860" fill="none" stroke="${INK}" stroke-width="16" stroke-linecap="round"/>
+    <path d="${HEART(1.3, 400, 600)}" fill="${RED}" stroke="${INK}" stroke-width="14" stroke-linejoin="round"/>
+    <path d="M330 560 C345 540 365 540 380 560 M420 560 C435 540 455 540 470 560" fill="none" stroke="${INK}" stroke-width="9" stroke-linecap="round"/>
+    <ellipse cx="400" cy="635" rx="34" ry="40" fill="${INK}"/>
+    <ellipse cx="315" cy="610" rx="24" ry="13" fill="#FFFFFF" opacity="0.35"/><ellipse cx="485" cy="610" rx="24" ry="13" fill="#FFFFFF" opacity="0.35"/>
+  </g>
+  <path d="M600 900 C600 860 640 845 670 865 C690 830 750 840 750 880 C780 885 780 920 750 922 L610 922 C585 920 585 900 600 900 Z" fill="${CARD}" stroke="${INK}" stroke-width="8"/>
+</svg>`;
+}
+
+// 08 · a nervous phone, a thumb hovering over Send
+export function nervousPhone() {
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <rect x="190" y="80" width="420" height="820" rx="60" fill="${INK}"/>
+  <rect x="216" y="130" width="368" height="700" rx="18" fill="#FFFFFF"/>
+  <rect x="350" y="98" width="100" height="14" rx="7" fill="#333"/>
+  <path d="M290 348 L350 326 M510 348 L450 326" stroke="${INK}" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="330" cy="390" r="22" fill="${INK}"/><circle cx="470" cy="390" r="22" fill="${INK}"/>
+  <path d="M320 500 C345 480 370 520 400 500 C430 480 455 520 480 500" fill="none" stroke="${INK}" stroke-width="12" stroke-linecap="round"/>
+  <path d="M560 260 C545 290 543 308 560 318 C577 308 575 290 560 260 Z" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/>
+  <path d="M248 300 C238 322 237 336 248 343 C259 336 258 322 248 300 Z" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/>
+  <rect x="236" y="600" width="230" height="70" rx="35" fill="#E6E9E4" stroke="${INK}" stroke-width="5"/>
+  <circle cx="300" cy="635" r="11" fill="${INK}"/><circle cx="350" cy="635" r="11" fill="${INK}"/><circle cx="400" cy="635" r="11" fill="${INK}"/>
+  <rect x="440" y="740" width="124" height="60" rx="30" fill="${RED}"/>
+  <text x="502" y="781" text-anchor="middle" font-family="M" font-weight="800" font-size="30" fill="#FFFFFF">Send</text>
+  <path d="M800 980 L640 840 C610 812 618 770 655 772 C680 774 690 790 705 805 L800 880 Z" fill="#F3D9C4" stroke="${INK}" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M640 800 C650 790 668 792 674 806" fill="none" stroke="${INK}" stroke-width="6"/>
+  <path d="M600 770 L580 750 M610 740 L600 712 M640 735 L645 705" stroke="${INK}" stroke-width="7" stroke-linecap="round"/>
+</svg>`;
+}
+
+// 07 · two skeletons holding hands: still together
+export function skeletonCouple() {
+  const torso = (cx, tilt, side) => {
+    let ribs = "", spine = "";
+    for (let i = 0; i < 5; i++) {
+      const y = 445 + i * 44, w = 130 - i * 12, d = 55 - i * 4;
+      ribs += bone(`M${cx} ${y} C ${cx - w * 0.5} ${y - 22} ${cx - w} ${y - 4} ${cx - w + 6} ${y + d}`, 14);
+      ribs += bone(`M${cx} ${y} C ${cx + w * 0.5} ${y - 22} ${cx + w} ${y - 4} ${cx + w - 6} ${y + d}`, 14);
+    }
+    for (let y = 330; y <= 690; y += 30) spine += `<rect x="${cx - 16}" y="${y}" width="32" height="22" rx="8" fill="${CARD}" stroke="${INK}" stroke-width="6"/>`;
+    const o = -side, i = side; // outer and inner directions
+    let teeth = "";
+    for (let x = cx - 48; x <= cx + 48; x += 19) teeth += `<path d="M${x} 270 L${x} 300" stroke="${INK}" stroke-width="5"/>`;
+    return `${spine}${bone(`M${cx - 135} 405 C${cx - 70} 385 ${cx + 70} 385 ${cx + 135} 405`, 18)}${ribs}
+      <path d="M${cx - 80} 730 C${cx - 85} 680 ${cx + 85} 680 ${cx + 80} 730 C${cx + 80} 780 ${cx + 30} 785 ${cx} 762 C${cx - 30} 785 ${cx - 80} 780 ${cx - 80} 730 Z" fill="${CARD}" stroke="${INK}" stroke-width="10"/>
+      ${bone(`M${cx + o * 135} 410 L${cx + o * 165} 610 L${cx + o * 140} 760`, 26)}
+      ${bone(`M${cx + i * 135} 410 L${cx + i * 160} 610 L${550 - side * 10} 690`, 26)}
+      ${knob(cx + o * 135, 410, 22)}${knob(cx + i * 135, 410, 22)}${knob(cx + o * 165, 610, 20)}${knob(cx + i * 160, 610, 20)}
+      <g transform="rotate(${tilt} ${cx} 220)">
+        <path d="M${cx - 110} 160 C${cx - 110} 40 ${cx + 110} 40 ${cx + 110} 160 C${cx + 110} 215 ${cx + 95} 240 ${cx + 80} 252 L${cx + 80} 292 C${cx + 80} 312 ${cx + 60} 322 ${cx + 40} 322 L${cx - 40} 322 C${cx - 60} 322 ${cx - 80} 312 ${cx - 80} 292 L${cx - 80} 252 C${cx - 95} 240 ${cx - 110} 215 ${cx - 110} 160 Z" fill="${CARD}" stroke="${INK}" stroke-width="12"/>
+        <ellipse cx="${cx - 44}" cy="182" rx="30" ry="34" fill="${INK}"/><ellipse cx="${cx + 46}" cy="182" rx="30" ry="34" fill="${INK}"/>
+        <path d="M${cx + 1} 222 L${cx - 15} 256 L${cx + 17} 256 Z" fill="${INK}"/>
+        <path d="M${cx - 65} 286 L${cx + 65} 286" stroke="${INK}" stroke-width="6"/>${teeth}
+      </g>`;
+  };
+  return `<svg viewBox="0 0 1100 1000" xmlns="http://www.w3.org/2000/svg">
+  ${torso(300, 12, 1)}
+  ${torso(800, -12, -1)}
+  <circle cx="550" cy="690" r="34" fill="${CARD}" stroke="${INK}" stroke-width="8"/>
+  <path d="${HEART(0.42, 550, 130)}" fill="${RED}" stroke="${INK}" stroke-width="9"/>
+</svg>`;
+}

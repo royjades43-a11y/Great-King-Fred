@@ -73,3 +73,7 @@ Piano samples: Salamander Grand Piano by Alexander Holm (CC BY 3.0). Sound effec
 ## Still to do
 
 Pinned comment, tags and Shorts.
+
+## Thumbnail D (new character style)
+
+`08-thumbnail-D-nervous-phone.jpg`: a nervous, sweating phone with a thumb hovering over Send while the typing dots wait. Everyone has stared at that screen. It uses the layout from video 12 on (one big drawn character, short text, one word in a red box), so it can go into Test & Compare against the current main thumbnail.

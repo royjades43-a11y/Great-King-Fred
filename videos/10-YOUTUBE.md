@@ -82,3 +82,7 @@ Piano samples: Salamander Grand Piano by Alexander Holm (CC BY 3.0). Sound effec
 ## Still to do
 
 Pinned comment, tags and Shorts.
+
+## Thumbnail D (new character style)
+
+`10-thumbnail-D-hooked-heart.jpg`: a heart on a fishhook, already stitched up from last time. Going back means biting the same hook again. It uses the layout from video 12 on (one big drawn character, short text, one word in a red box), so it can go into Test & Compare against the current main thumbnail.

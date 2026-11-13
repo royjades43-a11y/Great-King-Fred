@@ -75,3 +75,7 @@ Piano samples: Salamander Grand Piano by Alexander Holm (CC BY 3.0). Sound effec
 ## Still to do
 
 Pinned comment, tags and Shorts.
+
+## Thumbnail D (new character style)
+
+`11-thumbnail-D-puppet-on-strings.jpg`: a puppet on red strings, sweating and forcing a smile while it says "Sure!". The people-pleaser's yes, made visible. It uses the layout from video 12 on (one big drawn character, short text, one word in a red box), so it can go into Test & Compare against the current main thumbnail.
