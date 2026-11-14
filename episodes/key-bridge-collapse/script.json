@@ -7,34 +7,84 @@
       "id": "b01",
       "chapter": "Cold open",
       "narration": "At 1:25 in the morning on March 26th, 2024, a loaded containership leaving Baltimore lost its electrical power.",
-      "visual": {
-        "kind": "title",
-        "text": "1:25 AM",
-        "subtext": "March 26, 2024 · Baltimore",
-        "background": "uscg-dawn-truss-silhouette"
-      }
+      "visuals": [
+        {
+          "kind": "stamp",
+          "text": "1:25 AM",
+          "assets": [
+            "broll-px-night-industrial-shore-reflections"
+          ],
+          "subtext": "March 26, 2024"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-night-container-terminal-aerial"
+          ],
+          "at": "a loaded containership"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-bulb-flickers-out"
+          ],
+          "at": "lost its electrical power."
+        }
+      ]
     },
     {
       "id": "b02",
       "narration": "The Dali was 984 feet long, and about 3,200 feet from the Francis Scott Key Bridge.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "prelim-fig07-route-after-blackout"
-        ],
-        "label": "The Dali's track, NTSB graphic"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-night-ship-hull-side"
+          ]
+        },
+        {
+          "kind": "route",
+          "keyframes": [
+            {
+              "clock": "1:25:00",
+              "feet": 3200,
+              "note": "3.3 ship lengths"
+            },
+            {
+              "clock": "1:25:00",
+              "feet": 3200,
+              "note": "Power lost"
+            }
+          ],
+          "at": "about 3,200 feet"
+        }
+      ]
     },
     {
       "id": "b03",
       "narration": "Within eight seconds, its engine had shut down, and its steering pumps had no power. The ship kept moving.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "ecdis-playback-final-track"
-        ],
-        "label": "Electronic chart playback, NTSB"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-er-diesel-cylinder-heads"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-er-pump-motors-tank"
+          ],
+          "at": "its steering pumps"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-tug-night-vision2"
+          ],
+          "at": "The ship kept moving."
+        }
+      ]
     },
     {
       "id": "b04",
@@ -43,17 +93,17 @@
         {
           "kind": "footage",
           "assets": [
-            "mir-fig19-bow-strikes-pier17"
+            "uscg-dawn-truss-silhouette"
           ],
-          "label": "NTSB illustration"
+          "label": "Dawn, March 26, 2024 · U.S. Coast Guard"
         },
         {
           "kind": "footage",
           "assets": [
-            "uscg-aerial-wide-dali-wreck"
+            "ntsb-aerial-pier-stub-truss"
           ],
-          "at": "Thirteen seconds after that,",
-          "label": "After the collapse, U.S. Coast Guard"
+          "label": "NTSB drone",
+          "at": "the pier gave way,"
         }
       ]
     },
@@ -70,38 +120,72 @@
     {
       "id": "b06",
       "narration": "The cause had been on board since the ship was built. It was small enough to hold between two fingers.",
-      "visual": {
-        "kind": "evidence",
-        "heading": "Exhibit A",
-        "items": [
-          {
-            "asset": "mir-fig51-terminal-block-381-wire1",
-            "note": "Small enough to hold"
-          }
-        ]
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-ship-no-smoking-stencil"
+          ]
+        },
+        {
+          "kind": "evidence",
+          "heading": "Exhibit A",
+          "items": [
+            {
+              "asset": "mir-fig51-terminal-block-381-wire1",
+              "note": "Small enough to hold"
+            }
+          ],
+          "at": "It was small enough"
+        }
+      ]
     },
     {
       "id": "b07",
       "narration": "How does a ship that size lose everything at once? And why did a 47-year-old bridge come down in seconds?",
-      "visual": {
-        "kind": "title",
-        "text": "One Loose Wire",
-        "subtext": "Why the Key Bridge fell",
-        "background": "ntsb-aerial-stern-span-gap"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-night-ship-at-pier-lights"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-bridge-lights-river-night"
+          ],
+          "at": "And why did"
+        }
+      ]
     },
     {
       "id": "b08",
       "chapter": "The world before",
       "narration": "The Francis Scott Key Bridge opened in 1977, carrying Maryland 695 across the mouth of Baltimore's harbor. It belonged to the Maryland Transportation Authority, the MDTA.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "map-collision-location"
-        ],
-        "label": "Baltimore, Maryland"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-harbor-bridge-aerial"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "map-collision-location"
+          ],
+          "label": "Baltimore, Maryland",
+          "at": "across the mouth"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-cg-boat-baltimore-skyline"
+          ],
+          "at": "It belonged to"
+        }
+      ]
     },
     {
       "id": "b09",
@@ -110,15 +194,23 @@
         {
           "kind": "footage",
           "assets": [
-            "mir-fig17-worker-vehicle-positions"
-          ],
-          "label": "The main spans, NTSB drawing"
+            "broll-barge-truss-bridge-dawn"
+          ]
         },
         {
-          "kind": "title",
+          "kind": "footage",
+          "assets": [
+            "broll-tug-barge-under-spans"
+          ],
+          "at": "185 feet above"
+        },
+        {
+          "kind": "stamp",
           "text": "34,121",
-          "subtext": "vehicles a day, 2023",
-          "background": "ntsb-aerial-pier-stub-truss",
+          "assets": [
+            "broll-highway-topdown-day"
+          ],
+          "subtext": "Vehicles a day, 2023",
           "at": "In 2023,"
         }
       ]
@@ -126,24 +218,48 @@
     {
       "id": "b10",
       "narration": "Ships passed between Piers 17 and 18. From the edge of the 700-foot channel to either pier was only 200 feet.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "mir-fig36-blue-nagoya-vs-dali"
-        ],
-        "label": "Fort McHenry Channel, NTSB graphic"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-tug-bow-under-bridge"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-harbor-tug-wake-aerial"
+          ],
+          "at": "From the edge"
+        }
+      ]
     },
     {
       "id": "b11",
       "narration": "The Dali was Singapore-flagged, built in 2015 by HD Hyundai Heavy Industries, and managed by Synergy Marine.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "refloat-transit-tugs"
-        ],
-        "label": "The Dali, May 2024"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "refloat-transit-tugs"
+          ],
+          "label": "The Dali, May 2024 · USACE"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-container-stacks-topdown"
+          ],
+          "at": "built in 2015"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-ship-hull-under-cranes"
+          ],
+          "at": "managed by Synergy Marine."
+        }
+      ]
     },
     {
       "id": "b12",
@@ -154,12 +270,27 @@
           "assets": [
             "mir-fig04-dali-helm"
           ],
-          "label": "The Dali's helm, NTSB"
+          "label": "The Dali's helm · NTSB"
         },
         {
-          "kind": "footage",
-          "assets": [
-            "mir-fig05-plant-at-departure"
+          "kind": "power",
+          "steps": [
+            {
+              "clock": "12:36 AM",
+              "label": "Underway on generators 3 and 4",
+              "on": [
+                "DG3",
+                "DG4",
+                "HV",
+                "ME",
+                "TR",
+                "LV",
+                "STEER",
+                "COOL",
+                "FUEL",
+                "LIGHTS"
+              ]
+            }
           ],
           "at": "Its steering,"
         }
@@ -168,25 +299,33 @@
     {
       "id": "b13",
       "narration": "On the bridge that night, a Brawner Builders crew was filling potholes. An inspector walked the span, checking on drying cement.",
-      "visual": {
-        "kind": "evidence",
-        "heading": "Spans 18 and 20",
-        "items": [
-          {
-            "asset": "mir-fig17-worker-vehicle-positions",
-            "note": "Crew vehicles here"
-          }
-        ]
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-night-highway-valley"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-night-bokeh-fence"
+          ],
+          "at": "An inspector walked"
+        }
+      ]
     },
     {
       "id": "b14",
       "chapter": "The day of",
       "narration": "The afternoon before, the Dali blacked out twice at the dock.",
       "visual": {
-        "kind": "title",
-        "text": "March 25, 2024",
-        "subtext": "Seagirt Marine Terminal"
+        "kind": "stamp",
+        "text": "March 25",
+        "assets": [
+          "broll-ship-alongside-cranes"
+        ],
+        "subtext": "2:20 PM"
       }
     },
     {
@@ -194,31 +333,54 @@
       "narration": "A crewmember closed a generator's exhaust damper by mistake. Minutes later, a pump feeding fuel to another generator was not restarted in time.",
       "visuals": [
         {
-          "kind": "title",
-          "text": "2:20 PM",
-          "subtext": "In-port blackout one"
+          "kind": "footage",
+          "assets": [
+            "broll-er-overhead-work"
+          ]
         },
         {
-          "kind": "title",
+          "kind": "stamp",
           "text": "2:27 PM",
-          "subtext": "In-port blackout two",
+          "assets": [
+            "broll-er-purifiers-piping"
+          ],
+          "subtext": "Second blackout",
           "at": "Minutes later,"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-er-boots-deckplate"
+          ],
+          "at": "was not restarted"
         }
       ]
     },
     {
       "id": "b16",
       "narration": "Afterward, the electrician switched to a transformer, and a breaker called HR1, that had not been used in at least seven months.",
-      "visual": {
-        "kind": "evidence",
-        "heading": "March 25",
-        "items": [
-          {
-            "asset": "mir-fig05-plant-at-departure",
-            "note": "Switched to TR1"
-          }
-        ]
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-substation-insulators"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-breaker-hands-screwdriver"
+          ],
+          "at": "and a breaker called HR1,"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-clock-hands-timelapse"
+          ],
+          "at": "that had not been used"
+        }
+      ]
     },
     {
       "id": "b17",
@@ -227,154 +389,423 @@
         {
           "kind": "footage",
           "assets": [
-            "map-collision-location"
-          ],
-          "label": "Seagirt Marine Terminal"
+            "broll-night-pier-lights"
+          ]
         },
         {
-          "kind": "footage",
+          "kind": "stamp",
+          "text": "12:36 AM",
           "assets": [
-            "ecdis-playback-final-track"
+            "broll-px-night-harbor-reflections-teal"
           ],
-          "at": "By 1:08",
-          "label": "Electronic chart playback, NTSB"
+          "subtext": "Underway",
+          "at": "At about 12:36"
+        },
+        {
+          "kind": "stamp",
+          "text": "1:08 AM",
+          "assets": [
+            "broll-px-night-water-glitter"
+          ],
+          "subtext": "Tugs released",
+          "at": "By 1:08"
         }
       ]
     },
     {
       "id": "b18",
       "narration": "At 1:25, a breaker opened with no alarm. The ship's low-voltage power went dark.",
-      "visual": {
-        "kind": "title",
-        "text": "1:25:00",
-        "subtext": "4 minutes 9 seconds to impact"
-      }
+      "visuals": [
+        {
+          "kind": "stamp",
+          "text": "1:25:00 AM",
+          "assets": [
+            "ecdis-playback-final-track"
+          ],
+          "subtext": "First blackout"
+        },
+        {
+          "kind": "power",
+          "steps": [
+            {
+              "clock": "1:24:59",
+              "label": "Underway",
+              "on": [
+                "DG3",
+                "DG4",
+                "HV",
+                "ME",
+                "TR",
+                "LV",
+                "STEER",
+                "COOL",
+                "FUEL",
+                "LIGHTS"
+              ]
+            },
+            {
+              "clock": "1:25:00",
+              "label": "Breaker HR1 opens",
+              "on": [
+                "DG3",
+                "DG4",
+                "HV",
+                "ME"
+              ]
+            }
+          ],
+          "at": "The ship's low-voltage power"
+        }
+      ]
     },
     {
       "id": "b19",
       "narration": "All three steering pumps lost power, and most of the lights went out. The bridge was 3.3 ship lengths ahead.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "mir-fig08-plant-0125-00"
-        ],
-        "label": "Power at 1:25:00, NTSB"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-er-walkway-pump-no2"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-bridge-red-night-wide"
+          ],
+          "at": "and most of the lights"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-night-port-city-aerial"
+          ],
+          "at": "The bridge was 3.3"
+        }
+      ]
     },
     {
       "id": "b20",
       "narration": "Eight seconds later, the main engine shut down on low cooling-water pressure. It would not restart before the impact.",
-      "visual": {
-        "kind": "title",
-        "text": "1:25:08",
-        "subtext": "Main engine shuts down"
-      }
+      "visuals": [
+        {
+          "kind": "power",
+          "steps": [
+            {
+              "clock": "1:25:00",
+              "label": "Low-voltage board dark",
+              "on": [
+                "DG3",
+                "DG4",
+                "HV",
+                "ME"
+              ]
+            },
+            {
+              "clock": "1:25:08",
+              "label": "Main engine shuts down",
+              "on": [
+                "DG3",
+                "DG4",
+                "HV"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-er-hands-tools"
+          ],
+          "at": "It would not restart"
+        }
+      ]
     },
     {
       "id": "b21",
       "narration": "The senior pilot asked, \"Do we have steering?\" The answer: \"We have steering.\" But no steering pump had power.",
-      "visual": {
-        "kind": "document",
-        "source": "NTSB MIR-25-40, Table C-1 voyage timeline (VDR), p. 221",
-        "quote": "Second mate answered, ‘We have steering.’",
-        "highlight": "‘We have steering.’"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-bridge-radar-consoles-dusk"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-merchant-bridge-dusk-crew"
+          ],
+          "at": "The answer:"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-bridge-console-red-controls"
+          ],
+          "at": "But no steering pump"
+        }
+      ]
     },
     {
       "id": "b22",
       "narration": "With no engine and the rudder stuck, the ship swung to starboard. The helmsman called it out: \"Swinging to starboard, wheel on hard port sir.\"",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "prelim-fig07-route-after-blackout"
-        ],
-        "label": "The Dali's route after the blackout, NTSB"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-dark-water-ripples"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-merchant-bridge-window-watch"
+          ],
+          "at": "the ship swung to starboard."
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-bridge-console-hands"
+          ],
+          "at": "The helmsman called it out:"
+        }
+      ]
     },
     {
       "id": "b23",
       "narration": "At 1:25 and 58 seconds, the electrician closed the breakers by hand. Power was back after 58 seconds.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "mir-fig11-plant-0125-58"
-        ],
-        "label": "Power at 1:25:58, NTSB"
-      }
+      "visuals": [
+        {
+          "kind": "stamp",
+          "text": "1:25:58 AM",
+          "assets": [
+            "broll-breaker-red-screwdriver-close"
+          ],
+          "subtext": "Breakers closed by hand"
+        },
+        {
+          "kind": "power",
+          "steps": [
+            {
+              "clock": "1:25:08",
+              "label": "Engine off, low-voltage dark",
+              "on": [
+                "DG3",
+                "DG4",
+                "HV"
+              ]
+            },
+            {
+              "clock": "1:25:58",
+              "label": "Low-voltage power back",
+              "on": [
+                "DG3",
+                "DG4",
+                "HV",
+                "TR",
+                "LV",
+                "STEER",
+                "COOL",
+                "LIGHTS"
+              ]
+            }
+          ],
+          "at": "Power was back"
+        }
+      ]
     },
     {
       "id": "b24",
       "narration": "But the flushing pump, the only fuel supply for the two running generators, did not restart.",
-      "visual": {
-        "kind": "title",
-        "text": "The flushing pump",
-        "subtext": "Did not restart"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-er-white-tank-pump-motors"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-er-motors-pumps"
+          ],
+          "at": "the only fuel supply"
+        }
+      ]
     },
     {
       "id": "b25",
       "narration": "The senior pilot phoned the pilots' dispatcher to get the Key Bridge shut down. The ship was 2,430 feet away.",
-      "visual": {
-        "kind": "document",
-        "source": "NTSB MIR-25-40, p. 40",
-        "quote": "The senior pilot told the dispatcher to contact local authorities and tell them to shut down the Key Bridge; the call lasted about 7 seconds.",
-        "highlight": "the call lasted about 7 seconds"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-dispatch-center-radio"
+          ]
+        },
+        {
+          "kind": "route",
+          "keyframes": [
+            {
+              "clock": "1:25:00",
+              "feet": 3200,
+              "note": "First blackout"
+            },
+            {
+              "clock": "1:25:59",
+              "feet": 2430,
+              "note": "Call to shut the bridge",
+              "drift": 0.1
+            }
+          ],
+          "at": "The ship was 2,430 feet away."
+        }
+      ]
     },
     {
       "id": "b26",
       "narration": "The pilot radioed a tug: \"that's it, hammer down.\" That tug was sixteen minutes away.",
-      "visual": {
-        "kind": "title",
-        "text": "3.5 miles",
-        "subtext": "Responding tug: 16 minutes away"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-bridge-radar-consoles-dusk2"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-tug-night-vision"
+          ],
+          "at": "That tug was sixteen minutes away."
+        }
+      ]
     },
     {
       "id": "b27",
       "narration": "At 1:27 and 2 seconds, the senior pilot ordered the port anchor. The bridge was 1,500 feet away.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "prelim-fig07-route-after-blackout"
-        ],
-        "label": "4: tug call and anchor ordered"
-      }
+      "visuals": [
+        {
+          "kind": "stamp",
+          "text": "1:27:02 AM",
+          "assets": [
+            "broll-chain-locker-crew"
+          ],
+          "subtext": "Port anchor ordered"
+        },
+        {
+          "kind": "route",
+          "keyframes": [
+            {
+              "clock": "1:25:59",
+              "feet": 2430,
+              "note": "Call to shut the bridge",
+              "drift": 0.1
+            },
+            {
+              "clock": "1:27:02",
+              "feet": 1500,
+              "note": "Port anchor ordered",
+              "drift": 0.3
+            }
+          ],
+          "at": "The bridge was 1,500 feet away."
+        }
+      ]
     },
     {
       "id": "b28",
       "narration": "Two seconds later, the Dali blacked out again, high voltage and low. Starved of fuel, both running generators dropped off the line.",
       "visual": {
-        "kind": "footage",
-        "assets": [
-          "mir-fig13-plant-0127-04"
-        ],
-        "label": "Power at 1:27:04, NTSB"
+        "kind": "power",
+        "steps": [
+          {
+            "clock": "1:27:03",
+            "label": "Generators 3 and 4 online",
+            "on": [
+              "DG3",
+              "DG4",
+              "HV",
+              "TR",
+              "LV",
+              "STEER",
+              "COOL",
+              "LIGHTS"
+            ]
+          },
+          {
+            "clock": "1:27:04",
+            "label": "Second blackout: generators starved of fuel",
+            "on": [
+              "EG",
+              "LIGHTS"
+            ]
+          },
+          {
+            "clock": "1:27:07",
+            "label": "Generator 2 starting",
+            "on": [
+              "DG2",
+              "HV",
+              "EG",
+              "LIGHTS"
+            ]
+          }
+        ]
       }
     },
     {
       "id": "b29",
       "narration": "The senior pilot shouted for the bow thruster. It did not work; its pumps had tripped in the first blackout. And the anchor brake would not open.",
-      "visual": {
-        "kind": "document",
-        "source": "NTSB MIR-25-40, Table C-1 voyage timeline (VDR), p. 224",
-        "quote": "Senior pilot shouted, ‘captain [master], do we have a bow thruster?’",
-        "highlight": "do we have a bow thruster?"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-bridge-red-chart-table"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-er-diesel-crew"
+          ],
+          "at": "It did not work;"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-anchor-brake-wheel"
+          ],
+          "at": "And the anchor brake"
+        }
+      ]
     },
     {
       "id": "b30",
       "narration": "At 1:27 and 53 seconds, police at each end of the bridge were told to stop traffic. Both ends were blocked 48 seconds before impact.",
       "visuals": [
         {
-          "kind": "title",
-          "text": "1:27:53",
-          "subtext": "Police told to close the bridge"
+          "kind": "stamp",
+          "text": "1:27:53 AM",
+          "assets": [
+            "broll-dispatcher-headset-screens"
+          ],
+          "subtext": "Stop traffic"
         },
         {
-          "kind": "title",
-          "text": "48 seconds",
-          "subtext": "Bridge clear of traffic before impact",
+          "kind": "footage",
+          "assets": [
+            "broll-police-lightbar-day"
+          ],
+          "at": "police at each end"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-dusk-highway-aerial"
+          ],
           "at": "Both ends were blocked"
         }
       ]
@@ -382,34 +813,74 @@
     {
       "id": "b31",
       "narration": "At 1:28 and 42 seconds, the anchor finally went down. Seven seconds later, the bow began to swing back to port. Too late.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "ppu-playback-final-approach"
-        ],
-        "label": "Pilot's portable unit, 1:28"
-      }
+      "visuals": [
+        {
+          "kind": "stamp",
+          "text": "1:28:42 AM",
+          "assets": [
+            "broll-anchor-chain-closeup"
+          ],
+          "subtext": "Anchor down"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "ppu-playback-final-approach"
+          ],
+          "label": "Pilot's portable unit playback, 1:28 · NTSB",
+          "at": "Seven seconds later,"
+        }
+      ]
     },
     {
       "id": "b32",
       "narration": "The pilot ordered full bow thruster. \"No, it's not working.\" \"It's not working.\"",
-      "visual": {
-        "kind": "document",
-        "source": "NTSB MIR-25-40, Table C-1 voyage timeline (VDR), p. 225",
-        "quote": "Master stated, ‘It’s not working.’",
-        "highlight": "‘It’s not working.’"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-bridge-mariner-window"
+          ]
+        },
+        {
+          "kind": "document",
+          "source": "NTSB MIR-25-40, Table C-1 voyage timeline (VDR), p. 225",
+          "quote": "Master stated, ‘It’s not working.’",
+          "highlight": "‘It’s not working.’",
+          "at": "No, it's not working."
+        }
+      ]
     },
     {
       "id": "b33",
       "narration": "At 1:29 and 9 seconds, the Dali's starboard bow struck Pier 17 at 6.4 knots, with more than four times the sideways force the pier could resist.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "mir-fig19-bow-strikes-pier17"
-        ],
-        "label": "Pier 17, NTSB illustration"
-      }
+      "visuals": [
+        {
+          "kind": "route",
+          "keyframes": [
+            {
+              "clock": "1:27:04",
+              "feet": 1500,
+              "note": "Second blackout",
+              "drift": 0.3
+            },
+            {
+              "clock": "1:29:09",
+              "feet": 0,
+              "note": "Impact · Pier 17",
+              "drift": 1
+            }
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "mir-fig19-bow-strikes-pier17"
+          ],
+          "label": "Pier 17 · NTSB illustration",
+          "at": "at 6.4 knots,"
+        }
+      ]
     },
     {
       "id": "b34",
@@ -420,14 +891,15 @@
           "assets": [
             "mir-fig21-damage-spans-16-18"
           ],
-          "label": "Spans 16 to 18, NTSB"
+          "label": "Spans 16 to 18 · NTSB"
         },
         {
           "kind": "footage",
           "assets": [
-            "ntsb-aerial-pier-stub-truss"
+            "ntsb-aerial-stern-span-gap"
           ],
-          "at": "The inspector heard"
+          "label": "NTSB drone",
+          "at": "and the main spans fell."
         }
       ]
     },
@@ -436,15 +908,27 @@
       "narration": "Six men from the road crew were in their vehicles, on a break. They did not survive. A seventh escaped through his vehicle's open window, and was rescued at 1:55.",
       "visuals": [
         {
-          "kind": "footage",
-          "assets": [
-            "uscg-dawn-truss-silhouette"
+          "kind": "evidence",
+          "heading": "Spans 18 and 20",
+          "items": [
+            {
+              "asset": "mir-fig17-worker-vehicle-positions",
+              "note": "Crew vehicles here"
+            }
           ]
         },
         {
           "kind": "footage",
           "assets": [
             "uscg-sunrise-dali-wreck"
+          ],
+          "label": "Sunrise, March 26 · U.S. Coast Guard",
+          "at": "They did not survive."
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "uscg-boats-bow-under-truss"
           ],
           "at": "A seventh escaped"
         }
@@ -453,13 +937,22 @@
     {
       "id": "b36",
       "narration": "That evening, the search became a recovery. The last of the six men was found on May 7th.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "uscg-boats-bow-under-truss"
-        ],
-        "label": "March 26, 2024, U.S. Coast Guard"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-diver-suits-up-wreck"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "navy-3d-sonar-wreck"
+          ],
+          "label": "Sonar scan of the wreck site · U.S. Navy",
+          "at": "The last of the six men"
+        }
+      ]
     },
     {
       "id": "b37",
@@ -470,7 +963,7 @@
         "assets": [
           "ntsb-aerial-dali-truss-across-bow"
         ],
-        "label": "NTSB aerial"
+        "label": "NTSB drone"
       }
     },
     {
@@ -478,16 +971,16 @@
       "narration": "The voyage data recorder had stopped logging ship data at 1:25 and 3 seconds. Investigators rebuilt the final minutes from its audio, cameras and alarm logs.",
       "visuals": [
         {
-          "kind": "footage",
+          "kind": "stamp",
+          "text": "1:25:03 AM",
           "assets": [
-            "prelim-fig08-investigator-hv-switchboard"
+            "broll-bridge-console-cabinet"
           ],
-          "label": "NTSB investigator, high-voltage switchboard"
+          "subtext": "Data recorder stops"
         },
         {
           "kind": "evidence",
           "heading": "Rebuilding four minutes",
-          "at": "Investigators rebuilt",
           "items": [
             {
               "asset": "mir-fig08-plant-0125-00",
@@ -511,88 +1004,135 @@
               1,
               2
             ]
-          ]
+          ],
+          "at": "Investigators rebuilt"
         }
       ]
     },
     {
       "id": "b39",
       "narration": "The flushing pump explained the second blackout. A January email from the previous chief engineer had described the arrangement. But it did not explain the first.",
-      "visual": {
-        "kind": "document",
-        "source": "NTSB MIR-25-40, p. 94 (January 2024 email)",
-        "quote": "not in use all pumps heaters etc isolated after piping modification and permanently kept on LSMGO [flushing pump] line.",
-        "highlight": "permanently kept on LSMGO [flushing pump] line",
-        "background": "mir-fig13-plant-0127-04"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "mir-fig13-plant-0127-04"
+          ],
+          "label": "Power at 1:27:04 · NTSB"
+        },
+        {
+          "kind": "document",
+          "source": "NTSB MIR-25-40, p. 94 (January 2024 email)",
+          "quote": "not in use all pumps heaters etc isolated after piping modification and permanently kept on LSMGO [flushing pump] line.",
+          "highlight": "permanently kept on LSMGO [flushing pump] line",
+          "at": "A January email"
+        }
+      ]
     },
     {
       "id": "b40",
       "narration": "The first began when breaker HR1 opened on its own, with no alarm. It was as if an operator had turned the switch.",
-      "visual": {
-        "kind": "document",
-        "source": "NTSB MIR-25-40, p. 144",
-        "quote": "When Wire 1 became disconnected and HR1 opened, it was as if an operator had rotated the breaker control switch to ‘open,’ causing HR1 to intentionally open.",
-        "highlight": "as if an operator had rotated the breaker control switch"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-breaker-test-set-panel"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-old-control-room"
+          ],
+          "at": "It was as if"
+        }
+      ]
     },
     {
       "id": "b41",
       "narration": "On April 29th, during testing, HR1 tripped again. Shipyard engineers traced it to a single wire: Wire 1, in Terminal Block 381.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "mir-fig51-terminal-block-381-wire1"
-        ],
-        "label": "Terminal Block 381, NTSB"
-      }
+      "visuals": [
+        {
+          "kind": "stamp",
+          "text": "April 29, 2024",
+          "assets": [
+            "broll-breaker-test-cables"
+          ],
+          "subtext": "HR1 trips again"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-breaker-team-inspection"
+          ],
+          "at": "Shipyard engineers"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "mir-fig53-wire1-wire3-in-block"
+          ],
+          "label": "Terminal Block 381 · NTSB",
+          "at": "Wire 1, in Terminal Block 381."
+        }
+      ]
     },
     {
       "id": "b42",
       "narration": "Homendy compared it to hunting for a loose rivet on the Eiffel Tower.",
       "visual": {
-        "kind": "document",
-        "source": "NTSB news release, November 18, 2025",
-        "quote": "Finding this single wire was like hunting for a loose rivet on the Eiffel Tower.",
-        "highlight": "a loose rivet on the Eiffel Tower"
+        "kind": "footage",
+        "assets": [
+          "broll-yard-gusset-rivets"
+        ]
       }
     },
     {
       "id": "b43",
       "narration": "In the lab, investigators X-rayed the block. Under the microscope, they found arcing damage on the wire's metal tip, called a ferrule, and on the clamp it sat in.",
-      "visual": {
-        "kind": "evidence",
-        "heading": "NTSB lab",
-        "items": [
-          {
-            "asset": "mir-fig56-terminal-block-xray",
-            "note": "X-ray, Block 381"
-          },
-          {
-            "asset": "mir-fig58-wire1-ferrule-gouges",
-            "note": "Wire 1 ferrule"
-          },
-          {
-            "asset": "mir-fig62-arcing-damage-gate-face",
-            "note": "Arcing pits"
-          }
-        ],
-        "links": [
-          [
-            0,
-            2
-          ]
-        ]
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "mir-fig56-terminal-block-xray"
+          ],
+          "label": "X-ray, Terminal Block 381 · NTSB"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-microscope-focus-hands"
+          ],
+          "at": "Under the microscope,"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "mir-fig58-wire1-ferrule-gouges"
+          ],
+          "label": "Wire 1 ferrule · NTSB",
+          "at": "the wire's metal tip,"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "mir-fig62-arcing-damage-gate-face"
+          ],
+          "label": "Arcing damage · NTSB",
+          "at": "and on the clamp"
+        }
+      ]
     },
     {
       "id": "b44",
       "chapter": "The cause",
       "narration": "To understand the wire, go back to 2015, when the Dali was built.",
       "visual": {
-        "kind": "title",
+        "kind": "stamp",
         "text": "2015",
-        "subtext": "The shipyard"
+        "assets": [
+          "broll-night-hook-in-hold"
+        ]
       }
     },
     {
@@ -602,17 +1142,16 @@
         {
           "kind": "footage",
           "assets": [
-            "mir-fig42-hv-lv-switchboards"
-          ],
-          "label": "High- and low-voltage switchboards, NTSB"
+            "broll-px-hands-screwdriver-terminal-blocks"
+          ]
         },
         {
           "kind": "footage",
           "assets": [
-            "mir-fig53-wire1-wire3-in-block"
+            "mir-fig42-hv-lv-switchboards"
           ],
-          "at": "The builder told",
-          "label": "Wire labels, Blocks 376 to 384"
+          "label": "The Dali's switchboards · NTSB",
+          "at": "The builder told"
         }
       ]
     },
@@ -664,7 +1203,7 @@
         {
           "kind": "footage",
           "assets": [
-            "mir-fig61-ferrule-arcing-depression"
+            "broll-px-electrician-at-cabinet"
           ],
           "at": "Nobody noticed,"
         }
@@ -673,35 +1212,64 @@
     {
       "id": "b49",
       "narration": "The last switchboard inspection, three days before the accident, found no abnormalities. Infrared thermal imaging, the NTSB found, may have caught the loose wire.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "prelim-fig08-investigator-hv-switchboard"
-        ],
-        "label": "NTSB investigator at the switchboard, after the accident"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "prelim-fig08-investigator-hv-switchboard"
+          ],
+          "label": "NTSB investigator at the switchboard, after the accident"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-er-gauge-panel"
+          ],
+          "at": "Infrared thermal imaging,"
+        }
+      ]
     },
     {
       "id": "b50",
       "narration": "So, at or just before 1:25, the wire let go. HR1 opened. The cooling-water pump stopped, the engine shut down, and the steering died.",
       "visual": {
-        "kind": "evidence",
-        "heading": "The chain",
-        "items": [
+        "kind": "power",
+        "steps": [
           {
-            "asset": "mir-fig53-wire1-wire3-in-block",
-            "note": "Wire 1 lets go"
+            "clock": "1:24:59",
+            "label": "Wire 1 still making contact",
+            "on": [
+              "DG3",
+              "DG4",
+              "HV",
+              "ME",
+              "TR",
+              "LV",
+              "STEER",
+              "COOL",
+              "FUEL",
+              "LIGHTS"
+            ]
           },
           {
-            "asset": "mir-fig04-dali-helm",
-            "note": "No engine, no steering"
+            "clock": "1:25:00",
+            "label": "Wire 1 lets go: HR1 opens",
+            "on": [
+              "DG3",
+              "DG4",
+              "HV",
+              "ME"
+            ]
+          },
+          {
+            "clock": "1:25:08",
+            "label": "Engine and steering gone",
+            "on": [
+              "DG3",
+              "DG4",
+              "HV"
+            ]
           }
-        ],
-        "links": [
-          [
-            0,
-            1
-          ]
         ]
       }
     },
@@ -709,9 +1277,22 @@
       "id": "b51",
       "narration": "The breakers were set to manual. In automatic, power would have been back in about ten seconds, not 58.",
       "visual": {
-        "kind": "title",
-        "text": "10 seconds",
-        "subtext": "not 58, with breakers in automatic"
+        "kind": "chart",
+        "title": "Time to restore power",
+        "bars": [
+          {
+            "label": "Breakers in automatic (NTSB estimate)",
+            "value": 10,
+            "display": "about 10 s"
+          },
+          {
+            "label": "Breakers in manual, March 26",
+            "value": 58,
+            "display": "58 s",
+            "highlight": true
+          }
+        ],
+        "note": "NTSB MIR-25-40, Finding 12"
       }
     },
     {
@@ -727,91 +1308,194 @@
     {
       "id": "b53",
       "narration": "That explains why the ship hit the bridge. It does not explain why the bridge fell, or why six men died.",
-      "visual": {
-        "kind": "title",
-        "text": "The second question",
-        "background": "ntsb-aerial-stern-span-gap"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "drone-truss-on-bow-container-removal"
+          ],
+          "label": "April 7, 2024 · U.S. Coast Guard"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-yard-excavator-shear"
+          ],
+          "at": "It does not explain"
+        }
+      ]
     },
     {
       "id": "b54",
       "narration": "In 1980, a freighter struck Florida's Sunshine Skyway Bridge, and 35 people died. By 1991, national guidance recommended checking older bridges for ship-strike risk.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "mir-fig38-sunshine-skyway-1980"
-        ],
-        "label": "Sunshine Skyway, 1980"
-      }
+      "visuals": [
+        {
+          "kind": "stamp",
+          "text": "1980",
+          "assets": [
+            "mir-fig38-sunshine-skyway-1980"
+          ],
+          "subtext": "Sunshine Skyway Bridge, Florida"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "mir-fig40-i40-bridge-collapse"
+          ],
+          "label": "Interstate 40 bridge, Oklahoma · NTSB",
+          "at": "By 1991,"
+        }
+      ]
     },
     {
       "id": "b55",
       "narration": "Also in 1980, the 390-foot Blue Nagoya hit Pier 17's fender. The fender stopped it, and was rebuilt to its original design. The Dali was ten times its size.",
-      "visual": {
-        "kind": "evidence",
-        "heading": "Pier 17, 1980",
-        "items": [
-          {
-            "asset": "mir-fig36-blue-nagoya-vs-dali",
-            "note": "390 feet vs 984 feet"
-          }
-        ]
-      }
+      "visuals": [
+        {
+          "kind": "evidence",
+          "heading": "Pier 17, 1980",
+          "items": [
+            {
+              "asset": "mir-fig36-blue-nagoya-vs-dali",
+              "note": "390 feet vs 984 feet"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "title": "To scale",
+          "at": "The fender stopped it,",
+          "items": [
+            {
+              "label": "Blue Nagoya",
+              "length": 390,
+              "beam": 65,
+              "sublabel": "1980"
+            },
+            {
+              "label": "Dali",
+              "length": 984,
+              "beam": 158,
+              "sublabel": "2024",
+              "highlight": true
+            }
+          ],
+          "note": "Blue Nagoya displaced about one-tenth of the Dali · NTSB"
+        }
+      ]
     },
     {
       "id": "b56",
       "narration": "In 2006, at a harbor safety meeting, an MDTA representative stated that the Key Bridge was not designed to withstand contact by a large vessel.",
-      "visual": {
-        "kind": "document",
-        "source": "NTSB MIR-25-40, p. 134",
-        "quote": "the MDTA representative stated that the Key Bridge was not designed to withstand contact by a large vessel.",
-        "highlight": "not designed to withstand contact by a large vessel"
-      }
+      "visuals": [
+        {
+          "kind": "stamp",
+          "text": "2006",
+          "assets": [
+            "broll-cg-boat-harbor-skyline2"
+          ],
+          "subtext": "Harbor safety meeting"
+        },
+        {
+          "kind": "document",
+          "source": "NTSB MIR-25-40, p. 134",
+          "quote": "the MDTA representative stated that the Key Bridge was not designed to withstand contact by a large vessel.",
+          "highlight": "not designed to withstand contact by a large vessel",
+          "at": "an MDTA representative stated"
+        }
+      ]
     },
     {
       "id": "b57",
       "narration": "The MDTA never ran the recommended vulnerability assessment; no rule required it. The NTSB ran it afterward: a collapse risk almost 30 times the threshold for a critical bridge.",
-      "visual": {
-        "kind": "evidence",
-        "heading": "Annual frequency of collapse",
-        "items": [
-          {
-            "asset": "mir-table5-af-summary",
-            "note": "0.002921 vs 0.0001"
-          }
-        ]
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-yard-twisted-steel"
+          ]
+        },
+        {
+          "kind": "chart",
+          "title": "Annual frequency of collapse",
+          "at": "The NTSB ran it afterward:",
+          "bars": [
+            {
+              "label": "Threshold for a critical bridge (AASHTO)",
+              "value": 0.0001,
+              "display": "0.0001"
+            },
+            {
+              "label": "Key Bridge, NTSB calculation",
+              "value": 0.002921,
+              "display": "0.002921",
+              "highlight": true
+            }
+          ],
+          "note": "Almost 30 times the threshold · NTSB MIR-25-40, p. 135"
+        }
+      ]
     },
     {
       "id": "b58",
       "narration": "The nearest protective dolphins stood about 489 feet from the piers. The Dali touched none of them.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "mir-fig17-worker-vehicle-positions"
-        ],
-        "label": "Dolphins 1 and 2, NTSB drawing"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "prelim-fig07-route-after-blackout"
+          ],
+          "label": "Dolphins 1 and 2 · NTSB graphic"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "mir-figE1-dali-under-truss"
+          ],
+          "label": "NTSB",
+          "at": "The Dali touched none of them."
+        }
+      ]
     },
     {
       "id": "b59",
       "narration": "And the workers. The inspector had swapped phone numbers with the police officers. But when the order came, the police officers did not call the inspector.",
-      "visual": {
-        "kind": "document",
-        "source": "NTSB MIR-25-40, p. 177",
-        "quote": "when the call came in for the police officers to shut down the bridge to roadway traffic, the police officers did not call the inspector.",
-        "highlight": "the police officers did not call the inspector"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-police-hood-lights-radio"
+          ]
+        },
+        {
+          "kind": "document",
+          "source": "NTSB MIR-25-40, p. 177",
+          "quote": "when the call came in for the police officers to shut down the bridge to roadway traffic, the police officers did not call the inspector.",
+          "highlight": "the police officers did not call the inspector",
+          "at": "But when the order came,"
+        }
+      ]
     },
     {
       "id": "b60",
       "narration": "Warned when the police were, the crew would have had one minute and 16 seconds, perhaps enough to drive to a part of the bridge that stayed up.",
-      "visual": {
-        "kind": "title",
-        "text": "1 minute 16 seconds",
-        "subtext": "The warning the crew never got",
-        "background": "ntsb-aerial-severed-roadway"
-      }
+      "visuals": [
+        {
+          "kind": "stamp",
+          "text": "1:16",
+          "assets": [
+            "broll-px-night-highway-river-aerial"
+          ],
+          "subtext": "Time to drive clear"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-highway-sunset-quiet"
+          ],
+          "at": "perhaps enough to drive"
+        }
+      ]
     },
     {
       "id": "b61",
@@ -821,7 +1505,7 @@
         "heading": "Three failures",
         "items": [
           {
-            "asset": "banding-wire1-installation",
+            "asset": "mir-fig61-ferrule-arcing-depression",
             "note": "Never pushed home"
           },
           {
@@ -851,19 +1535,27 @@
       "narration": "On May 13th, explosive charges cut the fallen truss off the Dali's bow. On May 20th, the ship was refloated.",
       "visuals": [
         {
-          "kind": "footage",
+          "kind": "stamp",
+          "text": "May 13, 2024",
           "assets": [
             "demolition-side-view-uscg"
           ],
-          "label": "May 13, 2024, U.S. Coast Guard"
+          "subtext": "Controlled demolition"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "demolition-blast-closeup"
+          ],
+          "at": "cut the fallen truss"
         },
         {
           "kind": "footage",
           "assets": [
             "refloat-timelapse"
           ],
-          "at": "On May 20th,",
-          "label": "May 20, 2024"
+          "label": "May 20, 2024 · USACE",
+          "at": "On May 20th,"
         }
       ]
     },
@@ -874,15 +1566,15 @@
         {
           "kind": "footage",
           "assets": [
-            "navy-3d-sonar-wreck"
-          ],
-          "label": "U.S. Navy sonar, April 2024"
+            "broll-final-segment-lift"
+          ]
         },
         {
           "kind": "footage",
           "assets": [
             "channel-reopened-ship-passes-piers"
           ],
+          "label": "Fort McHenry Channel, June 2024",
           "at": "The Fort McHenry Channel"
         }
       ]
@@ -901,69 +1593,214 @@
     {
       "id": "b65",
       "narration": "In March 2025, the NTSB issued urgent recommendations: 30 owners of 68 bridges in 19 states should calculate the same collapse risk.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "wreck-site-after-refloat"
-        ]
-      }
+      "visuals": [
+        {
+          "kind": "stamp",
+          "text": "March 2025",
+          "assets": [
+            "wreck-site-after-refloat"
+          ],
+          "subtext": "Urgent recommendations"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-tug-under-bridge"
+          ],
+          "at": "30 owners of 68 bridges"
+        }
+      ]
     },
     {
       "id": "b66",
       "narration": "The final report asked for more, from a fix to the shipyard's banding procedure to ways of warning drivers and workers on bridges.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "banding-correct-installation"
-        ]
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-container-inspectors"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-highway-traffic-aerial-day"
+          ],
+          "at": "to ways of warning drivers"
+        }
+      ]
     },
     {
       "id": "b67",
       "narration": "The NTSB found that the quick actions of the pilots, the dispatcher and the MDTA police prevented a greater loss of life.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "uscg-boats-bow-under-truss"
-        ]
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-bridge-wing-mariners"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-dispatcher-keyboard"
+          ],
+          "at": "the dispatcher"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-police-cruiser-approaching"
+          ],
+          "at": "and the MDTA police"
+        }
+      ]
     },
     {
       "id": "b68",
       "narration": "Six men still died: Alejandro Hernández Fuentes, Dorlian Ronial Castillo Cabrera, Maynor Yassir Suazo Sandoval, Miguel Ángel Luna González, and two of their co-workers.",
-      "visual": {
-        "kind": "title",
-        "text": "In memory",
-        "subtext": "Six highway workers · March 26, 2024",
-        "background": "uscg-sunrise-dali-wreck"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-px-memorial-candles-night"
+          ]
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-memorial-buoy-flag-hull"
+          ],
+          "at": "Maynor Yassir Suazo Sandoval,"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-coast-guard-salute-water"
+          ],
+          "at": "and two of their co-workers."
+        }
+      ]
     },
     {
       "id": "b69",
       "narration": "A cable-stayed replacement is expected to open in late 2030, at an estimated 4.3 to 5.2 billion dollars.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "channel-reopened-ship-passes-piers"
-        ]
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-crane-barge-approach-span"
+          ]
+        },
+        {
+          "kind": "stamp",
+          "text": "Late 2030",
+          "assets": [
+            "broll-port-river-sunset-aerial"
+          ],
+          "subtext": "Expected opening",
+          "at": "in late 2030,"
+        }
+      ]
     },
     {
       "id": "b70",
       "narration": "At 1:25 that morning, a breaker opened because one wire had let go. It had waited nine years. The bridge had waited longer. As Homendy put it, like all of the accidents we investigate, this was preventable.",
       "visuals": [
         {
-          "kind": "title",
+          "kind": "stamp",
           "text": "1:25 AM",
-          "subtext": "March 26, 2024",
-          "background": "wreck-site-after-refloat"
+          "assets": [
+            "uscg-dawn-truss-silhouette"
+          ],
+          "subtext": "March 26, 2024"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-ship-wake-open-sea"
+          ],
+          "at": "It had waited nine years."
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-standing-truss-cranes"
+          ],
+          "at": "The bridge had waited longer."
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "broll-cg-boat-silhouette-sun"
+          ],
+          "at": "As Homendy put it,"
         },
         {
           "kind": "title",
           "text": "Preventable",
-          "at": "As Homendy put it,"
+          "subtext": "NTSB Chair Jennifer Homendy",
+          "at": "this was preventable."
         }
       ]
+    }
+  ],
+  "music": [
+    {
+      "asset": "music-lightless-dawn",
+      "from": "b01",
+      "to": "b07",
+      "offset": 0,
+      "volume": 0.12
+    },
+    {
+      "asset": "music-echoes-of-time-v2",
+      "from": "b08",
+      "to": "b13",
+      "offset": 0,
+      "volume": 0.11
+    },
+    {
+      "asset": "music-interloper",
+      "from": "b14",
+      "to": "b32",
+      "offset": 0,
+      "volume": 0.13
+    },
+    {
+      "asset": "music-heartbreaking",
+      "from": "b34",
+      "to": "b36",
+      "offset": 0,
+      "volume": 0.11
+    },
+    {
+      "asset": "music-long-note-four",
+      "from": "b37",
+      "to": "b43",
+      "offset": 0,
+      "volume": 0.12
+    },
+    {
+      "asset": "music-darkest-child",
+      "from": "b44",
+      "to": "b51",
+      "offset": 0,
+      "volume": 0.12
+    },
+    {
+      "asset": "music-darkest-child",
+      "from": "b53",
+      "to": "b61",
+      "offset": 80,
+      "volume": 0.12
+    },
+    {
+      "asset": "music-despair-and-triumph",
+      "from": "b62",
+      "to": "b70",
+      "offset": 0,
+      "volume": 0.12
     }
   ]
 }
