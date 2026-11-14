@@ -76,7 +76,7 @@ function makeCtx(sc) {
     t(phrase, nudge = 0) {
       const wi = find(phrase, sc.wi);
       const loc = ALL[wi].s - sc.start + nudge;
-      if (loc > sc.dur + 0.01) throw new Error(`${p}: "${phrase}" is after the scene ends`);
+      if (loc > sc.dur + 0.01) { if (process.env.STRICT === "list") { console.log(`LATE ${p} [${sc.at}] "${phrase}"`); return 0.35; } throw new Error(`${p}: "${phrase}" is after the scene ends`); }
       return +Math.max(0, loc).toFixed(3);
     },
     // place an animated group. opts: { at: seconds | phrase, anim, rot, idle, id, d }
