@@ -5,7 +5,7 @@ import {theme} from '../theme';
 
 // Investigation photos pinned to a board, with handwritten notes and red string between them.
 const SLOTS: Record<number, {x: number; y: number; r: number}[]> = {
-  1: [{x: 960, y: 520, r: -2}],
+  1: [{x: 960, y: 500, r: -2}],
   2: [
     {x: 600, y: 500, r: -4},
     {x: 1330, y: 560, r: 3},
@@ -34,7 +34,7 @@ export const EvidenceBoard: React.FC<{
   const shown = items.slice(0, 4);
   const slots = SLOTS[Math.max(1, shown.length)];
   const stagger = Math.min(36, Math.floor(durationInFrames / (shown.length + 2)));
-  const photoW = shown.length <= 2 ? 640 : 520;
+  const photoW = shown.length === 1 ? 1000 : shown.length === 2 ? 700 : 520;
   const drift = interpolate(frame, [0, durationInFrames], [1, 1.06]);
   const strings = links ?? shown.slice(1).map((_, i) => [i, i + 1] as [number, number]);
 

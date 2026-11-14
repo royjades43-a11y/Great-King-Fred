@@ -10,6 +10,9 @@ export type AssetRef = {
   duration?: number; // seconds, videos only
   trimIn?: number; // seconds into the clip to start from
   focus?: {x: number; y: number}; // 0..1, where the Ken Burns move should drift toward
+  width?: number;
+  height?: number;
+  fit?: 'cover' | 'contain'; // contain = show the whole image over a blurred backdrop (diagrams, documents)
 };
 
 export type EvidenceItem = {asset: AssetRef; note?: string};

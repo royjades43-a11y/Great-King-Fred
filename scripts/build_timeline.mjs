@@ -110,6 +110,9 @@ const resolveAsset = (id, where) => {
   if (a.duration) ref.duration = a.duration;
   if (a.trim_in) ref.trimIn = a.trim_in;
   if (a.focus) ref.focus = a.focus;
+  if (a.width) ref.width = a.width;
+  if (a.height) ref.height = a.height;
+  if (a.fit) ref.fit = a.fit;
   return ref;
 };
 
