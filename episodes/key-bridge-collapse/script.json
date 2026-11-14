@@ -277,7 +277,7 @@
         "kind": "document",
         "source": "NTSB MIR-25-40, Table C-1 voyage timeline (VDR), p. 221",
         "quote": "Second mate answered, ‘We have steering.’",
-        "highlight": "“We have steering.”"
+        "highlight": "‘We have steering.’"
       }
     },
     {
@@ -397,7 +397,7 @@
         "kind": "document",
         "source": "NTSB MIR-25-40, Table C-1 voyage timeline (VDR), p. 225",
         "quote": "Master stated, ‘It’s not working.’",
-        "highlight": "“It’s not working.”"
+        "highlight": "‘It’s not working.’"
       }
     },
     {

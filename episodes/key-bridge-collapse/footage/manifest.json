@@ -696,7 +696,8 @@
       "trimmed_from_source": [
         20.5,
         48.0
-      ]
+      ],
+      "trim_in": 1.5
     },
     {
       "id": "ntsb-aerial-pier-stub-truss",
@@ -750,7 +751,8 @@
       "trimmed_from_source": [
         305.0,
         335.0
-      ]
+      ],
+      "trim_in": 1.7
     },
     {
       "id": "uscg-aerial-wide-dali-wreck",
