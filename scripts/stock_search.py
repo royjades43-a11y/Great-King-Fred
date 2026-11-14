@@ -52,8 +52,10 @@ def pixabay(q, n, photos):
         if photos:
             out.append(dict(src="pixabay", id=h["id"], w=h["imageWidth"], h=h["imageHeight"], dur="", by=h["user"], preview=h["webformatURL"], page=h["pageURL"], dl=h.get("largeImageURL")))
         else:
-            v = h["videos"].get("large") or h["videos"].get("medium")
-            if v and v.get("url"):
+            vids = h["videos"]
+            # prefer ~1080p (we render at 1080p); skip portrait clips
+            v = next((vids[k] for k in ("medium", "large", "small") if vids.get(k, {}).get("url") and vids[k]["width"] >= 1280), None)
+            if v and v["width"] > v["height"]:
                 out.append(dict(src="pixabay", id=h["id"], w=v["width"], h=v["height"], dur=h["duration"], by=h["user"], preview=v.get("thumbnail", ""), page=h["pageURL"], dl=v["url"]))
     return out
 

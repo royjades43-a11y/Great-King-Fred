@@ -258,6 +258,26 @@ Every visual in this episode, where it came from, and the terms it is used under
   - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
   - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
   - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-crane-barge-approach-span** (video): Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel
+  - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-standing-truss-cranes** (video): Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel
+  - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-salvage-crew-barge-deck** (video): Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel
+  - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-torch-cutting-from-boat** (video): Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel
+  - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-workboat-under-truss** (video): Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel
+  - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
 
 ## Music
 

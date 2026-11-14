@@ -1070,6 +1070,96 @@
         122.0,
         140.0
       ]
+    },
+    {
+      "id": "broll-crane-barge-approach-span",
+      "file": "footage/broll-crane-barge-approach-span.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel",
+      "title": "Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, blue sky. A red-boom crawler crane on a barge beside the severed end of the bridge approach span and a pier; calm water. June 2024.",
+      "duration": 17.0,
+      "trimmed_from_source": [
+        158.0,
+        175.0
+      ]
+    },
+    {
+      "id": "broll-standing-truss-cranes",
+      "file": "footage/broll-standing-truss-cranes.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel",
+      "title": "Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. A tall section of fallen truss standing out of the river, with yellow and blue cranes on barges working around it. Key Bridge wreck removal, June 2024.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        182.0,
+        200.0
+      ]
+    },
+    {
+      "id": "broll-salvage-crew-barge-deck",
+      "file": "footage/broll-salvage-crew-barge-deck.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel",
+      "title": "Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Salvage workers in hard hats and orange vests on a crane barge deck, a crane counterweight above them, other work barges behind. Key Bridge wreck removal, June 2024.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        332.0,
+        348.0
+      ]
+    },
+    {
+      "id": "broll-torch-cutting-from-boat",
+      "file": "footage/broll-torch-cutting-from-boat.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel",
+      "title": "Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Workers in a small aluminium work boat cut into a mangled truss member with torches; smoke and sparks at the waterline, debris-clogged steel hanging above. Key Bridge wreck removal, June 2024.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        532.0,
+        550.0
+      ]
+    },
+    {
+      "id": "broll-workboat-under-truss",
+      "file": "footage/broll-workboat-under-truss.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel",
+      "title": "Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. A small work boat with crew idles among the legs of a fallen truss section standing in the river; industrial shoreline with white silos behind. Key Bridge wreck removal, June 2024.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        650.0,
+        668.0
+      ]
     }
   ]
 }
