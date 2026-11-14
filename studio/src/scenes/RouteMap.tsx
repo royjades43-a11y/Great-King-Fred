@@ -48,7 +48,7 @@ export const RouteMap: React.FC<{keyframes: RouteKey[]; title?: string; duration
   const angle = drift * 22; // bow swings toward the pier (stern swings the other way)
   const trailTop = BRIDGE_Y - keyframes[0].feet * PX_PER_FT;
   // camera closes in on the bridge as the ship approaches
-  const zoom = interpolate(feet, [0, 1600, keyframes[0].feet], [1.7, 1.25, 0.82], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const zoom = interpolate(feet, [0, 1600, 3200], [1.7, 1.25, 0.82], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const focusX = CX - pierOffset * interpolate(feet, [0, 1600], [0.6, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
   return (
