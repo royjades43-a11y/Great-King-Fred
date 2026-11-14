@@ -218,6 +218,14 @@ Every visual in this episode, where it came from, and the terms it is used under
   - Source: https://commons.wikimedia.org/wiki/File:Map-mv-dali-bridge-collision.png
   - Author: Michael.C.Wright (via Wikimedia Commons)
   - License: CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
+- **broll-dive-boat-helm** (video): B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations
+  - Source: https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali
+  - Author: Key Bridge Response 2024 Unified Command / USCG
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-diver-suits-up-wreck** (video): B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations
+  - Source: https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali
+  - Author: Key Bridge Response 2024 Unified Command / USCG
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
 
 ## Music
 

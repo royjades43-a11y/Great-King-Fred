@@ -890,6 +890,42 @@
       "license_url": "https://creativecommons.org/licenses/by/4.0/",
       "description": "Music bed candidate",
       "duration": 262.69
+    },
+    {
+      "id": "broll-dive-boat-helm",
+      "file": "footage/broll-dive-boat-helm.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali",
+      "title": "B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations",
+      "author": "Key Bridge Response 2024 Unified Command / USCG",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Inside the wheelhouse of a small response boat: a man in a hard hat and hi-vis vest at the helm, then a close view of hands on the throttle and console. Filmed during Key Bridge salvage dive operations, April 4, 2024.",
+      "duration": 7.9,
+      "trimmed_from_source": [
+        13.6,
+        21.5
+      ]
+    },
+    {
+      "id": "broll-diver-suits-up-wreck",
+      "file": "footage/broll-diver-suits-up-wreck.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali",
+      "title": "B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations",
+      "author": "Key Bridge Response 2024 Unified Command / USCG",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. On a work barge beside the fallen Key Bridge truss, a commercial diver in a brass-style hard-hat helmet is helped into his gear by tenders in hard hats; coiled yellow and red umbilical hoses on deck. Key Bridge salvage site, April 4, 2024.",
+      "duration": 17.0,
+      "trimmed_from_source": [
+        23.0,
+        40.0
+      ]
     }
   ]
 }
