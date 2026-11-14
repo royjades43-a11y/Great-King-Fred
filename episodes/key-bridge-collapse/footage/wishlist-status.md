@@ -21,8 +21,8 @@ The ECDIS and PPU playback videos (`ecdis-*`, `ppu-*`) were recorded by NTSB inv
 | S07 | Blue Nagoya vs Dali size comparison | **Found** (MIR Fig 36; portrait aspect) | `mir-fig36-blue-nagoya-vs-dali` |
 | S08 | AF table 0.002921 vs 0.0001 | **Found** (MIR Table 5) | `mir-table5-af-summary` |
 | S09 | Aerial of the Dali under the fallen truss | **Found** (USCG aerial from Commons, 1280 px, low sun; plus MIR Fig E-1 and USCG dawn video) | `uscg-aerial-wide-dali-wreck`, `mir-figE1-dali-under-truss`, `uscg-dawn-truss-silhouette` |
-| S10 | Bridge at 1977 opening / under construction | **Not yet**. Commons "Francis Scott Key bridge 1976.jpg" and NARA construction photo (546837) are identified but upload.wikimedia.org kept returning HTTP 429 (rate limit). See below. Fallback: `dali-arrival-under-bridge-wide` (intact bridge, daylight, March 23, 2024). | substitute: `dali-arrival-under-bridge-wide` |
-| S11 | Intact bridge, daylight | **Substitute**. The Commons 2015 photo was rate-limited (429). Daylight docket video of the intact bridge used instead. | `dali-arrival-under-bridge-wide`, `dali-arrival-under-bridge-tight` |
+| S10 | Bridge at 1977 opening / under construction | **Not found (blocked by rate limit)**. Retried on Nov 14, 00:00-00:10, with a descriptive User-Agent, strictly sequential requests, 2400px thumbnails and Retry-After waits: upload.wikimedia.org returned HTTP 429 every time. Commons "Francis Scott Key bridge 1976.jpg" and NARA construction photo (546837) are identified but upload.wikimedia.org kept returning HTTP 429 (rate limit). See below. The showrunner has excluded the docket CCTV clips, so there is **no usable fallback**. | none |
+| S11 | Intact bridge, daylight | **Not found (blocked by rate limit)**. Commons candidates still rate-limited (429): 'The Francis Scott Key Bridge (Baltimore).jpg', '20190202 Francis Scott Key Bridge (Baltimore) at sunset.jpg', 'Francis Scott Key Bridge I-695 Aerial.jpg', 'Francis Scott Key Bridge southern truss support.jpg'. The docket CCTV daylight clips are excluded by the showrunner. A DVIDS search found no video of the intact bridge, and DVIDS stills need the proxy-blocked image CDN. | none |
 | S12 | Aerial B-roll of bridge and Dali (NTSB) | **Found** (NTSB B-roll on Commons, 4 clips) | `ntsb-aerial-severed-roadway`, `ntsb-aerial-pier-stub-truss`, `ntsb-aerial-dali-truss-across-bow`, `ntsb-aerial-stern-span-gap` |
 | S13 | NTSB investigators on scene | **Substitute**. Flickr album licence checked: all 8 photos are "Public Domain Mark" (NTSB, photographer Peter Knudson), but live.staticflickr.com returned HTTP 429 for every download. Used the NTSB photo of an investigator sealing the HV switchboard (preliminary report Fig 8). | `prelim-fig08-investigator-hv-switchboard` |
 | S14 | Microscope close-ups: gouges, depression, arcing | **Found** (MIR Figs 58, 61, 62) | `mir-fig58-wire1-ferrule-gouges`, `mir-fig61-ferrule-arcing-depression`, `mir-fig62-arcing-damage-gate-face` |
@@ -67,6 +67,10 @@ The ECDIS and PPU playback videos (`ecdis-*`, `ppu-*`) were recorded by NTSB inv
 | S53 | Wire 1 and Wire 3; label banding | **Found** (MIR Fig 53; Fig 54 extracted, dropped) | `mir-fig53-wire1-wire3-in-block` |
 
 Extra (not on the wishlist): `mir-fig19-bow-strikes-pier17`, `mir-fig21-damage-spans-16-18`, `mir-fig58-…`, `drone-truss-on-bow-container-removal` (USCG drone, April 7).
+
+## Showrunner decision (Nov 14)
+
+The 7 privately recorded CCTV clips (`cctv-*`, `dock-east-*`, `dali-arrival-*`) stay in the manifest with their rights flagged, but they will not be used in the episode. That removes S01, S04, S32 and the intact-bridge fallback. S34 (Dali before the accident) is also still not found: Commons 'DALI (29715954007).jpg' (kees torn, CC BY-SA 2.0) was rate-limited.
 
 ## Download problems
 
