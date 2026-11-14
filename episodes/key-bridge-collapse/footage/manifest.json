@@ -926,6 +926,78 @@
         23.0,
         40.0
       ]
+    },
+    {
+      "id": "broll-diver-tenders-hoses",
+      "file": "footage/broll-diver-tenders-hoses.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali",
+      "title": "B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations",
+      "author": "Key Bridge Response 2024 Unified Command / USCG",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Diver in full helmet walks to the edge of the barge with tenders; piles of umbilical hose, dive control box, wrecked bridge steel and a pier in the background. Key Bridge salvage site, April 4, 2024.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        44.0,
+        62.0
+      ]
+    },
+    {
+      "id": "broll-dive-buoy-river",
+      "file": "footage/broll-dive-buoy-river.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali",
+      "title": "B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations",
+      "author": "Key Bridge Response 2024 Unified Command / USCG",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Grey-brown river water with a red marker float and a diver's line beside a submerged steel member, then the view from a boat moving away across the Patapsco with the wreck site on the horizon. April 4, 2024.",
+      "duration": 10.0,
+      "trimmed_from_source": [
+        69.0,
+        79.0
+      ]
+    },
+    {
+      "id": "broll-crane-lifts-container",
+      "file": "footage/broll-crane-lifts-container.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918321/crews-remove-containers-m-v-dali",
+      "title": "Crews remove containers on M/V Dali",
+      "author": "Charles Delano, U.S. Army Corps of Engineers",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, clear blue sky. A floating crane boom lifts a white Maersk shipping container, slowly turning on its slings. Key Bridge salvage, April 7, 2024.",
+      "duration": 11.3,
+      "trimmed_from_source": [
+        5.5,
+        16.8
+      ]
+    },
+    {
+      "id": "broll-container-over-barge",
+      "file": "footage/broll-container-over-barge.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918321/crews-remove-containers-m-v-dali",
+      "title": "Crews remove containers on M/V Dali",
+      "author": "Charles Delano, U.S. Army Corps of Engineers",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, clear. A container hangs from a crane above a flat deck barge, with the bent grey truss of the fallen bridge and a tug in the background. Key Bridge salvage, April 7, 2024.",
+      "duration": 17.4,
+      "trimmed_from_source": [
+        21.0,
+        38.4
+      ]
     }
   ]
 }

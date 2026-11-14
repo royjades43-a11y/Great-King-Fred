@@ -226,6 +226,22 @@ Every visual in this episode, where it came from, and the terms it is used under
   - Source: https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali
   - Author: Key Bridge Response 2024 Unified Command / USCG
   - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-diver-tenders-hoses** (video): B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations
+  - Source: https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali
+  - Author: Key Bridge Response 2024 Unified Command / USCG
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-dive-buoy-river** (video): B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations
+  - Source: https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali
+  - Author: Key Bridge Response 2024 Unified Command / USCG
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-crane-lifts-container** (video): Crews remove containers on M/V Dali
+  - Source: https://www.dvidshub.net/video/918321/crews-remove-containers-m-v-dali
+  - Author: Charles Delano, U.S. Army Corps of Engineers
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-container-over-barge** (video): Crews remove containers on M/V Dali
+  - Source: https://www.dvidshub.net/video/918321/crews-remove-containers-m-v-dali
+  - Author: Charles Delano, U.S. Army Corps of Engineers
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
 
 ## Music
 
