@@ -49,7 +49,7 @@ export const Media: React.FC<{asset: AssetRef; durationInFrames: number; seed?: 
     return (
       <AbsoluteFill style={{backgroundColor: 'black', overflow: 'hidden'}}>
         <Img src={src} style={{width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(40px) brightness(0.35)', transform: 'scale(1.2)'}} />
-        <AbsoluteFill style={{padding: '40px 60px 170px', transform: `scale(${s2})`}}>
+        <AbsoluteFill style={{padding: '40px 60px 200px', transform: `scale(${s2})`}}>
           <Img src={src} style={{width: '100%', height: '100%', objectFit: 'contain', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.6))'}} />
         </AbsoluteFill>
       </AbsoluteFill>

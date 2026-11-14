@@ -93,7 +93,7 @@ beats.forEach((b, bi) => {
       } else at = first + Math.round(((last - first + 1) * vi) / visuals.length);
     }
     // Cut slightly before the word lands so the picture leads the voice.
-    cuts.push({time: Math.max(0, tokens[at].start - 0.25), visual: v, beat: b});
+    cuts.push({time: Math.max(0, tokens[at].start - 0.25), visual: v, beat: b, first, last});
   });
 });
 cuts.sort((a, b) => a.time - b.time);
@@ -156,9 +156,23 @@ const scenes = cuts.map((c, i) => {
       if (!assets.length) errors.push(`${where}: stamp needs footage assets to sit on`);
       return {kind: 'stamp', ...base, text: v.text, ...(v.subtext ? {subtext: v.subtext} : {}), assets};
     }
-    case 'route':
-      if (!(v.keyframes ?? []).length) errors.push(`${where}: route needs keyframes [{clock, feet, note?, drift?}]`);
-      return {kind: 'route', ...base, keyframes: v.keyframes ?? [], ...(v.title ? {title: v.title} : {})};
+    case 'route': {
+      if (!(v.keyframes ?? []).length) errors.push(`${where}: route needs keyframes [{clock, feet, note?, drift?, at?}]`);
+      // A keyframe's `at` phrase pins the moment the ship reaches it to when the narrator says it.
+      const keyframes = (v.keyframes ?? []).map((k) => {
+        const {at: phrase, ...rest} = k;
+        if (!phrase) return rest;
+        const idx = findPhrase(c.first, c.last, phrase);
+        if (idx === -1) {
+          warnings.push(`${where}: route keyframe cue "${phrase}" not found in narration`);
+          return rest;
+        }
+        const t = tokens[idx].start - start;
+        if (t < 0 || t > end - start) warnings.push(`${where}: route keyframe cue "${phrase}" falls outside this scene`);
+        return {...rest, t: round(Math.max(0, Math.min(end - start, t)))};
+      });
+      return {kind: 'route', ...base, keyframes, ...(v.title ? {title: v.title} : {})};
+    }
     case 'power':
       if (!(v.steps ?? []).length) errors.push(`${where}: power needs steps [{clock, label, on: [...]}]`);
       return {kind: 'power', ...base, steps: v.steps ?? [], ...(v.title ? {title: v.title} : {})};

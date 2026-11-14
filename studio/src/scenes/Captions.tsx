@@ -53,7 +53,7 @@ export const Captions: React.FC<{lines: Line[]}> = ({lines}) => {
               style={{
                 color: active ? theme.accent : spoken ? theme.ink : 'rgba(244,239,230,0.72)',
                 display: 'inline-block',
-                transform: active ? 'scale(1.08)' : 'none',
+                
                 margin: '0 15px',
               }}
             >

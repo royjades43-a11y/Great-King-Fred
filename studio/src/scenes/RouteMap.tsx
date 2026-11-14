@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Easing, interpolate, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Easing, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import type {RouteKey} from '../types';
 import {theme} from '../theme';
 
@@ -8,8 +8,8 @@ import {theme} from '../theme';
 // the left-hand pier (the ship's starboard side when heading down the screen).
 const W = 1920;
 const H = 1080;
-const BRIDGE_Y = 900;
-const PX_PER_FT = 0.24;
+const BRIDGE_Y = 740;
+const PX_PER_FT = 0.19;
 const CX = 960; // channel centre
 const CHANNEL_FT = 700;
 const PIER_FT = 200; // channel edge to pier
@@ -27,17 +27,25 @@ const fmt = (sec: number) => {
 
 export const RouteMap: React.FC<{keyframes: RouteKey[]; title?: string; durationInFrames: number}> = ({keyframes, title, durationInFrames}) => {
   const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
   const n = keyframes.length;
-  const usable = Math.max(1, durationInFrames - 20);
-  const p = interpolate(frame, [10, 10 + usable], [0, n - 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
-  const i = Math.min(n - 2, Math.floor(p));
-  const local = n > 1 ? Easing.inOut(Easing.quad)(Math.min(1, p - i)) : 0;
-  const A = keyframes[Math.max(0, i)];
+  // When each keyframe is reached (frames). Pinned keyframes use their narration time;
+  // the rest are spread so the last one is reached at 65% of the scene, then held.
+  const times: number[] = keyframes.map((k, j) =>
+    k.t !== undefined ? k.t * fps : j === 0 ? 0 : 10 + ((durationInFrames * 0.65 - 10) * j) / Math.max(1, n - 1),
+  );
+  for (let j = 1; j < n; j++) times[j] = Math.max(times[j], times[j - 1] + 1);
+  let i = 0;
+  while (i < n - 2 && frame >= times[i + 1]) i++;
+  const A = keyframes[i];
   const B = keyframes[Math.min(n - 1, i + 1)];
+  const raw = n > 1 ? interpolate(frame, [times[i], times[Math.min(n - 1, i + 1)]], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) : 0;
+  const local = Easing.inOut(Easing.quad)(raw);
   const feet = A.feet + (B.feet - A.feet) * local;
   const clock = toSec(A.clock) + (toSec(B.clock) - toSec(A.clock)) * local;
   const drift = (A.drift ?? 0) + ((B.drift ?? 0) - (A.drift ?? 0)) * local;
-  const note = (local > 0.5 ? B.note : A.note) ?? '';
+  // a keyframe's note shows only once the ship has reached it
+  const note = (raw >= 1 ? B.note : A.note) ?? '';
 
   const halfChannel = (CHANNEL_FT / 2) * PX_PER_FT;
   const pierOffset = halfChannel + PIER_FT * PX_PER_FT;
@@ -48,7 +56,7 @@ export const RouteMap: React.FC<{keyframes: RouteKey[]; title?: string; duration
   const angle = drift * 22; // bow swings toward the pier (stern swings the other way)
   const trailTop = BRIDGE_Y - keyframes[0].feet * PX_PER_FT;
   // camera closes in on the bridge as the ship approaches
-  const zoom = interpolate(feet, [0, 1600, 3200], [1.7, 1.25, 0.82], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const zoom = interpolate(feet, [0, 1600, 3200], [1.45, 1.15, 0.95], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   const focusX = CX - pierOffset * interpolate(feet, [0, 1600], [0.6, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
   return (
@@ -68,7 +76,7 @@ export const RouteMap: React.FC<{keyframes: RouteKey[]; title?: string; duration
         <rect x={CX - halfChannel} y={0} width={halfChannel * 2} height={H} fill="url(#water)" />
         <line x1={CX - halfChannel} y1={0} x2={CX - halfChannel} y2={H} stroke="rgba(150,200,240,0.35)" strokeDasharray="14 10" strokeWidth={2} />
         <line x1={CX + halfChannel} y1={0} x2={CX + halfChannel} y2={H} stroke="rgba(150,200,240,0.35)" strokeDasharray="14 10" strokeWidth={2} />
-        <text x={CX + halfChannel + 14} y={60} fill="rgba(150,200,240,0.6)" fontFamily="Courier New" fontSize={22}>
+        <text x={CX + halfChannel + 14} y={BRIDGE_Y - 360} fill="rgba(150,200,240,0.6)" fontFamily="Courier New" fontSize={22}>
           FORT McHENRY CHANNEL · 700 FT
         </text>
         {/* track so far */}
@@ -78,12 +86,12 @@ export const RouteMap: React.FC<{keyframes: RouteKey[]; title?: string; duration
         {[-1, 1].map((s) => (
           <g key={s}>
             <rect x={CX + s * pierOffset - 14} y={BRIDGE_Y - 22} width={28} height={44} fill={s < 0 ? theme.alarm : '#8a949c'} />
-            <text x={CX + s * pierOffset} y={BRIDGE_Y + 60} textAnchor="middle" fill={s < 0 ? theme.alarm : '#c8d0d6'} fontFamily="Courier New" fontWeight={700} fontSize={26}>
+            <text x={CX + s * pierOffset + s * 40} y={BRIDGE_Y - 34} textAnchor={s < 0 ? 'end' : 'start'} fill={s < 0 ? theme.alarm : '#c8d0d6'} fontFamily="Courier New" fontWeight={700} fontSize={26}>
               PIER {s < 0 ? 17 : 18}
             </text>
           </g>
         ))}
-        <text x={60} y={BRIDGE_Y - 24} fill="#c8d0d6" fontFamily="Courier New" fontSize={24}>
+        <text x={CX - pierOffset - 420} y={BRIDGE_Y + 48} fill="#c8d0d6" fontFamily="Courier New" fontSize={24}>
           FRANCIS SCOTT KEY BRIDGE
         </text>
         {/* ship */}
@@ -96,7 +104,7 @@ export const RouteMap: React.FC<{keyframes: RouteKey[]; title?: string; duration
           />
           <rect x={-shipBeam / 2 + 3} y={-shipLen * 0.86} width={shipBeam - 6} height={shipLen * 0.08} fill="#fff3e0" />
         </g>
-        <text x={shipX + shipBeam + 18} y={bowY - shipLen / 2} fill="#ffd29a" fontFamily="Courier New" fontSize={24} fontWeight={700}>
+        <text x={shipX + shipBeam + 40} y={bowY - shipLen * 0.75} fill="#ffd29a" fontFamily="Courier New" fontSize={24} fontWeight={700}>
           DALI · 984 FT
         </text>
       </svg>

@@ -28,7 +28,7 @@ export type Scene =
   | {kind: 'chart'; start: number; end: number; title: string; bars: ChartBar[]; note?: string}
   | {kind: 'compare'; start: number; end: number; title: string; items: CompareItem[]; note?: string};
 
-export type RouteKey = {clock: string; feet: number; note?: string; drift?: number};
+export type RouteKey = {clock: string; feet: number; note?: string; drift?: number; t?: number};
 export type PowerStep = {clock: string; label: string; on: string[]};
 export type ChartBar = {label: string; value: number; display?: string; highlight?: boolean};
 export type CompareItem = {label: string; length: number; beam?: number; sublabel?: string; highlight?: boolean};
