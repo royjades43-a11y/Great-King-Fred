@@ -151,6 +151,21 @@ const scenes = cuts.map((c, i) => {
         ...(v.highlight ? {highlight: v.highlight} : {}),
         ...(v.background ? {background: resolveAsset(v.background, where)} : {}),
       };
+    case 'stamp': {
+      const assets = (v.assets ?? []).map((id) => resolveAsset(id, where)).filter(Boolean);
+      if (!assets.length) errors.push(`${where}: stamp needs footage assets to sit on`);
+      return {kind: 'stamp', ...base, text: v.text, ...(v.subtext ? {subtext: v.subtext} : {}), assets};
+    }
+    case 'route':
+      if (!(v.keyframes ?? []).length) errors.push(`${where}: route needs keyframes [{clock, feet, note?, drift?}]`);
+      return {kind: 'route', ...base, keyframes: v.keyframes ?? [], ...(v.title ? {title: v.title} : {})};
+    case 'power':
+      if (!(v.steps ?? []).length) errors.push(`${where}: power needs steps [{clock, label, on: [...]}]`);
+      return {kind: 'power', ...base, steps: v.steps ?? [], ...(v.title ? {title: v.title} : {})};
+    case 'chart':
+      return {kind: 'chart', ...base, title: v.title ?? '', bars: v.bars ?? [], ...(v.note ? {note: v.note} : {})};
+    case 'compare':
+      return {kind: 'compare', ...base, title: v.title ?? '', items: v.items ?? [], ...(v.note ? {note: v.note} : {})};
     default:
       errors.push(`${where}: unknown visual kind "${v.kind}"`);
       return {kind: 'title', ...base, text: ''};
@@ -160,6 +175,36 @@ const scenes = cuts.map((c, i) => {
 for (const s of scenes) if (s.end - s.start > 20) warnings.push(`scene at ${fmt(s.start)} holds for ${(s.end - s.start).toFixed(0)}s; split it with more visuals`);
 
 // ---------- outputs ----------
+// Music cues: {asset, from: beatId, to: beatId (inclusive), offset?: seconds into track, volume?: 0..1}
+const beatStart = (id) => {
+  const bi = beats.findIndex((b) => b.id === id);
+  const r = tokenRange.get(bi);
+  return r ? (bi === 0 ? 0 : Math.max(0, tokens[r[0]].start - 0.25)) : null;
+};
+const beatEnd = (id) => {
+  const bi = beats.findIndex((b) => b.id === id);
+  if (bi === -1) return null;
+  return bi + 1 < beats.length ? beatStart(beats[bi + 1].id) : duration;
+};
+const music = [];
+for (const [k, cue] of (script.music ?? []).entries()) {
+  const a = assetsById.get(cue.asset);
+  if (!a || a.type !== 'audio') {
+    errors.push(`music cue ${k + 1}: "${cue.asset}" is not an audio asset in the manifest`);
+    continue;
+  }
+  const start = cue.from ? beatStart(cue.from) : 0;
+  const end = cue.to ? beatEnd(cue.to) : duration;
+  if (start === null || end === null) {
+    errors.push(`music cue ${k + 1}: unknown beat id`);
+    continue;
+  }
+  const offset = cue.offset ?? 0;
+  if (a.duration && a.duration - offset < end - start - 0.5)
+    warnings.push(`music cue ${k + 1}: track ${a.id} (${a.duration.toFixed(0)}s from ${offset}s) is shorter than its ${(end - start).toFixed(0)}s slot; it will end early`);
+  music.push({file: a.file, start: round(start), end: round(end), offset, volume: cue.volume ?? 0.12});
+}
+
 const props = {
   title: script.title,
   fps: 30,
@@ -168,6 +213,7 @@ const props = {
   words: tokens.map((t) => ({text: t.text, start: round(t.start), end: round(t.end)})),
   scenes,
   captions,
+  music,
 };
 fs.mkdirSync(path.join(ep, 'build'), {recursive: true});
 fs.writeFileSync(path.join(ep, 'build/props.json'), JSON.stringify(props, null, 1));

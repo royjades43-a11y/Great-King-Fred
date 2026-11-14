@@ -10,3 +10,4 @@ episodes/*/audio/
 episodes/*/build/
 episodes/*/out/
 episodes/*/research/reports/
+episodes/*/music/*.mp3

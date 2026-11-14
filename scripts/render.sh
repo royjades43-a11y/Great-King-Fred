@@ -29,5 +29,10 @@ else
   OUT="$EP/out/$SLUG.mp4"
   npx remotion render src/index.ts Documentary "$OUT" --props="$EP/build/props.json" --public-dir="$EP" "${BROWSER[@]}" --log=error
 fi
+# Master the mix to YouTube's playback target: -14 LUFS integrated, -1 dBTP true peak.
+if [ "$PREVIEW" = 0 ] && ffprobe -v error -select_streams a -show_entries stream=index -of csv=p=0 "$OUT" | grep -q .; then
+  ffmpeg -v error -y -i "$OUT" -c:v copy -af loudnorm=I=-14:TP=-1:LRA=11 -c:a aac -b:a 192k -movflags +faststart "$OUT.tmp.mp4" && mv "$OUT.tmp.mp4" "$OUT"
+  echo "audio mastered to -14 LUFS"
+fi
 echo "rendered: $OUT"
 python3 "$ROOT/scripts/check_frames.py" "$EP" "$OUT"

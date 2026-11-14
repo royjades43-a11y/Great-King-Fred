@@ -21,7 +21,19 @@ export type Scene =
   | {kind: 'footage'; start: number; end: number; assets: AssetRef[]; label?: string}
   | {kind: 'evidence'; start: number; end: number; items: EvidenceItem[]; heading?: string; links?: [number, number][]}
   | {kind: 'title'; start: number; end: number; text: string; subtext?: string; background?: AssetRef}
-  | {kind: 'document'; start: number; end: number; source: string; quote: string; highlight?: string; background?: AssetRef};
+  | {kind: 'document'; start: number; end: number; source: string; quote: string; highlight?: string; background?: AssetRef}
+  | {kind: 'stamp'; start: number; end: number; text: string; subtext?: string; assets: AssetRef[]}
+  | {kind: 'route'; start: number; end: number; keyframes: RouteKey[]; title?: string}
+  | {kind: 'power'; start: number; end: number; steps: PowerStep[]; title?: string}
+  | {kind: 'chart'; start: number; end: number; title: string; bars: ChartBar[]; note?: string}
+  | {kind: 'compare'; start: number; end: number; title: string; items: CompareItem[]; note?: string};
+
+export type RouteKey = {clock: string; feet: number; note?: string; drift?: number};
+export type PowerStep = {clock: string; label: string; on: string[]};
+export type ChartBar = {label: string; value: number; display?: string; highlight?: boolean};
+export type CompareItem = {label: string; length: number; beam?: number; sublabel?: string; highlight?: boolean};
+
+export type MusicCue = {file: string; start: number; end: number; offset: number; volume: number};
 
 export type DocumentaryProps = {
   title: string;
@@ -31,4 +43,5 @@ export type DocumentaryProps = {
   words: Word[];
   scenes: Scene[];
   captions: boolean;
+  music?: MusicCue[];
 };

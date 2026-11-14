@@ -19,8 +19,9 @@ import subprocess
 import sys
 
 VIDEO_EXT = {".mp4", ".mov", ".m4v", ".webm", ".ogv", ".ogg", ".mkv", ".avi", ".mpg", ".mpeg", ".flv", ".wmv", ".3gp", ".ts"}
+AUDIO_EXT = {".mp3", ".wav", ".m4a", ".aac", ".flac", ".ogg_audio"}
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff", ".gif", ".bmp"}
-OK_LICENSES = ("public domain", "pd", "cc0", "cc by", "cc-by", "cc by-sa", "cc-by-sa", "us government", "u.s. government")
+OK_LICENSES = ("public domain", "pd", "cc0", "cc by", "cc-by", "cc by-sa", "cc-by-sa", "us government", "u.s. government", "pexels license", "pixabay content license")
 
 
 def probe(path):
@@ -49,7 +50,12 @@ def save(ep, m):
 
 def write_credits(ep, m):
     lines = ["# Footage and image credits", "", "Every visual in this episode, where it came from, and the terms it is used under.", ""]
-    for a in m["assets"]:
+    visuals = [a for a in m["assets"] if a["type"] != "audio"]
+    music = [a for a in m["assets"] if a["type"] == "audio"]
+    for a in visuals + ([{"_heading": True}] if music else []) + music:
+        if a.get("_heading"):
+            lines += ["", "## Music", ""]
+            continue
         lines.append(f"- **{a['id']}** ({a['type']}): {a.get('title') or a.get('description') or ''}")
         lines.append(f"  - Source: {a['source_url']}")
         lines.append(f"  - Author: {a.get('author') or 'unknown'}")
@@ -105,10 +111,15 @@ def main():
 
     ext = os.path.splitext(a.src)[1].lower()
     info = probe(a.src)
-    is_video = ext in VIDEO_EXT or (ext not in IMAGE_EXT and info.get("duration") and info["duration"] > 0.5)
+    is_audio = ext in AUDIO_EXT and not info.get("width")
+    is_video = (not is_audio) and ext in VIDEO_EXT or (ext not in IMAGE_EXT and info.get("duration") and info["duration"] > 0.5)
     os.makedirs(os.path.join(ep, "footage"), exist_ok=True)
 
-    if is_video:
+    if is_audio:
+        os.makedirs(os.path.join(ep, "music"), exist_ok=True)
+        rel = f"music/{a.id}.mp3"
+        cmd = ["ffmpeg", "-y", "-v", "error", "-i", a.src, "-vn", "-c:a", "libmp3lame", "-b:a", "192k", os.path.join(ep, rel)]
+    elif is_video:
         rel = f"footage/{a.id}.mp4"
         cmd = ["ffmpeg", "-y", "-v", "error"]
         if a.trim_in:
@@ -130,7 +141,7 @@ def main():
     entry = {
         "id": a.id,
         "file": rel,
-        "type": "video" if is_video else "image",
+        "type": "audio" if is_audio else "video" if is_video else "image",
         "width": out["width"],
         "height": out["height"],
         "source_url": a.source_url,
@@ -140,14 +151,14 @@ def main():
         "license_url": a.license_url,
         "description": a.description,
     }
-    if is_video:
+    if is_video or is_audio:
         entry["duration"] = round(out["duration"] or 0, 2)
         if a.trim_in or a.trim_out:
             entry["trimmed_from_source"] = [a.trim_in or 0, a.trim_out]
     if a.focus:
         x, y = (float(v) for v in a.focus.split(","))
         entry["focus"] = {"x": x, "y": y}
-    if out["width"] and out["width"] < 1000:
+    if not is_audio and out["width"] and out["width"] < 1000:
         print(f"note: {a.id} is only {out['width']}px wide; it will look soft full screen. Prefer it on an evidence board.")
 
     m["assets"] = [x for x in m["assets"] if x["id"] != a.id] + [entry]

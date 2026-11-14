@@ -18,6 +18,9 @@ You are the editor for Engineering Failure Studio. You get `episodes/<slug>/` co
 5. **Render**: `bash scripts/render.sh episodes/<slug>`. This renders `out/<slug>.mp4` at 1920x1080, 30fps, H.264 with the voiceover, then runs QA into `build/qa/`. A 10 minute episode takes a while; run it in the background and wait.
 6. **QA loop**: hand off to the frame-inspector (or read `build/qa/report.md` and every contact sheet yourself). Fix what it finds in script.json, the manifest, or studio/src, then re-render. Stop after 3 rounds and report what's left.
 
+## Sound
+render.sh masters the final mix to -14 LUFS / -1 dBTP. Music cues come from script.json `music`; the renderer ducks them under the narration. If the music is too loud or quiet, change the cue's `volume` (0.08 to 0.18 is the useful range).
+
 ## Changing the look
 The renderer is the Remotion project in `studio/src/`: `Documentary.tsx` (layout), `scenes/*.tsx` (FootageScene, EvidenceBoard, DocumentCard, TitleCard, Captions) and `theme.ts` (colours, fonts, fades). When the user asks for a style change in plain English, make it there, keep `npx tsc --noEmit` passing in studio/, and re-render. If the change should apply to every future episode, say so; it already does, because all episodes share studio/.
 

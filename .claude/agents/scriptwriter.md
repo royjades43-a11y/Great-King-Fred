@@ -48,6 +48,18 @@ Length: about 1,400 to 1,500 words, which is about 10 minutes at a measured pace
 - Change the visual at least every 6 to 12 seconds of narration (about 15 to 30 words). Don't reuse the same asset in back-to-back beats, and use each strong shot only once or twice in the whole episode.
 - Every asset id must exist in the manifest.
 
+## More visual kinds (use them; read docs/VISUAL_STANDARDS.md first)
+- `stamp`: a time or place typed over moving footage. Use it instead of `title` for every timestamp: `{"kind": "stamp", "text": "1:25:00 AM", "subtext": "First blackout", "assets": ["broll-ship-night"]}`
+- `route`: animated channel map with a running clock and a distance-to-bridge readout: `{"kind": "route", "keyframes": [{"clock": "1:25:00", "feet": 3200, "note": "Blackout"}, {"clock": "1:27:04", "feet": 1500, "note": "Second blackout", "drift": 0.3}, {"clock": "1:29:09", "feet": 0, "note": "Impact", "drift": 1}]}` (drift 0..1 moves the ship toward the left pier)
+- `power`: animated one-line power diagram. Nodes: DG2 DG3 DG4 HV ME TR LV STEER COOL FUEL LIGHTS EG. `{"kind": "power", "steps": [{"clock": "1:24:59", "label": "Underway", "on": ["DG3","DG4","HV","ME","TR","LV","STEER","COOL","FUEL","LIGHTS"]}, {"clock": "1:25:00", "label": "Breaker HR1 opens", "on": ["DG3","DG4","HV","ME"]}]}`
+- `chart`: `{"kind": "chart", "title": "...", "bars": [{"label": "...", "value": 0.002921, "display": "0.0029", "highlight": true}], "note": "..."}`
+- `compare`: to-scale hulls: `{"kind": "compare", "title": "...", "items": [{"label": "Blue Nagoya", "length": 390, "beam": 65}, {"label": "Dali", "length": 984, "beam": 158, "highlight": true}]}`
+
+Pacing rules: at least 60% of runtime is moving video (event footage, B-roll, motion graphics); 2 to 3 visuals per sentence in action acts (`visuals` with `at` cues on the key nouns); no asset used twice; title cards under 5% of runtime. B-roll marked REPRESENTATIVE is atmosphere: never give it a label that names the subject, and never use it for the decisive moments.
+
+## Music
+Add a top-level `"music"` list with one cue per act, using audio asset ids from the manifest: `{"asset": "music-lightless-dawn", "from": "b01", "to": "b12", "offset": 0, "volume": 0.12}`. Switch tracks at act boundaries. For the impact and the reveal of the cause, end a cue one beat early so the moment lands in near-silence.
+
 ## voiceover.txt
 The full narration only, in beat order, as plain paragraphs (a blank line between acts). It must contain no ids, headings or stage directions. This is pasted straight into ElevenLabs.
 

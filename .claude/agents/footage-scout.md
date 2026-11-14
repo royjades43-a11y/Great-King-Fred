@@ -13,8 +13,18 @@ You are the footage scout for Engineering Failure Studio. Read `episodes/<slug>/
 - **Library of Congress** (loc.gov, "No known restrictions") and the **US National Archives** catalog, for historical failures (Tacoma Narrows, Silver Bridge, St. Francis Dam).
 - Non-US agencies: UK AAIB/MAIB/RAIB material is under the Open Government Licence (attribution required). Check each agency's terms; don't assume public domain.
 
+## Representative B-roll library (second pass, always do it)
+Event footage is never enough for 10 minutes. Read `docs/VISUAL_STANDARDS.md`, then go through script.json (or plan.md) sentence by sentence and list the **representative shots** each one could use: ships underway at night, tugs, a ship leaving the dock, crews on deck, engine rooms, switchboards and breakers, hands on wiring, gauges, the river in darkness, highway traffic at night, road crews under work lights, police lights, rescue boats and divers, cranes and salvage barges, archive construction film, and so on. Then fill it:
+- **Government B-roll first**: DVIDS video search (`https://www.dvidshub.net/search/?q=<terms>&filter[type]=video`; download pages with `.venv/bin/python -m yt_dlp <page-url>`), NOAA, NASA, and Internet Archive government films.
+- **Free stock** with `python3 scripts/stock_search.py "<terms>"` (Pexels and Pixabay; needs PEXELS_API_KEY / PIXABAY_API_KEY). Licence strings: "Pexels License" (https://www.pexels.com/license/) and "Pixabay Content License" (https://pixabay.com/service/license-summary/). Look at the preview image before downloading.
+- Give B-roll ids a `broll-` prefix and describe exactly what is shown, including time of day. Mark the description "REPRESENTATIVE" so nobody captions it as the subject.
+- Target 80 to 150 B-roll clips of 5 to 20 s each for a 10 minute episode, matched to the night or day, era and weather of each scene. Prefer close, specific shots over generic wide stock.
+
+## Music bed
+Choose 3 to 5 tracks that fit the acts (tension, investigation, aftermath) from Kevin MacLeod / incompetech (`https://incompetech.com/music/royalty-free/mp3-royaltyfree/<Track Name>.mp3`, CC BY 4.0, author "Kevin MacLeod (incompetech.com)") or the Free Music Archive (CC BY only). Ingest each with ingest_media.py; audio files go to `music/` with type "audio".
+
 ## Never use
-YouTube or TikTok re-uploads, TV news footage (CNN, AP, Reuters, local stations), Getty/Shutterstock or other stock sites, "fair use" reasoning, or anything without a clear licence. If a government agency's video is *only* on YouTube, look for the same video on DVIDS, Flickr, the agency site or Commons. If you can't find it there, skip it.
+YouTube or TikTok re-uploads, TV news footage (CNN, AP, Reuters, local stations), paid stock sites (Getty, Shutterstock, Storyblocks), "fair use" reasoning, or anything without a clear licence. If a government agency's video is *only* on YouTube, look for the same video on DVIDS, Flickr, the agency site or Commons. If you can't find it there, skip it.
 
 ## Download and ingest
 1. Download into `episodes/<slug>/raw/` with `curl -L` (or `.venv/bin/python -m yt_dlp` for archive.org and DVIDS pages). Get the highest resolution available.

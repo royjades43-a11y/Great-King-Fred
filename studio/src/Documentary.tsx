@@ -5,10 +5,15 @@ import {FootageScene} from './scenes/FootageScene';
 import {EvidenceBoard} from './scenes/EvidenceBoard';
 import {TitleCard} from './scenes/TitleCard';
 import {DocumentCard} from './scenes/DocumentCard';
+import {Stamp} from './scenes/Stamp';
+import {RouteMap} from './scenes/RouteMap';
+import {PowerDiagram} from './scenes/PowerDiagram';
+import {Chart} from './scenes/Chart';
+import {Compare} from './scenes/Compare';
 import {Captions, groupWords} from './scenes/Captions';
 import {theme} from './theme';
 
-export const Documentary: React.FC<DocumentaryProps> = ({fps, audio, words, scenes, captions}) => {
+export const Documentary: React.FC<DocumentaryProps> = ({fps, audio, words, scenes, captions, music}) => {
   const lines = useMemo(() => groupWords(words), [words]);
   return (
     <AbsoluteFill style={{backgroundColor: 'black'}}>
@@ -29,6 +34,15 @@ export const Documentary: React.FC<DocumentaryProps> = ({fps, audio, words, scen
       <Grade />
       {captions ? <Captions lines={lines} /> : null}
       {audio ? <Audio src={staticFile(audio)} /> : null}
+      {(music ?? []).map((m, i) => (
+        <Sequence key={`music-${i}`} from={Math.round(m.start * fps)} durationInFrames={Math.max(1, Math.round((m.end - m.start) * fps))}>
+          <Audio
+            src={staticFile(m.file)}
+            startFrom={Math.round(m.offset * fps)}
+            volume={(f) => musicVolume(f, m, fps, words)}
+          />
+        </Sequence>
+      ))}
     </AbsoluteFill>
   );
 };
@@ -41,6 +55,16 @@ const SceneView: React.FC<{scene: Scene; durationInFrames: number}> = ({scene, d
       return <EvidenceBoard items={scene.items} durationInFrames={durationInFrames} heading={scene.heading} links={scene.links} />;
     case 'title':
       return <TitleCard text={scene.text} subtext={scene.subtext} background={scene.background} durationInFrames={durationInFrames} />;
+    case 'stamp':
+      return <Stamp text={scene.text} subtext={scene.subtext} assets={scene.assets} durationInFrames={durationInFrames} />;
+    case 'route':
+      return <RouteMap keyframes={scene.keyframes} title={scene.title} durationInFrames={durationInFrames} />;
+    case 'power':
+      return <PowerDiagram steps={scene.steps} title={scene.title} durationInFrames={durationInFrames} />;
+    case 'chart':
+      return <Chart title={scene.title} bars={scene.bars} note={scene.note} durationInFrames={durationInFrames} />;
+    case 'compare':
+      return <Compare title={scene.title} items={scene.items} note={scene.note} durationInFrames={durationInFrames} />;
     case 'document':
       return (
         <DocumentCard
@@ -67,3 +91,24 @@ const Grade: React.FC = () => (
     <AbsoluteFill style={{background: 'linear-gradient(to bottom, transparent 70%, rgba(0,0,0,0.55) 100%)'}} />
   </AbsoluteFill>
 );
+
+// Music bed: fades in and out over 2.5 s, sits under the narration, and lifts in pauses longer than ~1 s.
+function musicVolume(f: number, m: {start: number; end: number; volume: number}, fps: number, words: {start: number; end: number}[]) {
+  const len = (m.end - m.start) * fps;
+  const fade = Math.min(1, f / (2.5 * fps), (len - f) / (2.5 * fps));
+  const t = m.start + f / fps;
+  let lo = 0;
+  let hi = words.length - 1;
+  while (lo < hi) {
+    const mid = (lo + hi) >> 1;
+    if (words[mid].end < t) lo = mid + 1;
+    else hi = mid;
+  }
+  const w = words[lo];
+  const prevEnd = lo > 0 ? words[lo - 1].end : -10;
+  const speaking = w && t >= w.start - 0.35 && t <= w.end + 0.35;
+  const gapLen = w ? w.start - prevEnd : 10;
+  const inGap = !speaking && (gapLen > 1.0 || !w || t > w.end + 1);
+  const lift = inGap ? 2.2 : 1;
+  return Math.max(0, Math.min(1, m.volume * lift * Math.max(0, fade)));
+}

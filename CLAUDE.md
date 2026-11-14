@@ -42,10 +42,13 @@ episodes/<slug>/
 - `node scripts/build_timeline.mjs <ep> [--estimate]`: script + words + manifest → build/props.json; validates everything
 - `bash scripts/render.sh <ep> [--estimate] [--preview]`: render + QA
 - `python3 scripts/check_frames.py <ep>`: contact sheets, black/frozen-frame detection
-- Renderer: Remotion project in `studio/` (`Documentary.tsx`, `scenes/`, `theme.ts`). Visual kinds: `footage` (full screen), `evidence` (pinned photos, notes, red string), `document` (report quote with highlight), `title`.
+- Renderer: Remotion project in `studio/` (`Documentary.tsx`, `scenes/`, `theme.ts`). Visual kinds: `footage` (full screen), `stamp` (timestamp over footage), `route` (animated channel map + clock), `power` (animated power diagram), `chart`, `compare` (to-scale), `evidence` (pinned photos, notes, red string), `document` (report quote with highlight), `title`.
+- `python3 scripts/stock_search.py "<terms>"`: Pexels/Pixabay B-roll search (needs PEXELS_API_KEY / PIXABAY_API_KEY env vars)
 - Set `EFS_BROWSER=/path/to/chrome` to make Remotion use an existing Chrome instead of downloading one.
 
 ## Non-negotiables
 - Facts come from the official report; never invent numbers, quotes or causes.
-- Footage must be public domain, CC0, CC BY or CC BY-SA (or an equivalent open government licence), and recorded in the manifest with its source. No news-broadcast, YouTube re-upload or stock footage.
+- Footage must be public domain, CC0, CC BY or CC BY-SA (or an equivalent open government licence), or free stock under the Pexels / Pixabay licences for representative B-roll only, and recorded in the manifest with its source. No news-broadcast, YouTube re-upload or paid stock footage.
+- Representative B-roll is never captioned as the subject and never stands in for the event's decisive moments.
+- Visual and sound standards: `docs/VISUAL_STANDARDS.md` (60%+ moving video, no shot reuse, music bed at -14 LUFS master).
 - Narration never describes a shot the episode doesn't have.
