@@ -1,0 +1,13 @@
+node_modules/
+.venv/
+__pycache__/
+.DS_Store
+# Episode media is large and re-downloadable; the plans, scripts, manifests and credits are kept.
+episodes/*/raw/
+episodes/*/footage/*.mp4
+episodes/*/footage/*.jpg
+episodes/*/audio/
+episodes/*/build/
+episodes/*/out/
+episodes/*/research/reports/
+episodes/*/music/*.mp3
