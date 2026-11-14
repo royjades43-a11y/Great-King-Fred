@@ -7,18 +7,18 @@ import {theme} from '../theme';
 // lit nodes and the lines between them glow, the rest go dark.
 type Node = {id: string; label: string; x: number; y: number; w?: number};
 const NODES: Node[] = [
-  {id: 'DG2', label: 'GENERATOR 2', x: 260, y: 230},
-  {id: 'DG3', label: 'GENERATOR 3', x: 560, y: 230},
-  {id: 'DG4', label: 'GENERATOR 4', x: 860, y: 230},
-  {id: 'HV', label: 'HIGH-VOLTAGE BOARD', x: 560, y: 420, w: 560},
-  {id: 'ME', label: 'MAIN ENGINE', x: 1300, y: 420},
-  {id: 'TR', label: 'BREAKER HR1 + TRANSFORMER', x: 560, y: 600, w: 460},
-  {id: 'LV', label: 'LOW-VOLTAGE BOARD', x: 560, y: 780, w: 560},
-  {id: 'STEER', label: 'STEERING PUMPS', x: 260, y: 950},
-  {id: 'COOL', label: 'COOLING PUMP', x: 560, y: 950},
-  {id: 'FUEL', label: 'FLUSHING (FUEL) PUMP', x: 880, y: 950, w: 330},
-  {id: 'LIGHTS', label: 'LIGHTS', x: 1180, y: 950},
-  {id: 'EG', label: 'EMERGENCY GENERATOR', x: 1500, y: 780, w: 340},
+  {id: 'DG2', label: 'GENERATOR 2', x: 260, y: 180},
+  {id: 'DG3', label: 'GENERATOR 3', x: 560, y: 180},
+  {id: 'DG4', label: 'GENERATOR 4', x: 860, y: 180},
+  {id: 'HV', label: 'HIGH-VOLTAGE BOARD', x: 560, y: 340, w: 560},
+  {id: 'ME', label: 'MAIN ENGINE', x: 1300, y: 340},
+  {id: 'TR', label: 'BREAKER HR1 + TRANSFORMER', x: 560, y: 490, w: 460},
+  {id: 'LV', label: 'LOW-VOLTAGE BOARD', x: 560, y: 640, w: 560},
+  {id: 'STEER', label: 'STEERING PUMPS', x: 260, y: 790},
+  {id: 'COOL', label: 'COOLING PUMP', x: 560, y: 790},
+  {id: 'FUEL', label: 'FLUSHING (FUEL) PUMP', x: 880, y: 790, w: 330},
+  {id: 'LIGHTS', label: 'LIGHTS', x: 1180, y: 790},
+  {id: 'EG', label: 'EMERGENCY GENERATOR', x: 1500, y: 640, w: 340},
 ];
 const EDGES: [string, string][] = [
   ['DG2', 'HV'], ['DG3', 'HV'], ['DG4', 'HV'], ['HV', 'ME'], ['HV', 'TR'], ['TR', 'LV'],
