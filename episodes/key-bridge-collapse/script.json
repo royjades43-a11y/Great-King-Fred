@@ -22,43 +22,22 @@
             "broll-px-night-container-terminal-aerial"
           ],
           "at": "a loaded containership"
-        },
-        {
-          "kind": "footage",
-          "assets": [
-            "broll-px-bulb-flickers-out"
-          ],
-          "at": "lost its electrical power."
         }
       ]
     },
     {
       "id": "b02",
       "narration": "The Dali was 984 feet long, and about 3,200 feet from the Francis Scott Key Bridge.",
-      "visuals": [
-        {
-          "kind": "footage",
-          "assets": [
-            "broll-night-ship-hull-side"
-          ]
-        },
-        {
-          "kind": "route",
-          "keyframes": [
-            {
-              "clock": "1:25:00",
-              "feet": 3200,
-              "note": "3.3 ship lengths"
-            },
-            {
-              "clock": "1:25:00",
-              "feet": 3200,
-              "note": "Power lost"
-            }
-          ],
-          "at": "about 3,200 feet"
-        }
-      ]
+      "visual": {
+        "kind": "route",
+        "keyframes": [
+          {
+            "clock": "1:25:00",
+            "feet": 3200,
+            "note": "3.3 ship lengths"
+          }
+        ]
+      }
     },
     {
       "id": "b03",
@@ -120,25 +99,16 @@
     {
       "id": "b06",
       "narration": "The cause had been on board since the ship was built. It was small enough to hold between two fingers.",
-      "visuals": [
-        {
-          "kind": "footage",
-          "assets": [
-            "broll-ship-no-smoking-stencil"
-          ]
-        },
-        {
-          "kind": "evidence",
-          "heading": "Exhibit A",
-          "items": [
-            {
-              "asset": "mir-fig51-terminal-block-381-wire1",
-              "note": "Small enough to hold"
-            }
-          ],
-          "at": "It was small enough"
-        }
-      ]
+      "visual": {
+        "kind": "evidence",
+        "heading": "Exhibit A",
+        "items": [
+          {
+            "asset": "mir-fig51-terminal-block-381-wire1",
+            "note": "Small enough to hold"
+          }
+        ]
+      }
     },
     {
       "id": "b07",
@@ -153,7 +123,7 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-px-bridge-lights-river-night"
+            "broll-px-night-highway-river-aerial"
           ],
           "at": "And why did"
         }
@@ -167,7 +137,7 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-harbor-bridge-aerial"
+            "broll-clamshell-bridge-approach"
           ]
         },
         {
@@ -194,7 +164,7 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-barge-truss-bridge-dawn"
+            "broll-tug-barge-passes"
           ]
         },
         {
@@ -222,7 +192,7 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-tug-bow-under-bridge"
+            "broll-ship-passes-salvage-site"
           ]
         },
         {
@@ -268,9 +238,8 @@
         {
           "kind": "footage",
           "assets": [
-            "mir-fig04-dali-helm"
-          ],
-          "label": "The Dali's helm · NTSB"
+            "broll-er-diesel-crew"
+          ]
         },
         {
           "kind": "power",
@@ -369,8 +338,9 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-breaker-hands-screwdriver"
+            "mir-fig05-plant-at-departure"
           ],
+          "label": "Transformers and breakers · NTSB",
           "at": "and a breaker called HR1,"
         },
         {
@@ -478,7 +448,7 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-px-night-port-city-aerial"
+            "broll-px-dark-water-ripples"
           ],
           "at": "The bridge was 3.3"
         }
@@ -487,39 +457,30 @@
     {
       "id": "b20",
       "narration": "Eight seconds later, the main engine shut down on low cooling-water pressure. It would not restart before the impact.",
-      "visuals": [
-        {
-          "kind": "power",
-          "steps": [
-            {
-              "clock": "1:25:00",
-              "label": "Low-voltage board dark",
-              "on": [
-                "DG3",
-                "DG4",
-                "HV",
-                "ME"
-              ]
-            },
-            {
-              "clock": "1:25:08",
-              "label": "Main engine shuts down",
-              "on": [
-                "DG3",
-                "DG4",
-                "HV"
-              ]
-            }
-          ]
-        },
-        {
-          "kind": "footage",
-          "assets": [
-            "broll-er-hands-tools"
-          ],
-          "at": "It would not restart"
-        }
-      ]
+      "visual": {
+        "kind": "power",
+        "steps": [
+          {
+            "clock": "1:25:00",
+            "label": "Low-voltage board dark",
+            "on": [
+              "DG3",
+              "DG4",
+              "HV",
+              "ME"
+            ]
+          },
+          {
+            "clock": "1:25:08",
+            "label": "Main engine shuts down",
+            "on": [
+              "DG3",
+              "DG4",
+              "HV"
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "b21",
@@ -554,21 +515,15 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-px-dark-water-ripples"
+            "broll-merchant-bridge-window-watch"
           ]
         },
         {
           "kind": "footage",
           "assets": [
-            "broll-merchant-bridge-window-watch"
+            "mir-fig04-dali-helm"
           ],
-          "at": "the ship swung to starboard."
-        },
-        {
-          "kind": "footage",
-          "assets": [
-            "broll-bridge-console-hands"
-          ],
+          "label": "The Dali's helm · NTSB",
           "at": "The helmsman called it out:"
         }
       ]
@@ -581,7 +536,7 @@
           "kind": "stamp",
           "text": "1:25:58 AM",
           "assets": [
-            "broll-breaker-red-screwdriver-close"
+            "broll-er-generator-coupling"
           ],
           "subtext": "Breakers closed by hand"
         },
@@ -631,7 +586,7 @@
           "assets": [
             "broll-er-motors-pumps"
           ],
-          "at": "the only fuel supply"
+          "at": "did not restart."
         }
       ]
     },
@@ -657,10 +612,11 @@
               "clock": "1:25:59",
               "feet": 2430,
               "note": "Call to shut the bridge",
-              "drift": 0.1
+              "drift": 0.1,
+              "at": "2,430 feet away."
             }
           ],
-          "at": "The ship was 2,430 feet away."
+          "at": "to get the Key Bridge"
         }
       ]
     },
@@ -708,10 +664,11 @@
               "clock": "1:27:02",
               "feet": 1500,
               "note": "Port anchor ordered",
-              "drift": 0.3
+              "drift": 0.3,
+              "at": "1,500 feet away."
             }
           ],
-          "at": "The bridge was 1,500 feet away."
+          "at": "ordered the port anchor."
         }
       ]
     },
@@ -769,14 +726,14 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-er-diesel-crew"
+            "broll-er-gauge-panel"
           ],
           "at": "It did not work;"
         },
         {
           "kind": "footage",
           "assets": [
-            "broll-anchor-brake-wheel"
+            "broll-chain-locker-crew2"
           ],
           "at": "And the anchor brake"
         }
@@ -797,7 +754,7 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-police-lightbar-day"
+            "broll-police-hood-lights-radio"
           ],
           "at": "police at each end"
         },
@@ -818,7 +775,7 @@
           "kind": "stamp",
           "text": "1:28:42 AM",
           "assets": [
-            "broll-anchor-chain-closeup"
+            "broll-night-port-spreader-shackles"
           ],
           "subtext": "Anchor down"
         },
@@ -835,21 +792,24 @@
     {
       "id": "b32",
       "narration": "The pilot ordered full bow thruster. \"No, it's not working.\" \"It's not working.\"",
-      "visuals": [
-        {
-          "kind": "footage",
-          "assets": [
-            "broll-bridge-mariner-window"
-          ]
-        },
-        {
-          "kind": "document",
-          "source": "NTSB MIR-25-40, Table C-1 voyage timeline (VDR), p. 225",
-          "quote": "Master stated, ‘It’s not working.’",
-          "highlight": "‘It’s not working.’",
-          "at": "No, it's not working."
-        }
-      ]
+      "visual": {
+        "kind": "route",
+        "keyframes": [
+          {
+            "clock": "1:27:04",
+            "feet": 1500,
+            "note": "Second blackout",
+            "drift": 0.3
+          },
+          {
+            "clock": "1:28:57",
+            "feet": 140,
+            "note": "Bow thruster not working",
+            "drift": 0.85,
+            "at": "No, it's not working."
+          }
+        ]
+      }
     },
     {
       "id": "b33",
@@ -859,16 +819,17 @@
           "kind": "route",
           "keyframes": [
             {
-              "clock": "1:27:04",
-              "feet": 1500,
-              "note": "Second blackout",
-              "drift": 0.3
+              "clock": "1:28:57",
+              "feet": 140,
+              "note": "",
+              "drift": 0.85
             },
             {
               "clock": "1:29:09",
               "feet": 0,
               "note": "Impact · Pier 17",
-              "drift": 1
+              "drift": 1,
+              "at": "At 1:29 and 9 seconds"
             }
           ]
         },
@@ -900,6 +861,13 @@
           ],
           "label": "NTSB drone",
           "at": "and the main spans fell."
+        },
+        {
+          "kind": "document",
+          "source": "NTSB MIR-25-40, p. 49",
+          "quote": "heard a ‘crumbling thunder noise’ and began running northbound on the bridge.",
+          "highlight": "crumbling thunder noise",
+          "at": "The inspector heard"
         }
       ]
     },
@@ -920,16 +888,9 @@
         {
           "kind": "footage",
           "assets": [
-            "uscg-sunrise-dali-wreck"
-          ],
-          "label": "Sunrise, March 26 · U.S. Coast Guard",
-          "at": "They did not survive."
-        },
-        {
-          "kind": "footage",
-          "assets": [
             "uscg-boats-bow-under-truss"
           ],
+          "label": "Morning, March 26 · U.S. Coast Guard",
           "at": "A seventh escaped"
         }
       ]
@@ -958,13 +919,23 @@
       "id": "b37",
       "chapter": "The investigation",
       "narration": "The National Transportation Safety Board, the NTSB, was on scene that day, with its chair, Jennifer Homendy.",
-      "visual": {
-        "kind": "footage",
-        "assets": [
-          "ntsb-aerial-dali-truss-across-bow"
-        ],
-        "label": "NTSB drone"
-      }
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "uscg-sunrise-dali-wreck"
+          ],
+          "label": "Sunrise, March 26 · U.S. Coast Guard"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "ntsb-aerial-dali-truss-across-bow"
+          ],
+          "label": "NTSB drone",
+          "at": "with its chair,"
+        }
+      ]
     },
     {
       "id": "b38",
@@ -974,7 +945,7 @@
           "kind": "stamp",
           "text": "1:25:03 AM",
           "assets": [
-            "broll-bridge-console-cabinet"
+            "broll-night-port-worker-gangway"
           ],
           "subtext": "Data recorder stops"
         },
@@ -1032,21 +1003,12 @@
     {
       "id": "b40",
       "narration": "The first began when breaker HR1 opened on its own, with no alarm. It was as if an operator had turned the switch.",
-      "visuals": [
-        {
-          "kind": "footage",
-          "assets": [
-            "broll-breaker-test-set-panel"
-          ]
-        },
-        {
-          "kind": "footage",
-          "assets": [
-            "broll-px-old-control-room"
-          ],
-          "at": "It was as if"
-        }
-      ]
+      "visual": {
+        "kind": "footage",
+        "assets": [
+          "broll-px-electrician-at-cabinet"
+        ]
+      }
     },
     {
       "id": "b41",
@@ -1063,7 +1025,7 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-breaker-team-inspection"
+            "broll-bridge-console-cabinet"
           ],
           "at": "Shipyard engineers"
         },
@@ -1108,7 +1070,7 @@
         {
           "kind": "footage",
           "assets": [
-            "mir-fig58-wire1-ferrule-gouges"
+            "mir-fig61-ferrule-arcing-depression"
           ],
           "label": "Wire 1 ferrule · NTSB",
           "at": "the wire's metal tip,"
@@ -1203,7 +1165,7 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-px-electrician-at-cabinet"
+            "broll-ship-departs-tug-wake"
           ],
           "at": "Nobody noticed,"
         }
@@ -1223,7 +1185,7 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-er-gauge-panel"
+            "broll-er-hands-tools"
           ],
           "at": "Infrared thermal imaging,"
         }
@@ -1340,9 +1302,8 @@
         {
           "kind": "footage",
           "assets": [
-            "mir-fig40-i40-bridge-collapse"
+            "broll-tug-close-wreck-behind"
           ],
-          "label": "Interstate 40 bridge, Oklahoma · NTSB",
           "at": "By 1991,"
         }
       ]
@@ -1352,19 +1313,8 @@
       "narration": "Also in 1980, the 390-foot Blue Nagoya hit Pier 17's fender. The fender stopped it, and was rebuilt to its original design. The Dali was ten times its size.",
       "visuals": [
         {
-          "kind": "evidence",
-          "heading": "Pier 17, 1980",
-          "items": [
-            {
-              "asset": "mir-fig36-blue-nagoya-vs-dali",
-              "note": "390 feet vs 984 feet"
-            }
-          ]
-        },
-        {
           "kind": "compare",
           "title": "To scale",
-          "at": "The fender stopped it,",
           "items": [
             {
               "label": "Blue Nagoya",
@@ -1380,7 +1330,26 @@
               "highlight": true
             }
           ],
-          "note": "Blue Nagoya displaced about one-tenth of the Dali · NTSB"
+          "note": "Length and beam · NTSB"
+        },
+        {
+          "kind": "evidence",
+          "heading": "Pier 17, 1980",
+          "items": [
+            {
+              "asset": "mir-fig36-blue-nagoya-vs-dali",
+              "note": "Fender stopped it"
+            }
+          ],
+          "at": "The fender stopped it,"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "mir-figE1-dali-under-truss"
+          ],
+          "label": "The Dali · NTSB",
+          "at": "The Dali was ten times its size."
         }
       ]
     },
@@ -1450,9 +1419,8 @@
         {
           "kind": "footage",
           "assets": [
-            "mir-figE1-dali-under-truss"
+            "broll-px-grey-choppy-water"
           ],
-          "label": "NTSB",
           "at": "The Dali touched none of them."
         }
       ]
@@ -1464,7 +1432,7 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-police-hood-lights-radio"
+            "broll-dispatch-call-screen"
           ]
         },
         {
@@ -1484,14 +1452,14 @@
           "kind": "stamp",
           "text": "1:16",
           "assets": [
-            "broll-px-night-highway-river-aerial"
+            "broll-px-night-interchange-topdown"
           ],
           "subtext": "Time to drive clear"
         },
         {
           "kind": "footage",
           "assets": [
-            "broll-px-highway-sunset-quiet"
+            "broll-crane-barge-approach-span"
           ],
           "at": "perhaps enough to drive"
         }
@@ -1500,34 +1468,31 @@
     {
       "id": "b61",
       "narration": "Three failures. A wire never pushed home. A bridge never assessed. A crew never warned.",
-      "visual": {
-        "kind": "evidence",
-        "heading": "Three failures",
-        "items": [
-          {
-            "asset": "mir-fig61-ferrule-arcing-depression",
-            "note": "Never pushed home"
-          },
-          {
-            "asset": "mir-table5-af-summary",
-            "note": "Never assessed"
-          },
-          {
-            "asset": "uscg-aerial-wide-dali-wreck",
-            "note": "Never warned"
-          }
-        ],
-        "links": [
-          [
-            0,
-            1
+      "visuals": [
+        {
+          "kind": "footage",
+          "assets": [
+            "mir-fig58-wire1-ferrule-gouges"
           ],
-          [
-            1,
-            2
-          ]
-        ]
-      }
+          "label": "Wire 1 · NTSB"
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "mir-table5-af-summary"
+          ],
+          "label": "Collapse risk, Table 5 · NTSB",
+          "at": "A bridge never assessed."
+        },
+        {
+          "kind": "footage",
+          "assets": [
+            "uscg-aerial-wide-dali-wreck"
+          ],
+          "label": "U.S. Coast Guard",
+          "at": "A crew never warned."
+        }
+      ]
     },
     {
       "id": "b62",
@@ -1643,13 +1608,6 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-dispatcher-keyboard"
-          ],
-          "at": "the dispatcher"
-        },
-        {
-          "kind": "footage",
-          "assets": [
             "broll-police-cruiser-approaching"
           ],
           "at": "and the MDTA police"
@@ -1689,7 +1647,7 @@
         {
           "kind": "footage",
           "assets": [
-            "broll-crane-barge-approach-span"
+            "broll-salvage-truss-lift-wide"
           ]
         },
         {
@@ -1763,9 +1721,9 @@
     {
       "asset": "music-interloper",
       "from": "b14",
-      "to": "b32",
+      "to": "b33",
       "offset": 0,
-      "volume": 0.13
+      "volume": 0.09
     },
     {
       "asset": "music-heartbreaking",
@@ -1784,16 +1742,9 @@
     {
       "asset": "music-darkest-child",
       "from": "b44",
-      "to": "b51",
-      "offset": 0,
-      "volume": 0.12
-    },
-    {
-      "asset": "music-darkest-child",
-      "from": "b53",
       "to": "b61",
-      "offset": 80,
-      "volume": 0.12
+      "offset": 0,
+      "volume": 0.05
     },
     {
       "asset": "music-despair-and-triumph",
