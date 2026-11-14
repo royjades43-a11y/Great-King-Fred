@@ -998,6 +998,78 @@
         21.0,
         38.4
       ]
+    },
+    {
+      "id": "broll-salvage-truss-lift-wide",
+      "file": "footage/broll-salvage-truss-lift-wide.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel",
+      "title": "Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, sunny with clouds. Wide shot from the water: a yellow crane on a barge holds a section of grey bridge truss on slings above the river, a second crawler crane on another barge at right. Key Bridge wreck removal, June 3-4, 2024.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        1.0,
+        17.0
+      ]
+    },
+    {
+      "id": "broll-salvage-truss-on-slings",
+      "file": "footage/broll-salvage-truss-on-slings.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel",
+      "title": "Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, sunny. Closer view of a twisted truss section hanging from many crane slings over the river, crane barge at right. Key Bridge wreck removal, June 2024.",
+      "duration": 17.0,
+      "trimmed_from_source": [
+        21.0,
+        38.0
+      ]
+    },
+    {
+      "id": "broll-clamshell-debris-barge",
+      "file": "footage/broll-clamshell-debris-barge.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel",
+      "title": "Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. A red clamshell grab bucket swings above a deck barge and drops toward the water beside green channel buoy 5; crane barge and tug behind. Debris removal from the river, Key Bridge site, June 2024.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        98.0,
+        116.0
+      ]
+    },
+    {
+      "id": "broll-clamshell-bridge-approach",
+      "file": "footage/broll-clamshell-bridge-approach.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel",
+      "title": "Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Deck barges and a crane working beneath the surviving approach spans of the Key Bridge, a clamshell bucket entering the water; green buoy in the foreground. June 2024.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        122.0,
+        140.0
+      ]
     }
   ]
 }

@@ -242,6 +242,22 @@ Every visual in this episode, where it came from, and the terms it is used under
   - Source: https://www.dvidshub.net/video/918321/crews-remove-containers-m-v-dali
   - Author: Charles Delano, U.S. Army Corps of Engineers
   - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-salvage-truss-lift-wide** (video): Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel
+  - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-salvage-truss-on-slings** (video): Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel
+  - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-clamshell-debris-barge** (video): Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel
+  - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-clamshell-bridge-approach** (video): Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel
+  - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
 
 ## Music
 
