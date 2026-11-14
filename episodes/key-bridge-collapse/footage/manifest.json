@@ -892,24 +892,6 @@
       "duration": 262.69
     },
     {
-      "id": "broll-dive-boat-helm",
-      "file": "footage/broll-dive-boat-helm.mp4",
-      "type": "video",
-      "width": 1920,
-      "height": 1080,
-      "source_url": "https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali",
-      "title": "B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations",
-      "author": "Key Bridge Response 2024 Unified Command / USCG",
-      "license": "Public domain (US Government work)",
-      "license_url": "https://www.dvidshub.net/about/copyright",
-      "description": "REPRESENTATIVE: Daytime, overcast. Inside the wheelhouse of a small response boat: a man in a hard hat and hi-vis vest at the helm, then a close view of hands on the throttle and console. Filmed during Key Bridge salvage dive operations, April 4, 2024.",
-      "duration": 7.9,
-      "trimmed_from_source": [
-        13.6,
-        21.5
-      ]
-    },
-    {
       "id": "broll-diver-suits-up-wreck",
       "file": "footage/broll-diver-suits-up-wreck.mp4",
       "type": "video",
@@ -1159,6 +1141,2382 @@
       "trimmed_from_source": [
         650.0,
         668.0
+      ]
+    },
+    {
+      "id": "broll-final-segment-lift",
+      "file": "footage/broll-final-segment-lift.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel",
+      "title": "Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, blue sky. A large yellow crane lifts a tall rectangular truss segment clear of the river, the pier of the bridge behind it. Removal of the last large segment, June 4, 2024.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        900.0,
+        918.0
+      ]
+    },
+    {
+      "id": "broll-final-segment-hanging",
+      "file": "footage/broll-final-segment-hanging.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel",
+      "title": "Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, blue sky. The lifted truss segment hangs from the yellow crane above barges, water streaming from it; bridge pier in the background. June 4, 2024.",
+      "duration": 17.0,
+      "trimmed_from_source": [
+        945.0,
+        962.0
+      ]
+    },
+    {
+      "id": "broll-merchant-bridge-dusk-crew",
+      "file": "footage/broll-merchant-bridge-dusk-crew.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset",
+      "title": "B-Roll: MV Roy Benavidez: The Bridge at sunset",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Dusk. Inside the wheelhouse of a large civilian-crewed roll-on/roll-off cargo ship: mariners stand silhouetted against the bridge windows, consoles in shadow, sea visible outside. MV Roy P. Benavidez, May 2026.",
+      "duration": 15.0,
+      "trimmed_from_source": [
+        10.0,
+        25.0
+      ]
+    },
+    {
+      "id": "broll-merchant-bridge-window-watch",
+      "file": "footage/broll-merchant-bridge-window-watch.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset",
+      "title": "B-Roll: MV Roy Benavidez: The Bridge at sunset",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Dusk. A mariner on the bridge of a large cargo ship looks out of the forward windows at the sea, mostly in silhouette; window wipers and fittings in the foreground. MV Roy P. Benavidez, May 2026.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        30.0,
+        46.0
+      ]
+    },
+    {
+      "id": "broll-bridge-red-chart-table",
+      "file": "footage/broll-bridge-red-chart-table.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset",
+      "title": "B-Roll: MV Roy Benavidez: The Bridge at sunset",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night. Ship's bridge under red night lighting: a mariner works at the red-lit chart table, the rest of the wheelhouse dark. MV Roy P. Benavidez, May 2026.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        62.0,
+        80.0
+      ]
+    },
+    {
+      "id": "broll-bridge-red-night-wide",
+      "file": "footage/broll-bridge-red-night-wide.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset",
+      "title": "B-Roll: MV Roy Benavidez: The Bridge at sunset",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night. Wide view of a dark ship's wheelhouse lit only by dim red night lights and a few console lamps. MV Roy P. Benavidez, May 2026.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        84.0,
+        100.0
+      ]
+    },
+    {
+      "id": "broll-bridge-radar-consoles-dusk",
+      "file": "footage/broll-bridge-radar-consoles-dusk.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset",
+      "title": "B-Roll: MV Roy Benavidez: The Bridge at sunset",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Dusk. Wide view across a ship's bridge: two glowing radar/ECDIS screens in the foreground, mariners moving in silhouette at the forward windows. MV Roy P. Benavidez, May 2026.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        118.0,
+        136.0
+      ]
+    },
+    {
+      "id": "broll-bridge-radar-consoles-dusk2",
+      "file": "footage/broll-bridge-radar-consoles-dusk2.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset",
+      "title": "B-Roll: MV Roy Benavidez: The Bridge at sunset",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Dusk, light fading. Same ship's bridge, radar and chart display screens glowing green and blue, crew at the windows. MV Roy P. Benavidez, May 2026.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        140.0,
+        158.0
+      ]
+    },
+    {
+      "id": "broll-ship-departs-tug-wake",
+      "file": "footage/broll-ship-departs-tug-wake.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010655/b-roll-mv-roy-benavidez-departs-port-ponce-puerto-rico",
+      "title": "B-Roll: MV Roy Benavidez: Departs Port of Ponce, Puerto Rico",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Looking down the long deck of a large cargo ship as it leaves port; a red-and-white tug runs alongside throwing a white wake, open sea ahead. Ponce, Puerto Rico, May 2026.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        92.0,
+        108.0
+      ]
+    },
+    {
+      "id": "broll-cg-boat-flag-stern",
+      "file": "footage/broll-cg-boat-flag-stern.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland",
+      "title": "U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland",
+      "author": "U.S. Coast Guard Station Curtis Bay",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. The American flag flying from the stern of a Coast Guard boat, blue light bar beside it, Baltimore skyline behind. June 2026.",
+      "duration": 11.0,
+      "trimmed_from_source": [
+        170.0,
+        181.0
+      ]
+    },
+    {
+      "id": "broll-container-inspectors",
+      "file": "footage/broll-container-inspectors.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010029/b-roll-coast-guard-conducts-joint-operation-baltimore",
+      "title": "B-Roll: Coast Guard conducts joint operation in Baltimore",
+      "author": "Petty Officer 3rd Class Amy Hagan, U.S. Coast Guard",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, sunny. Inspectors in hard hats and hi-vis vests examine the doors of red shipping containers on truck chassis at the Port of Baltimore. March 2026.",
+      "duration": 20.0,
+      "trimmed_from_source": [
+        36.0,
+        56.0
+      ]
+    },
+    {
+      "id": "broll-er-motors-pumps",
+      "file": "footage/broll-er-motors-pumps.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room",
+      "title": "MV Cape Ray Virtual Tour: Engine Room",
+      "author": "U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. Electric pump motors and piping in a cargo ship's engine room, then a long horizontal machine with pipework. MV Cape Ray, 2014.",
+      "duration": 15.0,
+      "trimmed_from_source": [
+        64.5,
+        79.5
+      ]
+    },
+    {
+      "id": "broll-er-walkway-pump-no2",
+      "file": "footage/broll-er-walkway-pump-no2.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room",
+      "title": "MV Cape Ray Virtual Tour: Engine Room",
+      "author": "U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. Engine room passage with green deck plates, gauges and small electrical panels, then a close view of a pump motor stencilled 'No. 2'. MV Cape Ray, 2014.",
+      "duration": 15.0,
+      "trimmed_from_source": [
+        88.5,
+        103.5
+      ]
+    },
+    {
+      "id": "broll-er-gauge-panel",
+      "file": "footage/broll-er-gauge-panel.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room",
+      "title": "MV Cape Ray Virtual Tour: Engine Room",
+      "author": "U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. Plate heat exchanger close-up, then a cluster of pressure gauges on an engine-room panel with pipes and ladders around it. MV Cape Ray, 2014.",
+      "duration": 14.5,
+      "trimmed_from_source": [
+        136.5,
+        151.0
+      ]
+    },
+    {
+      "id": "broll-er-purifiers-piping",
+      "file": "footage/broll-er-purifiers-piping.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room",
+      "title": "MV Cape Ray Virtual Tour: Engine Room",
+      "author": "U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. Blue fuel/oil purifier units on green gratings in a ship's engine room, then tall white pump columns and pipework. MV Cape Ray, 2014.",
+      "duration": 15.1,
+      "trimmed_from_source": [
+        121.2,
+        136.3
+      ]
+    },
+    {
+      "id": "broll-er-white-tank-pump-motors",
+      "file": "footage/broll-er-white-tank-pump-motors.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room",
+      "title": "MV Cape Ray Virtual Tour: Engine Room",
+      "author": "U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. A white pressure vessel with valves and a gauge, pipework and machinery in a ship's engine room. MV Cape Ray, 2014.",
+      "duration": 9.9,
+      "trimmed_from_source": [
+        156.5,
+        166.4
+      ]
+    },
+    {
+      "id": "broll-er-pump-motors-tank",
+      "file": "footage/broll-er-pump-motors-tank.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room",
+      "title": "MV Cape Ray Virtual Tour: Engine Room",
+      "author": "U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. Vertical electric pump motors, red pipework and handwheels in a ship's engine room, then a grey tank and machinery space. MV Cape Ray, 2014.",
+      "duration": 20.3,
+      "trimmed_from_source": [
+        170.0,
+        190.3
+      ]
+    },
+    {
+      "id": "broll-er-hands-tools",
+      "file": "footage/broll-er-hands-tools.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/759228/sailors-conduct-routine-maintenance-engine-room-aboard-uss-new-orleans-lpd-18",
+      "title": "Sailors conduct routine maintenance in an engine room aboard USS New Orleans (LPD 18)",
+      "author": "CPO Kelby Sanders, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior, engine room. Close-ups: a hand pulls open a red tool drawer of wrenches, then sailors reach overhead to work on machinery in dim light.",
+      "duration": 14.2,
+      "trimmed_from_source": [
+        3.8,
+        18.0
+      ]
+    },
+    {
+      "id": "broll-er-overhead-work",
+      "file": "footage/broll-er-overhead-work.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/759228/sailors-conduct-routine-maintenance-engine-room-aboard-uss-new-orleans-lpd-18",
+      "title": "Sailors conduct routine maintenance in an engine room aboard USS New Orleans (LPD 18)",
+      "author": "CPO Kelby Sanders, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior, engine room, low light. A sailor in ear defenders and cap reaches up to work on piping beneath bundled cables, close and moody.",
+      "duration": 18.5,
+      "trimmed_from_source": [
+        56.5,
+        75.0
+      ]
+    },
+    {
+      "id": "broll-anchor-chain-crew",
+      "file": "footage/broll-anchor-chain-crew.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/748619/uss-new-orleans-anchoring",
+      "title": "USS New Orleans Anchoring",
+      "author": "CPO Kelby Sanders, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Crew bend over the anchor chain and windlass on the forecastle, working bars and stoppers on the chain links.",
+      "duration": 15.97,
+      "trimmed_from_source": [
+        43.0,
+        59.0
+      ]
+    },
+    {
+      "id": "broll-tug-bow-under-bridge",
+      "file": "footage/broll-tug-bow-under-bridge.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll",
+      "title": "Norfolk Harbor B-Roll",
+      "author": "James Walker, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. The bow of a red tug passes beneath the steel underside of a bridge span, river and harbor beyond. Norfolk, 2022.",
+      "duration": 12.0,
+      "trimmed_from_source": [
+        186.0,
+        198.0
+      ]
+    },
+    {
+      "id": "broll-highway-traffic-aerial-day",
+      "file": "footage/broll-highway-traffic-aerial-day.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll",
+      "title": "Norfolk Harbor B-Roll",
+      "author": "James Walker, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Aerial view of a busy multi-lane interstate highway and ramps beside the harbor, steady car and truck traffic. Norfolk, 2022.",
+      "duration": 17.0,
+      "trimmed_from_source": [
+        205.0,
+        222.0
+      ]
+    },
+    {
+      "id": "broll-harbor-tug-wake-aerial",
+      "file": "footage/broll-harbor-tug-wake-aerial.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll",
+      "title": "Norfolk Harbor B-Roll",
+      "author": "James Walker, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Aerial view following a red tug as it powers up a harbor channel, white wake behind it, a second vessel alongside. Norfolk, Virginia, 2022.",
+      "duration": 13.4,
+      "trimmed_from_source": [
+        157.6,
+        171.0
+      ]
+    },
+    {
+      "id": "broll-tug-under-bridge",
+      "file": "footage/broll-tug-under-bridge.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll",
+      "title": "Norfolk Harbor B-Roll",
+      "author": "James Walker, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Low aerial view behind a tug pushing a barge toward a low highway bridge across the Elizabeth River. Norfolk, 2022.",
+      "duration": 13.0,
+      "trimmed_from_source": [
+        172.0,
+        185.0
+      ]
+    },
+    {
+      "id": "broll-highway-topdown-day",
+      "file": "footage/broll-highway-topdown-day.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll",
+      "title": "Norfolk Harbor B-Roll",
+      "author": "James Walker, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Straight-down drone view of cars and trucks moving on a multi-lane highway bridge deck. Norfolk, 2022.",
+      "duration": 14.8,
+      "trimmed_from_source": [
+        142.0,
+        156.8
+      ]
+    },
+    {
+      "id": "broll-harbor-bridge-aerial",
+      "file": "footage/broll-harbor-bridge-aerial.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll",
+      "title": "Norfolk Harbor B-Roll",
+      "author": "James Walker, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. High aerial view of a harbor river crossed by a long low highway bridge, with an office tower in the foreground and port facilities beyond. Norfolk, 2022.",
+      "duration": 18.5,
+      "trimmed_from_source": [
+        122.0,
+        140.5
+      ]
+    },
+    {
+      "id": "broll-cg-coxswain-helm",
+      "file": "footage/broll-cg-coxswain-helm.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland",
+      "title": "U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland",
+      "author": "U.S. Coast Guard Station Curtis Bay",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. A Coast Guard coxswain in an orange life vest steers a response boat, hand on the throttle, harbor shoreline outside; then a close profile as he watches the water. Baltimore, June 2026.",
+      "duration": 13.3,
+      "trimmed_from_source": [
+        38.7,
+        52.0
+      ]
+    },
+    {
+      "id": "broll-ship-alongside-cranes",
+      "file": "footage/broll-ship-alongside-cranes.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010655/b-roll-mv-roy-benavidez-departs-port-ponce-puerto-rico",
+      "title": "B-Roll: MV Roy Benavidez: Departs Port of Ponce, Puerto Rico",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, bright backlit sun. View from high on a large cargo ship's deck along the quay at a container terminal, gantry cranes and a tug ahead. Port of Ponce, Puerto Rico, May 2026.",
+      "duration": 14.0,
+      "trimmed_from_source": [
+        6.0,
+        20.0
+      ]
+    },
+    {
+      "id": "broll-tug-alongside-at-quay",
+      "file": "footage/broll-tug-alongside-at-quay.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010655/b-roll-mv-roy-benavidez-departs-port-ponce-puerto-rico",
+      "title": "B-Roll: MV Roy Benavidez: Departs Port of Ponce, Puerto Rico",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, late light. A tug works beside a large cargo ship at the quay, seen from high on the ship; container cranes and the terminal behind. Ponce, Puerto Rico, May 2026.",
+      "duration": 12.1,
+      "trimmed_from_source": [
+        150.4,
+        162.5
+      ]
+    },
+    {
+      "id": "broll-bridge-wing-mariners",
+      "file": "footage/broll-bridge-wing-mariners.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010655/b-roll-mv-roy-benavidez-departs-port-ponce-puerto-rico",
+      "title": "B-Roll: MV Roy Benavidez: Departs Port of Ponce, Puerto Rico",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, backlit. Two mariners at the bridge-wing control station of a cargo ship, one on a radio/phone, watching the ship's side as it manoeuvres. Ponce, Puerto Rico, May 2026.",
+      "duration": 13.5,
+      "trimmed_from_source": [
+        163.0,
+        176.5
+      ]
+    },
+    {
+      "id": "broll-ship-wake-open-sea",
+      "file": "footage/broll-ship-wake-open-sea.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010655/b-roll-mv-roy-benavidez-departs-port-ponce-puerto-rico",
+      "title": "B-Roll: MV Roy Benavidez: Departs Port of Ponce, Puerto Rico",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Looking aft along a cargo ship's side at its white wake on blue open sea. May 2026.",
+      "duration": 6.9,
+      "trimmed_from_source": [
+        205.6,
+        212.5
+      ]
+    },
+    {
+      "id": "broll-memorial-buoy-flag-hull",
+      "file": "footage/broll-memorial-buoy-flag-hull.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1016546/b-roll-us-coast-guard-marks-46th-annual-francis-scott-key-memorial-buoy-commissioning",
+      "title": "B-Roll: U.S. Coast Guard Marks 46th Annual Francis Scott Key Memorial Buoy Commissioning",
+      "author": "U.S. Coast Guard, Coast Guard Cutter James Rankin",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, hazy. Close on the pointed end of a large buoy painted as the American flag, lying on the deck of a Coast Guard buoy tender, the Patapsco River beyond. Baltimore, July 28, 2026.",
+      "duration": 8.9,
+      "trimmed_from_source": [
+        19.8,
+        28.7
+      ]
+    },
+    {
+      "id": "broll-memorial-buoy-lift",
+      "file": "footage/broll-memorial-buoy-lift.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1016546/b-roll-us-coast-guard-marks-46th-annual-francis-scott-key-memorial-buoy-commissioning",
+      "title": "B-Roll: U.S. Coast Guard Marks 46th Annual Francis Scott Key Memorial Buoy Commissioning",
+      "author": "U.S. Coast Guard, Coast Guard Cutter James Rankin",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, hazy. A flag-painted buoy top hangs from a crane hook while Coast Guard crew in hard hats and life vests guide it at the stern of a buoy tender, open water behind. Baltimore Harbor, July 2026.",
+      "duration": 9.6,
+      "trimmed_from_source": [
+        57.6,
+        67.2
+      ]
+    },
+    {
+      "id": "broll-memorial-ceremony-deck",
+      "file": "footage/broll-memorial-ceremony-deck.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1016546/b-roll-us-coast-guard-marks-46th-annual-francis-scott-key-memorial-buoy-commissioning",
+      "title": "B-Roll: U.S. Coast Guard Marks 46th Annual Francis Scott Key Memorial Buoy Commissioning",
+      "author": "U.S. Coast Guard, Coast Guard Cutter James Rankin",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, hazy. A memorial ceremony on the deck of a Coast Guard buoy tender: seated guests face a speaker at a podium beside a large flag-painted buoy. Baltimore, July 2026.",
+      "duration": 9.0,
+      "trimmed_from_source": [
+        38.1,
+        47.1
+      ]
+    },
+    {
+      "id": "broll-coast-guard-salute-water",
+      "file": "footage/broll-coast-guard-salute-water.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1016546/b-roll-us-coast-guard-marks-46th-annual-francis-scott-key-memorial-buoy-commissioning",
+      "title": "B-Roll: U.S. Coast Guard Marks 46th Annual Francis Scott Key Memorial Buoy Commissioning",
+      "author": "U.S. Coast Guard, Coast Guard Cutter James Rankin",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, hazy. Coast Guard crew in hard hats and life vests stand at the stern of a buoy tender beside an upright star-painted buoy, facing the water. Baltimore Harbor, July 2026.",
+      "duration": 10.5,
+      "trimmed_from_source": [
+        84.9,
+        95.4
+      ]
+    },
+    {
+      "id": "broll-cg-boat-hull-spray",
+      "file": "footage/broll-cg-boat-hull-spray.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland",
+      "title": "U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland",
+      "author": "U.S. Coast Guard Station Curtis Bay",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, sunny. Looking back along the side of a Coast Guard response boat underway: orange collar, cabin and white spray, harbor shoreline beyond. Baltimore, June 2026.",
+      "duration": 9.3,
+      "trimmed_from_source": [
+        0.2,
+        9.5
+      ]
+    },
+    {
+      "id": "broll-cg-boat-baltimore-skyline",
+      "file": "footage/broll-cg-boat-baltimore-skyline.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland",
+      "title": "U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland",
+      "author": "U.S. Coast Guard Station Curtis Bay",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Through the windshield and wiper of a Coast Guard boat, the Baltimore skyline across the harbor. June 2026.",
+      "duration": 9.0,
+      "trimmed_from_source": [
+        9.7,
+        18.7
+      ]
+    },
+    {
+      "id": "broll-cg-boat-wake",
+      "file": "footage/broll-cg-boat-wake.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland",
+      "title": "U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland",
+      "author": "U.S. Coast Guard Station Curtis Bay",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Close on white water churning beside the orange hull of a fast-moving Coast Guard boat. Baltimore harbor, June 2026.",
+      "duration": 9.8,
+      "trimmed_from_source": [
+        18.9,
+        28.7
+      ]
+    },
+    {
+      "id": "broll-cg-boat-harbor-skyline2",
+      "file": "footage/broll-cg-boat-harbor-skyline2.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland",
+      "title": "U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland",
+      "author": "U.S. Coast Guard Station Curtis Bay",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Looking back over the outboard motors of a Coast Guard boat at its wake and the Baltimore Inner Harbor skyline. June 2026.",
+      "duration": 6.5,
+      "trimmed_from_source": [
+        155.2,
+        161.7
+      ]
+    },
+    {
+      "id": "broll-cg-boat-industrial-shore",
+      "file": "footage/broll-cg-boat-industrial-shore.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland",
+      "title": "U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland",
+      "author": "U.S. Coast Guard Station Curtis Bay",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. From a Coast Guard boat, the industrial waterfront of Baltimore harbor (old power plant and terminal buildings) across open water. June 2026.",
+      "duration": 7.7,
+      "trimmed_from_source": [
+        161.9,
+        169.6
+      ]
+    },
+    {
+      "id": "broll-port-baltimore-terminal-gate",
+      "file": "footage/broll-port-baltimore-terminal-gate.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010029/b-roll-coast-guard-conducts-joint-operation-baltimore",
+      "title": "B-Roll: Coast Guard conducts joint operation in Baltimore",
+      "author": "Petty Officer 3rd Class Amy Hagan, U.S. Coast Guard",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, sunny. Trucks and an SUV pass through the gate of a Port of Baltimore container terminal, ship-to-shore cranes behind. March 2026.",
+      "duration": 9.0,
+      "trimmed_from_source": [
+        0.7,
+        9.7
+      ]
+    },
+    {
+      "id": "broll-er-generator-coupling",
+      "file": "footage/broll-er-generator-coupling.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/759228/sailors-conduct-routine-maintenance-engine-room-aboard-uss-new-orleans-lpd-18",
+      "title": "Sailors conduct routine maintenance in an engine room aboard USS New Orleans (LPD 18)",
+      "author": "CPO Kelby Sanders, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior, engine room, dim. A sailor reaches overhead to work on machinery, then close on a red machinery guard around a white shaft and a grey generator housing with a bolted shaft coupling.",
+      "duration": 12.3,
+      "trimmed_from_source": [
+        12.1,
+        24.4
+      ]
+    },
+    {
+      "id": "broll-er-boots-deckplate",
+      "file": "footage/broll-er-boots-deckplate.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/759228/sailors-conduct-routine-maintenance-engine-room-aboard-uss-new-orleans-lpd-18",
+      "title": "Sailors conduct routine maintenance in an engine room aboard USS New Orleans (LPD 18)",
+      "author": "CPO Kelby Sanders, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior, engine room. Low close shot of a sailor's work boots shifting on diamond-plate deck beside machinery.",
+      "duration": 7.1,
+      "trimmed_from_source": [
+        30.3,
+        37.4
+      ]
+    },
+    {
+      "id": "broll-er-diesel-crew",
+      "file": "footage/broll-er-diesel-crew.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/759228/sailors-conduct-routine-maintenance-engine-room-aboard-uss-new-orleans-lpd-18",
+      "title": "Sailors conduct routine maintenance in an engine room aboard USS New Orleans (LPD 18)",
+      "author": "CPO Kelby Sanders, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior, engine room. Sailors in navy coveralls and ear defenders wipe down and work on the side of a large grey diesel engine, cables and piping overhead.",
+      "duration": 18.4,
+      "trimmed_from_source": [
+        37.6,
+        56.0
+      ]
+    },
+    {
+      "id": "broll-anchor-chain-forecastle",
+      "file": "footage/broll-anchor-chain-forecastle.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/748619/uss-new-orleans-anchoring",
+      "title": "USS New Orleans Anchoring",
+      "author": "CPO Kelby Sanders, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Sailors in hard hats wait on a ship's forecastle beside the heavy anchor chain, hills and harbor behind. Sasebo, Japan, 2020.",
+      "duration": 12.1,
+      "trimmed_from_source": [
+        9.5,
+        21.6
+      ]
+    },
+    {
+      "id": "broll-anchor-chain-closeup",
+      "file": "footage/broll-anchor-chain-closeup.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/748619/uss-new-orleans-anchoring",
+      "title": "USS New Orleans Anchoring",
+      "author": "CPO Kelby Sanders, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Extreme close-up of massive rusty anchor-chain links on deck, the chain moving slowly.",
+      "duration": 9.1,
+      "trimmed_from_source": [
+        21.8,
+        30.9
+      ]
+    },
+    {
+      "id": "broll-anchor-brake-wheel",
+      "file": "footage/broll-anchor-brake-wheel.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/748619/uss-new-orleans-anchoring",
+      "title": "USS New Orleans Anchoring",
+      "author": "CPO Kelby Sanders, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Sailors in blue hard hats and goggles turn the handwheel of an anchor windlass brake on the forecastle.",
+      "duration": 10.7,
+      "trimmed_from_source": [
+        31.1,
+        41.8
+      ]
+    },
+    {
+      "id": "broll-chain-locker-crew",
+      "file": "footage/broll-chain-locker-crew.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/943620/sailors-participate-anchor-drop-evolution",
+      "title": "Sailors Participate in Anchor Drop Evolution",
+      "author": "PO2 Timothy Meyer, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior, enclosed forecastle under work lights. Low angle past a chain stopper as sailors in hard hats work around heavy anchor chain. USS Nimitz, 2024.",
+      "duration": 14.6,
+      "trimmed_from_source": [
+        8.0,
+        22.6
+      ]
+    },
+    {
+      "id": "broll-chain-locker-crew2",
+      "file": "footage/broll-chain-locker-crew2.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/943620/sailors-participate-anchor-drop-evolution",
+      "title": "Sailors Participate in Anchor Drop Evolution",
+      "author": "PO2 Timothy Meyer, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior, enclosed forecastle under work lights. Sailors bend over and handle the heavy anchor chain and wire-rope gear on deck. USS Nimitz, 2024.",
+      "duration": 19.9,
+      "trimmed_from_source": [
+        31.1,
+        51.0
+      ]
+    },
+    {
+      "id": "broll-er-diesel-cylinder-heads",
+      "file": "footage/broll-er-diesel-cylinder-heads.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room",
+      "title": "MV Cape Ray Virtual Tour: Engine Room",
+      "author": "U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior, fluorescent light. Engine room of a merchant cargo ship: rows of large diesel engine cylinder heads and exhaust trunking, then a closer view along the engine. MV Cape Ray, 2014.",
+      "duration": 11.0,
+      "trimmed_from_source": [
+        52.0,
+        63.0
+      ]
+    },
+    {
+      "id": "broll-dive-boat-helm",
+      "file": "footage/broll-dive-boat-helm.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali",
+      "title": "B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations",
+      "author": "Key Bridge Response 2024 Unified Command / USCG",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Inside the wheelhouse of a small work boat: a man in a hard hat and hi-vis vest at the helm, then close on hands at the throttle and console. Filmed during Key Bridge salvage dive operations, April 4, 2024.",
+      "duration": 9.8,
+      "trimmed_from_source": [
+        14.1,
+        23.9
+      ]
+    },
+    {
+      "id": "broll-yard-twisted-steel",
+      "file": "footage/broll-yard-twisted-steel.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard",
+      "title": "New b-roll video shows Baltimore bridge cutting at wreckage processing yard",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Twisted, torn pieces of grey bridge steel lie on gravel at a wreckage processing yard, workers in hi-vis in the background. Key Bridge debris, April 11, 2024.",
+      "duration": 14.4,
+      "trimmed_from_source": [
+        60.0,
+        74.4
+      ]
+    },
+    {
+      "id": "broll-yard-gusset-rivets",
+      "file": "footage/broll-yard-gusset-rivets.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard",
+      "title": "New b-roll video shows Baltimore bridge cutting at wreckage processing yard",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Close on a massive riveted steel gusset plate from the fallen truss, rows of rivet heads and torn edges, resting on gravel. Key Bridge debris, April 2024.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        256.0,
+        274.0
+      ]
+    },
+    {
+      "id": "broll-yard-torch-cutters",
+      "file": "footage/broll-yard-torch-cutters.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard",
+      "title": "New b-roll video shows Baltimore bridge cutting at wreckage processing yard",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Workers in welding helmets cut lengths of bridge steel with torches among rows of beams on gravel; cranes on the horizon. Key Bridge wreckage yard, April 2024.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        357.0,
+        375.0
+      ]
+    },
+    {
+      "id": "broll-yard-torch-cutter-standing",
+      "file": "footage/broll-yard-torch-cutter-standing.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard",
+      "title": "New b-roll video shows Baltimore bridge cutting at wreckage processing yard",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. A worker in a welding hood stands on a steel beam cutting it with a torch, wisps of smoke, other workers behind. Key Bridge wreckage yard, April 2024.",
+      "duration": 14.0,
+      "trimmed_from_source": [
+        421.0,
+        435.0
+      ]
+    },
+    {
+      "id": "broll-yard-torch-flame-close",
+      "file": "footage/broll-yard-torch-flame-close.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard",
+      "title": "New b-roll video shows Baltimore bridge cutting at wreckage processing yard",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Close on the bright orange flame and sparks of a cutting torch slicing through a steel beam. Key Bridge wreckage yard, April 2024.",
+      "duration": 14.0,
+      "trimmed_from_source": [
+        438.5,
+        452.5
+      ]
+    },
+    {
+      "id": "broll-yard-excavator-shear",
+      "file": "footage/broll-yard-excavator-shear.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard",
+      "title": "New b-roll video shows Baltimore bridge cutting at wreckage processing yard",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. A yellow excavator fitted with a hydraulic shear bites into and lifts a pile of torn bridge steel. Key Bridge wreckage yard, April 2024.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        505.0,
+        523.0
+      ]
+    },
+    {
+      "id": "broll-yard-barge-pier",
+      "file": "footage/broll-yard-barge-pier.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard",
+      "title": "New b-roll video shows Baltimore bridge cutting at wreckage processing yard",
+      "author": "Bobby Petty, U.S. Army Corps of Engineers Baltimore District",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Camera pans from moored work boats along an old timber pier to a deck barge, a red crawler crane and a yellow gantry on the dock. Key Bridge wreckage processing yard waterfront, April 2024.",
+      "duration": 19.5,
+      "trimmed_from_source": [
+        18.0,
+        37.5
+      ]
+    },
+    {
+      "id": "broll-tug-barge-under-spans",
+      "file": "footage/broll-tug-barge-under-spans.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/917690/first-vessel-passes-through-temporary-alternate-channel",
+      "title": "First vessel passes through temporary alternate channel",
+      "author": "Key Bridge Response 2024 Unified Command",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. A tug pushes a long fuel barge across grey water, passing beneath the high approach spans of the Key Bridge. April 1, 2024.",
+      "duration": 17.0,
+      "trimmed_from_source": [
+        1.0,
+        18.0
+      ]
+    },
+    {
+      "id": "broll-tug-barge-passes",
+      "file": "footage/broll-tug-barge-passes.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/917690/first-vessel-passes-through-temporary-alternate-channel",
+      "title": "First vessel passes through temporary alternate channel",
+      "author": "Key Bridge Response 2024 Unified Command",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. A tug and loaded barge pass from left to right across the river, the bridge approach span and salvage cranes at the wreck site behind. April 1, 2024.",
+      "duration": 17.0,
+      "trimmed_from_source": [
+        33.0,
+        50.0
+      ]
+    },
+    {
+      "id": "broll-tug-close-wreck-behind",
+      "file": "footage/broll-tug-close-wreck-behind.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/917690/first-vessel-passes-through-temporary-alternate-channel",
+      "title": "First vessel passes through temporary alternate channel",
+      "author": "Key Bridge Response 2024 Unified Command",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. Close side view of a white pushboat tug moving past, salvage cranes and the wreck site behind it. Baltimore, April 1, 2024.",
+      "duration": 14.8,
+      "trimmed_from_source": [
+        65.2,
+        80.0
+      ]
+    },
+    {
+      "id": "broll-cg-boat-silhouette-sun",
+      "file": "footage/broll-cg-boat-silhouette-sun.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/917547/b-roll-unified-command-prepares-opening-temporary-alternate-channel-near-key-bridge",
+      "title": "B-Roll: Unified Command prepares for opening of temporary alternate channel near Key Bridge",
+      "author": "Key Bridge Response 2024 Unified Command",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, low sun. A Coast Guard boat silhouetted on glittering water near the fallen bridge wreck, then a Coast Guard aids-to-navigation boat carrying red and green buoys. Baltimore, March 31, 2024.",
+      "duration": 10.7,
+      "trimmed_from_source": [
+        11.2,
+        21.9
+      ]
+    },
+    {
+      "id": "broll-cg-crew-buoys",
+      "file": "footage/broll-cg-crew-buoys.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/917547/b-roll-unified-command-prepares-opening-temporary-alternate-channel-near-key-bridge",
+      "title": "B-Roll: Unified Command prepares for opening of temporary alternate channel near Key Bridge",
+      "author": "Key Bridge Response 2024 Unified Command",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Coast Guard crew in orange float coats and hard hats work red and green buoys over the side of a boat, sunlight on the water. Baltimore, March 31, 2024.",
+      "duration": 16.6,
+      "trimmed_from_source": [
+        27.2,
+        43.8
+      ]
+    },
+    {
+      "id": "broll-tug-night-vision",
+      "file": "footage/broll-tug-night-vision.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/521734/tug-boats-assist-adrift-barge-off-galveston",
+      "title": "Tug Boats assist adrift barge off Galveston",
+      "author": "U.S. Coast Guard Air Station Houston",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night, green night-vision/low-light aerial view. A tug's deck lights move across black water, other vessels' lights on the horizon. Off Galveston, Texas, 2017.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        12.0,
+        28.0
+      ]
+    },
+    {
+      "id": "broll-tug-night-vision2",
+      "file": "footage/broll-tug-night-vision2.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/521734/tug-boats-assist-adrift-barge-off-galveston",
+      "title": "Tug Boats assist adrift barge off Galveston",
+      "author": "U.S. Coast Guard Air Station Houston",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night, green night-vision aerial view. A tug and barge shown only by their lights on dark water, camera drifting. Off Galveston, Texas, 2017.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        36.0,
+        52.0
+      ]
+    },
+    {
+      "id": "broll-ship-passes-salvage-site",
+      "file": "footage/broll-ship-passes-salvage-site.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/920963/240425-n-fa868-1001",
+      "title": "240425-N-FA868-1001",
+      "author": "PO2 Theodore Lee, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, overcast. A bulk cargo ship with a tug passes slowly along the channel past salvage cranes at the Key Bridge wreck site. Baltimore, April 25, 2024.",
+      "duration": 11.4,
+      "trimmed_from_source": [
+        30.6,
+        42.0
+      ]
+    },
+    {
+      "id": "broll-mooring-line-to-pier",
+      "file": "footage/broll-mooring-line-to-pier.mp4",
+      "type": "video",
+      "width": 1916,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/347658/mv-cape-ray-port",
+      "title": "MV Cape Ray Port",
+      "author": "PO1 Desmond Parks, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, sunny. Looking down from high on a cargo ship's bow as line handlers pass a mooring line across to the pier. 720p source (lower resolution). Gioia Tauro, Italy, 2014.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        35.0,
+        53.0
+      ]
+    },
+    {
+      "id": "broll-barge-truss-bridge-dawn",
+      "file": "footage/broll-barge-truss-bridge-dawn.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1005217/morning-barge-traffic-louisville",
+      "title": "Morning barge traffic in Louisville",
+      "author": "Charles Delano, U.S. Army Corps of Engineers",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Dawn, warm low light. A towboat pushes barges along a calm river beneath a long steel truss bridge, city towers behind and reflections in the water. Louisville, Kentucky, 2026.",
+      "duration": 10.4,
+      "trimmed_from_source": [
+        0,
+        10.4
+      ]
+    },
+    {
+      "id": "broll-breaker-test-set-panel",
+      "file": "footage/broll-breaker-test-set-panel.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1007593/b-co-249th-engineer-battalion-prime-power-cbrm-mission-4k-b-roll-cannelton-locks-and-dam-indiana",
+      "title": "B CO, 249th Engineer Battalion (Prime Power) CBRM mission 4k b-roll at Cannelton Locks and Dam, Indiana",
+      "author": "Charles Delano, U.S. Army Corps of Engineers",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior, daylight. Close on a circuit-breaker test set: a gloved hand presses buttons beside a backlit display, rotary knob and ring of green indicator LEDs. Army prime-power technicians, 2026.",
+      "duration": 11.4,
+      "trimmed_from_source": [
+        28.0,
+        39.4
+      ]
+    },
+    {
+      "id": "broll-breaker-hands-screwdriver",
+      "file": "footage/broll-breaker-hands-screwdriver.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1007593/b-co-249th-engineer-battalion-prime-power-cbrm-mission-4k-b-roll-cannelton-locks-and-dam-indiana",
+      "title": "B CO, 249th Engineer Battalion (Prime Power) CBRM mission 4k b-roll at Cannelton Locks and Dam, Indiana",
+      "author": "Charles Delano, U.S. Army Corps of Engineers",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. A technician in a hard hat reaches into an open switchgear breaker cubicle, working on the breaker mechanism with a screwdriver. 2026.",
+      "duration": 9.4,
+      "trimmed_from_source": [
+        40.3,
+        49.7
+      ]
+    },
+    {
+      "id": "broll-breaker-red-screwdriver-close",
+      "file": "footage/broll-breaker-red-screwdriver-close.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1007593/b-co-249th-engineer-battalion-prime-power-cbrm-mission-4k-b-roll-cannelton-locks-and-dam-indiana",
+      "title": "B CO, 249th Engineer Battalion (Prime Power) CBRM mission 4k b-roll at Cannelton Locks and Dam, Indiana",
+      "author": "Charles Delano, U.S. Army Corps of Engineers",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. Close on gloved hands turning a red-handled screwdriver on a terminal of electrical gear. 2026.",
+      "duration": 6.2,
+      "trimmed_from_source": [
+        50.9,
+        57.1
+      ]
+    },
+    {
+      "id": "broll-breaker-team-inspection",
+      "file": "footage/broll-breaker-team-inspection.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1007593/b-co-249th-engineer-battalion-prime-power-cbrm-mission-4k-b-roll-cannelton-locks-and-dam-indiana",
+      "title": "B CO, 249th Engineer Battalion (Prime Power) CBRM mission 4k b-roll at Cannelton Locks and Dam, Indiana",
+      "author": "Charles Delano, U.S. Army Corps of Engineers",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. Three technicians in white hard hats crouch over a circuit breaker on a work mat, inspecting it together. 2026.",
+      "duration": 8.4,
+      "trimmed_from_source": [
+        58.1,
+        66.5
+      ]
+    },
+    {
+      "id": "broll-breaker-test-cables",
+      "file": "footage/broll-breaker-test-cables.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1007593/b-co-249th-engineer-battalion-prime-power-cbrm-mission-4k-b-roll-cannelton-locks-and-dam-indiana",
+      "title": "B CO, 249th Engineer Battalion (Prime Power) CBRM mission 4k b-roll at Cannelton Locks and Dam, Indiana",
+      "author": "Charles Delano, U.S. Army Corps of Engineers",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. Heavy black and red test cables clamped to a portable test unit beside electrical gear; a hand adjusts a connection. 2026.",
+      "duration": 7.6,
+      "trimmed_from_source": [
+        67.5,
+        75.1
+      ]
+    },
+    {
+      "id": "broll-police-lightbar-day",
+      "file": "footage/broll-police-lightbar-day.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/829409/police-lights",
+      "title": "Police lights",
+      "author": "PO1 Clyde Laster, U.S. Navy",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, clear sky. Low close-up of a police vehicle's roof light bar flashing blue. Panama City, Florida, 2021.",
+      "duration": 7.6,
+      "trimmed_from_source": [
+        0,
+        7.6
+      ]
+    },
+    {
+      "id": "broll-night-port-spreader-shackles",
+      "file": "footage/broll-night-port-spreader-shackles.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/893855/night-port-operations",
+      "title": "Night Port Operations",
+      "author": "SSG David Campos-Contreras, U.S. Army",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night, harsh sodium light. Close on a yellow-and-black lifting spreader beam and heavy shackles moving against the dark sky at a port. Kuwait, 2023.",
+      "duration": 18.5,
+      "trimmed_from_source": [
+        16.2,
+        34.7
+      ]
+    },
+    {
+      "id": "broll-night-port-worker-gangway",
+      "file": "footage/broll-night-port-worker-gangway.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/893855/night-port-operations",
+      "title": "Night Port Operations",
+      "author": "SSG David Campos-Contreras, U.S. Army",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night. A port worker in a blue hard hat and hi-vis vest at a ship's opening, the hull and deck lit by work lights. 2023.",
+      "duration": 19.3,
+      "trimmed_from_source": [
+        89.8,
+        109.1
+      ]
+    },
+    {
+      "id": "broll-ship-no-smoking-stencil",
+      "file": "footage/broll-ship-no-smoking-stencil.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/893855/night-port-operations",
+      "title": "Night Port Operations",
+      "author": "SSG David Campos-Contreras, U.S. Army",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night/interior. Close on a red 'NO SMOKING' stencil on a pale steel bulkhead inside a cargo ship, lit by a work light. 2023.",
+      "duration": 11.4,
+      "trimmed_from_source": [
+        109.5,
+        120.9
+      ]
+    },
+    {
+      "id": "broll-night-hook-in-hold",
+      "file": "footage/broll-night-hook-in-hold.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/893855/night-port-operations",
+      "title": "Night Port Operations",
+      "author": "SSG David Campos-Contreras, U.S. Army",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night/interior. A red crane hook and slings hang into a cargo ship's hold, steel walls lit by work lights. 2023.",
+      "duration": 14.9,
+      "trimmed_from_source": [
+        340.4,
+        355.3
+      ]
+    },
+    {
+      "id": "broll-terminal-trucks-under-cranes",
+      "file": "footage/broll-terminal-trucks-under-cranes.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/891556/b-roll-port-savannah-cargo-operations",
+      "title": "B-Roll - Port of Savannah, Cargo Operations",
+      "author": "Jerry Glaser, U.S. Customs and Border Protection",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Yard trucks carrying shipping containers move beneath the legs of ship-to-shore container cranes at a busy terminal. Port of Savannah, 2023.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        10.0,
+        26.0
+      ]
+    },
+    {
+      "id": "broll-crane-spreader-container",
+      "file": "footage/broll-crane-spreader-container.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/891556/b-roll-port-savannah-cargo-operations",
+      "title": "B-Roll - Port of Savannah, Cargo Operations",
+      "author": "Jerry Glaser, U.S. Customs and Border Protection",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. A container crane spreader lowers a box past the crane structure, stencilled 'UNDER HOOK BEAM' and number 46. Port of Savannah, 2023.",
+      "duration": 14.8,
+      "trimmed_from_source": [
+        57.5,
+        72.3
+      ]
+    },
+    {
+      "id": "broll-ship-hull-under-cranes",
+      "file": "footage/broll-ship-hull-under-cranes.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/891556/b-roll-port-savannah-cargo-operations",
+      "title": "B-Roll - Port of Savannah, Cargo Operations",
+      "author": "Jerry Glaser, U.S. Customs and Border Protection",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Looking along the towering white hull of a large container ship berthed under gantry cranes, a yard truck below. Port of Savannah, 2023.",
+      "duration": 7.5,
+      "trimmed_from_source": [
+        79.7,
+        87.2
+      ]
+    },
+    {
+      "id": "broll-container-lift-cables",
+      "file": "footage/broll-container-lift-cables.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/891556/b-roll-port-savannah-cargo-operations",
+      "title": "B-Roll - Port of Savannah, Cargo Operations",
+      "author": "Jerry Glaser, U.S. Customs and Border Protection",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, blue sky. Low angle as a container is hoisted on crane cables above stacks on a ship. Port of Savannah, 2023.",
+      "duration": 11.0,
+      "trimmed_from_source": [
+        199.1,
+        210.1
+      ]
+    },
+    {
+      "id": "broll-port-river-sunset-aerial",
+      "file": "footage/broll-port-river-sunset-aerial.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/891556/b-roll-port-savannah-cargo-operations",
+      "title": "B-Roll - Port of Savannah, Cargo Operations",
+      "author": "Jerry Glaser, U.S. Customs and Border Protection",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Sunset, orange sky. Aerial view down a river past a port and industrial waterfront, sun low on the horizon, water glowing. Savannah, 2023.",
+      "duration": 8.8,
+      "trimmed_from_source": [
+        243.7,
+        252.5
+      ]
+    },
+    {
+      "id": "broll-container-ships-anchored-aerial",
+      "file": "footage/broll-container-ships-anchored-aerial.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/783416/port-la-anchorage-broll",
+      "title": "Port LA Anchorage B-roll",
+      "author": "Petty Officer 1st Class Richard Brahm, U.S. Coast Guard",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, hazy. Aerial view from a helicopter over loaded container ships lying at anchor offshore, more ships fading into the haze. Off Los Angeles/Long Beach, 2021.",
+      "duration": 13.9,
+      "trimmed_from_source": [
+        46.4,
+        60.3
+      ]
+    },
+    {
+      "id": "broll-container-terminal-aerial",
+      "file": "footage/broll-container-terminal-aerial.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/783416/port-la-anchorage-broll",
+      "title": "Port LA Anchorage B-roll",
+      "author": "Petty Officer 1st Class Richard Brahm, U.S. Coast Guard",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Aerial view of a huge container terminal: stacked boxes, rows of gantry cranes and a breakwater, a small boat crossing the harbor. Long Beach, 2021.",
+      "duration": 8.6,
+      "trimmed_from_source": [
+        60.5,
+        69.1
+      ]
+    },
+    {
+      "id": "broll-container-ship-anchored-closer",
+      "file": "footage/broll-container-ship-anchored-closer.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/783416/port-la-anchorage-broll",
+      "title": "Port LA Anchorage B-roll",
+      "author": "Petty Officer 1st Class Richard Brahm, U.S. Coast Guard",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Helicopter view of loaded container ships on blue water off a port, the camera circling one ship. Off Long Beach, 2021.",
+      "duration": 12.9,
+      "trimmed_from_source": [
+        77.4,
+        90.3
+      ]
+    },
+    {
+      "id": "broll-container-stacks-topdown",
+      "file": "footage/broll-container-stacks-topdown.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/783416/port-la-anchorage-broll",
+      "title": "Port LA Anchorage B-roll",
+      "author": "Petty Officer 1st Class Richard Brahm, U.S. Coast Guard",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Low aerial pass over the deck of a container ship: rows of multicoloured stacked containers sliding under the camera. Off Long Beach, 2021.",
+      "duration": 17.0,
+      "trimmed_from_source": [
+        106.5,
+        123.5
+      ]
+    },
+    {
+      "id": "broll-night-pier-lights",
+      "file": "footage/broll-night-pier-lights.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/769014/logistic-support-vessel-5-and-6-home-coming-b-roll-night",
+      "title": "Logistic Support Vessel 5 and 6 home coming B-Roll (Night)",
+      "author": "1LT Nahjier Williams, U.S. Army",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night. A long concrete pier under tall floodlights, yellow bollards and a gangway stair in the foreground, a few distant figures walking. Fort Eustis, Virginia, 2020.",
+      "duration": 17.4,
+      "trimmed_from_source": [
+        0.2,
+        17.6
+      ]
+    },
+    {
+      "id": "broll-night-ship-bow-ramp",
+      "file": "footage/broll-night-ship-bow-ramp.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/769014/logistic-support-vessel-5-and-6-home-coming-b-roll-night",
+      "title": "Logistic Support Vessel 5 and 6 home coming B-Roll (Night)",
+      "author": "1LT Nahjier Williams, U.S. Army",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night. The open bow of a grey Army cargo vessel at a pier under floodlights, crew small at the rail above, dark water below. Fort Eustis, 2020.",
+      "duration": 12.2,
+      "trimmed_from_source": [
+        42.6,
+        54.8
+      ]
+    },
+    {
+      "id": "broll-night-ship-at-pier-lights",
+      "file": "footage/broll-night-ship-at-pier-lights.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/769014/logistic-support-vessel-5-and-6-home-coming-b-roll-night",
+      "title": "Logistic Support Vessel 5 and 6 home coming B-Roll (Night)",
+      "author": "1LT Nahjier Williams, U.S. Army",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night. A grey cargo vessel tied up at a pier, lit by deck and dock lights, other vessels' lights behind. Fort Eustis, 2020.",
+      "duration": 15.0,
+      "trimmed_from_source": [
+        57.6,
+        72.6
+      ]
+    },
+    {
+      "id": "broll-night-ship-hull-side",
+      "file": "footage/broll-night-ship-hull-side.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/769014/logistic-support-vessel-5-and-6-home-coming-b-roll-night",
+      "title": "Logistic Support Vessel 5 and 6 home coming B-Roll (Night)",
+      "author": "1LT Nahjier Williams, U.S. Army",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Night. Looking along the floodlit grey hull of a cargo vessel moored at a pier, lights on the superstructure. Fort Eustis, 2020.",
+      "duration": 10.4,
+      "trimmed_from_source": [
+        89.5,
+        99.9
+      ]
+    },
+    {
+      "id": "broll-bridge-console-hands",
+      "file": "footage/broll-bridge-console-hands.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010654/b-roll-mv-roy-benavidez-bridge",
+      "title": "B-Roll: MV Roy Benavidez: The Bridge",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, interior. Close on a mariner's hands working levers and switches on the control console of a cargo ship's bridge. MV Roy P. Benavidez, 2026.",
+      "duration": 10.0,
+      "trimmed_from_source": [
+        103.0,
+        113.0
+      ]
+    },
+    {
+      "id": "broll-bridge-console-cabinet",
+      "file": "footage/broll-bridge-console-cabinet.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010654/b-roll-mv-roy-benavidez-bridge",
+      "title": "B-Roll: MV Roy Benavidez: The Bridge",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, interior. A crewman crouches at the open back of a bridge console cabinet, checking the electrical equipment inside, while another watches. Cargo ship bridge, 2026.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        145.0,
+        163.0
+      ]
+    },
+    {
+      "id": "broll-bridge-binoculars-sea",
+      "file": "footage/broll-bridge-binoculars-sea.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010654/b-roll-mv-roy-benavidez-bridge",
+      "title": "B-Roll: MV Roy Benavidez: The Bridge",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Binoculars resting on a chart table beneath a ship's bridge windows, then silhouetted against the bright sea. Cargo ship bridge, 2026.",
+      "duration": 11.9,
+      "trimmed_from_source": [
+        199.5,
+        211.4
+      ]
+    },
+    {
+      "id": "broll-bridge-console-red-controls",
+      "file": "footage/broll-bridge-console-red-controls.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010654/b-roll-mv-roy-benavidez-bridge",
+      "title": "B-Roll: MV Roy Benavidez: The Bridge",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, interior. A tattooed hand on a lever at a ship's bridge console, then close on a hand moving over rows of switches and red-lit buttons. MV Roy P. Benavidez, 2026.",
+      "duration": 18.2,
+      "trimmed_from_source": [
+        228.0,
+        246.2
+      ]
+    },
+    {
+      "id": "broll-bridge-mariner-window",
+      "file": "footage/broll-bridge-mariner-window.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/1010654/b-roll-mv-roy-benavidez-bridge",
+      "title": "B-Roll: MV Roy Benavidez: The Bridge",
+      "author": "TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime, dim wheelhouse. A mariner stands at the console looking out of the forward windows of a cargo ship's bridge. 2026.",
+      "duration": 15.1,
+      "trimmed_from_source": [
+        29.0,
+        44.1
+      ]
+    },
+    {
+      "id": "broll-substation-insulators",
+      "file": "footage/broll-substation-insulators.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/882840/substation-insulators",
+      "title": "Substation Insulators",
+      "author": "John Switzer, U.S. Army",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Low angle on electrical substation insulators and a disconnect switch against a blue sky with clouds. Fort Carson, Colorado, 2023.",
+      "duration": 7.8,
+      "trimmed_from_source": [
+        0,
+        7.8
+      ]
+    },
+    {
+      "id": "broll-dispatch-center-radio",
+      "file": "footage/broll-dispatch-center-radio.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/703906/b-roll-emergency-dispatchers-military-police-and-firefighters-job",
+      "title": "B-roll: Emergency dispatchers, military police and firefighters on the job",
+      "author": "Cpl Stephen Beard, U.S. Marine Corps",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. Emergency dispatchers in headsets watch screens, then close on a desk radio console, then a dispatcher at a bank of monitors. Camp Pendleton, California, 2019.",
+      "duration": 13.4,
+      "trimmed_from_source": [
+        3.2,
+        16.6
+      ]
+    },
+    {
+      "id": "broll-police-hood-lights-radio",
+      "file": "footage/broll-police-hood-lights-radio.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/703906/b-roll-emergency-dispatchers-military-police-and-firefighters-job",
+      "title": "B-roll: Emergency dispatchers, military police and firefighters on the job",
+      "author": "Cpl Stephen Beard, U.S. Marine Corps",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. Close on the hood of a white police cruiser marked POLICE with blue and amber grille lights flashing, then an officer's hand at the in-car radio mic and cables. Camp Pendleton, 2019.",
+      "duration": 12.8,
+      "trimmed_from_source": [
+        34.6,
+        47.4
+      ]
+    },
+    {
+      "id": "broll-police-cruiser-approaching",
+      "file": "footage/broll-police-cruiser-approaching.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/703906/b-roll-emergency-dispatchers-military-police-and-firefighters-job",
+      "title": "B-roll: Emergency dispatchers, military police and firefighters on the job",
+      "author": "Cpl Stephen Beard, U.S. Marine Corps",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Daytime. A white police cruiser with roof lights on drives toward camera along a base road. Camp Pendleton, 2019.",
+      "duration": 6.8,
+      "trimmed_from_source": [
+        47.6,
+        54.4
+      ]
+    },
+    {
+      "id": "broll-dispatcher-headset-screens",
+      "file": "footage/broll-dispatcher-headset-screens.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/966642/quantico-hosts-regional-active-shooter-response-exercise-dispatchers-b-roll",
+      "title": "Quantico Hosts Regional Active Shooter Response Exercise: Dispatchers B-Roll",
+      "author": "LCpl Katherine Corado, U.S. Marine Corps",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. Over the shoulder of a dispatcher in a headset working at several monitors showing maps and call screens. Quantico, Virginia, 2025.",
+      "duration": 8.4,
+      "trimmed_from_source": [
+        3.2,
+        11.6
+      ]
+    },
+    {
+      "id": "broll-dispatcher-keyboard",
+      "file": "footage/broll-dispatcher-keyboard.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/966642/quantico-hosts-regional-active-shooter-response-exercise-dispatchers-b-roll",
+      "title": "Quantico Hosts Regional Active Shooter Response Exercise: Dispatchers B-Roll",
+      "author": "LCpl Katherine Corado, U.S. Marine Corps",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. Close on a dispatcher's hand on a keyboard, then wide on the dispatcher in a headset at a map-display console. Quantico, 2025.",
+      "duration": 10.5,
+      "trimmed_from_source": [
+        18.4,
+        28.9
+      ]
+    },
+    {
+      "id": "broll-dispatch-call-screen",
+      "file": "footage/broll-dispatch-call-screen.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/966642/quantico-hosts-regional-active-shooter-response-exercise-dispatchers-b-roll",
+      "title": "Quantico Hosts Regional Active Shooter Response Exercise: Dispatchers B-Roll",
+      "author": "LCpl Katherine Corado, U.S. Marine Corps",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior. A dispatcher bends over her console between monitors, then a close view of a call-control screen showing an incoming call. Quantico, 2025.",
+      "duration": 10.4,
+      "trimmed_from_source": [
+        32.5,
+        42.9
+      ]
+    },
+    {
+      "id": "broll-dispatcher-radio-console",
+      "file": "footage/broll-dispatcher-radio-console.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://www.dvidshub.net/video/996595/fire-dispatch",
+      "title": "Fire Dispatch",
+      "author": "Marc J. Sanchez, Bureau of Land Management / NIFC",
+      "license": "Public domain (US Government work)",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "description": "REPRESENTATIVE: Interior, daylight. A dispatcher types at a console with a gooseneck microphone and a radio-system screen. Nevada dispatch center, 2021.",
+      "duration": 14.6,
+      "trimmed_from_source": [
+        45.8,
+        60.4
+      ]
+    },
+    {
+      "id": "broll-px-night-container-terminal-aerial",
+      "file": "footage/broll-px-night-container-terminal-aerial.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-23759/",
+      "title": "Pixabay video 23759",
+      "author": "bellergy (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Night. Slow aerial drift over a brightly lit container terminal: gantry cranes, stacked boxes and a berthed ship beside dark water. Not Baltimore.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        0,
+        16.0
+      ]
+    },
+    {
+      "id": "broll-px-night-port-city-aerial",
+      "file": "footage/broll-px-night-port-city-aerial.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-24255/",
+      "title": "Pixabay video 24255",
+      "author": "bellergy (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Night. Aerial view over a large Asian port city: lit highways, a cable-stayed bridge, container terminals and ships along dark water, strong purple-blue grading. Not Baltimore.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        0,
+        16.0
+      ]
+    },
+    {
+      "id": "broll-px-night-industrial-shore-reflections",
+      "file": "footage/broll-px-night-industrial-shore-reflections.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1012,
+      "source_url": "https://pixabay.com/videos/id-330523/",
+      "title": "Pixabay video 330523",
+      "author": "Solarselle77 (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Night. Across dark water, an industrial waterfront of refinery lights and smoking stacks with moored ships, long reflections rippling on the water. Locked-off.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        0,
+        16.0
+      ]
+    },
+    {
+      "id": "broll-px-night-harbor-reflections-teal",
+      "file": "footage/broll-px-night-harbor-reflections-teal.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1072,
+      "source_url": "https://pixabay.com/videos/id-330501/",
+      "title": "Pixabay video 330501",
+      "author": "Solarselle77 (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Night/blue hour. A distant industrial harbor shoreline with orange and white lights reflected in calm teal water, smoke drifting from a stack, a small boat passing.",
+      "duration": 15.6,
+      "trimmed_from_source": [
+        0,
+        15.6
+      ]
+    },
+    {
+      "id": "broll-px-bridge-lights-river-night",
+      "file": "footage/broll-px-bridge-lights-river-night.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-3138/",
+      "title": "Pixabay video 3138",
+      "author": "Life-Of-Vids (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Night. Underside of a long lit bridge spanning a river, its lights glittering as reflections on the dark moving water. Not the Key Bridge.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        0,
+        18.0
+      ]
+    },
+    {
+      "id": "broll-px-electrician-at-cabinet",
+      "file": "footage/broll-px-electrician-at-cabinet.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-159674/",
+      "title": "Pixabay video 159674",
+      "author": "CreativeCommonsCentral (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Interior, bright. An electrician in a white hard hat and orange hi-vis vest works inside an open electrical cabinet marked with a high-voltage warning sign, seen from behind.",
+      "duration": 8.1,
+      "trimmed_from_source": [
+        0,
+        8.1
+      ]
+    },
+    {
+      "id": "broll-px-hands-screwdriver-terminal-blocks",
+      "file": "footage/broll-px-hands-screwdriver-terminal-blocks.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-86252/",
+      "title": "Pixabay video 86252",
+      "author": "lumosajans (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Interior, close-up. A hand with a red screwdriver tightens wires into rows of small blue and green screw terminal blocks inside a control box crowded with red, white and black wiring.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        2.0,
+        20.0
+      ]
+    },
+    {
+      "id": "broll-px-clock-hands-timelapse",
+      "file": "footage/broll-px-clock-hands-timelapse.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-7243/",
+      "title": "Pixabay video 7243",
+      "author": "2427999 (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Close-up, time-lapse. The hands of a 24-hour analogue instrument clock sweep round, warm out-of-focus panel lights and wiring behind.",
+      "duration": 15.0,
+      "trimmed_from_source": [
+        5.0,
+        20.0
+      ]
+    },
+    {
+      "id": "broll-px-bulb-flickers-out",
+      "file": "footage/broll-px-bulb-flickers-out.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-122/",
+      "title": "Pixabay video 122",
+      "author": "Coverr-Free-Footage (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Black background. A clear incandescent bulb glows, then its filament dims and goes dark, fading to near black.",
+      "duration": 13.3,
+      "trimmed_from_source": [
+        0,
+        13.3
+      ]
+    },
+    {
+      "id": "broll-px-old-control-room",
+      "file": "footage/broll-px-old-control-room.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-20017/",
+      "title": "Pixabay video 20017",
+      "author": "jodywhiteley (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Interior, daylight. A slow move along a curved, disused power-station control desk with rows of meters, switches and mimic panels on the walls.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        0,
+        16.0
+      ]
+    },
+    {
+      "id": "broll-px-night-bokeh-fence",
+      "file": "footage/broll-px-night-bokeh-fence.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-28860/",
+      "title": "Pixabay video 28860",
+      "author": "FreeCreativeStuff (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Night. Out-of-focus orange, white and red lights seen through a dark chain-link fence, soft bokeh.",
+      "duration": 14.0,
+      "trimmed_from_source": [
+        0,
+        14.0
+      ]
+    },
+    {
+      "id": "broll-px-night-highway-river-aerial",
+      "file": "footage/broll-px-night-highway-river-aerial.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-87884/",
+      "title": "Pixabay video 87884",
+      "author": "MagicTV (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Night. Aerial view of a curving elevated highway with streaking traffic light trails beside a river reflecting city lights. Not Baltimore.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        0,
+        16.0
+      ]
+    },
+    {
+      "id": "broll-px-dusk-highway-aerial",
+      "file": "footage/broll-px-dusk-highway-aerial.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-18083/",
+      "title": "Pixabay video 18083",
+      "author": "paulmaunders (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Dusk/after sunset. High aerial view of a long straight highway crossing dark countryside, sparse headlights moving, a faint pink band on the horizon.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        0,
+        16.0
+      ]
+    },
+    {
+      "id": "broll-px-night-highway-valley",
+      "file": "footage/broll-px-night-highway-valley.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1076,
+      "source_url": "https://pixabay.com/videos/id-12769/",
+      "title": "Pixabay video 12769",
+      "author": "adege (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Night/blue hour, time-lapse. A highway winding along a dark hillside, streaks of headlights and tail lights, a dim sky above.",
+      "duration": 16.8,
+      "trimmed_from_source": [
+        0,
+        16.8
+      ]
+    },
+    {
+      "id": "broll-px-night-interchange-topdown",
+      "file": "footage/broll-px-night-interchange-topdown.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-220940/",
+      "title": "Pixabay video 220940",
+      "author": "TungArt7 (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Night, time-lapse. Straight-down aerial view of a multi-level highway interchange glowing orange with light trails. Not Baltimore.",
+      "duration": 10.0,
+      "trimmed_from_source": [
+        0,
+        10.0
+      ]
+    },
+    {
+      "id": "broll-px-highway-sunset-quiet",
+      "file": "footage/broll-px-highway-sunset-quiet.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-230922/",
+      "title": "Pixabay video 230922",
+      "author": "Time_Trails (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Dusk. A divided highway seen from an overpass under a fading sky, light traffic, tree lines on both sides.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        0,
+        18.0
+      ]
+    },
+    {
+      "id": "broll-px-two-candles-dark",
+      "file": "footage/broll-px-two-candles-dark.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-51752/",
+      "title": "Pixabay video 51752",
+      "author": "padrinan (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Black background. Two lit candles burning steadily, close, calm.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        0,
+        16.0
+      ]
+    },
+    {
+      "id": "broll-px-row-of-candles",
+      "file": "footage/broll-px-row-of-candles.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-207357/",
+      "title": "Pixabay video 207357",
+      "author": "Mile_Hi_Church (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Dark background. A row of thin lit candles of different heights flickering, shallow focus.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        5.0,
+        21.0
+      ]
+    },
+    {
+      "id": "broll-px-memorial-candles-night",
+      "file": "footage/broll-px-memorial-candles-night.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-137522/",
+      "title": "Pixabay video 137522",
+      "author": "phtorxp (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Night. A cluster of memorial candles and lanterns in red and white glass glowing on the ground, darkness behind.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        5.0,
+        21.0
+      ]
+    },
+    {
+      "id": "broll-px-river-bridge-sunset",
+      "file": "footage/broll-px-river-bridge-sunset.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-34427/",
+      "title": "Pixabay video 34427",
+      "author": "huunghidt (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Sunset. A wide river with a distant cable-stayed bridge on the horizon, the sun setting low and reflected on the water. Not the Key Bridge.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        0,
+        18.0
+      ]
+    },
+    {
+      "id": "broll-px-flag-pole-grey-sky",
+      "file": "footage/broll-px-flag-pole-grey-sky.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-56729/",
+      "title": "Pixabay video 56729",
+      "author": "motionstock (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Daytime, pale overcast sky. An American flag flutters at the top of a tall flagpole (full staff), small clouds drifting.",
+      "duration": 10.0,
+      "trimmed_from_source": [
+        0,
+        10.0
+      ]
+    },
+    {
+      "id": "broll-px-flag-waving-close",
+      "file": "footage/broll-px-flag-waving-close.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-3415/",
+      "title": "Pixabay video 3415",
+      "author": "JohnSalvatore (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Daytime, lilac-blue sky. Low close view of an American flag waving on its pole in a steady wind.",
+      "duration": 17.0,
+      "trimmed_from_source": [
+        0,
+        17.0
+      ]
+    },
+    {
+      "id": "broll-px-murky-underwater-green",
+      "file": "footage/broll-px-murky-underwater-green.mp4",
+      "type": "video",
+      "width": 1918,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-250415/",
+      "title": "Pixabay video 250415",
+      "author": "AbstractBackground (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Underwater, dark murky green water with faint shafts of light from above, no visible objects. Not the Patapsco.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        0,
+        18.0
+      ]
+    },
+    {
+      "id": "broll-px-microscope-focus-hands",
+      "file": "footage/broll-px-microscope-focus-hands.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-86259/",
+      "title": "Pixabay video 86259",
+      "author": "lumosajans (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Interior, bright lab bench. Close on hands turning the focus knobs and moving the stage of a white laboratory microscope.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        2.0,
+        20.0
+      ]
+    },
+    {
+      "id": "broll-px-dark-water-ripples",
+      "file": "footage/broll-px-dark-water-ripples.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-304019/",
+      "title": "Pixabay video 304019",
+      "author": "Mario_Krimer (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Low light. Close on slow, dark grey-blue rippling water filling the frame, faint highlights on the wave crests.",
+      "duration": 16.0,
+      "trimmed_from_source": [
+        0,
+        16.0
+      ]
+    },
+    {
+      "id": "broll-px-night-water-glitter",
+      "file": "footage/broll-px-night-water-glitter.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-212057/",
+      "title": "Pixabay video 212057",
+      "author": "Mario_Krimer (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Night/low sun. Dark water with a narrow path of glittering light reflections moving on the ripples.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        0,
+        18.0
+      ]
+    },
+    {
+      "id": "broll-px-grey-choppy-water",
+      "file": "footage/broll-px-grey-choppy-water.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-230029/",
+      "title": "Pixabay video 230029",
+      "author": "Mario_Krimer (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Overcast, flat light. Grey choppy open water seen low from the surface, filling the frame.",
+      "duration": 18.0,
+      "trimmed_from_source": [
+        0,
+        18.0
+      ]
+    },
+    {
+      "id": "broll-px-bubbles-dark-water",
+      "file": "footage/broll-px-bubbles-dark-water.mp4",
+      "type": "video",
+      "width": 1920,
+      "height": 1080,
+      "source_url": "https://pixabay.com/videos/id-366804/",
+      "title": "Pixabay video 366804",
+      "author": "InfinityByte (Pixabay)",
+      "license": "Pixabay Content License",
+      "license_url": "https://pixabay.com/service/license-summary/",
+      "description": "REPRESENTATIVE: Underwater, dark blue. A column of air bubbles rising toward the surface light.",
+      "duration": 6.0,
+      "trimmed_from_source": [
+        0,
+        6.0
       ]
     }
   ]

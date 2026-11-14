@@ -218,10 +218,6 @@ Every visual in this episode, where it came from, and the terms it is used under
   - Source: https://commons.wikimedia.org/wiki/File:Map-mv-dali-bridge-collision.png
   - Author: Michael.C.Wright (via Wikimedia Commons)
   - License: CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
-- **broll-dive-boat-helm** (video): B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations
-  - Source: https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali
-  - Author: Key Bridge Response 2024 Unified Command / USCG
-  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
 - **broll-diver-suits-up-wreck** (video): B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations
   - Source: https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali
   - Author: Key Bridge Response 2024 Unified Command / USCG
@@ -278,6 +274,534 @@ Every visual in this episode, where it came from, and the terms it is used under
   - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
   - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
   - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-final-segment-lift** (video): Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel
+  - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-final-segment-hanging** (video): Unified Command removes final large bridge segment, nears complete restoration of Baltimore's federal channel
+  - Source: https://www.dvidshub.net/video/926255/unified-command-removes-final-large-bridge-segment-nears-complete-restoration-baltimores-federal-channel
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-merchant-bridge-dusk-crew** (video): B-Roll: MV Roy Benavidez: The Bridge at sunset
+  - Source: https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-merchant-bridge-window-watch** (video): B-Roll: MV Roy Benavidez: The Bridge at sunset
+  - Source: https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-bridge-red-chart-table** (video): B-Roll: MV Roy Benavidez: The Bridge at sunset
+  - Source: https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-bridge-red-night-wide** (video): B-Roll: MV Roy Benavidez: The Bridge at sunset
+  - Source: https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-bridge-radar-consoles-dusk** (video): B-Roll: MV Roy Benavidez: The Bridge at sunset
+  - Source: https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-bridge-radar-consoles-dusk2** (video): B-Roll: MV Roy Benavidez: The Bridge at sunset
+  - Source: https://www.dvidshub.net/video/1010657/b-roll-mv-roy-benavidez-bridge-sunset
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-ship-departs-tug-wake** (video): B-Roll: MV Roy Benavidez: Departs Port of Ponce, Puerto Rico
+  - Source: https://www.dvidshub.net/video/1010655/b-roll-mv-roy-benavidez-departs-port-ponce-puerto-rico
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-cg-boat-flag-stern** (video): U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland
+  - Source: https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland
+  - Author: U.S. Coast Guard Station Curtis Bay
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-container-inspectors** (video): B-Roll: Coast Guard conducts joint operation in Baltimore
+  - Source: https://www.dvidshub.net/video/1010029/b-roll-coast-guard-conducts-joint-operation-baltimore
+  - Author: Petty Officer 3rd Class Amy Hagan, U.S. Coast Guard
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-motors-pumps** (video): MV Cape Ray Virtual Tour: Engine Room
+  - Source: https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room
+  - Author: U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-walkway-pump-no2** (video): MV Cape Ray Virtual Tour: Engine Room
+  - Source: https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room
+  - Author: U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-gauge-panel** (video): MV Cape Ray Virtual Tour: Engine Room
+  - Source: https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room
+  - Author: U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-purifiers-piping** (video): MV Cape Ray Virtual Tour: Engine Room
+  - Source: https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room
+  - Author: U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-white-tank-pump-motors** (video): MV Cape Ray Virtual Tour: Engine Room
+  - Source: https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room
+  - Author: U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-pump-motors-tank** (video): MV Cape Ray Virtual Tour: Engine Room
+  - Source: https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room
+  - Author: U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-hands-tools** (video): Sailors conduct routine maintenance in an engine room aboard USS New Orleans (LPD 18)
+  - Source: https://www.dvidshub.net/video/759228/sailors-conduct-routine-maintenance-engine-room-aboard-uss-new-orleans-lpd-18
+  - Author: CPO Kelby Sanders, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-overhead-work** (video): Sailors conduct routine maintenance in an engine room aboard USS New Orleans (LPD 18)
+  - Source: https://www.dvidshub.net/video/759228/sailors-conduct-routine-maintenance-engine-room-aboard-uss-new-orleans-lpd-18
+  - Author: CPO Kelby Sanders, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-anchor-chain-crew** (video): USS New Orleans Anchoring
+  - Source: https://www.dvidshub.net/video/748619/uss-new-orleans-anchoring
+  - Author: CPO Kelby Sanders, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-tug-bow-under-bridge** (video): Norfolk Harbor B-Roll
+  - Source: https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll
+  - Author: James Walker, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-highway-traffic-aerial-day** (video): Norfolk Harbor B-Roll
+  - Source: https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll
+  - Author: James Walker, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-harbor-tug-wake-aerial** (video): Norfolk Harbor B-Roll
+  - Source: https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll
+  - Author: James Walker, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-tug-under-bridge** (video): Norfolk Harbor B-Roll
+  - Source: https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll
+  - Author: James Walker, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-highway-topdown-day** (video): Norfolk Harbor B-Roll
+  - Source: https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll
+  - Author: James Walker, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-harbor-bridge-aerial** (video): Norfolk Harbor B-Roll
+  - Source: https://www.dvidshub.net/video/884041/norfolk-harbor-b-roll
+  - Author: James Walker, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-cg-coxswain-helm** (video): U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland
+  - Source: https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland
+  - Author: U.S. Coast Guard Station Curtis Bay
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-ship-alongside-cranes** (video): B-Roll: MV Roy Benavidez: Departs Port of Ponce, Puerto Rico
+  - Source: https://www.dvidshub.net/video/1010655/b-roll-mv-roy-benavidez-departs-port-ponce-puerto-rico
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-tug-alongside-at-quay** (video): B-Roll: MV Roy Benavidez: Departs Port of Ponce, Puerto Rico
+  - Source: https://www.dvidshub.net/video/1010655/b-roll-mv-roy-benavidez-departs-port-ponce-puerto-rico
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-bridge-wing-mariners** (video): B-Roll: MV Roy Benavidez: Departs Port of Ponce, Puerto Rico
+  - Source: https://www.dvidshub.net/video/1010655/b-roll-mv-roy-benavidez-departs-port-ponce-puerto-rico
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-ship-wake-open-sea** (video): B-Roll: MV Roy Benavidez: Departs Port of Ponce, Puerto Rico
+  - Source: https://www.dvidshub.net/video/1010655/b-roll-mv-roy-benavidez-departs-port-ponce-puerto-rico
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-memorial-buoy-flag-hull** (video): B-Roll: U.S. Coast Guard Marks 46th Annual Francis Scott Key Memorial Buoy Commissioning
+  - Source: https://www.dvidshub.net/video/1016546/b-roll-us-coast-guard-marks-46th-annual-francis-scott-key-memorial-buoy-commissioning
+  - Author: U.S. Coast Guard, Coast Guard Cutter James Rankin
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-memorial-buoy-lift** (video): B-Roll: U.S. Coast Guard Marks 46th Annual Francis Scott Key Memorial Buoy Commissioning
+  - Source: https://www.dvidshub.net/video/1016546/b-roll-us-coast-guard-marks-46th-annual-francis-scott-key-memorial-buoy-commissioning
+  - Author: U.S. Coast Guard, Coast Guard Cutter James Rankin
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-memorial-ceremony-deck** (video): B-Roll: U.S. Coast Guard Marks 46th Annual Francis Scott Key Memorial Buoy Commissioning
+  - Source: https://www.dvidshub.net/video/1016546/b-roll-us-coast-guard-marks-46th-annual-francis-scott-key-memorial-buoy-commissioning
+  - Author: U.S. Coast Guard, Coast Guard Cutter James Rankin
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-coast-guard-salute-water** (video): B-Roll: U.S. Coast Guard Marks 46th Annual Francis Scott Key Memorial Buoy Commissioning
+  - Source: https://www.dvidshub.net/video/1016546/b-roll-us-coast-guard-marks-46th-annual-francis-scott-key-memorial-buoy-commissioning
+  - Author: U.S. Coast Guard, Coast Guard Cutter James Rankin
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-cg-boat-hull-spray** (video): U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland
+  - Source: https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland
+  - Author: U.S. Coast Guard Station Curtis Bay
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-cg-boat-baltimore-skyline** (video): U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland
+  - Source: https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland
+  - Author: U.S. Coast Guard Station Curtis Bay
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-cg-boat-wake** (video): U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland
+  - Source: https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland
+  - Author: U.S. Coast Guard Station Curtis Bay
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-cg-boat-harbor-skyline2** (video): U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland
+  - Source: https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland
+  - Author: U.S. Coast Guard Station Curtis Bay
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-cg-boat-industrial-shore** (video): U.S. Coast Guard Station Curtis Bay Prepares for Sail250 Maryland
+  - Source: https://www.dvidshub.net/video/1011429/us-coast-guard-station-curtis-bay-prepares-sail250-maryland
+  - Author: U.S. Coast Guard Station Curtis Bay
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-port-baltimore-terminal-gate** (video): B-Roll: Coast Guard conducts joint operation in Baltimore
+  - Source: https://www.dvidshub.net/video/1010029/b-roll-coast-guard-conducts-joint-operation-baltimore
+  - Author: Petty Officer 3rd Class Amy Hagan, U.S. Coast Guard
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-generator-coupling** (video): Sailors conduct routine maintenance in an engine room aboard USS New Orleans (LPD 18)
+  - Source: https://www.dvidshub.net/video/759228/sailors-conduct-routine-maintenance-engine-room-aboard-uss-new-orleans-lpd-18
+  - Author: CPO Kelby Sanders, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-boots-deckplate** (video): Sailors conduct routine maintenance in an engine room aboard USS New Orleans (LPD 18)
+  - Source: https://www.dvidshub.net/video/759228/sailors-conduct-routine-maintenance-engine-room-aboard-uss-new-orleans-lpd-18
+  - Author: CPO Kelby Sanders, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-diesel-crew** (video): Sailors conduct routine maintenance in an engine room aboard USS New Orleans (LPD 18)
+  - Source: https://www.dvidshub.net/video/759228/sailors-conduct-routine-maintenance-engine-room-aboard-uss-new-orleans-lpd-18
+  - Author: CPO Kelby Sanders, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-anchor-chain-forecastle** (video): USS New Orleans Anchoring
+  - Source: https://www.dvidshub.net/video/748619/uss-new-orleans-anchoring
+  - Author: CPO Kelby Sanders, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-anchor-chain-closeup** (video): USS New Orleans Anchoring
+  - Source: https://www.dvidshub.net/video/748619/uss-new-orleans-anchoring
+  - Author: CPO Kelby Sanders, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-anchor-brake-wheel** (video): USS New Orleans Anchoring
+  - Source: https://www.dvidshub.net/video/748619/uss-new-orleans-anchoring
+  - Author: CPO Kelby Sanders, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-chain-locker-crew** (video): Sailors Participate in Anchor Drop Evolution
+  - Source: https://www.dvidshub.net/video/943620/sailors-participate-anchor-drop-evolution
+  - Author: PO2 Timothy Meyer, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-chain-locker-crew2** (video): Sailors Participate in Anchor Drop Evolution
+  - Source: https://www.dvidshub.net/video/943620/sailors-participate-anchor-drop-evolution
+  - Author: PO2 Timothy Meyer, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-er-diesel-cylinder-heads** (video): MV Cape Ray Virtual Tour: Engine Room
+  - Source: https://www.dvidshub.net/video/354565/mv-cape-ray-virtual-tour-engine-room
+  - Author: U.S. Navy (Military Sealift Command, MV Cape Ray virtual tour)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-dive-boat-helm** (video): B-Roll: Key Bridge Response 2024 Unified Command divers conduct dive operations
+  - Source: https://www.dvidshub.net/video/918043/b-roll-key-bridge-response-2024-unified-command-divers-conduct-dive-operations-motor-vessel-dali
+  - Author: Key Bridge Response 2024 Unified Command / USCG
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-yard-twisted-steel** (video): New b-roll video shows Baltimore bridge cutting at wreckage processing yard
+  - Source: https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-yard-gusset-rivets** (video): New b-roll video shows Baltimore bridge cutting at wreckage processing yard
+  - Source: https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-yard-torch-cutters** (video): New b-roll video shows Baltimore bridge cutting at wreckage processing yard
+  - Source: https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-yard-torch-cutter-standing** (video): New b-roll video shows Baltimore bridge cutting at wreckage processing yard
+  - Source: https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-yard-torch-flame-close** (video): New b-roll video shows Baltimore bridge cutting at wreckage processing yard
+  - Source: https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-yard-excavator-shear** (video): New b-roll video shows Baltimore bridge cutting at wreckage processing yard
+  - Source: https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-yard-barge-pier** (video): New b-roll video shows Baltimore bridge cutting at wreckage processing yard
+  - Source: https://www.dvidshub.net/video/918933/new-b-roll-video-shows-baltimore-bridge-cutting-wreckage-processing-yard
+  - Author: Bobby Petty, U.S. Army Corps of Engineers Baltimore District
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-tug-barge-under-spans** (video): First vessel passes through temporary alternate channel
+  - Source: https://www.dvidshub.net/video/917690/first-vessel-passes-through-temporary-alternate-channel
+  - Author: Key Bridge Response 2024 Unified Command
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-tug-barge-passes** (video): First vessel passes through temporary alternate channel
+  - Source: https://www.dvidshub.net/video/917690/first-vessel-passes-through-temporary-alternate-channel
+  - Author: Key Bridge Response 2024 Unified Command
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-tug-close-wreck-behind** (video): First vessel passes through temporary alternate channel
+  - Source: https://www.dvidshub.net/video/917690/first-vessel-passes-through-temporary-alternate-channel
+  - Author: Key Bridge Response 2024 Unified Command
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-cg-boat-silhouette-sun** (video): B-Roll: Unified Command prepares for opening of temporary alternate channel near Key Bridge
+  - Source: https://www.dvidshub.net/video/917547/b-roll-unified-command-prepares-opening-temporary-alternate-channel-near-key-bridge
+  - Author: Key Bridge Response 2024 Unified Command
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-cg-crew-buoys** (video): B-Roll: Unified Command prepares for opening of temporary alternate channel near Key Bridge
+  - Source: https://www.dvidshub.net/video/917547/b-roll-unified-command-prepares-opening-temporary-alternate-channel-near-key-bridge
+  - Author: Key Bridge Response 2024 Unified Command
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-tug-night-vision** (video): Tug Boats assist adrift barge off Galveston
+  - Source: https://www.dvidshub.net/video/521734/tug-boats-assist-adrift-barge-off-galveston
+  - Author: U.S. Coast Guard Air Station Houston
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-tug-night-vision2** (video): Tug Boats assist adrift barge off Galveston
+  - Source: https://www.dvidshub.net/video/521734/tug-boats-assist-adrift-barge-off-galveston
+  - Author: U.S. Coast Guard Air Station Houston
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-ship-passes-salvage-site** (video): 240425-N-FA868-1001
+  - Source: https://www.dvidshub.net/video/920963/240425-n-fa868-1001
+  - Author: PO2 Theodore Lee, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-mooring-line-to-pier** (video): MV Cape Ray Port
+  - Source: https://www.dvidshub.net/video/347658/mv-cape-ray-port
+  - Author: PO1 Desmond Parks, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-barge-truss-bridge-dawn** (video): Morning barge traffic in Louisville
+  - Source: https://www.dvidshub.net/video/1005217/morning-barge-traffic-louisville
+  - Author: Charles Delano, U.S. Army Corps of Engineers
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-breaker-test-set-panel** (video): B CO, 249th Engineer Battalion (Prime Power) CBRM mission 4k b-roll at Cannelton Locks and Dam, Indiana
+  - Source: https://www.dvidshub.net/video/1007593/b-co-249th-engineer-battalion-prime-power-cbrm-mission-4k-b-roll-cannelton-locks-and-dam-indiana
+  - Author: Charles Delano, U.S. Army Corps of Engineers
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-breaker-hands-screwdriver** (video): B CO, 249th Engineer Battalion (Prime Power) CBRM mission 4k b-roll at Cannelton Locks and Dam, Indiana
+  - Source: https://www.dvidshub.net/video/1007593/b-co-249th-engineer-battalion-prime-power-cbrm-mission-4k-b-roll-cannelton-locks-and-dam-indiana
+  - Author: Charles Delano, U.S. Army Corps of Engineers
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-breaker-red-screwdriver-close** (video): B CO, 249th Engineer Battalion (Prime Power) CBRM mission 4k b-roll at Cannelton Locks and Dam, Indiana
+  - Source: https://www.dvidshub.net/video/1007593/b-co-249th-engineer-battalion-prime-power-cbrm-mission-4k-b-roll-cannelton-locks-and-dam-indiana
+  - Author: Charles Delano, U.S. Army Corps of Engineers
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-breaker-team-inspection** (video): B CO, 249th Engineer Battalion (Prime Power) CBRM mission 4k b-roll at Cannelton Locks and Dam, Indiana
+  - Source: https://www.dvidshub.net/video/1007593/b-co-249th-engineer-battalion-prime-power-cbrm-mission-4k-b-roll-cannelton-locks-and-dam-indiana
+  - Author: Charles Delano, U.S. Army Corps of Engineers
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-breaker-test-cables** (video): B CO, 249th Engineer Battalion (Prime Power) CBRM mission 4k b-roll at Cannelton Locks and Dam, Indiana
+  - Source: https://www.dvidshub.net/video/1007593/b-co-249th-engineer-battalion-prime-power-cbrm-mission-4k-b-roll-cannelton-locks-and-dam-indiana
+  - Author: Charles Delano, U.S. Army Corps of Engineers
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-police-lightbar-day** (video): Police lights
+  - Source: https://www.dvidshub.net/video/829409/police-lights
+  - Author: PO1 Clyde Laster, U.S. Navy
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-night-port-spreader-shackles** (video): Night Port Operations
+  - Source: https://www.dvidshub.net/video/893855/night-port-operations
+  - Author: SSG David Campos-Contreras, U.S. Army
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-night-port-worker-gangway** (video): Night Port Operations
+  - Source: https://www.dvidshub.net/video/893855/night-port-operations
+  - Author: SSG David Campos-Contreras, U.S. Army
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-ship-no-smoking-stencil** (video): Night Port Operations
+  - Source: https://www.dvidshub.net/video/893855/night-port-operations
+  - Author: SSG David Campos-Contreras, U.S. Army
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-night-hook-in-hold** (video): Night Port Operations
+  - Source: https://www.dvidshub.net/video/893855/night-port-operations
+  - Author: SSG David Campos-Contreras, U.S. Army
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-terminal-trucks-under-cranes** (video): B-Roll - Port of Savannah, Cargo Operations
+  - Source: https://www.dvidshub.net/video/891556/b-roll-port-savannah-cargo-operations
+  - Author: Jerry Glaser, U.S. Customs and Border Protection
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-crane-spreader-container** (video): B-Roll - Port of Savannah, Cargo Operations
+  - Source: https://www.dvidshub.net/video/891556/b-roll-port-savannah-cargo-operations
+  - Author: Jerry Glaser, U.S. Customs and Border Protection
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-ship-hull-under-cranes** (video): B-Roll - Port of Savannah, Cargo Operations
+  - Source: https://www.dvidshub.net/video/891556/b-roll-port-savannah-cargo-operations
+  - Author: Jerry Glaser, U.S. Customs and Border Protection
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-container-lift-cables** (video): B-Roll - Port of Savannah, Cargo Operations
+  - Source: https://www.dvidshub.net/video/891556/b-roll-port-savannah-cargo-operations
+  - Author: Jerry Glaser, U.S. Customs and Border Protection
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-port-river-sunset-aerial** (video): B-Roll - Port of Savannah, Cargo Operations
+  - Source: https://www.dvidshub.net/video/891556/b-roll-port-savannah-cargo-operations
+  - Author: Jerry Glaser, U.S. Customs and Border Protection
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-container-ships-anchored-aerial** (video): Port LA Anchorage B-roll
+  - Source: https://www.dvidshub.net/video/783416/port-la-anchorage-broll
+  - Author: Petty Officer 1st Class Richard Brahm, U.S. Coast Guard
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-container-terminal-aerial** (video): Port LA Anchorage B-roll
+  - Source: https://www.dvidshub.net/video/783416/port-la-anchorage-broll
+  - Author: Petty Officer 1st Class Richard Brahm, U.S. Coast Guard
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-container-ship-anchored-closer** (video): Port LA Anchorage B-roll
+  - Source: https://www.dvidshub.net/video/783416/port-la-anchorage-broll
+  - Author: Petty Officer 1st Class Richard Brahm, U.S. Coast Guard
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-container-stacks-topdown** (video): Port LA Anchorage B-roll
+  - Source: https://www.dvidshub.net/video/783416/port-la-anchorage-broll
+  - Author: Petty Officer 1st Class Richard Brahm, U.S. Coast Guard
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-night-pier-lights** (video): Logistic Support Vessel 5 and 6 home coming B-Roll (Night)
+  - Source: https://www.dvidshub.net/video/769014/logistic-support-vessel-5-and-6-home-coming-b-roll-night
+  - Author: 1LT Nahjier Williams, U.S. Army
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-night-ship-bow-ramp** (video): Logistic Support Vessel 5 and 6 home coming B-Roll (Night)
+  - Source: https://www.dvidshub.net/video/769014/logistic-support-vessel-5-and-6-home-coming-b-roll-night
+  - Author: 1LT Nahjier Williams, U.S. Army
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-night-ship-at-pier-lights** (video): Logistic Support Vessel 5 and 6 home coming B-Roll (Night)
+  - Source: https://www.dvidshub.net/video/769014/logistic-support-vessel-5-and-6-home-coming-b-roll-night
+  - Author: 1LT Nahjier Williams, U.S. Army
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-night-ship-hull-side** (video): Logistic Support Vessel 5 and 6 home coming B-Roll (Night)
+  - Source: https://www.dvidshub.net/video/769014/logistic-support-vessel-5-and-6-home-coming-b-roll-night
+  - Author: 1LT Nahjier Williams, U.S. Army
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-bridge-console-hands** (video): B-Roll: MV Roy Benavidez: The Bridge
+  - Source: https://www.dvidshub.net/video/1010654/b-roll-mv-roy-benavidez-bridge
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-bridge-console-cabinet** (video): B-Roll: MV Roy Benavidez: The Bridge
+  - Source: https://www.dvidshub.net/video/1010654/b-roll-mv-roy-benavidez-bridge
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-bridge-binoculars-sea** (video): B-Roll: MV Roy Benavidez: The Bridge
+  - Source: https://www.dvidshub.net/video/1010654/b-roll-mv-roy-benavidez-bridge
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-bridge-console-red-controls** (video): B-Roll: MV Roy Benavidez: The Bridge
+  - Source: https://www.dvidshub.net/video/1010654/b-roll-mv-roy-benavidez-bridge
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-bridge-mariner-window** (video): B-Roll: MV Roy Benavidez: The Bridge
+  - Source: https://www.dvidshub.net/video/1010654/b-roll-mv-roy-benavidez-bridge
+  - Author: TSgt Brooke Spenner, U.S. Department of Defense (USTRANSCOM)
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-substation-insulators** (video): Substation Insulators
+  - Source: https://www.dvidshub.net/video/882840/substation-insulators
+  - Author: John Switzer, U.S. Army
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-dispatch-center-radio** (video): B-roll: Emergency dispatchers, military police and firefighters on the job
+  - Source: https://www.dvidshub.net/video/703906/b-roll-emergency-dispatchers-military-police-and-firefighters-job
+  - Author: Cpl Stephen Beard, U.S. Marine Corps
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-police-hood-lights-radio** (video): B-roll: Emergency dispatchers, military police and firefighters on the job
+  - Source: https://www.dvidshub.net/video/703906/b-roll-emergency-dispatchers-military-police-and-firefighters-job
+  - Author: Cpl Stephen Beard, U.S. Marine Corps
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-police-cruiser-approaching** (video): B-roll: Emergency dispatchers, military police and firefighters on the job
+  - Source: https://www.dvidshub.net/video/703906/b-roll-emergency-dispatchers-military-police-and-firefighters-job
+  - Author: Cpl Stephen Beard, U.S. Marine Corps
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-dispatcher-headset-screens** (video): Quantico Hosts Regional Active Shooter Response Exercise: Dispatchers B-Roll
+  - Source: https://www.dvidshub.net/video/966642/quantico-hosts-regional-active-shooter-response-exercise-dispatchers-b-roll
+  - Author: LCpl Katherine Corado, U.S. Marine Corps
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-dispatcher-keyboard** (video): Quantico Hosts Regional Active Shooter Response Exercise: Dispatchers B-Roll
+  - Source: https://www.dvidshub.net/video/966642/quantico-hosts-regional-active-shooter-response-exercise-dispatchers-b-roll
+  - Author: LCpl Katherine Corado, U.S. Marine Corps
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-dispatch-call-screen** (video): Quantico Hosts Regional Active Shooter Response Exercise: Dispatchers B-Roll
+  - Source: https://www.dvidshub.net/video/966642/quantico-hosts-regional-active-shooter-response-exercise-dispatchers-b-roll
+  - Author: LCpl Katherine Corado, U.S. Marine Corps
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-dispatcher-radio-console** (video): Fire Dispatch
+  - Source: https://www.dvidshub.net/video/996595/fire-dispatch
+  - Author: Marc J. Sanchez, Bureau of Land Management / NIFC
+  - License: Public domain (US Government work) (https://www.dvidshub.net/about/copyright)
+- **broll-px-night-container-terminal-aerial** (video): Pixabay video 23759
+  - Source: https://pixabay.com/videos/id-23759/
+  - Author: bellergy (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-night-port-city-aerial** (video): Pixabay video 24255
+  - Source: https://pixabay.com/videos/id-24255/
+  - Author: bellergy (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-night-industrial-shore-reflections** (video): Pixabay video 330523
+  - Source: https://pixabay.com/videos/id-330523/
+  - Author: Solarselle77 (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-night-harbor-reflections-teal** (video): Pixabay video 330501
+  - Source: https://pixabay.com/videos/id-330501/
+  - Author: Solarselle77 (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-bridge-lights-river-night** (video): Pixabay video 3138
+  - Source: https://pixabay.com/videos/id-3138/
+  - Author: Life-Of-Vids (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-electrician-at-cabinet** (video): Pixabay video 159674
+  - Source: https://pixabay.com/videos/id-159674/
+  - Author: CreativeCommonsCentral (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-hands-screwdriver-terminal-blocks** (video): Pixabay video 86252
+  - Source: https://pixabay.com/videos/id-86252/
+  - Author: lumosajans (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-clock-hands-timelapse** (video): Pixabay video 7243
+  - Source: https://pixabay.com/videos/id-7243/
+  - Author: 2427999 (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-bulb-flickers-out** (video): Pixabay video 122
+  - Source: https://pixabay.com/videos/id-122/
+  - Author: Coverr-Free-Footage (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-old-control-room** (video): Pixabay video 20017
+  - Source: https://pixabay.com/videos/id-20017/
+  - Author: jodywhiteley (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-night-bokeh-fence** (video): Pixabay video 28860
+  - Source: https://pixabay.com/videos/id-28860/
+  - Author: FreeCreativeStuff (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-night-highway-river-aerial** (video): Pixabay video 87884
+  - Source: https://pixabay.com/videos/id-87884/
+  - Author: MagicTV (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-dusk-highway-aerial** (video): Pixabay video 18083
+  - Source: https://pixabay.com/videos/id-18083/
+  - Author: paulmaunders (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-night-highway-valley** (video): Pixabay video 12769
+  - Source: https://pixabay.com/videos/id-12769/
+  - Author: adege (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-night-interchange-topdown** (video): Pixabay video 220940
+  - Source: https://pixabay.com/videos/id-220940/
+  - Author: TungArt7 (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-highway-sunset-quiet** (video): Pixabay video 230922
+  - Source: https://pixabay.com/videos/id-230922/
+  - Author: Time_Trails (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-two-candles-dark** (video): Pixabay video 51752
+  - Source: https://pixabay.com/videos/id-51752/
+  - Author: padrinan (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-row-of-candles** (video): Pixabay video 207357
+  - Source: https://pixabay.com/videos/id-207357/
+  - Author: Mile_Hi_Church (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-memorial-candles-night** (video): Pixabay video 137522
+  - Source: https://pixabay.com/videos/id-137522/
+  - Author: phtorxp (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-river-bridge-sunset** (video): Pixabay video 34427
+  - Source: https://pixabay.com/videos/id-34427/
+  - Author: huunghidt (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-flag-pole-grey-sky** (video): Pixabay video 56729
+  - Source: https://pixabay.com/videos/id-56729/
+  - Author: motionstock (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-flag-waving-close** (video): Pixabay video 3415
+  - Source: https://pixabay.com/videos/id-3415/
+  - Author: JohnSalvatore (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-murky-underwater-green** (video): Pixabay video 250415
+  - Source: https://pixabay.com/videos/id-250415/
+  - Author: AbstractBackground (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-microscope-focus-hands** (video): Pixabay video 86259
+  - Source: https://pixabay.com/videos/id-86259/
+  - Author: lumosajans (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-dark-water-ripples** (video): Pixabay video 304019
+  - Source: https://pixabay.com/videos/id-304019/
+  - Author: Mario_Krimer (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-night-water-glitter** (video): Pixabay video 212057
+  - Source: https://pixabay.com/videos/id-212057/
+  - Author: Mario_Krimer (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-grey-choppy-water** (video): Pixabay video 230029
+  - Source: https://pixabay.com/videos/id-230029/
+  - Author: Mario_Krimer (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
+- **broll-px-bubbles-dark-water** (video): Pixabay video 366804
+  - Source: https://pixabay.com/videos/id-366804/
+  - Author: InfinityByte (Pixabay)
+  - License: Pixabay Content License (https://pixabay.com/service/license-summary/)
 
 ## Music
 

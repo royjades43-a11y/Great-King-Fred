@@ -77,3 +77,56 @@ The 7 privately recorded CCTV clips (`cctv-*`, `dock-east-*`, `dali-arrival-*`) 
 - **upload.wikimedia.org / commons.wikimedia.org**: these returned HTTP 429 (rate limit, `retry-after: 600`) for most requests through the shared proxy IP. The proxy did not refuse them. Still pending: bridge 1976, NARA construction photo, intact bridge 2015, Pier 17 truss support 2016, traffic 2016, Dali portrait, memorial, Army wreckage photo, labelled SVG, NTSB "Investigators aboard" B-roll, USCG overflight B-roll. The exact titles are in `raw/commons/urls.txt`. Retry later, or from another IP.
 - **live.staticflickr.com**: HTTP 429 for every NTSB album photo. The licences were confirmed as Public Domain Mark.
 - **Proxy-refused (403 on CONNECT)**: `d1ldvf68ux039x.cloudfront.net` and `d2cto119c3bgok.cloudfront.net`. These are the DVIDS **image** CDN, needed for DVIDS stills such as USCG photo 8314864 by PO3 Kimberly Reaves. The DVIDS video CDN `d34w7g4gy10iej.cloudfront.net` works.
+
+## Representative B-roll library (second pass, Nov 14)
+
+146 clips, all video, 5 to 20 s each (34 minutes in total). All ids start with `broll-` and every description begins "REPRESENTATIVE:" and states the time of day. The trims were checked frame by frame at first, middle and last, and the cut points were set by scene detection. Nothing has a burned-in slate or text.
+- **Government (118)**: Public domain (US Government work). Sources are DVIDS: USCG, USACE, US Navy, USTRANSCOM/MSC, US Army, USMC, CBP and BLM. Every DVIDS page was checked for its PUBLIC DOMAIN badge. "Courtesy" items from non-federal bodies were rejected (Port of Long Beach 977170, Maryland State Police 925222).
+- **Pixabay (28)**: Pixabay Content License, ids `broll-px-*`. AI-generated-looking results were rejected (police-car "night" clips, the welding clips, fantasy harbours).
+
+### By category
+| category | gov | Pixabay | ids (examples) |
+|---|---|---|---|
+| Key Bridge salvage, divers, buoys, wreck removal (actual response footage, filmed 2024) | 30 | 0 | `broll-diver-suits-up-wreck`, `broll-final-segment-lift`, `broll-torch-cutting-from-boat`, `broll-clamshell-debris-barge`, `broll-yard-*` (7, wreckage processing yard), `broll-tug-barge-under-spans`, `broll-cg-crew-buoys` |
+| Ships, tugs and container ports in daylight | 23 | 0 | `broll-ship-departs-tug-wake`, `broll-tug-alongside-at-quay`, `broll-harbor-tug-wake-aerial`, `broll-mooring-line-to-pier`, `broll-container-ships-anchored-aerial`, `broll-crane-spreader-container`, `broll-port-baltimore-terminal-gate` |
+| Night port, ships and water | 10 | 12 | `broll-night-pier-lights`, `broll-night-ship-at-pier-lights`, `broll-night-port-spreader-shackles`, `broll-tug-night-vision`, `broll-px-night-container-terminal-aerial`, `broll-px-bridge-lights-river-night`, `broll-px-night-water-glitter`, `broll-px-dark-water-ripples`, `broll-px-murky-underwater-green` |
+| Ship's bridge, helm, radar/ECDIS, red night lighting | 11 | 0 | `broll-bridge-radar-consoles-dusk`, `broll-bridge-red-chart-table`, `broll-bridge-red-night-wide`, `broll-bridge-console-red-controls`, `broll-bridge-wing-mariners`, `broll-bridge-console-cabinet` |
+| Engine room (diesels, pumps, purifiers, gauges) | 12 | 1 | `broll-er-diesel-cylinder-heads`, `broll-er-gauge-panel`, `broll-er-pump-motors-tank`, `broll-er-diesel-crew`, `broll-px-old-control-room` |
+| Electrical: breakers, terminals, wiring, power loss | 6 | 4 | `broll-breaker-test-set-panel`, `broll-breaker-hands-screwdriver`, `broll-breaker-red-screwdriver-close`, `broll-px-hands-screwdriver-terminal-blocks`, `broll-px-electrician-at-cabinet`, `broll-px-bulb-flickers-out` |
+| Anchors and chain, windlass brake | 5 | 0 | `broll-anchor-brake-wheel`, `broll-anchor-chain-closeup`, `broll-chain-locker-crew` |
+| Coast Guard boats in Baltimore harbor | 7 | 0 | `broll-cg-coxswain-helm`, `broll-cg-boat-baltimore-skyline`, `broll-cg-boat-wake` |
+| Highway traffic | 2 (day) | 5 (night/dusk) | `broll-highway-topdown-day`, `broll-px-night-highway-river-aerial`, `broll-px-night-highway-valley`, `broll-px-dusk-highway-aerial` |
+| Police lights, radio dispatch | 8 | 0 | `broll-police-hood-lights-radio`, `broll-police-lightbar-day`, `broll-dispatch-center-radio`, `broll-dispatcher-radio-console` |
+| Memorial (flags, candles, salute) | 4 | 5 | `broll-memorial-buoy-flag-hull` (Key Bridge memorial buoy, Baltimore 2026), `broll-coast-guard-salute-water`, `broll-px-memorial-candles-night`, `broll-px-flag-pole-grey-sky` |
+| Investigation and lab, time passing | 0 | 2 | `broll-px-microscope-focus-hands`, `broll-px-clock-hands-timelapse` |
+
+### Beat suggestions (narration is final)
+- b01–b07 cold open: `broll-px-night-container-terminal-aerial`, `broll-bridge-red-night-wide`, `broll-px-bulb-flickers-out`, `broll-er-diesel-cylinder-heads`, `broll-px-night-water-glitter`, `broll-px-hands-screwdriver-terminal-blocks` ("between two fingers")
+- b08–b10 bridge and channel: `broll-barge-truss-bridge-dawn`, `broll-px-night-highway-river-aerial`, `broll-highway-topdown-day`, `broll-tug-barge-under-spans`
+- b11–b12 ship and power: `broll-ship-alongside-cranes`, `broll-er-motors-pumps`, `broll-er-pump-motors-tank`, `broll-er-gauge-panel`
+- b13 road crew: `broll-px-night-highway-valley`, `broll-px-night-bokeh-fence` (no road-crew-at-night footage, see gaps)
+- b14–b16 dockside blackouts, HR1: `broll-ship-hull-under-cranes`, `broll-er-purifiers-piping`, `broll-breaker-test-set-panel`, `broll-breaker-hands-screwdriver`
+- b17 pilots, departure, tugs: `broll-night-pier-lights`, `broll-tug-alongside-at-quay`, `broll-ship-departs-tug-wake`, `broll-tug-night-vision`, `broll-bridge-wing-mariners`
+- b18–b24 blackout sequence: `broll-px-bulb-flickers-out`, `broll-bridge-red-chart-table`, `broll-bridge-radar-consoles-dusk`, `broll-bridge-console-red-controls`, `broll-er-overhead-work`, `broll-breaker-red-screwdriver-close`, `broll-px-dark-water-ripples`
+- b25–b26 dispatcher, tug: `broll-dispatch-center-radio`, `broll-dispatcher-radio-console`, `broll-harbor-tug-wake-aerial`
+- b27–b32 anchor, bow thruster, police: `broll-anchor-brake-wheel`, `broll-anchor-chain-closeup`, `broll-chain-locker-crew`, `broll-police-hood-lights-radio`, `broll-police-cruiser-approaching`
+- b35–b36 rescue to recovery: `broll-cg-coxswain-helm`, `broll-cg-boat-wake`, `broll-diver-suits-up-wreck`, `broll-dive-buoy-river`, `broll-px-murky-underwater-green`, `broll-px-bubbles-dark-water`
+- b37–b43 investigation: `broll-bridge-console-cabinet`, `broll-px-microscope-focus-hands`, `broll-px-electrician-at-cabinet`, `broll-breaker-team-inspection`, `broll-px-old-control-room`
+- b44–b51 cause: `broll-px-hands-screwdriver-terminal-blocks`, `broll-breaker-test-cables`, `broll-px-clock-hands-timelapse`, `broll-substation-insulators`
+- b54–b61 bridge vulnerability, workers: `broll-px-river-bridge-sunset`, `broll-tug-bow-under-bridge`, `broll-px-dusk-highway-aerial`, `broll-police-lightbar-day`
+- b62–b64 salvage and reopening: `broll-final-segment-lift`, `broll-torch-cutting-from-boat`, `broll-clamshell-debris-barge`, `broll-yard-*`, `broll-ship-passes-salvage-site`, `broll-container-ships-anchored-aerial`
+- b67–b70 memorial and close: `broll-memorial-buoy-flag-hull`, `broll-coast-guard-salute-water`, `broll-px-memorial-candles-night`, `broll-px-two-candles-dark`, `broll-port-river-sunset-aerial`, `broll-px-flag-waving-close`
+
+### Gaps (nothing usable found from allowed sources)
+- Pilots boarding by pilot ladder: no video, only DVIDS stills, which need the image CDN.
+- Road crew under work lights at night: no government video. Pixabay had only AI renders.
+- Police lights at night: only daytime government footage. The Pixabay night police clips are all AI-generated.
+- Bow thruster, rudder, ferrules: no clean footage.
+- 1970s Key Bridge construction: found on Commons as EPA DOCUMERICA photos by Jim Pickerell, May 1973 (NARA 546837, 546929, 546911, 546833; public domain), but **not downloaded**. upload.wikimedia.org returned 429 on every attempt. catalog.archives.gov is refused by the proxy.
+- NTSB investigators aboard the Dali: these exist on Commons ("NTSB B-Roll - Investigators Aboard the Cargo Ship Dali.webm" and "NTSB B-Roll - Hazardous Material Investigators and Engineers Aboard the Cargo Ship Dali.webm", both public domain) but were **not downloaded** because of the same 429.
+- NTSB labs, X-ray: none found from allowed sources. Use the MIR figures already in the manifest.
+
+### Hosts
+- `upload.wikimedia.org`: HTTP 429 every time this session. The `commons.wikimedia.org` API answered intermittently.
+- `catalog.archives.gov`: refused by the proxy (403 on CONNECT).
+- `api.dvidshub.net`: refused by the proxy (403 on CONNECT). The DVIDS HTML search returns 202 with an empty body. DVIDS **tag RSS** (`/rss/tag/<tag>`) and video pages work, and so does yt-dlp.
