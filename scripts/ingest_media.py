@@ -111,14 +111,14 @@ def main():
 
     ext = os.path.splitext(a.src)[1].lower()
     info = probe(a.src)
-    is_audio = ext in AUDIO_EXT and not info.get("width")
+    is_audio = ext in AUDIO_EXT
     is_video = (not is_audio) and ext in VIDEO_EXT or (ext not in IMAGE_EXT and info.get("duration") and info["duration"] > 0.5)
     os.makedirs(os.path.join(ep, "footage"), exist_ok=True)
 
     if is_audio:
         os.makedirs(os.path.join(ep, "music"), exist_ok=True)
         rel = f"music/{a.id}.mp3"
-        cmd = ["ffmpeg", "-y", "-v", "error", "-i", a.src, "-vn", "-c:a", "libmp3lame", "-b:a", "192k", os.path.join(ep, rel)]
+        cmd = ["ffmpeg", "-y", "-v", "error", "-i", a.src, "-vn", "-map_metadata", "-1", "-c:a", "libmp3lame", "-b:a", "192k", os.path.join(ep, rel)]
     elif is_video:
         rel = f"footage/{a.id}.mp4"
         cmd = ["ffmpeg", "-y", "-v", "error"]

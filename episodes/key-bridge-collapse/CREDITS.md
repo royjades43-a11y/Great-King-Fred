@@ -218,3 +218,34 @@ Every visual in this episode, where it came from, and the terms it is used under
   - Source: https://commons.wikimedia.org/wiki/File:Map-mv-dali-bridge-collision.png
   - Author: Michael.C.Wright (via Wikimedia Commons)
   - License: CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/)
+
+## Music
+
+- **music-lightless-dawn** (audio): Lightless Dawn
+  - Source: https://incompetech.com/music/royalty-free/index.html?isrc=&keywords=Lightless+Dawn
+  - Author: Kevin MacLeod (incompetech.com)
+  - License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+- **music-echoes-of-time-v2** (audio): Echoes of Time v2
+  - Source: https://incompetech.com/music/royalty-free/index.html?isrc=&keywords=Echoes+of+Time+v2
+  - Author: Kevin MacLeod (incompetech.com)
+  - License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+- **music-darkest-child** (audio): Darkest Child
+  - Source: https://incompetech.com/music/royalty-free/index.html?isrc=&keywords=Darkest+Child
+  - Author: Kevin MacLeod (incompetech.com)
+  - License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+- **music-despair-and-triumph** (audio): Despair and Triumph
+  - Source: https://incompetech.com/music/royalty-free/index.html?isrc=&keywords=Despair+and+Triumph
+  - Author: Kevin MacLeod (incompetech.com)
+  - License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+- **music-heartbreaking** (audio): Heartbreaking
+  - Source: https://incompetech.com/music/royalty-free/index.html?isrc=&keywords=Heartbreaking
+  - Author: Kevin MacLeod (incompetech.com)
+  - License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+- **music-long-note-four** (audio): Long Note Four
+  - Source: https://incompetech.com/music/royalty-free/index.html?isrc=&keywords=Long+Note+Four
+  - Author: Kevin MacLeod (incompetech.com)
+  - License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+- **music-interloper** (audio): Interloper
+  - Source: https://incompetech.com/music/royalty-free/index.html?isrc=&keywords=Interloper
+  - Author: Kevin MacLeod (incompetech.com)
+  - License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
