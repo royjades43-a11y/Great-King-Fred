@@ -13,6 +13,18 @@ import os
 import sys
 
 
+def _decode(path):
+    """16 kHz mono float32 via ffmpeg (avoids PyAV/faster-whisper version mismatches)."""
+    import subprocess
+    import numpy as np  # type: ignore
+
+    raw = subprocess.run(
+        ["ffmpeg", "-nostdin", "-v", "error", "-i", path, "-f", "s16le", "-ac", "1", "-ar", "16000", "-"],
+        check=True, capture_output=True,
+    ).stdout
+    return np.frombuffer(raw, np.int16).astype(np.float32) / 32768.0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("episode")
@@ -36,7 +48,7 @@ def main():
 
         engine = f"faster-whisper/{a.model}"
         model = WhisperModel(a.model, device="cpu", compute_type="int8")
-        segments, _ = model.transcribe(audio, word_timestamps=True, initial_prompt=prompt, vad_filter=False, beam_size=5)
+        segments, _ = model.transcribe(_decode(audio), word_timestamps=True, initial_prompt=prompt, vad_filter=False, beam_size=5)
         for seg in segments:
             for w in seg.words or []:
                 words.append({"word": w.word.strip(), "start": round(w.start, 3), "end": round(w.end, 3)})

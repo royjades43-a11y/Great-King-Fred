@@ -276,7 +276,7 @@
       "visual": {
         "kind": "document",
         "source": "NTSB MIR-25-40, Table C-1 voyage timeline (VDR), p. 221",
-        "quote": "Second mate answered, “We have steering.”",
+        "quote": "Second mate answered, ‘We have steering.’",
         "highlight": "“We have steering.”"
       }
     },
@@ -358,7 +358,7 @@
       "visual": {
         "kind": "document",
         "source": "NTSB MIR-25-40, Table C-1 voyage timeline (VDR), p. 224",
-        "quote": "Senior pilot shouted, “captain [master], do we have a bow thruster?”",
+        "quote": "Senior pilot shouted, ‘captain [master], do we have a bow thruster?’",
         "highlight": "do we have a bow thruster?"
       }
     },
@@ -396,7 +396,7 @@
       "visual": {
         "kind": "document",
         "source": "NTSB MIR-25-40, Table C-1 voyage timeline (VDR), p. 225",
-        "quote": "Master stated, “It’s not working.”",
+        "quote": "Master stated, ‘It’s not working.’",
         "highlight": "“It’s not working.”"
       }
     },
@@ -532,7 +532,7 @@
       "visual": {
         "kind": "document",
         "source": "NTSB MIR-25-40, p. 144",
-        "quote": "When Wire 1 became disconnected and HR1 opened, it was as if an operator had rotated the breaker control switch to “open,” causing HR1 to intentionally open.",
+        "quote": "When Wire 1 became disconnected and HR1 opened, it was as if an operator had rotated the breaker control switch to ‘open,’ causing HR1 to intentionally open.",
         "highlight": "as if an operator had rotated the breaker control switch"
       }
     },

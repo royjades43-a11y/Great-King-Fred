@@ -44,7 +44,9 @@ export const FootageScene: React.FC<{assets: AssetRef[]; durationInFrames: numbe
             textTransform: 'uppercase',
             textShadow: '0 2px 8px rgba(0,0,0,0.9)',
             borderLeft: `4px solid ${theme.alarm}`,
-            paddingLeft: 16,
+            padding: '8px 18px 8px 16px',
+            background: 'rgba(10,10,10,0.72)',
+            zIndex: 10,
           }}
         >
           {label}
