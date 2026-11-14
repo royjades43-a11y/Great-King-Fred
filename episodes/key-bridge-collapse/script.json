@@ -806,7 +806,8 @@
             "feet": 140,
             "note": "Bow thruster not working",
             "drift": 0.85,
-            "at": "No, it's not working."
+            "at": "No, it's not working.",
+            "hideFeet": true
           }
         ]
       }
@@ -822,7 +823,8 @@
               "clock": "1:28:57",
               "feet": 140,
               "note": "",
-              "drift": 0.85
+              "drift": 0.85,
+              "hideFeet": true
             },
             {
               "clock": "1:29:09",
@@ -865,7 +867,7 @@
         {
           "kind": "document",
           "source": "NTSB MIR-25-40, p. 49",
-          "quote": "heard a ‘crumbling thunder noise’ and began running northbound on the bridge.",
+          "quote": "heard a “crumbling thunder noise” and began running northbound on the bridge.",
           "highlight": "crumbling thunder noise",
           "at": "The inspector heard"
         }
@@ -1636,7 +1638,7 @@
           "assets": [
             "broll-coast-guard-salute-water"
           ],
-          "at": "and two of their co-workers."
+          "at": "Miguel"
         }
       ]
     },

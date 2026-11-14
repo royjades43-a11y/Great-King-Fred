@@ -46,6 +46,8 @@ export const RouteMap: React.FC<{keyframes: RouteKey[]; title?: string; duration
   const drift = (A.drift ?? 0) + ((B.drift ?? 0) - (A.drift ?? 0)) * local;
   // a keyframe's note shows only once the ship has reached it
   const note = (raw >= 1 ? B.note : A.note) ?? '';
+  // distances not given in the report (hideFeet) are never displayed
+  const showFeet = raw >= 1 ? !B.hideFeet : !(A.hideFeet || B.hideFeet);
 
   const halfChannel = (CHANNEL_FT / 2) * PX_PER_FT;
   const pierOffset = halfChannel + PIER_FT * PX_PER_FT;
@@ -76,7 +78,7 @@ export const RouteMap: React.FC<{keyframes: RouteKey[]; title?: string; duration
         <rect x={CX - halfChannel} y={0} width={halfChannel * 2} height={H} fill="url(#water)" />
         <line x1={CX - halfChannel} y1={0} x2={CX - halfChannel} y2={H} stroke="rgba(150,200,240,0.35)" strokeDasharray="14 10" strokeWidth={2} />
         <line x1={CX + halfChannel} y1={0} x2={CX + halfChannel} y2={H} stroke="rgba(150,200,240,0.35)" strokeDasharray="14 10" strokeWidth={2} />
-        <text x={CX + halfChannel + 14} y={BRIDGE_Y - 360} fill="rgba(150,200,240,0.6)" fontFamily="Courier New" fontSize={22}>
+        <text x={CX - halfChannel - 14} y={BRIDGE_Y - 200} textAnchor="end" fill="rgba(150,200,240,0.6)" fontFamily="Courier New" fontSize={22}>
           FORT McHENRY CHANNEL · 700 FT
         </text>
         {/* track so far */}
@@ -112,7 +114,7 @@ export const RouteMap: React.FC<{keyframes: RouteKey[]; title?: string; duration
       <div style={{position: 'absolute', right: 80, top: 110, textAlign: 'right', fontFamily: theme.fontType, color: theme.ink}}>
         <div style={{fontSize: 30, letterSpacing: 4, color: '#8fb4d0'}}>{title ?? 'MARCH 26, 2024'}</div>
         <div style={{fontSize: 110, fontWeight: 700, color: theme.accent}}>{fmt(clock)}</div>
-        <div style={{fontSize: 46, marginTop: 6}}>{Math.max(0, Math.round(feet)).toLocaleString('en-US')} FT TO THE BRIDGE</div>
+        <div style={{fontSize: 46, marginTop: 6, opacity: showFeet ? 1 : 0}}>{Math.max(0, Math.round(feet)).toLocaleString('en-US')} FT TO THE BRIDGE</div>
         <div style={{fontSize: 34, marginTop: 18, color: theme.alarm, minHeight: 40, letterSpacing: 2, textTransform: 'uppercase'}}>{note}</div>
       </div>
     </AbsoluteFill>
