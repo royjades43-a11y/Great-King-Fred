@@ -33,8 +33,14 @@ export const Media: React.FC<{asset: AssetRef; durationInFrames: number; seed?: 
   }
 
   const progress = interpolate(frame, [0, Math.max(1, durationInFrames)], [0, 1], {extrapolateRight: 'clamp'});
-  const zoomIn = seed % 2 === 0;
-  const scale = zoomIn ? 1.04 + 0.12 * progress : 1.16 - 0.12 * progress;
+  // Vary the move per asset so consecutive stills don't all zoom the same way:
+  // push in, pull out, drift left, drift right, or a near-locked hold.
+  let h = seed;
+  for (const c of asset.id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  const move = h % 5;
+  const e = progress * progress * (3 - 2 * progress); // smoothstep
+  const scale = move === 0 ? 1.04 + 0.1 * e : move === 1 ? 1.14 - 0.1 * e : move === 4 ? 1.03 + 0.025 * e : 1.1;
+  const dx = move === 2 ? 3 - 6 * e : move === 3 ? -3 + 6 * e : 0; // percent of width
   // Diagrams, charts and odd-shaped images would lose their edges (labels, legends) if cropped to 16:9.
   const aspect = asset.width && asset.height ? asset.width / asset.height : 16 / 9;
   const contain = (asset.fit ?? (aspect < 1.7 || aspect > 2.0 ? 'contain' : 'cover')) === 'contain' || fit === 'contain';
@@ -59,7 +65,7 @@ export const Media: React.FC<{asset: AssetRef; durationInFrames: number; seed?: 
           width: '100%',
           height: '100%',
           objectFit: fit,
-          transform: `scale(${scale})`,
+          transform: `scale(${scale}) translateX(${dx}%)`,
           transformOrigin: `${fx * 100}% ${fy * 100}%`,
         }}
       />
