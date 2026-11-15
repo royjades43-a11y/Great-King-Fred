@@ -1,0 +1,4 @@
+   2.18s  pop               -20 dB  pitch +0.0
+   3.83s  click             -12 dB  pitch +0.0
+   5.11s  click-soft        -16 dB  pitch +0.0
+  17.66s  pop               -22 dB  pitch +1.0

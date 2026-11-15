@@ -250,3 +250,30 @@ export function imFine() {
   </g>
 </svg>`;
 }
+
+// Short 04 · a sneaky doorway swallowing someone's thought
+export function sneakyDoor() {
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <path d="M60 960 L740 960" stroke="${INK}" stroke-width="16" stroke-linecap="round"/>
+  <rect x="200" y="120" width="400" height="840" fill="#2A2F29"/>
+  <path d="M170 960 L170 100 L630 100 L630 960" fill="none" stroke="${INK}" stroke-width="26" stroke-linejoin="round"/>
+  <path d="M190 110 L360 170 L360 900 L190 950 Z" fill="${CARD}" stroke="${INK}" stroke-width="16" stroke-linejoin="round"/>
+  <rect x="318" y="520" width="20" height="56" rx="10" fill="${RED}"/>
+  <ellipse cx="240" cy="360" rx="20" ry="28" fill="${INK}"/><ellipse cx="310" cy="380" rx="20" ry="28" fill="${INK}"/>
+  <circle cx="248" cy="352" r="6" fill="${CARD}"/><circle cx="318" cy="372" r="6" fill="${CARD}"/>
+  <path d="M215 318 L262 330 M290 336 L336 352" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+  <path d="M222 450 C250 490 300 500 340 470" fill="none" stroke="${INK}" stroke-width="11" stroke-linecap="round"/>
+  <g transform="translate(720 640)">
+    <path d="M-150 30 Q-176 26 -172 2 Q-176 -24 -146 -26 Q-140 -54 -104 -50 Q-80 -68 -54 -50 Q-20 -54 -16 -24 Q6 -12 -6 14 Q0 42 -30 42 Q-42 62 -74 52 Q-100 66 -120 48 Q-148 54 -150 30 Z"
+      transform="scale(1.6)" fill="#FFFFFF" stroke="${INK}" stroke-width="7"/>
+    <path d="M-160 50 L-150 100 L-130 90 L-150 140" fill="none" stroke="${INK}" stroke-width="0"/>
+    <g transform="translate(-140 -10)">
+      <path d="M-34 -30 L34 -30 L28 34 Q26 44 16 44 L-16 44 Q-26 44 -28 34 Z" fill="${CARD}" stroke="${INK}" stroke-width="8"/>
+      <path d="M34 -14 C56 -14 56 22 30 22" fill="none" stroke="${INK}" stroke-width="8"/>
+      <path d="M-14 -46 C-20 -60 -6 -66 -12 -80 M8 -46 C2 -60 16 -66 10 -80" fill="none" stroke="${RED}" stroke-width="6" stroke-linecap="round"/>
+    </g>
+  </g>
+  <circle cx="110" cy="760" r="20" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/>
+  <circle cx="60" cy="820" r="12" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/>
+</svg>`;
+}

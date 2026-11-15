@@ -1,0 +1,1382 @@
+{
+ "title": "Blame the Door",
+ "scenes": [
+  {
+   "id": "short",
+   "tail": 0.2,
+   "beats": [
+    {
+     "id": "b00",
+     "say": "You walk into a room."
+    },
+    {
+     "id": "b01",
+     "say": "And you forget why."
+    },
+    {
+     "id": "b02",
+     "say": "Blame the door."
+    },
+    {
+     "id": "b03",
+     "say": "In twenty eleven, psychologist Gabriel Radvansky had people carry objects from table to table."
+    },
+    {
+     "id": "b04",
+     "say": "Some walked through a doorway."
+    },
+    {
+     "id": "b05",
+     "say": "Others walked the same distance inside one room."
+    },
+    {
+     "id": "b06",
+     "say": "The doorway group forgot more."
+    },
+    {
+     "id": "b07",
+     "say": "Here's why."
+    },
+    {
+     "id": "b08",
+     "say": "Your brain stores your day in chapters."
+    },
+    {
+     "id": "b09",
+     "say": "A doorway is a page break."
+    },
+    {
+     "id": "b10",
+     "say": "New room, new chapter."
+    },
+    {
+     "id": "b11",
+     "say": "And the reason you came in?"
+    },
+    {
+     "id": "b12",
+     "say": "It stayed in the last one."
+    },
+    {
+     "id": "b13",
+     "say": "So it's not your memory failing."
+    },
+    {
+     "id": "b14",
+     "say": "It's your brain turning the page."
+    },
+    {
+     "id": "b15",
+     "say": "Be kind to yourself the next time you walk into a room."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "dr0",
+     "name": "doorway",
+     "x": 640,
+     "y": 916,
+     "size": 760,
+     "from": "none",
+     "at": "b00:you",
+     "out": "b02"
+    },
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 200,
+     "y": 980,
+     "from": "none",
+     "at": "b00:you",
+     "poses": [
+      [
+       "idle",
+       "b00:you"
+      ],
+      [
+       "shrug",
+       "b01:forget"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:you"
+      ],
+      [
+       "o",
+       "b01:forget"
+      ]
+     ],
+     "out": "b02",
+     "scale": 1.15,
+     "move": [
+      [
+       600,
+       980,
+       "b00:walk",
+       1.0
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "q0",
+     "name": "question",
+     "x": 600,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b01:forget",
+     "out": "b02"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "you walk *in*…",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "none",
+     "at": "b00:you",
+     "out": "b01",
+     "perWord": false,
+     "startAtZero": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "…and forget !why!",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b01:and",
+     "out": "b02"
+    },
+    {
+     "t": "icon",
+     "id": "dr1",
+     "name": "doorway",
+     "x": 480,
+     "y": 840,
+     "size": 620,
+     "from": "pop",
+     "at": "b02:blame",
+     "out": "b03"
+    },
+    {
+     "t": "icon",
+     "id": "ar",
+     "name": "arrowDown",
+     "x": 480,
+     "y": 430,
+     "size": 150,
+     "from": "pop",
+     "at": "b02:blame",
+     "out": "b03",
+     "color": "accent"
+    },
+    {
+     "t": "stamp",
+     "id": "gu",
+     "text": "GUILTY",
+     "x": 480,
+     "y": 1110,
+     "size": 64,
+     "from": "slam",
+     "at": "b02:door",
+     "out": "b03"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "blame the *door*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b02:blame",
+     "out": "b03"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2011 · THE DOORWAY STUDY",
+     "text": "Carry it, table to table",
+     "sub": "Radvansky et al.",
+     "x": 480,
+     "y": 470,
+     "from": "top",
+     "at": "b03:twenty",
+     "out": "b03:people"
+    },
+    {
+     "t": "icon",
+     "id": "tb1",
+     "name": "table",
+     "x": 230,
+     "y": 1050,
+     "size": 300,
+     "from": "pop",
+     "at": "b03:twenty",
+     "out": "b04"
+    },
+    {
+     "t": "icon",
+     "id": "tb2",
+     "name": "table",
+     "x": 730,
+     "y": 1050,
+     "size": 300,
+     "from": "pop",
+     "at": "b03:twenty",
+     "out": "b04"
+    },
+    {
+     "t": "icon",
+     "id": "bx0",
+     "name": "box",
+     "x": 230,
+     "y": 920,
+     "size": 110,
+     "from": "pop",
+     "at": "b03:objects",
+     "out": "b04",
+     "move": [
+      [
+       730,
+       920,
+       "b03:table#2",
+       1.0
+      ]
+     ]
+    },
+    {
+     "t": "stick",
+     "id": "cr",
+     "x": 230,
+     "y": 980,
+     "from": "left",
+     "at": "b03:people",
+     "poses": [
+      [
+       "give",
+       "b03:carry"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b03:people"
+      ]
+     ],
+     "out": "b04",
+     "scale": 0.9,
+     "move": [
+      [
+       650,
+       980,
+       "b03:table#2",
+       1.0
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "the *2011* experiment",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b03:twenty",
+     "out": "b03:had"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "carry it table to *table*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b03:had",
+     "out": "b04"
+    },
+    {
+     "t": "icon",
+     "id": "dr2",
+     "name": "doorway",
+     "x": 480,
+     "y": 942,
+     "size": 700,
+     "from": "pop",
+     "at": "b04:some",
+     "out": "b05"
+    },
+    {
+     "t": "stick",
+     "id": "w1",
+     "x": 140,
+     "y": 980,
+     "from": "left",
+     "at": "b04:some",
+     "poses": [
+      [
+       "give",
+       "b04:some"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b04:some"
+      ]
+     ],
+     "out": "b05",
+     "scale": 0.9,
+     "move": [
+      [
+       800,
+       980,
+       "b04:through",
+       1.4
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "bx1",
+     "name": "box",
+     "x": 230,
+     "y": 900,
+     "size": 100,
+     "from": "pop",
+     "at": "b04:some",
+     "out": "b05",
+     "move": [
+      [
+       890,
+       900,
+       "b04:through",
+       1.4
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "through a *door*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b04:through",
+     "out": "b05"
+    },
+    {
+     "t": "stick",
+     "id": "w2",
+     "x": 140,
+     "y": 980,
+     "from": "left",
+     "at": "b05:others",
+     "poses": [
+      [
+       "give",
+       "b05:others"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b05:others"
+      ]
+     ],
+     "out": "b06",
+     "scale": 0.9,
+     "move": [
+      [
+       800,
+       980,
+       "b05:same",
+       1.8
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "bx2",
+     "name": "box",
+     "x": 230,
+     "y": 900,
+     "size": 100,
+     "from": "pop",
+     "at": "b05:others",
+     "out": "b06",
+     "move": [
+      [
+       890,
+       900,
+       "b05:same",
+       1.8
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "dots",
+     "text": "· · · · · · · · · · · · · · · ·",
+     "x": 480,
+     "y": 1215,
+     "size": 80,
+     "from": "pop",
+     "at": "b05:distance",
+     "out": "b06",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "or the *same distance*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b05:same",
+     "out": "b06"
+    },
+    {
+     "t": "stick",
+     "id": "ga",
+     "x": 270,
+     "y": 980,
+     "from": "bottom",
+     "at": "b06:the",
+     "poses": [
+      [
+       "shrug",
+       "b06:forgot"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b06:forgot"
+      ]
+     ],
+     "out": "b07",
+     "scale": 0.9
+    },
+    {
+     "t": "stick",
+     "id": "gb",
+     "x": 720,
+     "y": 980,
+     "from": "bottom",
+     "at": "b06:the",
+     "poses": [
+      [
+       "happy",
+       "b06:forgot"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b06:forgot"
+      ]
+     ],
+     "out": "b07",
+     "scale": 0.9,
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "ta",
+     "name": "thought",
+     "x": 360,
+     "y": 560,
+     "size": 230,
+     "from": "pop",
+     "at": "b06:doorway",
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "tq",
+     "name": "question",
+     "x": 365,
+     "y": 545,
+     "size": 80,
+     "from": "pop",
+     "at": "b06:forgot",
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "tbb",
+     "name": "thought",
+     "x": 800,
+     "y": 560,
+     "size": 230,
+     "from": "pop",
+     "at": "b06:doorway",
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "tbx",
+     "name": "box",
+     "x": 805,
+     "y": 545,
+     "size": 80,
+     "from": "pop",
+     "at": "b06:doorway",
+     "out": "b07"
+    },
+    {
+     "t": "text",
+     "id": "la",
+     "text": "doorway",
+     "x": 270,
+     "y": 1215,
+     "size": 46,
+     "from": "bottom",
+     "at": "b06:doorway",
+     "out": "b07",
+     "color": "ink"
+    },
+    {
+     "t": "text",
+     "id": "lb",
+     "text": "one room",
+     "x": 720,
+     "y": 1215,
+     "size": 46,
+     "from": "bottom",
+     "at": "b06:doorway",
+     "out": "b07",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "doorway = forgot !more!",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b06:doorway",
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "brain",
+     "x": 480,
+     "y": 800,
+     "size": 340,
+     "from": "pop",
+     "at": "b07:here's",
+     "out": "b08"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "here's *why*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b07:here's",
+     "out": "b08"
+    },
+    {
+     "t": "icon",
+     "id": "bk",
+     "name": "book",
+     "x": 480,
+     "y": 800,
+     "size": 440,
+     "from": "pop",
+     "at": "b08:brain",
+     "out": "b11:reason"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "your day, in *chapters*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b08:stores",
+     "out": "b09"
+    },
+    {
+     "t": "icon",
+     "id": "pd",
+     "name": "doorway",
+     "x": 480,
+     "y": 780,
+     "size": 150,
+     "from": "pop",
+     "at": "b09:doorway",
+     "out": "b11:reason"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "a doorway = a !page break!",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b09:doorway",
+     "out": "b10"
+    },
+    {
+     "t": "text",
+     "id": "ch",
+     "text": "chapter 2",
+     "x": 480,
+     "y": 1110,
+     "size": 52,
+     "from": "bottom",
+     "at": "b10:new",
+     "out": "b11:reason",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "new room, new *chapter*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b10:new",
+     "out": "b11"
+    },
+    {
+     "t": "icon",
+     "id": "lt",
+     "name": "thought",
+     "x": 300,
+     "y": 640,
+     "size": 300,
+     "from": "pop",
+     "at": "b11:reason",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "lc",
+     "name": "coffee",
+     "x": 305,
+     "y": 625,
+     "size": 110,
+     "from": "pop",
+     "at": "b11:reason",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "bk2",
+     "name": "book",
+     "x": 700,
+     "y": 880,
+     "size": 300,
+     "from": "pop",
+     "at": "b11:reason",
+     "out": "b13",
+     "move": [
+      [
+       760,
+       900,
+       "b12:last",
+       0.8
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "the reason you came *in*?",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b11:reason",
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "it stayed in the *last one*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b12:stayed",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "br2",
+     "name": "brain",
+     "x": 480,
+     "y": 800,
+     "size": 340,
+     "from": "pop",
+     "at": "b13:so",
+     "out": "b15"
+    },
+    {
+     "t": "icon",
+     "id": "bx",
+     "name": "cross",
+     "x": 690,
+     "y": 620,
+     "size": 130,
+     "from": "pop",
+     "at": "b13:failing",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "not your memory *failing*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b13:not",
+     "out": "b14"
+    },
+    {
+     "t": "icon",
+     "id": "bk3",
+     "name": "book",
+     "x": 720,
+     "y": 1050,
+     "size": 170,
+     "from": "pop",
+     "at": "b14:turning",
+     "out": "b15",
+     "sway": 10,
+     "period": 0.6
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "your brain turning the *page*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b14:brain",
+     "out": "b15"
+    },
+    {
+     "t": "icon",
+     "id": "dr9",
+     "name": "doorway",
+     "x": 640,
+     "y": 916,
+     "size": 760,
+     "from": "pop",
+     "at": "b15:next",
+     "hold": true
+    },
+    {
+     "t": "stick",
+     "id": "me9",
+     "x": 200,
+     "y": 980,
+     "from": "none",
+     "at": "b15:be",
+     "poses": [
+      [
+       "happy",
+       "b15:kind"
+      ],
+      [
+       "idle",
+       "b15:walk"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b15:kind"
+      ],
+      [
+       "neutral",
+       "b15:walk"
+      ]
+     ],
+     "scale": 1.15,
+     "hold": true
+    },
+    {
+     "t": "icon",
+     "id": "hk",
+     "name": "heart",
+     "x": 360,
+     "y": 600,
+     "size": 120,
+     "from": "pop",
+     "at": "b15:kind",
+     "out": "b15:next",
+     "color": "accent",
+     "pulse": 1.12,
+     "beat": 0.9
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "be *kind* to yourself",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b15:be",
+     "out": "b15:next"
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "next time you walk *in*…",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b15:next",
+     "hold": true
+    },
+    {
+     "t": "text",
+     "id": "cap0",
+     "text": "You walk into",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b00:you",
+     "out": "b00:a",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap1",
+     "text": "a room.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b00:a",
+     "out": "b01:and",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap2",
+     "text": "And you forget",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b01:and",
+     "out": "b01:why",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap3",
+     "text": "why.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b01:why",
+     "out": "b02:blame",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap4",
+     "text": "Blame the door.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b02:blame",
+     "out": "b03:in",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap5",
+     "text": "In 2011,",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b03:in",
+     "out": "b03:psychologist",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap6",
+     "text": "psychologist Gabriel Radvansky",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b03:psychologist",
+     "out": "b03:had",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap7",
+     "text": "had people carry",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b03:had",
+     "out": "b03:objects",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap8",
+     "text": "objects from table",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b03:objects",
+     "out": "b03:to",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap9",
+     "text": "to table.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b03:to",
+     "out": "b04:some",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap10",
+     "text": "Some walked through",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b04:some",
+     "out": "b04:a",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap11",
+     "text": "a doorway.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b04:a",
+     "out": "b05:others",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap12",
+     "text": "Others walked the",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b05:others",
+     "out": "b05:same",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap13",
+     "text": "same distance inside",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b05:same",
+     "out": "b05:one",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap14",
+     "text": "one room.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b05:one",
+     "out": "b06:the",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap15",
+     "text": "The doorway group",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b06:the",
+     "out": "b06:forgot",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap16",
+     "text": "forgot more.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b06:forgot",
+     "out": "b07:here's",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap17",
+     "text": "Here's why.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b07:here's",
+     "out": "b08:your",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap18",
+     "text": "Your brain stores",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b08:your",
+     "out": "b08:your#2",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap19",
+     "text": "your day in",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b08:your#2",
+     "out": "b08:chapters",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap20",
+     "text": "chapters.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b08:chapters",
+     "out": "b09:a",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap21",
+     "text": "A doorway is",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b09:a",
+     "out": "b09:a#2",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap22",
+     "text": "a page break.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b09:a#2",
+     "out": "b10:new",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap23",
+     "text": "New room, new",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b10:new",
+     "out": "b10:chapter",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap24",
+     "text": "chapter.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b10:chapter",
+     "out": "b11:and",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap25",
+     "text": "And the reason",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b11:and",
+     "out": "b11:you",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap26",
+     "text": "you came in?",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b11:you",
+     "out": "b12:it",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap27",
+     "text": "It stayed in",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b12:it",
+     "out": "b12:the",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap28",
+     "text": "the last one.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b12:the",
+     "out": "b13:so",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap29",
+     "text": "So it's not",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b13:so",
+     "out": "b13:your",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap30",
+     "text": "your memory failing.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b13:your",
+     "out": "b14:it's",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap31",
+     "text": "It's your brain",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b14:it's",
+     "out": "b14:turning",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap32",
+     "text": "turning the page.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b14:turning",
+     "out": "b15:be",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap33",
+     "text": "Be kind to",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b15:be",
+     "out": "b15:yourself",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap34",
+     "text": "yourself the next",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b15:yourself",
+     "out": "b15:time",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap35",
+     "text": "time you walk",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b15:time",
+     "out": "b15:into",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap36",
+     "text": "into a room.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b15:into",
+     "weight": 800,
+     "exit": "cut",
+     "hold": true
+    }
+   ]
+  }
+ ]
+}
