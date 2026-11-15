@@ -1,7 +1,7 @@
 # Original Short 04 · Same ticket (the psychology of money)
 
 **Hook on screen (first 2 s):** "Same ticket. $29 or $61?"
-**Length:** 92 words, about 33 seconds at Josh's pace.
+**Length:** 100 words, about 35 seconds at Josh's pace.
 
 ## Why this should travel (applied research)
 
