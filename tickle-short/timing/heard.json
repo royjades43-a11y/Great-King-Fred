@@ -1,0 +1,34 @@
+[
+ {
+  "take": 0,
+  "script": "Try to tickle yourself. Right now. Go on. Nothing, right? There's a reason. In the late nineteen nineties, neuroscientist Sarah-Jayne Blakemore and her team built a tickle robot. People moved a handle, and the robot stroked their palm with soft foam. When it copied their movement instantly, it barely tickled. Then they added a tiny delay. A fifth of a second. Suddenly, it tickled more. Your brain predicts every move you make. When it sees a touch coming, it turns the feeling down. Your own hand can't surprise you. And a tickle without surprise is just a touch. Bet you're about to try it again.",
+  "clips": [
+   {
+    "start": 0,
+    "end": 7.76,
+    "heard": "Try to tickle yourself right now. Go on. Nothing, right? There's a reason. In the late 1990s,"
+   },
+   {
+    "start": 7.88,
+    "end": 18.9,
+    "heard": "Neuroscientist Sarah Jane Blakemore and her team built a tickle robot. People moved a handle and the robot stroked their palm with soft foam. When it copied their movement"
+   },
+   {
+    "start": 18.94,
+    "end": 29.5,
+    "heard": "instantly it barely tickled. Then they added a tiny delay, a fifth of a second. Suddenly it tickled more. Your brain predicts"
+   },
+   {
+    "start": 29.5,
+    "end": 40.06,
+    "heard": "Every move you make, when it sees a touch coming, it turns the feeling down. Your own hand can't surprise you, and a tickle without surprise is just a touch."
+   },
+   {
+    "start": 40.47,
+    "end": 42.42,
+    "heard": "Bet you're about to try it again."
+   }
+  ],
+  "heard": "Try to tickle yourself right now. Go on. Nothing, right? There's a reason. In the late 1990s, Neuroscientist Sarah Jane Blakemore and her team built a tickle robot. People moved a handle and the robot stroked their palm with soft foam. When it copied their movement instantly it barely tickled. Then they added a tiny delay, a fifth of a second. Suddenly it tickled more. Your brain predicts Every move you make, when it sees a touch coming, it turns the feeling down. Your own hand can't surprise you, and a tickle without surprise is just a touch. Bet you're about to try it again."
+ }
+]

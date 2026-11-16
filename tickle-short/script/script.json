@@ -1,0 +1,1292 @@
+{
+ "title": "Why You Can't Tickle Yourself",
+ "scenes": [
+  {
+   "id": "short",
+   "tail": 0.2,
+   "beats": [
+    {
+     "id": "b00",
+     "say": "Try to tickle yourself."
+    },
+    {
+     "id": "b01",
+     "say": "Right now."
+    },
+    {
+     "id": "b02",
+     "say": "Go on."
+    },
+    {
+     "id": "b03",
+     "say": "Nothing, right?"
+    },
+    {
+     "id": "b04",
+     "say": "There's a reason."
+    },
+    {
+     "id": "b05",
+     "say": "In the late nineteen nineties, neuroscientist Sarah-Jayne Blakemore and her team built a tickle robot."
+    },
+    {
+     "id": "b06",
+     "say": "People moved a handle, and the robot stroked their palm with soft foam."
+    },
+    {
+     "id": "b07",
+     "say": "When it copied their movement instantly, it barely tickled."
+    },
+    {
+     "id": "b08",
+     "say": "Then they added a tiny delay."
+    },
+    {
+     "id": "b09",
+     "say": "A fifth of a second."
+    },
+    {
+     "id": "b10",
+     "say": "Suddenly, it tickled more."
+    },
+    {
+     "id": "b11",
+     "say": "Your brain predicts every move you make."
+    },
+    {
+     "id": "b12",
+     "say": "When it sees a touch coming, it turns the feeling down."
+    },
+    {
+     "id": "b13",
+     "say": "Your own hand can't surprise you."
+    },
+    {
+     "id": "b14",
+     "say": "And a tickle without surprise is just a touch."
+    },
+    {
+     "id": "b15",
+     "say": "Bet you're about to try it again."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 480,
+     "y": 980,
+     "from": "none",
+     "at": "b00:try",
+     "poses": [
+      [
+       "armsCrossed",
+       "b00:try"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:try"
+      ]
+     ],
+     "out": "b04",
+     "scale": 1.15,
+     "sway": 4,
+     "period": 0.22,
+     "startAtZero": true
+    },
+    {
+     "t": "text",
+     "id": "mew1",
+     "text": "≈",
+     "x": 330,
+     "y": 900,
+     "size": 70,
+     "from": "none",
+     "at": "b00:try",
+     "out": "b04",
+     "color": "accent",
+     "perWord": false,
+     "startAtZero": true
+    },
+    {
+     "t": "text",
+     "id": "mew2",
+     "text": "≈",
+     "x": 630,
+     "y": 900,
+     "size": 70,
+     "from": "none",
+     "at": "b00:try",
+     "out": "b04",
+     "color": "accent",
+     "perWord": false,
+     "startAtZero": true
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "try to *tickle* yourself",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "none",
+     "at": "b00:try",
+     "out": "b01",
+     "perWord": false,
+     "startAtZero": true
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "right *now*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b01:right",
+     "out": "b02"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "go *on*…",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b02:go",
+     "out": "b03"
+    },
+    {
+     "t": "bubble",
+     "id": "nb",
+     "text": "…",
+     "x": 690,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b03:nothing",
+     "fontSize": 60,
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "…!nothing!?",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b03:nothing",
+     "out": "b04"
+    },
+    {
+     "t": "stick",
+     "id": "mq",
+     "x": 480,
+     "y": 980,
+     "from": "none",
+     "at": "b04:there's",
+     "poses": [
+      [
+       "armsCrossed",
+       "b04:there's"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b04:there's"
+      ]
+     ],
+     "out": "b05",
+     "scale": 1.15
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "question",
+     "x": 480,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b04:reason",
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "there's a *reason*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b04:there's",
+     "out": "b05"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "LATE 1990s · BLAKEMORE ET AL.",
+     "text": "They built a tickle robot",
+     "sub": "Wolpert & Frith",
+     "x": 480,
+     "y": 470,
+     "from": "top",
+     "at": "b05:late",
+     "out": "b05:built"
+    },
+    {
+     "t": "icon",
+     "id": "br0",
+     "name": "brain",
+     "x": 480,
+     "y": 860,
+     "size": 300,
+     "from": "pop",
+     "at": "b05:neuroscientist",
+     "out": "b05:built"
+    },
+    {
+     "t": "icon",
+     "id": "rb",
+     "name": "robot",
+     "x": 480,
+     "y": 860,
+     "size": 560,
+     "from": "pop",
+     "at": "b05:built",
+     "out": "b06"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "the *1990s*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b05:late",
+     "out": "b05:built"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "a *tickle robot*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b05:tickle",
+     "out": "b06"
+    },
+    {
+     "t": "stick",
+     "id": "pp",
+     "x": 220,
+     "y": 980,
+     "from": "left",
+     "at": "b06:people",
+     "poses": [
+      [
+       "give",
+       "b06:moved"
+      ],
+      [
+       "idle",
+       "b07:when"
+      ],
+      [
+       "happy",
+       "b10:suddenly"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b06:people"
+      ],
+      [
+       "neutral",
+       "b07:barely"
+      ],
+      [
+       "smile",
+       "b10:suddenly"
+      ]
+     ],
+     "out": "b11",
+     "sway": 0
+    },
+    {
+     "t": "icon",
+     "id": "lv",
+     "name": "lever",
+     "x": 380,
+     "y": 1080,
+     "size": 180,
+     "from": "pop",
+     "at": "b06:handle",
+     "out": "b11"
+    },
+    {
+     "t": "icon",
+     "id": "rb2",
+     "name": "robot",
+     "x": 740,
+     "y": 740,
+     "size": 380,
+     "from": "pop",
+     "at": "b06:robot",
+     "out": "b11"
+    },
+    {
+     "t": "icon",
+     "id": "hd",
+     "name": "hand",
+     "x": 780,
+     "y": 1060,
+     "size": 190,
+     "from": "pop",
+     "at": "b06:palm",
+     "out": "b11"
+    },
+    {
+     "t": "text",
+     "id": "lk",
+     "text": "· · · · ·",
+     "x": 520,
+     "y": 820,
+     "size": 60,
+     "from": "pop",
+     "at": "b06:robot",
+     "out": "b11",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "it strokes your *palm*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b06:stroked",
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "sw",
+     "name": "stopwatch",
+     "x": 360,
+     "y": 480,
+     "size": 150,
+     "from": "pop",
+     "at": "b07:instantly",
+     "out": "b11"
+    },
+    {
+     "t": "text",
+     "id": "d0",
+     "text": "0.0 s",
+     "x": 560,
+     "y": 480,
+     "size": 70,
+     "from": "bottom",
+     "at": "b07:instantly",
+     "out": "b08:delay",
+     "weight": 800,
+     "exit": "cut"
+    },
+    {
+     "t": "bar",
+     "id": "m1",
+     "x": 580,
+     "y": 1190,
+     "w": 80,
+     "h": 50,
+     "color": "muted",
+     "label": "tickle",
+     "from": "draw",
+     "at": "b07:barely",
+     "out": "b10:suddenly"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "instant = *barely* tickles",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b07:copied",
+     "out": "b08"
+    },
+    {
+     "t": "text",
+     "id": "d1",
+     "text": "0.2 s",
+     "x": 560,
+     "y": 480,
+     "size": 70,
+     "from": "slam",
+     "at": "b08:delay",
+     "out": "b11",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "a tiny *delay*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b08:added",
+     "out": "b09"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "a *fifth* of a second",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b09:fifth",
+     "out": "b10"
+    },
+    {
+     "t": "bar",
+     "id": "m2",
+     "x": 580,
+     "y": 1190,
+     "w": 80,
+     "h": 280,
+     "color": "accent",
+     "label": "tickle",
+     "from": "draw",
+     "at": "b10:suddenly",
+     "out": "b11"
+    },
+    {
+     "t": "text",
+     "id": "ha",
+     "text": "ha ha!",
+     "x": 200,
+     "y": 640,
+     "size": 64,
+     "from": "slam",
+     "at": "b10:tickled",
+     "out": "b11",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "suddenly… !tickly!",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b10:suddenly",
+     "out": "b11"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "brain",
+     "x": 480,
+     "y": 760,
+     "size": 380,
+     "from": "pop",
+     "at": "b11:brain",
+     "out": "b13",
+     "pulse": 1.05,
+     "beat": 0.8
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "your brain *predicts*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b11:brain",
+     "out": "b12"
+    },
+    {
+     "t": "icon",
+     "id": "kn",
+     "name": "knob",
+     "x": 780,
+     "y": 1080,
+     "size": 200,
+     "from": "pop",
+     "at": "b12:turns",
+     "out": "b13",
+     "sway": 30,
+     "period": 1.6
+    },
+    {
+     "t": "text",
+     "id": "dn",
+     "text": "feeling ↓",
+     "x": 360,
+     "y": 1100,
+     "size": 60,
+     "from": "bottom",
+     "at": "b12:down",
+     "out": "b13",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "it turns the feeling *down*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b12:turns",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "br2",
+     "name": "brain",
+     "x": 700,
+     "y": 700,
+     "size": 240,
+     "from": "pop",
+     "at": "b13:your",
+     "out": "b14"
+    },
+    {
+     "t": "icon",
+     "id": "ok",
+     "name": "check",
+     "x": 700,
+     "y": 500,
+     "size": 110,
+     "from": "pop",
+     "at": "b13:surprise",
+     "out": "b14"
+    },
+    {
+     "t": "icon",
+     "id": "hd2",
+     "name": "hand",
+     "x": 280,
+     "y": 900,
+     "size": 220,
+     "from": "pop",
+     "at": "b13:hand",
+     "out": "b14",
+     "move": [
+      [
+       420,
+       860,
+       "b13:can't",
+       0.9
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "it can't *surprise* you",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b13:can't",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "e1",
+     "text": "tickle",
+     "x": 480,
+     "y": 640,
+     "size": 110,
+     "from": "pop",
+     "at": "b14:tickle",
+     "out": "b15",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "e2",
+     "text": "− surprise",
+     "x": 480,
+     "y": 790,
+     "size": 110,
+     "from": "pop",
+     "at": "b14:without",
+     "out": "b15",
+     "weight": 800
+    },
+    {
+     "t": "strike",
+     "id": "ek",
+     "x": 480,
+     "y": 790,
+     "w": 520,
+     "at": "b14:surprise",
+     "out": "b15"
+    },
+    {
+     "t": "text",
+     "id": "e3",
+     "text": "= touch",
+     "x": 480,
+     "y": 950,
+     "size": 110,
+     "from": "slam",
+     "at": "b14:touch",
+     "out": "b15",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "no surprise = just a *touch*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b14:without",
+     "out": "b15"
+    },
+    {
+     "t": "stick",
+     "id": "me9",
+     "x": 480,
+     "y": 980,
+     "from": "none",
+     "at": "b15:bet",
+     "poses": [
+      [
+       "armsCrossed",
+       "b15:bet"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b15:bet"
+      ]
+     ],
+     "scale": 1.15,
+     "sway": 4,
+     "period": 0.22,
+     "hold": true
+    },
+    {
+     "t": "text",
+     "id": "me9w1",
+     "text": "≈",
+     "x": 330,
+     "y": 900,
+     "size": 70,
+     "from": "none",
+     "at": "b15:bet",
+     "color": "accent",
+     "perWord": false,
+     "hold": true
+    },
+    {
+     "t": "text",
+     "id": "me9w2",
+     "text": "≈",
+     "x": 630,
+     "y": 900,
+     "size": 70,
+     "from": "none",
+     "at": "b15:bet",
+     "color": "accent",
+     "perWord": false,
+     "hold": true
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "try it *again*…",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b15:bet",
+     "hold": true
+    },
+    {
+     "t": "text",
+     "id": "cap0",
+     "text": "Try to tickle",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b00:try",
+     "out": "b00:yourself",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap1",
+     "text": "yourself.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b00:yourself",
+     "out": "b01:right",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap2",
+     "text": "Right now.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b01:right",
+     "out": "b02:go",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap3",
+     "text": "Go on.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b02:go",
+     "out": "b03:nothing",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap4",
+     "text": "Nothing, right?",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b03:nothing",
+     "out": "b04:there's",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap5",
+     "text": "There's a reason.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b04:there's",
+     "out": "b05:in",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap6",
+     "text": "In the late",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b05:in",
+     "out": "b05:nineteen",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap7",
+     "text": "1990s, neuroscientist",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b05:nineteen",
+     "out": "b05:sarah-jayne",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap8",
+     "text": "Sarah-Jayne Blakemore and",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b05:sarah-jayne",
+     "out": "b05:her",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap9",
+     "text": "her team built",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b05:her",
+     "out": "b05:a",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap10",
+     "text": "a tickle robot.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b05:a",
+     "out": "b06:people",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap11",
+     "text": "People moved a",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b06:people",
+     "out": "b06:handle",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap12",
+     "text": "handle, and the",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b06:handle",
+     "out": "b06:robot",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap13",
+     "text": "robot stroked their",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b06:robot",
+     "out": "b06:palm",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap14",
+     "text": "palm with soft",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b06:palm",
+     "out": "b06:foam",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap15",
+     "text": "foam.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b06:foam",
+     "out": "b07:when",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap16",
+     "text": "When it copied",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b07:when",
+     "out": "b07:their",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap17",
+     "text": "their movement instantly,",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b07:their",
+     "out": "b07:it#2",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap18",
+     "text": "it barely tickled.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b07:it#2",
+     "out": "b08:then",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap19",
+     "text": "Then they added",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b08:then",
+     "out": "b08:a",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap20",
+     "text": "a tiny delay.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b08:a",
+     "out": "b09:a",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap21",
+     "text": "A fifth of",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b09:a",
+     "out": "b09:a#2",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap22",
+     "text": "a second.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b09:a#2",
+     "out": "b10:suddenly",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap23",
+     "text": "Suddenly, it tickled",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b10:suddenly",
+     "out": "b10:more",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap24",
+     "text": "more.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b10:more",
+     "out": "b11:your",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap25",
+     "text": "Your brain predicts",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b11:your",
+     "out": "b11:every",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap26",
+     "text": "every move you",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b11:every",
+     "out": "b11:make",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap27",
+     "text": "make.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b11:make",
+     "out": "b12:when",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap28",
+     "text": "When it sees",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b12:when",
+     "out": "b12:a",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap29",
+     "text": "a touch coming,",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b12:a",
+     "out": "b12:it#2",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap30",
+     "text": "it turns the",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b12:it#2",
+     "out": "b12:feeling",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap31",
+     "text": "feeling down.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b12:feeling",
+     "out": "b13:your",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap32",
+     "text": "Your own hand",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b13:your",
+     "out": "b13:can't",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap33",
+     "text": "can't surprise you.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b13:can't",
+     "out": "b14:and",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap34",
+     "text": "And a tickle",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b14:and",
+     "out": "b14:without",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap35",
+     "text": "without surprise is",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b14:without",
+     "out": "b14:just",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap36",
+     "text": "just a touch.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b14:just",
+     "out": "b15:bet",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap37",
+     "text": "Bet you're about",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b15:bet",
+     "out": "b15:to",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap38",
+     "text": "to try it",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b15:to",
+     "out": "b15:again",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap39",
+     "text": "again.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b15:again",
+     "weight": 800,
+     "exit": "cut",
+     "hold": true
+    }
+   ]
+  }
+ ]
+}

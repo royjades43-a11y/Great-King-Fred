@@ -277,3 +277,33 @@ export function sneakyDoor() {
   <circle cx="60" cy="820" r="12" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/>
 </svg>`;
 }
+
+// Short 05 · a cheeky tickle robot with a feather
+export function tickleRobot() {
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="380" cy="955" rx="230" ry="24" fill="${INK}" opacity="0.18"/>
+  <path d="M380 150 L380 90" stroke="${INK}" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="380" cy="76" r="22" fill="${RED}" stroke="${INK}" stroke-width="9"/>
+  <rect x="230" y="150" width="300" height="230" rx="46" fill="${CARD}" stroke="${INK}" stroke-width="14"/>
+  <rect x="268" y="196" width="224" height="130" rx="30" fill="#2A2F29"/>
+  <path d="M300 270 C312 238 344 238 356 270 M404 270 C416 238 448 238 460 270" fill="none" stroke="${CARD}" stroke-width="12" stroke-linecap="round"/>
+  <path d="M330 300 C360 324 400 324 430 300" fill="none" stroke="${RED}" stroke-width="10" stroke-linecap="round"/>
+  <rect x="350" y="380" width="60" height="34" fill="${CARD}" stroke="${INK}" stroke-width="10"/>
+  <rect x="210" y="414" width="340" height="380" rx="40" fill="${CARD}" stroke="${INK}" stroke-width="14"/>
+  <circle cx="300" cy="500" r="22" fill="${RED}" stroke="${INK}" stroke-width="7"/>
+  <path d="M260 600 L500 600 M260 650 L450 650 M260 700 L480 700" stroke="${INK}" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
+  <path d="M215 470 C150 500 120 560 130 640" fill="none" stroke="${INK}" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="132" cy="652" r="24" fill="${CARD}" stroke="${INK}" stroke-width="9"/>
+  <path d="M545 470 C620 450 660 380 650 300" fill="none" stroke="${INK}" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="650" cy="290" r="24" fill="${CARD}" stroke="${INK}" stroke-width="9"/>
+  <g transform="rotate(28 660 230)">
+    <path d="M660 300 L660 40" stroke="${INK}" stroke-width="7" stroke-linecap="round"/>
+    <path d="M660 60 C620 90 610 160 620 230 C640 210 652 170 660 140 C668 170 680 210 700 230 C710 160 700 90 660 60 Z" fill="${RED}" stroke="${INK}" stroke-width="7"/>
+    <path d="M660 100 L630 130 M660 140 L628 175 M660 100 L690 130 M660 140 L692 175" stroke="${INK}" stroke-width="4" opacity="0.6"/>
+  </g>
+  <rect x="250" y="794" width="90" height="120" rx="20" fill="${CARD}" stroke="${INK}" stroke-width="12"/>
+  <rect x="420" y="794" width="90" height="120" rx="20" fill="${CARD}" stroke="${INK}" stroke-width="12"/>
+  <path d="M230 920 L360 920 M400 920 L530 920" stroke="${INK}" stroke-width="18" stroke-linecap="round"/>
+  <path d="M600 520 L640 500 M610 560 L656 560 M600 600 L640 620" stroke="${RED}" stroke-width="8" stroke-linecap="round"/>
+</svg>`;
+}

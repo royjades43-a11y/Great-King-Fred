@@ -1,0 +1,3 @@
+   4.94s  pop               -20 dB  pitch +0.0
+   6.43s  click-soft        -16 dB  pitch +0.0
+  37.98s  whoosh-short      -24 dB  pitch +2.0
