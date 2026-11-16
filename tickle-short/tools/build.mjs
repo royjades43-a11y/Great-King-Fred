@@ -182,7 +182,7 @@ function buildScene(s, si) {
       const sentenceIn = local(spoken(`${el.at.split(":")[0]}:start`) - LEAD);
       if (tOut - tIn < need) tIn = Math.max(0, Math.min(tIn, Math.max(sentenceIn, tOut - need)));
     }
-    tOut = Math.max(tOut, tIn + (el.t === "strike" ? 0.3 : 0.6));
+    tOut = Math.max(tOut, tIn + (el.t === "strike" ? 0.3 : el.exit === "cut" ? 0.05 : 0.6));
     const outDur = el.exit === "cut" ? 0.01 : ["slam", "pop", "blur", "draw"].includes(el.from) ? 0.25 : 0.3;
     const end = el.hold ? sceneLen : el.exit === "cut" ? Math.min(sceneLen, tOut) : Math.min(sceneLen, tOut + outDur + 0.04);
     cueSheet.push(`${s.id.padEnd(6)} ${el.id.padEnd(6)} ${el.t.padEnd(8)} cue ${el.at.padEnd(18)} spoken ${(local(spoken(el.at)) + s.start).toFixed(2).padStart(7)}s  in ${(tIn + s.start).toFixed(2).padStart(7)}s  out ${(tOut + s.start).toFixed(2).padStart(7)}s`);

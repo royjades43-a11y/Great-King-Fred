@@ -1,0 +1,1395 @@
+{
+ "title": "Don't Think of a White Bear",
+ "scenes": [
+  {
+   "id": "short",
+   "tail": 0.2,
+   "beats": [
+    {
+     "id": "b00",
+     "say": "Don't think of a white bear."
+    },
+    {
+     "id": "b01",
+     "say": "Don't."
+    },
+    {
+     "id": "b02",
+     "say": "Too late, right?"
+    },
+    {
+     "id": "b03",
+     "say": "In nineteen eighty-seven, psychologist Daniel Wegner tried this on students."
+    },
+    {
+     "id": "b04",
+     "say": "They talked out loud for five minutes."
+    },
+    {
+     "id": "b05",
+     "say": "One rule."
+    },
+    {
+     "id": "b06",
+     "say": "Don't think of a white bear."
+    },
+    {
+     "id": "b07",
+     "say": "Every time it popped up, they rang a bell."
+    },
+    {
+     "id": "b08",
+     "say": "Ding."
+    },
+    {
+     "id": "b09",
+     "say": "Ding."
+    },
+    {
+     "id": "b10",
+     "say": "Ding."
+    },
+    {
+     "id": "b11",
+     "say": "And when the rule ended, the bear came back even more."
+    },
+    {
+     "id": "b12",
+     "say": "Fighting a thought keeps it alive."
+    },
+    {
+     "id": "b13",
+     "say": "Same with an ex."
+    },
+    {
+     "id": "b14",
+     "say": "Or that awkward thing you said."
+    },
+    {
+     "id": "b15",
+     "say": "But one trick helped."
+    },
+    {
+     "id": "b16",
+     "say": "Pick a different thought on purpose."
+    },
+    {
+     "id": "b17",
+     "say": "In the study, it was a red car."
+    },
+    {
+     "id": "b18",
+     "say": "So picture a red car."
+    },
+    {
+     "id": "b19",
+     "say": "And whatever you do, don't think of a white bear."
+    }
+   ],
+   "elements": [
+    {
+     "t": "stick",
+     "id": "me",
+     "x": 280,
+     "y": 980,
+     "from": "none",
+     "at": "b00:don't",
+     "poses": [
+      [
+       "idle",
+       "b00:don't"
+      ],
+      [
+       "shrug",
+       "b02:too"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b00:don't"
+      ],
+      [
+       "o",
+       "b02:too"
+      ]
+     ],
+     "out": "b03",
+     "scale": 1.1,
+     "startAtZero": true
+    },
+    {
+     "t": "icon",
+     "id": "metb",
+     "name": "thought",
+     "x": 620,
+     "y": 600,
+     "size": 440,
+     "from": "none",
+     "at": "b00:don't",
+     "out": "b03",
+     "startAtZero": true
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "don't think of a *white bear*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "none",
+     "at": "b00:don't",
+     "out": "b01",
+     "perWord": false,
+     "startAtZero": true
+    },
+    {
+     "t": "icon",
+     "id": "no",
+     "name": "nosign",
+     "x": 820,
+     "y": 980,
+     "size": 170,
+     "from": "slam",
+     "at": "b01:don't",
+     "out": "b03"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "!don't.!",
+     "x": 480,
+     "y": 260,
+     "size": 90,
+     "from": "top",
+     "at": "b01:don't",
+     "out": "b02"
+    },
+    {
+     "t": "icon",
+     "id": "b0",
+     "name": "bear",
+     "x": 626,
+     "y": 588,
+     "size": 190,
+     "from": "pop",
+     "at": "b02:late",
+     "out": "b03"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "too *late*?",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b02:too",
+     "out": "b03"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "1987 · WEGNER ET AL.",
+     "text": "The white bear experiment",
+     "sub": "Schneider, Carter & White",
+     "x": 480,
+     "y": 470,
+     "from": "top",
+     "at": "b03:nineteen",
+     "out": "b04"
+    },
+    {
+     "t": "icon",
+     "id": "bb",
+     "name": "bear",
+     "x": 480,
+     "y": 880,
+     "size": 320,
+     "from": "pop",
+     "at": "b03:psychologist",
+     "out": "b04"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "the *1987* experiment",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b03:nineteen",
+     "out": "b04"
+    },
+    {
+     "t": "stick",
+     "id": "tk",
+     "x": 280,
+     "y": 980,
+     "from": "none",
+     "at": "b04:they",
+     "poses": [
+      [
+       "give",
+       "b04:talked"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b04:talked"
+      ]
+     ],
+     "out": "b05",
+     "scale": 1.1
+    },
+    {
+     "t": "icon",
+     "id": "ch",
+     "name": "chat",
+     "x": 520,
+     "y": 640,
+     "size": 150,
+     "from": "pop",
+     "at": "b04:talked",
+     "out": "b05"
+    },
+    {
+     "t": "icon",
+     "id": "sw",
+     "name": "stopwatch",
+     "x": 780,
+     "y": 760,
+     "size": 170,
+     "from": "pop",
+     "at": "b04:five",
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "sw5",
+     "text": "5:00",
+     "x": 780,
+     "y": 900,
+     "size": 58,
+     "from": "bottom",
+     "at": "b04:five",
+     "out": "b05",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "talk for *5 minutes*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b04:talked",
+     "out": "b05"
+    },
+    {
+     "t": "icon",
+     "id": "rb",
+     "name": "bear",
+     "x": 480,
+     "y": 840,
+     "size": 300,
+     "from": "pop",
+     "at": "b05:one",
+     "out": "b07"
+    },
+    {
+     "t": "icon",
+     "id": "rx",
+     "name": "nosign",
+     "x": 480,
+     "y": 840,
+     "size": 400,
+     "from": "slam",
+     "at": "b06:don't",
+     "out": "b07"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "one *rule*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b05:one",
+     "out": "b06"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "rule: !no bear!",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b06:don't",
+     "out": "b07"
+    },
+    {
+     "t": "stick",
+     "id": "rg",
+     "x": 280,
+     "y": 980,
+     "from": "none",
+     "at": "b07:every",
+     "poses": [
+      [
+       "give",
+       "b07:rang"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b07:every"
+      ],
+      [
+       "o",
+       "b08:ding"
+      ]
+     ],
+     "out": "b12",
+     "scale": 1.1
+    },
+    {
+     "t": "icon",
+     "id": "rgtb",
+     "name": "thought",
+     "x": 620,
+     "y": 600,
+     "size": 440,
+     "from": "pop",
+     "at": "b07:every",
+     "out": "b12"
+    },
+    {
+     "t": "icon",
+     "id": "bl",
+     "name": "bell",
+     "x": 780,
+     "y": 1060,
+     "size": 170,
+     "from": "pop",
+     "at": "b07:bell",
+     "out": "b12",
+     "sway": 14,
+     "period": 0.3
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "ring the *bell*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b07:every",
+     "out": "b08"
+    },
+    {
+     "t": "icon",
+     "id": "m1",
+     "name": "bear",
+     "x": 550,
+     "y": 590,
+     "size": 110,
+     "from": "pop",
+     "at": "b08:ding",
+     "out": "b12"
+    },
+    {
+     "t": "icon",
+     "id": "m2",
+     "name": "bear",
+     "x": 650,
+     "y": 550,
+     "size": 110,
+     "from": "pop",
+     "at": "b09:ding",
+     "out": "b12"
+    },
+    {
+     "t": "icon",
+     "id": "m3",
+     "name": "bear",
+     "x": 730,
+     "y": 595,
+     "size": 110,
+     "from": "pop",
+     "at": "b10:ding",
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "d1",
+     "text": "ding!",
+     "x": 780,
+     "y": 880,
+     "size": 64,
+     "from": "slam",
+     "at": "b08:ding",
+     "out": "b09:ding",
+     "color": "accent",
+     "weight": 800,
+     "exit": "cut"
+    },
+    {
+     "t": "text",
+     "id": "d2",
+     "text": "ding! ×2",
+     "x": 780,
+     "y": 880,
+     "size": 64,
+     "from": "slam",
+     "at": "b09:ding",
+     "out": "b10:ding",
+     "color": "accent",
+     "weight": 800,
+     "exit": "cut"
+    },
+    {
+     "t": "text",
+     "id": "d3",
+     "text": "ding! ×3",
+     "x": 780,
+     "y": 880,
+     "size": 64,
+     "from": "slam",
+     "at": "b10:ding",
+     "out": "b11",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "*ding!*",
+     "x": 480,
+     "y": 260,
+     "size": 90,
+     "from": "top",
+     "at": "b08:ding",
+     "out": "b11"
+    },
+    {
+     "t": "icon",
+     "id": "m4",
+     "name": "bear",
+     "x": 590,
+     "y": 650,
+     "size": 110,
+     "from": "pop",
+     "at": "b11:came",
+     "out": "b12"
+    },
+    {
+     "t": "icon",
+     "id": "m5",
+     "name": "bear",
+     "x": 690,
+     "y": 660,
+     "size": 110,
+     "from": "pop",
+     "at": "b11:more",
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "it came back *more*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b11:bear",
+     "out": "b12"
+    },
+    {
+     "t": "stick",
+     "id": "fg",
+     "x": 260,
+     "y": 980,
+     "from": "none",
+     "at": "b12:fighting",
+     "poses": [
+      [
+       "strain",
+       "b12:fighting"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b12:fighting"
+      ]
+     ],
+     "out": "b15",
+     "scale": 1.1
+    },
+    {
+     "t": "icon",
+     "id": "bg",
+     "name": "thought",
+     "x": 620,
+     "y": 580,
+     "size": 560,
+     "from": "pop",
+     "at": "b12:fighting",
+     "out": "b15"
+    },
+    {
+     "t": "icon",
+     "id": "g1",
+     "name": "bear",
+     "x": 560,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b12:fighting",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "g2",
+     "name": "bear",
+     "x": 690,
+     "y": 580,
+     "size": 150,
+     "from": "pop",
+     "at": "b12:alive",
+     "out": "b13"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "fighting it keeps it *alive*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b12:fighting",
+     "out": "b13"
+    },
+    {
+     "t": "icon",
+     "id": "ex",
+     "name": "broken",
+     "x": 626,
+     "y": 570,
+     "size": 200,
+     "from": "pop",
+     "at": "b13:ex",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "same with an *ex*…",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b13:same",
+     "out": "b14"
+    },
+    {
+     "t": "icon",
+     "id": "aw",
+     "name": "chat",
+     "x": 590,
+     "y": 570,
+     "size": 170,
+     "from": "pop",
+     "at": "b14:awkward",
+     "out": "b15"
+    },
+    {
+     "t": "text",
+     "id": "aw2",
+     "text": "?!",
+     "x": 710,
+     "y": 540,
+     "size": 80,
+     "from": "slam",
+     "at": "b14:awkward",
+     "out": "b15",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "…or that *awkward* thing",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b14:or",
+     "out": "b15"
+    },
+    {
+     "t": "icon",
+     "id": "bu",
+     "name": "bulb",
+     "x": 480,
+     "y": 820,
+     "size": 300,
+     "from": "pop",
+     "at": "b15:trick",
+     "out": "b16",
+     "pulse": 1.08,
+     "beat": 0.7
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "one *trick*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b15:one",
+     "out": "b16"
+    },
+    {
+     "t": "stick",
+     "id": "pk",
+     "x": 280,
+     "y": 980,
+     "from": "none",
+     "at": "b16:pick",
+     "poses": [
+      [
+       "point",
+       "b16:pick"
+      ],
+      [
+       "happy",
+       "b18:picture"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b16:pick"
+      ],
+      [
+       "smile",
+       "b17:red"
+      ]
+     ],
+     "out": "b19",
+     "scale": 1.1
+    },
+    {
+     "t": "icon",
+     "id": "pktb",
+     "name": "thought",
+     "x": 620,
+     "y": 600,
+     "size": 440,
+     "from": "pop",
+     "at": "b16:pick",
+     "out": "b19"
+    },
+    {
+     "t": "text",
+     "id": "t14",
+     "text": "pick a thought on *purpose*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b16:pick",
+     "out": "b17"
+    },
+    {
+     "t": "icon",
+     "id": "car",
+     "name": "car",
+     "x": 626,
+     "y": 580,
+     "size": 200,
+     "from": "pop",
+     "at": "b17:red",
+     "out": "b19",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t15",
+     "text": "a *red car*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b17:red",
+     "out": "b18"
+    },
+    {
+     "t": "text",
+     "id": "t16",
+     "text": "picture a *red car*",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b18:picture",
+     "out": "b19"
+    },
+    {
+     "t": "stick",
+     "id": "me9",
+     "x": 280,
+     "y": 980,
+     "from": "none",
+     "at": "b19:and",
+     "poses": [
+      [
+       "idle",
+       "b19:and"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b19:and"
+      ]
+     ],
+     "scale": 1.1,
+     "hold": true
+    },
+    {
+     "t": "icon",
+     "id": "me9tb",
+     "name": "thought",
+     "x": 620,
+     "y": 600,
+     "size": 440,
+     "from": "none",
+     "at": "b19:and",
+     "hold": true
+    },
+    {
+     "t": "text",
+     "id": "t17",
+     "text": "don't think of a *white bear*…",
+     "x": 480,
+     "y": 260,
+     "size": 66,
+     "from": "top",
+     "at": "b19:don't",
+     "hold": true
+    },
+    {
+     "t": "text",
+     "id": "cap0",
+     "text": "Don't think of",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b00:don't",
+     "out": "b00:a",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap1",
+     "text": "a white bear.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b00:a",
+     "out": "b01:don't",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap2",
+     "text": "Don't.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b01:don't",
+     "out": "b02:too",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap3",
+     "text": "Too late, right?",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b02:too",
+     "out": "b03:in",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap4",
+     "text": "In 1987,",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b03:in",
+     "out": "b03:psychologist",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap5",
+     "text": "psychologist Daniel Wegner",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b03:psychologist",
+     "out": "b03:tried",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap6",
+     "text": "tried this on",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b03:tried",
+     "out": "b03:students",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap7",
+     "text": "students.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b03:students",
+     "out": "b04:they",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap8",
+     "text": "They talked out",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b04:they",
+     "out": "b04:loud",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap9",
+     "text": "loud for five",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b04:loud",
+     "out": "b04:minutes",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap10",
+     "text": "minutes.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b04:minutes",
+     "out": "b05:one",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap11",
+     "text": "One rule.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b05:one",
+     "out": "b06:don't",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap12",
+     "text": "Don't think of",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b06:don't",
+     "out": "b06:a",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap13",
+     "text": "a white bear.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b06:a",
+     "out": "b07:every",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap14",
+     "text": "Every time it",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b07:every",
+     "out": "b07:popped",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap15",
+     "text": "popped up, they",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b07:popped",
+     "out": "b07:rang",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap16",
+     "text": "rang a bell.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b07:rang",
+     "out": "b08:ding",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap17",
+     "text": "Ding.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b08:ding",
+     "out": "b09:ding",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap18",
+     "text": "Ding.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b09:ding",
+     "out": "b10:ding",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap19",
+     "text": "Ding.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b10:ding",
+     "out": "b11:and",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap20",
+     "text": "And when the",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b11:and",
+     "out": "b11:rule",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap21",
+     "text": "rule ended, the",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b11:rule",
+     "out": "b11:bear",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap22",
+     "text": "bear came back",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b11:bear",
+     "out": "b11:even",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap23",
+     "text": "even more.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b11:even",
+     "out": "b12:fighting",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap24",
+     "text": "Fighting a thought",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b12:fighting",
+     "out": "b12:keeps",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap25",
+     "text": "keeps it alive.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b12:keeps",
+     "out": "b13:same",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap26",
+     "text": "Same with an",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b13:same",
+     "out": "b13:ex",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap27",
+     "text": "ex.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b13:ex",
+     "out": "b14:or",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap28",
+     "text": "Or that awkward",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b14:or",
+     "out": "b14:thing",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap29",
+     "text": "thing you said.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b14:thing",
+     "out": "b15:but",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap30",
+     "text": "But one trick",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b15:but",
+     "out": "b15:helped",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap31",
+     "text": "helped.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b15:helped",
+     "out": "b16:pick",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap32",
+     "text": "Pick a different",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b16:pick",
+     "out": "b16:thought",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap33",
+     "text": "thought on purpose.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b16:thought",
+     "out": "b17:in",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap34",
+     "text": "In the study,",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b17:in",
+     "out": "b17:it",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap35",
+     "text": "it was a",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b17:it",
+     "out": "b17:red",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap36",
+     "text": "red car.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b17:red",
+     "out": "b18:so",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap37",
+     "text": "So picture a",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b18:so",
+     "out": "b18:red",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap38",
+     "text": "red car.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b18:red",
+     "out": "b19:and",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap39",
+     "text": "And whatever you",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b19:and",
+     "out": "b19:do",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap40",
+     "text": "do, don't think",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b19:do",
+     "out": "b19:of",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap41",
+     "text": "of a white",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b19:of",
+     "out": "b19:bear",
+     "weight": 800,
+     "exit": "cut",
+     "hold": false
+    },
+    {
+     "t": "text",
+     "id": "cap42",
+     "text": "bear.",
+     "x": 480,
+     "y": 1322,
+     "size": 58,
+     "from": "none",
+     "at": "b19:bear",
+     "weight": 800,
+     "exit": "cut",
+     "hold": true
+    }
+   ]
+  }
+ ]
+}

@@ -307,3 +307,25 @@ export function tickleRobot() {
   <path d="M600 520 L640 500 M610 560 L656 560 M600 600 L640 620" stroke="${RED}" stroke-width="8" stroke-linecap="round"/>
 </svg>`;
 }
+
+// Short 06 · a cheeky polar bear peeking out of a thought bubble
+export function peekingBear() {
+  const W = "#FFFFFF";
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="250" cy="250" r="56" fill="${W}" stroke="${INK}" stroke-width="12"/><circle cx="250" cy="250" r="26" fill="#E8D9D2"/>
+  <circle cx="550" cy="250" r="56" fill="${W}" stroke="${INK}" stroke-width="12"/><circle cx="550" cy="250" r="26" fill="#E8D9D2"/>
+  <ellipse cx="400" cy="420" rx="230" ry="210" fill="${W}" stroke="${INK}" stroke-width="14"/>
+  <ellipse cx="320" cy="390" rx="22" ry="30" fill="${INK}"/><ellipse cx="480" cy="390" rx="22" ry="30" fill="${INK}"/>
+  <circle cx="328" cy="378" r="8" fill="${W}"/><circle cx="488" cy="378" r="8" fill="${W}"/>
+  <path d="M292 336 C310 322 332 320 348 330 M452 318 C470 304 494 306 510 318" fill="none" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+  <ellipse cx="400" cy="490" rx="84" ry="62" fill="#F4F0EA" stroke="${INK}" stroke-width="9"/>
+  <ellipse cx="400" cy="465" rx="32" ry="22" fill="${INK}"/>
+  <path d="M368 515 C392 532 420 530 446 504" fill="none" stroke="${INK}" stroke-width="9" stroke-linecap="round"/>
+  <path d="M90 700 C40 690 30 620 80 600 C70 540 140 510 190 540 C220 480 320 480 350 540 C380 500 470 500 490 550 C540 510 640 520 650 580 C720 570 760 640 720 690 C760 740 700 800 640 780 C610 840 500 840 470 800 C430 850 330 850 300 800 C250 840 150 830 140 780 C80 790 50 740 90 700 Z" fill="${CARD}" stroke="${INK}" stroke-width="14" stroke-linejoin="round"/>
+  <ellipse cx="290" cy="600" rx="62" ry="40" fill="${W}" stroke="${INK}" stroke-width="12"/>
+  <ellipse cx="510" cy="600" rx="62" ry="40" fill="${W}" stroke="${INK}" stroke-width="12"/>
+  <circle cx="266" cy="588" r="8" fill="#E8D9D2"/><circle cx="290" cy="580" r="8" fill="#E8D9D2"/><circle cx="314" cy="588" r="8" fill="#E8D9D2"/><ellipse cx="290" cy="610" rx="16" ry="11" fill="#E8D9D2"/><circle cx="486" cy="588" r="8" fill="#E8D9D2"/><circle cx="510" cy="580" r="8" fill="#E8D9D2"/><circle cx="534" cy="588" r="8" fill="#E8D9D2"/><ellipse cx="510" cy="610" rx="16" ry="11" fill="#E8D9D2"/>
+  <circle cx="170" cy="880" r="30" fill="${CARD}" stroke="${INK}" stroke-width="10"/>
+  <circle cx="120" cy="950" r="18" fill="${CARD}" stroke="${INK}" stroke-width="8"/>
+</svg>`;
+}
