@@ -125,3 +125,65 @@ Send this to the friend who's all-in on one stock... and ask them.
 
 **The maths:** $100 × 0.5 = $50; $50 × 1.5 = $75; $50 × 2 = $100. $100 × 0.1 = $10; $10 × 10 = $100, a gain of +900%.
 "Spread it out" is general diversification guidance, not personal advice.
+
+---
+
+## SEO descriptions (paste into YouTube)
+
+### Short 14 — The Penny Question
+```
+$1 million today, or a penny that doubles every day for 30 days? Most people take the million, but the penny ends up worth $5,368,709.12. Here's the math, and the compound-interest lesson almost everyone learns too late: nearly all the growth happens at the very end.
+
+The penny, day by day (1¢ doubled = 2^(day−1) cents):
+Day 10: $5.12
+Day 20: $5,242.88
+Day 28: $1,342,177.28 (first day over $1 million)
+Day 30: $5,368,709.12
+
+Real investments don't double daily. At an average 7% a year, money doubles roughly every 10 years (the "rule of 72"), but the shape of the curve is the same: slow, slow, then fast.
+
+▶ Full video: The Boring Way to Get Rich (compound interest explained)
+🔔 Subscribe to PesaBrain for the psychology of your money.
+
+For education only, not financial advice.
+
+#compoundinterest #personalfinance #moneytips #investing #shorts
+```
+
+### Short 15 — The 50% Trap
+```
+If your money drops 50%, how much does it need to gain to get back to even? Not 50%. You need +100%. Lose 90% and you need +900%. This is the math behind "don't lose big", and why diversification matters more than chasing the next big win.
+
+The math:
+$100 − 50% = $50
+$50 + 50% = $75 (still down $25)
+$50 + 100% = $100 (back to even)
+$100 − 90% = $10, and $10 needs +900% to get back to $100
+Recovery gain needed = loss ÷ (1 − loss)
+
+Spreading money across many investments (for example, a low-cost index fund) is the standard way to avoid one loss wiping you out.
+Source: U.S. Securities and Exchange Commission, "Beginners' Guide to Asset Allocation, Diversification, and Rebalancing" (investor.gov).
+
+▶ Full video: The Boring Way to Get Rich (index funds and diversification)
+🔔 Subscribe to PesaBrain for the psychology of your money.
+
+For education only, not financial advice.
+
+#investing #stockmarket #personalfinance #moneytips #shorts
+```
+
+### Short 13 — The $1.10 Question (for completeness)
+```
+A bat and a ball cost $1.10. The bat costs $1 more than the ball. How much is the ball? Most people say 10 cents, and it's wrong. Comment your answer BEFORE you watch 👀
+
+The answer is 5 cents (ball 5¢ + bat $1.05 = $1.10). It's the most famous question from the Cognitive Reflection Test, and it shows how your fast, confident brain makes money mistakes like "it's only $5" or "it's on sale".
+
+Sources:
+• Frederick, S. (2005). "Cognitive Reflection and Decision Making." Journal of Economic Perspectives, 19(4), 25–42.
+• Kahneman, D. (2011). Thinking, Fast and Slow, chapter 3.
+
+▶ Full video: The $5 Coffee Myth Is Wrong
+🔔 Subscribe to PesaBrain for the psychology of your money.
+
+#brainteaser #psychology #moneytips #personalfinance #shorts
+```

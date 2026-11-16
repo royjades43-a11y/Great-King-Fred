@@ -47,6 +47,7 @@ These come from tool vendors and blogs, not from YouTube or published studies, s
 | 9 | **End mid-sentence into the start,** so the loop is invisible. | YouTube autoplay loop |
 | 10 | **30–35 seconds, a new picture every 1.5–2.5 s, captions always on.** | Retention; sound-off viewing |
 | 11 | **Every claim checkable.** A viral Short gets fact-checked in the comments. | Channel trust |
+| 12 | **Ship an SEO description every time:** the searchable question in the first line, the payoff or the maths spelled out, citations for any study or statistic, a link to the related long video, 3–5 hashtags, and the not-advice line. | Search and suggested traffic; trust |
 
 **Grading a script:** a script must hit 1, 2, 4, 9 and 11, plus at least three of the rest, before it goes to voiceover.
 
@@ -57,7 +58,7 @@ almost everyone answers wrong *with confidence*. That's the perfect information 
 they're wrong. It's about money, it's quick to do in your head, and it makes the sharer look smart. Comments explode because people
 argue about it.
 
-**Checklist score:** hits all 11 rules.
+**Checklist score:** hits all 12 rules (description in `VIRAL2.md`).
 
 ### Frame 1 (what a scroller sees before any sound)
 Tag: **MOST PEOPLE GET THIS WRONG** · a baseball bat and a ball, both with faces, standing on a price tag that says **$1.10 TOTAL**.
