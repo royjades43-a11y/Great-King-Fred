@@ -35,9 +35,9 @@ Re-runs are cached: footage searches and downloads, plus each voice line. Change
 ## Writing an episode
 ```yaml
 segments:
-  - say: "At forty-one thousand feet, both engines went silent."   # narration (write for the ear)
-    punch: "41,000 FT. ZERO ENGINES."                               # on-screen red box, ≤5 words
-    footage: {query: "Boeing 767 in flight", type: video}           # Commons search; video or image
+  - say: "Planes don't cruise at thirty-five thousand feet to avoid the weather."  # narration (write for the ear)
+    punch: "IT'S NOT THE WEATHER"                                   # on-screen red box, ≤5 words
+    footage: {query: "contrail", type: video}                       # Commons search; video or image
 
   - say: "Up there, only thirty-one percent of the air is left."
     punch: "ONLY 31% OF THE AIR"
