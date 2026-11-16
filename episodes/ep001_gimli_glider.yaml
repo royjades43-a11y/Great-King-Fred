@@ -1,0 +1,57 @@
+id: ep001_gimli_glider
+series: What Would Happen If
+title: "What happens if a jet runs out of fuel at 41,000 ft?"
+format: short          # short = 1080x1920, long = 1920x1080
+description: >
+  In 1983 a brand-new Boeing 767 ran completely dry at cruising altitude.
+  What happened next is one of the greatest saves in aviation history.
+tags: [aviation, gimli glider, air canada 143, boeing 767, what would happen if, planes]
+voice:
+  voice_id: pNInz6obpgDQGcFmaJgB   # replace with your chosen ElevenLabs voice
+  model_id: eleven_multilingual_v2
+  stability: 0.4
+  similarity_boost: 0.75
+  style: 0.55
+segments:
+  - say: "At forty-one thousand feet, both engines went silent."
+    punch: "41,000 FT. ZERO ENGINES."
+    footage: {query: "Boeing 767 in flight", type: video}
+  - say: "And the place they ended up landing… was a racetrack full of families."
+    punch: "WAIT, WHAT?"
+    footage: {query: "drag racing", type: video}
+  - say: "July 1983. Air Canada Flight 143. A brand-new Boeing 767."
+    punch: "AIR CANADA 143"
+    footage: {query: "Gimli Glider C-GAUN", type: image}
+  - say: "The fuel was worked out in pounds, not kilograms. They left with about half what they needed."
+    punch: "POUNDS ≠ KILOGRAMS"
+    footage: {query: "aircraft fuel truck", type: video}
+  - say: "Over Ontario, the fuel ran out. Then the screens went dark."
+    punch: "NO FUEL. NO POWER."
+    footage: {query: "Boeing 767 cockpit", type: image}
+  - say: "A tiny propeller dropped from the belly, spinning in the wind to keep the controls alive."
+    punch: "RAM AIR TURBINE"
+    footage: {query: "ram air turbine", type: image}
+  - say: "Luckily, Captain Bob Pearson was also an experienced glider pilot."
+    punch: "THE GLIDER PILOT"
+    footage: {query: "sailplane", type: video}
+  - say: "First Officer Maurice Quintal remembered an old air force base nearby. Gimli."
+    punch: "GIMLI, MANITOBA"
+    footage: {query: "Gimli Manitoba", type: image}
+  - say: "But it had been turned into a drag strip… and race day was underway."
+    punch: "RACE DAY."
+    footage: {query: "drag strip race", type: video}
+  - say: "Too high, Pearson threw the jet sideways, a glider trick, to dump height."
+    punch: "THE SIDESLIP"
+    footage: {query: "airliner landing crosswind", type: video}
+  - say: "The nose gear collapsed, the nose scraped the runway, and the jet stopped short of the crowd."
+    punch: "STOPPED."
+    footage: {query: "Gimli Glider", type: image}
+  - say: "Sixty-nine people on board. Zero deaths. They called it… the Gimli Glider."
+    punch: "69 ON BOARD. 0 LOST."
+    footage: {query: "Boeing 767 Air Canada", type: image}
+  - say: "Could you have landed it? Tell me in the comments."
+    punch: "COULD YOU?"
+    footage: {query: "Boeing 767 landing", type: video}
+sources:
+  - "Canada, Commission of Inquiry (Lockwood Report), Final Report of the Board of Inquiry into Air Canada Flight 143, 1985"
+  - "https://en.wikipedia.org/wiki/Gimli_Glider"

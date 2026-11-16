@@ -1,0 +1,52 @@
+id: ep002_train_steering
+series: Why Does It
+title: "Why trains don't need a steering wheel"
+format: short
+description: >
+  Trains turn corners without anyone steering. The secret is hiding in the
+  shape of the wheels — and it's genius.
+tags: [trains, railway, engineering, physics, wheel conicity, why does it]
+voice:
+  voice_id: pNInz6obpgDQGcFmaJgB
+  model_id: eleven_multilingual_v2
+  stability: 0.4
+  similarity_boost: 0.75
+  style: 0.5
+segments:
+  - say: "A train has no steering wheel. So how does it get around a corner?"
+    punch: "NO STEERING WHEEL?"
+    footage: {query: "train curve", type: video}
+  - say: "Most people think it's the flanges, the lips on the inside of the wheels."
+    punch: "IT'S NOT THE FLANGES"
+    footage: {query: "railway wheel flange", type: image}
+  - say: "Wrong. If flanges did the steering, they'd grind and screech on every bend."
+    punch: "SCREEEECH"
+    footage: {query: "freight train wheels", type: video}
+  - say: "The real trick? Train wheels aren't flat. They're cones."
+    punch: "THEY'RE CONES"
+    footage: {query: "railway wheelset", type: image}
+  - say: "And both wheels are locked to one solid axle, so they always spin at the same speed."
+    punch: "ONE SOLID AXLE"
+    footage: {query: "wheelset axle", type: image}
+  - say: "On a curve, the outer rail is longer. The outer wheel has further to go."
+    punch: "OUTER RAIL = LONGER"
+    footage: {query: "railway curve track", type: image}
+  - say: "As the train drifts outward, the outer wheel rides on its fat part… and the inner wheel on its thin part."
+    punch: "BIG WHEEL / SMALL WHEEL"
+    footage: {query: "train wheels close up", type: video}
+  - say: "A bigger circle covers more ground per turn. So the wheelset steers itself around the bend."
+    punch: "IT STEERS ITSELF"
+    footage: {query: "train bend", type: video}
+  - say: "On straight track, the same cones keep pulling it back to the centre."
+    punch: "SELF-CENTRING"
+    footage: {query: "high speed train", type: video}
+  - say: "The flanges are just the emergency backup."
+    punch: "BACKUP ONLY"
+    footage: {query: "railway wheel", type: image}
+  - say: "Two cones and a stick. Did you know this one? Be honest."
+    punch: "DID YOU KNOW?"
+    footage: {query: "steam train", type: video}
+sources:
+  - "Wickens, A.H., Fundamentals of Rail Vehicle Dynamics, 2003"
+  - "https://en.wikipedia.org/wiki/Hunting_oscillation"
+  - "https://en.wikipedia.org/wiki/Wheelset_(rail_transport)"
