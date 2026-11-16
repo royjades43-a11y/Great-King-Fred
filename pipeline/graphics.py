@@ -16,6 +16,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 from matplotlib import font_manager  # noqa: E402
+from matplotlib.patches import Rectangle  # noqa: E402
 import numpy as np  # noqa: E402
 
 FPS = 30
@@ -38,12 +39,61 @@ def _ease(x: float) -> float:
     return 1 - (1 - x) ** 3
 
 
-def _pipe(size: tuple[int, int], out: Path, preset: str) -> subprocess.Popen:
+STRIP = 0.24  # vertical layout: top 24% of the frame shows the aircraft b-roll
+
+
+def _pipe(size: tuple[int, int], out: Path, preset: str, dur: float, bg: dict | None = None) -> subprocess.Popen:
+    """ffmpeg process that composites piped RGBA chart frames over aircraft b-roll."""
     W, H = size
+    vertical = H > W
+    frames = max(1, round(dur * FPS))
+    inputs, chain = [], f"color=c={SURFACE}:s={W}x{H}:r={FPS}:d={dur + 1:.3f}[base];"
+    if bg:
+        if bg["kind"] == "video":
+            inputs = ["-stream_loop", "-1", "-ss", f"{float(bg.get('start') or 0):.2f}", "-i", bg["path"]]
+        else:
+            inputs = ["-loop", "1", "-framerate", str(FPS), "-i", bg["path"]]
+        grade = "eq=contrast=1.08:saturation=1.18"
+        if vertical:
+            sh = int(H * STRIP) // 2 * 2
+            chain += (f"[0:v]fps={FPS},scale={W}:{sh}:force_original_aspect_ratio=increase,"
+                      f"crop={W}:{sh},{grade}[bg];[base][bg]overlay=0:0[under];")
+        else:
+            chain += (f"[0:v]fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,"
+                      f"crop={W}:{H},{grade}[bg];[base][bg]overlay=0:0[under];")
+        fg = 1
+    else:
+        chain += "[base]null[under];"
+        fg = 0
+    chain += f"[{fg}:v]format=rgba[fg];[under][fg]overlay=0:0:format=auto,format=yuv420p[v]"
     return subprocess.Popen(
-        ["ffmpeg", "-y", "-v", "error", "-f", "rawvideo", "-pix_fmt", "rgba", "-s", f"{W}x{H}",
-         "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", preset,
-         "-crf", "18", str(out)], stdin=subprocess.PIPE)
+        ["ffmpeg", "-y", "-v", "error", *inputs,
+         "-f", "rawvideo", "-pix_fmt", "rgba", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+         "-filter_complex", chain, "-map", "[v]", "-frames:v", str(frames), "-an",
+         "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", str(FPS), "-preset", preset, "-crf", "18", str(out)],
+        stdin=subprocess.PIPE)
+
+
+def _canvas(size: tuple[int, int], has_bg: bool):
+    """Transparent figure with the dark chart surface painted where the chart lives."""
+    W, H = size
+    vertical = H > W
+    fig = plt.figure(figsize=(W / 100, H / 100), dpi=100)
+    fig.patch.set_alpha(0)
+    if not has_bg:
+        fig.patches.append(Rectangle((0, 0), 1, 1, transform=fig.transFigure, fc=SURFACE, zorder=-10))
+    elif vertical:
+        top = 1 - STRIP
+        fig.patches.append(Rectangle((0, 0), 1, top, transform=fig.transFigure, fc=SURFACE, zorder=-10))
+        steps = 24  # soft fade from footage into the chart surface
+        for k in range(steps):
+            fig.patches.append(Rectangle((0, top + 0.05 * k / steps), 1, 0.05 / steps + 0.0005,
+                                         transform=fig.transFigure, fc=SURFACE, lw=0,
+                                         alpha=(1 - k / steps) ** 1.6, zorder=-10))
+    else:
+        fig.patches.append(Rectangle((0, 0), 1, 1, transform=fig.transFigure, fc=SURFACE,
+                                     alpha=0.82, zorder=-10))
+    return fig
 
 
 def _frame(fig) -> bytes:
@@ -59,13 +109,14 @@ def _densify(pts: np.ndarray, n: int = 400) -> np.ndarray:
     return np.column_stack([np.interp(t, s, pts[:, 0]), np.interp(t, s, pts[:, 1])])
 
 
-def render_chart(spec: dict, dur: float, size: tuple[int, int], out: Path, preset: str = "veryfast") -> None:
+def render_chart(spec: dict, dur: float, size: tuple[int, int], out: Path, preset: str = "veryfast",
+                 bg: dict | None = None) -> None:
     W, H = size
     vertical = H > W
-    fig = plt.figure(figsize=(W / 100, H / 100), dpi=100, facecolor=SURFACE)
+    fig = _canvas(size, bg is not None)
     # keep clear of the punch box (top) and captions (lower third)
-    ax = fig.add_axes([0.17, 0.38, 0.73, 0.36] if vertical else [0.10, 0.25, 0.80, 0.55])
-    ax.set_facecolor(SURFACE)
+    ax = fig.add_axes([0.17, 0.45, 0.73, 0.25] if vertical else [0.10, 0.25, 0.80, 0.55])
+    ax.set_facecolor("none")
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
     for side in ("left", "bottom"):
@@ -81,7 +132,7 @@ def render_chart(spec: dict, dur: float, size: tuple[int, int], out: Path, prese
     if spec.get("y_lim"):
         ax.set_ylim(*spec["y_lim"])
     if spec.get("note"):
-        fig.text(0.90, 0.75 if vertical else 0.83, spec["note"], color=INK_2, ha="right",
+        fig.text(0.90, 0.715 if vertical else 0.83, spec["note"], color=INK_2, ha="right",
                  fontsize=20 if vertical else 16, style="italic")
 
     lines, heads, paths = [], [], []
@@ -132,7 +183,7 @@ def render_chart(spec: dict, dur: float, size: tuple[int, int], out: Path, prese
                                           (pts.max(0) - pts.min(0) + 1e-9)).T)))
         callouts.append((dot, txt, idx / (len(pts) - 1)))
 
-    proc = _pipe(size, out, preset)
+    proc = _pipe(size, out, preset, dur, bg)
     frames = max(1, round(dur * FPS))
     draw_time = min(dur * 0.7, max(1.5, dur - 1.2))
     for n in range(frames):
@@ -157,11 +208,12 @@ def render_chart(spec: dict, dur: float, size: tuple[int, int], out: Path, prese
         raise RuntimeError("ffmpeg failed while encoding chart")
 
 
-def render_counter(spec: dict, dur: float, size: tuple[int, int], out: Path, preset: str = "veryfast") -> None:
+def render_counter(spec: dict, dur: float, size: tuple[int, int], out: Path, preset: str = "veryfast",
+                   bg: dict | None = None) -> None:
     """A huge number counting from `from` to `to`, with small labels above/below."""
     W, H = size
     vertical = H > W
-    fig = plt.figure(figsize=(W / 100, H / 100), dpi=100, facecolor=SURFACE)
+    fig = _canvas(size, bg is not None)
     cy = 0.56 if vertical else 0.55
     top = fig.text(0.5, cy + 0.085, spec.get("above", ""), color=INK_2, ha="center",
                    fontsize=40 if vertical else 34, fontweight="semibold")
@@ -172,7 +224,7 @@ def render_counter(spec: dict, dur: float, size: tuple[int, int], out: Path, pre
     start, end = float(spec["from"]), float(spec["to"])
     dec = int(spec.get("decimals", 0))
     pre, suf = spec.get("prefix", ""), spec.get("suffix", "")
-    proc = _pipe(size, out, preset)
+    proc = _pipe(size, out, preset, dur, bg)
     frames = max(1, round(dur * FPS))
     hold = float(spec.get("hold_start", 0.4))
     for n in range(frames):

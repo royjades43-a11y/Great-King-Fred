@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Throttle & Track — script → finished Short in one command.
 
-    python make_video.py episodes/ep001_gimli_glider.yaml            # real voice (needs ELEVENLABS_API_KEY)
-    python make_video.py episodes/ep001_gimli_glider.yaml --draft    # free preview: silent, estimated timing
+    python make_video.py episodes/ep001_why_35000_feet.yaml            # real voice (needs ELEVENLABS_API_KEY)
+    python make_video.py episodes/ep001_why_35000_feet.yaml --draft    # free preview: silent, estimated timing
     python make_video.py episodes/*.yaml --music music/bed.mp3
 
 Output: out/<episode_id>/{video.mp4, thumbnail.jpg, description.txt, credits.json}
@@ -31,7 +31,7 @@ def build(ep_path: Path, draft: bool, music: Path | None, preset: str) -> Path:
 
     print(f"▶ {ep['title']}")
     print("1/4 footage (Wikimedia Commons, CC-licensed only)")
-    assets = footage.fetch_for_segments(segments, work)
+    assets = footage.fetch_for_segments(segments, work, ep.get("broll_filters"), ep.get("chart_background"))
 
     real_voice = bool(os.environ.get("ELEVENLABS_API_KEY")) and not draft
     print(f"2/4 voiceover ({'ElevenLabs' if real_voice else 'DRAFT: silent placeholder'})")

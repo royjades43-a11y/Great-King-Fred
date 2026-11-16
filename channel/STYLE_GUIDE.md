@@ -17,6 +17,15 @@
 4. **Pay the loop off late** — around 70–80% of runtime — so retention holds.
 5. **End with something viewers can check themselves** plus a question ("Next flight, watch the altitude on the map screen. Did you know this one?"). No "like and subscribe" begging; one quick spoken line max.
 
+## B-roll: the aircraft is the star
+The audience is plane and train lovers. **A moving aircraft on screen is what holds them**: one flying, taking off, landing or taxiing. It matters more than any graphic.
+- **Match the shot to the line.** If the narration says "planes at 35,000 ft", the shot is a plane high in the sky at cruise, never an empty sky, a satellite image or a cockpit gauge.
+- **The hook shot is the best aircraft shot in the video**, and the plane must be visible in the very first frame. Use `focus:` to keep the aircraft in the vertical crop.
+- **No aircraft, no shot.** Avoid window views, cabin interiors, bare wing surfaces, diagrams, archive newsreels and stills. Automatic picks must have an aircraft in the file title (`broll_filters` in the episode YAML).
+- **Charts keep a plane on screen too.** In vertical Shorts, the top quarter of every chart or counter plays aircraft footage (`background:`), and the chart sits below it.
+- **Preference order:** close flyby or rotation > takeoff or landing > taxiing > distant plane in the sky.
+- **Hand-pick, then pin.** Run `python tools/scout.py --query "..."` to get contact sheets with timestamps, then pin the exact moment in the script: `footage: {file: "...", start: 52, focus: 0.27}`.
+
 ## Pacing rules
 | Element | Rule |
 |---|---|
@@ -25,7 +34,7 @@
 | Captions | Always on, burned in, 1–3 words at a time, active word highlighted yellow. |
 | Numbers | Always shown on screen as punch text. Convert units for both audiences (ft + m, mph + km/h). |
 | Shorts length | 40–65 s (hard cap 75 s). Long-form: 8–12 min, chapters every ~90 s. |
-| Visual motion | Stills get a Ken Burns push; video gets a slow punch-in. Nothing sits static. |
+| Visual motion | Moving aircraft footage first. Stills only as a last resort (with a Ken Burns push). Nothing sits static. |
 
 ## Charts (the core of every video)
 - Built from data written in the script YAML and animated: the line draws itself, and callouts pop in as the line reaches them.

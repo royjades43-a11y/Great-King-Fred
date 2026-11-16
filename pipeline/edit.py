@@ -41,14 +41,14 @@ ENCODE = ["-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", str(FPS)]
 
 
 def render_shot(asset: dict, dur: float, idx: int, size: tuple[int, int], out: Path,
-                preset: str) -> None:
+                preset: str, offset: float = 0.0) -> None:
     W, H = size
     frames = max(1, round(dur * FPS))
     if asset["kind"] == "graphic":
         from . import graphics
         spec = {**asset["spec"], **asset["spec"].get("chart", {})}
         (graphics.render_chart if asset["graphic"] == "chart" else graphics.render_counter)(
-            spec, frames / FPS, size, out, preset)
+            spec, frames / FPS, size, out, preset, bg=asset.get("bg"))
         return
     flash = f"fade=in:st=0:d=0.12:color=white"
     if asset["kind"] == "image":
@@ -70,11 +70,16 @@ def render_shot(asset: dict, dur: float, idx: int, size: tuple[int, int], out: P
         # skip the (often boring) first 15% of the clip, loop short clips
         src_dur = asset.get("duration") or probe_duration(Path(asset["path"]))
         start = 0.0
-        if src_dur > dur + 1:
+        if asset.get("start") is not None:
+            # hand-picked moment; later cuts of the same beat continue from there
+            start = float(asset["start"]) + offset
+        elif src_dur > dur + 1:
             rnd = random.Random(asset["url"] + str(idx))
             start = rnd.uniform(src_dur * 0.15, max(src_dur * 0.15, src_dur - dur - 0.5))
         z0, z1 = (1.0, 1.12) if idx % 2 == 0 else (1.12, 1.0)
-        vf = (f"fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+        fx = asset.get("focus")
+        cx = f":x='max(0,min(iw-ow,iw*{fx}-ow/2))'" if fx is not None else ""
+        vf = (f"fps={FPS},scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H}{cx},"
               f"zoompan=z='{z0}+({z1}-{z0})*on/{frames}':d=1:x='iw/2-iw/zoom/2':"
               f"y='ih/2-ih/zoom/2':s={W}x{H}:fps={FPS},{GRADE},{flash},format=yuv420p")
         inp = ["-stream_loop", "-1", "-ss", f"{start:.2f}", "-i", asset["path"]]
@@ -170,7 +175,7 @@ def assemble(segments: list[dict], assets: list[dict], size: tuple[int, int], wo
         print(f"  beat {i:02d}  {seg['duration']:.2f}s  {asset['kind']}  x{n} cut(s)")
         for k in range(n):
             shot = shots_dir / f"shot_{i:02d}_{k}.mp4"
-            render_shot(asset, cuts[k + 1] - cuts[k], i * 3 + k + (i % 2), size, shot, preset)
+            render_shot(asset, cuts[k + 1] - cuts[k], i * 3 + k + (i % 2), size, shot, preset, offset=cuts[k])
             shot_list.append(shot)
         voice_list.append(Path(seg["voice_path"]))
         offset += seg["duration"]
@@ -222,7 +227,8 @@ def write_description(ep: dict, assets: list[dict], out: Path, synthetic_voice: 
     if ep.get("sources"):
         lines += ["📚 Sources:"] + [f"• {s}" for s in ep["sources"]] + [""]
     lines += ["🎞 Footage (Creative Commons / Public Domain, via Wikimedia Commons):"]
-    assets = [a for a in assets if a["kind"] != "graphic"]
+    assets = [a.get("bg") if a["kind"] == "graphic" else a for a in assets]
+    assets = [a for a in assets if a]
     seen = set()
     for a in assets:
         if a["url"] in seen:

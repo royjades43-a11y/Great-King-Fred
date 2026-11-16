@@ -37,7 +37,8 @@ Re-runs are cached: footage searches and downloads, plus each voice line. Change
 segments:
   - say: "Planes don't cruise at thirty-five thousand feet to avoid the weather."  # narration (write for the ear)
     punch: "IT'S NOT THE WEATHER"                                   # on-screen red box, ≤5 words
-    footage: {query: "contrail", type: video}                       # Commons search; video or image
+    footage: {file: "Air-to-air contrails.webm", start: 52, focus: 0.27}  # pinned clip, exact moment, crop focus
+    # or: footage: {query: "Boeing 747 takeoff", type: video}      # automatic search (aircraft-only filter)
 
   - say: "Up there, only thirty-one percent of the air is left."
     punch: "ONLY 31% OF THE AIR"
@@ -48,11 +49,19 @@ segments:
         y_label: "altitude (thousand ft)"
         series: [{name: "Air density", points: [[100, 0], [53.3, 20], [31.0, 35]]}]
         highlights: [{x: 31.0, y: 35, label: "31% at 35,000 ft"}]
+      background: {file: "UPS A300 (N152UP) Takeoff Portland Airport (PDX).ogv", start: 41}  # plane plays above the chart
 
   - say: "…but across the ground, you're doing about four hundred and fifty."
     footage: {type: counter, from: 250, to: 449, suffix: " kt", above: "true airspeed", below: "≈ MACH 0.78"}
 ```
 Each beat becomes 1–3 cuts depending on its length, so there's a fresh visual roughly every 3–4 s. Captions are timed to the actual ElevenLabs word timings.
+
+## Finding b-roll
+```bash
+python tools/scout.py --query "Boeing 747 takeoff"           # contact sheets in scout/, with timestamps
+python tools/scout.py --file "Air-to-air contrails.webm"
+```
+Pick the moment where the aircraft is biggest and moving, then pin it with `file:` + `start:` (+ `focus:` if it's off-centre).
 
 ## Before uploading (checklist)
 - [ ] Watch the whole render and swap any `footage.query` that matched something off-topic (edit `work/<id>/footage.json` or change the query and delete that file).

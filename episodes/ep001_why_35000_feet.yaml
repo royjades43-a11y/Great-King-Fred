@@ -12,6 +12,10 @@ graphics_note: >
   Charts use the International Standard Atmosphere (ISO 2533). Speeds assume a
   constant 250 kt equivalent airspeed (constant lift and drag). The step-climb
   profile is illustrative.
+# plane lovers watch for the aircraft: every automatic pick must have one in the title
+broll_filters:
+  require_any: [airliner, airbus, boeing, "737", "747", "767", "777", "787", a300, a320, a321, a330, a350, a380, jet, aircraft, plane, embraer]
+  avoid: ["193", "194", "195", newsreel, satellite, cira, modis, cockpit, interior, cabin]
 voice:
   voice_id: pNInz6obpgDQGcFmaJgB   # replace with your chosen ElevenLabs voice
   model_id: eleven_multilingual_v2
@@ -22,15 +26,16 @@ segments:
   # ── hook ────────────────────────────────────────────────────────────────
   - say: "Planes don't cruise at thirty-five thousand feet to avoid the weather."
     punch: "IT'S NOT THE WEATHER"
-    footage: {query: "contrail", type: video}
+    footage: {file: "Air-to-air contrails.webm", start: 52, focus: 0.27, query: "airliner contrail"}
   - say: "The real reason is hiding in one number."
     punch: "ONE NUMBER"
-    footage: {query: "airliner cockpit flight", type: video}
+    footage: {file: "Cargolux 747 taking off - Paine Field USA 5-19-2012.ogv", start: 2, query: "Boeing 747 takeoff"}
 
   # ── the thin air ────────────────────────────────────────────────────────
   - say: "Up there, only thirty-one percent of the air is left."
     punch: "ONLY 31% OF THE AIR"
     footage:
+      background: {file: "Air-to-air contrails.webm", start: 54, query: "airliner contrail"}
       type: chart
       chart:
         x_label: "air density, % of sea level"
@@ -46,34 +51,35 @@ segments:
           - {x: 31.0, y: 35, label: "31% at 35,000 ft", offset: [34, -8], ha: left}
   - say: "Thin air means less drag, right? Not really."
     punch: "LESS DRAG? NOPE."
-    footage: {query: "airliner wing flight", type: video}
+    footage: {file: "Plane Spotting China airlines Cargo 747-400 takeoff and landing.webm", start: 724, query: "Boeing 747 flyby"}
   - say: "A wing needs a certain flow of air to hold the plane up."
     punch: "LIFT NEEDS AIR"
-    footage: {query: "airliner wing view window", type: image}
+    footage: {file: "UPS 767-300F (N356UP) Takeoff Portland Airport (PDX).ogv", start: 48, focus: 0.45, query: "Boeing 767 takeoff"}
   - say: "With a third of the air, it just flies about eighty percent faster."
     punch: "+80% SPEED"
-    footage: {type: counter, from: 1.0, to: 1.8, decimals: 1, prefix: "×",
+    footage: {type: counter, background: {file: "UPS A300 (N152UP) Takeoff Portland Airport (PDX).ogv", start: 41, query: "airliner climb"}, from: 1.0, to: 1.8, decimals: 1, prefix: "×",
               above: "speed for the same lift", below: "at 35,000 ft vs sea level"}
 
   # ── the payoff ──────────────────────────────────────────────────────────
   - say: "The wing feels the same lift, and about the same drag, as a slow plane at sea level."
     punch: "SAME LIFT. SAME DRAG."
-    footage: {query: "Airbus A320 takeoff", type: video}
+    footage: {file: "UPS A300 Sunset Landing at PDX.ogv", start: 13, query: "airliner landing"}
   - say: "So the speed in the cockpit reads about two hundred and fifty knots…"
     punch: "COCKPIT: ~250 KT"
-    footage: {query: "airspeed indicator", type: image}
+    footage: {file: "Plane Spotting Cargolux Airlines Boeing 747-4F and 747-8F.webm", start: 420, query: "Boeing 747 landing"}
   - say: "…but across the ground, you're doing about four hundred and fifty."
     punch: "REALITY: ~450 KT"
-    footage: {type: counter, from: 250, to: 449, suffix: " kt",
+    footage: {type: counter, background: {file: "Airbus A321-231 Frankfurt-Sofia 2018-08-18.webm", start: 8, query: "airliner flying"}, from: 250, to: 449, suffix: " kt",
               above: "true airspeed at 35,000 ft", below: "≈ MACH 0.78"}
   - say: "Same push from the engines, nearly double the distance. That's the secret."
     punch: "SAME PUSH, ~2× DISTANCE"
-    footage: {query: "turbofan engine airliner", type: video}
+    footage: {file: "UPS N337UP 767-300ER Takeoff Portland Airport (PDX).ogv", start: 29, query: "airliner engine takeoff"}
 
   # ── why not higher ──────────────────────────────────────────────────────
   - say: "So why not go higher? The speed you need keeps rising… toward the speed of sound."
     punch: "THE INVISIBLE WALL"
     footage:
+      background: {file: "Plane Spotting Cargolux Airlines Boeing 747-4F and 747-8F.webm", start: 178, query: "Boeing 747 in flight"}
       type: chart
       chart:
         x_label: "speed (knots)"
@@ -95,15 +101,16 @@ segments:
           - {x: 574, y: 45, label: "shockwaves", offset: [-36, 10], ha: right, series: 0}
   - say: "Get close and shockwaves form on the wing. Drag shoots up, and the engines run short of air."
     punch: "SHOCKWAVES + WEAK ENGINES"
-    footage: {query: "shock wave airliner wing", type: image}
+    footage: {file: "Plane Spotting CARGOLUX Boeing 747-800 Go Around.webm", start: 42, query: "Boeing 747 go around"}
 
   # ── the bit almost nobody notices ───────────────────────────────────────
   - say: "And almost nobody notices this. On long flights, your plane keeps climbing."
     punch: "IT KEEPS CLIMBING"
-    footage: {query: "Boeing 777 cruise", type: video}
+    footage: {file: "UPS 767-300F (N356UP) Takeoff Portland Airport (PDX).ogv", start: 59, query: "airliner climb sunset"}
   - say: "As it burns fuel it gets lighter, so its best altitude rises. Pilots step up."
     punch: "LIGHTER = HIGHER"
     footage:
+      background: {file: "UPS N148UP A300 Takeoff Portland Airport (PDX).ogv", start: 68, query: "airliner climb"}
       type: chart
       chart:
         x_label: "hours into a long-haul flight"
@@ -124,7 +131,7 @@ segments:
   # ── close ───────────────────────────────────────────────────────────────
   - say: "Next flight, watch the altitude on the map screen. Did you know this one?"
     punch: "DID YOU KNOW?"
-    footage: {query: "in-flight entertainment map", type: image}
+    footage: {file: "QTR A380 A7-APD 23dec14 LFBO-3.webm", start: 54, query: "Airbus A380 takeoff"}
 sources:
   - "ISO 2533:1975, Standard Atmosphere (density, temperature and speed of sound by altitude)"
   - "Anderson, J.D., Introduction to Flight, 9th ed. (lift equation, equivalent vs true airspeed, Breguet range)"
