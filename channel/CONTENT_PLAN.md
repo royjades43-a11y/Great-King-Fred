@@ -1,28 +1,36 @@
-# Content Plan — first 12 uploads
+# Content Plan: analysis first
 
-Cadence: **3 Shorts/week** (Mon/Wed/Fri) + **1 long-form every 2 weeks**, built by cutting Shorts from long-form scripts.
+The channel explains **how and why machines work, with real numbers**, not incident stories. Every video:
+1. opens on a belief most viewers hold ("planes fly high to avoid weather"),
+2. breaks it with one number,
+3. shows the mechanism with an animated chart built from a citable source,
+4. ends with something the viewer can check themselves on their next trip.
 
-| # | Series | Working title | Hook line | Status |
-|---|---|---|---|---|
-| 1 | What Would Happen If | What happens if a jet runs out of fuel at 41,000 ft? | "At forty-one thousand feet, both engines went silent." | ✅ script `episodes/ep001_gimli_glider.yaml` |
-| 2 | Why Does It | Why trains don't need steering wheels | "A train has no steering wheel. So how does it turn?" | ✅ script `episodes/ep002_train_steering.yaml` |
-| 3 | The Record | The steam engine record nobody has beaten since 1938 | "In 1938, a steam engine hit 126 mph… and nothing has beaten it since." | ✅ script `episodes/ep003_mallard.yaml` |
-| 4 | Why Does It | Why plane windows are round | "Square windows once tore planes apart in mid-air." | idea |
-| 5 | What Would Happen If | What if you opened a plane door mid-flight? | "You physically can't — and the reason is pressure." | idea |
-| 6 | The Record | The fastest jet ever flown was retired 30 years ago | "It outran missiles. Literally." | idea |
-| 7 | What Would Happen If | How long does a bullet train take to stop? | "Hit the brakes at 300 km/h… and keep waiting." | idea |
-| 8 | Why Does It | Why planes leave white lines in the sky | "Those aren't smoke." | idea |
-| 9 | The Record | The longest straight railway on Earth | "478 km without a single curve." | idea (verify) |
-| 10 | What Would Happen If | What if lightning hits a plane? | "It happens to every airliner about once a year." | idea (verify) |
-| 11 | Why Does It | Why trains click-clack (and new ones don't) | "That sound is disappearing." | idea |
-| 12 | Long-form | 7 times planes landed with no engines | compilation of #1 + Air Transat 236 + BA9 + US1549 | idea |
+Cadence: **3 Shorts/week** (Mon/Wed/Fri) + **1 long-form every 2 weeks**. Long-forms go deeper on the same topic and get cut back into Shorts.
+
+| # | Working title | The belief we break | The number / mechanism | Data source | Status |
+|---|---|---|---|---|---|
+| 1 | Why planes fly at 35,000 ft (it's not the weather) | "To avoid storms" | 31% air density → same lift and drag at ~1.8× the speed; step climbs | ISA (ISO 2533), Anderson | ✅ `episodes/ep001_why_35000_feet.yaml` |
+| 2 | Why trains don't need a steering wheel | "The flanges steer it" | Conical wheels + solid axle = self-steering | Wickens, rail dynamics | ✅ `episodes/ep002_train_steering.yaml` |
+| 3 | Your flight is slower than it was in 1970 | "Planes keep getting faster" | Drag rises with speed²; cruise Mach dropped (707 ≈ 0.84, A320 ≈ 0.78) and schedules padded | Manufacturer data, airline timetables | research |
+| 4 | Why flying east is faster than flying west | "Same distance, same time" | Jet stream 100–200 kt tailwinds; plot actual flight times both ways | Flight-tracking data, NOAA winds | research |
+| 5 | Why planes don't fly straight lines on the map | "The map line is the short way" | Great circle vs Mercator; compute both distances | Haversine maths | research |
+| 6 | Why a full jet burns fuel just to carry fuel | "Fuel is just fuel" | Breguet range equation: extra fuel weight costs fuel | Breguet, airline tankering studies | research |
+| 7 | Is flying more fuel-efficient than driving? | "Planes are gas guzzlers" | L/100 passenger-km for a modern narrowbody vs a car with 1.5 occupants | ICCT efficiency reports | research |
+| 8 | Why wings bend so much | "Rigid is strong" | 787 wingtips flex metres upward in flight; flexing spreads the load | Certification wing-bend test data | research |
+| 9 | Why planes land into the wind | "Wind is just bumpy" | Ground speed = airspeed − headwind; shorter runway needed | Basic kinematics | research |
+| 10 | Why your ears pop: the cabin is at 8,000 ft | "The cabin is at sea level" | Cabin altitude limit; pressure differential vs fuselage stress | FAA 14 CFR 25.841 | research |
+| 11 | How long a 300 km/h train takes to stop | "Brakes stop it fast" | Kinetic energy ∝ v²; braking distance in km | Operator braking curves | research |
+| 12 | Long-form: The physics of a flight, gate to gate | | Each phase with its own chart | All of the above | later |
+
+## Rules for analysis videos
+- **Every number on screen has a source** in the YAML `sources:` list, and any modelling assumption goes in `graphics_note:` (it's printed in the description).
+- **Charts are built from data in the script** (`footage: {type: chart}`), never screenshotted from elsewhere.
+- Simplifications are fine but get named: "roughly", "illustrative", "standard atmosphere".
+- If a fact can't be checked, it gets cut.
 
 ## Growth loop
-1. Publish Short → watch 48 h retention graph → note the second people drop.
-2. Rewrite that beat in the template for the next script (shorter sentence, earlier number, new visual).
-3. Top-performing Short gets expanded into a long-form; long-form gets chopped back into 3 new Shorts.
-4. Pin a comment with a follow-up question; reply to the first 30 comments in the first hour.
-
-## Titles & thumbnails
-- Titles: question or tension, ≤ 50 chars, number if possible ("…at 41,000 ft?").
-- Thumbnail: one machine, one face of emotion or one giant number, ≤ 3 words of text, yellow/red brand colours.
+1. Publish → check the 48 h retention graph → find the second viewers drop.
+2. That beat gets rewritten in the next script (shorter sentence, number sooner, chart earlier).
+3. Top Short becomes a long-form, and the long-form is cut into 3 new Shorts.
+4. Pin a comment asking viewers to report what their own flight's map showed.

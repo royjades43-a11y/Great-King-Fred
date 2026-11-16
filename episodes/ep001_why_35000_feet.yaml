@@ -1,0 +1,132 @@
+id: ep001_why_35000_feet
+series: Why Does It
+title: "Why planes fly at 35,000 ft (it's not the weather)"
+format: short
+description: >
+  Most people think airliners cruise high to dodge storms. The real reason is a
+  neat piece of aerodynamics: thin air lets the same wing, with roughly the same
+  drag, cover almost twice the distance. Here's the maths, with real
+  atmosphere numbers.
+tags: [aviation, aerodynamics, planes, cruising altitude, physics, why does it]
+graphics_note: >
+  Charts use the International Standard Atmosphere (ISO 2533). Speeds assume a
+  constant 250 kt equivalent airspeed (constant lift and drag). The step-climb
+  profile is illustrative.
+voice:
+  voice_id: pNInz6obpgDQGcFmaJgB   # replace with your chosen ElevenLabs voice
+  model_id: eleven_multilingual_v2
+  stability: 0.45
+  similarity_boost: 0.75
+  style: 0.45
+segments:
+  # ── hook ────────────────────────────────────────────────────────────────
+  - say: "Planes don't cruise at thirty-five thousand feet to avoid the weather."
+    punch: "IT'S NOT THE WEATHER"
+    footage: {query: "contrail", type: video}
+  - say: "The real reason is hiding in one number."
+    punch: "ONE NUMBER"
+    footage: {query: "airliner cockpit flight", type: video}
+
+  # ── the thin air ────────────────────────────────────────────────────────
+  - say: "Up there, only thirty-one percent of the air is left."
+    punch: "ONLY 31% OF THE AIR"
+    footage:
+      type: chart
+      chart:
+        x_label: "air density, % of sea level"
+        y_label: "altitude (thousand ft)"
+        x_lim: [0, 108]
+        y_lim: [0, 50]
+        series:
+          - name: "Air density"
+            points: [[100.0, 0], [86.2, 5], [73.8, 10], [62.9, 15], [53.3, 20], [44.8, 25],
+                     [37.4, 30], [31.0, 35], [24.6, 40], [19.4, 45], [15.2, 50]]
+            label_at: [72, 17]
+        highlights:
+          - {x: 31.0, y: 35, label: "31% at 35,000 ft", offset: [34, -8], ha: left}
+  - say: "Thin air means less drag, right? Not really."
+    punch: "LESS DRAG? NOPE."
+    footage: {query: "airliner wing flight", type: video}
+  - say: "A wing needs a certain flow of air to hold the plane up."
+    punch: "LIFT NEEDS AIR"
+    footage: {query: "airliner wing view window", type: image}
+  - say: "With a third of the air, it just flies about eighty percent faster."
+    punch: "+80% SPEED"
+    footage: {type: counter, from: 1.0, to: 1.8, decimals: 1, prefix: "×",
+              above: "speed for the same lift", below: "at 35,000 ft vs sea level"}
+
+  # ── the payoff ──────────────────────────────────────────────────────────
+  - say: "The wing feels the same lift, and about the same drag, as a slow plane at sea level."
+    punch: "SAME LIFT. SAME DRAG."
+    footage: {query: "Airbus A320 takeoff", type: video}
+  - say: "So the speed in the cockpit reads about two hundred and fifty knots…"
+    punch: "COCKPIT: ~250 KT"
+    footage: {query: "airspeed indicator", type: image}
+  - say: "…but across the ground, you're doing about four hundred and fifty."
+    punch: "REALITY: ~450 KT"
+    footage: {type: counter, from: 250, to: 449, suffix: " kt",
+              above: "true airspeed at 35,000 ft", below: "≈ MACH 0.78"}
+  - say: "Same push from the engines, nearly double the distance. That's the secret."
+    punch: "SAME PUSH, ~2× DISTANCE"
+    footage: {query: "turbofan engine airliner", type: video}
+
+  # ── why not higher ──────────────────────────────────────────────────────
+  - say: "So why not go higher? The speed you need keeps rising… toward the speed of sound."
+    punch: "THE INVISIBLE WALL"
+    footage:
+      type: chart
+      chart:
+        x_label: "speed (knots)"
+        y_label: "altitude (thousand ft)"
+        x_lim: [200, 720]
+        y_lim: [0, 50]
+        series:
+          - name: "Speed needed"
+            points: [[250, 0], [269, 5], [291, 10], [315, 15], [342, 20], [373, 25],
+                     [409, 30], [449, 35], [504, 40], [568, 45]]
+            label_at: [335, 7]
+            label_ha: left
+          - name: "Speed of sound"
+            points: [[661, 0], [650, 5], [638, 10], [626, 15], [614, 20], [602, 25],
+                     [589, 30], [576, 35], [574, 40], [574, 45]]
+            label_at: [598, 20]
+            label_ha: right
+        highlights:
+          - {x: 574, y: 45, label: "shockwaves", offset: [-36, 10], ha: right, series: 0}
+  - say: "Get close and shockwaves form on the wing. Drag shoots up, and the engines run short of air."
+    punch: "SHOCKWAVES + WEAK ENGINES"
+    footage: {query: "shock wave airliner wing", type: image}
+
+  # ── the bit almost nobody notices ───────────────────────────────────────
+  - say: "And almost nobody notices this. On long flights, your plane keeps climbing."
+    punch: "IT KEEPS CLIMBING"
+    footage: {query: "Boeing 777 cruise", type: video}
+  - say: "As it burns fuel it gets lighter, so its best altitude rises. Pilots step up."
+    punch: "LIGHTER = HIGHER"
+    footage:
+      type: chart
+      chart:
+        x_label: "hours into a long-haul flight"
+        y_label: "altitude (thousand ft)"
+        x_lim: [0, 11.5]
+        y_lim: [0, 45]
+        note: "illustrative step climb"
+        series:
+          - name: "Cruise altitude"
+            points: [[0, 0], [0.4, 31], [3.0, 31], [3.15, 35], [7.0, 35], [7.15, 39],
+                     [10.4, 39], [11.0, 0]]
+            label_at: [5.0, 26]
+            label_ha: center
+        highlights:
+          - {x: 3.15, y: 35, label: "35,000", offset: [-10, 26], ha: right}
+          - {x: 7.15, y: 39, label: "39,000", offset: [-10, 26], ha: right}
+
+  # ── close ───────────────────────────────────────────────────────────────
+  - say: "Next flight, watch the altitude on the map screen. Did you know this one?"
+    punch: "DID YOU KNOW?"
+    footage: {query: "in-flight entertainment map", type: image}
+sources:
+  - "ISO 2533:1975, Standard Atmosphere (density, temperature and speed of sound by altitude)"
+  - "Anderson, J.D., Introduction to Flight, 9th ed. (lift equation, equivalent vs true airspeed, Breguet range)"
+  - "Federal Aviation Administration, Airplane Flying Handbook, FAA-H-8083-3C, ch. on high-altitude and transonic flight"
+  - "Airbus, Getting to Grips with Aircraft Performance (2002): optimum altitude and step climbs"

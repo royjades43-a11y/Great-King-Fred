@@ -161,7 +161,7 @@ def fetch_for_segments(segments: list[dict], work: Path) -> list[dict]:
     cache = work / "footage.json"
     if cache.exists():
         picks = json.loads(cache.read_text())
-        if len(picks) == len(segments) and all(Path(p["path"]).exists() for p in picks):
+        if len(picks) == len(segments) and all(p["kind"] == "graphic" or Path(p["path"]).exists() for p in picks):
             return picks
     global _search_cache_path
     _search_cache_path = work / "search_cache.json"
@@ -171,6 +171,12 @@ def fetch_for_segments(segments: list[dict], work: Path) -> list[dict]:
     picks = []
     for i, seg in enumerate(segments):
         spec = seg.get("footage", {})
+        if spec.get("type") in ("chart", "counter"):
+            # generated explainer graphic: nothing to download, nothing to credit
+            picks.append({"kind": "graphic", "graphic": spec["type"], "spec": spec,
+                          "title": f"graphic-{i}", "url": f"graphic:{i}", "path": ""})
+            print(f"  [{i:02d}] {spec['type']} (generated)")
+            continue
         query, kind = spec.get("query", "train"), spec.get("type", "video")
         other = "image" if kind == "video" else "video"
         cands = search(query, kind) or search(query, other)

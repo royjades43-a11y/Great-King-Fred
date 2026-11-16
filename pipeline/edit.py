@@ -44,6 +44,12 @@ def render_shot(asset: dict, dur: float, idx: int, size: tuple[int, int], out: P
                 preset: str) -> None:
     W, H = size
     frames = max(1, round(dur * FPS))
+    if asset["kind"] == "graphic":
+        from . import graphics
+        spec = {**asset["spec"], **asset["spec"].get("chart", {})}
+        (graphics.render_chart if asset["graphic"] == "chart" else graphics.render_counter)(
+            spec, frames / FPS, size, out, preset)
+        return
     flash = f"fade=in:st=0:d=0.12:color=white"
     if asset["kind"] == "image":
         inp = ["-loop", "1", "-framerate", str(FPS), "-i", asset["path"]]
@@ -159,7 +165,7 @@ def assemble(segments: list[dict], assets: list[dict], size: tuple[int, int], wo
         seg["offset"] = offset
         # pattern interrupt: beats longer than ~4 s get re-cut into 2-3 shots with
         # alternating motion (and a different source offset for video)
-        n = 1 if seg["duration"] <= 4.5 else 2 if seg["duration"] <= 8 else 3
+        n = 1 if seg["duration"] <= 4.5 or asset["kind"] == "graphic" else 2 if seg["duration"] <= 8 else 3
         cuts = [round(seg["duration"] * k / n * FPS) / FPS for k in range(n + 1)]
         print(f"  beat {i:02d}  {seg['duration']:.2f}s  {asset['kind']}  x{n} cut(s)")
         for k in range(n):
@@ -216,6 +222,7 @@ def write_description(ep: dict, assets: list[dict], out: Path, synthetic_voice: 
     if ep.get("sources"):
         lines += ["📚 Sources:"] + [f"• {s}" for s in ep["sources"]] + [""]
     lines += ["🎞 Footage (Creative Commons / Public Domain, via Wikimedia Commons):"]
+    assets = [a for a in assets if a["kind"] != "graphic"]
     seen = set()
     for a in assets:
         if a["url"] in seen:
@@ -225,6 +232,8 @@ def write_description(ep: dict, assets: list[dict], out: Path, synthetic_voice: 
     if any("SA" in a["licence"].upper() for a in assets):
         lines += ["", "Footage marked CC BY-SA was cut, cropped, colour-graded and captioned by "
                   "Throttle & Track; this edit is shared under the same licence."]
+    if ep.get("graphics_note"):
+        lines += ["", f"📈 {ep['graphics_note']}"]
     lines += ["", "🎙 Narration voice is AI-generated (ElevenLabs)." if synthetic_voice else "", "",
               " ".join(f"#{t.replace(' ', '')}" for t in ep.get("tags", [])[:5])]
     out.write_text("\n".join(lines).strip() + "\n", encoding="utf-8")

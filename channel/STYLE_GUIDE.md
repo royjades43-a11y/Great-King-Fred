@@ -1,23 +1,21 @@
 # Throttle & Track — Channel Style Guide
 
-> Planes, trains, and "what would happen if…" — told fast, told true.
+> How planes and trains really work: real numbers, explained fast.
 
 ## Positioning
 - **Who it's for:** curious people who scroll past "educational" content. Not enthusiasts only — the 14‑year‑old and the 60‑year‑old should both finish the video.
 - **Promise:** every video answers one question you didn't know you had, with one fact you'll repeat to someone today.
-- **Three series:**
-  1. **What Would Happen If…** — physics/engineering scenarios (engines fail, a train never brakes, a plane flies too high).
-  2. **Why Does It…** — the hidden engineering of normal things (why trains don't need steering, why plane windows are round).
-  3. **The Record** — one machine, one record, one day (Mallard, Concorde, the SR‑71).
+- **Format:** analysis, not anecdotes. Each video takes one common belief, breaks it with one number, and shows the mechanism on an animated chart. No incident or disaster stories.
+- **Series:** *Why Does It…* (hidden engineering), *What Would Happen If…* (physics thought experiments worked through with real numbers), *By The Numbers* (one dataset, one surprising answer).
 
 ## The hook formula (first 3 seconds decide everything)
-1. **Open on the most dramatic line in the script.** Never "Hi, welcome back". Never the question alone — the *stakes*.
-   - ✅ "At forty-one thousand feet, both engines went silent."
-   - ❌ "Today we're talking about the Gimli Glider."
-2. **On-screen punch text** restates the hook in ≤5 words (e.g. `41,000 FT. ZERO ENGINES.`).
-3. **Open a loop** by second 5: tease the payoff ("…and the place they landed was a racetrack full of people").
+1. **Open by contradicting a common belief.** Never "Hi, welcome back".
+   - ✅ "Planes don't cruise at thirty-five thousand feet to avoid the weather."
+   - ❌ "Today we're looking at cruising altitude."
+2. **On-screen punch text** restates the hook in ≤5 words (e.g. `IT'S NOT THE WEATHER`).
+3. **Open a loop** by second 5: promise the answer ("The real reason is hiding in one number").
 4. **Pay the loop off late** — around 70–80% of runtime — so retention holds.
-5. **End on a question** that invites a comment ("Would you have tried the landing?"). No "like and subscribe" begging; one quick spoken line max.
+5. **End with something viewers can check themselves** plus a question ("Next flight, watch the altitude on the map screen. Did you know this one?"). No "like and subscribe" begging; one quick spoken line max.
 
 ## Pacing rules
 | Element | Rule |
@@ -28,6 +26,12 @@
 | Numbers | Always shown on screen as punch text. Convert units for both audiences (ft + m, mph + km/h). |
 | Shorts length | 40–65 s (hard cap 75 s). Long-form: 8–12 min, chapters every ~90 s. |
 | Visual motion | Stills get a Ken Burns push; video gets a slow punch-in. Nothing sits static. |
+
+## Charts (the core of every video)
+- Built from data written in the script YAML and animated: the line draws itself, and callouts pop in as the line reaches them.
+- One axis per chart, never two. Thin lines, recessive grid, direct labels (no legend box), text in neutral ink.
+- Series colours are amber `#CF7F00` then blue `#3A92DB`, checked for colour-blind separation on the dark `#0E1116` background. Brand yellow is reserved for callout rings and hero numbers.
+- Big counting numbers (`type: counter`) for the single headline number of a beat.
 
 ## Look
 - **Font:** Inter ExtraBold/Black, ALL CAPS captions, heavy black outline.
@@ -50,4 +54,4 @@
 ## Accuracy
 - Every fact in a script carries a source in the YAML `sources:` list. If it can't be sourced, it doesn't get said.
 - "What would happen if" scenarios: be clear which parts are real incidents and which are hypothetical.
-- Disaster topics: respectful tone, no sensational crash imagery, name the crew who saved lives.
+- State modelling assumptions in `graphics_note` (e.g. "International Standard Atmosphere, constant equivalent airspeed").
