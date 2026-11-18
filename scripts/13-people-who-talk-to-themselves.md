@@ -1,7 +1,7 @@
 # Video 13: The Psychology of People Who Talk to Themselves
 
 **Title:** The Psychology of People Who Talk to Themselves
-**Length:** 1,400 words, about 8:50 at Josh's pace (video 12 ran at 2.64 words a second). That's over 8:00, so
+**Length:** 1,413 words, about 8:55 at Josh's pace (video 12 ran at 2.64 words a second). That's over 8:00, so
 mid-roll ads are possible.
 
 ## Why this title and topic
@@ -22,11 +22,13 @@ mid-roll ads are possible.
 
 ## Engagement design (the new playbook in `GROWTH.md`)
 
-- **Faster intro:**
-  - the "you" moment in the first 5 seconds ("You've lost your keys.")
-  - the twist at about 0:17 ("Saying 'keys' out loud may have helped you find them.")
-  - the first real study by about 0:32
-  - the promise by about 0:42
+- **Opening (the owner's direction): start with the four-year-old, then say what the video is about.**
+  - **0:00:** a child talking to their blocks. "Nobody thinks they're crazy. We think they're cute. But give that
+    same habit to an adult… and we start to wonder."
+  - **About 0:17:** "So here's what this video is about. By the end, you'll know…", which states all three payoffs.
+  - **About 0:33:** the first real finding (Vygotsky: thinking out loud, and more of it when the task gets harder).
+  - **About 1:05:** the adult version, the keys, and the twist: saying "keys" may help you find them (Lupyan &
+    Swingley).
 - **Two open loops, both paid off:**
   - "Why some people hear no inner voice at all" → paid at about 3:30
   - "The one small word that changes how your self-talk works" → paid at about 6:00 ("I" vs your name or "you")
@@ -42,8 +44,9 @@ mid-roll ads are possible.
   - the best players doing it in front of millions
   - LeBron James talking about LeBron James
   - "would you call your friend an idiot for dropping a glass?"
-- **A running image:** the keys. They open the video, return in rule one, and close the video ("Keys, keys, keys…
-  don't feel crazy.").
+- **Running images:**
+  - The four-year-old opens the video and closes it ("It started when you were four, narrating your blocks.").
+  - The keys appear at 1:05, return in rule one, and close the video ("Keys, keys, keys… don't feel crazy.").
 
 Numbers and years are written the way they are spoken, so `scripts/13-talk-to-themselves-voiceover.txt` can be
 pasted straight into ElevenLabs. The reading guide is `scripts/13-talk-to-themselves-voice-direction.md`
@@ -63,18 +66,19 @@ cards.
 
 ---
 
-## [0:00–0:50] HOOK
+## [0:00–1:10] HOOK
+*[a small stick figure stacking blocks, with speech bubbles "this one goes here"; a little heart: "cute"]*
+*[the same habit, adult-sized: a grown figure muttering alone in a kitchen; a "?" over a watching neighbour]*
+*[the promise: three teaser icons pop in one by one: a brain with a speech bubble, a crossed-out microphone, and an
+"I" turning into a name tag]*
+*[1930s card: Vygotsky; a pencil cup missing the blue pencil; more speech bubbles pop up around the child]*
+*[the bubble shrinks and slides inside a head outline; then an adult, eyes shut, "okay, okay, focus"]*
+
+## [1:10–2:20] THE KEYS
 *[a stick figure turning in circles in a kitchen; a little bubble "keys… keys…"; a second figure appears in the
 doorway; the first freezes, mouth open]*
 *[top: "it may have **helped**"; the keys glint on the counter]*
 *[the 2012 card; a grid of small objects; one figure says "banana" and a red ring finds the banana faster]*
-*[three teaser icons for the promise: a speech bubble, a crossed-out microphone, and an "I" turning into a name tag]*
-
-## [0:50–2:10] THINKING OUT LOUD
-*[a small figure stacking blocks, with speech bubbles "this one goes here"]*
-*[1930s card: Vygotsky; a pencil cup missing the blue pencil; more speech bubbles pop up]*
-*[the bubble shrinks and slides inside a head outline]*
-*[an adult figure, eyes shut, "okay, okay, focus"]*
 *[a banana; the brain lights up yellow and curved outlines; then a "?" object that the word doesn't help with]*
 
 ## [2:10–3:20] HOW OFTEN

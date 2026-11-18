@@ -22,54 +22,41 @@ energy  5 |
         2 |                          *                       *  *
         1 |
           +----------------------------------------------------------
-            hook  words  how often  no voice  athletes  one word  rules  twist end
+            hook  keys   how often  no voice  athletes  one word  rules  twist end
 ```
 
-This is the first video built on the faster intro from `GROWTH.md`:
-- the "you" moment in the first 10 seconds
-- the promise by about 0:25
-- the first real finding by about 0:40
+This is the first video built on the faster intro from `GROWTH.md`, and it opens on the owner's chosen image, a
+four-year-old talking to their blocks:
+- a moment everyone recognises in the first 10 seconds
+- the promise ("here's what this video is about") by about 0:20
+- the first real finding (Vygotsky) by about 0:35
 
-The hook is playful and a little embarrassed (the keys). The "no inner voice" section is the jaw-dropper: read it
+The hook is warm (the child with blocks), then the keys are playful and a little embarrassed. The "no inner voice" section is the jaw-dropper: read it
 with real wonder, not spookiness. The sport section is upbeat. The "one word" section is the payoff, warm and
 clear. The rules are friendly, and the twist is kind.
 
-The script talks straight to the viewer ("you've lost your keys", "do you hear it in a voice?"). Read those asides as
+The script talks straight to the viewer ("we start to wonder", "you've lost your keys", "do you hear it in a voice?"). Read those asides as
 if to one friend.
 
 ---
 
-## 1 · Hook (0:00–0:50)
-**Direction:** playful and quick. Read the "Keys. Keys." line in a muttering, real-life voice. "And suddenly you
-feel a little bit crazy" gets a smile. The study is brisk; the promise is warm. Energy 3, rising to 4 by the
-promise.
-
-(light) You've lost your **keys**. |
-You're walking around the kitchen, | and you hear yourself **say** it. ||
-(character) "Keys. | Keys. | Where are my **keys**?" ||
-(slower) Then someone walks **in**. |
-(smile) And suddenly you feel a little bit **crazy**. ||
-Almost all of us do this. | We just hope nobody **hears**. ||
-(lean in) Here's the **twist**. |
-Saying "keys" out loud | may have helped you **find** them. ||
-(brisk) In twenty twelve, | psychologists Gary Lupyan and Daniel **Swingley** tested exactly that. |
-People searched for everyday objects | among a crowd of **pictures**. |
-Some said the object's name **out loud** as they looked. |
-(land it) Saying the name sped up the **search**. ||
-So the habit that makes you look **strange** | might be making you **sharper**. ||
-(warm) By the end of this video, | you'll know why your brain **talks** to itself. |
-Why some people hear **no** inner voice at all. |
-(lean in) And the **one** small word | that changes how your self-talk **works**. ||
-Let's start with why your brain needs **words** at all. ||
-
-## 2 · Thinking out loud (0:50–2:10)
-**Direction:** warm and a little nostalgic on the four-year-old. "That's the four-year-old, still at work" is a
-smile. The banana line is curious. "Words aren't magic. They're a tool." lands down. Energy 3.
+## 1 · Hook (0:00–1:10)
+**Direction:** warm and smiling, like watching a child you love. Read the child's lines in a soft, busy little
+voice. "We think they're cute." gets a smile, and "we start to wonder" is a playful lean-in. The promise is clear
+and warm: this is the moment the viewer decides to stay. Vygotsky is brisk; the blue pencil is a smile. Energy 3,
+rising to 4 by the promise.
 
 (warm) Watch a four-year-old play with **blocks**. |
-They narrate **everything**. |
+They talk the whole **time**. |
 (character) "This one goes **here**. | No, | not **that** one." ||
-In the nineteen thirties, | psychologist Lev **Vygotsky** noticed this. |
+(smile) Nobody thinks they're **crazy**. | We think they're **cute**. ||
+(lean in) But give that same habit to an **adult**, | muttering alone in the kitchen, | and we start to **wonder**. ||
+(warm) So here's what this video is **about**. |
+By the end, | you'll know why your brain **talks** to itself. |
+Why some people hear **no** inner voice at all. |
+(lean in) And the **one** small word | that changes how your self-talk **works**. ||
+Let's start with that **four-year-old**. ||
+(brisk) In the nineteen thirties, | psychologist Lev **Vygotsky** watched children like this. |
 He argued it isn't **babbling**. |
 (land it) It's thinking, | out **loud**. ||
 His team even tried making the tasks **harder**. |
@@ -81,9 +68,26 @@ It becomes the quiet voice in your **head**. |
 But it never fully **leaves**. |
 Under pressure, | it comes back **out**. ||
 (lean in) Ever caught yourself saying, | "Okay, | okay, | **focus**," | before something hard? ↗ ||
+
+## 2 · The keys (1:10–2:20)
+**Direction:** playful and a little embarrassed. Read the "Keys. Keys." line in a muttering, real-life voice. "And
+suddenly you feel a little bit crazy" gets a smile. The study is brisk. The banana line is curious, and "Words
+aren't magic. They're a tool." lands down. Energy 3.
+
+(light) You've lost your **keys**. |
+You're walking around the kitchen, | and you hear yourself **say** it. ||
+(character) "Keys. | Keys. | Where are my **keys**?" ||
+(slower) Then someone walks **in**. |
+(smile) And suddenly you feel a little bit **crazy**. ||
+Almost all of us do this. | We just hope nobody **hears**. ||
 (smile) That's the four-year-old, | still at **work**. ||
-Words help your brain hold onto a **plan**. |
-They point your attention at the right **thing**. |
+(lean in) And here's the **twist**. |
+Saying "keys" out loud | may have helped you **find** them. ||
+(brisk) In twenty twelve, | psychologists Gary Lupyan and Daniel **Swingley** tested exactly that. |
+People searched for everyday objects | among a crowd of **pictures**. |
+Some said the object's name **out loud** as they looked. |
+(land it) Saying the name sped up the **search**. ||
+So the habit that makes you look **strange** | might be making you **sharper**. ||
 Lupyan explained it with a **banana**. |
 Say "banana," | and your brain wakes up what bananas look like. | **Yellow**. | **Curved**. ||
 But there's a **catch**. |
