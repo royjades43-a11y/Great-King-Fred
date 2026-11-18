@@ -1,7 +1,7 @@
 # Video 13: The Psychology of People Who Talk to Themselves
 
 **Title:** The Psychology of People Who Talk to Themselves
-**Length:** 1,413 words, about 8:55 at Josh's pace (video 12 ran at 2.64 words a second). That's over 8:00, so
+**Length:** 1,532 words, about 9:25–9:40 at Josh's pace (videos 11 and 12 ran at 2.64–2.74 words a second). That's over 8:00, so
 mid-roll ads are possible.
 
 ## Why this title and topic
@@ -20,14 +20,24 @@ mid-roll ads are possible.
 - Why Talking to Yourself Is Good for Your Brain
 - Talking to Yourself Isn't Crazy. Science Says the Opposite
 
+## Tone (owner's note, Nov 2026)
+
+- **Spoken, not written.** Whole, natural sentences, the way you'd explain it to a friend across a table: "He
+  believed those children were actually thinking, just out loud", not "It isn't babbling. It's thinking."
+- **No "it isn't X, it's Y" formulas and no strings of two-word fragments.** They sound machine-written.
+- **Every line speaks to the viewer** ("you've probably…", "let me ask you something", "if you're like most
+  people"), so they feel part of the video rather than watching it from outside.
+
 ## Engagement design (the new playbook in `GROWTH.md`)
 
 - **Opening (the owner's direction): start with the four-year-old, then say what the video is about.**
-  - **0:00:** a child talking to their blocks. "Nobody thinks they're crazy. We think they're cute. But give that
-    same habit to an adult… and we start to wonder."
-  - **About 0:17:** "So here's what this video is about. By the end, you'll know…", which states all three payoffs.
-  - **About 0:33:** the first real finding (Vygotsky: thinking out loud, and more of it when the task gets harder).
-  - **About 1:05:** the adult version, the keys, and the twist: saying "keys" may help you find them (Lupyan &
+  - **0:00:** "Have you ever watched a four-year-old play with blocks?… Nobody thinks they're crazy. We think it's
+    cute. But if you caught a grown adult doing the same thing… you'd probably wonder. Maybe you've been that adult."
+  - **About 0:22:** "So in this video, we're going to look at why your brain talks to itself…", which states all
+    three payoffs, spoken to the viewer.
+  - **About 0:40:** the first real finding (Vygotsky: children thinking out loud, and more of it when the blue pencil
+    goes missing).
+  - **About 1:30:** the adult version, the keys, and the twist: saying "keys" may help you find them (Lupyan &
     Swingley).
 - **Two open loops, both paid off:**
   - "Why some people hear no inner voice at all" → paid at about 3:30
@@ -46,7 +56,7 @@ mid-roll ads are possible.
   - "would you call your friend an idiot for dropping a glass?"
 - **Running images:**
   - The four-year-old opens the video and closes it ("It started when you were four, narrating your blocks.").
-  - The keys appear at 1:05, return in rule one, and close the video ("Keys, keys, keys… don't feel crazy.").
+  - The keys appear at about 1:30, return in rule one, and close the video ("Keys, keys, keys… don't feel crazy.").
 
 Numbers and years are written the way they are spoken, so `scripts/13-talk-to-themselves-voiceover.txt` can be
 pasted straight into ElevenLabs. The reading guide is `scripts/13-talk-to-themselves-voice-direction.md`
@@ -66,7 +76,7 @@ cards.
 
 ---
 
-## [0:00–1:10] HOOK
+## [0:00–1:25] HOOK
 *[a small stick figure stacking blocks, with speech bubbles "this one goes here"; a little heart: "cute"]*
 *[the same habit, adult-sized: a grown figure muttering alone in a kitchen; a "?" over a watching neighbour]*
 *[the promise: three teaser icons pop in one by one: a brain with a speech bubble, a crossed-out microphone, and an
@@ -74,7 +84,7 @@ cards.
 *[1930s card: Vygotsky; a pencil cup missing the blue pencil; more speech bubbles pop up around the child]*
 *[the bubble shrinks and slides inside a head outline; then an adult, eyes shut, "okay, okay, focus"]*
 
-## [1:10–2:20] THE KEYS
+## [1:25–2:30] THE KEYS
 *[a stick figure turning in circles in a kitchen; a little bubble "keys… keys…"; a second figure appears in the
 doorway; the first freezes, mouth open]*
 *[top: "it may have **helped**"; the keys glint on the counter]*

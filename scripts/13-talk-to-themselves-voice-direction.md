@@ -11,6 +11,10 @@ section's **Direction** line as the style prompt), and for our free AI voice thr
 | ↘ / ↗ | land down / lift (a genuine question) |
 | (brisk) (slower) (land it) (lean in) (warm) (smile) (light) (character) | how to deliver the line |
 
+**This script is written to be spoken, like one friend talking to another.** It uses whole, natural sentences
+and few marks, and every line speaks to the listener ("you've probably…", "let me ask you…"). Read it the way you'd
+tell a story across a table, not as a list of facts. Pause naturally at full stops and lift genuine questions.
+
 Numbers are written the way they are spoken.
 
 ## Energy map
@@ -41,213 +45,160 @@ if to one friend.
 ---
 
 ## 1 · Hook (0:00–1:10)
-**Direction:** warm and smiling, like watching a child you love. Read the child's lines in a soft, busy little
-voice. "We think they're cute." gets a smile, and "we start to wonder" is a playful lean-in. The promise is clear
-and warm: this is the moment the viewer decides to stay. Vygotsky is brisk; the blue pencil is a smile. Energy 3,
-rising to 4 by the promise.
+**Direction:** warm and smiling, like you're sitting next to the viewer watching a child play. Read the child's lines in a soft, busy little voice. "Maybe you've been that adult" is a friendly, knowing aside. The promise is clear and warm, spoken straight to the viewer. Energy 3, rising to 4 by the promise.
 
-(warm) Watch a four-year-old play with **blocks**. |
-They talk the whole **time**. |
-(character) "This one goes **here**. | No, | not **that** one." ||
-(smile) Nobody thinks they're **crazy**. | We think they're **cute**. ||
-(lean in) But give that same habit to an **adult**, | muttering alone in the kitchen, | and we start to **wonder**. ||
-(warm) So here's what this video is **about**. |
-By the end, | you'll know why your brain **talks** to itself. |
-Why some people hear **no** inner voice at all. |
-(lean in) And the **one** small word | that changes how your self-talk **works**. ||
-Let's start with that **four-year-old**. ||
-(brisk) In the nineteen thirties, | psychologist Lev **Vygotsky** watched children like this. |
-He argued it isn't **babbling**. |
-(land it) It's thinking, | out **loud**. ||
-His team even tried making the tasks **harder**. |
-(smile) Say, | the blue pencil a child needed | had quietly gone **missing**. |
-The children talked to themselves even **more**. ||
-The harder the problem, | the louder the **thinking**. ||
-As children grow, | that voice slowly moves **inside**. |
-It becomes the quiet voice in your **head**. |
-But it never fully **leaves**. |
-Under pressure, | it comes back **out**. ||
-(lean in) Ever caught yourself saying, | "Okay, | okay, | **focus**," | before something hard? ↗ ||
+Have you ever watched a four-year-old play with blocks? ||
+They talk the whole time. ||
+"This one goes here. No, not that one." ||
+And nobody thinks they're crazy. We think it's cute. ||
+But if you caught a grown adult doing the same thing, alone in the kitchen, you'd probably wonder. ||
+Maybe you've been that adult. Most of us have. ||
+So in this video, we're going to look at why your brain talks to itself. ||
+You'll find out why some people don't hear an inner voice at all. ||
+And by the end, you'll know the one small word that can change how your self-talk works. ||
+Let's go back to that four-year-old. ||
+Back in the nineteen thirties, a psychologist named Lev Vygotsky spent a lot of time watching children like this. ||
+Most adults would call all that chatter babbling. ||
+Vygotsky saw something different. He believed those children were actually thinking, just out loud. ||
+His team even made the tasks harder on purpose. ||
+Imagine a child drawing, and the blue pencil they need has quietly gone missing. ||
+When that happened, the children talked to themselves even more. ||
+Vygotsky believed that as we grow up, that voice slowly moves inside. ||
+It becomes the quiet voice you might be hearing in your head right now. ||
+But it never fully goes away. When you're under pressure, it tends to come back out. ||
+Have you ever caught yourself saying, "Okay, okay, focus," right before something hard? ||
 
-## 2 · The keys (1:10–2:20)
-**Direction:** playful and a little embarrassed. Read the "Keys. Keys." line in a muttering, real-life voice. "And
-suddenly you feel a little bit crazy" gets a smile. The study is brisk. The banana line is curious, and "Words
-aren't magic. They're a tool." lands down. Energy 3.
+## 2 · The keys (1:10–2:30)
+**Direction:** playful and a little embarrassed, like sharing a moment you've both lived. Read "Keys. Keys." in a muttering, real-life voice. The study is easy and clear. The banana is curious. Energy 3.
 
-(light) You've lost your **keys**. |
-You're walking around the kitchen, | and you hear yourself **say** it. ||
-(character) "Keys. | Keys. | Where are my **keys**?" ||
-(slower) Then someone walks **in**. |
-(smile) And suddenly you feel a little bit **crazy**. ||
-Almost all of us do this. | We just hope nobody **hears**. ||
-(smile) That's the four-year-old, | still at **work**. ||
-(lean in) And here's the **twist**. |
-Saying "keys" out loud | may have helped you **find** them. ||
-(brisk) In twenty twelve, | psychologists Gary Lupyan and Daniel **Swingley** tested exactly that. |
-People searched for everyday objects | among a crowd of **pictures**. |
-Some said the object's name **out loud** as they looked. |
-(land it) Saying the name sped up the **search**. ||
-So the habit that makes you look **strange** | might be making you **sharper**. ||
-Lupyan explained it with a **banana**. |
-Say "banana," | and your brain wakes up what bananas look like. | **Yellow**. | **Curved**. ||
-But there's a **catch**. |
-The word only helps | if your brain already knows what to **look** for. |
-(land it) Words aren't **magic**. | They're a **tool**. ||
+You've lost your keys. You're walking around the kitchen, and you hear yourself saying, "Keys. Keys. Where are my keys?" ||
+Then someone walks in, and you suddenly feel a little bit crazy. ||
+Most of us do this, and just hope nobody's listening. ||
+That's your inner four-year-old, still trying to help. ||
+And here's the interesting part. Saying "keys" out loud might actually help you find them. ||
+In twenty twelve, psychologists Gary Lupyan and Daniel Swingley put this to the test. ||
+They asked people to find everyday objects among a crowd of pictures. ||
+Some of them said the object's name out loud while they searched. ||
+And those people found the object faster. ||
+So the habit that makes you feel a bit silly might be making you sharper. ||
+Lupyan explained it with a banana. ||
+When you say "banana," your brain calls up what a banana looks like. Yellow, curved, easy to spot. ||
+There is one catch. The word only helps if your brain already knows what it's looking for. ||
 
-## 3 · How often (2:10–3:20)
-**Direction:** curious, like a detective story. The beeper is fun. "It doesn't." is a quiet surprise. The last
-two lines are the re-hook: slow down and lean in. Energy 3, rising.
+## 3 · How often (2:30–3:45)
+**Direction:** curious, like a story you're telling a friend over coffee. The beeper is fun. "Here's the funny part" gets a smile. Slow down and lean in on the last two lines: that's the re-hook. Energy 3, rising.
 
-So how often does your inner voice actually **talk**? ↗ |
-Psychologist Russell **Hurlburt** spent decades finding out. |
-He started back in the nineteen **seventies**, | with a homemade **beeper**. |
-He gave people that beeper, | and it went off at **random** moments. |
-Each time it beeped, | they noted what was in their mind | right **then**. ||
-Most people assume their inner voice runs all **day**. |
-(land it) It **doesn't**. ||
-When people fill in a **questionnaire**, | they report two to four times more inner speech | than the beeper **finds**. |
-(smile) We're not even good at knowing | what goes on in our own **heads**. ||
-In one study, | inner speech showed up in fewer than a **third** of the moments. |
-Other times, people saw **pictures**. |
-Or felt **feelings**, | with no words at all. ||
-And the differences between people were **huge**. |
-Some talked to themselves almost **constantly**. |
-Others, | almost **never**. ||
-(slower) Which raises a strange **question**. |
-(lean in) What if, | for some people, | the answer is **never**? ↗ ||
+So how often does that inner voice of yours actually talk? ||
+A psychologist named Russell Hurlburt has spent decades trying to find out. ||
+Starting in the nineteen seventies, he gave people a beeper that went off at random moments in their day. ||
+Every time it beeped, they'd write down exactly what was going on in their mind. ||
+If you're like most people, you'd guess your inner voice runs all day long. ||
+It speaks up a lot less than that. ||
+In one study, inner speech showed up in fewer than a third of those moments. ||
+The rest of the time, people were seeing pictures, or feeling something with no words at all. ||
+Here's the funny part. ||
+On questionnaires, people report two to four times more inner speech than the beeper finds. ||
+So we're not even very good at knowing what goes on in our own heads. ||
+And the differences between people were huge. ||
+Some people talked to themselves almost constantly. Others hardly ever did. ||
+What about the people whose inner voice is never there at all? ||
 
-## 4 · No inner voice (3:20–4:50)
-**Direction:** the jaw-dropper. Read "Anendophasia" slowly and clearly (an-en-doh-FAY-zha). The rhyme example is
-light. The question to the viewer is sincere, almost whispered. "You're not broken" is warm. Energy 4, then 3.
+## 4 · No inner voice (3:45–5:20)
+**Direction:** real wonder, never spooky. Say "Anendophasia" slowly and clearly (an-en-doh-FAY-zha). The sock and the clock are light. The question to the viewer is sincere and close, almost one-to-one. "There's nothing wrong with you" is warm. Energy 4, then 3.
 
-In twenty twenty-four, | psychologists Johanne Nedergaard and Gary **Lupyan** studied those people. |
-(smile) Yes, | the same Gary Lupyan from the **keys** experiment. ||
-They gave it a **name**. |
-(slower) **Anendophasia**. |
-Life without an inner **voice**. ||
-A few years earlier, | in twenty twenty, | a blog post about this went **viral**. |
-Thousands of people learned | that not everyone has an inner **monologue**. |
-(smile) Some were **stunned**. | Others were stunned that anyone **had** one. ||
-Nedergaard and Lupyan wanted to know | if it actually **changes** anything. |
-They compared adults with very little inner speech | to adults with a **lot**. |
-Then they gave both groups a few **puzzles**. |
-In one, | people saw two pictures | and decided if their names **rhymed**. |
-(light) A **sock** | and a **clock**, | for example. |
-In another, | they had to remember a short list of **words**. ||
-(land it) The people with little inner voice | did **worse** on both. ||
-How common is a quiet mind? | Nobody knows **yet**. |
-People are remarkably poor at describing their own **thoughts**. |
-But on other tasks, | there was no difference at **all**. |
-They weren't less smart. | Their brains just took a different **route**. ||
-(lean in) So here's a question for **you**. |
-When you read a message, | do you hear it in a **voice**? ↗ ||
-(warm) If you don't, | you're not **broken**. |
-Your brain just does it **differently**. ||
+In twenty twenty-four, psychologists Johanne Nedergaard and Gary Lupyan decided to study those people. ||
+Yes, the same Gary Lupyan from the keys experiment. ||
+They gave the experience a name. Anendophasia. ||
+It simply means living without an inner voice. ||
+In twenty twenty, a blog post about it went viral. ||
+Thousands of people were stunned to learn that not everyone has an inner monologue. ||
+And plenty of others were just as stunned to learn that anyone does. ||
+Nedergaard and Lupyan wanted to know whether it actually changes how people think. ||
+So they compared adults with very little inner speech to adults with a lot of it. ||
+In one, people looked at two pictures and decided whether their names rhymed. Think of a sock and a clock. ||
+In another, they had to remember a short list of words. ||
+On both of those, the people with little inner voice did worse. ||
+But on the other tasks, the two groups did just as well as each other. ||
+How common is a quiet mind? Honestly, nobody knows yet. ||
+So let me ask you something. ||
+When you read a message from a friend, do you hear it in a voice? ||
+If you don't, there's nothing wrong with you. Your brain simply does things its own way. ||
 
-## 5 · Athletes (4:50–5:55)
-**Direction:** upbeat, like a sports segment. Read the quoted cues in a short, coaching voice. "It's training."
-lands. Then a real pause before "But it wasn't over yet.", which is low and close. Energy 4.
+## 5 · Athletes (5:20–6:25)
+**Direction:** upbeat, like a sports segment you're enjoying together. Read the coaching cues short and crisp. The irony is a smile. Then a real pause before "But it wasn't over yet.", low and close. Energy 4.
 
-(brisk) Athletes figured this out long before **scientists** did. |
-Tennis players mutter between **points**. |
-Runners whisper, | "Keep **going**." ||
-In twenty eleven, | sport psychologist Antonis **Hatzigeorgiadis** and his colleagues | pulled together thirty-two **studies**. |
-Their question was **simple**. |
-Does self-talk actually improve **performance**? ↗ ||
-(land it) It **does**. |
-The effect was **moderate**, | but it was **real**. ||
-And it worked best in two **situations**. |
-When a skill needed **precision**, | like a golf putt. |
-And when the task was **new**. ||
-(character) Short cues helped with **technique**. | "Eyes on the **ball**." | "Elbow **up**." ||
-And it worked better | when people had **practiced** their self-talk first. |
-Like any skill, | your inner coach gets better with **training**. ||
-(smile) The irony? | The best players in the world do this in front of **millions**. |
-And we still think it looks **strange**. ||
-So talking to yourself isn't **weird**. |
-(land it) It's **training**. ||
-(slower) (lean in) But it wasn't over **yet**. ||
+Athletes figured this out long before scientists did. ||
+Tennis players mutter to themselves between points. ||
+Runners whisper "keep going" in the last stretch of a race. ||
+In twenty eleven, sport psychologist Antonis Hatzigeorgiadis and his colleagues pulled together thirty-two studies. ||
+Does talking to yourself actually improve performance? ||
+The answer was yes. The effect was moderate, but it was real. ||
+And it worked best in two situations. ||
+First, when a skill needed precision, like sinking a golf putt. ||
+And second, when the task was new to you. ||
+Short reminders about technique helped the most. Things like "eyes on the ball," or "elbow up." ||
+Here's the irony. The best players in the world do this in front of millions of people. ||
+And most of us still feel embarrassed doing it alone in our own kitchen. ||
+But it wasn't over yet. ||
 
-## 6 · The one word (5:55–7:20)
-**Direction:** the payoff of the hook's promise. Clear and bright. Read "I can't do this." small and anxious, and
-"Sam, you can do this." steady and kind. The closing question is warm. Energy 4.
+## 6 · The one word (6:25–7:50)
+**Direction:** the payoff of the promise, clear and bright. Read "I" as a small, nervous word, and "Sam, you can do this." steady and kind. The closing question is warm and personal. Energy 4.
 
-Because **how** you talk to yourself | matters as much as **whether** you do. |
-And the difference comes down to | one tiny **word**. ||
-(slower) "**I**." ||
-In twenty fourteen, | psychologist Ethan **Kross** and his colleagues | gave people five minutes to prepare a **speech**. |
-Some talked to themselves as | "**I**." |
-Others used their own **name**. |
-(character) "Sam, | you can **do** this." ||
-The name group felt less **anxious**. |
-Judges rated their speeches **better**. ||
-(smile) You may have heard a famous version of this. |
-In twenty ten, | basketball star LeBron James explained a huge career **decision**. |
-He said he wanted to do what was best | for **LeBron James**. |
-People **laughed**. |
-(land it) Psychologists **didn't**. ||
-Three years later, | Kross and psychologist Jason **Moser** looked inside the brain. |
-People saw upsetting pictures, | and talked to themselves **either** way. |
-With their own name, | the brain's emotional reaction dropped within a **second**. |
-(land it) And it took no extra **effort**. ||
-That same year as the speech study, | psychologists Sanda Dolcos and Dolores **Albarracín** tried "**you**." |
-People who told themselves "**you** can do it" | solved more word puzzles | than people who said "**I** can do it." |
-They also planned to work **harder** on the next ones. ||
-(lean in) Why would a single word **matter**? ↗ |
-Your name, | or "you," | puts a little **distance** between you and the problem. |
-You stop **drowning** in it. |
-You start **coaching** yourself, | the way you'd coach a **friend**. ||
-(warm) Isn't it strange | how much kinder we are to our friends | than to **ourselves**? ↗ ||
+Because the way you talk to yourself might matter even more than whether you do. ||
+And it can come down to one tiny word. The word "I." ||
+In twenty fourteen, psychologist Ethan Kross and his colleagues gave people five minutes to prepare a speech. ||
+Some of them talked to themselves using "I." ||
+Others used their own name, like, "Sam, you can do this." ||
+The people who used their name felt less anxious. And judges rated their speeches as better. ||
+You might remember a famous example of this. ||
+In twenty ten, basketball star LeBron James explained a huge career decision. ||
+He said he wanted to do what was best for LeBron James. ||
+A lot of people laughed. Psychologists recognized exactly what he was doing. ||
+Three years after the speech study, Kross and psychologist Jason Moser looked inside the brain. ||
+People looked at upsetting pictures while talking to themselves. ||
+When they used their name, the brain's emotional reaction dropped within about a second. ||
+And it didn't take any extra effort. ||
+The same year as the speech study, psychologists Sanda Dolcos and Dolores Albarracín tried the word "you." ||
+People who told themselves "you can do it" solved more word puzzles than people who said "I can do it." ||
+So why would one small word make such a difference? ||
+When you use your name, or "you," you step back from the problem a little. ||
+You start coaching yourself, the same way you'd coach a friend. ||
+And isn't it strange how much kinder we are to our friends than we are to ourselves? ||
 
-## 7 · Five rules (7:20–8:20)
-**Direction:** friendly and practical. Each "Rule" line is a small headline. The glass example gets a smile.
-Energy 3.
+## 7 · Five rules (7:50–8:50)
+**Direction:** friendly and practical, like a friend giving tips they actually use. Each "Rule" is a small headline. The glass example gets a smile. Energy 3.
 
-(brisk) So here's how to use your inner voice on **purpose**. ||
-Rule **one**: | when you're searching, | say it out **loud**. |
-(character) Keys. | Phone. | **Wallet**. |
-Just make sure you know what you're looking **for**. |
-The name only helps | when your brain has a picture to **match**. ||
-Rule **two**: | under stress, | switch from "I" to your **name**. |
-Or to "**you**." |
-It takes a second, | and it costs **nothing**. |
-Try it on something small **first**. | A tough **email**. | A phone call you've been **dreading**. ||
-Rule **three**: | for skills, | keep it **short**. |
-Two or three words about **technique**. |
-(character) "Slow **down**." | "Breathe **out**." |
-Practice them when things are **calm**, | so they're ready when things **aren't**. ||
-Rule **four**: | talk to yourself like a **coach**, | not a **critic**. |
-(smile) Would you call your friend an idiot | for dropping a **glass**? ↗ |
-Then don't say it to **yourself**. |
-Your brain is listening to every **word**. ||
-And rule **five**: | get curious about your own inner **voice**. |
-Does it speak in full **sentences**? ↗ | Does it sound like **you**? ↗ |
-Some people find theirs is **quiet**. |
-(warm) And that's fine, **too**. ||
+So how can you use this in your own life? Here are five simple rules. ||
+Rule one. When you're looking for something, say it out loud. Keys. Phone. Wallet. ||
+It works best when you already know what the thing looks like. ||
+Rule two. When you're stressed, switch from "I" to your own name. Or try "you." ||
+It takes a second, and it costs you nothing. ||
+Rule three. When you're learning a skill, keep your self-talk short. ||
+Two or three words about technique, like "slow down," or "breathe out." ||
+Practice those words when you're calm, so they're ready when you're not. ||
+Rule four. Talk to yourself the way a good coach would. ||
+Would you call a friend an idiot for dropping a glass? ||
+Then try not to say it to yourself, either. Your brain is listening to every word. ||
+And rule five. Get curious about your own inner voice. ||
+Does it speak in full sentences? Does it even sound like you? ||
+And if yours turns out to be quiet, that's perfectly fine. ||
 
-## 8 · Twist and ending (8:20–9:10)
-**Direction:** soft and generous. "The research says almost the opposite." lands. The keys callback is warm and a
-little funny. The challenge is bright, and the last lines are a warm sign-off. Energy 2.
+## 8 · Twist and ending (8:50–9:45)
+**Direction:** soft and generous, talking to one person. The four-year-old callback is tender. The keys callback is warm and a little funny. The challenge is bright, and the last lines are a warm sign-off. Energy 2.
 
-(slower) So here's the **twist**. |
-We grew up hearing that talking to yourself | means you're losing **it**. |
-(land it) The research says almost the **opposite**. ||
-It's one of the oldest tools your brain **has**. |
-(warm) It started when you were four, | narrating your **blocks**. |
-Kids do it without any **shame**. |
-Somewhere along the way, | we just learned to **whisper**. |
-And it never stopped working for **you**. ||
-The question was never **whether** you talk to yourself. |
-(land it) It's **what** you say. ||
-And if your inner voice is quiet? |
-(warm) Then you've been solving problems your **own** way | all along. ||
-(smile) So the next time you catch yourself muttering, | "Keys, | keys, | **keys**," | don't feel crazy. |
-You're just using your **brain**. ||
-(brisk) So here's your **challenge** for this week. |
-The next time you're nervous, | talk to yourself by **name**. |
-Out loud, | if you **can**. |
-Then notice what **happens**. ||
-(lean in) And tell me something in the **comments**. |
-Do you have an inner **voice**? ↗ | Or is it quiet in **there**? ↗ ||
-(warm) Which habit should we cover **next**? ↗ |
-Drop it in the **comments**. ||
+So here's the twist. ||
+Most of us grew up hearing that talking to yourself means you're losing it. ||
+The research points almost the other way. ||
+Self-talk is one of the oldest tools your brain has. ||
+You started using it when you were four, chatting away to your blocks. ||
+Somewhere along the way, most of us just learned to whisper. ||
+So maybe the better question is this. What are you saying when you talk to yourself? ||
+And if your inner voice is quiet, you've simply been solving problems your own way all along. ||
+So the next time you catch yourself muttering, "Keys, keys, keys," go easy on yourself. ||
+Your brain is just doing its job. ||
+Here's your challenge for this week. ||
+The next time you feel nervous, talk to yourself using your own name. Out loud, if you can. ||
+Then notice what happens. ||
+And I'd love to know something. Do you have an inner voice? Or is it quiet in there? ||
+Let me know in the comments. ||
+Which habit should we cover next? Drop it in the comments. ||
