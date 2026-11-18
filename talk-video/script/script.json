@@ -1,0 +1,5078 @@
+{
+ "title": "The Psychology of People Who Talk to Themselves",
+ "scenes": [
+  {
+   "id": "play",
+   "beats": [
+    {
+     "id": "b00",
+     "say": "Have you ever watched a four-year-old play with blocks?"
+    },
+    {
+     "id": "b01",
+     "say": "They talk the whole time."
+    },
+    {
+     "id": "b02",
+     "say": "\"This one goes here."
+    },
+    {
+     "id": "b03",
+     "say": "No, not that one.\""
+    },
+    {
+     "id": "b04",
+     "say": "And nobody thinks they're crazy."
+    },
+    {
+     "id": "b05",
+     "say": "We think it's cute."
+    },
+    {
+     "id": "b06",
+     "say": "But if you caught a grown adult doing the same thing, alone in the kitchen, you'd probably wonder."
+    },
+    {
+     "id": "b07",
+     "say": "Maybe you've been that adult."
+    },
+    {
+     "id": "b08",
+     "say": "Most of us have."
+    },
+    {
+     "id": "b09",
+     "say": "So in this video, we're going to look at why your brain talks to itself."
+    },
+    {
+     "id": "b10",
+     "say": "You'll find out why some people don't hear an inner voice at all."
+    },
+    {
+     "id": "b11",
+     "say": "And by the end, you'll know the one small word that can change how your self-talk works."
+    },
+    {
+     "id": "b12",
+     "say": "Let's go back to that four-year-old."
+    },
+    {
+     "id": "b13",
+     "say": "Back in the nineteen thirties, a psychologist named Lev Vygotsky spent a lot of time watching children like this."
+    },
+    {
+     "id": "b14",
+     "say": "Most adults would call all that chatter babbling."
+    },
+    {
+     "id": "b15",
+     "say": "Vygotsky saw something different."
+    },
+    {
+     "id": "b16",
+     "say": "He believed those children were actually thinking, just out loud."
+    },
+    {
+     "id": "b17",
+     "say": "His team even made the tasks harder on purpose."
+    },
+    {
+     "id": "b18",
+     "say": "Imagine a child drawing, and the blue pencil they need has quietly gone missing."
+    },
+    {
+     "id": "b19",
+     "say": "When that happened, the children talked to themselves even more."
+    },
+    {
+     "id": "b20",
+     "say": "Vygotsky believed that as we grow up, that voice slowly moves inside."
+    },
+    {
+     "id": "b21",
+     "say": "It becomes the quiet voice you might be hearing in your head right now."
+    },
+    {
+     "id": "b22",
+     "say": "But it never fully goes away."
+    },
+    {
+     "id": "b23",
+     "say": "When you're under pressure, it tends to come back out."
+    },
+    {
+     "id": "b24",
+     "say": "Have you ever caught yourself saying, \"Okay, okay, focus,\" right before something hard?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "bg",
+     "name": "bgPlayroom",
+     "x": 960,
+     "y": 560,
+     "size": 1920,
+     "from": "blur",
+     "at": "b00:have",
+     "out": "b25",
+     "color": "muted",
+     "opacity": 0.42,
+     "z": 1
+    },
+    {
+     "t": "stick",
+     "id": "h",
+     "x": 400,
+     "y": 690,
+     "from": "none",
+     "at": "b00:have",
+     "poses": [
+      [
+       "present",
+       "b00:watched"
+      ],
+      [
+       "happy",
+       "b04:nobody"
+      ],
+      [
+       "chin",
+       "b06:if"
+      ],
+      [
+       "explainR",
+       "b07:maybe"
+      ],
+      [
+       "lean",
+       "b08:most"
+      ],
+      [
+       "explain",
+       "b09:so"
+      ],
+      [
+       "count",
+       "b10:you'll"
+      ],
+      [
+       "present",
+       "b11:by"
+      ],
+      [
+       "presentL",
+       "b12:let's"
+      ],
+      [
+       "handsHips",
+       "b13:back"
+      ],
+      [
+       "shrug",
+       "b14:most"
+      ],
+      [
+       "explain",
+       "b15:vygotsky"
+      ],
+      [
+       "chin",
+       "b17:his"
+      ],
+      [
+       "happy",
+       "b18:imagine"
+      ],
+      [
+       "explain",
+       "b19:when"
+      ],
+      [
+       "explainR",
+       "b20:vygotsky"
+      ],
+      [
+       "ear",
+       "b21:it"
+      ],
+      [
+       "idle",
+       "b22:but"
+      ],
+      [
+       "explain",
+       "b23:when"
+      ],
+      [
+       "lean",
+       "b24:have"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b00:have"
+      ],
+      [
+       "grin",
+       "b05:we"
+      ],
+      [
+       "neutral",
+       "b06:if"
+      ],
+      [
+       "smile",
+       "b07:maybe"
+      ],
+      [
+       "smile",
+       "b09:so"
+      ],
+      [
+       "smile",
+       "b13:back"
+      ],
+      [
+       "smile",
+       "b18:imagine"
+      ],
+      [
+       "smile",
+       "b24:have"
+      ]
+     ],
+     "out": "b25",
+     "talk": [
+      [
+       "b00:have",
+       "b02"
+      ],
+      [
+       "b04:and",
+       "b25"
+      ]
+     ],
+     "move": [
+      [
+       560,
+       690,
+       "b09:so",
+       1.2
+      ],
+      [
+       400,
+       690,
+       "b12:let's",
+       1.2
+      ]
+     ]
+    },
+    {
+     "t": "stick",
+     "id": "kid",
+     "x": 1180,
+     "y": 760,
+     "from": "bottom",
+     "at": "b00:four-year-old",
+     "poses": [
+      [
+       "give",
+       "b02:this"
+      ],
+      [
+       "point",
+       "b03:no"
+      ],
+      [
+       "happy",
+       "b05:cute"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b00:four-year-old"
+      ],
+      [
+       "grin",
+       "b05:cute"
+      ]
+     ],
+     "out": "b06",
+     "scale": 0.62,
+     "sit": true,
+     "variant": "bow",
+     "talk": [
+      [
+       "b01:they",
+       "b04"
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "bk1",
+     "name": "box",
+     "x": 1370,
+     "y": 840,
+     "size": 90,
+     "from": "pop",
+     "at": "b01:talk",
+     "out": "b06"
+    },
+    {
+     "t": "icon",
+     "id": "bk2",
+     "name": "box",
+     "x": 1370,
+     "y": 770,
+     "size": 80,
+     "from": "pop",
+     "at": "b02:here",
+     "out": "b06"
+    },
+    {
+     "t": "icon",
+     "id": "bk3",
+     "name": "box",
+     "x": 1460,
+     "y": 840,
+     "size": 90,
+     "from": "pop",
+     "at": "b03:not",
+     "out": "b06"
+    },
+    {
+     "t": "bubble",
+     "id": "kq",
+     "text": "This one goes here!",
+     "x": 1270,
+     "y": 420,
+     "size": 170,
+     "from": "pop",
+     "at": "b02:this",
+     "fontSize": 30,
+     "out": "b04"
+    },
+    {
+     "t": "icon",
+     "id": "kh",
+     "name": "heart",
+     "x": 1180,
+     "y": 470,
+     "size": 90,
+     "from": "pop",
+     "at": "b05:cute",
+     "out": "b06",
+     "color": "accent",
+     "pulse": 1.12,
+     "beat": 0.9
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "a four-year-old, *talking*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b00:watched",
+     "out": "b02"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "nobody thinks they're *crazy*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b04:nobody",
+     "out": "b05"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "we think it's *cute*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b05:we",
+     "out": "b06"
+    },
+    {
+     "t": "stick",
+     "id": "ad",
+     "x": 1300,
+     "y": 690,
+     "from": "right",
+     "at": "b06:grown",
+     "poses": [
+      [
+       "search",
+       "b06:grown"
+      ],
+      [
+       "chin",
+       "b06:kitchen"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b06:grown"
+      ]
+     ],
+     "out": "b09",
+     "flip": true,
+     "talk": [
+      [
+       "b06:grown",
+       "b07"
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "mm",
+     "text": "…mumble mumble…",
+     "x": 1300,
+     "y": 330,
+     "size": 40,
+     "from": "bottom",
+     "at": "b06:same",
+     "out": "b07",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "hq",
+     "name": "question",
+     "x": 520,
+     "y": 300,
+     "size": 90,
+     "from": "pop",
+     "at": "b06:wonder",
+     "out": "b07"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "…an *adult*, muttering alone?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b06:grown",
+     "out": "b07"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "maybe you've been that *adult*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b07:maybe",
+     "out": "b09"
+    },
+    {
+     "t": "icon",
+     "id": "p1",
+     "name": "brain",
+     "x": 1060,
+     "y": 560,
+     "size": 200,
+     "from": "pop",
+     "at": "b09:brain",
+     "out": "b12"
+    },
+    {
+     "t": "bubble",
+     "id": "p1b",
+     "text": "…",
+     "x": 1150,
+     "y": 410,
+     "size": 110,
+     "from": "pop",
+     "at": "b09:talks",
+     "fontSize": 48,
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "p1t",
+     "text": "why it talks",
+     "x": 1060,
+     "y": 760,
+     "size": 38,
+     "from": "bottom",
+     "at": "b09:brain",
+     "out": "b12",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "p2",
+     "name": "mute",
+     "x": 1390,
+     "y": 560,
+     "size": 190,
+     "from": "pop",
+     "at": "b10:inner",
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "p2t",
+     "text": "no inner voice?",
+     "x": 1390,
+     "y": 760,
+     "size": 38,
+     "from": "bottom",
+     "at": "b10:inner",
+     "out": "b12",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "p3",
+     "name": "nametag",
+     "x": 1700,
+     "y": 560,
+     "size": 180,
+     "from": "pop",
+     "at": "b11:word",
+     "out": "b12"
+    },
+    {
+     "t": "text",
+     "id": "p3t",
+     "text": "one small word",
+     "x": 1700,
+     "y": 760,
+     "size": 38,
+     "from": "bottom",
+     "at": "b11:word",
+     "out": "b12",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "in this video",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b09:so",
+     "out": "b12",
+     "color": "muted"
+    },
+    {
+     "t": "stick",
+     "id": "kid2",
+     "x": 1180,
+     "y": 760,
+     "from": "bottom",
+     "at": "b12:let's",
+     "poses": [
+      [
+       "give",
+       "b12:four-year-old"
+      ],
+      [
+       "point",
+       "b14:chatter"
+      ],
+      [
+       "give",
+       "b17:tasks"
+      ],
+      [
+       "shrug",
+       "b18:missing"
+      ],
+      [
+       "point",
+       "b19:talked"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b12:let's"
+      ],
+      [
+       "o",
+       "b18:missing"
+      ],
+      [
+       "smile",
+       "b19:when"
+      ]
+     ],
+     "out": "b20",
+     "scale": 0.62,
+     "sit": true,
+     "variant": "bow",
+     "talk": [
+      [
+       "b14:most",
+       "b15"
+      ],
+      [
+       "b19:when",
+       "b20"
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "kb1",
+     "name": "box",
+     "x": 1370,
+     "y": 840,
+     "size": 90,
+     "from": "pop",
+     "at": "b12:four-year-old",
+     "out": "b20"
+    },
+    {
+     "t": "icon",
+     "id": "kb2",
+     "name": "box",
+     "x": 1370,
+     "y": 770,
+     "size": 80,
+     "from": "pop",
+     "at": "b12:four-year-old",
+     "out": "b20"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "1930s · LEV VYGOTSKY",
+     "text": "Watching children think out loud",
+     "sub": "psychologist",
+     "x": 1250,
+     "y": 220,
+     "from": "top",
+     "at": "b13:nineteen",
+     "out": "b14"
+    },
+    {
+     "t": "text",
+     "id": "bb",
+     "text": "blah blah blah",
+     "x": 1250,
+     "y": 420,
+     "size": 44,
+     "from": "bottom",
+     "at": "b14:chatter",
+     "out": "b15",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "\"just *babbling*\"?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b14:most",
+     "out": "b15"
+    },
+    {
+     "t": "icon",
+     "id": "bulb",
+     "name": "bulb",
+     "x": 1200,
+     "y": 470,
+     "size": 150,
+     "from": "pop",
+     "at": "b15:different",
+     "out": "b17",
+     "pulse": 1.08,
+     "beat": 0.8
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "thinking, *out loud*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b16:thinking",
+     "out": "b17"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "make it *harder*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b17:harder",
+     "out": "b18"
+    },
+    {
+     "t": "icon",
+     "id": "pp",
+     "name": "paper",
+     "x": 1480,
+     "y": 840,
+     "size": 120,
+     "from": "pop",
+     "at": "b17:tasks",
+     "out": "b20"
+    },
+    {
+     "t": "icon",
+     "id": "pen",
+     "name": "pen",
+     "x": 1560,
+     "y": 760,
+     "size": 110,
+     "from": "pop",
+     "at": "b18:blue",
+     "out": "b18:missing",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "pq",
+     "name": "question",
+     "x": 1560,
+     "y": 700,
+     "size": 90,
+     "from": "pop",
+     "at": "b18:missing",
+     "out": "b20"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "the *blue pencil* is missing",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b18:blue",
+     "out": "b19"
+    },
+    {
+     "t": "bubble",
+     "id": "m1",
+     "text": "Where's blue?",
+     "x": 1080,
+     "y": 420,
+     "size": 140,
+     "from": "pop",
+     "at": "b19:talked",
+     "fontSize": 28,
+     "out": "b20"
+    },
+    {
+     "t": "bubble",
+     "id": "m2",
+     "text": "Hmm…",
+     "x": 1330,
+     "y": 360,
+     "size": 120,
+     "from": "pop",
+     "at": "b19:themselves",
+     "fontSize": 30,
+     "out": "b20"
+    },
+    {
+     "t": "bubble",
+     "id": "m3",
+     "text": "I'll use red!",
+     "x": 1580,
+     "y": 420,
+     "size": 140,
+     "from": "pop",
+     "at": "b19:more",
+     "fontSize": 28,
+     "out": "b20"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "they talked even *more*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b19:talked",
+     "out": "b20"
+    },
+    {
+     "t": "icon",
+     "id": "hc",
+     "name": "thought",
+     "x": 660,
+     "y": 330,
+     "size": 160,
+     "from": "pop",
+     "at": "b20:inside",
+     "out": "b24"
+    },
+    {
+     "t": "icon",
+     "id": "hcc",
+     "name": "chat",
+     "x": 662,
+     "y": 322,
+     "size": 66,
+     "from": "pop",
+     "at": "b21:quiet",
+     "out": "b24"
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "the voice moves *inside*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b20:grow",
+     "out": "b21"
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "the quiet voice in your *head*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b21:quiet",
+     "out": "b22"
+    },
+    {
+     "t": "text",
+     "id": "t13",
+     "text": "under pressure… it comes *back*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b23:pressure",
+     "out": "b24"
+    },
+    {
+     "t": "bubble",
+     "id": "ok",
+     "text": "Okay, okay… focus.",
+     "x": 680,
+     "y": 330,
+     "size": 160,
+     "from": "pop",
+     "at": "b24:okay",
+     "fontSize": 30
+    }
+   ]
+  },
+  {
+   "id": "keys",
+   "beats": [
+    {
+     "id": "b25",
+     "say": "You've lost your keys."
+    },
+    {
+     "id": "b26",
+     "say": "You're walking around the kitchen, and you hear yourself saying, \"Keys."
+    },
+    {
+     "id": "b27",
+     "say": "Keys."
+    },
+    {
+     "id": "b28",
+     "say": "Where are my keys?\""
+    },
+    {
+     "id": "b29",
+     "say": "Then someone walks in, and you suddenly feel a little bit crazy."
+    },
+    {
+     "id": "b30",
+     "say": "Most of us do this, and just hope nobody's listening."
+    },
+    {
+     "id": "b31",
+     "say": "That's your inner four-year-old, still trying to help."
+    },
+    {
+     "id": "b32",
+     "say": "And here's the interesting part."
+    },
+    {
+     "id": "b33",
+     "say": "Saying \"keys\" out loud might actually help you find them."
+    },
+    {
+     "id": "b34",
+     "say": "In twenty twelve, psychologists Gary Lupyan and Daniel Swingley put this to the test."
+    },
+    {
+     "id": "b35",
+     "say": "They asked people to find everyday objects among a crowd of pictures."
+    },
+    {
+     "id": "b36",
+     "say": "Some of them said the object's name out loud while they searched."
+    },
+    {
+     "id": "b37",
+     "say": "And those people found the object faster."
+    },
+    {
+     "id": "b38",
+     "say": "So the habit that makes you feel a bit silly might be making you sharper."
+    },
+    {
+     "id": "b39",
+     "say": "Lupyan explained it with a banana."
+    },
+    {
+     "id": "b40",
+     "say": "When you say \"banana,\" your brain calls up what a banana looks like."
+    },
+    {
+     "id": "b41",
+     "say": "Yellow, curved, easy to spot."
+    },
+    {
+     "id": "b42",
+     "say": "There is one catch."
+    },
+    {
+     "id": "b43",
+     "say": "The word only helps if your brain already knows what it's looking for."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "bg",
+     "name": "bgKitchen",
+     "x": 960,
+     "y": 560,
+     "size": 1920,
+     "from": "blur",
+     "at": "b25:you've",
+     "out": "b44",
+     "color": "muted",
+     "opacity": 0.42,
+     "z": 1
+    },
+    {
+     "t": "stick",
+     "id": "h",
+     "x": 400,
+     "y": 690,
+     "from": "left",
+     "at": "b25:you've",
+     "poses": [
+      [
+       "search",
+       "b25:lost"
+      ],
+      [
+       "chin",
+       "b26:kitchen"
+      ],
+      [
+       "search",
+       "b27:keys"
+      ],
+      [
+       "embarrassed",
+       "b29:crazy"
+      ],
+      [
+       "shrug",
+       "b30:most"
+      ],
+      [
+       "happy",
+       "b31:that's"
+      ],
+      [
+       "explainR",
+       "b32:and"
+      ],
+      [
+       "present",
+       "b34:in"
+      ],
+      [
+       "explain",
+       "b38:so"
+      ],
+      [
+       "chin",
+       "b39:lupyan"
+      ],
+      [
+       "count",
+       "b41:yellow"
+      ],
+      [
+       "chin",
+       "b42:there"
+      ],
+      [
+       "explain",
+       "b43:the"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b25:you've"
+      ],
+      [
+       "o",
+       "b29:walks"
+      ],
+      [
+       "tight",
+       "b29:crazy"
+      ],
+      [
+       "smile",
+       "b30:most"
+      ],
+      [
+       "smile",
+       "b32:and"
+      ],
+      [
+       "grin",
+       "b38:sharper"
+      ],
+      [
+       "smile",
+       "b39:lupyan"
+      ],
+      [
+       "neutral",
+       "b42:there"
+      ]
+     ],
+     "out": "b44",
+     "talk": [
+      [
+       "b25:you've",
+       "b29:then"
+      ],
+      [
+       "b30:most",
+       "b44"
+      ]
+     ],
+     "move": [
+      [
+       760,
+       690,
+       "b26:walking",
+       1.4
+      ],
+      [
+       560,
+       690,
+       "b27:keys",
+       1.0
+      ],
+      [
+       400,
+       690,
+       "b31:that's",
+       1.0
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "ky",
+     "name": "keys",
+     "x": 1640,
+     "y": 620,
+     "size": 80,
+     "from": "pop",
+     "at": "b25:keys",
+     "out": "b34",
+     "pulse": 1.15,
+     "beat": 1.4
+    },
+    {
+     "t": "bubble",
+     "id": "kk",
+     "text": "Keys… keys…",
+     "x": 720,
+     "y": 360,
+     "size": 150,
+     "from": "pop",
+     "at": "b26:keys",
+     "fontSize": 30,
+     "out": "b29"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "you've lost your *keys*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b25:lost",
+     "out": "b26"
+    },
+    {
+     "t": "stick",
+     "id": "nb",
+     "x": 1500,
+     "y": 690,
+     "from": "right",
+     "at": "b29:someone",
+     "poses": [
+      [
+       "idle",
+       "b29:someone"
+      ],
+      [
+       "shrug",
+       "b29:crazy"
+      ],
+      [
+       "happy",
+       "b31:that's"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b29:walks"
+      ],
+      [
+       "smile",
+       "b31:that's"
+      ]
+     ],
+     "out": "b32",
+     "flip": true,
+     "variant": "bow",
+     "move": [
+      [
+       1250,
+       690,
+       "b29:walks",
+       1.2
+      ]
+     ]
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "…and someone walks *in*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b29:someone",
+     "out": "b30"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "we all *do* this",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b30:most",
+     "out": "b31"
+    },
+    {
+     "t": "stick",
+     "id": "ghost",
+     "x": 660,
+     "y": 760,
+     "from": "pop",
+     "at": "b31:inner",
+     "poses": [
+      [
+       "wave",
+       "b31:four-year-old"
+      ]
+     ],
+     "mouth": [
+      [
+       "grin",
+       "b31:inner"
+      ]
+     ],
+     "out": "b33",
+     "scale": 0.5,
+     "opacity": 0.6
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "your inner *four-year-old*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b31:inner",
+     "out": "b32"
+    },
+    {
+     "t": "bubble",
+     "id": "kk2",
+     "text": "Keys!",
+     "x": 640,
+     "y": 360,
+     "size": 130,
+     "from": "pop",
+     "at": "b33:saying",
+     "fontSize": 40,
+     "out": "b34"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "saying it might *help*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b33:saying",
+     "out": "b34"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2012 · LUPYAN & SWINGLEY",
+     "text": "Find it in a crowd of pictures",
+     "sub": "psychologists",
+     "x": 1360,
+     "y": 220,
+     "from": "top",
+     "at": "b34:twenty",
+     "out": "b35"
+    },
+    {
+     "t": "icon",
+     "id": "g0",
+     "name": "coffee",
+     "x": 1180,
+     "y": 360,
+     "size": 110,
+     "from": "pop",
+     "at": "b35:objects",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "g1",
+     "name": "book",
+     "x": 1360,
+     "y": 360,
+     "size": 110,
+     "from": "pop",
+     "at": "b35:objects",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "g2",
+     "name": "clock",
+     "x": 1540,
+     "y": 360,
+     "size": 110,
+     "from": "pop",
+     "at": "b35:objects",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "g3",
+     "name": "gift",
+     "x": 1180,
+     "y": 540,
+     "size": 110,
+     "from": "pop",
+     "at": "b35:objects",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "g4",
+     "name": "keys",
+     "x": 1360,
+     "y": 540,
+     "size": 110,
+     "from": "pop",
+     "at": "b35:objects",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "g5",
+     "name": "phone",
+     "x": 1540,
+     "y": 540,
+     "size": 110,
+     "from": "pop",
+     "at": "b35:objects",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "g6",
+     "name": "notebook",
+     "x": 1180,
+     "y": 720,
+     "size": 110,
+     "from": "pop",
+     "at": "b35:objects",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "g7",
+     "name": "money",
+     "x": 1360,
+     "y": 720,
+     "size": 110,
+     "from": "pop",
+     "at": "b35:objects",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "g8",
+     "name": "mic",
+     "x": 1540,
+     "y": 720,
+     "size": 110,
+     "from": "pop",
+     "at": "b35:objects",
+     "out": "b39"
+    },
+    {
+     "t": "bubble",
+     "id": "say",
+     "text": "Keys…",
+     "x": 660,
+     "y": 360,
+     "size": 130,
+     "from": "pop",
+     "at": "b36:some",
+     "fontSize": 36,
+     "out": "b38"
+    },
+    {
+     "t": "icon",
+     "id": "ring",
+     "name": "circles",
+     "x": 1360,
+     "y": 540,
+     "size": 200,
+     "from": "pop",
+     "at": "b37:faster",
+     "out": "b39",
+     "color": "accent"
+    },
+    {
+     "t": "icon",
+     "id": "sw",
+     "name": "stopwatch",
+     "x": 1760,
+     "y": 540,
+     "size": 130,
+     "from": "pop",
+     "at": "b37:faster",
+     "out": "b39"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "say the name… find it *faster*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b36:name",
+     "out": "b38"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "silly… but *sharper*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b38:silly",
+     "out": "b39"
+    },
+    {
+     "t": "icon",
+     "id": "ban",
+     "name": "banana",
+     "x": 1360,
+     "y": 520,
+     "size": 280,
+     "from": "pop",
+     "at": "b39:banana",
+     "out": "b42",
+     "sway": 6,
+     "period": 2.4
+    },
+    {
+     "t": "icon",
+     "id": "bbr",
+     "name": "brain",
+     "x": 1080,
+     "y": 520,
+     "size": 180,
+     "from": "pop",
+     "at": "b40:brain",
+     "out": "b42"
+    },
+    {
+     "t": "text",
+     "id": "b1",
+     "text": "yellow",
+     "x": 1130,
+     "y": 760,
+     "size": 38,
+     "from": "bottom",
+     "at": "b41:yellow",
+     "out": "b42",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "b2",
+     "text": "curved",
+     "x": 1350,
+     "y": 760,
+     "size": 38,
+     "from": "bottom",
+     "at": "b41:curved",
+     "out": "b42",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "b3",
+     "text": "easy to spot",
+     "x": 1620,
+     "y": 760,
+     "size": 38,
+     "from": "bottom",
+     "at": "b41:easy",
+     "out": "b42",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "say *banana*…",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b39:banana",
+     "out": "b41"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "yellow, curved, easy to *spot*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b41:yellow",
+     "out": "b42"
+    },
+    {
+     "t": "icon",
+     "id": "cq",
+     "name": "question",
+     "x": 1360,
+     "y": 520,
+     "size": 220,
+     "from": "pop",
+     "at": "b42:catch",
+     "out": "b44"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "the catch: know what it *looks* like",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b43:word"
+    }
+   ]
+  },
+  {
+   "id": "beeper",
+   "beats": [
+    {
+     "id": "b44",
+     "say": "So how often does that inner voice of yours actually talk?"
+    },
+    {
+     "id": "b45",
+     "say": "A psychologist named Russell Hurlburt has spent decades trying to find out."
+    },
+    {
+     "id": "b46",
+     "say": "Starting in the nineteen seventies, he gave people a beeper that went off at random moments in their day."
+    },
+    {
+     "id": "b47",
+     "say": "Every time it beeped, they'd write down exactly what was going on in their mind."
+    },
+    {
+     "id": "b48",
+     "say": "If you're like most people, you'd guess your inner voice runs all day long."
+    },
+    {
+     "id": "b49",
+     "say": "It speaks up a lot less than that."
+    },
+    {
+     "id": "b50",
+     "say": "In one study, inner speech showed up in fewer than a third of those moments."
+    },
+    {
+     "id": "b51",
+     "say": "The rest of the time, people were seeing pictures, or feeling something with no words at all."
+    },
+    {
+     "id": "b52",
+     "say": "Here's the funny part."
+    },
+    {
+     "id": "b53",
+     "say": "On questionnaires, people report two to four times more inner speech than the beeper finds."
+    },
+    {
+     "id": "b54",
+     "say": "So we're not even very good at knowing what goes on in our own heads."
+    },
+    {
+     "id": "b55",
+     "say": "And the differences between people were huge."
+    },
+    {
+     "id": "b56",
+     "say": "Some people talked to themselves almost constantly."
+    },
+    {
+     "id": "b57",
+     "say": "Others hardly ever did."
+    },
+    {
+     "id": "b58",
+     "say": "What about the people whose inner voice is never there at all?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "bg",
+     "name": "bgStudy",
+     "x": 960,
+     "y": 560,
+     "size": 1920,
+     "from": "blur",
+     "at": "b44:so",
+     "out": "b59",
+     "color": "muted",
+     "opacity": 0.42,
+     "z": 1
+    },
+    {
+     "t": "stick",
+     "id": "h",
+     "x": 400,
+     "y": 690,
+     "from": "left",
+     "at": "b44:so",
+     "poses": [
+      [
+       "chin",
+       "b44:often"
+      ],
+      [
+       "present",
+       "b45:psychologist"
+      ],
+      [
+       "explain",
+       "b47:every"
+      ],
+      [
+       "shrug",
+       "b48:if"
+      ],
+      [
+       "handsHips",
+       "b49:it"
+      ],
+      [
+       "present",
+       "b50:in"
+      ],
+      [
+       "explain",
+       "b51:rest"
+      ],
+      [
+       "happy",
+       "b52:funny"
+      ],
+      [
+       "shrug",
+       "b54:so"
+      ],
+      [
+       "present",
+       "b55:and"
+      ],
+      [
+       "lean",
+       "b58:what"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b44:so"
+      ],
+      [
+       "smile",
+       "b48:if"
+      ],
+      [
+       "grin",
+       "b52:funny"
+      ],
+      [
+       "smile",
+       "b54:so"
+      ],
+      [
+       "neutral",
+       "b58:what"
+      ]
+     ],
+     "out": "b59",
+     "talk": true
+    },
+    {
+     "t": "icon",
+     "id": "hb",
+     "name": "thought",
+     "x": 660,
+     "y": 330,
+     "size": 160,
+     "from": "pop",
+     "at": "b44:inner",
+     "out": "b46"
+    },
+    {
+     "t": "icon",
+     "id": "hbq",
+     "name": "question",
+     "x": 662,
+     "y": 322,
+     "size": 60,
+     "from": "pop",
+     "at": "b44:talk",
+     "out": "b46"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "how often does it *talk*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b44:often",
+     "out": "b45"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "1970s · RUSSELL HURLBURT",
+     "text": "A beeper, at random moments",
+     "sub": "decades of sampling",
+     "x": 1350,
+     "y": 220,
+     "from": "top",
+     "at": "b45:russell",
+     "out": "b46:beeper"
+    },
+    {
+     "t": "stick",
+     "id": "hp",
+     "x": 1350,
+     "y": 690,
+     "from": "bottom",
+     "at": "b46:gave",
+     "poses": [
+      [
+       "give",
+       "b46:beeper"
+      ],
+      [
+       "give",
+       "b47:write"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b46:gave"
+      ],
+      [
+       "o",
+       "b46:random"
+      ]
+     ],
+     "out": "b48",
+     "flip": true
+    },
+    {
+     "t": "icon",
+     "id": "pg",
+     "name": "pager",
+     "x": 1580,
+     "y": 460,
+     "size": 150,
+     "from": "pop",
+     "at": "b46:beeper",
+     "out": "b48",
+     "sway": 12,
+     "period": 0.4
+    },
+    {
+     "t": "text",
+     "id": "bp1",
+     "text": "beep!",
+     "x": 1690,
+     "y": 360,
+     "size": 54,
+     "from": "slam",
+     "at": "b46:random",
+     "out": "b47",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "bp2",
+     "text": "beep!",
+     "x": 1690,
+     "y": 360,
+     "size": 54,
+     "from": "slam",
+     "at": "b47:beeped",
+     "out": "b48",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "icon",
+     "id": "nbk",
+     "name": "notebook",
+     "x": 1120,
+     "y": 600,
+     "size": 130,
+     "from": "pop",
+     "at": "b47:write",
+     "out": "b48"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "beep… what's on your *mind*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b46:beeper",
+     "out": "b48"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "you'd guess: *all day*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b48:guess",
+     "out": "b49"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "…a lot *less*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b49:speaks",
+     "out": "b50"
+    },
+    {
+     "t": "bar",
+     "id": "k1",
+     "x": 1150,
+     "y": 860,
+     "w": 170,
+     "h": 150,
+     "color": "accent",
+     "label": "words",
+     "from": "draw",
+     "at": "b50:inner",
+     "out": "b52"
+    },
+    {
+     "t": "text",
+     "id": "p1",
+     "text": "< 1/3",
+     "x": 1150,
+     "y": 660,
+     "size": 52,
+     "from": "bottom",
+     "at": "b50:third",
+     "out": "b52",
+     "weight": 600
+    },
+    {
+     "t": "bar",
+     "id": "k2",
+     "x": 1450,
+     "y": 860,
+     "w": 170,
+     "h": 320,
+     "color": "muted",
+     "label": "pictures & feelings",
+     "from": "draw",
+     "at": "b51:rest",
+     "out": "b52"
+    },
+    {
+     "t": "icon",
+     "id": "pf",
+     "name": "frame",
+     "x": 1450,
+     "y": 420,
+     "size": 100,
+     "from": "pop",
+     "at": "b51:pictures",
+     "out": "b52"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "inner speech: under a *third*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b50:in",
+     "out": "b51"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "pictures… *feelings*…",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b51:pictures",
+     "out": "b52"
+    },
+    {
+     "t": "bar",
+     "id": "q1",
+     "x": 1150,
+     "y": 860,
+     "w": 170,
+     "h": 380,
+     "color": "muted",
+     "label": "questionnaire",
+     "from": "draw",
+     "at": "b53:questionnaires",
+     "out": "b55"
+    },
+    {
+     "t": "bar",
+     "id": "q2",
+     "x": 1450,
+     "y": 860,
+     "w": 170,
+     "h": 130,
+     "color": "accent",
+     "label": "beeper",
+     "from": "draw",
+     "at": "b53:beeper",
+     "out": "b55"
+    },
+    {
+     "t": "text",
+     "id": "q3",
+     "text": "2–4×",
+     "x": 1300,
+     "y": 380,
+     "size": 70,
+     "from": "slam",
+     "at": "b53:two",
+     "out": "b55",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "here's the *funny* part",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b52:funny",
+     "out": "b53"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "we don't know our own *heads*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b54:not",
+     "out": "b55"
+    },
+    {
+     "t": "stick",
+     "id": "r1",
+     "x": 1150,
+     "y": 690,
+     "from": "bottom",
+     "at": "b55:differences",
+     "poses": [
+      [
+       "happy",
+       "b56:some"
+      ]
+     ],
+     "mouth": [
+      [
+       "open",
+       "b56:some"
+      ]
+     ],
+     "out": "b58",
+     "talk": [
+      [
+       "b56:some",
+       "b57"
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "r1b",
+     "name": "chat",
+     "x": 1260,
+     "y": 380,
+     "size": 110,
+     "from": "pop",
+     "at": "b56:constantly",
+     "out": "b58"
+    },
+    {
+     "t": "icon",
+     "id": "r1c",
+     "name": "chat",
+     "x": 1060,
+     "y": 360,
+     "size": 90,
+     "from": "pop",
+     "at": "b56:constantly",
+     "out": "b58"
+    },
+    {
+     "t": "stick",
+     "id": "r2",
+     "x": 1550,
+     "y": 690,
+     "from": "bottom",
+     "at": "b55:differences",
+     "poses": [
+      [
+       "idle",
+       "b57:others"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b55:differences"
+      ]
+     ],
+     "out": "b58",
+     "flip": true
+    },
+    {
+     "t": "icon",
+     "id": "r2b",
+     "name": "thought",
+     "x": 1650,
+     "y": 370,
+     "size": 140,
+     "from": "pop",
+     "at": "b57:hardly",
+     "out": "b58"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "the differences: *huge*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b55:differences",
+     "out": "b56"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "some, *constantly*… some, hardly *ever*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b56:some",
+     "out": "b58"
+    },
+    {
+     "t": "icon",
+     "id": "emp",
+     "name": "thought",
+     "x": 1350,
+     "y": 480,
+     "size": 300,
+     "from": "pop",
+     "at": "b58:never"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "what if it's *never* there?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b58:what"
+    }
+   ]
+  },
+  {
+   "id": "quiet",
+   "beats": [
+    {
+     "id": "b59",
+     "say": "In twenty twenty-four, psychologists Johanne Nedergaard and Gary Lupyan decided to study those people."
+    },
+    {
+     "id": "b60",
+     "say": "Yes, the same Gary Lupyan from the keys experiment."
+    },
+    {
+     "id": "b61",
+     "say": "They gave the experience a name."
+    },
+    {
+     "id": "b62",
+     "say": "Anendophasia."
+    },
+    {
+     "id": "b63",
+     "say": "It simply means living without an inner voice."
+    },
+    {
+     "id": "b64",
+     "say": "In twenty twenty, a blog post about it went viral."
+    },
+    {
+     "id": "b65",
+     "say": "Thousands of people were stunned to learn that not everyone has an inner monologue."
+    },
+    {
+     "id": "b66",
+     "say": "And plenty of others were just as stunned to learn that anyone does."
+    },
+    {
+     "id": "b67",
+     "say": "Nedergaard and Lupyan wanted to know whether it actually changes how people think."
+    },
+    {
+     "id": "b68",
+     "say": "So they compared adults with very little inner speech to adults with a lot of it."
+    },
+    {
+     "id": "b69",
+     "say": "In one, people looked at two pictures and decided whether their names rhymed."
+    },
+    {
+     "id": "b70",
+     "say": "Think of a sock and a clock."
+    },
+    {
+     "id": "b71",
+     "say": "In another, they had to remember a short list of words."
+    },
+    {
+     "id": "b72",
+     "say": "On both of those, the people with little inner voice did worse."
+    },
+    {
+     "id": "b73",
+     "say": "But on the other tasks, the two groups did just as well as each other."
+    },
+    {
+     "id": "b74",
+     "say": "How common is a quiet mind?"
+    },
+    {
+     "id": "b75",
+     "say": "Honestly, nobody knows yet."
+    },
+    {
+     "id": "b76",
+     "say": "So let me ask you something."
+    },
+    {
+     "id": "b77",
+     "say": "When you read a message from a friend, do you hear it in a voice?"
+    },
+    {
+     "id": "b78",
+     "say": "If you don't, there's nothing wrong with you."
+    },
+    {
+     "id": "b79",
+     "say": "Your brain simply does things its own way."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "bg",
+     "name": "bgDesk",
+     "x": 960,
+     "y": 560,
+     "size": 1920,
+     "from": "blur",
+     "at": "b59:in",
+     "out": "b80",
+     "color": "muted",
+     "opacity": 0.42,
+     "z": 1
+    },
+    {
+     "t": "stick",
+     "id": "h",
+     "x": 400,
+     "y": 690,
+     "from": "left",
+     "at": "b59:in",
+     "poses": [
+      [
+       "present",
+       "b59:twenty"
+      ],
+      [
+       "happy",
+       "b60:yes"
+      ],
+      [
+       "explain",
+       "b61:they"
+      ],
+      [
+       "present",
+       "b62:anendophasia"
+      ],
+      [
+       "explain",
+       "b64:in"
+      ],
+      [
+       "happy",
+       "b66:and"
+      ],
+      [
+       "chin",
+       "b67:nedergaard"
+      ],
+      [
+       "present",
+       "b68:so"
+      ],
+      [
+       "explain",
+       "b72:on"
+      ],
+      [
+       "explainR",
+       "b73:but"
+      ],
+      [
+       "chin",
+       "b74:how"
+      ],
+      [
+       "shrug",
+       "b75:honestly"
+      ],
+      [
+       "lean",
+       "b76:so"
+      ],
+      [
+       "ear",
+       "b77:when"
+      ],
+      [
+       "explain",
+       "b78:if"
+      ],
+      [
+       "happy",
+       "b79:your"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b59:in"
+      ],
+      [
+       "grin",
+       "b60:yes"
+      ],
+      [
+       "smile",
+       "b61:they"
+      ],
+      [
+       "grin",
+       "b66:and"
+      ],
+      [
+       "smile",
+       "b67:nedergaard"
+      ],
+      [
+       "neutral",
+       "b74:how"
+      ],
+      [
+       "smile",
+       "b75:honestly"
+      ],
+      [
+       "smile",
+       "b76:so"
+      ],
+      [
+       "smile",
+       "b78:if"
+      ]
+     ],
+     "out": "b80",
+     "talk": true,
+     "move": [
+      [
+       560,
+       690,
+       "b76:so",
+       1.2
+      ]
+     ]
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2024 · NEDERGAARD & LUPYAN",
+     "text": "Life without an inner voice",
+     "sub": "psychologists",
+     "x": 1350,
+     "y": 220,
+     "from": "top",
+     "at": "b59:twenty",
+     "out": "b60:yes"
+    },
+    {
+     "t": "icon",
+     "id": "ky",
+     "name": "keys",
+     "x": 1350,
+     "y": 560,
+     "size": 120,
+     "from": "pop",
+     "at": "b60:keys",
+     "out": "b61"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "the same *Gary Lupyan*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b60:same",
+     "out": "b61"
+    },
+    {
+     "t": "text",
+     "id": "an",
+     "text": "Anendophasia",
+     "x": 1350,
+     "y": 500,
+     "size": 120,
+     "from": "slam",
+     "at": "b62:anendophasia",
+     "out": "b64",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "anp",
+     "text": "an-en-doh-FAY-zha",
+     "x": 1350,
+     "y": 610,
+     "size": 46,
+     "from": "bottom",
+     "at": "b62:anendophasia",
+     "out": "b64",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "mt",
+     "name": "mute",
+     "x": 1350,
+     "y": 760,
+     "size": 130,
+     "from": "pop",
+     "at": "b63:without",
+     "out": "b64"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "living *without* an inner voice",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b63:simply",
+     "out": "b64"
+    },
+    {
+     "t": "icon",
+     "id": "ph",
+     "name": "phone",
+     "x": 1350,
+     "y": 560,
+     "size": 220,
+     "from": "pop",
+     "at": "b64:twenty",
+     "out": "b67",
+     "sway": 6,
+     "period": 0.6
+    },
+    {
+     "t": "icon",
+     "id": "pheart",
+     "name": "heart",
+     "x": 1470,
+     "y": 420,
+     "size": 70,
+     "from": "pop",
+     "at": "b64:viral",
+     "out": "b67",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "vir",
+     "text": "viral",
+     "x": 1350,
+     "y": 760,
+     "size": 50,
+     "from": "slam",
+     "at": "b64:viral",
+     "out": "b67",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "stick",
+     "id": "s1",
+     "x": 1000,
+     "y": 690,
+     "from": "left",
+     "at": "b65:thousands",
+     "poses": [
+      [
+       "holdHead",
+       "b65:stunned"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b65:stunned"
+      ]
+     ],
+     "out": "b67",
+     "scale": 0.8
+    },
+    {
+     "t": "stick",
+     "id": "s2",
+     "x": 1700,
+     "y": 690,
+     "from": "right",
+     "at": "b66:and",
+     "poses": [
+      [
+       "holdHead",
+       "b66:stunned"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b66:stunned"
+      ]
+     ],
+     "out": "b67",
+     "scale": 0.8,
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "not everyone has an *inner monologue*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b65:thousands",
+     "out": "b66"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "…and some were stunned anyone *does*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b66:plenty",
+     "out": "b67"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "does it change how you *think*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b67:whether",
+     "out": "b68"
+    },
+    {
+     "t": "stick",
+     "id": "lq0",
+     "x": 1000,
+     "y": 690,
+     "from": "bottom",
+     "at": "b68:compared",
+     "poses": [
+      [
+       "idle",
+       "b68:compared"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b68:compared"
+      ]
+     ],
+     "out": "b69",
+     "scale": 0.6
+    },
+    {
+     "t": "stick",
+     "id": "lq1",
+     "x": 1130,
+     "y": 690,
+     "from": "bottom",
+     "at": "b68:compared",
+     "poses": [
+      [
+       "idle",
+       "b68:compared"
+      ]
+     ],
+     "mouth": [
+      [
+       "neutral",
+       "b68:compared"
+      ]
+     ],
+     "out": "b69",
+     "scale": 0.6
+    },
+    {
+     "t": "icon",
+     "id": "lqt",
+     "name": "thought",
+     "x": 1080,
+     "y": 420,
+     "size": 140,
+     "from": "pop",
+     "at": "b68:little",
+     "out": "b69"
+    },
+    {
+     "t": "stick",
+     "id": "lo0",
+     "x": 1580,
+     "y": 690,
+     "from": "bottom",
+     "at": "b68:compared",
+     "poses": [
+      [
+       "happy",
+       "b68:lot"
+      ]
+     ],
+     "mouth": [
+      [
+       "open",
+       "b68:lot"
+      ]
+     ],
+     "out": "b69",
+     "scale": 0.6
+    },
+    {
+     "t": "stick",
+     "id": "lo1",
+     "x": 1710,
+     "y": 690,
+     "from": "bottom",
+     "at": "b68:compared",
+     "poses": [
+      [
+       "happy",
+       "b68:lot"
+      ]
+     ],
+     "mouth": [
+      [
+       "open",
+       "b68:lot"
+      ]
+     ],
+     "out": "b69",
+     "scale": 0.6
+    },
+    {
+     "t": "icon",
+     "id": "lot",
+     "name": "chat",
+     "x": 1650,
+     "y": 420,
+     "size": 140,
+     "from": "pop",
+     "at": "b68:lot",
+     "out": "b69"
+    },
+    {
+     "t": "text",
+     "id": "lql",
+     "text": "little inner speech",
+     "x": 1060,
+     "y": 780,
+     "size": 38,
+     "from": "bottom",
+     "at": "b68:little",
+     "out": "b69",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "lol",
+     "text": "a lot",
+     "x": 1650,
+     "y": 780,
+     "size": 38,
+     "from": "bottom",
+     "at": "b68:lot",
+     "out": "b69",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "sock",
+     "name": "sock",
+     "x": 1200,
+     "y": 540,
+     "size": 200,
+     "from": "pop",
+     "at": "b69:pictures",
+     "out": "b71"
+    },
+    {
+     "t": "icon",
+     "id": "clk",
+     "name": "clock",
+     "x": 1500,
+     "y": 540,
+     "size": 200,
+     "from": "pop",
+     "at": "b69:pictures",
+     "out": "b71"
+    },
+    {
+     "t": "text",
+     "id": "rh",
+     "text": "rhyme?",
+     "x": 1350,
+     "y": 760,
+     "size": 56,
+     "from": "bottom",
+     "at": "b69:rhymed",
+     "out": "b71",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "a *sock* and a *clock*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b70:sock",
+     "out": "b71"
+    },
+    {
+     "t": "icon",
+     "id": "lst",
+     "name": "paper",
+     "x": 1350,
+     "y": 540,
+     "size": 260,
+     "from": "pop",
+     "at": "b71:list",
+     "out": "b72"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "remember a short *list*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b71:remember",
+     "out": "b72"
+    },
+    {
+     "t": "bar",
+     "id": "w1",
+     "x": 1150,
+     "y": 860,
+     "w": 170,
+     "h": 220,
+     "color": "muted",
+     "label": "quiet mind",
+     "from": "draw",
+     "at": "b72:worse",
+     "out": "b74"
+    },
+    {
+     "t": "bar",
+     "id": "w2",
+     "x": 1450,
+     "y": 860,
+     "w": 170,
+     "h": 340,
+     "color": "accent",
+     "label": "inner voice",
+     "from": "draw",
+     "at": "b72:worse",
+     "out": "b74"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "on those two: *worse*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b72:on",
+     "out": "b73"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "everything else: *just as well*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b73:but",
+     "out": "b74"
+    },
+    {
+     "t": "icon",
+     "id": "qm",
+     "name": "question",
+     "x": 1350,
+     "y": 520,
+     "size": 220,
+     "from": "pop",
+     "at": "b74:how",
+     "out": "b76"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "how common? nobody knows *yet*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b74:how",
+     "out": "b76"
+    },
+    {
+     "t": "bubble",
+     "id": "msg",
+     "text": "Hey! Free later?",
+     "x": 1350,
+     "y": 480,
+     "size": 220,
+     "from": "pop",
+     "at": "b77:message",
+     "fontSize": 36,
+     "out": "b78"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "do you hear it in a *voice*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b77:when",
+     "out": "b78"
+    },
+    {
+     "t": "icon",
+     "id": "wh",
+     "name": "heart",
+     "x": 1350,
+     "y": 520,
+     "size": 160,
+     "from": "pop",
+     "at": "b78:nothing",
+     "color": "accent",
+     "pulse": 1.08,
+     "beat": 1.0
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "nothing *wrong* with you",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b78:if"
+    }
+   ]
+  },
+  {
+   "id": "sport",
+   "beats": [
+    {
+     "id": "b80",
+     "say": "Athletes figured this out long before scientists did."
+    },
+    {
+     "id": "b81",
+     "say": "Tennis players mutter to themselves between points."
+    },
+    {
+     "id": "b82",
+     "say": "Runners whisper \"keep going\" in the last stretch of a race."
+    },
+    {
+     "id": "b83",
+     "say": "In twenty eleven, sport psychologist Antonis Hatzigeorgiadis and his colleagues pulled together thirty-two studies."
+    },
+    {
+     "id": "b84",
+     "say": "Does talking to yourself actually improve performance?"
+    },
+    {
+     "id": "b85",
+     "say": "The answer was yes."
+    },
+    {
+     "id": "b86",
+     "say": "The effect was moderate, but it was real."
+    },
+    {
+     "id": "b87",
+     "say": "And it worked best in two situations."
+    },
+    {
+     "id": "b88",
+     "say": "First, when a skill needed precision, like sinking a golf putt."
+    },
+    {
+     "id": "b89",
+     "say": "And second, when the task was new to you."
+    },
+    {
+     "id": "b90",
+     "say": "Short reminders about technique helped the most."
+    },
+    {
+     "id": "b91",
+     "say": "Things like \"eyes on the ball,\" or \"elbow up.\""
+    },
+    {
+     "id": "b92",
+     "say": "Here's the irony."
+    },
+    {
+     "id": "b93",
+     "say": "The best players in the world do this in front of millions of people."
+    },
+    {
+     "id": "b94",
+     "say": "And most of us still feel embarrassed doing it alone in our own kitchen."
+    },
+    {
+     "id": "b95",
+     "say": "But it wasn't over yet."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "bg",
+     "name": "bgCourt",
+     "x": 960,
+     "y": 560,
+     "size": 1920,
+     "from": "blur",
+     "at": "b80:athletes",
+     "out": "b95",
+     "color": "muted",
+     "opacity": 0.42,
+     "z": 1
+    },
+    {
+     "t": "stick",
+     "id": "h",
+     "x": 400,
+     "y": 690,
+     "from": "left",
+     "at": "b80:athletes",
+     "poses": [
+      [
+       "presentL",
+       "b80:athletes"
+      ],
+      [
+       "present",
+       "b81:tennis"
+      ],
+      [
+       "present",
+       "b83:in"
+      ],
+      [
+       "chin",
+       "b84:does"
+      ],
+      [
+       "proud",
+       "b85:answer"
+      ],
+      [
+       "explain",
+       "b86:effect"
+      ],
+      [
+       "count",
+       "b87:two"
+      ],
+      [
+       "explainR",
+       "b89:second"
+      ],
+      [
+       "explain",
+       "b90:short"
+      ],
+      [
+       "happy",
+       "b92:here's"
+      ],
+      [
+       "embarrassed",
+       "b94:most"
+      ],
+      [
+       "lean",
+       "b95:but"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b80:athletes"
+      ],
+      [
+       "neutral",
+       "b84:does"
+      ],
+      [
+       "smile",
+       "b85:answer"
+      ],
+      [
+       "grin",
+       "b92:here's"
+      ],
+      [
+       "tight",
+       "b94:embarrassed"
+      ],
+      [
+       "neutral",
+       "b95:but"
+      ]
+     ],
+     "out": "b96",
+     "talk": true
+    },
+    {
+     "t": "stick",
+     "id": "tp",
+     "x": 1450,
+     "y": 690,
+     "from": "right",
+     "at": "b81:tennis",
+     "poses": [
+      [
+       "give",
+       "b81:tennis"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b81:tennis"
+      ]
+     ],
+     "out": "b83",
+     "flip": true,
+     "talk": [
+      [
+       "b81:mutter",
+       "b82"
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "rk",
+     "name": "racket",
+     "x": 1300,
+     "y": 520,
+     "size": 160,
+     "from": "pop",
+     "at": "b81:tennis",
+     "out": "b83"
+    },
+    {
+     "t": "bubble",
+     "id": "cm",
+     "text": "Come on…",
+     "x": 1540,
+     "y": 380,
+     "size": 130,
+     "from": "pop",
+     "at": "b81:mutter",
+     "fontSize": 32,
+     "out": "b82"
+    },
+    {
+     "t": "stick",
+     "id": "rn",
+     "x": 1100,
+     "y": 690,
+     "from": "left",
+     "at": "b82:runners",
+     "poses": [
+      [
+       "strain",
+       "b82:runners"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b82:runners"
+      ]
+     ],
+     "out": "b83",
+     "move": [
+      [
+       1700,
+       690,
+       "b82:runners",
+       3.4
+      ]
+     ],
+     "talk": [
+      [
+       "b82:whisper",
+       "b83"
+      ]
+     ]
+    },
+    {
+     "t": "bubble",
+     "id": "kg",
+     "text": "Keep going.",
+     "x": 1350,
+     "y": 380,
+     "size": 140,
+     "from": "pop",
+     "at": "b82:keep",
+     "fontSize": 32,
+     "out": "b83"
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "athletes knew it *first*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b80:athletes",
+     "out": "b81"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2011 · HATZIGEORGIADIS ET AL.",
+     "text": "32 studies on self-talk",
+     "sub": "sport psychology",
+     "x": 1350,
+     "y": 220,
+     "from": "top",
+     "at": "b83:twenty",
+     "out": "b84"
+    },
+    {
+     "t": "icon",
+     "id": "pa0",
+     "name": "paper",
+     "x": 1200,
+     "y": 600,
+     "size": 180,
+     "from": "pop",
+     "at": "b83:thirty-two",
+     "out": "b85"
+    },
+    {
+     "t": "icon",
+     "id": "pa1",
+     "name": "paper",
+     "x": 1260,
+     "y": 580,
+     "size": 180,
+     "from": "pop",
+     "at": "b83:thirty-two",
+     "out": "b85"
+    },
+    {
+     "t": "icon",
+     "id": "pa2",
+     "name": "paper",
+     "x": 1320,
+     "y": 560,
+     "size": 180,
+     "from": "pop",
+     "at": "b83:thirty-two",
+     "out": "b85"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "does it actually *work*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b84:does",
+     "out": "b85"
+    },
+    {
+     "t": "icon",
+     "id": "yes",
+     "name": "check",
+     "x": 1350,
+     "y": 540,
+     "size": 220,
+     "from": "pop",
+     "at": "b85:yes",
+     "out": "b87"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "yes: moderate, but *real*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b85:answer",
+     "out": "b87"
+    },
+    {
+     "t": "icon",
+     "id": "fl",
+     "name": "flag",
+     "x": 1200,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b88:precision",
+     "out": "b90"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "1 · *precise* skills",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b88:first",
+     "out": "b89"
+    },
+    {
+     "t": "text",
+     "id": "nw",
+     "text": "NEW",
+     "x": 1550,
+     "y": 560,
+     "size": 90,
+     "from": "slam",
+     "at": "b89:new",
+     "out": "b90",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "2 · *new* tasks",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b89:second",
+     "out": "b90"
+    },
+    {
+     "t": "bubble",
+     "id": "e1",
+     "text": "Eyes on the ball.",
+     "x": 1200,
+     "y": 480,
+     "size": 170,
+     "from": "pop",
+     "at": "b91:eyes",
+     "fontSize": 30,
+     "out": "b92"
+    },
+    {
+     "t": "bubble",
+     "id": "e2",
+     "text": "Elbow up.",
+     "x": 1560,
+     "y": 480,
+     "size": 150,
+     "from": "pop",
+     "at": "b91:elbow",
+     "fontSize": 32,
+     "out": "b92"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "short cues about *technique*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b90:short",
+     "out": "b92"
+    },
+    {
+     "t": "icon",
+     "id": "tv",
+     "name": "tv",
+     "x": 1350,
+     "y": 560,
+     "size": 260,
+     "from": "pop",
+     "at": "b93:millions",
+     "out": "b95"
+    },
+    {
+     "t": "icon",
+     "id": "crowd",
+     "name": "people",
+     "x": 1350,
+     "y": 780,
+     "size": 220,
+     "from": "pop",
+     "at": "b93:millions",
+     "out": "b95"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "in front of *millions*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b93:best",
+     "out": "b94"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "…and we're embarrassed in the *kitchen*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b94:most",
+     "out": "b95"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "But it wasn't over yet.",
+     "x": 960,
+     "y": 300,
+     "size": 90,
+     "from": "slam",
+     "at": "b95:but",
+     "hero": true
+    }
+   ]
+  },
+  {
+   "id": "word",
+   "beats": [
+    {
+     "id": "b96",
+     "say": "Because the way you talk to yourself might matter even more than whether you do."
+    },
+    {
+     "id": "b97",
+     "say": "And it can come down to one tiny word."
+    },
+    {
+     "id": "b98",
+     "say": "The word \"I.\""
+    },
+    {
+     "id": "b99",
+     "say": "In twenty fourteen, psychologist Ethan Kross and his colleagues gave people five minutes to prepare a speech."
+    },
+    {
+     "id": "b100",
+     "say": "Some of them talked to themselves using \"I.\""
+    },
+    {
+     "id": "b101",
+     "say": "Others used their own name, like, \"Sam, you can do this.\""
+    },
+    {
+     "id": "b102",
+     "say": "The people who used their name felt less anxious."
+    },
+    {
+     "id": "b103",
+     "say": "And judges rated their speeches as better."
+    },
+    {
+     "id": "b104",
+     "say": "You might remember a famous example of this."
+    },
+    {
+     "id": "b105",
+     "say": "In twenty ten, basketball star LeBron James explained a huge career decision."
+    },
+    {
+     "id": "b106",
+     "say": "He said he wanted to do what was best for LeBron James."
+    },
+    {
+     "id": "b107",
+     "say": "A lot of people laughed."
+    },
+    {
+     "id": "b108",
+     "say": "Psychologists recognized exactly what he was doing."
+    },
+    {
+     "id": "b109",
+     "say": "Three years after the speech study, Kross and psychologist Jason Moser looked inside the brain."
+    },
+    {
+     "id": "b110",
+     "say": "People looked at upsetting pictures while talking to themselves."
+    },
+    {
+     "id": "b111",
+     "say": "When they used their name, the brain's emotional reaction dropped within about a second."
+    },
+    {
+     "id": "b112",
+     "say": "And it didn't take any extra effort."
+    },
+    {
+     "id": "b113",
+     "say": "The same year as the speech study, psychologists Sanda Dolcos and Dolores Albarracín tried the word \"you.\""
+    },
+    {
+     "id": "b114",
+     "say": "People who told themselves \"you can do it\" solved more word puzzles than people who said \"I can do it.\""
+    },
+    {
+     "id": "b115",
+     "say": "So why would one small word make such a difference?"
+    },
+    {
+     "id": "b116",
+     "say": "When you use your name, or \"you,\" you step back from the problem a little."
+    },
+    {
+     "id": "b117",
+     "say": "You start coaching yourself, the same way you'd coach a friend."
+    },
+    {
+     "id": "b118",
+     "say": "And isn't it strange how much kinder we are to our friends than we are to ourselves?"
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "bg",
+     "name": "bgStage",
+     "x": 960,
+     "y": 560,
+     "size": 1920,
+     "from": "blur",
+     "at": "b96:because",
+     "out": "b119",
+     "color": "muted",
+     "opacity": 0.42,
+     "z": 1
+    },
+    {
+     "t": "stick",
+     "id": "h",
+     "x": 360,
+     "y": 690,
+     "from": "left",
+     "at": "b96:because",
+     "poses": [
+      [
+       "explain",
+       "b96:because"
+      ],
+      [
+       "count",
+       "b97:one"
+      ],
+      [
+       "present",
+       "b98:word"
+      ],
+      [
+       "presentL",
+       "b99:in"
+      ],
+      [
+       "happy",
+       "b104:you"
+      ],
+      [
+       "present",
+       "b105:in"
+      ],
+      [
+       "happy",
+       "b107:lot"
+      ],
+      [
+       "chin",
+       "b108:psychologists"
+      ],
+      [
+       "present",
+       "b109:three"
+      ],
+      [
+       "explain",
+       "b111:when"
+      ],
+      [
+       "handsHips",
+       "b112:and"
+      ],
+      [
+       "present",
+       "b113:same"
+      ],
+      [
+       "chin",
+       "b115:so"
+      ],
+      [
+       "explain",
+       "b116:when"
+      ],
+      [
+       "explainR",
+       "b117:you"
+      ],
+      [
+       "lean",
+       "b118:and"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b96:because"
+      ],
+      [
+       "neutral",
+       "b98:word"
+      ],
+      [
+       "smile",
+       "b99:in"
+      ],
+      [
+       "grin",
+       "b107:laughed"
+      ],
+      [
+       "smile",
+       "b108:psychologists"
+      ],
+      [
+       "smile",
+       "b113:same"
+      ],
+      [
+       "neutral",
+       "b115:so"
+      ],
+      [
+       "smile",
+       "b117:you"
+      ]
+     ],
+     "out": "b119",
+     "talk": true
+    },
+    {
+     "t": "text",
+     "id": "bigI",
+     "text": "\"I\"",
+     "x": 1350,
+     "y": 520,
+     "size": 260,
+     "from": "slam",
+     "at": "b98:word",
+     "out": "b99",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "one tiny *word*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b97:one",
+     "out": "b99"
+    },
+    {
+     "t": "card",
+     "id": "c1",
+     "kicker": "2014 · KROSS ET AL.",
+     "text": "5 minutes to prepare a speech",
+     "sub": "psychologists",
+     "x": 1350,
+     "y": 220,
+     "from": "top",
+     "at": "b99:twenty",
+     "out": "b100"
+    },
+    {
+     "t": "icon",
+     "id": "mc",
+     "name": "mic",
+     "x": 1350,
+     "y": 600,
+     "size": 200,
+     "from": "pop",
+     "at": "b99:speech",
+     "out": "b100"
+    },
+    {
+     "t": "stick",
+     "id": "sa",
+     "x": 1100,
+     "y": 690,
+     "from": "left",
+     "at": "b100:some",
+     "poses": [
+      [
+       "sorry",
+       "b100:talked"
+      ]
+     ],
+     "mouth": [
+      [
+       "tight",
+       "b100:talked"
+      ],
+      [
+       "frown",
+       "b102:people"
+      ]
+     ],
+     "out": "b104",
+     "scale": 0.9,
+     "talk": [
+      [
+       "b100:using",
+       "b101"
+      ]
+     ]
+    },
+    {
+     "t": "bubble",
+     "id": "sab",
+     "text": "I can't…",
+     "x": 1180,
+     "y": 380,
+     "size": 130,
+     "from": "pop",
+     "at": "b100:using",
+     "fontSize": 32,
+     "out": "b104"
+    },
+    {
+     "t": "stick",
+     "id": "sb",
+     "x": 1650,
+     "y": 690,
+     "from": "right",
+     "at": "b101:others",
+     "poses": [
+      [
+       "proud",
+       "b101:sam"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b101:others"
+      ],
+      [
+       "grin",
+       "b102:less"
+      ]
+     ],
+     "out": "b104",
+     "scale": 0.9,
+     "flip": true,
+     "variant": "bow",
+     "talk": [
+      [
+       "b101:sam",
+       "b102"
+      ]
+     ]
+    },
+    {
+     "t": "bubble",
+     "id": "sbb",
+     "text": "Sam, you can do this.",
+     "x": 1580,
+     "y": 380,
+     "size": 170,
+     "from": "pop",
+     "at": "b101:sam",
+     "fontSize": 28,
+     "out": "b104"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "\"I\" … or your own *name*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b100:some",
+     "out": "b102"
+    },
+    {
+     "t": "icon",
+     "id": "j1",
+     "name": "check",
+     "x": 1650,
+     "y": 250,
+     "size": 80,
+     "from": "pop",
+     "at": "b103:judges",
+     "out": "b104"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "less anxious · rated *better*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b102:less",
+     "out": "b104"
+    },
+    {
+     "t": "card",
+     "id": "c2",
+     "kicker": "2010 · LEBRON JAMES",
+     "text": "“What's best for LeBron James”",
+     "sub": "on a career decision",
+     "x": 1350,
+     "y": 470,
+     "from": "top",
+     "at": "b105:twenty",
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "ha",
+     "text": "ha ha",
+     "x": 1350,
+     "y": 700,
+     "size": 60,
+     "from": "pop",
+     "at": "b107:laughed",
+     "out": "b108",
+     "color": "muted",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "people *laughed*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b107:lot",
+     "out": "b108"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "psychologists *recognized* it",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b108:psychologists",
+     "out": "b109"
+    },
+    {
+     "t": "card",
+     "id": "c3",
+     "kicker": "2017 · MOSER, KROSS ET AL.",
+     "text": "Inside the brain",
+     "sub": "upsetting pictures",
+     "x": 1350,
+     "y": 220,
+     "from": "top",
+     "at": "b109:three",
+     "out": "b110"
+    },
+    {
+     "t": "icon",
+     "id": "br",
+     "name": "brain",
+     "x": 1350,
+     "y": 560,
+     "size": 280,
+     "from": "pop",
+     "at": "b109:brain",
+     "out": "b113"
+    },
+    {
+     "t": "icon",
+     "id": "sw",
+     "name": "stopwatch",
+     "x": 1650,
+     "y": 520,
+     "size": 130,
+     "from": "pop",
+     "at": "b111:second",
+     "out": "b113"
+    },
+    {
+     "t": "text",
+     "id": "sw1",
+     "text": "≈ 1 s",
+     "x": 1650,
+     "y": 660,
+     "size": 50,
+     "from": "bottom",
+     "at": "b111:second",
+     "out": "b113",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "with your name: calm within a *second*",
+     "x": 960,
+     "y": 170,
+     "size": 58,
+     "from": "top",
+     "at": "b111:when",
+     "out": "b112"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "no extra *effort*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b112:effort",
+     "out": "b113"
+    },
+    {
+     "t": "bubble",
+     "id": "y1",
+     "text": "You can do it.",
+     "x": 1150,
+     "y": 460,
+     "size": 170,
+     "from": "pop",
+     "at": "b113:you",
+     "fontSize": 32,
+     "out": "b115"
+    },
+    {
+     "t": "bubble",
+     "id": "y2",
+     "text": "I can do it.",
+     "x": 1600,
+     "y": 460,
+     "size": 160,
+     "from": "pop",
+     "at": "b114:i",
+     "fontSize": 32,
+     "out": "b115"
+    },
+    {
+     "t": "bar",
+     "id": "yb1",
+     "x": 1150,
+     "y": 900,
+     "w": 170,
+     "h": 300,
+     "color": "accent",
+     "label": "\"you\"",
+     "from": "draw",
+     "at": "b114:solved",
+     "out": "b115"
+    },
+    {
+     "t": "bar",
+     "id": "yb2",
+     "x": 1600,
+     "y": 900,
+     "w": 170,
+     "h": 200,
+     "color": "muted",
+     "label": "\"I\"",
+     "from": "draw",
+     "at": "b114:solved",
+     "out": "b115"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "\"you\" solved *more* puzzles",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b114:solved",
+     "out": "b115"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "why would one word *matter*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b115:why",
+     "out": "b116"
+    },
+    {
+     "t": "stick",
+     "id": "co",
+     "x": 1250,
+     "y": 690,
+     "from": "left",
+     "at": "b116:when",
+     "poses": [
+      [
+       "explainR",
+       "b117:coaching"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b116:when"
+      ]
+     ],
+     "out": "b119"
+    },
+    {
+     "t": "stick",
+     "id": "fr",
+     "x": 1600,
+     "y": 690,
+     "from": "right",
+     "at": "b116:when",
+     "poses": [
+      [
+       "headDown",
+       "b116:when"
+      ],
+      [
+       "happy",
+       "b117:friend"
+      ]
+     ],
+     "mouth": [
+      [
+       "frown",
+       "b116:when"
+      ],
+      [
+       "smile",
+       "b117:friend"
+      ]
+     ],
+     "out": "b119",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "a step *back*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b116:step",
+     "out": "b117"
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "coach yourself like a *friend*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b117:coaching",
+     "out": "b118"
+    },
+    {
+     "t": "icon",
+     "id": "kh",
+     "name": "heart",
+     "x": 1430,
+     "y": 380,
+     "size": 110,
+     "from": "pop",
+     "at": "b118:kinder",
+     "color": "accent",
+     "pulse": 1.1,
+     "beat": 0.9
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "kinder to friends than *ourselves*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b118:kinder"
+    }
+   ]
+  },
+  {
+   "id": "rules",
+   "beats": [
+    {
+     "id": "b119",
+     "say": "So how can you use this in your own life?"
+    },
+    {
+     "id": "b120",
+     "say": "Here are five simple rules."
+    },
+    {
+     "id": "b121",
+     "say": "Rule one."
+    },
+    {
+     "id": "b122",
+     "say": "When you're looking for something, say it out loud."
+    },
+    {
+     "id": "b123",
+     "say": "Keys."
+    },
+    {
+     "id": "b124",
+     "say": "Phone."
+    },
+    {
+     "id": "b125",
+     "say": "Wallet."
+    },
+    {
+     "id": "b126",
+     "say": "It works best when you already know what the thing looks like."
+    },
+    {
+     "id": "b127",
+     "say": "Rule two."
+    },
+    {
+     "id": "b128",
+     "say": "When you're stressed, switch from \"I\" to your own name."
+    },
+    {
+     "id": "b129",
+     "say": "Or try \"you.\""
+    },
+    {
+     "id": "b130",
+     "say": "It takes a second, and it costs you nothing."
+    },
+    {
+     "id": "b131",
+     "say": "Rule three."
+    },
+    {
+     "id": "b132",
+     "say": "When you're learning a skill, keep your self-talk short."
+    },
+    {
+     "id": "b133",
+     "say": "Two or three words about technique, like \"slow down,\" or \"breathe out.\""
+    },
+    {
+     "id": "b134",
+     "say": "Practice those words when you're calm, so they're ready when you're not."
+    },
+    {
+     "id": "b135",
+     "say": "Rule four."
+    },
+    {
+     "id": "b136",
+     "say": "Talk to yourself the way a good coach would."
+    },
+    {
+     "id": "b137",
+     "say": "Would you call a friend an idiot for dropping a glass?"
+    },
+    {
+     "id": "b138",
+     "say": "Then try not to say it to yourself, either."
+    },
+    {
+     "id": "b139",
+     "say": "Your brain is listening to every word."
+    },
+    {
+     "id": "b140",
+     "say": "And rule five."
+    },
+    {
+     "id": "b141",
+     "say": "Get curious about your own inner voice."
+    },
+    {
+     "id": "b142",
+     "say": "Does it speak in full sentences?"
+    },
+    {
+     "id": "b143",
+     "say": "Does it even sound like you?"
+    },
+    {
+     "id": "b144",
+     "say": "And if yours turns out to be quiet, that's perfectly fine."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "bg",
+     "name": "bgStudy",
+     "x": 960,
+     "y": 560,
+     "size": 1920,
+     "from": "blur",
+     "at": "b119:so",
+     "out": "b145",
+     "color": "muted",
+     "opacity": 0.42,
+     "z": 1
+    },
+    {
+     "t": "stick",
+     "id": "h",
+     "x": 400,
+     "y": 690,
+     "from": "left",
+     "at": "b119:so",
+     "poses": [
+      [
+       "explain",
+       "b119:so"
+      ],
+      [
+       "count",
+       "b121:rule"
+      ],
+      [
+       "search",
+       "b122:looking"
+      ],
+      [
+       "explain",
+       "b126:it"
+      ],
+      [
+       "count",
+       "b127:rule"
+      ],
+      [
+       "explainR",
+       "b128:when"
+      ],
+      [
+       "happy",
+       "b130:it"
+      ],
+      [
+       "count",
+       "b131:rule"
+      ],
+      [
+       "explain",
+       "b133:two"
+      ],
+      [
+       "handsHips",
+       "b134:practice"
+      ],
+      [
+       "count",
+       "b135:rule"
+      ],
+      [
+       "chin",
+       "b137:would"
+      ],
+      [
+       "explainR",
+       "b138:then"
+      ],
+      [
+       "ear",
+       "b139:listening"
+      ],
+      [
+       "count",
+       "b140:rule"
+      ],
+      [
+       "chin",
+       "b141:curious"
+      ],
+      [
+       "ear",
+       "b142:does"
+      ],
+      [
+       "happy",
+       "b144:and"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b119:so"
+      ],
+      [
+       "neutral",
+       "b137:would"
+      ],
+      [
+       "smile",
+       "b138:then"
+      ],
+      [
+       "smile",
+       "b144:and"
+      ]
+     ],
+     "out": "b145",
+     "talk": true
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "five simple *rules*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b119:so",
+     "out": "b121"
+    },
+    {
+     "t": "text",
+     "id": "r1",
+     "text": "rule 1: say it *out loud*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b121:rule",
+     "out": "b127"
+    },
+    {
+     "t": "icon",
+     "id": "k1",
+     "name": "keys",
+     "x": 1150,
+     "y": 540,
+     "size": 160,
+     "from": "pop",
+     "at": "b123:keys",
+     "out": "b127"
+    },
+    {
+     "t": "icon",
+     "id": "k2",
+     "name": "phone",
+     "x": 1400,
+     "y": 540,
+     "size": 160,
+     "from": "pop",
+     "at": "b124:phone",
+     "out": "b127"
+    },
+    {
+     "t": "icon",
+     "id": "k3",
+     "name": "money",
+     "x": 1650,
+     "y": 540,
+     "size": 160,
+     "from": "pop",
+     "at": "b125:wallet",
+     "out": "b127"
+    },
+    {
+     "t": "text",
+     "id": "k4",
+     "text": "know what it looks like",
+     "x": 1400,
+     "y": 760,
+     "size": 38,
+     "from": "bottom",
+     "at": "b126:works",
+     "out": "b127",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "r2",
+     "text": "rule 2: \"I\" → your *name*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b127:rule",
+     "out": "b131"
+    },
+    {
+     "t": "text",
+     "id": "i1",
+     "text": "I",
+     "x": 1150,
+     "y": 540,
+     "size": 140,
+     "from": "pop",
+     "at": "b128:i",
+     "out": "b131",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "i2",
+     "text": "→",
+     "x": 1350,
+     "y": 540,
+     "size": 100,
+     "from": "pop",
+     "at": "b128:name",
+     "out": "b131",
+     "color": "muted"
+    },
+    {
+     "t": "icon",
+     "id": "i3",
+     "name": "nametag",
+     "x": 1600,
+     "y": 540,
+     "size": 260,
+     "from": "pop",
+     "at": "b128:name",
+     "out": "b131"
+    },
+    {
+     "t": "text",
+     "id": "i4",
+     "text": "you",
+     "x": 1600,
+     "y": 760,
+     "size": 60,
+     "from": "pop",
+     "at": "b129:you",
+     "out": "b131",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "r3",
+     "text": "rule 3: keep it *short*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b131:rule",
+     "out": "b135"
+    },
+    {
+     "t": "bubble",
+     "id": "c1",
+     "text": "Slow down.",
+     "x": 1200,
+     "y": 480,
+     "size": 150,
+     "from": "pop",
+     "at": "b133:slow",
+     "fontSize": 34,
+     "out": "b135"
+    },
+    {
+     "t": "bubble",
+     "id": "c2",
+     "text": "Breathe out.",
+     "x": 1600,
+     "y": 480,
+     "size": 150,
+     "from": "pop",
+     "at": "b133:breathe",
+     "fontSize": 34,
+     "out": "b135"
+    },
+    {
+     "t": "text",
+     "id": "c3",
+     "text": "practice them when calm",
+     "x": 1400,
+     "y": 760,
+     "size": 38,
+     "from": "bottom",
+     "at": "b134:practice",
+     "out": "b135",
+     "color": "muted"
+    },
+    {
+     "t": "text",
+     "id": "r4",
+     "text": "rule 4: a *coach*, not a critic",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b135:rule",
+     "out": "b140"
+    },
+    {
+     "t": "stick",
+     "id": "fd",
+     "x": 1400,
+     "y": 690,
+     "from": "right",
+     "at": "b137:would",
+     "poses": [
+      [
+       "sorry",
+       "b137:dropping"
+      ],
+      [
+       "happy",
+       "b138:then"
+      ]
+     ],
+     "mouth": [
+      [
+       "o",
+       "b137:dropping"
+      ],
+      [
+       "smile",
+       "b138:then"
+      ]
+     ],
+     "out": "b140",
+     "flip": true,
+     "variant": "bow"
+    },
+    {
+     "t": "icon",
+     "id": "gl",
+     "name": "coffee",
+     "x": 1620,
+     "y": 820,
+     "size": 110,
+     "from": "pop",
+     "at": "b137:glass",
+     "out": "b138"
+    },
+    {
+     "t": "icon",
+     "id": "gh",
+     "name": "heart",
+     "x": 1400,
+     "y": 380,
+     "size": 90,
+     "from": "pop",
+     "at": "b139:listening",
+     "out": "b140",
+     "color": "accent"
+    },
+    {
+     "t": "text",
+     "id": "r5",
+     "text": "rule 5: get *curious*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b140:rule",
+     "out": "b145"
+    },
+    {
+     "t": "icon",
+     "id": "cur",
+     "name": "thought",
+     "x": 1350,
+     "y": 480,
+     "size": 320,
+     "from": "pop",
+     "at": "b141:inner",
+     "out": "b145"
+    },
+    {
+     "t": "icon",
+     "id": "cur2",
+     "name": "chat",
+     "x": 1350,
+     "y": 470,
+     "size": 120,
+     "from": "pop",
+     "at": "b142:sentences",
+     "out": "b144"
+    },
+    {
+     "t": "text",
+     "id": "cur3",
+     "text": "me?",
+     "x": 1460,
+     "y": 420,
+     "size": 50,
+     "from": "pop",
+     "at": "b143:sound",
+     "out": "b144",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "cur4",
+     "text": "quiet is fine, too",
+     "x": 1350,
+     "y": 760,
+     "size": 38,
+     "from": "bottom",
+     "at": "b144:quiet",
+     "out": "b145",
+     "color": "muted"
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "tail": 2.6,
+   "beats": [
+    {
+     "id": "b145",
+     "say": "So here's the twist."
+    },
+    {
+     "id": "b146",
+     "say": "Most of us grew up hearing that talking to yourself means you're losing it."
+    },
+    {
+     "id": "b147",
+     "say": "The research points almost the other way."
+    },
+    {
+     "id": "b148",
+     "say": "Self-talk is one of the oldest tools your brain has."
+    },
+    {
+     "id": "b149",
+     "say": "You started using it when you were four, chatting away to your blocks."
+    },
+    {
+     "id": "b150",
+     "say": "Somewhere along the way, most of us just learned to whisper."
+    },
+    {
+     "id": "b151",
+     "say": "So maybe the better question is this."
+    },
+    {
+     "id": "b152",
+     "say": "What are you saying when you talk to yourself?"
+    },
+    {
+     "id": "b153",
+     "say": "And if your inner voice is quiet, you've simply been solving problems your own way all along."
+    },
+    {
+     "id": "b154",
+     "say": "So the next time you catch yourself muttering, \"Keys, keys, keys,\" go easy on yourself."
+    },
+    {
+     "id": "b155",
+     "say": "Your brain is just doing its job."
+    },
+    {
+     "id": "b156",
+     "say": "Here's your challenge for this week."
+    },
+    {
+     "id": "b157",
+     "say": "The next time you feel nervous, talk to yourself using your own name."
+    },
+    {
+     "id": "b158",
+     "say": "Out loud, if you can."
+    },
+    {
+     "id": "b159",
+     "say": "Then notice what happens."
+    },
+    {
+     "id": "b160",
+     "say": "And I'd love to know something."
+    },
+    {
+     "id": "b161",
+     "say": "Do you have an inner voice?"
+    },
+    {
+     "id": "b162",
+     "say": "Or is it quiet in there?"
+    },
+    {
+     "id": "b163",
+     "say": "Let me know in the comments."
+    },
+    {
+     "id": "b164",
+     "say": "Which habit should we cover next?"
+    },
+    {
+     "id": "b165",
+     "say": "Drop it in the comments."
+    }
+   ],
+   "elements": [
+    {
+     "t": "icon",
+     "id": "bg",
+     "name": "bgPlayroom",
+     "x": 960,
+     "y": 560,
+     "size": 1920,
+     "from": "blur",
+     "at": "b145:so",
+     "color": "muted",
+     "opacity": 0.42,
+     "z": 1
+    },
+    {
+     "t": "stick",
+     "id": "h",
+     "x": 400,
+     "y": 690,
+     "from": "left",
+     "at": "b145:so",
+     "poses": [
+      [
+       "explain",
+       "b145:twist"
+      ],
+      [
+       "shrug",
+       "b146:most"
+      ],
+      [
+       "proud",
+       "b147:research"
+      ],
+      [
+       "explain",
+       "b148:self-talk"
+      ],
+      [
+       "presentL",
+       "b149:you"
+      ],
+      [
+       "ear",
+       "b150:whisper"
+      ],
+      [
+       "chin",
+       "b151:so"
+      ],
+      [
+       "explainR",
+       "b152:what"
+      ],
+      [
+       "happy",
+       "b153:and"
+      ],
+      [
+       "search",
+       "b154:keys"
+      ],
+      [
+       "happy",
+       "b155:your"
+      ],
+      [
+       "explain",
+       "b156:here's"
+      ],
+      [
+       "proud",
+       "b157:name"
+      ],
+      [
+       "explainR",
+       "b159:then"
+      ],
+      [
+       "ear",
+       "b160:and"
+      ],
+      [
+       "lean",
+       "b162:or"
+      ],
+      [
+       "wave",
+       "b164:which"
+      ]
+     ],
+     "mouth": [
+      [
+       "smile",
+       "b145:so"
+      ],
+      [
+       "grin",
+       "b147:research"
+      ],
+      [
+       "smile",
+       "b148:self-talk"
+      ],
+      [
+       "smile",
+       "b151:so"
+      ],
+      [
+       "grin",
+       "b155:your"
+      ],
+      [
+       "smile",
+       "b156:here's"
+      ],
+      [
+       "grin",
+       "b164:which"
+      ]
+     ],
+     "talk": true
+    },
+    {
+     "t": "text",
+     "id": "t0",
+     "text": "here's the *twist*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b145:twist",
+     "out": "b146"
+    },
+    {
+     "t": "text",
+     "id": "sg",
+     "text": "talking to yourself = crazy",
+     "x": 1350,
+     "y": 520,
+     "size": 64,
+     "from": "pop",
+     "at": "b146:grew",
+     "out": "b148",
+     "weight": 800
+    },
+    {
+     "t": "strike",
+     "id": "sgk",
+     "x": 1350,
+     "y": 520,
+     "w": 900,
+     "at": "b147:research",
+     "out": "b148"
+    },
+    {
+     "t": "text",
+     "id": "t1",
+     "text": "the research says *the opposite*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b147:research",
+     "out": "b148"
+    },
+    {
+     "t": "stick",
+     "id": "kid",
+     "x": 1250,
+     "y": 760,
+     "from": "bottom",
+     "at": "b149:you",
+     "poses": [
+      [
+       "give",
+       "b149:chatting"
+      ],
+      [
+       "happy",
+       "b150:somewhere"
+      ]
+     ],
+     "mouth": [
+      [
+       "grin",
+       "b149:you"
+      ]
+     ],
+     "out": "b151",
+     "scale": 0.62,
+     "sit": true,
+     "variant": "bow",
+     "talk": [
+      [
+       "b149:chatting",
+       "b150"
+      ]
+     ]
+    },
+    {
+     "t": "icon",
+     "id": "bk1",
+     "name": "box",
+     "x": 1440,
+     "y": 840,
+     "size": 90,
+     "from": "pop",
+     "at": "b149:blocks",
+     "out": "b151"
+    },
+    {
+     "t": "icon",
+     "id": "bk2",
+     "name": "box",
+     "x": 1440,
+     "y": 770,
+     "size": 80,
+     "from": "pop",
+     "at": "b149:blocks",
+     "out": "b151"
+    },
+    {
+     "t": "text",
+     "id": "t2",
+     "text": "you started at *four*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b149:you",
+     "out": "b150"
+    },
+    {
+     "t": "text",
+     "id": "t3",
+     "text": "then we learned to *whisper*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b150:somewhere",
+     "out": "b151"
+    },
+    {
+     "t": "icon",
+     "id": "q",
+     "name": "thought",
+     "x": 1350,
+     "y": 480,
+     "size": 300,
+     "from": "pop",
+     "at": "b151:question",
+     "out": "b154"
+    },
+    {
+     "t": "icon",
+     "id": "qc",
+     "name": "chat",
+     "x": 1350,
+     "y": 470,
+     "size": 110,
+     "from": "pop",
+     "at": "b152:saying",
+     "out": "b154"
+    },
+    {
+     "t": "text",
+     "id": "t4",
+     "text": "what are you *saying*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b152:what",
+     "out": "b153"
+    },
+    {
+     "t": "text",
+     "id": "t5",
+     "text": "a quiet mind: your *own* way",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b153:quiet",
+     "out": "b154"
+    },
+    {
+     "t": "icon",
+     "id": "ky",
+     "name": "keys",
+     "x": 1350,
+     "y": 560,
+     "size": 150,
+     "from": "pop",
+     "at": "b154:keys",
+     "out": "b156",
+     "pulse": 1.1,
+     "beat": 0.9
+    },
+    {
+     "t": "bubble",
+     "id": "kb",
+     "text": "Keys, keys, keys…",
+     "x": 760,
+     "y": 360,
+     "size": 160,
+     "from": "pop",
+     "at": "b154:keys",
+     "fontSize": 30,
+     "out": "b155"
+    },
+    {
+     "t": "text",
+     "id": "t6",
+     "text": "go easy on *yourself*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b154:easy",
+     "out": "b156"
+    },
+    {
+     "t": "text",
+     "id": "t7",
+     "text": "your *challenge* this week",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b156:challenge",
+     "out": "b157"
+    },
+    {
+     "t": "icon",
+     "id": "nt",
+     "name": "nametag",
+     "x": 1350,
+     "y": 540,
+     "size": 260,
+     "from": "pop",
+     "at": "b157:nervous",
+     "out": "b160"
+    },
+    {
+     "t": "text",
+     "id": "t8",
+     "text": "nervous? use your *name*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b157:next",
+     "out": "b159"
+    },
+    {
+     "t": "text",
+     "id": "t9",
+     "text": "then notice what *happens*",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b159:notice",
+     "out": "b160"
+    },
+    {
+     "t": "icon",
+     "id": "eq",
+     "name": "thought",
+     "x": 1350,
+     "y": 500,
+     "size": 300,
+     "from": "pop",
+     "at": "b161:inner",
+     "out": "b164"
+    },
+    {
+     "t": "text",
+     "id": "eq2",
+     "text": "?",
+     "x": 1350,
+     "y": 480,
+     "size": 120,
+     "from": "pop",
+     "at": "b162:quiet",
+     "out": "b164",
+     "color": "accent",
+     "weight": 800
+    },
+    {
+     "t": "text",
+     "id": "t10",
+     "text": "inner voice… or *quiet*?",
+     "x": 960,
+     "y": 170,
+     "size": 64,
+     "from": "top",
+     "at": "b161:do",
+     "out": "b164"
+    },
+    {
+     "t": "icon",
+     "id": "end",
+     "name": "heart",
+     "x": 1350,
+     "y": 540,
+     "size": 200,
+     "from": "pop",
+     "at": "b164:habit",
+     "color": "accent",
+     "pulse": 1.08,
+     "beat": 1.2
+    },
+    {
+     "t": "text",
+     "id": "t11",
+     "text": "which habit *next*?",
+     "x": 960,
+     "y": 170,
+     "size": 80,
+     "from": "top",
+     "at": "b164:habit",
+     "hero": true
+    },
+    {
+     "t": "text",
+     "id": "t12",
+     "text": "@darealwhy",
+     "x": 1350,
+     "y": 820,
+     "size": 44,
+     "from": "bottom",
+     "at": "b165:comments",
+     "weight": 600,
+     "color": "muted"
+    }
+   ]
+  }
+ ]
+}

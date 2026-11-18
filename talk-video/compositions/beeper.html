@@ -1,0 +1,277 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="beeper" data-width="1920" data-height="1080">
+    <div id="beeper-bg" class="clip el" data-start="0.2" data-duration="60.228" data-track-index="1" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:1;opacity:0.42" data-layout-allow-overlap><div id="beeper-bg-in" class="in"><div class="ico" style="width:1920px;height:1920px;color:var(--muted)"><svg viewBox="0 0 200 200"><path d="M-20 137.5 L220 137.5" fill="none" stroke="currentColor" stroke-width="7" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M120 110 L196 110 M126 110 L126 137.5 M190 110 L190 137.5" fill="none" stroke="currentColor" stroke-width="6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M176 110 L176 94 L170 88 M164 88 L178 88 L174 82 L168 82 Z" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M132 110 L132 98 L140 98 L140 110 M142 110 L142 100 L148 100 L148 110 M150 110 L150 96 L156 96 L156 110" fill="none" stroke="currentColor" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 66 L58 66 L58 100 L24 100 Z M41 66 L41 100" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+    <div id="beeper-h" class="clip el" data-start="0.2" data-duration="60.228" data-track-index="2" style="position:absolute;left:0px;top:300px;width:800px;height:780px;z-index:3"><div id="beeper-h-in" class="in"><svg class="stick" id="beeper-h-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="beeper-h-aLu"><path class="s" d="M150 160 L150 255"/><g id="beeper-h-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="beeper-h-aRu"><path class="s" d="M150 160 L150 255"/><g id="beeper-h-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="beeper-h-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="beeper-h-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="beeper-h-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="beeper-h-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="beeper-h-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="beeper-h-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="beeper-h-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="beeper-h-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="beeper-hb" class="clip el" data-start="1.64" data-duration="6.63" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1320px;height:660px;z-index:4" data-layout-allow-overlap><div id="beeper-hb-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="beeper-hbq" class="clip el" data-start="3.08" data-duration="5.19" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1324px;height:644px;z-index:5" data-layout-allow-overlap><div id="beeper-hbq-in" class="in"><div class="ico" style="width:60px;height:60px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="beeper-t0" class="clip el" data-start="0.86" data-duration="3.2" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:6"><div id="beeper-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="beeper-t0-w0" class="w">how</span> <span id="beeper-t0-w1" class="w">often</span> <span id="beeper-t0-w2" class="w">does</span> <span id="beeper-t0-w3" class="w">it</span> <span id="beeper-t0-w4" class="w acc">talk<span class="tail">?</span></span></div></div></div>
+    <div id="beeper-c1" class="clip el" data-start="4.94" data-duration="6.26" data-track-index="6" style="position:absolute;left:780px;top:0px;width:1140px;height:440px;z-index:7"><div id="beeper-c1-in" class="in"><div class="card"><div class="card-k">1970s · RUSSELL HURLBURT</div><div class="card-t">A beeper, at random moments</div><div class="card-s">decades of sampling</div></div></div></div>
+    <div id="beeper-hp" class="clip el" data-start="10.32" data-duration="9.031" data-track-index="7" style="position:absolute;left:780px;top:300px;width:1140px;height:780px;z-index:8"><div id="beeper-hp-in" class="in"><svg class="stick" id="beeper-hp-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="beeper-hp-aLu"><path class="s" d="M150 160 L150 255"/><g id="beeper-hp-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="beeper-hp-aRu"><path class="s" d="M150 160 L150 255"/><g id="beeper-hp-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="beeper-hp-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="beeper-hp-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="beeper-hp-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="beeper-hp-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="beeper-hp-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="beeper-hp-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="beeper-hp-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="beeper-hp-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="beeper-pg" class="clip el" data-start="11.1" data-duration="8.201" data-track-index="8" style="position:absolute;left:1240px;top:0px;width:680px;height:920px;z-index:9" data-layout-allow-overlap><div id="beeper-pg-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 60 L160 60 Q172 60 172 72 L172 150 Q172 162 160 162 L40 162 Q28 162 28 150 L28 72 Q28 60 40 60 Z"/><path class="s acc-s" pathLength="1" d="M48 78 L152 78 L152 118 L48 118 Z"/><path class="s thin" pathLength="1" d="M60 98 L76 98 M86 98 L120 98"/><circle class="f" cx="70" cy="140" r="8"/><circle class="f" cx="100" cy="140" r="8"/><circle class="f" cx="130" cy="140" r="8"/><path class="s acc-s" pathLength="1" d="M150 40 L162 26 M164 48 L182 42 M172 62 L190 64"/></svg></div></div></div>
+    <div id="beeper-bp1" class="clip el" data-start="12.52" data-duration="2.25" data-track-index="9" style="position:absolute;left:1460px;top:0px;width:460px;height:720px;z-index:10"><div id="beeper-bp1-in" class="in"><div class="txt" style="font-size:54px;font-weight:800;color:var(--accent)"><span id="beeper-bp1-w0" class="w">beep</span></div></div></div>
+    <div id="beeper-bp2" class="clip el" data-start="15.32" data-duration="3.981" data-track-index="10" style="position:absolute;left:1460px;top:0px;width:460px;height:720px;z-index:11"><div id="beeper-bp2-in" class="in"><div class="txt" style="font-size:54px;font-weight:800;color:var(--accent)"><span id="beeper-bp2-w0" class="w">beep</span></div></div></div>
+    <div id="beeper-nbk" class="clip el" data-start="16.251" data-duration="3.05" data-track-index="11" style="position:absolute;left:320px;top:120px;width:1600px;height:960px;z-index:12" data-layout-allow-overlap><div id="beeper-nbk-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 20 L156 20 L156 184 L44 184 Z"/><path class="s" pathLength="1" d="M44 20 L44 184 M60 20 L60 184"/><path class="s acc-s" pathLength="1" d="M76 60 L140 60 M76 90 L140 90 M76 120 L124 120"/></svg></div></div></div>
+    <div id="beeper-t1" class="clip el" data-start="11.1" data-duration="8.251" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:13"><div id="beeper-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="beeper-t1-w0" class="w">beep…</span> <span id="beeper-t1-w1" class="w">what's</span> <span id="beeper-t1-w2" class="w">on</span> <span id="beeper-t1-w3" class="w">your</span> <span id="beeper-t1-w4" class="w acc">mind<span class="tail">?</span></span></div></div></div>
+    <div id="beeper-t2" class="clip el" data-start="21.191" data-duration="3.08" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:14"><div id="beeper-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="beeper-t2-w0" class="w">you'd</span> <span id="beeper-t2-w1" class="w">guess:</span> <span id="beeper-t2-w2" class="w acc">all</span> <span id="beeper-t2-w3" class="w acc">day</span></div></div></div>
+    <div id="beeper-t3" class="clip el" data-start="24.371" data-duration="2.544" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="beeper-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="beeper-t3-w0" class="w">…a</span> <span id="beeper-t3-w1" class="w">lot</span> <span id="beeper-t3-w2" class="w acc">less</span></div></div></div>
+    <div id="beeper-k1" class="clip el" data-start="28.015" data-duration="9.305" data-track-index="15" style="position:absolute;left:380px;top:640px;width:1540px;height:440px;z-index:16"><div id="beeper-k1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:150px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">words</div></div></div></div>
+    <div id="beeper-p1" class="clip el" data-start="29.875" data-duration="7.495" data-track-index="16" style="position:absolute;left:380px;top:240px;width:1540px;height:840px;z-index:17"><div id="beeper-p1-in" class="in"><div class="txt" style="font-size:52px;font-weight:600;color:var(--ink)"><span id="beeper-p1-w0" class="w">&lt;</span> <span id="beeper-p1-w1" class="w">1/3</span></div></div></div>
+    <div id="beeper-k2" class="clip el" data-start="31.835" data-duration="5.485" data-track-index="17" style="position:absolute;left:980px;top:640px;width:940px;height:440px;z-index:18"><div id="beeper-k2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:320px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">pictures &amp; feelings</div></div></div></div>
+    <div id="beeper-pf" class="clip el" data-start="33.595" data-duration="3.725" data-track-index="18" style="position:absolute;left:980px;top:0px;width:940px;height:840px;z-index:19" data-layout-allow-overlap><div id="beeper-pf-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M26 34 L174 34 L174 172 L26 172 Z"/><path class="s" pathLength="1" d="M46 54 L154 54 L154 152 L46 152 Z"/><path class="s acc-s" pathLength="1" d="M50 148 L84 104 L108 130 L126 110 L150 148"/><circle class="alm-f" cx="78" cy="78" r="9"/></svg></div></div></div>
+    <div id="beeper-t4" class="clip el" data-start="26.815" data-duration="4.96" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="beeper-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="beeper-t4-w0" class="w">inner</span> <span id="beeper-t4-w1" class="w">speech:</span> <span id="beeper-t4-w2" class="w">under</span> <span id="beeper-t4-w3" class="w">a</span> <span id="beeper-t4-w4" class="w acc">third</span></div></div></div>
+    <div id="beeper-t5" class="clip el" data-start="33.595" data-duration="3.775" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:21"><div id="beeper-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="beeper-t5-w0" class="w">pictures…</span> <span id="beeper-t5-w1" class="w acc">feelings<span class="tail">…</span></span></div></div></div>
+    <div id="beeper-q1" class="clip el" data-start="38.97" data-duration="10.236" data-track-index="21" style="position:absolute;left:380px;top:640px;width:1540px;height:440px;z-index:22"><div id="beeper-q1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:380px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">questionnaire</div></div></div></div>
+    <div id="beeper-q2" class="clip el" data-start="43.71" data-duration="5.496" data-track-index="22" style="position:absolute;left:980px;top:640px;width:940px;height:440px;z-index:23"><div id="beeper-q2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:130px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">beeper</div></div></div></div>
+    <div id="beeper-q3" class="clip el" data-start="40.77" data-duration="8.436" data-track-index="23" style="position:absolute;left:680px;top:0px;width:1240px;height:760px;z-index:24"><div id="beeper-q3-in" class="in"><div class="txt" style="font-size:70px;font-weight:800;color:var(--accent)"><span id="beeper-q3-w0" class="w">2–4×</span></div></div></div>
+    <div id="beeper-t6" class="clip el" data-start="37.27" data-duration="1.72" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:25"><div id="beeper-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="beeper-t6-w0" class="w">here's</span> <span id="beeper-t6-w1" class="w">the</span> <span id="beeper-t6-w2" class="w acc">funny</span> <span id="beeper-t6-w3" class="w">part</span></div></div></div>
+    <div id="beeper-t7" class="clip el" data-start="45.616" data-duration="3.64" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:26"><div id="beeper-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="beeper-t7-w0" class="w">we</span> <span id="beeper-t7-w1" class="w">don't</span> <span id="beeper-t7-w2" class="w">know</span> <span id="beeper-t7-w3" class="w">our</span> <span id="beeper-t7-w4" class="w">own</span> <span id="beeper-t7-w5" class="w acc">heads</span></div></div></div>
+    <div id="beeper-r1" class="clip el" data-start="49.336" data-duration="7.932" data-track-index="26" style="position:absolute;left:380px;top:300px;width:1540px;height:780px;z-index:27"><div id="beeper-r1-in" class="in"><svg class="stick" id="beeper-r1-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="beeper-r1-aLu"><path class="s" d="M150 160 L150 255"/><g id="beeper-r1-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="beeper-r1-aRu"><path class="s" d="M150 160 L150 255"/><g id="beeper-r1-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="beeper-r1-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="beeper-r1-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="beeper-r1-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="beeper-r1-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="beeper-r1-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="beeper-r1-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="beeper-r1-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="beeper-r1-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="beeper-r1b" class="clip el" data-start="53.876" data-duration="3.342" data-track-index="27" style="position:absolute;left:600px;top:0px;width:1320px;height:760px;z-index:28" data-layout-allow-overlap><div id="beeper-r1b-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 30 L120 30 Q134 30 134 44 L134 96 Q134 110 120 110 L60 110 L36 132 L40 110 L34 110 Q20 110 20 96 L20 44 Q20 30 34 30 Z"/><path class="s acc-s" pathLength="1" d="M80 128 L80 120 Q80 106 94 106 L166 106 Q180 106 180 120 L180 160 Q180 174 166 174 L160 174 L164 194 L140 174 L94 174 Q80 174 80 160 Z"/></svg></div></div></div>
+    <div id="beeper-r1c" class="clip el" data-start="53.876" data-duration="3.342" data-track-index="28" style="position:absolute;left:200px;top:0px;width:1720px;height:720px;z-index:29" data-layout-allow-overlap><div id="beeper-r1c-in" class="in"><div class="ico" style="width:90px;height:90px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M20 30 L120 30 Q134 30 134 44 L134 96 Q134 110 120 110 L60 110 L36 132 L40 110 L34 110 Q20 110 20 96 L20 44 Q20 30 34 30 Z"/><path class="s acc-s" pathLength="1" d="M80 128 L80 120 Q80 106 94 106 L166 106 Q180 106 180 120 L180 160 Q180 174 166 174 L160 174 L164 194 L140 174 L94 174 Q80 174 80 160 Z"/></svg></div></div></div>
+    <div id="beeper-r2" class="clip el" data-start="49.336" data-duration="7.932" data-track-index="29" style="position:absolute;left:1180px;top:300px;width:740px;height:780px;z-index:30"><div id="beeper-r2-in" class="in"><svg class="stick" id="beeper-r2-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="beeper-r2-aLu"><path class="s" d="M150 160 L150 255"/><g id="beeper-r2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="beeper-r2-aRu"><path class="s" d="M150 160 L150 255"/><g id="beeper-r2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="beeper-r2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="beeper-r2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="beeper-r2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="beeper-r2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="beeper-r2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="beeper-r2-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="beeper-r2-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="beeper-r2-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="beeper-r2b" class="clip el" data-start="55.528" data-duration="1.69" data-track-index="30" style="position:absolute;left:1380px;top:0px;width:540px;height:740px;z-index:31" data-layout-allow-overlap><div id="beeper-r2b-in" class="in"><div class="ico" style="width:140px;height:140px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="beeper-t8" class="clip el" data-start="49.336" data-duration="2.82" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:32"><div id="beeper-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="beeper-t8-w0" class="w">the</span> <span id="beeper-t8-w1" class="w">differences:</span> <span id="beeper-t8-w2" class="w acc">huge</span></div></div></div>
+    <div id="beeper-t9" class="clip el" data-start="52.056" data-duration="5.212" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:33"><div id="beeper-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="beeper-t9-w0" class="w">some,</span> <span id="beeper-t9-w1" class="w acc">constantly<span class="tail">…</span></span> <span id="beeper-t9-w2" class="w">some,</span> <span id="beeper-t9-w3" class="w">hardly</span> <span id="beeper-t9-w4" class="w acc">ever</span></div></div></div>
+    <div id="beeper-emp" class="clip el" data-start="59.048" data-duration="1.28" data-track-index="33" style="position:absolute;left:780px;top:0px;width:1140px;height:960px;z-index:34" data-layout-allow-overlap><div id="beeper-emp-in" class="in"><div class="ico" style="width:300px;height:300px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="beeper-t10" class="clip el" data-start="57.168" data-duration="3.235" data-track-index="34" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:35"><div id="beeper-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="beeper-t10-w0" class="w">what</span> <span id="beeper-t10-w1" class="w">if</span> <span id="beeper-t10-w2" class="w">it's</span> <span id="beeper-t10-w3" class="w acc">never</span> <span id="beeper-t10-w4" class="w">there?</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"beeper-bg","t":"icon","from":"blur","exit":null,"in":0.2,"out":60.388,"outDur":0.25,"hold":false},{"id":"beeper-h","t":"stick","from":"left","exit":null,"in":0.2,"out":60.388,"outDur":0.3,"hold":false,"poses":[["chin",0.86],["present",4.06],["explain",14.72],["shrug",19.251],["handsHips",24.171],["present",26.815],["explain",31.835],["happy",37.69],["shrug",45.016],["present",49.156],["lean",57.168]],"mouth":[["smile",0.2],["open",0.45],["smile",0.604],["o",0.67],["smile",0.89],["o",1.11],["smile",1.33],["open",1.57],["smile",1.682],["open",1.73],["smile",1.842],["open",1.89],["smile",2.086],["open",2.17],["smile",2.366],["open",2.45],["smile",2.59],["open",2.65],["smile",2.75],["o",2.79],["smile",3.01],["o",3.33],["smile",3.55],["open",4.21],["smile",4.31],["o",4.31],["smile",4.53],["o",4.75],["smile",4.97],["o",5.19],["smile",5.41],["o",5.61],["smile",5.83],["open",6.07],["smile",6.28],["open",6.37],["smile",6.566],["o",6.83],["smile",7.05],["open",7.33],["smile",7.512],["open",7.59],["smile",7.69],["open",7.71],["smile",7.864],["o",7.93],["smile",8.15],["o",8.47],["smile",8.69],["open",8.81],["smile",8.936],["open",8.99],["smile",9.07],["o",9.07],["smile",9.29],["o",9.718],["smile",9.938],["open",10.51],["smile",10.57],["open",10.57],["smile",10.682],["o",10.73],["smile",10.95],["open",11.13],["smile",11.284],["o",11.35],["smile",11.57],["open",11.87],["smile",11.996],["open",12.05],["smile",12.218],["open",12.29],["smile",12.5],["open",12.59],["smile",12.716],["o",12.77],["smile",12.99],["o",13.25],["smile",13.47],["open",13.61],["smile",13.778],["open",13.85],["smile",13.95],["o",13.99],["smile",14.21],["open",14.97],["smile",15.138],["open",15.21],["smile",15.35],["open",15.41],["smile",15.522],["o",15.57],["smile",15.79],["open",16.261],["smile",16.429],["open",16.501],["smile",16.601],["open",16.641],["smile",16.823],["o",16.901],["smile",17.121],["o",17.461],["smile",17.681],["open",17.841],["smile",17.941],["open",17.961],["smile",18.143],["open",18.221],["smile",18.347],["open",18.401],["smile",18.501],["open",18.541],["smile",18.641],["o",18.681],["smile",18.901],["open",19.501],["smile",19.711],["open",19.801],["smile",19.901],["open",19.941],["smile",20.041],["open",20.061],["smile",20.271],["o",20.361],["smile",20.581],["open",21.241],["smile",21.381],["open",21.441],["smile",21.567],["open",21.621],["smile",21.803],["open",21.881],["smile",22.063],["open",22.141],["smile",22.323],["o",22.401],["smile",22.621],["o",22.741],["smile",22.961],["open",23.181],["smile",23.349],["o",23.421],["smile",23.641],["open",24.421],["smile",24.561],["o",24.621],["smile",24.841],["open",24.941],["smile",25.123],["open",25.201],["smile",25.341],["open",25.401],["smile",25.611],["open",25.701],["smile",25.897],["open",25.981],["smile",26.121],["open",26.181],["smile",26.363],["open",27.065],["smile",27.165],["open",27.205],["smile",27.331],["o",27.385],["smile",27.605],["open",28.265],["smile",28.377],["open",28.425],["smile",28.621],["o",28.705],["smile",28.925],["open",29.045],["smile",29.199],["open",29.265],["smile",29.377],["o",29.425],["smile",29.645],["open",29.805],["smile",29.945],["open",30.005],["smile",30.105],["o",30.125],["smile",30.345],["open",30.485],["smile",30.611],["open",30.665],["smile",30.805],["o",30.865],["smile",31.085],["open",31.925],["smile",32.037],["open",32.085],["smile",32.197],["open",32.245],["smile",32.371],["open",32.425],["smile",32.525],["open",32.545],["smile",32.741],["open",33.205],["smile",33.373],["open",33.445],["smile",33.557],["open",33.605],["smile",33.773],["o",33.845],["smile",34.065],["o",34.345],["smile",34.565],["o",34.885],["smile",35.105],["o",35.305],["smile",35.525],["open",35.745],["smile",35.899],["open",35.965],["smile",36.175],["open",36.265],["smile",36.433],["open",36.505],["smile",36.659],["open",36.725],["smile",36.935],["o",37.52],["grin",37.69],["open",37.84],["grin",37.94],["open",37.94],["grin",38.136],["o",38.22],["grin",38.44],["open",39.14],["grin",39.22],["o",39.22],["grin",39.44],["open",40.4],["grin",40.526],["o",40.58],["grin",40.8],["o",41.02],["grin",41.24],["open",41.48],["grin",41.606],["open",41.66],["grin",41.87],["o",41.96],["grin",42.18],["o",42.32],["grin",42.54],["o",42.72],["grin",42.94],["o",43.1],["grin",43.32],["o",43.42],["grin",43.64],["open",43.78],["grin",43.906],["o",43.96],["grin",44.18],["o",44.28],["grin",44.5],["smile",45.016],["open",45.266],["smile",45.434],["o",45.506],["smile",45.726],["open",45.866],["smile",45.966],["open",46.006],["smile",46.146],["open",46.206],["smile",46.388],["open",46.466],["smile",46.62],["open",46.686],["smile",46.786],["open",46.786],["smile",46.968],["open",47.046],["smile",47.214],["open",47.286],["smile",47.426],["open",47.486],["smile",47.654],["open",47.726],["smile",47.826],["open",47.826],["smile",47.938],["o",47.986],["smile",48.206],["o",48.326],["smile",48.546],["open",49.406],["smile",49.486],["open",49.486],["smile",49.586],["o",49.586],["smile",49.806],["o",50.066],["smile",50.286],["o",50.486],["smile",50.706],["open",50.906],["smile",51.074],["o",51.146],["smile",51.366],["open",52.306],["smile",52.474],["open",52.546],["smile",52.756],["open",52.846],["smile",53.042],["open",53.126],["smile",53.226],["o",53.266],["smile",53.486],["o",53.606],["smile",53.826],["o",54.126],["smile",54.346],["o",55.338],["smile",55.558],["o",55.778],["smile",55.998],["o",56.238],["smile",56.458],["open",56.558],["smile",56.726],["neutral",57.168],["open",57.418],["neutral",57.544],["open",57.598],["neutral",57.738],["open",57.798],["neutral",57.924],["open",57.978],["neutral",58.16],["open",58.238],["neutral",58.448],["open",58.538],["neutral",58.706],["open",58.778],["neutral",58.96],["open",59.038],["neutral",59.22],["o",59.298],["neutral",59.518],["open",59.678],["neutral",59.846],["open",59.918],["neutral",60.044],["open",60.098],["neutral",60.266]]},{"id":"beeper-hb","t":"icon","from":"pop","exit":null,"in":1.64,"out":7.98,"outDur":0.25,"hold":false},{"id":"beeper-hbq","t":"icon","from":"pop","exit":null,"in":3.08,"out":7.98,"outDur":0.25,"hold":false},{"id":"beeper-t0","t":"text","from":"top","exit":null,"in":0.86,"out":3.7199999999999998,"outDur":0.3,"hold":false,"words":[0.42,0.86,1.32,3.08,3.08]},{"id":"beeper-c1","t":"card","from":"top","exit":null,"in":4.94,"out":10.86,"outDur":0.3,"hold":false},{"id":"beeper-hp","t":"stick","from":"bottom","exit":null,"in":10.32,"out":19.011000000000003,"outDur":0.3,"hold":false,"poses":[["give",11.1],["give",16.251]],"mouth":[["neutral",10.32],["o",12.52]]},{"id":"beeper-pg","t":"icon","from":"pop","exit":null,"in":11.1,"out":19.011000000000003,"outDur":0.25,"hold":false,"sway":12,"period":0.4},{"id":"beeper-bp1","t":"text","from":"slam","exit":null,"in":12.52,"out":14.48,"outDur":0.25,"hold":false,"words":[11.1]},{"id":"beeper-bp2","t":"text","from":"slam","exit":null,"in":15.32,"out":19.011000000000003,"outDur":0.25,"hold":false,"words":[15.32]},{"id":"beeper-nbk","t":"icon","from":"pop","exit":null,"in":16.251,"out":19.011000000000003,"outDur":0.25,"hold":false},{"id":"beeper-t1","t":"text","from":"top","exit":null,"in":11.1,"out":19.011000000000003,"outDur":0.3,"hold":false,"words":[11.1,11.2,11.3,11.4,11.5]},{"id":"beeper-t2","t":"text","from":"top","exit":null,"in":21.191,"out":23.931,"outDur":0.3,"hold":false,"words":[20.991,21.191,22.491,22.931]},{"id":"beeper-t3","t":"text","from":"top","exit":null,"in":24.371,"out":26.575000000000003,"outDur":0.3,"hold":false,"words":[24.951,25.151,25.451]},{"id":"beeper-k1","t":"bar","from":"draw","exit":null,"in":28.015,"out":37.03,"outDur":0.25,"hold":false},{"id":"beeper-p1","t":"text","from":"bottom","exit":null,"in":29.875,"out":37.03,"outDur":0.3,"hold":false,"words":[29.975,30.075]},{"id":"beeper-k2","t":"bar","from":"draw","exit":null,"in":31.835,"out":37.03,"outDur":0.25,"hold":false},{"id":"beeper-pf","t":"icon","from":"pop","exit":null,"in":33.595,"out":37.03,"outDur":0.25,"hold":false},{"id":"beeper-t4","t":"text","from":"top","exit":null,"in":26.815,"out":31.435000000000002,"outDur":0.3,"hold":false,"words":[28.015,28.175,29.755,29.755,29.875]},{"id":"beeper-t5","t":"text","from":"top","exit":null,"in":33.595,"out":37.03,"outDur":0.3,"hold":false,"words":[33.595,34.635]},{"id":"beeper-q1","t":"bar","from":"draw","exit":null,"in":38.97,"out":48.916,"outDur":0.25,"hold":false},{"id":"beeper-q2","t":"bar","from":"draw","exit":null,"in":43.71,"out":48.916,"outDur":0.25,"hold":false},{"id":"beeper-q3","t":"text","from":"slam","exit":null,"in":40.77,"out":48.916,"outDur":0.25,"hold":false,"words":[40.87]},{"id":"beeper-t6","t":"text","from":"top","exit":null,"in":37.27,"out":38.65,"outDur":0.3,"hold":false,"words":[37.27,37.59,37.69,37.97]},{"id":"beeper-t7","t":"text","from":"top","exit":null,"in":45.616,"out":48.916,"outDur":0.3,"hold":false,"words":[46.536,46.536,46.536,47.576,47.736,48.076]},{"id":"beeper-r1","t":"stick","from":"bottom","exit":null,"in":49.336,"out":56.928,"outDur":0.3,"hold":false,"poses":[["happy",52.056]],"mouth":[["open",52.056],["o",53.266],["open",53.486],["o",53.606],["open",53.826],["o",54.126],["open",54.346]]},{"id":"beeper-r1b","t":"icon","from":"pop","exit":null,"in":53.876,"out":56.928,"outDur":0.25,"hold":false},{"id":"beeper-r1c","t":"icon","from":"pop","exit":null,"in":53.876,"out":56.928,"outDur":0.25,"hold":false},{"id":"beeper-r2","t":"stick","from":"bottom","exit":null,"in":49.336,"out":56.928,"outDur":0.3,"hold":false,"poses":[["idle",55.088]],"mouth":[["neutral",49.336]]},{"id":"beeper-r2b","t":"icon","from":"pop","exit":null,"in":55.528,"out":56.928,"outDur":0.25,"hold":false},{"id":"beeper-t8","t":"text","from":"top","exit":null,"in":49.336,"out":51.815999999999995,"outDur":0.3,"hold":false,"words":[49.236,49.336,50.896]},{"id":"beeper-t9","t":"text","from":"top","exit":null,"in":52.056,"out":56.928,"outDur":0.3,"hold":false,"words":[52.056,53.876,53.976,54.076,54.176]},{"id":"beeper-emp","t":"icon","from":"pop","exit":null,"in":59.048,"out":60.038,"outDur":0.25,"hold":false},{"id":"beeper-t10","t":"text","from":"top","exit":null,"in":57.168,"out":60.062999999999995,"outDur":0.3,"hold":false,"words":[57.168,59.048,59.048,59.048,59.428]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4},"explain":{"aLu":40,"aLl":78,"aRu":-40,"aRl":-78,"hd":0},"explainR":{"aLu":12,"aLl":-4,"aRu":-40,"aRl":-72,"hd":-4},"present":{"aLu":14,"aLl":-4,"aRu":-96,"aRl":-34,"hd":-6},"presentL":{"aLu":96,"aLl":34,"aRu":-14,"aRl":4,"hd":6},"chin":{"aLu":24,"aLl":-104,"aRu":-70,"aRl":198,"hd":8},"ear":{"aLu":14,"aLl":-4,"aRu":-100,"aRl":246,"hd":10},"wave":{"aLu":14,"aLl":-4,"aRu":-150,"aRl":-20,"hd":-4},"count":{"aLu":14,"aLl":-4,"aRu":-60,"aRl":-100},"lean":{"aLu":20,"aLl":-10,"aRu":-20,"aRl":10,"hd":10,"hy":4},"tiltL":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4,"hd":-10},"handsHips":{"aLu":40,"aLl":-100,"aRu":-40,"aRl":100,"hd":0},"embarrassed":{"aLu":6,"aLl":0,"aRu":-30,"aRl":150,"hy":10,"hd":6},"search":{"aLu":30,"aLl":-30,"aRu":-30,"aRl":30,"hd":-12}};
+      const MOUTHS = ["neutral","smile","frown","o","tight","open","grin"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (e.hold) {
+        } else if (ex === "cut") {
+          tl.set(inner, { opacity: 0 }, e.out);
+        } else if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["beeper"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,266 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="keys" data-width="1920" data-height="1080">
+    <div id="keys-bg" class="clip el" data-start="0.2" data-duration="57.952" data-track-index="1" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:1;opacity:0.42" data-layout-allow-overlap><div id="keys-bg-in" class="in"><div class="ico" style="width:1920px;height:1920px;color:var(--muted)"><svg viewBox="0 0 200 200"><path d="M-20 137.5 L220 137.5" fill="none" stroke="currentColor" stroke-width="7" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 70 L56 70 L56 102 L22 102 Z M39 70 L39 102 M22 86 L56 86" fill="none" stroke="currentColor" stroke-width="6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="77" r="3.2" fill="currentColor" opacity="0.5"/><path d="M118 110 L204 110 M122 110 L122 137.5 M150 110 L150 137.5 M178 110 L178 137.5 M200 110 L200 137.5 M134 122 L138 122 M162 122 L166 122 M188 122 L192 122" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M126 66 L198 66 L198 86 L126 86 Z M150 66 L150 86 M174 66 L174 86" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M90 40 L90 62 M82 66 L98 66 L94 62 L86 62 Z" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M136 110 L136 102 L144 102 L144 110 M140 102 L142 98" fill="none" stroke="currentColor" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+    <div id="keys-h" class="clip el" data-start="0.2" data-duration="57.952" data-track-index="2" style="position:absolute;left:0px;top:300px;width:800px;height:780px;z-index:3"><div id="keys-h-in" class="in"><svg class="stick" id="keys-h-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="keys-h-aLu"><path class="s" d="M150 160 L150 255"/><g id="keys-h-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="keys-h-aRu"><path class="s" d="M150 160 L150 255"/><g id="keys-h-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="keys-h-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="keys-h-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="keys-h-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="keys-h-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="keys-h-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="keys-h-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="keys-h-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="keys-h-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="keys-ky" class="clip el" data-start="0.74" data-duration="22.965" data-track-index="3" style="position:absolute;left:1360px;top:160px;width:560px;height:920px;z-index:4" data-layout-allow-overlap><div id="keys-ky-in" class="in"><div class="ico" style="width:80px;height:80px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 70 m-40 0 a40 40 0 1 0 80 0 a40 40 0 1 0 -80 0"/><path class="s acc-s" pathLength="1" d="M64 70 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"/><path class="s" pathLength="1" d="M94 98 L176 180 M150 154 L132 172 M166 170 L150 186"/></svg></div></div></div>
+    <div id="keys-kk" class="clip el" data-start="4.458" data-duration="2.73" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1440px;height:720px;z-index:5" data-layout-allow-overlap><div id="keys-kk-in" class="in"><div class="ico bub" style="width:210px;height:150px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:30px">Keys… keys…</div></div></div></div>
+    <div id="keys-t0" class="clip el" data-start="0.2" data-duration="1.42" data-track-index="5" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:6"><div id="keys-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="keys-t0-w0" class="w">you've</span> <span id="keys-t0-w1" class="w">lost</span> <span id="keys-t0-w2" class="w">your</span> <span id="keys-t0-w3" class="w acc">keys</span></div></div></div>
+    <div id="keys-nb" class="clip el" data-start="7.298" data-duration="10.717" data-track-index="6" style="position:absolute;left:1080px;top:300px;width:840px;height:780px;z-index:7"><div id="keys-nb-in" class="in"><svg class="stick" id="keys-nb-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="keys-nb-aLu"><path class="s" d="M150 160 L150 255"/><g id="keys-nb-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="keys-nb-aRu"><path class="s" d="M150 160 L150 255"/><g id="keys-nb-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="keys-nb-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="keys-nb-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="keys-nb-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="keys-nb-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="keys-nb-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="keys-nb-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="keys-nb-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="keys-nb-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="keys-t1" class="clip el" data-start="7.298" data-duration="4.08" data-track-index="7" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:8"><div id="keys-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="keys-t1-w0" class="w">…and</span> <span id="keys-t1-w1" class="w">someone</span> <span id="keys-t1-w2" class="w">walks</span> <span id="keys-t1-w3" class="w acc">in</span></div></div></div>
+    <div id="keys-t2" class="clip el" data-start="11.278" data-duration="3.44" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:9"><div id="keys-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="keys-t2-w0" class="w">we</span> <span id="keys-t2-w1" class="w">all</span> <span id="keys-t2-w2" class="w acc">do</span> <span id="keys-t2-w3" class="w">this</span></div></div></div>
+    <div id="keys-ghost" class="clip el" data-start="15.098" data-duration="4.827" data-track-index="9" style="position:absolute;left:0px;top:440px;width:1320px;height:640px;z-index:10;opacity:0.6"><div id="keys-ghost-in" class="in"><svg class="stick" id="keys-ghost-svg" width="150" height="260" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="keys-ghost-aLu"><path class="s" d="M150 160 L150 255"/><g id="keys-ghost-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="keys-ghost-aRu"><path class="s" d="M150 160 L150 255"/><g id="keys-ghost-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="keys-ghost-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="keys-ghost-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="keys-ghost-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="keys-ghost-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="keys-ghost-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="keys-ghost-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="keys-ghost-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="keys-ghost-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="keys-t3" class="clip el" data-start="15.098" data-duration="2.917" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:11"><div id="keys-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="keys-t3-w0" class="w">your</span> <span id="keys-t3-w1" class="w">inner</span> <span id="keys-t3-w2" class="w acc">four-year-old</span></div></div></div>
+    <div id="keys-kk2" class="clip el" data-start="19.875" data-duration="3.83" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1280px;height:720px;z-index:12" data-layout-allow-overlap><div id="keys-kk2-in" class="in"><div class="ico bub" style="width:182px;height:130px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:40px">Keys!</div></div></div></div>
+    <div id="keys-t4" class="clip el" data-start="19.875" data-duration="3.88" data-track-index="12" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:13"><div id="keys-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="keys-t4-w0" class="w">saying</span> <span id="keys-t4-w1" class="w">it</span> <span id="keys-t4-w2" class="w">might</span> <span id="keys-t4-w3" class="w acc">help</span></div></div></div>
+    <div id="keys-c1" class="clip el" data-start="23.815" data-duration="5.14" data-track-index="13" style="position:absolute;left:800px;top:0px;width:1120px;height:440px;z-index:14"><div id="keys-c1-in" class="in"><div class="card"><div class="card-k">2012 · LUPYAN &amp; SWINGLEY</div><div class="card-t">Find it in a crowd of pictures</div><div class="card-s">psychologists</div></div></div></div>
+    <div id="keys-g0" class="clip el" data-start="30.535" data-duration="12.752" data-track-index="14" style="position:absolute;left:440px;top:0px;width:1480px;height:720px;z-index:15" data-layout-allow-overlap><div id="keys-g0-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 72 L150 72 L140 172 Q138 182 128 182 L62 182 Q52 182 50 172 Z"/><path class="s" pathLength="1" d="M148 92 Q182 92 178 122 Q174 146 144 142"/><path class="s acc-s" pathLength="1" d="M78 54 Q66 38 78 22 M110 54 Q98 38 110 22"/></svg></div></div></div>
+    <div id="keys-g1" class="clip el" data-start="30.535" data-duration="12.752" data-track-index="15" style="position:absolute;left:800px;top:0px;width:1120px;height:720px;z-index:16" data-layout-allow-overlap><div id="keys-g1-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 52 Q60 32 18 46 L18 168 Q60 154 100 174 Q140 154 182 168 L182 46 Q140 32 100 52 Z"/><path class="s" pathLength="1" d="M100 52 L100 174"/><path class="s acc-s" pathLength="1" d="M40 80 L80 86 M40 108 L80 114 M120 86 L160 80 M120 114 L160 108"/></svg></div></div></div>
+    <div id="keys-g2" class="clip el" data-start="30.535" data-duration="12.752" data-track-index="16" style="position:absolute;left:1160px;top:0px;width:760px;height:720px;z-index:17" data-layout-allow-overlap><div id="keys-g2-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-80 0 a80 80 0 1 0 160 0 a80 80 0 1 0 -160 0"/><path class="s" pathLength="1" d="M100 100 L100 50"/><path class="s alm-s" pathLength="1" d="M100 100 L140 120"/><circle class="f" cx="100" cy="100" r="8"/></svg></div></div></div>
+    <div id="keys-g3" class="clip el" data-start="30.535" data-duration="12.752" data-track-index="17" style="position:absolute;left:440px;top:0px;width:1480px;height:1080px;z-index:18" data-layout-allow-overlap><div id="keys-g3-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 92 L170 92 L170 182 L30 182 Z"/><path class="s" pathLength="1" d="M20 64 L180 64 L180 92 L20 92 Z"/><path class="s acc-s" pathLength="1" d="M100 64 L100 182"/><path class="s acc-s" pathLength="1" d="M100 64 Q66 26 56 48 Q52 66 100 64 Q148 66 144 48 Q134 26 100 64"/></svg></div></div></div>
+    <div id="keys-g4" class="clip el" data-start="30.535" data-duration="12.752" data-track-index="18" style="position:absolute;left:800px;top:0px;width:1120px;height:1080px;z-index:19" data-layout-allow-overlap><div id="keys-g4-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 70 m-40 0 a40 40 0 1 0 80 0 a40 40 0 1 0 -80 0"/><path class="s acc-s" pathLength="1" d="M64 70 m-12 0 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0"/><path class="s" pathLength="1" d="M94 98 L176 180 M150 154 L132 172 M166 170 L150 186"/></svg></div></div></div>
+    <div id="keys-g5" class="clip el" data-start="30.535" data-duration="12.752" data-track-index="19" style="position:absolute;left:1160px;top:0px;width:760px;height:1080px;z-index:20" data-layout-allow-overlap><div id="keys-g5-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="keys-g6" class="clip el" data-start="30.535" data-duration="12.752" data-track-index="20" style="position:absolute;left:440px;top:360px;width:1480px;height:720px;z-index:21" data-layout-allow-overlap><div id="keys-g6-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 20 L156 20 L156 184 L44 184 Z"/><path class="s" pathLength="1" d="M44 20 L44 184 M60 20 L60 184"/><path class="s acc-s" pathLength="1" d="M76 60 L140 60 M76 90 L140 90 M76 120 L124 120"/></svg></div></div></div>
+    <div id="keys-g7" class="clip el" data-start="30.535" data-duration="12.752" data-track-index="21" style="position:absolute;left:800px;top:360px;width:1120px;height:720px;z-index:22" data-layout-allow-overlap><div id="keys-g7-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M14 64 L186 64 L186 150 L14 150 Z"/><path class="s" pathLength="1" d="M24 160 L196 160 M34 172 L196 172"/><path class="s acc-s" pathLength="1" d="M118 86 Q100 76 86 86 Q76 98 100 107 Q124 115 114 128 Q100 138 80 128 M100 72 L100 142"/></svg></div></div></div>
+    <div id="keys-g8" class="clip el" data-start="30.535" data-duration="12.752" data-track-index="22" style="position:absolute;left:1160px;top:360px;width:760px;height:720px;z-index:23" data-layout-allow-overlap><div id="keys-g8-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M76 30 Q76 14 100 14 Q124 14 124 30 L124 100 Q124 118 100 118 Q76 118 76 100 Z"/><path class="s" pathLength="1" d="M52 92 Q52 142 100 142 Q148 142 148 92 M100 142 L100 180 M70 182 L130 182"/><circle class="alm-f" cx="100" cy="56" r="8"/></svg></div></div></div>
+    <div id="keys-say" class="clip el" data-start="32.817" data-duration="6.53" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1320px;height:720px;z-index:24" data-layout-allow-overlap><div id="keys-say-in" class="in"><div class="ico bub" style="width:182px;height:130px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:36px">Keys…</div></div></div></div>
+    <div id="keys-ring" class="clip el" data-start="38.177" data-duration="5.11" data-track-index="24" style="position:absolute;left:800px;top:0px;width:1120px;height:1080px;z-index:25" data-layout-allow-overlap><div id="keys-ring-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 100 m-86 0 a86 86 0 1 0 172 0 a86 86 0 1 0 -172 0"/><path class="s" pathLength="1" d="M100 100 m-58 0 a58 58 0 1 0 116 0 a58 58 0 1 0 -116 0"/><path class="s acc-s" pathLength="1" d="M100 100 m-30 0 a30 30 0 1 0 60 0 a30 30 0 1 0 -60 0"/></svg></div></div></div>
+    <div id="keys-sw" class="clip el" data-start="38.177" data-duration="5.11" data-track-index="25" style="position:absolute;left:1600px;top:0px;width:320px;height:1080px;z-index:26" data-layout-allow-overlap><div id="keys-sw-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 116 m-68 0 a68 68 0 1 0 136 0 a68 68 0 1 0 -136 0"/><path class="s" pathLength="1" d="M84 24 L116 24 M100 24 L100 48 M152 52 L166 38"/><path class="s alm-s" pathLength="1" d="M100 116 L100 74"/><circle class="f" cx="100" cy="116" r="7"/></svg></div></div></div>
+    <div id="keys-t5" class="clip el" data-start="34.357" data-duration="5.04" data-track-index="26" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:27"><div id="keys-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="keys-t5-w0" class="w">say</span> <span id="keys-t5-w1" class="w">the</span> <span id="keys-t5-w2" class="w">name…</span> <span id="keys-t5-w3" class="w">find</span> <span id="keys-t5-w4" class="w">it</span> <span id="keys-t5-w5" class="w acc">faster</span></div></div></div>
+    <div id="keys-t6" class="clip el" data-start="41.097" data-duration="2.24" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:28"><div id="keys-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="keys-t6-w0" class="w">silly…</span> <span id="keys-t6-w1" class="w">but</span> <span id="keys-t6-w2" class="w acc">sharper</span></div></div></div>
+    <div id="keys-ban" class="clip el" data-start="44.976" data-duration="7.55" data-track-index="28" style="position:absolute;left:800px;top:0px;width:1120px;height:1040px;z-index:29" data-layout-allow-overlap><div id="keys-ban-in" class="in"><div class="ico" style="width:280px;height:280px;color:var(--ink)"><svg viewBox="0 0 200 200"><path d="M30 60 C40 130 110 170 176 132 C150 136 92 124 62 70 Z" fill="#E9C84A"/><path class="s" pathLength="1" d="M30 60 C40 130 110 170 176 132 C150 136 92 124 62 70 Z"/><path class="s" pathLength="1" d="M30 60 L22 44 L34 40 L40 56"/><path class="s acc-s" pathLength="1" d="M176 132 L186 136"/></svg></div></div></div>
+    <div id="keys-bbr" class="clip el" data-start="47.516" data-duration="5.01" data-track-index="29" style="position:absolute;left:240px;top:0px;width:1680px;height:1040px;z-index:30" data-layout-allow-overlap><div id="keys-bbr-in" class="in"><div class="ico" style="width:180px;height:180px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 40 Q70 18 50 44 Q22 50 28 84 Q12 108 34 130 Q36 162 70 162 Q88 182 100 160 Q112 182 130 162 Q164 162 166 130 Q188 108 172 84 Q178 50 150 44 Q130 18 100 40 Z"/><path class="s" pathLength="1" d="M100 40 L100 160 M60 80 Q80 90 70 110 M140 80 Q120 90 130 110"/></svg></div></div></div>
+    <div id="keys-b1" class="clip el" data-start="50.116" data-duration="2.46" data-track-index="30" style="position:absolute;left:340px;top:440px;width:1580px;height:640px;z-index:31"><div id="keys-b1-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--accent)"><span id="keys-b1-w0" class="w">yellow</span></div></div></div>
+    <div id="keys-b2" class="clip el" data-start="50.796" data-duration="1.78" data-track-index="31" style="position:absolute;left:780px;top:440px;width:1140px;height:640px;z-index:32"><div id="keys-b2-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--accent)"><span id="keys-b2-w0" class="w">curved</span></div></div></div>
+    <div id="keys-b3" class="clip el" data-start="50.836" data-duration="1.74" data-track-index="32" style="position:absolute;left:1320px;top:440px;width:600px;height:640px;z-index:33"><div id="keys-b3-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--accent)"><span id="keys-b3-w0" class="w">easy</span> <span id="keys-b3-w1" class="w">to</span> <span id="keys-b3-w2" class="w">spot</span></div></div></div>
+    <div id="keys-t7" class="clip el" data-start="44.976" data-duration="5.24" data-track-index="33" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:34"><div id="keys-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="keys-t7-w0" class="w">say</span> <span id="keys-t7-w1" class="w acc">banana<span class="tail">…</span></span></div></div></div>
+    <div id="keys-t8" class="clip el" data-start="50.116" data-duration="2.46" data-track-index="34" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:35"><div id="keys-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="keys-t8-w0" class="w">yellow,</span> <span id="keys-t8-w1" class="w">curved,</span> <span id="keys-t8-w2" class="w">easy</span> <span id="keys-t8-w3" class="w">to</span> <span id="keys-t8-w4" class="w acc">spot</span></div></div></div>
+    <div id="keys-cq" class="clip el" data-start="53.336" data-duration="4.816" data-track-index="35" style="position:absolute;left:800px;top:0px;width:1120px;height:1040px;z-index:36" data-layout-allow-overlap><div id="keys-cq-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="keys-t9" class="clip el" data-start="54.336" data-duration="3.791" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:37"><div id="keys-t9-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="keys-t9-w0" class="w">the</span> <span id="keys-t9-w1" class="w">catch:</span> <span id="keys-t9-w2" class="w">know</span> <span id="keys-t9-w3" class="w">what</span> <span id="keys-t9-w4" class="w">it</span> <span id="keys-t9-w5" class="w acc">looks</span> <span id="keys-t9-w6" class="w">like</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"keys-bg","t":"icon","from":"blur","exit":null,"in":0.2,"out":58.111999999999995,"outDur":0.25,"hold":false},{"id":"keys-h","t":"stick","from":"left","exit":null,"in":0.2,"out":58.111999999999995,"outDur":0.3,"hold":false,"poses":[["search",0.4],["chin",2.34],["search",5.158],["embarrassed",10.258],["shrug",11.278],["happy",14.618],["explainR",17.915],["present",23.655],["explain",39.297],["chin",43.237],["count",50.116],["chin",52.476],["explain",54.236]],"mouth":[["neutral",0.2],["open",0.45],["neutral",0.59],["open",0.65],["neutral",0.75],["open",0.77],["neutral",0.924],["o",0.99],["neutral",1.21],["open",1.77],["neutral",1.87],["open",1.89],["neutral",2.1],["open",2.19],["neutral",2.372],["open",2.45],["neutral",2.55],["open",2.59],["neutral",2.786],["o",2.87],["neutral",3.09],["open",3.21],["neutral",3.322],["open",3.37],["neutral",3.524],["open",3.59],["neutral",3.8],["o",3.89],["neutral",4.11],["o",4.708],["neutral",4.928],["open",5.408],["neutral",5.562],["open",5.988],["neutral",6.088],["open",6.128],["neutral",6.208],["open",6.208],["neutral",6.308],["o",6.328],["neutral",6.548],["o",7.738],["tight",10.258],["smile",11.278],["open",11.528],["smile",11.654],["open",11.708],["smile",11.862],["open",11.928],["smile",12.028],["open",12.048],["smile",12.188],["open",12.248],["smile",12.444],["o",12.528],["smile",12.748],["open",12.848],["smile",13.058],["o",13.148],["smile",13.368],["o",13.468],["smile",13.688],["o",14.008],["smile",14.228],["o",14.868],["smile",15.088],["open",15.208],["smile",15.308],["o",15.348],["smile",15.568],["o",15.736],["smile",15.956],["open",16.705],["smile",16.873],["open",16.945],["smile",17.141],["open",17.225],["smile",17.325],["open",17.365],["smile",17.547],["open",18.165],["smile",18.265],["o",18.265],["smile",18.485],["open",18.745],["smile",18.845],["o",18.845],["smile",19.065],["o",19.245],["smile",19.465],["open",20.125],["smile",20.293],["o",20.365],["smile",20.585],["o",20.885],["smile",21.105],["o",21.285],["smile",21.505],["o",21.605],["smile",21.825],["o",22.145],["smile",22.365],["open",22.625],["smile",22.807],["open",22.885],["smile",22.997],["open",23.045],["smile",23.227],["open",23.305],["smile",23.473],["open",23.905],["smile",24.017],["o",24.065],["smile",24.285],["o",24.485],["smile",24.705],["o",24.965],["smile",25.185],["o",25.605],["smile",25.825],["o",26.105],["smile",26.325],["open",26.525],["smile",26.707],["o",26.785],["smile",27.005],["o",27.125],["smile",27.345],["open",27.605],["smile",27.787],["open",27.865],["smile",27.991],["open",28.045],["smile",28.157],["open",28.205],["smile",28.305],["o",28.325],["smile",28.545],["open",29.105],["smile",29.205],["open",29.205],["smile",29.415],["o",29.505],["smile",29.725],["open",29.845],["smile",29.945],["open",29.985],["smile",30.139],["o",30.205],["smile",30.425],["o",30.785],["smile",31.005],["o",31.245],["smile",31.465],["open",31.585],["smile",31.685],["open",31.705],["smile",31.915],["open",32.005],["smile",32.145],["o",32.205],["smile",32.425],["open",33.067],["smile",33.277],["open",33.367],["smile",33.467],["open",33.467],["smile",33.593],["o",33.647],["smile",33.867],["open",33.967],["smile",34.079],["o",34.127],["smile",34.347],["open",34.607],["smile",34.707],["o",34.747],["smile",34.967],["o",35.067],["smile",35.287],["open",35.407],["smile",35.603],["open",35.687],["smile",35.799],["o",35.847],["smile",36.067],["open",36.687],["smile",36.827],["open",36.887],["smile",37.069],["o",37.147],["smile",37.367],["o",37.527],["smile",37.747],["open",37.907],["smile",38.047],["o",38.107],["smile",38.327],["o",38.427],["smile",38.647],["open",39.547],["smile",39.701],["o",39.767],["smile",39.987],["open",40.087],["smile",40.283],["open",40.367],["smile",40.507],["open",40.567],["smile",40.667],["open",40.707],["smile",40.833],["open",40.887],["smile",41.041],["open",41.107],["smile",41.207],["open",41.227],["smile",41.327],["o",41.347],["smile",41.567],["o",41.787],["smile",42.007],["open",42.367],["smile",42.507],["open",42.567],["smile",42.763],["grin",42.777],["open",42.847],["grin",42.973],["o",43.027],["smile",43.237],["o",43.487],["smile",43.707],["o",44.326],["smile",44.546],["open",44.786],["smile",44.886],["open",44.926],["smile",45.038],["open",45.086],["smile",45.186],["open",45.226],["smile",45.422],["open",46.026],["smile",46.166],["open",46.226],["smile",46.326],["open",46.366],["smile",46.534],["o",46.606],["smile",46.826],["open",47.586],["smile",47.712],["open",47.766],["smile",47.976],["o",48.066],["smile",48.286],["open",48.466],["smile",48.634],["open",48.706],["smile",48.832],["open",48.886],["smile",48.986],["open",48.986],["smile",49.154],["o",49.226],["smile",49.446],["o",49.546],["smile",49.766],["open",50.366],["smile",50.534],["open",51.046],["smile",51.172],["open",51.706],["smile",51.832],["open",51.886],["smile",51.986],["open",52.026],["smile",52.222],["neutral",52.476],["open",52.726],["neutral",52.88],["open",52.946],["neutral",53.156],["o",53.246],["neutral",53.466],["o",53.586],["neutral",53.806],["open",54.486],["neutral",54.586],["open",54.586],["neutral",54.782],["o",54.982],["neutral",55.202],["o",55.302],["neutral",55.522],["open",55.682],["neutral",55.808],["open",55.862],["neutral",55.988],["open",56.042],["neutral",56.21],["o",56.282],["neutral",56.502],["o",56.842],["neutral",57.062],["open",57.202],["neutral",57.412],["open",57.502],["neutral",57.628],["open",57.682],["neutral",57.822],["open",57.882],["neutral",58.092]],"move":[[360,0,1.64,1.4],[160,0,5.158,1],[0,0,14.618,1]]},{"id":"keys-ky","t":"icon","from":"pop","exit":null,"in":0.74,"out":23.415000000000003,"outDur":0.25,"hold":false,"pulse":1.15,"beat":1.4},{"id":"keys-kk","t":"bubble","from":"pop","exit":null,"in":4.458,"out":6.898,"outDur":0.25,"hold":false},{"id":"keys-t0","t":"text","from":"top","exit":null,"in":0.2,"out":1.28,"outDur":0.3,"hold":false,"words":[0.2,0.4,0.52,0.74]},{"id":"keys-nb","t":"stick","from":"right","exit":null,"in":7.298,"out":17.675,"outDur":0.3,"hold":false,"poses":[["idle",7.298],["shrug",10.258],["happy",14.618]],"mouth":[["o",7.738],["smile",14.618]],"move":[[-250,0,7.738,1.2]]},{"id":"keys-t1","t":"text","from":"top","exit":null,"in":7.298,"out":11.038,"outDur":0.3,"hold":false,"words":[8.258,8.358,8.458,8.558]},{"id":"keys-t2","t":"text","from":"top","exit":null,"in":11.278,"out":14.378,"outDur":0.3,"hold":false,"words":[11.798,11.798,11.798,11.998]},{"id":"keys-ghost","t":"stick","from":"pop","exit":null,"in":15.098,"out":19.635,"outDur":0.25,"hold":false,"poses":[["wave",15.486]],"mouth":[["grin",15.098]]},{"id":"keys-t3","t":"text","from":"top","exit":null,"in":15.098,"out":17.675,"outDur":0.3,"hold":false,"words":[14.958,15.098,15.486]},{"id":"keys-kk2","t":"bubble","from":"pop","exit":null,"in":19.875,"out":23.415000000000003,"outDur":0.25,"hold":false},{"id":"keys-t4","t":"text","from":"top","exit":null,"in":19.875,"out":23.415000000000003,"outDur":0.3,"hold":false,"words":[19.875,21.355,21.355,22.375]},{"id":"keys-c1","t":"card","from":"top","exit":null,"in":23.815,"out":28.615000000000002,"outDur":0.3,"hold":false},{"id":"keys-g0","t":"icon","from":"pop","exit":null,"in":30.535,"out":42.997,"outDur":0.25,"hold":false},{"id":"keys-g1","t":"icon","from":"pop","exit":null,"in":30.535,"out":42.997,"outDur":0.25,"hold":false},{"id":"keys-g2","t":"icon","from":"pop","exit":null,"in":30.535,"out":42.997,"outDur":0.25,"hold":false},{"id":"keys-g3","t":"icon","from":"pop","exit":null,"in":30.535,"out":42.997,"outDur":0.25,"hold":false},{"id":"keys-g4","t":"icon","from":"pop","exit":null,"in":30.535,"out":42.997,"outDur":0.25,"hold":false},{"id":"keys-g5","t":"icon","from":"pop","exit":null,"in":30.535,"out":42.997,"outDur":0.25,"hold":false},{"id":"keys-g6","t":"icon","from":"pop","exit":null,"in":30.535,"out":42.997,"outDur":0.25,"hold":false},{"id":"keys-g7","t":"icon","from":"pop","exit":null,"in":30.535,"out":42.997,"outDur":0.25,"hold":false},{"id":"keys-g8","t":"icon","from":"pop","exit":null,"in":30.535,"out":42.997,"outDur":0.25,"hold":false},{"id":"keys-say","t":"bubble","from":"pop","exit":null,"in":32.817,"out":39.056999999999995,"outDur":0.25,"hold":false},{"id":"keys-ring","t":"icon","from":"pop","exit":null,"in":38.177,"out":42.997,"outDur":0.25,"hold":false},{"id":"keys-sw","t":"icon","from":"pop","exit":null,"in":38.177,"out":42.997,"outDur":0.25,"hold":false},{"id":"keys-t5","t":"text","from":"top","exit":null,"in":34.357,"out":39.056999999999995,"outDur":0.3,"hold":false,"words":[33.717,33.717,34.357,34.457,34.557,34.657]},{"id":"keys-t6","t":"text","from":"top","exit":null,"in":41.097,"out":42.997,"outDur":0.3,"hold":false,"words":[41.097,42.777,42.777]},{"id":"keys-ban","t":"icon","from":"pop","exit":null,"in":44.976,"out":52.236,"outDur":0.25,"hold":false,"sway":6,"period":2.4},{"id":"keys-bbr","t":"icon","from":"pop","exit":null,"in":47.516,"out":52.236,"outDur":0.25,"hold":false},{"id":"keys-b1","t":"text","from":"bottom","exit":null,"in":50.116,"out":52.236,"outDur":0.3,"hold":false,"words":[50.116]},{"id":"keys-b2","t":"text","from":"bottom","exit":null,"in":50.796,"out":52.236,"outDur":0.3,"hold":false,"words":[50.796]},{"id":"keys-b3","t":"text","from":"bottom","exit":null,"in":50.836,"out":52.236,"outDur":0.3,"hold":false,"words":[51.456,51.636,51.776]},{"id":"keys-t7","t":"text","from":"top","exit":null,"in":44.976,"out":49.876,"outDur":0.3,"hold":false,"words":[44.976,44.976]},{"id":"keys-t8","t":"text","from":"top","exit":null,"in":50.116,"out":52.236,"outDur":0.3,"hold":false,"words":[50.116,50.796,51.456,51.636,51.776]},{"id":"keys-cq","t":"icon","from":"pop","exit":null,"in":53.336,"out":58.111999999999995,"outDur":0.25,"hold":false},{"id":"keys-t9","t":"text","from":"top","exit":null,"in":54.336,"out":57.787,"outDur":0.3,"hold":false,"words":[54.236,56.592,56.592,56.952,57.052,57.152,57.252]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4},"explain":{"aLu":40,"aLl":78,"aRu":-40,"aRl":-78,"hd":0},"explainR":{"aLu":12,"aLl":-4,"aRu":-40,"aRl":-72,"hd":-4},"present":{"aLu":14,"aLl":-4,"aRu":-96,"aRl":-34,"hd":-6},"presentL":{"aLu":96,"aLl":34,"aRu":-14,"aRl":4,"hd":6},"chin":{"aLu":24,"aLl":-104,"aRu":-70,"aRl":198,"hd":8},"ear":{"aLu":14,"aLl":-4,"aRu":-100,"aRl":246,"hd":10},"wave":{"aLu":14,"aLl":-4,"aRu":-150,"aRl":-20,"hd":-4},"count":{"aLu":14,"aLl":-4,"aRu":-60,"aRl":-100},"lean":{"aLu":20,"aLl":-10,"aRu":-20,"aRl":10,"hd":10,"hy":4},"tiltL":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4,"hd":-10},"handsHips":{"aLu":40,"aLl":-100,"aRu":-40,"aRl":100,"hd":0},"embarrassed":{"aLu":6,"aLl":0,"aRu":-30,"aRl":150,"hy":10,"hd":6},"search":{"aLu":30,"aLl":-30,"aRu":-30,"aRl":30,"hd":-12}};
+      const MOUTHS = ["neutral","smile","frown","o","tight","open","grin"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (e.hold) {
+        } else if (ex === "cut") {
+          tl.set(inner, { opacity: 0 }, e.out);
+        } else if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["keys"] = tl;
+    })();
+  </script>
+</template>
