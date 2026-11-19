@@ -1,0 +1,233 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="end" data-width="1920" data-height="1080">
+    <div id="end-bg" class="clip el" data-start="0.2" data-duration="58.984" data-track-index="1" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:1;opacity:0.42" data-layout-allow-overlap><div id="end-bg-in" class="in"><div class="ico" style="width:1920px;height:1920px;color:var(--muted)"><svg viewBox="0 0 200 200"><path d="M-20 137.5 L220 137.5" fill="none" stroke="currentColor" stroke-width="7" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 70 L56 70 L56 102 L22 102 Z M39 70 L39 102 M22 86 L56 86" fill="none" stroke="currentColor" stroke-width="6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="77" r="3.2" fill="currentColor" opacity="0.5"/><path d="M118 110 L204 110 M122 110 L122 137.5 M150 110 L150 137.5 M178 110 L178 137.5 M200 110 L200 137.5 M134 122 L138 122 M162 122 L166 122 M188 122 L192 122" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M126 66 L198 66 L198 86 L126 86 Z M150 66 L150 86 M174 66 L174 86" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M90 40 L90 62 M82 66 L98 66 L94 62 L86 62 Z" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M136 110 L136 102 L144 102 L144 110 M140 102 L142 98" fill="none" stroke="currentColor" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+    <div id="end-h" class="clip el" data-start="0.2" data-duration="59.059" data-track-index="2" style="position:absolute;left:0px;top:300px;width:800px;height:780px;z-index:3"><div id="end-h-in" class="in"><svg class="stick" id="end-h-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="end-h-aLu"><path class="s" d="M150 160 L150 255"/><g id="end-h-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="end-h-aRu"><path class="s" d="M150 160 L150 255"/><g id="end-h-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="end-h-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="end-h-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="end-h-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="end-h-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="end-h-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="end-h-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="end-h-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="end-h-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="end-t0" class="clip el" data-start="0.2" data-duration="1.86" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:4"><div id="end-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="end-t0-w0" class="w">so</span> <span id="end-t0-w1" class="w">here's</span> <span id="end-t0-w2" class="w">the</span> <span id="end-t0-w3" class="w acc">twist</span></div></div></div>
+    <div id="end-bt" class="clip el" data-start="3.04" data-duration="2.49" data-track-index="4" style="position:absolute;left:780px;top:120px;width:1140px;height:960px;z-index:5" data-layout-allow-overlap><div id="end-bt-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 150 L170 150 L170 182 L30 182 Z"/><path class="alm-f" d="M48 150 Q48 96 100 96 Q152 96 152 150 Z"/><path class="s" pathLength="1" d="M48 150 Q48 96 100 96 Q152 96 152 150 Z"/><path class="s thin" pathLength="1" d="M76 116 Q88 106 104 106"/></svg></div></div></div>
+    <div id="end-btt" class="clip el" data-start="3.82" data-duration="1.71" data-track-index="5" style="position:absolute;left:780px;top:0px;width:1140px;height:800px;z-index:6"><div id="end-btt-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--ink)"><span id="end-btt-w0" class="w">strange?</span> <span id="end-btt-w1" class="w">broken?</span></div></div></div>
+    <div id="end-btk" class="clip el" data-start="4.58" data-duration="1" data-track-index="6" style="position:absolute;left:780px;top:0px;width:1140px;height:800px;z-index:50" data-layout-allow-overlap data-layout-allow-occlusion><div id="end-btk-in" class="in"><div class="strike" style="width:480px"></div></div></div>
+    <div id="end-t1" class="clip el" data-start="6.48" data-duration="3.42" data-track-index="7" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:8"><div id="end-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="end-t1-w0" class="w">we</span> <span id="end-t1-w1" class="w">were</span> <span id="end-t1-w2" class="w">never</span> <span id="end-t1-w3" class="w acc">taught</span></div></div></div>
+    <div id="end-t2" class="clip el" data-start="11.078" data-duration="2.34" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:9"><div id="end-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="end-t2-w0" class="w">it</span> <span id="end-t2-w1" class="w">gets</span> <span id="end-t2-w2" class="w">easier</span> <span id="end-t2-w3" class="w">with</span> <span id="end-t2-w4" class="w acc">practice</span></div></div></div>
+    <div id="end-rs" class="clip el" data-start="14.698" data-duration="1.35" data-track-index="9" style="position:absolute;left:780px;top:40px;width:1140px;height:1040px;z-index:10" data-layout-allow-overlap><div id="end-rs-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M20 100 Q40 40 60 100 Q80 160 100 100 Q120 40 140 100 Q160 160 180 100"/><path class="s alm-s" pathLength="1" d="M30 60 L60 30 M170 60 L140 30 M100 30 L100 10"/></svg></div></div></div>
+    <div id="end-cl" class="clip el" data-start="18.698" data-duration="0.95" data-track-index="10" style="position:absolute;left:780px;top:40px;width:1140px;height:1040px;z-index:11" data-layout-allow-overlap><div id="end-cl-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M10 110 L60 110 Q80 96 100 110 Q120 124 140 110 L190 110"/></svg></div></div></div>
+    <div id="end-t3" class="clip el" data-start="13.498" data-duration="6.2" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:12"><div id="end-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="end-t3-w0" class="w">restless…</span> <span id="end-t3-w1" class="w">then</span> <span id="end-t3-w2" class="w">it</span> <span id="end-t3-w3" class="w acc">settles</span></div></div></div>
+    <div id="end-br" class="clip el" data-start="21.286" data-duration="4.45" data-track-index="12" style="position:absolute;left:780px;top:40px;width:1140px;height:1040px;z-index:13" data-layout-allow-overlap><div id="end-br-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 40 Q70 18 50 44 Q22 50 28 84 Q12 108 34 130 Q36 162 70 162 Q88 182 100 160 Q112 182 130 162 Q164 162 166 130 Q188 108 172 84 Q178 50 150 44 Q130 18 100 40 Z"/><path class="s" pathLength="1" d="M100 40 L100 160 M60 80 Q80 90 70 110 M140 80 Q120 90 130 110"/></svg></div></div></div>
+    <div id="end-bb" class="clip el" data-start="24.266" data-duration="1.47" data-track-index="13" style="position:absolute;left:1040px;top:0px;width:880px;height:840px;z-index:14" data-layout-allow-overlap><div id="end-bb-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 24 C56 24 40 62 50 94 C58 118 74 126 76 150 L124 150 C126 126 142 118 150 94 C160 62 144 24 100 24 Z"/><path class="s" pathLength="1" d="M80 164 L120 164 M86 180 L114 180"/><path class="s acc-s" pathLength="1" d="M86 112 L100 90 L114 112"/><path class="s acc-s" pathLength="1" d="M24 40 L10 30 M176 40 L190 30 M16 96 L0 96 M184 96 L200 96"/></svg></div></div></div>
+    <div id="end-t4" class="clip el" data-start="23.146" data-duration="2.64" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="end-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="end-t4-w0" class="w">room</span> <span id="end-t4-w1" class="w">for</span> <span id="end-t4-w2" class="w">your</span> <span id="end-t4-w3" class="w">brain</span> <span id="end-t4-w4" class="w">to</span> <span id="end-t4-w5" class="w acc">work</span></div></div></div>
+    <div id="end-kt" class="clip el" data-start="27.506" data-duration="6.619" data-track-index="15" style="position:absolute;left:80px;top:140px;width:1840px;height:940px;z-index:16" data-layout-allow-overlap><div id="end-kt-in" class="in"><div class="ico" style="width:190px;height:190px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M50 176 L150 176 Q164 176 160 160 L150 92 Q146 70 120 66 L80 66 Q54 70 50 92 L40 160 Q36 176 50 176 Z"/><path class="s" pathLength="1" d="M76 66 Q76 40 100 40 Q124 40 124 66"/><path class="s" pathLength="1" d="M150 112 L184 82 L190 92 L158 128"/><path class="s thin" pathLength="1" d="M184 66 Q174 52 186 40 Q198 28 188 14 M168 54 Q158 42 168 30"/><circle class="alm-f" cx="100" cy="128" r="12"/></svg></div></div></div>
+    <div id="end-t5" class="clip el" data-start="28.606" data-duration="3.729" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:17"><div id="end-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="end-t5-w0" class="w">let</span> <span id="end-t5-w1" class="w">it</span> <span id="end-t5-w2" class="w acc">boil</span></div></div></div>
+    <div id="end-kc" class="clip el" data-start="30.206" data-duration="3.919" data-track-index="17" style="position:absolute;left:580px;top:0px;width:1340px;height:800px;z-index:18" data-layout-allow-overlap><div id="end-kc-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="end-t6" class="clip el" data-start="32.235" data-duration="1.94" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:19"><div id="end-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="end-t6-w0" class="w">you</span> <span id="end-t6-w1" class="w">might</span> <span id="end-t6-w2" class="w">like</span> <span id="end-t6-w3" class="w">where</span> <span id="end-t6-w4" class="w">they</span> <span id="end-t6-w5" class="w acc">go</span></div></div></div>
+    <div id="end-t7" class="clip el" data-start="34.214999999999996" data-duration="2.04" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="end-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="end-t7-w0" class="w">your</span> <span id="end-t7-w1" class="w acc">challenge</span> <span id="end-t7-w2" class="w">this</span> <span id="end-t7-w3" class="w">week</span></div></div></div>
+    <div id="end-ch1" class="clip el" data-start="37.295" data-duration="10.831" data-track-index="20" style="position:absolute;left:780px;top:0px;width:1140px;height:1000px;z-index:21"><div id="end-ch1-in" class="in"><div class="txt" style="font-size:96px;font-weight:800;color:var(--ink)"><span id="end-ch1-w0" class="w">10</span> <span id="end-ch1-w1" class="w">minutes</span></div></div></div>
+    <div id="end-ch2" class="clip el" data-start="38.675" data-duration="9.501" data-track-index="21" style="position:absolute;left:780px;top:200px;width:1140px;height:880px;z-index:22"><div id="end-ch2-in" class="in"><div class="txt" style="font-size:40px;font-weight:800;color:var(--accent)"><span id="end-ch2-w0" class="w">no</span> <span id="end-ch2-w1" class="w">phone</span> <span id="end-ch2-w2" class="w">·</span> <span id="end-ch2-w3" class="w">no</span> <span id="end-ch2-w4" class="w">music</span> <span id="end-ch2-w5" class="w">·</span> <span id="end-ch2-w6" class="w">no</span> <span id="end-ch2-w7" class="w">screen</span></div></div></div>
+    <div id="end-t8" class="clip el" data-start="41.595" data-duration="3.721" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:23"><div id="end-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="end-t8-w0" class="w">sit</span> <span id="end-t8-w1" class="w">or</span> <span id="end-t8-w2" class="w">walk…</span> <span id="end-t8-w3" class="w">let</span> <span id="end-t8-w4" class="w">it</span> <span id="end-t8-w5" class="w acc">wander</span></div></div></div>
+    <div id="end-t9" class="clip el" data-start="45.776" data-duration="2.4" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:24"><div id="end-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="end-t9-w0" class="w">notice</span> <span id="end-t9-w1" class="w">how</span> <span id="end-t9-w2" class="w">you</span> <span id="end-t9-w3" class="w acc">feel</span></div></div></div>
+    <div id="end-eq" class="clip el" data-start="51.216" data-duration="3.143" data-track-index="24" style="position:absolute;left:780px;top:0px;width:1140px;height:1040px;z-index:25" data-layout-allow-overlap><div id="end-eq-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="end-eq2" class="clip el" data-start="52.056" data-duration="2.303" data-track-index="25" style="position:absolute;left:1040px;top:0px;width:880px;height:800px;z-index:26"><div id="end-eq2-in" class="in"><div class="txt" style="font-size:110px;font-weight:800;color:var(--accent)"><span id="end-eq2-w0" class="w">?</span></div></div></div>
+    <div id="end-t10" class="clip el" data-start="50.076" data-duration="4.333" data-track-index="26" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:27"><div id="end-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="end-t10-w0" class="w">what</span> <span id="end-t10-w1" class="w">do</span> <span id="end-t10-w2" class="w acc">you</span> <span id="end-t10-w3" class="w">reach</span> <span id="end-t10-w4" class="w">for?</span></div></div></div>
+    <div id="end-end" class="clip el" data-start="54.609" data-duration="5.225" data-track-index="27" style="position:absolute;left:780px;top:0px;width:1140px;height:1080px;z-index:28" data-layout-allow-overlap><div id="end-end-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="end-t11" class="clip el" data-start="54.609" data-duration="5.3" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:29"><div id="end-t11-in" class="in"><div class="txt hero" style="font-size:80px;font-weight:800;color:var(--ink)"><span id="end-t11-w0" class="w">which</span> <span id="end-t11-w1" class="w">habit</span> <span id="end-t11-w2" class="w acc">next<span class="tail">?</span></span></div></div></div>
+    <div id="end-t12" class="clip el" data-start="56.709" data-duration="3.225" data-track-index="29" style="position:absolute;left:780px;top:560px;width:1140px;height:520px;z-index:30"><div id="end-t12-in" class="in"><div class="txt" style="font-size:44px;font-weight:600;color:var(--muted)"><span id="end-t12-w0" class="w">@darealwhy</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"end-bg","t":"icon","from":"blur","exit":null,"in":0.2,"out":58.894,"outDur":0.25,"hold":false},{"id":"end-h","t":"stick","from":"left","exit":null,"in":0.2,"out":58.919,"outDur":0.3,"hold":false,"poses":[["explain",1.1],["shrug",3.32],["explain",5.48],["proud",10.46],["chin",14.698],["happy",18.698],["explainR",20.278],["present",24.266],["presentL",27.506],["happy",29.506],["happy",32.515],["explain",34.515],["count",37.295],["explainR",41.815],["chin",45.776],["lean",48.596],["chin",50.076],["happy",52.816],["wave",54.309]],"mouth":[["smile",0.2],["open",0.45],["smile",0.632],["o",0.71],["smile",0.93],["open",1.25],["smile",1.35],["o",1.35],["smile",1.57],["open",2.21],["smile",2.31],["o",2.33],["smile",2.55],["open",2.67],["smile",2.796],["open",2.85],["smile",3.018],["open",3.09],["smile",3.23],["open",3.29],["neutral",3.32],["o",3.57],["neutral",3.79],["o",4.07],["neutral",4.29],["o",4.47],["neutral",4.69],["o",4.83],["neutral",5.05],["smile",5.48],["open",5.73],["smile",5.87],["open",5.93],["smile",6.042],["open",6.09],["smile",6.202],["open",6.25],["smile",6.35],["o",6.39],["smile",6.61],["o",6.73],["smile",6.95],["o",7.15],["smile",7.37],["o",7.49],["smile",7.71],["open",7.87],["smile",7.982],["open",8.03],["smile",8.13],["open",8.15],["smile",8.36],["open",8.45],["smile",8.646],["open",8.73],["smile",8.83],["open",8.87],["smile",9.08],["o",9.17],["smile",9.39],["open",10.05],["smile",10.15],["open",10.17],["smile",10.27],["o",10.31],["smile",10.53],["o",10.71],["smile",10.93],["open",11.428],["smile",11.528],["open",11.568],["smile",11.668],["o",11.688],["smile",11.908],["open",12.228],["smile",12.354],["o",12.408],["smile",12.628],["open",13.568],["smile",13.694],["open",13.748],["smile",13.93],["open",14.008],["smile",14.19],["open",14.268],["smile",14.436],["o",14.508],["neutral",14.698],["o",14.948],["neutral",15.168],["o",16.248],["neutral",16.468],["o",16.568],["neutral",16.788],["o",17.368],["neutral",17.588],["o",18.008],["neutral",18.228],["o",18.348],["neutral",18.568],["open",18.688],["smile",18.698],["o",18.948],["smile",19.168],["open",19.848],["smile",20.002],["open",20.068],["smile",20.168],["o",20.188],["smile",20.408],["o",20.528],["smile",20.748],["open",21.336],["smile",21.476],["open",21.536],["smile",21.746],["o",21.836],["smile",22.056],["open",22.196],["smile",22.392],["o",22.476],["smile",22.696],["open",23.296],["smile",23.408],["o",23.456],["smile",23.676],["open",23.996],["smile",24.164],["open",24.236],["smile",24.432],["open",24.516],["smile",24.698],["open",24.776],["smile",24.93],["o",24.996],["smile",25.216],["open",25.936],["smile",26.118],["open",26.196],["smile",26.392],["open",26.476],["smile",26.658],["open",26.736],["smile",26.862],["open",26.916],["smile",27.042],["open",27.096],["smile",27.306],["open",27.396],["smile",27.506],["open",27.616],["smile",27.716],["o",27.756],["smile",27.976],["open",28.676],["smile",28.756],["open",28.756],["smile",28.856],["o",28.856],["smile",29.076],["o",29.756],["smile",29.976],["open",30.116],["smile",30.242],["open",30.296],["smile",30.408],["open",30.456],["smile",30.652],["open",30.736],["smile",30.932],["open",31.016],["smile",31.142],["o",31.196],["smile",31.416],["open",31.536],["smile",31.746],["open",32.485],["grin",32.515],["open",32.625],["grin",32.725],["o",32.765],["grin",32.985],["open",33.085],["grin",33.239],["open",33.305],["grin",33.405],["open",33.445],["grin",33.613],["o",34.325],["smile",34.515],["open",34.665],["smile",34.765],["open",34.765],["smile",34.975],["open",35.065],["smile",35.247],["open",35.325],["smile",35.493],["open",35.565],["smile",35.761],["open",36.405],["smile",36.559],["open",36.625],["smile",36.725],["open",36.745],["smile",36.927],["open",37.325],["smile",37.479],["o",37.545],["smile",37.765],["open",38.005],["smile",38.173],["o",38.245],["smile",38.465],["o",38.585],["smile",38.805],["o",38.925],["smile",39.145],["open",39.685],["smile",39.839],["o",39.905],["smile",40.125],["open",40.585],["smile",40.665],["open",40.665],["smile",40.875],["o",40.965],["smile",41.185],["open",41.845],["smile",41.999],["o",42.065],["smile",42.285],["o",42.385],["smile",42.605],["o",42.945],["smile",43.165],["open",43.686],["smile",43.798],["open",43.846],["smile",43.958],["open",44.006],["smile",44.132],["open",44.186],["smile",44.396],["o",44.486],["smile",44.706],["o",45.466],["smile",45.686],["o",46.026],["smile",46.246],["open",46.446],["smile",46.6],["open",46.666],["smile",46.766],["open",46.806],["smile",46.988],["o",47.066],["smile",47.286],["open",48.326],["smile",48.466],["open",48.526],["smile",48.596],["open",48.846],["smile",48.946],["open",48.966],["smile",49.078],["open",49.126],["smile",49.266],["o",49.326],["smile",49.546],["open",50.326],["smile",50.494],["open",50.566],["smile",50.666],["o",50.686],["smile",50.906],["open",51.086],["smile",51.226],["open",51.286],["smile",51.412],["open",51.466],["smile",51.606],["open",51.666],["smile",51.862],["open",51.946],["smile",52.072],["open",52.126],["smile",52.252],["open",52.306],["smile",52.502],["open",53.066],["smile",53.178],["open",53.226],["smile",53.326],["open",53.326],["smile",53.426],["open",53.466],["smile",53.546],["open",53.546],["smile",53.646],["o",53.646],["smile",53.866],["grin",54.309],["open",54.559],["grin",54.769],["open",54.859],["grin",55.013],["open",55.079],["grin",55.233],["open",55.299],["grin",55.399],["open",55.419],["grin",55.559],["o",55.619],["grin",55.839],["open",56.579],["grin",56.639],["open",56.639],["grin",56.739],["open",56.759],["grin",56.859],["open",56.859],["grin",56.959],["o",56.959],["grin",57.179]],"move":[[300,0,27.506,1.2]]},{"id":"end-t0","t":"text","from":"top","exit":null,"in":0.2,"out":1.72,"outDur":0.3,"hold":false,"words":[0.2,0.46,1,1.1]},{"id":"end-bt","t":"icon","from":"pop","exit":null,"in":3.04,"out":5.24,"outDur":0.25,"hold":false},{"id":"end-btt","t":"text","from":"pop","exit":null,"in":3.82,"out":5.24,"outDur":0.25,"hold":false,"words":[3.82,4.58]},{"id":"end-btk","t":"strike","from":"pop","exit":null,"in":4.58,"out":5.24,"outDur":0.3,"hold":false},{"id":"end-t1","t":"text","from":"top","exit":null,"in":6.48,"out":9.56,"outDur":0.3,"hold":false,"words":[6,6,6.48,6.9]},{"id":"end-t2","t":"text","from":"top","exit":null,"in":11.078,"out":13.078,"outDur":0.3,"hold":false,"words":[11.178,11.318,11.438,11.978,12.158]},{"id":"end-rs","t":"icon","from":"pop","exit":null,"in":14.698,"out":15.758,"outDur":0.25,"hold":false},{"id":"end-cl","t":"icon","from":"pop","exit":null,"in":18.698,"out":19.358,"outDur":0.25,"hold":false},{"id":"end-t3","t":"text","from":"top","exit":null,"in":13.498,"out":19.358,"outDur":0.3,"hold":false,"words":[14.698,14.798,14.898,14.998]},{"id":"end-br","t":"icon","from":"pop","exit":null,"in":21.286,"out":25.446,"outDur":0.25,"hold":false},{"id":"end-bb","t":"icon","from":"pop","exit":null,"in":24.266,"out":25.446,"outDur":0.25,"hold":false},{"id":"end-t4","t":"text","from":"top","exit":null,"in":23.146,"out":25.446,"outDur":0.3,"hold":false,"words":[24.266,24.526,24.526,24.526,24.526,24.746]},{"id":"end-kt","t":"icon","from":"pop","exit":null,"in":27.506,"out":33.835,"outDur":0.25,"hold":false},{"id":"end-t5","t":"text","from":"top","exit":null,"in":28.606,"out":31.995,"outDur":0.3,"hold":false,"words":[28.426,28.506,28.606]},{"id":"end-kc","t":"icon","from":"pop","exit":null,"in":30.206,"out":33.835,"outDur":0.25,"hold":false},{"id":"end-t6","t":"text","from":"top","exit":null,"in":32.235,"out":33.835,"outDur":0.3,"hold":false,"words":[32.235,32.375,32.515,32.835,33.055,33.195]},{"id":"end-t7","t":"text","from":"top","exit":null,"in":34.214999999999996,"out":35.915,"outDur":0.3,"hold":false,"words":[34.415,34.515,35.075,35.315]},{"id":"end-ch1","t":"text","from":"pop","exit":null,"in":37.295,"out":47.836,"outDur":0.25,"hold":false,"words":[37.755,37.755]},{"id":"end-ch2","t":"text","from":"bottom","exit":null,"in":38.675,"out":47.836,"outDur":0.3,"hold":false,"words":[38.335,38.675,39.435,39.435,39.655,40.415,40.415,40.715]},{"id":"end-t8","t":"text","from":"top","exit":null,"in":41.595,"out":44.976,"outDur":0.3,"hold":false,"words":[41.815,42.135,42.695,43.596,44.236,44.236]},{"id":"end-t9","t":"text","from":"top","exit":null,"in":45.776,"out":47.836,"outDur":0.3,"hold":false,"words":[45.776,46.196,46.416,46.556]},{"id":"end-eq","t":"icon","from":"pop","exit":null,"in":51.216,"out":54.068999999999996,"outDur":0.25,"hold":false},{"id":"end-eq2","t":"text","from":"pop","exit":null,"in":52.056,"out":54.068999999999996,"outDur":0.25,"hold":false,"words":[52.156]},{"id":"end-t10","t":"text","from":"top","exit":null,"in":50.076,"out":54.068999999999996,"outDur":0.3,"hold":false,"words":[50.076,51.036,51.036,51.216,51.416]},{"id":"end-end","t":"icon","from":"pop","exit":null,"in":54.609,"out":59.544,"outDur":0.25,"hold":false,"pulse":1.08,"beat":1.2},{"id":"end-t11","t":"text","from":"top","exit":null,"in":54.609,"out":59.569,"outDur":0.3,"hold":false,"words":[54.309,54.609,55.369]},{"id":"end-t12","t":"text","from":"bottom","exit":null,"in":56.709,"out":59.594,"outDur":0.3,"hold":false,"words":[56.809]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4},"explain":{"aLu":40,"aLl":78,"aRu":-40,"aRl":-78,"hd":0},"explainR":{"aLu":12,"aLl":-4,"aRu":-40,"aRl":-72,"hd":-4},"present":{"aLu":14,"aLl":-4,"aRu":-96,"aRl":-34,"hd":-6},"presentL":{"aLu":96,"aLl":34,"aRu":-14,"aRl":4,"hd":6},"chin":{"aLu":24,"aLl":-104,"aRu":-70,"aRl":198,"hd":8},"ear":{"aLu":14,"aLl":-4,"aRu":-100,"aRl":246,"hd":10},"wave":{"aLu":14,"aLl":-4,"aRu":-150,"aRl":-20,"hd":-4},"count":{"aLu":14,"aLl":-4,"aRu":-60,"aRl":-100},"lean":{"aLu":20,"aLl":-10,"aRu":-20,"aRl":10,"hd":10,"hy":4},"tiltL":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4,"hd":-10},"handsHips":{"aLu":40,"aLl":-100,"aRu":-40,"aRl":100,"hd":0},"embarrassed":{"aLu":6,"aLl":0,"aRu":-30,"aRl":150,"hy":10,"hd":6},"search":{"aLu":30,"aLl":-30,"aRu":-30,"aRl":30,"hd":-12}};
+      const MOUTHS = ["neutral","smile","frown","o","tight","open","grin"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (e.hold) {
+        } else if (ex === "cut") {
+          tl.set(inner, { opacity: 0 }, e.out);
+        } else if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["end"] = tl;
+    })();
+  </script>
+</template>
