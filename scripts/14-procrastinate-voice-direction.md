@@ -44,9 +44,9 @@ energy  5 |
 **Direction:** light and knowing, like you're both guilty of it. "Octopuses" gets a small smile. The promise is clear and warm, spoken straight to the viewer. Then curious for the research. Energy 3, rising to 4 by the promise.
 
 You sit down to finally do the thing you've been putting off. ||
-Ten minutes later, the kitchen is clean. ||
-The junk drawer is organized. And somehow, you're watching a video about how octopuses sleep. ||
-The thing you sat down to do is still there, waiting for you. ||
+An hour later, you still haven't started it. ||
+Instead, you went for the easier jobs. The kitchen is clean. The junk drawer is organized. ||
+And somehow, you're watching a video about how octopuses sleep. ||
 If that sounds familiar, you're in very good company. ||
 And if you're watching this instead of doing something else right now, don't worry. I won't tell anyone. ||
 So in this video, we're going to look at why your brain keeps putting things off. ||

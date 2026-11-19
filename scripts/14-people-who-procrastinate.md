@@ -1,7 +1,7 @@
 # Video 14: The Psychology of People Who Procrastinate
 
 **Title:** The Psychology of People Who Procrastinate
-**Length:** 1,472 words. That's about 8:45 at Josh's pace (video 13 ran at 2.81 words a second), so it's over 8:00
+**Length:** 1471 words. That's about 8:45 at Josh's pace (video 13 ran at 2.81 words a second), so it's over 8:00
 and mid-roll ads are possible.
 
 ## Why this title and topic
@@ -30,8 +30,8 @@ and mid-roll ads are possible.
 ## Engagement design (`GROWTH.md`)
 
 - **Opening: the most relatable image first, then the promise.**
-  - **0:00:** "You sit down to finally do the thing you've been putting off. Ten minutes later, the kitchen is clean…"
-    It's the junk drawer, then the octopus video.
+  - **0:00:** "You sit down to finally do the thing you've been putting off. An hour later, you still haven't started it.
+    Instead, you went for the easier jobs…": the clean kitchen, the junk drawer, then the octopus video.
   - **About 0:25:** "So in this video, we're going to look at why your brain keeps putting things off…" It states all three
     payoffs, spoken to the viewer.
   - **About 0:40:** the first real finding (Steel 2007: how common it is), then the core idea: it's about feelings
