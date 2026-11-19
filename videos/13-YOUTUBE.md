@@ -81,6 +81,15 @@ Piano samples: Salamander Grand Piano by Alexander Holm (CC BY 3.0). Sound effec
 
 Chapter times come from the aligned voiceover (`talk-video/timing/words.json`).
 
+## Pinned comment
+
+```
+Be honest 👇 When you read this comment, do you hear it in a voice?
+🗣️ A: Yes, loud and clear (it's reading this to me right now)
+🤫 B: Not really… it's quiet in there
+🤔 C: Wait. I've never thought about this until now
+```
+
 ## Still to do
 
-Pinned comment, tags and Shorts.
+Tags and Shorts.
