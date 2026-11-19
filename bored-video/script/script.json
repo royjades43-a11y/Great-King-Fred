@@ -310,7 +310,7 @@
       ]
      ],
      "out": "b27",
-     "talk": true,
+     "talk": false,
      "move": [
       [
        700,
@@ -1052,7 +1052,7 @@
       ]
      ],
      "out": "b43",
-     "talk": true
+     "talk": false
     },
     {
      "t": "text",
@@ -1648,7 +1648,7 @@
       ]
      ],
      "out": "b62",
-     "talk": true
+     "talk": false
     },
     {
      "t": "text",
@@ -2156,7 +2156,7 @@
       ]
      ],
      "out": "b79",
-     "talk": true
+     "talk": false
     },
     {
      "t": "text",
@@ -2657,7 +2657,7 @@
       ]
      ],
      "out": "b93",
-     "talk": true
+     "talk": false
     },
     {
      "t": "text",
@@ -3221,7 +3221,7 @@
       ]
      ],
      "out": "b114",
-     "talk": true
+     "talk": false
     },
     {
      "t": "text",
@@ -3955,7 +3955,7 @@
       ]
      ],
      "out": "b139",
-     "talk": true
+     "talk": false
     },
     {
      "t": "text",
@@ -4534,7 +4534,7 @@
        "b157:which"
       ]
      ],
-     "talk": true,
+     "talk": false,
      "move": [
       [
        700,

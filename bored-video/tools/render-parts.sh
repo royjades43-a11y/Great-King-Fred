@@ -9,3 +9,4 @@ one() { f=$1; n=${f%.html}; out=.work/parts/$n.mp4
     && mv .work/parts/$n.tmp.mp4 $out && echo "done $n $(date +%T)" || echo "FAIL $n"; }
 export -f one; export P
 ls part-*.html | xargs -P 4 -I{} bash -c 'one {}'
+rm -f part-*.html  # the per-scene root files confuse "hyperframes check"; mkparts.py regenerates them

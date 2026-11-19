@@ -87,7 +87,7 @@ GY = 690  # where stickmen stand
 HX = 400            # the host's usual mark (left third)
 def BG(id, name, at, out=None):
     return I(id, name, 960, 560, 1920, "blur", at, out, color="muted", opacity=0.42, z=1)
-def HOST(id, at, out, poses, mouths, talk=True, x=HX, **k):
+def HOST(id, at, out, poses, mouths, talk=False, x=HX, **k):
     return ST(id, x, GY, "none" if at == "b00:have" else "left", at, poses, mouths, out=out, talk=talk, **k)
 def PCT(id, x, h, txt, at, out, y=860):
     return T(id, txt, x, y - h - 50, 52, "bottom", at, out, weight=M)
@@ -103,12 +103,10 @@ scenes.append({"id": "play", "beats": R(0, 24), "elements": [
           ["shrug", "b14:most"], ["explain", "b15:vygotsky"], ["chin", "b17:his"], ["happy", "b18:imagine"], ["explain", "b19:when"],
           ["explainR", "b20:vygotsky"], ["ear", "b21:it"], ["idle", "b22:but"], ["explain", "b23:when"], ["lean", "b24:have"]],
          [["smile", "b00:have"], ["grin", "b05:we"], ["neutral", "b06:if"], ["smile", "b07:maybe"], ["smile", "b09:so"], ["smile", "b13:back"],
-          ["smile", "b18:imagine"], ["smile", "b24:have"]],
-         talk=[["b00:have", "b02"], ["b04:and", "b25"]],
-         move=[[560, GY, "b09:so", 1.2], [HX, GY, "b12:let's", 1.2]]),
+          ["smile", "b18:imagine"], ["smile", "b24:have"]]),
     # the child and the blocks
     ST("kid", 1180, 760, "bottom", "b00:four-year-old", [["give", "b02:this"], ["point", "b03:no"], ["happy", "b05:cute"]],
-       [["smile", "b00:four-year-old"], ["grin", "b05:cute"]], out="b06", scale=0.62, sit=True, variant="bow", talk=[["b01:they", "b04"]]),
+       [["smile", "b00:four-year-old"], ["grin", "b05:cute"]], out="b06", scale=0.62, sit=True, variant="bow"),
     I("bk1", "box", 1370, 840, 90, "pop", "b01:talk", "b06"),
     I("bk2", "box", 1370, 770, 80, "pop", "b02:here", "b06"),
     I("bk3", "box", 1460, 840, 90, "pop", "b03:not", "b06"),
@@ -119,7 +117,7 @@ scenes.append({"id": "play", "beats": R(0, 24), "elements": [
     TOP("t2", "we think it's *cute*", "b05:we", "b06"),
     # the adult in the kitchen
     ST("ad", 1300, GY, "right", "b06:grown", [["search", "b06:grown"], ["chin", "b06:kitchen"]], [["neutral", "b06:grown"]], out="b09",
-       flip=True, talk=[["b06:grown", "b07"]]),
+       flip=True),
     T("mm", "…mumble mumble…", 1300, 330, 40, "bottom", "b06:same", "b07", color="muted"),
     I("hq", "question", 520, 300, 90, "pop", "b06:wonder", "b07"),
     TOP("t3", "…an *adult*, muttering alone?", "b06:grown", "b07"),
@@ -135,8 +133,7 @@ scenes.append({"id": "play", "beats": R(0, 24), "elements": [
     TOP("t5", "in this video", "b09:so", "b12", color="muted"),
     # back to the child: Vygotsky
     ST("kid2", 1180, 760, "bottom", "b12:let's", [["give", "b12:four-year-old"], ["point", "b14:chatter"], ["give", "b17:tasks"], ["shrug", "b18:missing"], ["point", "b19:talked"]],
-       [["smile", "b12:let's"], ["o", "b18:missing"], ["smile", "b19:when"]], out="b20", scale=0.62, sit=True, variant="bow",
-       talk=[["b14:most", "b15"], ["b19:when", "b20"]]),
+       [["smile", "b12:let's"], ["o", "b18:missing"], ["smile", "b19:when"]], out="b20", scale=0.62, sit=True, variant="bow"),
     I("kb1", "box", 1370, 840, 90, "pop", "b12:four-year-old", "b20"),
     I("kb2", "box", 1370, 770, 80, "pop", "b12:four-year-old", "b20"),
     CARD("c1", "1930s · LEV VYGOTSKY", "Watching children think out loud", "psychologist", 1250, 220, "b13:nineteen", "b14"),
@@ -172,9 +169,7 @@ scenes.append({"id": "keys", "beats": R(25, 43), "elements": [
           ["happy", "b31:that's"], ["explainR", "b32:and"], ["present", "b34:in"], ["explain", "b38:so"], ["chin", "b39:lupyan"],
           ["count", "b41:yellow"], ["chin", "b42:there"], ["explain", "b43:the"]],
          [["neutral", "b25:you've"], ["o", "b29:walks"], ["tight", "b29:crazy"], ["smile", "b30:most"], ["smile", "b32:and"], ["grin", "b38:sharper"],
-          ["smile", "b39:lupyan"], ["neutral", "b42:there"]],
-         talk=[["b25:you've", "b29:then"], ["b30:most", "b44"]],
-         move=[[760, GY, "b26:walking", 1.4], [560, GY, "b27:keys", 1.0], [HX, GY, "b31:that's", 1.0]]),
+          ["smile", "b39:lupyan"], ["neutral", "b42:there"]]),
     I("ky", "keys", 1640, 620, 80, "pop", "b25:keys", "b34", pulse=1.15, beat=1.4),
     BUB("kk", "Keys… keys…", 720, 360, 150, "b26:keys", "b29", fontSize=30),
     TOP("t0", "you've lost your *keys*", "b25:lost", "b26"),
@@ -236,7 +231,7 @@ scenes.append({"id": "beeper", "beats": R(44, 58), "elements": [
     T("q3", "2–4×", 1300, 380, 70, "slam", "b53:two", "b55", color="accent", weight=800),
     TOP("t6", "here's the *funny* part", "b52:funny", "b53"),
     TOP("t7", "we don't know our own *heads*", "b54:not", "b55"),
-    ST("r1", 1150, GY, "bottom", "b55:differences", [["happy", "b56:some"]], [["open", "b56:some"]], out="b58", talk=[["b56:some", "b57"]]),
+    ST("r1", 1150, GY, "bottom", "b55:differences", [["happy", "b56:some"]], [["open", "b56:some"]], out="b58"),
     I("r1b", "chat", 1260, 380, 110, "pop", "b56:constantly", "b58"),
     I("r1c", "chat", 1060, 360, 90, "pop", "b56:constantly", "b58"),
     ST("r2", 1550, GY, "bottom", "b55:differences", [["idle", "b57:others"]], [["neutral", "b55:differences"]], out="b58", flip=True),
@@ -308,11 +303,11 @@ scenes.append({"id": "sport", "beats": R(80, 95), "elements": [
          [["smile", "b80:athletes"], ["neutral", "b84:does"], ["smile", "b85:answer"], ["grin", "b92:here's"], ["tight", "b94:embarrassed"],
           ["neutral", "b95:but"]],
          ),
-    ST("tp", 1450, GY, "right", "b81:tennis", [["give", "b81:tennis"]], [["tight", "b81:tennis"]], out="b83", flip=True, talk=[["b81:mutter", "b82"]]),
+    ST("tp", 1450, GY, "right", "b81:tennis", [["give", "b81:tennis"]], [["tight", "b81:tennis"]], out="b83", flip=True),
     I("rk", "racket", 1300, 520, 160, "pop", "b81:tennis", "b83"),
     BUB("cm", "Come on…", 1540, 380, 130, "b81:mutter", "b82", fontSize=32),
     ST("rn", 1100, GY, "left", "b82:runners", [["strain", "b82:runners"]], [["tight", "b82:runners"]], out="b83",
-       move=[[1700, GY, "b82:runners", 3.4]], talk=[["b82:whisper", "b83"]]),
+       move=[[1700, GY, "b82:runners", 3.4]]),
     BUB("kg", "Keep going.", 1350, 380, 140, "b82:keep", "b83", fontSize=32),
     TOP("t0", "athletes knew it *first*", "b80:athletes", "b81"),
     CARD("c1", "2011 · HATZIGEORGIADIS ET AL.", "32 studies on self-talk", "sport psychology", 1350, 220, "b83:twenty", "b84"),
@@ -349,11 +344,10 @@ scenes.append({"id": "word", "beats": R(96, 118), "elements": [
     TOP("t0", "one tiny *word*", "b97:one", "b99"),
     CARD("c1", "2014 · KROSS ET AL.", "5 minutes to prepare a speech", "psychologists", 1350, 220, "b99:twenty", "b100"),
     I("mc", "mic", 1350, 600, 200, "pop", "b99:speech", "b100"),
-    ST("sa", 1100, GY, "left", "b100:some", [["sorry", "b100:talked"]], [["tight", "b100:talked"], ["frown", "b102:people"]], out="b104", scale=0.9,
-       talk=[["b100:using", "b101"]]),
+    ST("sa", 1100, GY, "left", "b100:some", [["sorry", "b100:talked"]], [["tight", "b100:talked"], ["frown", "b102:people"]], out="b104", scale=0.9),
     BUB("sab", "I can't…", 1180, 380, 130, "b100:using", "b104", fontSize=32),
     ST("sb", 1650, GY, "right", "b101:others", [["proud", "b101:sam"]], [["smile", "b101:others"], ["grin", "b102:less"]], out="b104", scale=0.9, flip=True,
-       variant="bow", talk=[["b101:sam", "b102"]]),
+       variant="bow"),
     BUB("sbb", "Sam, you can do this.", 1580, 380, 170, "b101:sam", "b104", fontSize=28),
     TOP("t1", "\"I\" … or your own *name*", "b100:some", "b102"),
     I("j1", "check", 1650, 250, 80, "pop", "b103:judges", "b104"),
@@ -434,7 +428,7 @@ scenes.append({"id": "end", "tail": 2.6, "beats": R(145, 165), "elements": [
     K("sgk", 1350, 520, 900, "b147:research", "b148"),
     TOP("t1", "the research says *the opposite*", "b147:research", "b148"),
     ST("kid", 1250, 760, "bottom", "b149:you", [["give", "b149:chatting"], ["happy", "b150:somewhere"]], [["grin", "b149:you"]], out="b151", scale=0.62,
-       sit=True, variant="bow", talk=[["b149:chatting", "b150"]]),
+       sit=True, variant="bow"),
     I("bk1", "box", 1440, 840, 90, "pop", "b149:blocks", "b151"),
     I("bk2", "box", 1440, 770, 80, "pop", "b149:blocks", "b151"),
     TOP("t2", "you started at *four*", "b149:you", "b150"),

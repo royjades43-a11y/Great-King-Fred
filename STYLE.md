@@ -67,9 +67,11 @@ The layout follows big psychology channels like KnowSense, but in our own brand.
 
 ## Performance and art direction (from video 13, Nov 2026)
 
-- **A host:** one stick figure talks to the viewer and performs the narration.
-  - Its mouth moves on every spoken word (`talk`).
-  - Its posture acts out the line: explain, present, chin, ear, lean, count, embarrassed and so on.
+- **A host:** one stick figure performs the narration silently, like a mime (owner's rule, Nov 2026).
+  - **No talking:** mouths never move with the voice. There's no lip-sync (`talk`) on the host or on story figures.
+  - **Gestures carry the line:** explain, present, chin, ear, lean, count, embarrassed, shrug and so on.
+  - **Faces only when the moment calls for it:** a smile, a grin, surprise (`o`), worry (`frown`, `tight`). The
+    rest of the time the face is neutral or a soft smile.
   - It reacts to the story figures, then turns back to the viewer.
 - **Story figures act out the studies and moments.** No floating icons where a person could act it instead.
 - **Every chapter happens somewhere:** a soft, muted line-drawn environment (playroom, kitchen, study, court,

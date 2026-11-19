@@ -85,7 +85,7 @@ GY = 690  # where stickmen stand
 HX = 400
 def BG(id, name, at, out=None):
     return I(id, name, 960, 560, 1920, "blur", at, out, color="muted", opacity=0.42, z=1)
-def HOST(id, at, out, poses, mouths, talk=True, x=HX, **k):
+def HOST(id, at, out, poses, mouths, talk=False, x=HX, **k):
     return ST(id, x, GY, "none" if at == "b00:you" else "left", at, poses, mouths, out=out, talk=talk, **k)
 def TAG(id, txt, x, y, at, out, size=38, color="muted"):
     return T(id, txt, x, y, size, "bottom", at, out, color=color)

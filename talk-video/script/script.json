@@ -244,30 +244,7 @@
       ]
      ],
      "out": "b25",
-     "talk": [
-      [
-       "b00:have",
-       "b02"
-      ],
-      [
-       "b04:and",
-       "b25"
-      ]
-     ],
-     "move": [
-      [
-       560,
-       690,
-       "b09:so",
-       1.2
-      ],
-      [
-       400,
-       690,
-       "b12:let's",
-       1.2
-      ]
-     ]
+     "talk": false
     },
     {
      "t": "stick",
@@ -303,13 +280,7 @@
      "out": "b06",
      "scale": 0.62,
      "sit": true,
-     "variant": "bow",
-     "talk": [
-      [
-       "b01:they",
-       "b04"
-      ]
-     ]
+     "variant": "bow"
     },
     {
      "t": "icon",
@@ -427,13 +398,7 @@
       ]
      ],
      "out": "b09",
-     "flip": true,
-     "talk": [
-      [
-       "b06:grown",
-       "b07"
-      ]
-     ]
+     "flip": true
     },
     {
      "t": "text",
@@ -619,17 +584,7 @@
      "out": "b20",
      "scale": 0.62,
      "sit": true,
-     "variant": "bow",
-     "talk": [
-      [
-       "b14:most",
-       "b15"
-      ],
-      [
-       "b19:when",
-       "b20"
-      ]
-     ]
+     "variant": "bow"
     },
     {
      "t": "icon",
@@ -1074,36 +1029,7 @@
       ]
      ],
      "out": "b44",
-     "talk": [
-      [
-       "b25:you've",
-       "b29:then"
-      ],
-      [
-       "b30:most",
-       "b44"
-      ]
-     ],
-     "move": [
-      [
-       760,
-       690,
-       "b26:walking",
-       1.4
-      ],
-      [
-       560,
-       690,
-       "b27:keys",
-       1.0
-      ],
-      [
-       400,
-       690,
-       "b31:that's",
-       1.0
-      ]
-     ]
+     "talk": false
     },
     {
      "t": "icon",
@@ -1691,7 +1617,7 @@
       ]
      ],
      "out": "b59",
-     "talk": true
+     "talk": false
     },
     {
      "t": "icon",
@@ -2002,13 +1928,7 @@
        "b56:some"
       ]
      ],
-     "out": "b58",
-     "talk": [
-      [
-       "b56:some",
-       "b57"
-      ]
-     ]
+     "out": "b58"
     },
     {
      "t": "icon",
@@ -2324,7 +2244,7 @@
       ]
      ],
      "out": "b80",
-     "talk": true,
+     "talk": false,
      "move": [
       [
        560,
@@ -3018,7 +2938,7 @@
       ]
      ],
      "out": "b96",
-     "talk": true
+     "talk": false
     },
     {
      "t": "stick",
@@ -3040,13 +2960,7 @@
       ]
      ],
      "out": "b83",
-     "flip": true,
-     "talk": [
-      [
-       "b81:mutter",
-       "b82"
-      ]
-     ]
+     "flip": true
     },
     {
      "t": "icon",
@@ -3097,12 +3011,6 @@
        690,
        "b82:runners",
        3.4
-      ]
-     ],
-     "talk": [
-      [
-       "b82:whisper",
-       "b83"
       ]
      ]
     },
@@ -3564,7 +3472,7 @@
       ]
      ],
      "out": "b119",
-     "talk": true
+     "talk": false
     },
     {
      "t": "text",
@@ -3636,13 +3544,7 @@
       ]
      ],
      "out": "b104",
-     "scale": 0.9,
-     "talk": [
-      [
-       "b100:using",
-       "b101"
-      ]
-     ]
+     "scale": 0.9
     },
     {
      "t": "bubble",
@@ -3682,13 +3584,7 @@
      "out": "b104",
      "scale": 0.9,
      "flip": true,
-     "variant": "bow",
-     "talk": [
-      [
-       "b101:sam",
-       "b102"
-      ]
-     ]
+     "variant": "bow"
     },
     {
      "t": "bubble",
@@ -4244,7 +4140,7 @@
       ]
      ],
      "out": "b145",
-     "talk": true
+     "talk": false
     },
     {
      "t": "text",
@@ -4754,7 +4650,7 @@
        "b164:which"
       ]
      ],
-     "talk": true
+     "talk": false
     },
     {
      "t": "text",
@@ -4825,13 +4721,7 @@
      "out": "b151",
      "scale": 0.62,
      "sit": true,
-     "variant": "bow",
-     "talk": [
-      [
-       "b149:chatting",
-       "b150"
-      ]
-     ]
+     "variant": "bow"
     },
     {
      "t": "icon",
