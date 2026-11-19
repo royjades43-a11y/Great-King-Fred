@@ -407,3 +407,64 @@ export function mirrorPep() {
   ${person({ x: 680, face: nervous })}
 </svg>`;
 }
+
+// Video 14 · A: someone hiding inside a "TO DO" box, only the eyes peeking out
+export function todoBox() {
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="400" cy="440" r="150" fill="${CARD}" stroke="${INK}" stroke-width="13"/>
+  <path d="M330 392 L380 374 M470 374 L520 392" stroke="${INK}" stroke-width="12" stroke-linecap="round"/>
+  <ellipse cx="352" cy="430" rx="22" ry="27" fill="${INK}"/><ellipse cx="448" cy="430" rx="22" ry="27" fill="${INK}"/>
+  <circle cx="345" cy="420" r="7" fill="${CARD}"/><circle cx="441" cy="420" r="7" fill="${CARD}"/>
+  <path d="M560 330 C546 362 544 382 560 392 C576 382 574 362 560 330 Z" fill="#FFFFFF" stroke="${INK}" stroke-width="7"/>
+  <path d="M120 470 L680 470 L680 960 L120 960 Z" fill="#D9C7A3" stroke="${INK}" stroke-width="13" stroke-linejoin="round"/>
+  <path d="M120 470 L40 560 M680 470 L760 560" stroke="${INK}" stroke-width="13" stroke-linecap="round"/>
+  <path d="M120 470 L40 560 L60 580 L140 492 Z M680 470 L760 560 L740 580 L660 492 Z" fill="#CBB58C" stroke="${INK}" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M292 470 C292 448 316 444 322 466 M478 466 C484 444 508 448 508 470" fill="${CARD}" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+  <g transform="rotate(-6 400 700)"><rect x="220" y="620" width="360" height="150" rx="14" fill="none" stroke="${RED}" stroke-width="12"/>
+  <text x="400" y="730" text-anchor="middle" font-family="M" font-weight="800" font-size="104" fill="${RED}">TO DO</text></g>
+  <path d="M170 900 L630 900" stroke="${INK}" stroke-width="6" opacity="0.35"/>
+</svg>`;
+}
+
+// Video 14 · B: future you, older and fed up, holding the ketchup-and-soy-sauce drink
+export function futureYou() {
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <path d="M150 1000 C150 800 200 690 320 670 L520 670 C640 690 690 800 690 1000 Z" fill="${CARD}" stroke="${INK}" stroke-width="13" stroke-linejoin="round"/>
+  <path d="M250 330 C230 200 330 140 420 150 C520 140 600 200 590 330 C620 300 640 250 610 200 C640 150 560 90 480 110 C440 70 360 80 330 120 C250 110 200 190 230 240 C200 270 220 320 250 330 Z" fill="#E3E3E3" stroke="${INK}" stroke-width="11" stroke-linejoin="round"/>
+  <circle cx="420" cy="430" r="170" fill="${CARD}" stroke="${INK}" stroke-width="13"/>
+  <circle cx="356" cy="440" r="44" fill="none" stroke="${INK}" stroke-width="10"/><circle cx="486" cy="440" r="44" fill="none" stroke="${INK}" stroke-width="10"/>
+  <path d="M400 440 L442 440" stroke="${INK}" stroke-width="10"/>
+  <path d="M322 402 L392 418 M450 418 L520 402" stroke="${INK}" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="362" cy="448" r="12" fill="${INK}"/><circle cx="480" cy="448" r="12" fill="${INK}"/>
+  <path d="M364 540 C392 518 450 518 478 540" fill="none" stroke="${INK}" stroke-width="12" stroke-linecap="round"/>
+  <path d="M290 500 L306 510 M550 500 L534 510 M386 340 L456 340" stroke="${INK}" stroke-width="6" stroke-linecap="round" opacity="0.6"/>
+  <path d="M460 650 L700 650 L670 950 L490 950 Z" fill="#6B4A2E"/>
+  <path d="M440 560 L720 560 L680 960 L480 960 Z" fill="none" stroke="${INK}" stroke-width="13" stroke-linejoin="round"/>
+  <path d="M452 650 L708 650" stroke="${INK}" stroke-width="7"/>
+  <path d="M640 530 C620 500 660 480 640 450 M700 530 C680 500 720 480 700 450" fill="none" stroke="#6B8F3E" stroke-width="9" stroke-linecap="round"/>
+  <path d="M440 760 C400 760 380 800 410 830 L470 830" fill="${CARD}" stroke="${INK}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+}
+
+// Video 14 · C: a wall calendar where every day is Monday, and someone asleep under it
+export function allMondays() {
+  let cells = "";
+  for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) {
+    const x = 150 + c * 135, y = 250 + r * 95;
+    cells += `<rect x="${x}" y="${y}" width="125" height="85" rx="8" fill="#FFFFFF" stroke="${INK}" stroke-width="5"/>`
+      + `<text x="${x + 62}" y="${y + 58}" text-anchor="middle" font-family="M" font-weight="800" font-size="34" fill="${RED}">MON</text>`;
+  }
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <rect x="120" y="140" width="600" height="520" rx="22" fill="${CARD}" stroke="${INK}" stroke-width="13"/>
+  <rect x="120" y="140" width="600" height="90" rx="22" fill="${RED}" stroke="${INK}" stroke-width="13"/>
+  <path d="M230 110 L230 175 M610 110 L610 175" stroke="${INK}" stroke-width="16" stroke-linecap="round"/>
+  ${cells}
+  <path d="M40 980 L40 820 Q40 790 70 790 L760 790 Q790 790 790 820 L790 980" fill="${CARD}" stroke="${INK}" stroke-width="12" stroke-linejoin="round"/>
+  <ellipse cx="200" cy="790" rx="120" ry="46" fill="#FFFFFF" stroke="${INK}" stroke-width="10"/>
+  <circle cx="230" cy="730" r="80" fill="${CARD}" stroke="${INK}" stroke-width="12"/>
+  <path d="M196 728 C206 738 220 738 228 728 M250 722 C260 732 274 732 282 722" fill="none" stroke="${INK}" stroke-width="8" stroke-linecap="round"/>
+  <path d="M232 770 C240 764 250 764 256 770" fill="none" stroke="${INK}" stroke-width="7" stroke-linecap="round"/>
+  <path d="M260 810 C360 760 560 760 790 800 L790 900 L260 900 Z" fill="#DCE6D8" stroke="${INK}" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M330 690 L370 690 L330 730 L370 730 M390 640 L420 640 L390 670 L420 670" fill="none" stroke="${INK}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+}
