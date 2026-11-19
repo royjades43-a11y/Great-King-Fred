@@ -31,7 +31,7 @@
         <defs><filter id="b075-rough" x="-5%" y="-5%" width="110%" height="110%">
           <feTurbulence id="b075-turb" type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1"/>
           <feDisplacementMap in="SourceGraphic" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
-        <g id="b075-world" transform="translate(960 540) scale(1.025) translate(-800 -600)"><g filter="url(#b075-rough)">
+        <g id="b075-world" transform="translate(960 540) scale(1.025) translate(-800 -540)"><g filter="url(#b075-rough)">
 <rect x="-800" y="-400" width="6800" height="1340" fill="#DCE6E2"/><circle cx="4600" cy="160" r="70" fill="#E9C25B" opacity="0.8"/>
     <path d="M -300 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 1700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 2700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 3700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 4700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/>
     <rect x="-800" y="940" width="6800" height="700" fill="#C9C3B6"/><path d="M -800 940 L 6000 940" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M -800 1000 L 6000 1000" stroke="#B5AE9F" stroke-width="4" stroke-dasharray="60 40"/><rect x="470" y="260" width="660" height="680" fill="#EBDFC2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><rect x="670" y="560" width="260" height="380" rx="10" fill="#5F7C90" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
@@ -71,9 +71,9 @@
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
-    (() => { const w = document.querySelector("#b075-world"); const c = { x: 800, y: 600, z: 1.025 };
+    (() => { const w = document.querySelector("#b075-world"); const c = { x: 800, y: 540, z: 1.025 };
       const ap = () => w.setAttribute("transform", "translate(960 540) scale(" + c.z + ") translate(" + (-c.x) + " " + (-c.y) + ")");
-      tl.set(c, { x: 800, y: 600, z: 1.025, onUpdate: ap }, 0);
+      tl.set(c, { x: 800, y: 540, z: 1.025, onUpdate: ap }, 0);
       tl.to(c, { x: 900, y: 560, z: 1.1, duration: 0.90, ease: "power2.inOut", onUpdate: ap }, 0);
       tl.to(c, { x: 900, y: 560, z: 1.1275, duration: 2.32, ease: "none", onUpdate: ap }, 0.90); })();
     tl.fromTo("#b075-tag", { opacity: 0, rotation: -16, transformOrigin: "34px 50%" }, { opacity: 1, rotation: 0, duration: 0.9, ease: "elastic.out(1, 0.45)" }, 0.04);

@@ -168,8 +168,8 @@ export const BEATS = [
   /* ===================== PART 4 · the street home: four moves ===================== */
   { at: "Four moves", set: "street", cam: [2450, 560, 0.5], tag: "4 MOVES", tagColor: "olive", drift: 1.01,
     draw: (S) => B(S, { pose: "wave", face: "smile" }, 900, 1.6) },
-  { at: "Move one, the mood check", set: "street", cam: [800, 600, 1.0], tag: "MOVE 1: THE MOOD CHECK", tagColor: "slate",
-    draw: (S) => S.put(mirror(), 600, 940, 0.9, { anim: "pop" }) + B(S, { pose: "think", face: "thinking" }, 950, 0.95) + S.put(bubble("THE THING", { size: 36, w: 260, h: 100, dx: 30, dy: 90 }), 860, 300, 1, { anim: "grow", at: "thing" }) + S.put(bubble("THE FEELING", { size: 36, w: 280, h: 100, dx: -30, dy: 90 }), 1180, 300, 1, { anim: "grow", at: "feeling" }) },
+  { at: "Move one, the mood check", set: "street", cam: [800, 540, 1.0], tag: "MOVE 1: THE MOOD CHECK", tagColor: "slate",
+    draw: (S) => S.put(mirror(), 560, 940, 0.9, { anim: "pop" }) + B(S, { pose: "think", face: "thinking" }, 1000, 0.95) + S.put(note(["THE THING?"], 300), 1320, 520, 1, { anim: "grow", at: "thing" }) + S.put(note(["THE FEELING?"], 320), 1320, 680, 1, { anim: "grow", at: "feeling" }) },
   { at: "Just naming the feeling", set: "street", cam: [900, 560, 1.1], tag: "NAME IT", tagColor: "slate",
     draw: (S) => B(S, { pose: "point", face: "determined" }, 950, 0.95) + S.put(raincloud("SAD", { rain: true, size: 40 }), 1100, 560, 0.9, { anim: "none", id: "nm" }) + S.js(`tl.to("#${S.id("nm")}-i", { scale: 0.55, transformOrigin: "50% 50%", duration: 0.9 }, ${S.t("power")});`) },
   { at: "If the answer is the feeling", set: "street", cam: [900, 600, 1.2], tag: "CLOSE THE APP", tagColor: "olive",
