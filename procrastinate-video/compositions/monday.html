@@ -1,0 +1,239 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="monday" data-width="1920" data-height="1080">
+    <div id="monday-bg" class="clip el" data-start="0.2" data-duration="50.913" data-track-index="1" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:1;opacity:0.42" data-layout-allow-overlap><div id="monday-bg-in" class="in"><div class="ico" style="width:1920px;height:1920px;color:var(--muted)"><svg viewBox="0 0 200 200"><path d="M-20 137.5 L220 137.5" fill="none" stroke="currentColor" stroke-width="7" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M112 110 L198 110 L198 128 L112 128 Z M112 128 L112 137.5 M198 128 L198 137.5 M190 110 L190 92 L204 92" fill="none" stroke="currentColor" stroke-width="6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M118 110 Q124 100 140 102 Q150 104 150 110" fill="none" stroke="currentColor" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 56 L96 56 L96 92 L60 92 Z M60 64 L96 64 M69 64 L69 92 M78 64 L78 92 M87 64 L87 92 M60 73 L96 73 M60 82 L96 82" fill="none" stroke="currentColor" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M70 52 L70 58 M86 52 L86 58" fill="none" stroke="currentColor" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 64 L48 64 L48 96 L22 96 Z M35 64 L35 96" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+    <div id="monday-h" class="clip el" data-start="0.2" data-duration="50.913" data-track-index="2" style="position:absolute;left:0px;top:300px;width:800px;height:780px;z-index:3"><div id="monday-h-in" class="in"><svg class="stick" id="monday-h-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="monday-h-aLu"><path class="s" d="M150 160 L150 255"/><g id="monday-h-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="monday-h-aRu"><path class="s" d="M150 160 L150 255"/><g id="monday-h-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="monday-h-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="monday-h-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="monday-h-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="monday-h-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="monday-h-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="monday-h-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="monday-h-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="monday-h-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="monday-t0" class="clip el" data-start="0.2" data-duration="4.07" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:4"><div id="monday-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t0-w0" class="w">let</span> <span id="monday-t0-w1" class="w">me</span> <span id="monday-t0-w2" class="w">ask</span> <span id="monday-t0-w3" class="w">you</span> <span id="monday-t0-w4" class="w acc">something</span></div></div></div>
+    <div id="monday-mb" class="clip el" data-start="1.9" data-duration="3.22" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1520px;height:680px;z-index:5" data-layout-allow-overlap><div id="monday-mb-in" class="in"><div class="ico bub" style="width:251.99999999999997px;height:180px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:30px">I'll start on Monday.</div></div></div></div>
+    <div id="monday-cal" class="clip el" data-start="4.17" data-duration="4.61" data-track-index="5" style="position:absolute;left:780px;top:0px;width:1140px;height:1080px;z-index:6" data-layout-allow-overlap><div id="monday-cal-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="monday-mon" class="clip el" data-start="4.17" data-duration="4.61" data-track-index="6" style="position:absolute;left:780px;top:400px;width:1140px;height:680px;z-index:7"><div id="monday-mon-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--accent)"><span id="monday-mon-w0" class="w">MONDAY</span></div></div></div>
+    <div id="monday-t1" class="clip el" data-start="5.07" data-duration="1.38" data-track-index="7" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:8"><div id="monday-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t1-w0" class="w">you're</span> <span id="monday-t1-w1" class="w">not</span> <span id="monday-t1-w2" class="w acc">alone</span></div></div></div>
+    <div id="monday-t2" class="clip el" data-start="7.09" data-duration="1.74" data-track-index="8" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:9"><div id="monday-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t2-w0" class="w">psychologists</span> <span id="monday-t2-w1" class="w acc">measured</span> <span id="monday-t2-w2" class="w">it</span></div></div></div>
+    <div id="monday-c1" class="clip el" data-start="8.81" data-duration="6.612" data-track-index="9" style="position:absolute;left:780px;top:0px;width:1140px;height:440px;z-index:10"><div id="monday-c1-in" class="in"><div class="card"><div class="card-k">2014 · DAI, MILKMAN &amp; RIIS</div><div class="card-t">Google searches for "diet"</div><div class="card-s">researchers</div></div></div></div>
+    <div id="monday-sr" class="clip el" data-start="14.762" data-duration="0.89" data-track-index="10" style="position:absolute;left:780px;top:0px;width:1140px;height:1040px;z-index:11" data-layout-allow-overlap><div id="monday-sr-in" class="in"><div class="ico bub" style="width:224px;height:160px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:44px">diet</div></div></div></div>
+    <div id="monday-w1" class="clip el" data-start="17.702" data-duration="6.004" data-track-index="11" style="position:absolute;left:240px;top:640px;width:1680px;height:440px;z-index:12"><div id="monday-w1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:300px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">new week</div></div></div></div>
+    <div id="monday-w2" class="clip el" data-start="18.602" data-duration="5.104" data-track-index="12" style="position:absolute;left:780px;top:640px;width:1140px;height:440px;z-index:13"><div id="monday-w2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:330px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">new month</div></div></div></div>
+    <div id="monday-w3" class="clip el" data-start="19.942" data-duration="3.764" data-track-index="13" style="position:absolute;left:1320px;top:640px;width:600px;height:440px;z-index:14"><div id="monday-w3-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:380px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">new year</div></div></div></div>
+    <div id="monday-t3" class="clip el" data-start="15.322" data-duration="5.354" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="monday-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t3-w0" class="w">searches</span> <span id="monday-t3-w1" class="w acc">jump</span> <span id="monday-t3-w2" class="w">on</span> <span id="monday-t3-w3" class="w">fresh</span> <span id="monday-t3-w4" class="w">starts</span></div></div></div>
+    <div id="monday-db" class="clip el" data-start="21.236" data-duration="2.47" data-track-index="15" style="position:absolute;left:1680px;top:0px;width:240px;height:840px;z-index:16" data-layout-allow-overlap><div id="monday-db-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M56 100 L144 100"/><path class="s" pathLength="1" d="M24 70 L44 70 L44 130 L24 130 Z M44 80 L56 80 L56 120 L44 120 Z M156 70 L176 70 L176 130 L156 130 Z M144 80 L156 80 L156 120 L144 120 Z"/></svg></div></div></div>
+    <div id="monday-t4" class="clip el" data-start="21.236" data-duration="2.52" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:17"><div id="monday-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t4-w0" class="w">gym</span> <span id="monday-t4-w1" class="w">visits,</span> <span id="monday-t4-w2" class="w acc">too</span></div></div></div>
+    <div id="monday-t5" class="clip el" data-start="24.136000000000003" data-duration="2.04" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:18"><div id="monday-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t5-w0" class="w">the</span> <span id="monday-t5-w1" class="w">fresh</span> <span id="monday-t5-w2" class="w">start</span> <span id="monday-t5-w3" class="w acc">effect</span></div></div></div>
+    <div id="monday-nt" class="clip el" data-start="26.816" data-duration="3.574" data-track-index="18" style="position:absolute;left:780px;top:40px;width:1140px;height:1040px;z-index:19" data-layout-allow-overlap><div id="monday-nt-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 20 L164 20 Q176 20 176 32 L176 176 Q176 186 164 186 L36 186 Q24 186 24 176 L24 32 Q24 20 36 20 Z"/><path class="s acc-s" pathLength="1" d="M48 66 L60 78 L82 54"/><path class="s" pathLength="1" d="M100 66 L150 66"/><path class="s acc-s" pathLength="1" d="M48 112 L60 124 L82 100"/><path class="s" pathLength="1" d="M100 112 L150 112"/><path class="s acc-s" pathLength="1" d="M48 158 L60 170 L82 146"/><path class="s" pathLength="1" d="M100 158 L150 158"/></svg></div></div></div>
+    <div id="monday-ntt" class="clip el" data-start="29.3" data-duration="1.09" data-track-index="19" style="position:absolute;left:780px;top:0px;width:1140px;height:720px;z-index:20"><div id="monday-ntt-in" class="in"><div class="txt" style="font-size:52px;font-weight:800;color:var(--ink)"><span id="monday-ntt-w0" class="w">Monday:</span></div></div></div>
+    <div id="monday-t6" class="clip el" data-start="27.8" data-duration="2.64" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:21"><div id="monday-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t6-w0" class="w">a</span> <span id="monday-t6-w1" class="w">plan</span> <span id="monday-t6-w2" class="w">that</span> <span id="monday-t6-w3" class="w">starts</span> <span id="monday-t6-w4" class="w">on</span> <span id="monday-t6-w5" class="w acc">Monday</span></div></div></div>
+    <div id="monday-pg" class="clip el" data-start="32.06" data-duration="4.63" data-track-index="21" style="position:absolute;left:780px;top:0px;width:1140px;height:1080px;z-index:22" data-layout-allow-overlap><div id="monday-pg-in" class="in"><div class="ico" style="width:240px;height:240px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L150 20 L176 46 L176 168 L64 168 Z"/><path class="s" pathLength="1" d="M150 20 L150 46 L176 46"/><path class="s" pathLength="1" d="M44 40 L44 184 L156 184"/><path class="s" pathLength="1" d="M24 60 L24 198 L136 198"/><path class="s acc-s" pathLength="1" d="M88 76 L152 76 M88 104 L152 104 M88 132 L132 132"/></svg></div></div></div>
+    <div id="monday-t7" class="clip el" data-start="30.48" data-duration="2.64" data-track-index="22" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:23"><div id="monday-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t7-w0" class="w">a</span> <span id="monday-t7-w1" class="w">new</span> <span id="monday-t7-w2" class="w">week:</span> <span id="monday-t7-w3" class="w">a</span> <span id="monday-t7-w4" class="w">clean</span> <span id="monday-t7-w5" class="w acc">page</span></div></div></div>
+    <div id="monday-ms" class="clip el" data-start="34.04" data-duration="2.65" data-track-index="23" style="position:absolute;left:280px;top:0px;width:1640px;height:1080px;z-index:24" data-layout-allow-overlap><div id="monday-ms-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M20 100 Q40 40 60 100 Q80 160 100 100 Q120 40 140 100 Q160 160 180 100"/><path class="s alm-s" pathLength="1" d="M30 60 L60 30 M170 60 L140 30 M100 30 L100 10"/></svg></div></div></div>
+    <div id="monday-msl" class="clip el" data-start="33.12" data-duration="3.62" data-track-index="24" style="position:absolute;left:280px;top:400px;width:1640px;height:680px;z-index:25"><div id="monday-msl-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--muted)"><span id="monday-msl-w0" class="w">old</span> <span id="monday-msl-w1" class="w">you</span></div></div></div>
+    <div id="monday-nk" class="clip el" data-start="35.66" data-duration="1.03" data-track-index="25" style="position:absolute;left:1280px;top:0px;width:640px;height:1080px;z-index:26" data-layout-allow-overlap><div id="monday-nk-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M30 104 L80 154 L172 50"/></svg></div></div></div>
+    <div id="monday-nkl" class="clip el" data-start="34.86" data-duration="1.88" data-track-index="26" style="position:absolute;left:1280px;top:400px;width:640px;height:680px;z-index:27"><div id="monday-nkl-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--muted)"><span id="monday-nkl-w0" class="w">new</span> <span id="monday-nkl-w1" class="w">you</span></div></div></div>
+    <div id="monday-t8" class="clip el" data-start="36.64" data-duration="1.896" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:28"><div id="monday-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t8-w0" class="w">here's</span> <span id="monday-t8-w1" class="w">the</span> <span id="monday-t8-w2" class="w acc">irony</span></div></div></div>
+    <div id="monday-cal2" class="clip el" data-start="39.696" data-duration="7.767" data-track-index="28" style="position:absolute;left:780px;top:0px;width:1140px;height:1080px;z-index:29" data-layout-allow-overlap><div id="monday-cal2-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="monday-mon2" class="clip el" data-start="39.696" data-duration="7.767" data-track-index="29" style="position:absolute;left:780px;top:400px;width:1140px;height:680px;z-index:30"><div id="monday-mon2-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--accent)"><span id="monday-mon2-w0" class="w">MONDAY</span></div></div></div>
+    <div id="monday-t9" class="clip el" data-start="38.436" data-duration="3.64" data-track-index="30" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:31"><div id="monday-t9-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="monday-t9-w0" class="w">that's</span> <span id="monday-t9-w1" class="w">how</span> <span id="monday-t9-w2" class="w">we</span> <span id="monday-t9-w3" class="w acc">push</span> <span id="monday-t9-w4" class="w acc">it</span> <span id="monday-t9-w5" class="w acc">back</span></div></div></div>
+    <div id="monday-sl" class="clip el" data-start="43.456" data-duration="4.007" data-track-index="31" style="position:absolute;left:1380px;top:40px;width:540px;height:1040px;z-index:32" data-layout-allow-overlap><div id="monday-sl-in" class="in"><div class="ico" style="width:180px;height:180px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M80 186 L80 20"/><path class="s acc-s" pathLength="1" d="M80 24 L150 46 L80 68 Z"/><path class="s" pathLength="1" d="M30 186 Q100 170 170 186"/><circle class="f" cx="120" cy="178" r="7"/></svg></div></div></div>
+    <div id="monday-t10" class="clip el" data-start="42.916" data-duration="1.74" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:33"><div id="monday-t10-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t10-w0" class="w">a</span> <span id="monday-t10-w1" class="w">starting</span> <span id="monday-t10-w2" class="w">line…</span></div></div></div>
+    <div id="monday-wt" class="clip el" data-start="46.656" data-duration="0.89" data-track-index="33" style="position:absolute;left:180px;top:40px;width:1740px;height:1040px;z-index:34" data-layout-allow-overlap><div id="monday-wt-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M50 20 L150 20 M50 180 L150 180 M60 20 Q60 80 100 100 Q140 120 140 180 M140 20 Q140 80 100 100 Q60 120 60 180"/></svg></div></div></div>
+    <div id="monday-t11" class="clip el" data-start="44.873" data-duration="2.64" data-track-index="34" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:35"><div id="monday-t11-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t11-w0" class="w">…or</span> <span id="monday-t11-w1" class="w">where</span> <span id="monday-t11-w2" class="w">things</span> <span id="monday-t11-w3" class="w">go</span> <span id="monday-t11-w4" class="w">to</span> <span id="monday-t11-w5" class="w acc">wait</span></div></div></div>
+    <div id="monday-t12" class="clip el" data-start="47.553" data-duration="3.535" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:36"><div id="monday-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="monday-t12-w0" class="w">what</span> <span id="monday-t12-w1" class="w">you</span> <span id="monday-t12-w2" class="w">do</span> <span id="monday-t12-w3" class="w">when</span> <span id="monday-t12-w4" class="w">Monday</span> <span id="monday-t12-w5" class="w acc">comes</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"monday-bg","t":"icon","from":"blur","exit":null,"in":0.2,"out":51.073,"outDur":0.25,"hold":false},{"id":"monday-h","t":"stick","from":"left","exit":null,"in":0.2,"out":51.073,"outDur":0.3,"hold":false,"poses":[["lean",0.74],["embarrassed",4.17],["happy",5.49],["present",6.35],["presentL",8.73],["explain",15.322],["count",18.602],["explainR",20.576],["present",24.476],["chin",26.076],["explain",30.48],["shrug",33.12],["proud",34.86],["lean",36.98],["explainR",38.016],["present",41.976],["shrug",46.656],["explain",47.553]],"mouth":[["smile",0.2],["open",0.45],["smile",0.55],["open",0.59],["smile",0.786],["open",0.87],["smile",0.97],["open",0.99],["smile",1.158],["open",1.23],["smile",1.33],["o",1.33],["smile",1.55],["open",2.15],["smile",2.25],["open",2.29],["smile",2.43],["open",2.49],["smile",2.7],["open",2.79],["smile",2.916],["open",2.97],["smile",3.096],["o",3.15],["smile",3.37],["open",3.8],["smile",3.94],["open",4],["smile",4.154],["grin",4.17],["open",4.22],["grin",4.36],["o",4.42],["grin",4.64],["open",5.32],["smile",5.49],["open",5.58],["smile",5.692],["o",5.74],["smile",5.96],["o",6.6],["smile",6.82],["open",7.18],["smile",7.376],["o",7.46],["smile",7.68],["o",7.96],["smile",8.18],["o",8.36],["smile",8.58],["open",8.98],["smile",9.06],["o",9.06],["smile",9.28],["o",9.492],["smile",9.712],["o",10.11],["smile",10.33],["open",10.666],["smile",10.882],["o",10.974],["smile",11.194],["o",11.592],["smile",11.812],["open",12.012],["smile",12.208],["o",12.292],["smile",12.512],["o",12.632],["smile",12.852],["o",12.952],["smile",13.172],["open",13.452],["smile",13.564],["o",13.612],["smile",13.832],["o",13.932],["smile",14.152],["open",14.332],["smile",14.528],["open",14.612],["smile",14.712],["open",14.732],["smile",14.928],["o",15.012],["smile",15.232],["o",15.572],["smile",15.792],["o",16.492],["smile",16.712],["open",16.952],["smile",17.064],["open",17.112],["smile",17.212],["open",17.212],["smile",17.38],["open",17.452],["smile",17.564],["o",17.612],["smile",17.832],["o",17.952],["smile",18.172],["open",18.632],["smile",18.786],["o",18.852],["smile",19.072],["open",19.412],["smile",19.512],["o",19.512],["smile",19.732],["open",19.912],["smile",20.108],["open",20.192],["smile",20.402],["o",20.826],["smile",21.046],["open",21.186],["smile",21.312],["open",21.366],["smile",21.466],["open",21.486],["smile",21.682],["o",21.766],["smile",21.986],["open",22.106],["smile",22.206],["open",22.226],["smile",22.366],["open",22.426],["smile",22.636],["open",22.726],["smile",22.936],["o",23.026],["smile",23.246],["open",23.906],["smile",24.006],["open",24.046],["smile",24.228],["open",24.306],["smile",24.432],["open",24.486],["smile",24.654],["o",24.726],["smile",24.946],["o",25.086],["smile",25.306],["o",25.466],["smile",25.686],["neutral",26.076],["open",26.326],["neutral",26.522],["open",26.606],["neutral",26.774],["open",26.846],["neutral",26.946],["open",26.946],["neutral",27.046],["open",27.066],["neutral",27.206],["o",27.266],["neutral",27.486],["o",27.626],["neutral",27.846],["o",28.006],["neutral",28.226],["open",28.566],["neutral",28.646],["open",28.646],["neutral",28.746],["o",28.746],["neutral",28.966],["open",29.086],["neutral",29.212],["open",29.266],["neutral",29.476],["open",29.566],["neutral",29.72],["o",29.786],["neutral",30.006],["smile",30.48],["open",30.59],["smile",30.69],["open",30.73],["smile",30.884],["open",30.95],["smile",31.146],["o",31.23],["smile",31.45],["open",31.59],["smile",31.744],["open",31.81],["smile",31.91],["o",31.93],["smile",32.15],["o",32.31],["smile",32.53],["open",33.27],["smile",33.37],["o",33.37],["smile",33.59],["open",33.69],["smile",33.816],["open",33.87],["smile",34.038],["open",34.11],["smile",34.236],["open",34.29],["smile",34.458],["grin",34.86],["open",35.03],["grin",35.11],["open",35.11],["grin",35.306],["open",35.39],["grin",35.572],["open",35.65],["grin",35.832],["open",35.91],["grin",36.106],["open",36.19],["grin",36.4],["open",36.89],["neutral",36.98],["open",37.13],["neutral",37.23],["o",37.23],["neutral",37.45],["open",38.066],["neutral",38.206],["o",38.266],["neutral",38.486],["o",38.686],["neutral",38.906],["open",39.186],["neutral",39.326],["open",39.386],["neutral",39.498],["open",39.546],["neutral",39.728],["open",39.806],["neutral",39.906],["open",39.946],["neutral",40.128],["open",40.206],["neutral",40.388],["open",40.466],["neutral",40.662],["open",40.746],["neutral",40.858],["open",40.906],["neutral",41.006],["o",41.006],["neutral",41.226],["o",41.326],["neutral",41.546],["smile",41.976],["o",42.226],["smile",42.446],["o",42.586],["smile",42.806],["open",43.026],["smile",43.222],["open",43.306],["smile",43.406],["open",43.426],["smile",43.622],["o",43.706],["smile",43.926],["o",44.146],["smile",44.366],["o",44.806],["smile",45.026],["open",45.146],["smile",45.328],["open",45.406],["smile",45.506],["open",45.526],["smile",45.626],["open",45.646],["smile",45.746],["open",45.766],["smile",45.934],["open",46.006],["smile",46.16],["open",46.226],["smile",46.394],["open",46.466],["neutral",46.656],["open",46.766],["neutral",46.866],["o",46.906],["neutral",47.126],["smile",47.553],["open",47.663],["smile",47.763],["o",47.803],["smile",48.023],["open",48.243],["smile",48.453],["open",48.543],["smile",48.725],["open",48.803],["smile",48.943],["open",49.003],["smile",49.143],["open",49.203],["smile",49.371],["o",49.443],["smile",49.663],["o",49.783],["smile",50.003],["o",50.403],["smile",50.623]]},{"id":"monday-t0","t":"text","from":"top","exit":null,"in":0.2,"out":3.9299999999999997,"outDur":0.3,"hold":false,"words":[0.34,0.62,0.74,0.98,1.08]},{"id":"monday-mb","t":"bubble","from":"pop","exit":null,"in":1.9,"out":4.83,"outDur":0.25,"hold":false},{"id":"monday-cal","t":"icon","from":"pop","exit":null,"in":4.17,"out":8.49,"outDur":0.25,"hold":false},{"id":"monday-mon","t":"text","from":"slam","exit":null,"in":4.17,"out":8.49,"outDur":0.25,"hold":false,"words":[4.17]},{"id":"monday-t1","t":"text","from":"top","exit":null,"in":5.07,"out":6.109999999999999,"outDur":0.3,"hold":false,"words":[5.07,5.33,5.49]},{"id":"monday-t2","t":"text","from":"top","exit":null,"in":7.09,"out":8.49,"outDur":0.3,"hold":false,"words":[6.35,7.71,8.11]},{"id":"monday-c1","t":"card","from":"top","exit":null,"in":8.81,"out":15.081999999999999,"outDur":0.3,"hold":false},{"id":"monday-sr","t":"bubble","from":"pop","exit":null,"in":14.762,"out":15.362,"outDur":0.25,"hold":false},{"id":"monday-w1","t":"bar","from":"draw","exit":null,"in":17.702,"out":23.416,"outDur":0.25,"hold":false},{"id":"monday-w2","t":"bar","from":"draw","exit":null,"in":18.602,"out":23.416,"outDur":0.25,"hold":false},{"id":"monday-w3","t":"bar","from":"draw","exit":null,"in":19.942,"out":23.416,"outDur":0.25,"hold":false},{"id":"monday-t3","t":"text","from":"top","exit":null,"in":15.322,"out":20.336000000000002,"outDur":0.3,"hold":false,"words":[15.322,16.242,16.962,16.962,16.962]},{"id":"monday-db","t":"icon","from":"pop","exit":null,"in":21.236,"out":23.416,"outDur":0.25,"hold":false},{"id":"monday-t4","t":"text","from":"top","exit":null,"in":21.236,"out":23.416,"outDur":0.3,"hold":false,"words":[21.236,22.776,22.776]},{"id":"monday-t5","t":"text","from":"top","exit":null,"in":24.136000000000003,"out":25.836000000000002,"outDur":0.3,"hold":false,"words":[24.236,24.476,24.836,25.216]},{"id":"monday-nt","t":"icon","from":"pop","exit":null,"in":26.816,"out":30.1,"outDur":0.25,"hold":false},{"id":"monday-ntt","t":"text","from":"pop","exit":null,"in":29.3,"out":30.1,"outDur":0.25,"hold":false,"words":[29.536]},{"id":"monday-t6","t":"text","from":"top","exit":null,"in":27.8,"out":30.1,"outDur":0.3,"hold":false,"words":[26.696,28.496,28.836,29.016,29.316,29.536]},{"id":"monday-pg","t":"icon","from":"pop","exit":null,"in":32.06,"out":36.4,"outDur":0.25,"hold":false},{"id":"monday-t7","t":"text","from":"top","exit":null,"in":30.48,"out":32.78,"outDur":0.3,"hold":false,"words":[30.34,30.48,30.7,31.56,31.68,32.06]},{"id":"monday-ms","t":"icon","from":"pop","exit":null,"in":34.04,"out":36.4,"outDur":0.25,"hold":false},{"id":"monday-msl","t":"text","from":"bottom","exit":null,"in":33.12,"out":36.4,"outDur":0.3,"hold":false,"words":[33.12,33.44]},{"id":"monday-nk","t":"icon","from":"pop","exit":null,"in":35.66,"out":36.4,"outDur":0.25,"hold":false},{"id":"monday-nkl","t":"text","from":"bottom","exit":null,"in":34.86,"out":36.4,"outDur":0.3,"hold":false,"words":[34.86,35.14]},{"id":"monday-t8","t":"text","from":"top","exit":null,"in":36.64,"out":38.196,"outDur":0.3,"hold":false,"words":[36.64,36.88,36.98]},{"id":"monday-cal2","t":"icon","from":"pop","exit":null,"in":39.696,"out":47.172999999999995,"outDur":0.25,"hold":false},{"id":"monday-mon2","t":"text","from":"pop","exit":null,"in":39.696,"out":47.172999999999995,"outDur":0.25,"hold":false,"words":[39.796]},{"id":"monday-t9","t":"text","from":"top","exit":null,"in":38.436,"out":41.736,"outDur":0.3,"hold":false,"words":[37.816,39.696,39.696,39.696,40.216,40.216]},{"id":"monday-sl","t":"icon","from":"pop","exit":null,"in":43.456,"out":47.172999999999995,"outDur":0.25,"hold":false},{"id":"monday-t10","t":"text","from":"top","exit":null,"in":42.916,"out":44.315999999999995,"outDur":0.3,"hold":false,"words":[43.056,43.456,43.896]},{"id":"monday-wt","t":"icon","from":"pop","exit":null,"in":46.656,"out":47.256,"outDur":0.25,"hold":false},{"id":"monday-t11","t":"text","from":"top","exit":null,"in":44.873,"out":47.172999999999995,"outDur":0.3,"hold":false,"words":[44.556,45.756,45.976,46.216,46.516,46.656]},{"id":"monday-t12","t":"text","from":"top","exit":null,"in":47.553,"out":50.748,"outDur":0.3,"hold":false,"words":[48.293,48.553,48.753,48.953,49.193,50.153]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4},"explain":{"aLu":40,"aLl":78,"aRu":-40,"aRl":-78,"hd":0},"explainR":{"aLu":12,"aLl":-4,"aRu":-40,"aRl":-72,"hd":-4},"present":{"aLu":14,"aLl":-4,"aRu":-96,"aRl":-34,"hd":-6},"presentL":{"aLu":96,"aLl":34,"aRu":-14,"aRl":4,"hd":6},"chin":{"aLu":24,"aLl":-104,"aRu":-70,"aRl":198,"hd":8},"ear":{"aLu":14,"aLl":-4,"aRu":-100,"aRl":246,"hd":10},"wave":{"aLu":14,"aLl":-4,"aRu":-150,"aRl":-20,"hd":-4},"count":{"aLu":14,"aLl":-4,"aRu":-60,"aRl":-100},"lean":{"aLu":20,"aLl":-10,"aRu":-20,"aRl":10,"hd":10,"hy":4},"tiltL":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4,"hd":-10},"handsHips":{"aLu":40,"aLl":-100,"aRu":-40,"aRl":100,"hd":0},"embarrassed":{"aLu":6,"aLl":0,"aRu":-30,"aRl":150,"hy":10,"hd":6},"search":{"aLu":30,"aLl":-30,"aRu":-30,"aRl":30,"hd":-12}};
+      const MOUTHS = ["neutral","smile","frown","o","tight","open","grin"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (e.hold) {
+        } else if (ex === "cut") {
+          tl.set(inner, { opacity: 0 }, e.out);
+        } else if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["monday"] = tl;
+    })();
+  </script>
+</template>

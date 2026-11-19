@@ -1,0 +1,286 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="habit" data-width="1920" data-height="1080">
+    <div id="habit-bg" class="clip el" data-start="0.2" data-duration="65.878" data-track-index="1" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:1;opacity:0.42" data-layout-allow-overlap><div id="habit-bg-in" class="in"><div class="ico" style="width:1920px;height:1920px;color:var(--muted)"><svg viewBox="0 0 200 200"><path d="M-20 137.5 L220 137.5" fill="none" stroke="currentColor" stroke-width="7" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M100 46 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M100 41 L100 46 L104 49" fill="none" stroke="currentColor" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M70 118 L94 118 M74 118 L74 137.5 M90 118 L90 137.5 M110 118 L134 118 M114 118 L114 137.5 M130 118 L130 137.5 M150 118 L174 118 M154 118 L154 137.5 M170 118 L170 137.5" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 66 L190 66" fill="none" stroke="currentColor" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 60 L48 60 L48 96 L22 96 Z M35 60 L35 96" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+    <div id="habit-h" class="clip el" data-start="0.2" data-duration="65.878" data-track-index="2" style="position:absolute;left:0px;top:300px;width:800px;height:780px;z-index:3"><div id="habit-h-in" class="in"><svg class="stick" id="habit-h-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="habit-h-aLu"><path class="s" d="M150 160 L150 255"/><g id="habit-h-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="habit-h-aRu"><path class="s" d="M150 160 L150 255"/><g id="habit-h-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="habit-h-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="habit-h-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="habit-h-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="habit-h-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="habit-h-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="habit-h-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="habit-h-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="habit-h-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="habit-kd" class="clip el" data-start="4.03" data-duration="1.31" data-track-index="3" style="position:absolute;left:780px;top:0px;width:1140px;height:1080px;z-index:4" data-layout-allow-overlap><div id="habit-kd-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="habit-t0" class="clip el" data-start="1" data-duration="4.39" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:5"><div id="habit-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-t0-w0" class="w">the</span> <span id="habit-t0-w1" class="w">most</span> <span id="habit-t0-w2" class="w">useful…</span> <span id="habit-t0-w3" class="w">and</span> <span id="habit-t0-w4" class="w">the</span> <span id="habit-t0-w5" class="w acc">kindest</span></div></div></div>
+    <div id="habit-c1" class="clip el" data-start="5.39" data-duration="6.7" data-track-index="5" style="position:absolute;left:780px;top:0px;width:1140px;height:440px;z-index:6"><div id="habit-c1-in" class="in"><div class="card"><div class="card-k">2010 · WOHL, PYCHYL &amp; BENNETT</div><div class="card-t">First-year students, two exams</div><div class="card-s">psychologists</div></div></div></div>
+    <div id="habit-sa" class="clip el" data-start="11.99" data-duration="18.889" data-track-index="6" style="position:absolute;left:320px;top:300px;width:1600px;height:780px;z-index:7"><div id="habit-sa-in" class="in"><svg class="stick" id="habit-sa-svg" width="240" height="416" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="habit-sa-aLu"><path class="s" d="M150 160 L150 255"/><g id="habit-sa-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="habit-sa-aRu"><path class="s" d="M150 160 L150 255"/><g id="habit-sa-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="habit-sa-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="habit-sa-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="habit-sa-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="habit-sa-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="habit-sa-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="habit-sa-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="habit-sa-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="habit-sa-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="habit-sb" class="clip el" data-start="11.99" data-duration="18.889" data-track-index="7" style="position:absolute;left:1320px;top:300px;width:600px;height:780px;z-index:8"><div id="habit-sb-in" class="in"><svg class="stick" id="habit-sb-svg" width="240" height="416" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="habit-sb-aLu"><path class="s" d="M150 160 L150 255"/><g id="habit-sb-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="habit-sb-aRu"><path class="s" d="M150 160 L150 255"/><g id="habit-sb-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="habit-sb-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="habit-sb-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="habit-sb-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="habit-sb-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="habit-sb-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="habit-sb-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="habit-sb-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="habit-sb-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="habit-pa" class="clip el" data-start="14.176" data-duration="1.43" data-track-index="8" style="position:absolute;left:540px;top:120px;width:1380px;height:960px;z-index:9" data-layout-allow-overlap><div id="habit-pa-in" class="in"><div class="ico" style="width:80px;height:80px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="habit-pb" class="clip el" data-start="14.176" data-duration="1.43" data-track-index="9" style="position:absolute;left:1100px;top:120px;width:820px;height:960px;z-index:10" data-layout-allow-overlap><div id="habit-pb-in" class="in"><div class="ico" style="width:80px;height:80px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L136 20 Q148 20 148 32 L148 168 Q148 180 136 180 L64 180 Q52 180 52 168 L52 32 Q52 20 64 20 Z"/><path class="s acc-s" pathLength="1" d="M64 44 L136 44 L136 150 L64 150 Z"/><circle class="f" cx="100" cy="165" r="6"/></svg></div></div></div>
+    <div id="habit-t1" class="clip el" data-start="11.99" data-duration="3.666" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:11"><div id="habit-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-t1-w0" class="w">exam</span> <span id="habit-t1-w1" class="w acc">one<span class="tail">:</span></span> <span id="habit-t1-w2" class="w">they</span> <span id="habit-t1-w3" class="w">put</span> <span id="habit-t1-w4" class="w">off</span> <span id="habit-t1-w5" class="w">studying</span></div></div></div>
+    <div id="habit-fa" class="clip el" data-start="18.136" data-duration="4.168" data-track-index="11" style="position:absolute;left:320px;top:0px;width:1600px;height:760px;z-index:12" data-layout-allow-overlap><div id="habit-fa-in" class="in"><div class="ico bub" style="width:237.99999999999997px;height:170px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:28px">It's okay. Next time.</div></div></div></div>
+    <div id="habit-rc" class="clip el" data-start="18.136" data-duration="12.693" data-track-index="12" style="position:absolute;left:1320px;top:0px;width:600px;height:760px;z-index:13" data-layout-allow-overlap><div id="habit-rc-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--muted)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 108 Q18 106 22 80 Q20 54 50 54 Q58 24 92 28 Q118 10 142 32 Q178 30 178 64 Q196 78 182 98 Q176 110 156 108 Z"/><path class="s acc-s" pathLength="1" d="M60 132 L52 156 M100 132 L92 156 M140 132 L132 156 M80 164 L74 182 M120 164 L114 182"/></svg></div></div></div>
+    <div id="habit-t2" class="clip el" data-start="16.736" data-duration="3.18" data-track-index="13" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:14"><div id="habit-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-t2-w0" class="w">did</span> <span id="habit-t2-w1" class="w">they</span> <span id="habit-t2-w2" class="w acc">forgive</span> <span id="habit-t2-w3" class="w">themselves?</span></div></div></div>
+    <div id="habit-t3" class="clip el" data-start="20.614000000000004" data-duration="1.74" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="habit-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-t3-w0" class="w">then…</span> <span id="habit-t3-w1" class="w">exam</span> <span id="habit-t3-w2" class="w acc">two</span></div></div></div>
+    <div id="habit-la" class="clip el" data-start="24.934" data-duration="5.945" data-track-index="15" style="position:absolute;left:320px;top:820px;width:1600px;height:260px;z-index:16"><div id="habit-la-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--accent)"><span id="habit-la-w0" class="w">put</span> <span id="habit-la-w1" class="w">it</span> <span id="habit-la-w2" class="w">off</span> <span id="habit-la-w3" class="w">less</span></div></div></div>
+    <div id="habit-t4" class="clip el" data-start="23.054" data-duration="3.94" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:17"><div id="habit-t4-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="habit-t4-w0" class="w">forgave</span> <span id="habit-t4-w1" class="w">themselves</span> <span id="habit-t4-w2" class="w">→</span> <span id="habit-t4-w3" class="w acc">less</span> <span id="habit-t4-w4" class="w">putting</span> <span id="habit-t4-w5" class="w">off</span></div></div></div>
+    <div id="habit-lb" class="clip el" data-start="26.994" data-duration="5.885" data-track-index="17" style="position:absolute;left:1320px;top:820px;width:600px;height:260px;z-index:18"><div id="habit-lb-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--muted)"><span id="habit-lb-w0" class="w">put</span> <span id="habit-lb-w1" class="w">it</span> <span id="habit-lb-w2" class="w">off</span> <span id="habit-lb-w3" class="w">more</span></div></div></div>
+    <div id="habit-t5" class="clip el" data-start="27.874" data-duration="3.005" data-track-index="18" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:19"><div id="habit-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-t5-w0" class="w">beating</span> <span id="habit-t5-w1" class="w">themselves</span> <span id="habit-t5-w2" class="w">up</span> <span id="habit-t5-w3" class="w">→</span> <span id="habit-t5-w4" class="w acc">more</span></div></div></div>
+    <div id="habit-th" class="clip el" data-start="32.779" data-duration="2.93" data-track-index="19" style="position:absolute;left:380px;top:0px;width:1540px;height:1040px;z-index:20"><div id="habit-th-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-th-w0" class="w">try</span> <span id="habit-th-w1" class="w">harder</span></div></div></div>
+    <div id="habit-thk" class="clip el" data-start="32.779" data-duration="2.98" data-track-index="20" style="position:absolute;left:380px;top:0px;width:1540px;height:1040px;z-index:50" data-layout-allow-overlap data-layout-allow-occlusion><div id="habit-thk-in" class="in"><div class="strike" style="width:400px"></div></div></div>
+    <div id="habit-pl" class="clip el" data-start="34.819" data-duration="0.89" data-track-index="21" style="position:absolute;left:1320px;top:0px;width:600px;height:1040px;z-index:22" data-layout-allow-overlap><div id="habit-pl-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 20 L156 20 L156 184 L44 184 Z"/><path class="s" pathLength="1" d="M44 20 L44 184 M60 20 L60 184"/><path class="s acc-s" pathLength="1" d="M76 60 L140 60 M76 90 L140 90 M76 120 L124 120"/></svg></div></div></div>
+    <div id="habit-plk" class="clip el" data-start="34.819" data-duration="0.94" data-track-index="22" style="position:absolute;left:1320px;top:0px;width:600px;height:1040px;z-index:50" data-layout-allow-overlap data-layout-allow-occlusion><div id="habit-plk-in" class="in"><div class="strike" style="width:220px"></div></div></div>
+    <div id="habit-kh" class="clip el" data-start="37.099" data-duration="1.19" data-track-index="23" style="position:absolute;left:780px;top:0px;width:1140px;height:1080px;z-index:24" data-layout-allow-overlap><div id="habit-kh-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="f" d="M100 176 C40 130 16 100 16 66 C16 38 38 20 62 20 C80 20 94 30 100 46 C106 30 120 20 138 20 C162 20 184 38 184 66 C184 100 160 130 100 176 Z"/></svg></div></div></div>
+    <div id="habit-t6" class="clip el" data-start="36.599" data-duration="1.74" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:25"><div id="habit-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-t6-w0" class="w">a</span> <span id="habit-t6-w1" class="w">little</span> <span id="habit-t6-w2" class="w acc">kindness</span></div></div></div>
+    <div id="habit-w" class="clip el" data-start="38.479" data-duration="3.277" data-track-index="25" style="position:absolute;left:0px;top:0px;width:1320px;height:660px;z-index:26" data-layout-allow-overlap><div id="habit-w-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="habit-wi" class="clip el" data-start="38.479" data-duration="3.277" data-track-index="26" style="position:absolute;left:0px;top:0px;width:1324px;height:644px;z-index:27" data-layout-allow-overlap><div id="habit-wi-in" class="in"><div class="ico" style="width:60px;height:60px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="habit-t7" class="clip el" data-start="38.479" data-duration="3.327" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:28"><div id="habit-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-t7-w0" class="w">why</span> <span id="habit-t7-w1" class="w">would</span> <span id="habit-t7-w2" class="w">kindness</span> <span id="habit-t7-w3" class="w acc">help<span class="tail">?</span></span></div></div></div>
+    <div id="habit-dr" class="clip el" data-start="41.706" data-duration="2.11" data-track-index="28" style="position:absolute;left:780px;top:40px;width:1140px;height:1040px;z-index:29" data-layout-allow-overlap><div id="habit-dr-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 96 L176 96 L176 170 L24 170 Z"/><path class="s" pathLength="1" d="M24 96 L44 62 L188 62 L176 96"/><path class="s acc-s" pathLength="1" d="M84 134 L116 134"/><path class="s" pathLength="1" d="M62 62 L76 30 M100 62 L104 40 L118 46 L112 62 M140 62 Q140 44 156 44 Q170 46 164 62"/><circle class="f" cx="76" cy="30" r="5"/></svg></div></div></div>
+    <div id="habit-t8" class="clip el" data-start="41.706" data-duration="2.16" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:30"><div id="habit-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-t8-w0" class="w">think</span> <span id="habit-t8-w1" class="w">back</span> <span id="habit-t8-w2" class="w">to</span> <span id="habit-t8-w3" class="w">the</span> <span id="habit-t8-w4" class="w acc">start</span></div></div></div>
+    <div id="habit-tk" class="clip el" data-start="43.766" data-duration="15.45" data-track-index="30" style="position:absolute;left:580px;top:120px;width:1340px;height:960px;z-index:31" data-layout-allow-overlap><div id="habit-tk-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L150 20 L176 46 L176 168 L64 168 Z"/><path class="s" pathLength="1" d="M150 20 L150 46 L176 46"/><path class="s" pathLength="1" d="M44 40 L44 184 L156 184"/><path class="s" pathLength="1" d="M24 60 L24 198 L136 198"/><path class="s acc-s" pathLength="1" d="M88 76 L152 76 M88 104 L152 104 M88 132 L132 132"/></svg></div></div></div>
+    <div id="habit-bf" class="clip el" data-start="46.106" data-duration="6.45" data-track-index="31" style="position:absolute;left:580px;top:0px;width:1340px;height:760px;z-index:32" data-layout-allow-overlap><div id="habit-bf-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--muted)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 128 Q18 126 22 100 Q20 74 50 74 Q58 44 92 48 Q118 30 142 52 Q178 50 178 84 Q196 98 182 118 Q176 130 156 128 Z"/></svg></div></div></div>
+    <div id="habit-gu" class="clip el" data-start="46.986" data-duration="5.57" data-track-index="32" style="position:absolute;left:1120px;top:0px;width:800px;height:720px;z-index:33" data-layout-allow-overlap><div id="habit-gu-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--muted)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M44 108 Q18 106 22 80 Q20 54 50 54 Q58 24 92 28 Q118 10 142 32 Q178 30 178 64 Q196 78 182 98 Q176 110 156 108 Z"/><path class="s acc-s" pathLength="1" d="M60 132 L52 156 M100 132 L92 156 M140 132 L132 156 M80 164 L74 182 M120 164 L114 182"/></svg></div></div></div>
+    <div id="habit-gul" class="clip el" data-start="46.986" data-duration="5.62" data-track-index="33" style="position:absolute;left:1120px;top:0px;width:800px;height:1040px;z-index:34"><div id="habit-gul-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--muted)"><span id="habit-gul-w0" class="w">guilt</span></div></div></div>
+    <div id="habit-t9" class="clip el" data-start="46.986" data-duration="1.96" data-track-index="34" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:35"><div id="habit-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-t9-w0" class="w">guilt</span> <span id="habit-t9-w1" class="w">is</span> <span id="habit-t9-w2" class="w">a</span> <span id="habit-t9-w3" class="w">bad</span> <span id="habit-t9-w4" class="w">feeling</span> <span id="habit-t9-w5" class="w acc">too</span></div></div></div>
+    <div id="habit-t10" class="clip el" data-start="49.166" data-duration="3.44" data-track-index="35" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:36"><div id="habit-t10-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="habit-t10-w0" class="w">harder</span> <span id="habit-t10-w1" class="w">on</span> <span id="habit-t10-w2" class="w">yourself</span> <span id="habit-t10-w3" class="w">→</span> <span id="habit-t10-w4" class="w">more</span> <span id="habit-t10-w5" class="w">to</span> <span id="habit-t10-w6" class="w acc">escape</span></div></div></div>
+    <div id="habit-wt" class="clip el" data-start="54.366" data-duration="1.05" data-track-index="36" style="position:absolute;left:580px;top:0px;width:1340px;height:840px;z-index:37" data-layout-allow-overlap><div id="habit-wt-in" class="in"><div class="ico" style="width:150px;height:150px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M30 76 L170 76 L170 182 L30 182 Z"/><path class="s" pathLength="1" d="M30 76 L56 44 L144 44 L170 76"/><path class="s acc-s" pathLength="1" d="M80 76 L120 76 M100 76 L100 118"/></svg></div></div></div>
+    <div id="habit-t11" class="clip el" data-start="52.506" data-duration="2.96" data-track-index="37" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:38"><div id="habit-t11-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="habit-t11-w0" class="w">forgiving</span> <span id="habit-t11-w1" class="w">yourself</span> <span id="habit-t11-w2" class="w">takes</span> <span id="habit-t11-w3" class="w">the</span> <span id="habit-t11-w4" class="w acc">weight</span> <span id="habit-t11-w5" class="w">off</span></div></div></div>
+    <div id="habit-lt" class="clip el" data-start="56.646" data-duration="2.57" data-track-index="38" style="position:absolute;left:1080px;top:40px;width:840px;height:1040px;z-index:39" data-layout-allow-overlap><div id="habit-lt-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M30 104 L80 154 L172 50"/></svg></div></div></div>
+    <div id="habit-t12" class="clip el" data-start="55.966" data-duration="3.3" data-track-index="39" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:40"><div id="habit-t12-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-t12-w0" class="w">starting</span> <span id="habit-t12-w1" class="w">feels</span> <span id="habit-t12-w2" class="w acc">lighter</span></div></div></div>
+    <div id="habit-fr" class="clip el" data-start="59.706" data-duration="6.372" data-track-index="40" style="position:absolute;left:980px;top:300px;width:940px;height:780px;z-index:41"><div id="habit-fr-in" class="in"><svg class="stick" id="habit-fr-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="habit-fr-aLu"><path class="s" d="M150 160 L150 255"/><g id="habit-fr-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="habit-fr-aRu"><path class="s" d="M150 160 L150 255"/><g id="habit-fr-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="habit-fr-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="habit-fr-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="habit-fr-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="habit-fr-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="habit-fr-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="habit-fr-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="habit-fr-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="habit-fr-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="habit-fp" class="clip el" data-start="61.506" data-duration="2.002" data-track-index="41" style="position:absolute;left:1360px;top:200px;width:560px;height:880px;z-index:42" data-layout-allow-overlap><div id="habit-fp-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L150 20 L176 46 L176 168 L64 168 Z"/><path class="s" pathLength="1" d="M150 20 L150 46 L176 46"/><path class="s" pathLength="1" d="M44 40 L44 184 L156 184"/><path class="s" pathLength="1" d="M24 60 L24 198 L136 198"/><path class="s acc-s" pathLength="1" d="M88 76 L152 76 M88 104 L152 104 M88 132 L132 132"/></svg></div></div></div>
+    <div id="habit-t13" class="clip el" data-start="59.166" data-duration="3.38" data-track-index="42" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:43"><div id="habit-t13-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="habit-t13-w0" class="w">would</span> <span id="habit-t13-w1" class="w">you</span> <span id="habit-t13-w2" class="w">call</span> <span id="habit-t13-w3" class="w">a</span> <span id="habit-t13-w4" class="w">friend</span> <span id="habit-t13-w5" class="w">a</span> <span id="habit-t13-w6" class="w acc">failure<span class="tail">?</span></span></div></div></div>
+    <div id="habit-lg" class="clip el" data-start="64.118" data-duration="1.96" data-track-index="43" style="position:absolute;left:0px;top:0px;width:1520px;height:680px;z-index:44" data-layout-allow-overlap><div id="habit-lg-in" class="in"><div class="ico bub" style="width:237.99999999999997px;height:170px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:28px">Let it go. Start again.</div></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"habit-bg","t":"icon","from":"blur","exit":null,"in":0.2,"out":66.03800000000001,"outDur":0.25,"hold":false},{"id":"habit-h","t":"stick","from":"left","exit":null,"in":0.2,"out":66.03800000000001,"outDur":0.3,"hold":false,"poses":[["explain",1],["present",5.29],["explainR",11.99],["chin",15.556],["explain",19.816],["proud",22.394],["sorry",26.994],["shrug",30.779],["shrug",33.759],["happy",37.099],["chin",38.239],["present",41.706],["explain",43.766],["holdHead",46.986],["explainR",49.166],["happy",52.506],["proud",55.966],["lean",59.166],["shrug",62.446],["happy",63.458]],"mouth":[["smile",0.2],["open",0.45],["smile",0.646],["open",0.73],["smile",0.856],["o",0.91],["smile",1.13],["o",1.25],["smile",1.47],["o",1.75],["smile",1.97],["open",2.13],["smile",2.298],["o",2.37],["smile",2.59],["open",3.42],["smile",3.546],["o",3.6],["smile",3.82],["open",4.08],["smile",4.22],["o",4.28],["smile",4.5],["open",4.84],["smile",5.008],["open",5.54],["smile",5.64],["o",5.64],["smile",5.86],["o",6.258],["smile",6.478],["open",6.7],["smile",6.868],["o",6.94],["smile",7.16],["open",7.62],["smile",7.72],["o",7.76],["smile",7.98],["open",8.18],["smile",8.362],["o",8.44],["smile",8.66],["o",8.76],["smile",8.98],["o",9.08],["smile",9.3],["o",9.76],["smile",9.98],["o",10.44],["smile",10.66],["o",10.82],["smile",11.04],["open",11.16],["smile",11.3],["o",11.36],["smile",11.58],["o",12.24],["smile",12.46],["open",12.62],["smile",12.76],["open",12.82],["smile",12.988],["o",13.06],["smile",13.28],["o",13.726],["smile",13.946],["open",14.166],["smile",14.266],["open",14.306],["smile",14.406],["open",14.426],["smile",14.594],["open",14.666],["smile",14.792],["o",14.846],["smile",15.066],["o",15.806],["smile",16.026],["open",16.566],["smile",16.646],["o",16.646],["smile",16.866],["o",16.986],["smile",17.206],["o",17.506],["smile",17.726],["open",17.866],["smile",18.034],["open",18.106],["smile",18.218],["open",18.266],["smile",18.366],["o",18.386],["smile",18.606],["o",18.806],["smile",19.026],["o",19.186],["smile",19.406],["open",19.526],["smile",19.694],["open",20.066],["smile",20.276],["open",20.366],["smile",20.576],["open",20.666],["smile",20.876],["open",20.966],["smile",21.092],["open",21.146],["smile",21.246],["o",21.266],["smile",21.486],["o",21.626],["smile",21.846],["open",22.504],["smile",22.604],["o",22.644],["smile",22.864],["open",22.984],["smile",23.138],["open",23.204],["smile",23.304],["o",23.304],["smile",23.524],["o",23.704],["smile",23.924],["o",24.184],["smile",24.404],["o",25.184],["smile",25.404],["open",25.544],["smile",25.74],["open",25.824],["smile",26.034],["open",26.124],["smile",26.292],["o",26.364],["smile",26.584],["open",27.144],["smile",27.244],["open",27.244],["smile",27.454],["open",27.544],["smile",27.698],["open",27.764],["smile",27.864],["open",27.864],["frown",27.874],["open",28.124],["frown",28.32],["o",28.404],["frown",28.624],["o",28.844],["frown",29.064],["o",29.224],["frown",29.444],["o",30.204],["frown",30.424],["smile",30.779],["o",31.029],["smile",31.249],["open",31.369],["smile",31.551],["o",31.629],["smile",31.849],["o",32.069],["smile",32.289],["open",32.409],["smile",32.549],["open",32.609],["smile",32.709],["open",32.749],["smile",32.945],["o",33.029],["smile",33.249],["open",34.009],["smile",34.163],["o",34.229],["smile",34.449],["open",34.629],["smile",34.769],["open",34.869],["smile",35.009],["o",35.069],["smile",35.289],["open",35.909],["smile",36.021],["o",36.069],["smile",36.289],["o",36.449],["smile",36.669],["open",36.909],["smile",37.009],["open",37.049],["grin",37.099],["o",37.349],["grin",37.569],["neutral",38.239],["open",38.489],["neutral",38.657],["o",38.729],["neutral",38.949],["open",39.189],["neutral",39.289],["open",39.329],["neutral",39.469],["o",39.529],["neutral",39.749],["open",39.869],["neutral",40.037],["open",40.109],["neutral",40.319],["o",40.409],["neutral",40.629],["open",40.729],["neutral",40.829],["open",40.869],["neutral",40.969],["open",41.009],["neutral",41.149],["open",41.209],["neutral",41.391],["smile",41.706],["open",41.956],["smile",42.138],["open",42.216],["smile",42.356],["open",42.416],["smile",42.528],["open",42.576],["smile",42.676],["open",42.676],["smile",42.858],["open",42.936],["smile",43.036],["open",43.076],["smile",43.176],["o",43.216],["smile",43.436],["open",44.016],["smile",44.142],["open",44.196],["smile",44.392],["open",44.476],["smile",44.644],["open",44.716],["smile",44.884],["open",44.956],["smile",45.056],["open",45.076],["smile",45.188],["open",45.236],["smile",45.348],["o",45.396],["smile",45.616],["open",45.836],["smile",46.004],["open",46.076],["smile",46.272],["o",46.356],["smile",46.576],["neutral",46.986],["open",47.236],["neutral",47.418],["open",47.496],["neutral",47.692],["open",47.776],["neutral",47.856],["open",47.856],["neutral",47.996],["o",48.056],["neutral",48.276],["o",48.376],["neutral",48.596],["open",49.096],["neutral",49.222],["open",49.276],["neutral",49.376],["o",49.416],["neutral",49.636],["open",49.736],["neutral",49.918],["open",49.996],["neutral",50.108],["open",50.156],["neutral",50.268],["o",50.316],["neutral",50.536],["open",51.056],["neutral",51.116],["open",51.116],["neutral",51.298],["open",51.376],["neutral",51.516],["open",51.576],["neutral",51.702],["open",51.756],["neutral",51.856],["o",51.896],["neutral",52.116],["smile",52.506],["o",52.756],["smile",52.976],["o",53.176],["smile",53.396],["o",53.636],["smile",53.856],["open",54.056],["smile",54.266],["open",54.356],["smile",54.456],["open",54.476],["smile",54.576],["open",54.616],["smile",54.812],["open",54.896],["smile",55.092],["open",55.176],["smile",55.302],["open",55.356],["smile",55.538],["o",55.616],["smile",55.836],["grin",55.966],["o",56.216],["grin",56.436],["o",56.896],["grin",57.116],["open",57.296],["grin",57.464],["o",57.536],["grin",57.756],["open",57.876],["grin",58.03],["open",58.096],["grin",58.306],["open",58.396],["grin",58.55],["o",58.616],["grin",58.836],["smile",59.166],["open",59.416],["smile",59.496],["open",59.496],["smile",59.596],["open",59.636],["smile",59.776],["open",59.836],["smile",59.936],["open",59.956],["smile",60.166],["open",60.256],["smile",60.356],["o",60.396],["smile",60.616],["open",60.836],["smile",60.99],["open",61.056],["smile",61.21],["open",61.276],["smile",61.43],["open",61.496],["smile",61.678],["o",61.756],["smile",61.976],["grin",62.446],["open",62.696],["grin",62.878],["o",62.956],["grin",63.176],["smile",63.458],["open",63.708],["smile",63.89],["open",63.968],["smile",64.068],["open",64.088],["smile",64.2],["open",64.248],["smile",64.348],["open",64.368],["smile",64.522],["open",64.588],["smile",64.688],["open",64.708],["smile",64.876],["o",64.948],["smile",65.168],["open",65.348],["smile",65.53],["o",65.608],["smile",65.828]]},{"id":"habit-kd","t":"icon","from":"pop","exit":null,"in":4.03,"out":5.05,"outDur":0.25,"hold":false,"pulse":1.08,"beat":1},{"id":"habit-t0","t":"text","from":"top","exit":null,"in":1,"out":5.05,"outDur":0.3,"hold":false,"words":[0.48,0.66,1,3.83,3.83,4.03]},{"id":"habit-c1","t":"card","from":"top","exit":null,"in":5.39,"out":11.75,"outDur":0.3,"hold":false},{"id":"habit-sa","t":"stick","from":"bottom","exit":null,"in":11.99,"out":30.539,"outDur":0.3,"hold":false,"poses":[["headDown",14.176],["happy",18.136],["proud",24.934]],"mouth":[["neutral",11.99],["smile",18.136],["grin",24.934]]},{"id":"habit-sb","t":"stick","from":"bottom","exit":null,"in":11.99,"out":30.539,"outDur":0.3,"hold":false,"poses":[["headDown",14.176],["holdHead",18.136],["sorry",27.874]],"mouth":[["neutral",11.99],["frown",18.136],["tight",27.874]]},{"id":"habit-pa","t":"icon","from":"pop","exit":null,"in":14.176,"out":15.315999999999999,"outDur":0.25,"hold":false},{"id":"habit-pb","t":"icon","from":"pop","exit":null,"in":14.176,"out":15.315999999999999,"outDur":0.25,"hold":false},{"id":"habit-t1","t":"text","from":"top","exit":null,"in":11.99,"out":15.315999999999999,"outDur":0.3,"hold":false,"words":[12.81,14.176,14.176,14.176,14.416,14.596]},{"id":"habit-fa","t":"bubble","from":"pop","exit":null,"in":18.136,"out":22.014000000000003,"outDur":0.25,"hold":false},{"id":"habit-rc","t":"icon","from":"pop","exit":null,"in":18.136,"out":30.539,"outDur":0.25,"hold":false},{"id":"habit-t2","t":"text","from":"top","exit":null,"in":16.736,"out":19.576,"outDur":0.3,"hold":false,"words":[17.856,17.856,18.136,18.556]},{"id":"habit-t3","t":"text","from":"top","exit":null,"in":20.614000000000004,"out":22.014000000000003,"outDur":0.3,"hold":false,"words":[19.816,21.376,21.476]},{"id":"habit-la","t":"text","from":"bottom","exit":null,"in":24.934,"out":30.539,"outDur":0.3,"hold":false,"words":[24.934,24.934,24.934,24.934]},{"id":"habit-t4","t":"text","from":"top","exit":null,"in":23.054,"out":26.654,"outDur":0.3,"hold":false,"words":[23.454,23.454,24.934,24.934,25.034,25.134]},{"id":"habit-lb","t":"text","from":"bottom","exit":null,"in":26.994,"out":32.539,"outDur":0.3,"hold":false,"words":[29.954,29.954,29.954,29.954]},{"id":"habit-t5","t":"text","from":"top","exit":null,"in":27.874,"out":30.539,"outDur":0.3,"hold":false,"words":[27.874,28.154,28.594,29.954,29.954]},{"id":"habit-th","t":"text","from":"pop","exit":null,"in":32.779,"out":35.419,"outDur":0.25,"hold":false,"words":[32.499,32.779]},{"id":"habit-thk","t":"strike","from":"pop","exit":null,"in":32.779,"out":35.419,"outDur":0.3,"hold":false},{"id":"habit-pl","t":"icon","from":"pop","exit":null,"in":34.819,"out":35.419000000000004,"outDur":0.25,"hold":false},{"id":"habit-plk","t":"strike","from":"pop","exit":null,"in":34.819,"out":35.419,"outDur":0.3,"hold":false},{"id":"habit-kh","t":"icon","from":"pop","exit":null,"in":37.099,"out":37.998999999999995,"outDur":0.25,"hold":false,"pulse":1.1,"beat":0.9},{"id":"habit-t6","t":"text","from":"top","exit":null,"in":36.599,"out":37.998999999999995,"outDur":0.3,"hold":false,"words":[36.659,36.799,37.099]},{"id":"habit-w","t":"icon","from":"pop","exit":null,"in":38.479,"out":41.466,"outDur":0.25,"hold":false},{"id":"habit-wi","t":"icon","from":"pop","exit":null,"in":38.479,"out":41.466,"outDur":0.25,"hold":false},{"id":"habit-t7","t":"text","from":"top","exit":null,"in":38.479,"out":41.466,"outDur":0.3,"hold":false,"words":[38.479,38.939,39.279,40.159]},{"id":"habit-dr","t":"icon","from":"pop","exit":null,"in":41.706,"out":43.525999999999996,"outDur":0.25,"hold":false},{"id":"habit-t8","t":"text","from":"top","exit":null,"in":41.706,"out":43.525999999999996,"outDur":0.3,"hold":false,"words":[41.706,41.966,42.166,42.326,42.426]},{"id":"habit-tk","t":"icon","from":"pop","exit":null,"in":43.766,"out":58.925999999999995,"outDur":0.25,"hold":false},{"id":"habit-bf","t":"icon","from":"pop","exit":null,"in":46.106,"out":52.266,"outDur":0.25,"hold":false},{"id":"habit-gu","t":"icon","from":"pop","exit":null,"in":46.986,"out":52.266,"outDur":0.25,"hold":false},{"id":"habit-gul","t":"text","from":"bottom","exit":null,"in":46.986,"out":52.266,"outDur":0.3,"hold":false,"words":[46.986]},{"id":"habit-t9","t":"text","from":"top","exit":null,"in":46.986,"out":48.605999999999995,"outDur":0.3,"hold":false,"words":[46.986,47.246,47.526,47.606,47.806,48.126]},{"id":"habit-t10","t":"text","from":"top","exit":null,"in":49.166,"out":52.266,"outDur":0.3,"hold":false,"words":[49.166,49.906,50.066,50.866,50.866,51.506,51.646]},{"id":"habit-wt","t":"icon","from":"pop","exit":null,"in":54.366,"out":55.126,"outDur":0.25,"hold":false},{"id":"habit-t11","t":"text","from":"top","exit":null,"in":52.506,"out":55.126,"outDur":0.3,"hold":false,"words":[52.506,52.926,53.386,54.926,55.026,55.126]},{"id":"habit-lt","t":"icon","from":"pop","exit":null,"in":56.646,"out":58.925999999999995,"outDur":0.25,"hold":false},{"id":"habit-t12","t":"text","from":"top","exit":null,"in":55.966,"out":58.925999999999995,"outDur":0.3,"hold":false,"words":[56.646,57.626,57.726]},{"id":"habit-fr","t":"stick","from":"right","exit":null,"in":59.706,"out":66.03800000000001,"outDur":0.3,"hold":false,"poses":[["headDown",60.146],["happy",64.118]],"mouth":[["frown",60.146],["smile",64.118]]},{"id":"habit-fp","t":"icon","from":"pop","exit":null,"in":61.506,"out":63.217999999999996,"outDur":0.25,"hold":false},{"id":"habit-t13","t":"text","from":"top","exit":null,"in":59.166,"out":62.205999999999996,"outDur":0.3,"hold":false,"words":[59.166,59.246,59.386,59.586,59.706,60.006,60.146]},{"id":"habit-lg","t":"bubble","from":"pop","exit":null,"in":64.118,"out":66.03800000000001,"outDur":0.25,"hold":false}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4},"explain":{"aLu":40,"aLl":78,"aRu":-40,"aRl":-78,"hd":0},"explainR":{"aLu":12,"aLl":-4,"aRu":-40,"aRl":-72,"hd":-4},"present":{"aLu":14,"aLl":-4,"aRu":-96,"aRl":-34,"hd":-6},"presentL":{"aLu":96,"aLl":34,"aRu":-14,"aRl":4,"hd":6},"chin":{"aLu":24,"aLl":-104,"aRu":-70,"aRl":198,"hd":8},"ear":{"aLu":14,"aLl":-4,"aRu":-100,"aRl":246,"hd":10},"wave":{"aLu":14,"aLl":-4,"aRu":-150,"aRl":-20,"hd":-4},"count":{"aLu":14,"aLl":-4,"aRu":-60,"aRl":-100},"lean":{"aLu":20,"aLl":-10,"aRu":-20,"aRl":10,"hd":10,"hy":4},"tiltL":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4,"hd":-10},"handsHips":{"aLu":40,"aLl":-100,"aRu":-40,"aRl":100,"hd":0},"embarrassed":{"aLu":6,"aLl":0,"aRu":-30,"aRl":150,"hy":10,"hd":6},"search":{"aLu":30,"aLl":-30,"aRu":-30,"aRl":30,"hd":-12}};
+      const MOUTHS = ["neutral","smile","frown","o","tight","open","grin"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (e.hold) {
+        } else if (ex === "cut") {
+          tl.set(inner, { opacity: 0 }, e.out);
+        } else if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["habit"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,255 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="rules" data-width="1920" data-height="1080">
+    <div id="rules-bg" class="clip el" data-start="0.2" data-duration="62.452" data-track-index="1" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:1;opacity:0.42" data-layout-allow-overlap><div id="rules-bg-in" class="in"><div class="ico" style="width:1920px;height:1920px;color:var(--muted)"><svg viewBox="0 0 200 200"><path d="M-20 137.5 L220 137.5" fill="none" stroke="currentColor" stroke-width="7" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M118 106 L190 106 Q196 106 196 112 L196 130 L112 130 L112 112 Q112 106 118 106 Z M116 118 L192 118 M118 130 L118 137.5 M190 130 L190 137.5" fill="none" stroke="currentColor" stroke-width="6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M100 137.5 L100 82 M92 82 L108 82 L104 70 L96 70 Z" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M136 60 L170 60 L170 84 L136 84 Z M142 78 L150 68 L156 74 L162 66" fill="none" stroke="currentColor" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 62 L50 62 L50 98 L22 98 Z M36 62 L36 98 M22 80 L50 80" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+    <div id="rules-h" class="clip el" data-start="0.2" data-duration="62.452" data-track-index="2" style="position:absolute;left:0px;top:300px;width:800px;height:780px;z-index:3"><div id="rules-h-in" class="in"><svg class="stick" id="rules-h-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="rules-h-aLu"><path class="s" d="M150 160 L150 255"/><g id="rules-h-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-h-aRu"><path class="s" d="M150 160 L150 255"/><g id="rules-h-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-h-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="rules-h-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="rules-h-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="rules-h-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="rules-h-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="rules-h-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="rules-h-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="rules-h-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="rules-t0" class="clip el" data-start="3.12" data-duration="1.94" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:4"><div id="rules-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t0-w0" class="w">five</span> <span id="rules-t0-w1" class="w">simple</span> <span id="rules-t0-w2" class="w acc">rules</span></div></div></div>
+    <div id="rules-r1" class="clip el" data-start="4.96" data-duration="11.914" data-track-index="4" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:5"><div id="rules-r1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-r1-w0" class="w">rule</span> <span id="rules-r1-w1" class="w">1:</span> <span id="rules-r1-w2" class="w">name</span> <span id="rules-r1-w3" class="w">the</span> <span id="rules-r1-w4" class="w acc">feeling</span></div></div></div>
+    <div id="rules-fq" class="clip el" data-start="7.3" data-duration="9.524" data-track-index="5" style="position:absolute;left:780px;top:0px;width:1140px;height:960px;z-index:6" data-layout-allow-overlap><div id="rules-fq-in" class="in"><div class="ico" style="width:360px;height:360px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s card-f" pathLength="1" d="M40 112 Q14 108 18 84 Q14 58 44 56 Q50 28 86 32 Q110 14 136 32 Q170 28 174 58 Q196 70 184 96 Q190 124 160 124 Q148 144 116 134 Q90 148 70 130 Q42 136 40 112 Z"/><path class="s" pathLength="1" d="M52 152 m-9 0 a9 9 0 1 0 18 0 a9 9 0 1 0 -18 0 M34 176 m-6 0 a6 6 0 1 0 12 0 a6 6 0 1 0 -12 0"/></svg></div></div></div>
+    <div id="rules-fqq" class="clip el" data-start="9.434" data-duration="1.27" data-track-index="6" style="position:absolute;left:780px;top:0px;width:1140px;height:940px;z-index:7"><div id="rules-fqq-in" class="in"><div class="txt" style="font-size:110px;font-weight:800;color:var(--accent)"><span id="rules-fqq-w0" class="w">?</span></div></div></div>
+    <div id="rules-fb1" class="clip el" data-start="10.654" data-duration="6.22" data-track-index="7" style="position:absolute;left:180px;top:0px;width:1740px;height:1040px;z-index:8"><div id="rules-fb1-in" class="in"><div class="txt" style="font-size:40px;font-weight:800;color:var(--muted)"><span id="rules-fb1-w0" class="w">bored?</span></div></div></div>
+    <div id="rules-fb2" class="clip el" data-start="11.254" data-duration="5.62" data-track-index="8" style="position:absolute;left:1400px;top:0px;width:520px;height:1040px;z-index:9"><div id="rules-fb2-in" class="in"><div class="txt" style="font-size:40px;font-weight:800;color:var(--muted)"><span id="rules-fb2-w0" class="w">confused?</span></div></div></div>
+    <div id="rules-fb3" class="clip el" data-start="12.294" data-duration="4.58" data-track-index="9" style="position:absolute;left:780px;top:380px;width:1140px;height:700px;z-index:10"><div id="rules-fb3-in" class="in"><div class="txt" style="font-size:40px;font-weight:800;color:var(--accent)"><span id="rules-fb3-w0" class="w">scared?</span></div></div></div>
+    <div id="rules-fb4" class="clip el" data-start="14.034" data-duration="2.84" data-track-index="10" style="position:absolute;left:780px;top:560px;width:1140px;height:520px;z-index:11"><div id="rules-fb4-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--muted)"><span id="rules-fb4-w0" class="w">it</span> <span id="rules-fb4-w1" class="w">loses</span> <span id="rules-fb4-w2" class="w">its</span> <span id="rules-fb4-w3" class="w">grip</span></div></div></div>
+    <div id="rules-r2" class="clip el" data-start="16.774" data-duration="6.658" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:12"><div id="rules-r2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-r2-w0" class="w">rule</span> <span id="rules-r2-w1" class="w">2:</span> <span id="rules-r2-w2" class="w">make</span> <span id="rules-r2-w3" class="w">the</span> <span id="rules-r2-w4" class="w">first</span> <span id="rules-r2-w5" class="w">step</span> <span id="rules-r2-w6" class="w acc">tiny</span></div></div></div>
+    <div id="rules-lt" class="clip el" data-start="18.034" data-duration="5.348" data-track-index="12" style="position:absolute;left:780px;top:120px;width:1140px;height:960px;z-index:13" data-layout-allow-overlap><div id="rules-lt-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M36 40 L164 40 Q172 40 172 48 L172 136 L28 136 L28 48 Q28 40 36 40 Z"/><path class="s acc-s" pathLength="1" d="M46 58 L154 58 L154 120 L46 120 Z"/><path class="s" pathLength="1" d="M8 146 L192 146 Q192 162 176 162 L24 162 Q8 162 8 146 Z"/></svg></div></div></div>
+    <div id="rules-wr" class="clip el" data-start="19.752" data-duration="1.67" data-track-index="13" style="position:absolute;left:780px;top:0px;width:1140px;height:800px;z-index:14"><div id="rules-wr-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--ink)"><span id="rules-wr-w0" class="w">write</span> <span id="rules-wr-w1" class="w">the</span> <span id="rules-wr-w2" class="w">report</span></div></div></div>
+    <div id="rules-wrk" class="clip el" data-start="19.752" data-duration="1.72" data-track-index="14" style="position:absolute;left:780px;top:0px;width:1140px;height:800px;z-index:50" data-layout-allow-overlap data-layout-allow-occlusion><div id="rules-wrk-in" class="in"><div class="strike" style="width:520px"></div></div></div>
+    <div id="rules-od" class="clip el" data-start="21.472" data-duration="1.91" data-track-index="15" style="position:absolute;left:780px;top:0px;width:1140px;height:800px;z-index:16"><div id="rules-od-in" class="in"><div class="txt" style="font-size:60px;font-weight:800;color:var(--accent)"><span id="rules-od-w0" class="w">open</span> <span id="rules-od-w1" class="w">the</span> <span id="rules-od-w2" class="w">document</span></div></div></div>
+    <div id="rules-r3" class="clip el" data-start="23.332" data-duration="6.778" data-track-index="16" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:17"><div id="rules-r3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-r3-w0" class="w">rule</span> <span id="rules-r3-w1" class="w">3:</span> <span id="rules-r3-w2" class="w acc">if<span class="tail">…</span></span> <span id="rules-r3-w3" class="w">then…</span></div></div></div>
+    <div id="rules-r3b" class="clip el" data-start="35.91" data-duration="8.306" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:18"><div id="rules-r3b-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-r3b-w0" class="w">plan</span> <span id="rules-r3b-w1" class="w">it</span> <span id="rules-r3b-w2" class="w">as</span> <span id="rules-r3b-w3" class="w acc">if…</span> <span id="rules-r3b-w4" class="w acc">then</span></div></div></div>
+    <div id="rules-it" class="clip el" data-start="26.772" data-duration="3.288" data-track-index="18" style="position:absolute;left:780px;top:0px;width:1140px;height:1000px;z-index:19" data-layout-allow-overlap><div id="rules-it-in" class="in"><div class="ico bub" style="width:364px;height:260px"><svg viewBox="0 0 280 200" preserveAspectRatio="none"><path class="s card-f" pathLength="1" d="M40 14 L240 14 Q266 14 266 40 L266 130 Q266 156 240 156 L110 156 L66 190 L74 156 L40 156 Q14 156 14 130 L14 40 Q14 14 40 14 Z"/></svg><div class="bub-t" style="font-size:28px">If it's 9:00, then I open the document.</div></div></div></div>
+    <div id="rules-c1" class="clip el" data-start="30.01" data-duration="5.9" data-track-index="19" style="position:absolute;left:780px;top:0px;width:1140px;height:440px;z-index:20"><div id="rules-c1-in" class="in"><div class="card"><div class="card-k">2006 · GOLLWITZER &amp; SHEERAN</div><div class="card-t">94 tests of if-then plans</div><div class="card-s">psychologists</div></div></div></div>
+    <div id="rules-ok" class="clip el" data-start="38.37" data-duration="5.796" data-track-index="20" style="position:absolute;left:780px;top:0px;width:1140px;height:1080px;z-index:21" data-layout-allow-overlap><div id="rules-ok-in" class="in"><div class="ico" style="width:220px;height:220px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M30 104 L80 154 L172 50"/></svg></div></div></div>
+    <div id="rules-okl" class="clip el" data-start="38.37" data-duration="5.846" data-track-index="21" style="position:absolute;left:780px;top:440px;width:1140px;height:640px;z-index:22"><div id="rules-okl-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--muted)"><span id="rules-okl-w0" class="w">more</span> <span id="rules-okl-w1" class="w">likely</span> <span id="rules-okl-w2" class="w">to</span> <span id="rules-okl-w3" class="w">follow</span> <span id="rules-okl-w4" class="w">through</span></div></div></div>
+    <div id="rules-dec" class="clip el" data-start="40.416" data-duration="3.8" data-track-index="22" style="position:absolute;left:780px;top:580px;width:1140px;height:500px;z-index:23"><div id="rules-dec-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--accent)"><span id="rules-dec-w0" class="w">decided</span> <span id="rules-dec-w1" class="w">before</span> <span id="rules-dec-w2" class="w">the</span> <span id="rules-dec-w3" class="w">moment</span> <span id="rules-dec-w4" class="w">arrives</span></div></div></div>
+    <div id="rules-r4" class="clip el" data-start="44.116" data-duration="7.068" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:24"><div id="rules-r4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-r4-w0" class="w">rule</span> <span id="rules-r4-w1" class="w">4:</span> <span id="rules-r4-w2" class="w">small</span> <span id="rules-r4-w3" class="w">deadlines,</span> <span id="rules-r4-w4" class="w acc">shared</span></div></div></div>
+    <div id="rules-fl0" class="clip el" data-start="45.196" data-duration="5.938" data-track-index="24" style="position:absolute;left:280px;top:40px;width:1640px;height:1040px;z-index:25" data-layout-allow-overlap><div id="rules-fl0-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M80 186 L80 20"/><path class="s acc-s" pathLength="1" d="M80 24 L150 46 L80 68 Z"/><path class="s" pathLength="1" d="M30 186 Q100 170 170 186"/><circle class="f" cx="120" cy="178" r="7"/></svg></div></div></div>
+    <div id="rules-fl1" class="clip el" data-start="45.196" data-duration="5.938" data-track-index="25" style="position:absolute;left:500px;top:40px;width:1420px;height:1040px;z-index:26" data-layout-allow-overlap><div id="rules-fl1-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M80 186 L80 20"/><path class="s acc-s" pathLength="1" d="M80 24 L150 46 L80 68 Z"/><path class="s" pathLength="1" d="M30 186 Q100 170 170 186"/><circle class="f" cx="120" cy="178" r="7"/></svg></div></div></div>
+    <div id="rules-fl2" class="clip el" data-start="45.196" data-duration="5.938" data-track-index="26" style="position:absolute;left:720px;top:40px;width:1200px;height:1040px;z-index:27" data-layout-allow-overlap><div id="rules-fl2-in" class="in"><div class="ico" style="width:100px;height:100px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M80 186 L80 20"/><path class="s acc-s" pathLength="1" d="M80 24 L150 46 L80 68 Z"/><path class="s" pathLength="1" d="M30 186 Q100 170 170 186"/><circle class="f" cx="120" cy="178" r="7"/></svg></div></div></div>
+    <div id="rules-pal" class="clip el" data-start="46.536" data-duration="4.648" data-track-index="27" style="position:absolute;left:1380px;top:300px;width:540px;height:780px;z-index:28"><div id="rules-pal-in" class="in"><svg class="stick" id="rules-pal-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="rules-pal-aLu"><path class="s" d="M150 160 L150 255"/><g id="rules-pal-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-pal-aRu"><path class="s" d="M150 160 L150 255"/><g id="rules-pal-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="rules-pal-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="rules-pal-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="rules-pal-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="rules-pal-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="rules-pal-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="rules-pal-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="rules-pal-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="rules-pal-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="rules-tu" class="clip el" data-start="46.816" data-duration="4.318" data-track-index="28" style="position:absolute;left:1380px;top:0px;width:540px;height:760px;z-index:29" data-layout-allow-overlap><div id="rules-tu-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M56 92 L56 180 L22 180 L22 92 Z"/><path class="s acc-s" pathLength="1" d="M56 92 L92 30 Q112 30 110 56 L104 84 L164 84 Q184 86 178 108 L164 164 Q158 180 140 180 L56 180"/></svg></div></div></div>
+    <div id="rules-big" class="clip el" data-start="48.224" data-duration="2.91" data-track-index="29" style="position:absolute;left:680px;top:40px;width:1240px;height:1040px;z-index:30" data-layout-allow-overlap><div id="rules-big-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M80 186 L80 20"/><path class="s acc-s" pathLength="1" d="M80 24 L150 46 L80 68 Z"/><path class="s" pathLength="1" d="M30 186 Q100 170 170 186"/><circle class="f" cx="120" cy="178" r="7"/></svg></div></div></div>
+    <div id="rules-hid" class="clip el" data-start="48.844" data-duration="2.34" data-track-index="30" style="position:absolute;left:680px;top:440px;width:1240px;height:640px;z-index:31"><div id="rules-hid-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--muted)"><span id="rules-hid-w0" class="w">where</span> <span id="rules-hid-w1" class="w">things</span> <span id="rules-hid-w2" class="w">go</span> <span id="rules-hid-w3" class="w">to</span> <span id="rules-hid-w4" class="w">hide</span></div></div></div>
+    <div id="rules-r5" class="clip el" data-start="51.084" data-duration="5.7" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:32"><div id="rules-r5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-r5-w0" class="w">rule</span> <span id="rules-r5-w1" class="w">5:</span> <span id="rules-r5-w2" class="w">forgive</span> <span id="rules-r5-w3" class="w acc">yesterday</span></div></div></div>
+    <div id="rules-yc" class="clip el" data-start="52.424" data-duration="4.31" data-track-index="32" style="position:absolute;left:780px;top:0px;width:1140px;height:1080px;z-index:33" data-layout-allow-overlap><div id="rules-yc-in" class="in"><div class="ico" style="width:260px;height:260px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M24 42 L176 42 L176 182 L24 182 Z"/><path class="s" pathLength="1" d="M24 78 L176 78 M62 24 L62 56 M138 24 L138 56"/><path class="s acc-s" pathLength="1" d="M50 110 L70 110 M90 110 L110 110 M130 110 L150 110 M50 146 L70 146 M90 146 L110 146"/></svg></div></div></div>
+    <div id="rules-yt" class="clip el" data-start="52.424" data-duration="4.31" data-track-index="33" style="position:absolute;left:780px;top:440px;width:1140px;height:640px;z-index:34"><div id="rules-yt-in" class="in"><div class="txt" style="font-size:50px;font-weight:800;color:var(--ink)"><span id="rules-yt-w0" class="w">yesterday</span></div></div></div>
+    <div id="rules-ytk" class="clip el" data-start="53.864" data-duration="2.92" data-track-index="34" style="position:absolute;left:780px;top:440px;width:1140px;height:640px;z-index:50" data-layout-allow-overlap data-layout-allow-occlusion><div id="rules-ytk-in" class="in"><div class="strike" style="width:300px"></div></div></div>
+    <div id="rules-nx" class="clip el" data-start="55.744" data-duration="0.99" data-track-index="35" style="position:absolute;left:1380px;top:40px;width:540px;height:1040px;z-index:36" data-layout-allow-overlap><div id="rules-nx-in" class="in"><div class="ico" style="width:160px;height:160px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M80 186 L80 20"/><path class="s acc-s" pathLength="1" d="M80 24 L150 46 L80 68 Z"/><path class="s" pathLength="1" d="M30 186 Q100 170 170 186"/><circle class="f" cx="120" cy="178" r="7"/></svg></div></div></div>
+    <div id="rules-t6" class="clip el" data-start="56.984" data-duration="5.593" data-track-index="36" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:37"><div id="rules-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="rules-t6-w0" class="w">be</span> <span id="rules-t6-w1" class="w acc">patient</span> <span id="rules-t6-w2" class="w">with</span> <span id="rules-t6-w3" class="w">yourself</span></div></div></div>
+    <div id="rules-hg" class="clip el" data-start="58.932" data-duration="3.62" data-track-index="37" style="position:absolute;left:780px;top:0px;width:1140px;height:1080px;z-index:38" data-layout-allow-overlap><div id="rules-hg-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M50 20 L150 20 M50 180 L150 180 M60 20 Q60 80 100 100 Q140 120 140 180 M140 20 Q140 80 100 100 Q60 120 60 180"/></svg></div></div></div>
+    <div id="rules-hgl" class="clip el" data-start="59.532" data-duration="3.095" data-track-index="38" style="position:absolute;left:780px;top:440px;width:1140px;height:640px;z-index:39"><div id="rules-hgl-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--muted)"><span id="rules-hgl-w0" class="w">years</span> <span id="rules-hgl-w1" class="w">to</span> <span id="rules-hgl-w2" class="w">build,</span> <span id="rules-hgl-w3" class="w">a</span> <span id="rules-hgl-w4" class="w">while</span> <span id="rules-hgl-w5" class="w">to</span> <span id="rules-hgl-w6" class="w">change</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"rules-bg","t":"icon","from":"blur","exit":null,"in":0.2,"out":62.611999999999995,"outDur":0.25,"hold":false},{"id":"rules-h","t":"stick","from":"left","exit":null,"in":0.2,"out":62.611999999999995,"outDur":0.3,"hold":false,"poses":[["explain",0.3],["count",3.12],["count",4.96],["chin",7.3],["explainR",14.034],["count",16.774],["present",19.752],["happy",21.372],["count",23.332],["explain",26.772],["present",30.01],["proud",35.91],["explainR",39.536],["count",44.116],["give",46.536],["shrug",50.204],["count",51.084],["happy",52.204],["explain",54.884],["happy",56.984],["explainR",58.932]],"mouth":[["smile",0.2],["open",0.45],["smile",0.55],["o",0.55],["smile",0.77],["open",0.93],["smile",1.042],["open",1.09],["smile",1.19],["open",1.23],["smile",1.412],["open",1.49],["smile",1.59],["open",1.61],["smile",1.75],["open",1.81],["smile",1.91],["open",1.95],["smile",2.118],["o",2.19],["smile",2.41],["open",2.99],["smile",3.13],["open",3.19],["smile",3.316],["o",3.37],["smile",3.59],["o",3.75],["smile",3.97],["o",4.19],["smile",4.41],["open",5.21],["smile",5.29],["o",5.29],["smile",5.51],["open",6.09],["smile",6.286],["open",6.37],["smile",6.566],["o",6.65],["smile",6.87],["neutral",7.3],["open",7.55],["neutral",7.662],["o",7.71],["neutral",7.93],["open",8.364],["neutral",8.56],["open",8.644],["neutral",8.744],["open",8.744],["neutral",8.824],["open",8.824],["neutral",9.034],["o",9.124],["neutral",9.344],["open",9.484],["neutral",9.624],["open",9.684],["neutral",9.866],["open",9.944],["neutral",10.126],["open",10.204],["neutral",10.386],["open",10.904],["neutral",11.114],["o",11.504],["neutral",11.724],["open",12.464],["neutral",12.544],["o",12.544],["neutral",12.764],["open",12.944],["neutral",13.056],["open",13.104],["neutral",13.244],["open",13.304],["neutral",13.404],["o",13.424],["neutral",13.644],["smile",14.034],["open",14.284],["smile",14.396],["open",14.444],["smile",14.544],["open",14.584],["smile",14.78],["open",15.204],["smile",15.284],["o",15.284],["smile",15.504],["open",15.664],["smile",15.86],["open",15.944],["smile",16.044],["open",16.064],["smile",16.19],["open",16.244],["smile",16.426],["open",17.024],["smile",17.124],["o",17.144],["smile",17.364],["open",17.964],["smile",18.064],["open",18.104],["smile",18.23],["open",18.284],["smile",18.48],["o",18.564],["smile",18.784],["o",19.102],["smile",19.322],["open",20.002],["smile",20.102],["o",20.122],["smile",20.342],["open",20.562],["smile",20.716],["o",20.782],["smile",21.002],["grin",21.372],["open",21.622],["grin",21.722],["o",21.722],["grin",21.942],["open",22.402],["grin",22.514],["o",22.562],["grin",22.782],["open",23.582],["grin",23.682],["o",23.702],["grin",23.922],["open",24.562],["grin",24.662],["open",24.702],["grin",24.842],["open",24.902],["grin",25.098],["o",25.182],["grin",25.402],["open",25.622],["grin",25.748],["o",25.802],["grin",26.022],["open",26.382],["grin",26.536],["smile",26.772],["open",27.022],["smile",27.134],["open",27.182],["smile",27.322],["open",27.382],["smile",27.508],["open",27.562],["smile",27.662],["open",27.702],["smile",27.782],["open",27.782],["smile",27.992],["o",28.362],["smile",28.582],["o",28.682],["smile",28.902],["open",29.022],["smile",29.218],["open",29.302],["smile",29.402],["o",29.442],["smile",29.662],["o",30.26],["smile",30.48],["o",30.88],["smile",31.1],["o",31.32],["smile",31.54],["open",31.88],["smile",32.076],["o",32.16],["smile",32.38],["o",32.59],["smile",32.81],["o",33.02],["smile",33.24],["o",33.44],["smile",33.66],["o",34.12],["smile",34.34],["open",34.62],["smile",34.746],["open",34.8],["smile",34.968],["open",35.04],["smile",35.236],["o",35.32],["smile",35.54],["grin",35.91],["open",36.06],["grin",36.16],["open",36.16],["grin",36.37],["open",36.78],["grin",36.92],["open",36.98],["grin",37.106],["open",37.16],["grin",37.328],["open",37.4],["grin",37.568],["open",37.64],["grin",37.794],["open",37.86],["grin",38.042],["open",38.12],["grin",38.33],["open",38.42],["grin",38.56],["open",38.62],["grin",38.802],["o",38.88],["grin",39.1],["smile",39.536],["open",39.646],["smile",39.746],["o",39.786],["smile",40.006],["o",40.126],["smile",40.346],["open",40.506],["smile",40.618],["o",40.666],["smile",40.886],["open",41.086],["smile",41.24],["o",41.306],["smile",41.526],["o",41.746],["smile",41.966],["o",42.126],["smile",42.346],["open",42.766],["smile",42.962],["open",43.046],["smile",43.214],["o",43.286],["smile",43.506],["open",44.366],["smile",44.446],["o",44.446],["smile",44.666],["open",45.346],["smile",45.446],["o",45.446],["smile",45.666],["o",45.946],["smile",46.166],["o",46.326],["smile",46.546],["open",46.786],["smile",46.982],["o",47.066],["smile",47.286],["open",47.406],["smile",47.574],["open",47.646],["smile",47.842],["open",48.174],["smile",48.384],["o",48.474],["smile",48.694],["o",48.834],["smile",49.054],["o",49.194],["smile",49.414],["open",49.554],["smile",49.68],["open",49.734],["smile",49.916],["open",49.994],["neutral",50.204],["open",50.294],["neutral",50.406],["o",50.454],["neutral",50.674],["open",51.334],["neutral",51.446],["o",51.494],["neutral",51.714],["smile",52.204],["open",52.454],["smile",52.608],["o",52.674],["smile",52.894],["open",53.774],["smile",53.854],["open",53.854],["smile",54.036],["o",54.114],["smile",54.334],["open",54.494],["smile",54.648],["open",54.934],["smile",55.014],["open",55.014],["smile",55.114],["o",55.134],["smile",55.354],["o",55.474],["smile",55.694],["open",55.814],["smile",55.94],["open",55.994],["smile",56.19],["o",56.274],["smile",56.494],["open",56.934],["smile",56.984],["open",57.034],["smile",57.174],["o",57.234],["smile",57.454],["open",57.734],["smile",57.902],["o",57.974],["smile",58.194],["open",59.002],["smile",59.128],["open",59.182],["smile",59.336],["open",59.402],["smile",59.542],["open",59.602],["smile",59.728],["o",59.782],["smile",60.002],["open",60.222],["smile",60.39],["open",60.462],["smile",60.644],["o",60.722],["smile",60.942],["open",61.222],["smile",61.348],["open",61.402],["smile",61.598],["open",61.682],["smile",61.864],["open",61.942],["smile",62.068],["o",62.122],["smile",62.342]]},{"id":"rules-t0","t":"text","from":"top","exit":null,"in":3.12,"out":4.72,"outDur":0.3,"hold":false,"words":[3.12,3.5,3.94]},{"id":"rules-r1","t":"text","from":"top","exit":null,"in":4.96,"out":16.534000000000002,"outDur":0.3,"hold":false,"words":[4.96,5.06,5.16,5.26,5.36]},{"id":"rules-fq","t":"icon","from":"pop","exit":null,"in":7.3,"out":16.534000000000002,"outDur":0.25,"hold":false},{"id":"rules-fqq","t":"text","from":"pop","exit":null,"in":9.434,"out":10.414,"outDur":0.25,"hold":false,"words":[9.534]},{"id":"rules-fb1","t":"text","from":"bottom","exit":null,"in":10.654,"out":16.534000000000002,"outDur":0.3,"hold":false,"words":[10.654]},{"id":"rules-fb2","t":"text","from":"bottom","exit":null,"in":11.254,"out":16.534000000000002,"outDur":0.3,"hold":false,"words":[11.254]},{"id":"rules-fb3","t":"text","from":"bottom","exit":null,"in":12.294,"out":16.534000000000002,"outDur":0.3,"hold":false,"words":[12.294]},{"id":"rules-fb4","t":"text","from":"bottom","exit":null,"in":14.034,"out":16.534000000000002,"outDur":0.3,"hold":false,"words":[14.954,15.034,15.814,15.994]},{"id":"rules-r2","t":"text","from":"top","exit":null,"in":16.774,"out":23.092000000000002,"outDur":0.3,"hold":false,"words":[16.774,16.874,16.974,17.074,17.174,17.274,17.374]},{"id":"rules-lt","t":"icon","from":"pop","exit":null,"in":18.034,"out":23.092000000000002,"outDur":0.25,"hold":false},{"id":"rules-wr","t":"text","from":"pop","exit":null,"in":19.752,"out":21.132,"outDur":0.25,"hold":false,"words":[19.872,20.312,20.532]},{"id":"rules-wrk","t":"strike","from":"pop","exit":null,"in":19.752,"out":21.132,"outDur":0.3,"hold":false},{"id":"rules-od","t":"text","from":"pop","exit":null,"in":21.472,"out":23.092000000000002,"outDur":0.25,"hold":false,"words":[21.472,22.152,22.312]},{"id":"rules-r3","t":"text","from":"top","exit":null,"in":23.332,"out":29.770000000000003,"outDur":0.3,"hold":false,"words":[23.332,23.432,23.532,23.632]},{"id":"rules-r3b","t":"text","from":"top","exit":null,"in":35.91,"out":43.876,"outDur":0.3,"hold":false,"words":[36.01,36.11,36.21,36.31,36.41]},{"id":"rules-it","t":"bubble","from":"pop","exit":null,"in":26.772,"out":29.770000000000003,"outDur":0.25,"hold":false},{"id":"rules-c1","t":"card","from":"top","exit":null,"in":30.01,"out":35.57,"outDur":0.3,"hold":false},{"id":"rules-ok","t":"icon","from":"pop","exit":null,"in":38.37,"out":43.876,"outDur":0.25,"hold":false},{"id":"rules-okl","t":"text","from":"bottom","exit":null,"in":38.37,"out":43.876,"outDur":0.3,"hold":false,"words":[37.61,37.87,38.17,38.37,38.63]},{"id":"rules-dec","t":"text","from":"bottom","exit":null,"in":40.416,"out":43.876,"outDur":0.3,"hold":false,"words":[41.876,41.876,42.516,42.796,43.036]},{"id":"rules-r4","t":"text","from":"top","exit":null,"in":44.116,"out":50.844,"outDur":0.3,"hold":false,"words":[44.116,44.216,44.316,44.416,44.516]},{"id":"rules-fl0","t":"icon","from":"pop","exit":null,"in":45.196,"out":50.844,"outDur":0.25,"hold":false},{"id":"rules-fl1","t":"icon","from":"pop","exit":null,"in":45.196,"out":50.844,"outDur":0.25,"hold":false},{"id":"rules-fl2","t":"icon","from":"pop","exit":null,"in":45.196,"out":50.844,"outDur":0.25,"hold":false},{"id":"rules-pal","t":"stick","from":"right","exit":null,"in":46.536,"out":50.844,"outDur":0.3,"hold":false,"poses":[["happy",46.536]],"mouth":[["smile",46.536]]},{"id":"rules-tu","t":"icon","from":"pop","exit":null,"in":46.816,"out":50.844,"outDur":0.25,"hold":false},{"id":"rules-big","t":"icon","from":"pop","exit":null,"in":48.224,"out":50.844,"outDur":0.25,"hold":false},{"id":"rules-hid","t":"text","from":"bottom","exit":null,"in":48.844,"out":50.844,"outDur":0.3,"hold":false,"words":[49.304,49.484,49.744,50.044,50.204]},{"id":"rules-r5","t":"text","from":"top","exit":null,"in":51.084,"out":56.443999999999996,"outDur":0.3,"hold":false,"words":[51.084,51.184,51.284,51.384]},{"id":"rules-yc","t":"icon","from":"pop","exit":null,"in":52.424,"out":56.443999999999996,"outDur":0.25,"hold":false},{"id":"rules-yt","t":"text","from":"pop","exit":null,"in":52.424,"out":56.443999999999996,"outDur":0.25,"hold":false,"words":[52.424]},{"id":"rules-ytk","t":"strike","from":"pop","exit":null,"in":53.864,"out":56.443999999999996,"outDur":0.3,"hold":false},{"id":"rules-nx","t":"icon","from":"pop","exit":null,"in":55.744,"out":56.443999999999996,"outDur":0.25,"hold":false},{"id":"rules-t6","t":"text","from":"top","exit":null,"in":56.984,"out":62.236999999999995,"outDur":0.3,"hold":false,"words":[56.784,56.984,57.484,57.724]},{"id":"rules-hg","t":"icon","from":"pop","exit":null,"in":58.932,"out":62.262,"outDur":0.25,"hold":false},{"id":"rules-hgl","t":"text","from":"bottom","exit":null,"in":59.532,"out":62.287,"outDur":0.3,"hold":false,"words":[59.532,59.972,60.212,60.972,61.432,61.692,61.872]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4},"explain":{"aLu":40,"aLl":78,"aRu":-40,"aRl":-78,"hd":0},"explainR":{"aLu":12,"aLl":-4,"aRu":-40,"aRl":-72,"hd":-4},"present":{"aLu":14,"aLl":-4,"aRu":-96,"aRl":-34,"hd":-6},"presentL":{"aLu":96,"aLl":34,"aRu":-14,"aRl":4,"hd":6},"chin":{"aLu":24,"aLl":-104,"aRu":-70,"aRl":198,"hd":8},"ear":{"aLu":14,"aLl":-4,"aRu":-100,"aRl":246,"hd":10},"wave":{"aLu":14,"aLl":-4,"aRu":-150,"aRl":-20,"hd":-4},"count":{"aLu":14,"aLl":-4,"aRu":-60,"aRl":-100},"lean":{"aLu":20,"aLl":-10,"aRu":-20,"aRl":10,"hd":10,"hy":4},"tiltL":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4,"hd":-10},"handsHips":{"aLu":40,"aLl":-100,"aRu":-40,"aRl":100,"hd":0},"embarrassed":{"aLu":6,"aLl":0,"aRu":-30,"aRl":150,"hy":10,"hd":6},"search":{"aLu":30,"aLl":-30,"aRu":-30,"aRl":30,"hd":-12}};
+      const MOUTHS = ["neutral","smile","frown","o","tight","open","grin"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (e.hold) {
+        } else if (ex === "cut") {
+          tl.set(inner, { opacity: 0 }, e.out);
+        } else if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["rules"] = tl;
+    })();
+  </script>
+</template>

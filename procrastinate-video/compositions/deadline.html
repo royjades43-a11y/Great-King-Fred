@@ -1,0 +1,275 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="deadline" data-width="1920" data-height="1080">
+    <div id="deadline-bg" class="clip el" data-start="0.2" data-duration="42.753" data-track-index="1" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:1;opacity:0.42" data-layout-allow-overlap><div id="deadline-bg-in" class="in"><div class="ico" style="width:1920px;height:1920px;color:var(--muted)"><svg viewBox="0 0 200 200"><path d="M-20 137.5 L220 137.5" fill="none" stroke="currentColor" stroke-width="7" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M60 112 L200 112 M66 112 L66 137.5 M194 112 L194 137.5" fill="none" stroke="currentColor" stroke-width="6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M150 112 L150 96 L176 96 L176 112 M144 96 L182 96" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 64 L56 64 L56 98 L22 98 Z M39 64 L39 98 M22 81 L56 81" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+    <div id="deadline-h" class="clip el" data-start="0.2" data-duration="42.753" data-track-index="2" style="position:absolute;left:0px;top:300px;width:800px;height:780px;z-index:3"><div id="deadline-h-in" class="in"><svg class="stick" id="deadline-h-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="deadline-h-aLu"><path class="s" d="M150 160 L150 255"/><g id="deadline-h-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="deadline-h-aRu"><path class="s" d="M150 160 L150 255"/><g id="deadline-h-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="deadline-h-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="deadline-h-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="deadline-h-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="deadline-h-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="deadline-h-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="deadline-h-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="deadline-h-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="deadline-h-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="deadline-t0" class="clip el" data-start="0.92" data-duration="2.7" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:4"><div id="deadline-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="deadline-t0-w0" class="w">do</span> <span id="deadline-t0-w1" class="w">deadlines</span> <span id="deadline-t0-w2" class="w acc">help<span class="tail">?</span></span></div></div></div>
+    <div id="deadline-c1" class="clip el" data-start="3.62" data-duration="6.174" data-track-index="4" style="position:absolute;left:780px;top:0px;width:1140px;height:440px;z-index:5"><div id="deadline-c1-in" class="in"><div class="card"><div class="card-k">2002 · ARIELY &amp; WERTENBROCH</div><div class="card-t">Paid to find typos</div><div class="card-s">proofreaders</div></div></div></div>
+    <div id="deadline-pp" class="clip el" data-start="8.714" data-duration="1.03" data-track-index="5" style="position:absolute;left:680px;top:40px;width:1240px;height:1040px;z-index:6" data-layout-allow-overlap><div id="deadline-pp-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L150 20 L176 46 L176 168 L64 168 Z"/><path class="s" pathLength="1" d="M150 20 L150 46 L176 46"/><path class="s" pathLength="1" d="M44 40 L44 184 L156 184"/><path class="s" pathLength="1" d="M24 60 L24 198 L136 198"/><path class="s acc-s" pathLength="1" d="M88 76 L152 76 M88 104 L152 104 M88 132 L132 132"/></svg></div></div></div>
+    <div id="deadline-pn" class="clip el" data-start="8.714" data-duration="1.03" data-track-index="6" style="position:absolute;left:940px;top:0px;width:980px;height:1040px;z-index:7" data-layout-allow-overlap><div id="deadline-pn-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--accent)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M150 24 L176 50 L76 150 L42 160 L52 126 Z"/><path class="s" pathLength="1" d="M136 38 L162 64"/><path class="s acc-s" pathLength="1" d="M52 126 L76 150"/></svg></div></div></div>
+    <div id="deadline-r0" class="clip el" data-start="9.694" data-duration="8.946" data-track-index="7" style="position:absolute;left:240px;top:300px;width:1680px;height:780px;z-index:8"><div id="deadline-r0-in" class="in"><svg class="stick" id="deadline-r0-svg" width="234" height="405.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="deadline-r0-aLu"><path class="s" d="M150 160 L150 255"/><g id="deadline-r0-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="deadline-r0-aRu"><path class="s" d="M150 160 L150 255"/><g id="deadline-r0-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="deadline-r0-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="deadline-r0-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="deadline-r0-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="deadline-r0-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="deadline-r0-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="deadline-r0-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="deadline-r0-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="deadline-r0-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="deadline-r0f" class="clip el" data-start="12.194" data-duration="6.396" data-track-index="8" style="position:absolute;left:460px;top:40px;width:1460px;height:1040px;z-index:9" data-layout-allow-overlap><div id="deadline-r0f-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M80 186 L80 20"/><path class="s acc-s" pathLength="1" d="M80 24 L150 46 L80 68 Z"/><path class="s" pathLength="1" d="M30 186 Q100 170 170 186"/><circle class="f" cx="120" cy="178" r="7"/></svg></div></div></div>
+    <div id="deadline-r0l" class="clip el" data-start="12.194" data-duration="6.446" data-track-index="9" style="position:absolute;left:240px;top:820px;width:1680px;height:260px;z-index:10"><div id="deadline-r0l-in" class="in"><div class="txt" style="font-size:32px;font-weight:800;color:var(--muted)"><span id="deadline-r0l-w0" class="w">one,</span> <span id="deadline-r0l-w1" class="w">at</span> <span id="deadline-r0l-w2" class="w">the</span> <span id="deadline-r0l-w3" class="w">end</span></div></div></div>
+    <div id="deadline-r1" class="clip el" data-start="12.514" data-duration="6.126" data-track-index="10" style="position:absolute;left:840px;top:300px;width:1080px;height:780px;z-index:11"><div id="deadline-r1-in" class="in"><svg class="stick" id="deadline-r1-svg" width="234" height="405.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="deadline-r1-aLu"><path class="s" d="M150 160 L150 255"/><g id="deadline-r1-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="deadline-r1-aRu"><path class="s" d="M150 160 L150 255"/><g id="deadline-r1-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="deadline-r1-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="deadline-r1-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="deadline-r1-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="deadline-r1-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="deadline-r1-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="deadline-r1-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="deadline-r1-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="deadline-r1-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="deadline-r1f0" class="clip el" data-start="14.034" data-duration="4.556" data-track-index="11" style="position:absolute;left:720px;top:0px;width:1200px;height:900px;z-index:12" data-layout-allow-overlap><div id="deadline-r1f0-in" class="in"><div class="ico" style="width:70px;height:70px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M80 186 L80 20"/><path class="s acc-s" pathLength="1" d="M80 24 L150 46 L80 68 Z"/><path class="s" pathLength="1" d="M30 186 Q100 170 170 186"/><circle class="f" cx="120" cy="178" r="7"/></svg></div></div></div>
+    <div id="deadline-r1f1" class="clip el" data-start="14.034" data-duration="4.556" data-track-index="12" style="position:absolute;left:840px;top:0px;width:1080px;height:900px;z-index:13" data-layout-allow-overlap><div id="deadline-r1f1-in" class="in"><div class="ico" style="width:70px;height:70px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M80 186 L80 20"/><path class="s acc-s" pathLength="1" d="M80 24 L150 46 L80 68 Z"/><path class="s" pathLength="1" d="M30 186 Q100 170 170 186"/><circle class="f" cx="120" cy="178" r="7"/></svg></div></div></div>
+    <div id="deadline-r1f2" class="clip el" data-start="14.034" data-duration="4.556" data-track-index="13" style="position:absolute;left:960px;top:0px;width:960px;height:900px;z-index:14" data-layout-allow-overlap><div id="deadline-r1f2-in" class="in"><div class="ico" style="width:70px;height:70px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M80 186 L80 20"/><path class="s acc-s" pathLength="1" d="M80 24 L150 46 L80 68 Z"/><path class="s" pathLength="1" d="M30 186 Q100 170 170 186"/><circle class="f" cx="120" cy="178" r="7"/></svg></div></div></div>
+    <div id="deadline-r1l" class="clip el" data-start="14.514" data-duration="4.126" data-track-index="14" style="position:absolute;left:840px;top:820px;width:1080px;height:260px;z-index:15"><div id="deadline-r1l-in" class="in"><div class="txt" style="font-size:32px;font-weight:800;color:var(--muted)"><span id="deadline-r1l-w0" class="w">every</span> <span id="deadline-r1l-w1" class="w">week</span></div></div></div>
+    <div id="deadline-r2" class="clip el" data-start="15.56" data-duration="3.08" data-track-index="15" style="position:absolute;left:1440px;top:300px;width:480px;height:780px;z-index:16"><div id="deadline-r2-in" class="in"><svg class="stick" id="deadline-r2-svg" width="234" height="405.6" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="deadline-r2-aLu"><path class="s" d="M150 160 L150 255"/><g id="deadline-r2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="deadline-r2-aRu"><path class="s" d="M150 160 L150 255"/><g id="deadline-r2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="deadline-r2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="deadline-r2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="deadline-r2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="deadline-r2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="deadline-r2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="deadline-r2-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="deadline-r2-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="deadline-r2-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="deadline-r2f" class="clip el" data-start="16.58" data-duration="2.01" data-track-index="16" style="position:absolute;left:1220px;top:40px;width:700px;height:1040px;z-index:17" data-layout-allow-overlap><div id="deadline-r2f-in" class="in"><div class="ico" style="width:110px;height:110px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M80 186 L80 20"/><path class="s acc-s" pathLength="1" d="M80 24 L150 46 L80 68 Z"/><path class="s" pathLength="1" d="M30 186 Q100 170 170 186"/><circle class="f" cx="120" cy="178" r="7"/></svg></div></div></div>
+    <div id="deadline-r2q" class="clip el" data-start="17.04" data-duration="1.55" data-track-index="17" style="position:absolute;left:1220px;top:0px;width:700px;height:880px;z-index:18" data-layout-allow-overlap><div id="deadline-r2q-in" class="in"><div class="ico" style="width:70px;height:70px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s alm-s" pathLength="1" d="M62 66 Q62 24 102 24 Q142 24 142 62 Q142 88 104 102 L104 128"/><circle class="alm-f" cx="104" cy="166" r="11"/></svg></div></div></div>
+    <div id="deadline-r2l" class="clip el" data-start="16.900000000000002" data-duration="1.74" data-track-index="18" style="position:absolute;left:1440px;top:820px;width:480px;height:260px;z-index:19"><div id="deadline-r2l-in" class="in"><div class="txt" style="font-size:32px;font-weight:800;color:var(--muted)"><span id="deadline-r2l-w0" class="w">choose</span> <span id="deadline-r2l-w1" class="w">your</span> <span id="deadline-r2l-w2" class="w">own</span></div></div></div>
+    <div id="deadline-t1" class="clip el" data-start="10.574" data-duration="2.04" data-track-index="19" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:20"><div id="deadline-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="deadline-t1-w0" class="w">one</span> <span id="deadline-t1-w1" class="w">at</span> <span id="deadline-t1-w2" class="w">the</span> <span id="deadline-t1-w3" class="w acc">end</span></div></div></div>
+    <div id="deadline-t2" class="clip el" data-start="13.78" data-duration="1.74" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:21"><div id="deadline-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="deadline-t2-w0" class="w">one</span> <span id="deadline-t2-w1" class="w acc">every</span> <span id="deadline-t2-w2" class="w acc">week</span></div></div></div>
+    <div id="deadline-t3" class="clip el" data-start="16.58" data-duration="2.06" data-track-index="21" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:22"><div id="deadline-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="deadline-t3-w0" class="w">choose</span> <span id="deadline-t3-w1" class="w">your</span> <span id="deadline-t3-w2" class="w acc">own</span></div></div></div>
+    <div id="deadline-e1" class="clip el" data-start="19.16" data-duration="23.468" data-track-index="22" style="position:absolute;left:840px;top:640px;width:1080px;height:440px;z-index:23"><div id="deadline-e1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:380px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">weekly</div></div></div></div>
+    <div id="deadline-e1t" class="clip el" data-start="21.04" data-duration="4.168" data-track-index="23" style="position:absolute;left:840px;top:0px;width:1080px;height:760px;z-index:24"><div id="deadline-e1t-in" class="in"><div class="txt" style="font-size:34px;font-weight:600;color:var(--accent)"><span id="deadline-e1t-w0" class="w">most</span> <span id="deadline-e1t-w1" class="w">typos</span> <span id="deadline-e1t-w2" class="w">found</span></div></div></div>
+    <div id="deadline-t4" class="clip el" data-start="19.16" data-duration="6.048" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:25"><div id="deadline-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="deadline-t4-w0" class="w">weekly:</span> <span id="deadline-t4-w1" class="w">most</span> <span id="deadline-t4-w2" class="w">errors,</span> <span id="deadline-t4-w3" class="w">least</span> <span id="deadline-t4-w4" class="w acc">late</span></div></div></div>
+    <div id="deadline-e0" class="clip el" data-start="25.708" data-duration="16.995" data-track-index="25" style="position:absolute;left:240px;top:640px;width:1680px;height:440px;z-index:26"><div id="deadline-e0-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:130px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">one at the end</div></div></div></div>
+    <div id="deadline-t5" class="clip el" data-start="25.708" data-duration="3.32" data-track-index="26" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:27"><div id="deadline-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="deadline-t5-w0" class="w">one</span> <span id="deadline-t5-w1" class="w">big</span> <span id="deadline-t5-w2" class="w">deadline:</span> <span id="deadline-t5-w3" class="w">the</span> <span id="deadline-t5-w4" class="w acc">worst</span></div></div></div>
+    <div id="deadline-e2" class="clip el" data-start="31.608" data-duration="11.145" data-track-index="27" style="position:absolute;left:1440px;top:640px;width:480px;height:440px;z-index:28"><div id="deadline-e2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:240px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">chose their own</div></div></div></div>
+    <div id="deadline-t6" class="clip el" data-start="29.688" data-duration="3.48" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:29"><div id="deadline-t6-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="deadline-t6-w0" class="w">chose</span> <span id="deadline-t6-w1" class="w">their</span> <span id="deadline-t6-w2" class="w">own…</span> <span id="deadline-t6-w3" class="w">the</span> <span id="deadline-t6-w4" class="w acc">middle</span></div></div></div>
+    <div id="deadline-t7" class="clip el" data-start="33.153" data-duration="2.34" data-track-index="29" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:30"><div id="deadline-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="deadline-t7-w0" class="w">they</span> <span id="deadline-t7-w1" class="w">knew</span> <span id="deadline-t7-w2" class="w">they</span> <span id="deadline-t7-w3" class="w acc">needed</span> <span id="deadline-t7-w4" class="w">deadlines</span></div></div></div>
+    <div id="deadline-t8" class="clip el" data-start="35.632999999999996" data-duration="2.04" data-track-index="30" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:31"><div id="deadline-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="deadline-t8-w0" class="w">…just</span> <span id="deadline-t8-w1" class="w">not</span> <span id="deadline-t8-w2" class="w acc">tight</span> <span id="deadline-t8-w3" class="w">enough</span></div></div></div>
+    <div id="deadline-t9" class="clip el" data-start="37.933" data-duration="3.64" data-track-index="31" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:32"><div id="deadline-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="deadline-t9-w0" class="w">we</span> <span id="deadline-t9-w1" class="w">know</span> <span id="deadline-t9-w2" class="w">ourselves…</span> <span id="deadline-t9-w3" class="w">a</span> <span id="deadline-t9-w4" class="w acc">little</span></div></div></div>
+    <div id="deadline-hero" class="clip el" data-start="41.473" data-duration="1.405" data-track-index="32" style="position:absolute;left:0px;top:0px;width:1920px;height:600px;z-index:33"><div id="deadline-hero-in" class="in"><div class="txt hero" style="font-size:90px;font-weight:800;color:var(--ink)"><span id="deadline-hero-w0" class="w">But</span> <span id="deadline-hero-w1" class="w">it</span> <span id="deadline-hero-w2" class="w">wasn't</span> <span id="deadline-hero-w3" class="w">over</span> <span id="deadline-hero-w4" class="w">yet.</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"deadline-bg","t":"icon","from":"blur","exit":null,"in":0.2,"out":42.913,"outDur":0.25,"hold":false},{"id":"deadline-h","t":"stick","from":"left","exit":null,"in":0.2,"out":42.913,"outDur":0.3,"hold":false,"poses":[["chin",0.92],["shrug",2.68],["present",3.52],["count",9.694],["count",12.514],["count",15.56],["proud",19.16],["happy",23.82],["shrug",27.888],["chin",29.688],["explainR",32.228],["explain",33.068],["embarrassed",36.433],["happy",37.573],["shrug",39.413],["idle",41.473]],"mouth":[["neutral",0.2],["open",0.45],["neutral",0.55],["o",0.57],["neutral",0.79],["open",0.97],["neutral",1.11],["o",1.17],["neutral",1.39],["open",2.29],["neutral",2.35],["open",2.35],["neutral",2.45],["o",2.47],["neutral",2.69],["o",2.93],["neutral",3.15],["smile",3.52],["open",3.77],["smile",3.87],["open",3.87],["smile",4.037],["o",4.109],["smile",4.329],["open",4.646],["smile",4.855],["o",4.944],["smile",5.164],["o",5.284],["smile",5.504],["open",5.804],["smile",5.986],["open",6.064],["smile",6.232],["o",6.304],["smile",6.524],["o",7.044],["smile",7.264],["open",7.464],["smile",7.632],["open",7.704],["smile",7.844],["o",7.904],["smile",8.124],["open",8.224],["smile",8.364],["open",8.424],["smile",8.524],["open",8.524],["smile",8.692],["open",8.764],["smile",8.904],["o",8.964],["smile",9.184],["o",9.944],["smile",10.164],["open",10.324],["smile",10.506],["o",10.584],["smile",10.804],["o",10.924],["smile",11.144],["open",11.284],["smile",11.494],["open",11.584],["smile",11.684],["o",11.704],["smile",11.924],["o",12.064],["smile",12.284],["o",12.764],["smile",12.984],["open",13.084],["smile",13.266],["open",13.344],["smile",13.456],["open",13.504],["smile",13.644],["open",13.704],["smile",13.816],["open",13.864],["smile",13.964],["open",13.984],["smile",14.194],["o",14.284],["smile",14.504],["o",14.764],["smile",14.984],["open",15.67],["smile",15.77],["open",15.81],["smile",16.02],["o",16.11],["smile",16.33],["open",16.45],["smile",16.618],["open",16.69],["smile",16.79],["open",16.83],["smile",17.04],["open",17.13],["smile",17.242],["o",17.29],["smile",17.51],["o",17.69],["smile",17.91],["open",18.79],["smile",18.89],["open",18.91],["smile",19.092],["open",19.17],["smile",19.338],["o",19.41],["smile",19.63],["o",19.77],["smile",19.99],["o",20.31],["smile",20.53],["open",20.69],["smile",20.83],["o",20.89],["smile",21.11],["o",21.29],["smile",21.51],["open",22.19],["smile",22.33],["open",22.39],["smile",22.49],["open",22.51],["smile",22.678],["open",22.75],["smile",22.904],["o",22.97],["smile",23.19],["o",23.31],["smile",23.53],["grin",23.82],["open",23.83],["grin",23.998],["open",24.07],["grin",24.266],["open",24.35],["grin",24.476],["o",24.53],["grin",24.75],["open",25.358],["grin",25.458],["open",25.478],["grin",25.66],["open",25.738],["grin",25.892],["o",25.958],["grin",26.178],["o",26.278],["grin",26.498],["o",26.618],["grin",26.838],["open",26.978],["grin",27.132],["open",27.198],["grin",27.298],["open",27.338],["grin",27.534],["o",27.618],["grin",27.838],["neutral",27.888],["open",27.978],["neutral",28.09],["o",28.138],["neutral",28.358],["open",29.178],["neutral",29.318],["open",29.378],["neutral",29.49],["open",29.538],["neutral",29.706],["open",29.778],["neutral",29.89],["open",29.938],["neutral",30.148],["open",30.238],["neutral",30.35],["open",30.398],["neutral",30.594],["o",30.678],["neutral",30.898],["open",31.598],["neutral",31.78],["open",31.858],["neutral",32.078],["open",32.178],["smile",32.228],["open",32.378],["smile",32.478],["open",32.478],["smile",32.66],["open",33.318],["smile",33.444],["open",33.498],["smile",33.61],["open",33.658],["smile",33.758],["open",33.798],["smile",34.008],["open",34.098],["smile",34.238],["o",34.298],["smile",34.518],["o",34.678],["smile",34.898],["open",35.643],["smile",35.743],["open",35.783],["smile",35.909],["o",35.963],["smile",36.183],["open",36.283],["tight",36.433],["open",36.523],["tight",36.635],["open",36.683],["tight",36.893],["o",36.983],["tight",37.203],["smile",37.573],["open",37.823],["smile",37.991],["open",38.063],["smile",38.163],["open",38.183],["smile",38.309],["o",38.363],["smile",38.583],["open",38.703],["smile",38.899],["open",38.983],["smile",39.193],["open",39.663],["smile",39.859],["o",39.943],["smile",40.163],["open",40.363],["smile",40.559],["open",40.643],["smile",40.825],["o",40.903],["smile",41.123],["neutral",41.473],["open",41.723],["neutral",41.863],["open",41.923],["neutral",42.003],["o",42.003],["neutral",42.223],["open",42.423],["neutral",42.605],["o",42.683],["neutral",42.903]]},{"id":"deadline-t0","t":"text","from":"top","exit":null,"in":0.92,"out":3.2800000000000002,"outDur":0.3,"hold":false,"words":[0.92,0.92,1.02]},{"id":"deadline-c1","t":"card","from":"top","exit":null,"in":3.62,"out":9.454,"outDur":0.3,"hold":false},{"id":"deadline-pp","t":"icon","from":"pop","exit":null,"in":8.714,"out":9.454,"outDur":0.25,"hold":false},{"id":"deadline-pn","t":"icon","from":"pop","exit":null,"in":8.714,"out":9.454,"outDur":0.25,"hold":false},{"id":"deadline-r0","t":"stick","from":"bottom","exit":null,"in":9.694,"out":18.3,"outDur":0.3,"hold":false,"poses":[["idle",9.694],["shrug",27.888]],"mouth":[["neutral",9.694]]},{"id":"deadline-r0f","t":"icon","from":"pop","exit":null,"in":12.194,"out":18.3,"outDur":0.25,"hold":false},{"id":"deadline-r0l","t":"text","from":"bottom","exit":null,"in":12.194,"out":18.3,"outDur":0.3,"hold":false,"words":[10.334,11.034,11.334,11.814]},{"id":"deadline-r1","t":"stick","from":"bottom","exit":null,"in":12.514,"out":18.3,"outDur":0.3,"hold":false,"poses":[["give",13.254]],"mouth":[["smile",12.514]]},{"id":"deadline-r1f0","t":"icon","from":"pop","exit":null,"in":14.034,"out":18.3,"outDur":0.25,"hold":false},{"id":"deadline-r1f1","t":"icon","from":"pop","exit":null,"in":14.034,"out":18.3,"outDur":0.25,"hold":false},{"id":"deadline-r1f2","t":"icon","from":"pop","exit":null,"in":14.034,"out":18.3,"outDur":0.25,"hold":false},{"id":"deadline-r1l","t":"text","from":"bottom","exit":null,"in":14.514,"out":18.3,"outDur":0.3,"hold":false,"words":[14.034,14.514]},{"id":"deadline-r2","t":"stick","from":"bottom","exit":null,"in":15.56,"out":18.3,"outDur":0.3,"hold":false,"poses":[["chin",16.58]],"mouth":[["neutral",15.56]]},{"id":"deadline-r2f","t":"icon","from":"pop","exit":null,"in":16.58,"out":18.3,"outDur":0.25,"hold":false},{"id":"deadline-r2q","t":"icon","from":"pop","exit":null,"in":17.04,"out":18.3,"outDur":0.25,"hold":false},{"id":"deadline-r2l","t":"text","from":"bottom","exit":null,"in":16.900000000000002,"out":18.3,"outDur":0.3,"hold":false,"words":[16.58,17.04,17.04]},{"id":"deadline-t1","t":"text","from":"top","exit":null,"in":10.574,"out":12.274,"outDur":0.3,"hold":false,"words":[10.334,11.034,11.334,11.814]},{"id":"deadline-t2","t":"text","from":"top","exit":null,"in":13.78,"out":15.18,"outDur":0.3,"hold":false,"words":[14.034,14.034,14.514]},{"id":"deadline-t3","t":"text","from":"top","exit":null,"in":16.58,"out":18.3,"outDur":0.3,"hold":false,"words":[16.58,17.04,17.04]},{"id":"deadline-e1","t":"bar","from":"draw","exit":null,"in":19.16,"out":42.338,"outDur":0.25,"hold":false},{"id":"deadline-e1t","t":"text","from":"bottom","exit":null,"in":21.04,"out":24.868000000000002,"outDur":0.3,"hold":false,"words":[20.64,20.74,20.84]},{"id":"deadline-t4","t":"text","from":"top","exit":null,"in":19.16,"out":24.868000000000002,"outDur":0.3,"hold":false,"words":[19.16,20.64,21.04,21.14,21.24]},{"id":"deadline-e0","t":"bar","from":"draw","exit":null,"in":25.708,"out":42.413,"outDur":0.25,"hold":false},{"id":"deadline-t5","t":"text","from":"top","exit":null,"in":25.708,"out":28.688000000000002,"outDur":0.3,"hold":false,"words":[25.708,26.028,26.368,26.948,27.888]},{"id":"deadline-e2","t":"bar","from":"draw","exit":null,"in":31.608,"out":42.463,"outDur":0.25,"hold":false},{"id":"deadline-t6","t":"text","from":"top","exit":null,"in":29.688,"out":32.827999999999996,"outDur":0.3,"hold":false,"words":[29.688,29.988,30.148,30.248,30.348]},{"id":"deadline-t7","t":"text","from":"top","exit":null,"in":33.153,"out":35.153,"outDur":0.3,"hold":false,"words":[33.848,34.048,34.048,34.048,34.428]},{"id":"deadline-t8","t":"text","from":"top","exit":null,"in":35.632999999999996,"out":37.333,"outDur":0.3,"hold":false,"words":[35.533,36.433,36.433,36.733]},{"id":"deadline-t9","t":"text","from":"top","exit":null,"in":37.933,"out":41.233,"outDur":0.3,"hold":false,"words":[37.573,37.933,38.113,38.453,38.733]},{"id":"deadline-hero","t":"text","from":"slam","exit":null,"in":41.473,"out":42.588,"outDur":0.25,"hold":false,"words":[41.473,41.673,41.753,42.173,42.433]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4},"explain":{"aLu":40,"aLl":78,"aRu":-40,"aRl":-78,"hd":0},"explainR":{"aLu":12,"aLl":-4,"aRu":-40,"aRl":-72,"hd":-4},"present":{"aLu":14,"aLl":-4,"aRu":-96,"aRl":-34,"hd":-6},"presentL":{"aLu":96,"aLl":34,"aRu":-14,"aRl":4,"hd":6},"chin":{"aLu":24,"aLl":-104,"aRu":-70,"aRl":198,"hd":8},"ear":{"aLu":14,"aLl":-4,"aRu":-100,"aRl":246,"hd":10},"wave":{"aLu":14,"aLl":-4,"aRu":-150,"aRl":-20,"hd":-4},"count":{"aLu":14,"aLl":-4,"aRu":-60,"aRl":-100},"lean":{"aLu":20,"aLl":-10,"aRu":-20,"aRl":10,"hd":10,"hy":4},"tiltL":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4,"hd":-10},"handsHips":{"aLu":40,"aLl":-100,"aRu":-40,"aRl":100,"hd":0},"embarrassed":{"aLu":6,"aLl":0,"aRu":-30,"aRl":150,"hy":10,"hd":6},"search":{"aLu":30,"aLl":-30,"aRu":-30,"aRl":30,"hd":-12}};
+      const MOUTHS = ["neutral","smile","frown","o","tight","open","grin"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (e.hold) {
+        } else if (ex === "cut") {
+          tl.set(inner, { opacity: 0 }, e.out);
+        } else if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["deadline"] = tl;
+    })();
+  </script>
+</template>

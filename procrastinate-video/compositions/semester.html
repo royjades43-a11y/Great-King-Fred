@@ -1,0 +1,276 @@
+<template>
+  <style>
+    @font-face { font-family: "Montserrat"; font-weight: 600; font-style: normal; src: url("assets/fonts/montserrat-600.woff2") format("woff2"); }
+    @font-face { font-family: "Montserrat"; font-weight: 800; font-style: normal; src: url("assets/fonts/montserrat-800.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; font-family: "Montserrat", sans-serif; }
+    .el { display: flex; align-items: center; justify-content: center; pointer-events: none; }
+    .in { position: relative; display: flex; align-items: center; justify-content: center; }
+    .txt { white-space: nowrap; letter-spacing: -0.03em; line-height: 1.05; text-align: center; text-shadow: 0 4px 0 var(--shadow-soft), 0 10px 18px var(--shadow-soft); }
+    .txt .w { display: inline-block; }
+    .acc { color: var(--accent); }
+    .alm { color: var(--alarm); }
+    .tail { color: var(--ink); }
+    .chap { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+    .chap-num { font-family: "Montserrat", sans-serif; font-size: 240px; font-weight: 800; letter-spacing: -0.04em; line-height: 0.9; color: var(--ink); text-shadow: 0 8px 0 var(--shadow-soft), 0 18px 30px var(--shadow); }
+    .chap-rule { width: 120px; height: 10px; border-radius: 5px; background: var(--accent); box-shadow: 0 6px 10px var(--shadow-soft); }
+    .hero { font-family: "Montserrat", sans-serif; font-weight: 800 !important; letter-spacing: -0.03em; text-transform: uppercase; word-spacing: 0.12em; }
+    .ico svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(0 12px 14px var(--shadow-soft)); }
+    .ico .s { fill: none; stroke: currentColor; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    .ico .f { fill: currentColor; stroke: none; }
+    .ico .a2 { stroke: var(--accent2); }
+    .ico .acc-s { stroke: var(--accent); }
+    .ico .alm-s { stroke: var(--alarm); }
+    .ico .alm-f { fill: var(--alarm); stroke: none; }
+    .ico .card-f { fill: var(--card); }
+    .ico .t { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; fill: var(--ink); text-anchor: middle; }
+    .bub { position: relative; color: var(--ink); }
+    .bub-t { position: absolute; inset: 0 0 18% 0; padding: 0 11%; text-align: center; line-height: 1.12; display: flex; align-items: center; justify-content: center; font-size: 70px; font-weight: 800; color: var(--ink); letter-spacing: 0.04em; }
+    .card { background: var(--card); border: 6px solid var(--ink); border-radius: 26px; padding: 26px 44px 30px; display: flex; flex-direction: column; gap: 6px; min-width: 520px; box-shadow: 0 10px 0 var(--shadow-soft), 0 24px 40px var(--shadow); }
+    .card .txt, .card div { text-shadow: none; }
+    .card-k { font-size: 30px; font-weight: 800; color: var(--accent); letter-spacing: 0.12em; }
+    .card-t { font-size: 54px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
+    .card-s { font-size: 36px; font-weight: 600; color: var(--muted); }
+    .barw { position: relative; width: 1px; }
+    .bar { position: absolute; left: 50%; border-radius: 14px 14px 0 0; transform-origin: 50% 100%; }
+    .bar-l { position: absolute; left: 0; width: 400px; margin-left: -200px; text-align: center; font-size: 36px; font-weight: 800; color: var(--ink); }
+    .strike { height: 12px; border-radius: 6px; background: var(--alarm); transform-origin: 0% 50%; box-shadow: 0 5px 8px var(--shadow); }
+    .stamp { border: 10px solid var(--alarm); color: var(--alarm); background: rgba(241, 245, 239, 0.55); border-radius: 18px; padding: 10px 34px; font-weight: 800; letter-spacing: 0.08em; box-shadow: 0 8px 0 var(--shadow-soft), 0 18px 26px var(--shadow); }
+    .meter { position: relative; width: 74px; border: 8px solid var(--ink); border-radius: 37px; overflow: visible; }
+    .meter-fill { position: absolute; left: 8px; right: 8px; bottom: 8px; top: 8px; border-radius: 26px; background: var(--muted); opacity: 0.35; transform-origin: 50% 100%; }
+    .meter-mark { position: absolute; left: -26px; width: 110px; height: 10px; border-radius: 5px; background: var(--alarm); }
+    .meter-mark span { position: absolute; left: 130px; top: -18px; font-size: 32px; font-weight: 800; color: var(--alarm); white-space: nowrap; }
+    .slot { position: relative; width: 440px; height: 300px; }
+    .slot-box { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .slot-box rect { fill: var(--card); stroke: var(--ink); stroke-width: 8; }
+    .slot-n { position: absolute; left: 50%; top: -38px; width: 76px; height: 76px; margin-left: -38px; border-radius: 38px; background: var(--ink); color: var(--paper); font-size: 40px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+    .slot-t { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+    .slot-t .txt { white-space: normal; width: 360px; line-height: 1.1; }
+    .ico .s.thin { stroke-width: 1.2; }
+    .ico .s.mid { stroke-width: 2; }
+    .stick { overflow: visible; filter: drop-shadow(0 6px 0 var(--shadow-soft)) drop-shadow(8px 14px 12px var(--shadow-soft)); }
+    .stick .s { fill: none; stroke: var(--ink); stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+    .stick .face { fill: var(--paper); }
+    .stick .ground { fill: var(--shadow); stroke: none; }
+    .stick .f { fill: var(--ink); }
+    .stick .bow { fill: var(--accent); stroke: none; }
+    .stick .tat { fill: var(--accent); stroke: none; }
+  </style>
+  <div id="root" data-composition-id="semester" data-width="1920" data-height="1080">
+    <div id="semester-bg" class="clip el" data-start="0.2" data-duration="52.872" data-track-index="1" style="position:absolute;left:0px;top:40px;width:1920px;height:1040px;z-index:1;opacity:0.42" data-layout-allow-overlap><div id="semester-bg-in" class="in"><div class="ico" style="width:1920px;height:1920px;color:var(--muted)"><svg viewBox="0 0 200 200"><path d="M-20 137.5 L220 137.5" fill="none" stroke="currentColor" stroke-width="7" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M78 46 L176 46 L176 92 L78 92 Z" fill="none" stroke="currentColor" stroke-width="6" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M86 60 L120 60 M86 70 L140 70 M86 80 L110 80 M150 58 Q160 70 150 82" fill="none" stroke="currentColor" stroke-width="3" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M82 96 L172 96" fill="none" stroke="currentColor" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 52 m-10 0 a10 10 0 1 0 20 0 a10 10 0 1 0 -20 0 M24 46 L24 52 L28 55" fill="none" stroke="currentColor" stroke-width="4" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/><path d="M96 120 L124 120 M100 120 L100 137.5 M120 120 L120 137.5 M146 120 L174 120 M150 120 L150 137.5 M170 120 L170 137.5" fill="none" stroke="currentColor" stroke-width="5" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div></div>
+    <div id="semester-h" class="clip el" data-start="0.2" data-duration="52.872" data-track-index="2" style="position:absolute;left:0px;top:300px;width:800px;height:780px;z-index:3"><div id="semester-h-in" class="in"><svg class="stick" id="semester-h-svg" width="300" height="520" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="semester-h-aLu"><path class="s" d="M150 160 L150 255"/><g id="semester-h-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="semester-h-aRu"><path class="s" d="M150 160 L150 255"/><g id="semester-h-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="semester-h-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="semester-h-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="semester-h-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="semester-h-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="semester-h-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="semester-h-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="semester-h-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="semester-h-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="semester-t0" class="clip el" data-start="0.2" data-duration="1.88" data-track-index="3" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:4"><div id="semester-t0-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="semester-t0-w0" class="w">it</span> <span id="semester-t0-w1" class="w">gets</span> <span id="semester-t0-w2" class="w acc">interesting</span></div></div></div>
+    <div id="semester-c1" class="clip el" data-start="2.06" data-duration="7.514" data-track-index="4" style="position:absolute;left:780px;top:0px;width:1140px;height:440px;z-index:5"><div id="semester-c1-in" class="in"><div class="card"><div class="card-k">1997 · TICE &amp; BAUMEISTER</div><div class="card-t">A whole semester of students</div><div class="card-s">psychologists</div></div></div></div>
+    <div id="semester-s0" class="clip el" data-start="6.694" data-duration="30.336" data-track-index="5" style="position:absolute;left:280px;top:300px;width:1640px;height:780px;z-index:6"><div id="semester-s0-in" class="in"><svg class="stick" id="semester-s0-svg" width="240" height="416" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="semester-s0-aLu"><path class="s" d="M150 160 L150 255"/><g id="semester-s0-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="semester-s0-aRu"><path class="s" d="M150 160 L150 255"/><g id="semester-s0-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="semester-s0-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="semester-s0-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="semester-s0-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="semester-s0-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="semester-s0-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="semester-s0-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="semester-s0-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="semester-s0-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="semester-s1" class="clip el" data-start="6.694" data-duration="30.336" data-track-index="6" style="position:absolute;left:840px;top:300px;width:1080px;height:780px;z-index:7"><div id="semester-s1-in" class="in"><svg class="stick" id="semester-s1-svg" width="240" height="416" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g>
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="semester-s1-aLu"><path class="s" d="M150 160 L150 255"/><g id="semester-s1-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="semester-s1-aRu"><path class="s" d="M150 160 L150 255"/><g id="semester-s1-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="semester-s1-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/><path class="bow" d="M178 34 L206 18 L204 50 Z"/><path class="bow" d="M178 34 L196 6 L210 28 Z"/><circle class="f" cx="182" cy="34" r="7"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="semester-s1-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="semester-s1-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="semester-s1-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="semester-s1-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="semester-s1-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="semester-s1-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="semester-s1-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="semester-s2" class="clip el" data-start="6.694" data-duration="30.336" data-track-index="7" style="position:absolute;left:1400px;top:300px;width:520px;height:780px;z-index:8"><div id="semester-s2-in" class="in"><svg class="stick" id="semester-s2-svg" width="240" height="416" viewBox="0 0 300 520">
+  <ellipse class="ground" cx="150" cy="496" rx="92" ry="12"/>
+  <g transform="translate(300,0) scale(-1,1)">
+    <path class="s" d="M150 140 L150 300"/>
+    <path class="s" d="M150 300 L106 492"/><path class="s" d="M150 300 L194 492"/>
+    <g id="semester-s2-aLu"><path class="s" d="M150 160 L150 255"/><g id="semester-s2-aLl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="semester-s2-aRu"><path class="s" d="M150 160 L150 255"/><g id="semester-s2-aRl"><path class="s" d="M150 255 L150 340"/></g></g>
+    <g id="semester-s2-hd">
+      <circle class="s face" cx="150" cy="80" r="56"/>
+      <g class="eye"><circle class="f" cx="131" cy="74" r="7"/><circle class="f" cx="169" cy="74" r="7"/></g>
+      <g id="semester-s2-m-neutral"><path class="s" d="M132 102 L168 102"/></g><g id="semester-s2-m-smile"><path class="s" d="M128 96 Q150 120 172 96"/></g><g id="semester-s2-m-frown"><path class="s" d="M130 110 Q150 92 170 110"/></g><g id="semester-s2-m-o"><ellipse class="s" cx="150" cy="104" rx="9" ry="11"/></g><g id="semester-s2-m-tight"><path class="s" d="M136 104 L164 100"/></g><g id="semester-s2-m-open"><path class="s" d="M134 100 Q150 116 166 100 Z"/></g><g id="semester-s2-m-grin"><path class="s" d="M126 94 Q150 124 174 94 Z"/></g>
+    </g>
+  </g>
+</svg></div></div>
+    <div id="semester-bk0" class="clip el" data-start="25.991" data-duration="3.07" data-track-index="8" style="position:absolute;left:280px;top:0px;width:1640px;height:940px;z-index:9" data-layout-allow-overlap><div id="semester-bk0-in" class="in"><div class="ico" style="width:90px;height:90px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 52 Q60 32 18 46 L18 168 Q60 154 100 174 Q140 154 182 168 L182 46 Q140 32 100 52 Z"/><path class="s" pathLength="1" d="M100 52 L100 174"/><path class="s acc-s" pathLength="1" d="M40 80 L80 86 M40 108 L80 114 M120 86 L160 80 M120 114 L160 108"/></svg></div></div></div>
+    <div id="semester-bk2" class="clip el" data-start="25.991" data-duration="3.07" data-track-index="9" style="position:absolute;left:1400px;top:0px;width:520px;height:940px;z-index:10" data-layout-allow-overlap><div id="semester-bk2-in" class="in"><div class="ico" style="width:90px;height:90px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M100 52 Q60 32 18 46 L18 168 Q60 154 100 174 Q140 154 182 168 L182 46 Q140 32 100 52 Z"/><path class="s" pathLength="1" d="M100 52 L100 174"/><path class="s acc-s" pathLength="1" d="M40 80 L80 86 M40 108 L80 114 M120 86 L160 80 M120 114 L160 108"/></svg></div></div></div>
+    <div id="semester-t1" class="clip el" data-start="9.674" data-duration="4.751" data-track-index="10" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:11"><div id="semester-t1-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="semester-t1-w0" class="w">who</span> <span id="semester-t1-w1" class="w">procrastinated…</span> <span id="semester-t1-w2" class="w acc">stress</span> <span id="semester-t1-w3" class="w">and</span> <span id="semester-t1-w4" class="w acc">health</span></div></div></div>
+    <div id="semester-t2" class="clip el" data-start="14.325" data-duration="3.74" data-track-index="11" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:12"><div id="semester-t2-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="semester-t2-w0" class="w">early</span> <span id="semester-t2-w1" class="w">on:</span> <span id="semester-t2-w2" class="w">they</span> <span id="semester-t2-w3" class="w">looked</span> <span id="semester-t2-w4" class="w">like</span> <span id="semester-t2-w5" class="w acc">winners</span></div></div></div>
+    <div id="semester-g1" class="clip el" data-start="18.185" data-duration="4.74" data-track-index="12" style="position:absolute;left:840px;top:0px;width:1080px;height:760px;z-index:13"><div id="semester-g1-in" class="in"><div class="txt" style="font-size:44px;font-weight:800;color:var(--accent)"><span id="semester-g1-w0" class="w">less</span> <span id="semester-g1-w1" class="w">stressed</span></div></div></div>
+    <div id="semester-g2" class="clip el" data-start="20.965" data-duration="1.96" data-track-index="13" style="position:absolute;left:840px;top:0px;width:1080px;height:620px;z-index:14"><div id="semester-g2-in" class="in"><div class="txt" style="font-size:44px;font-weight:800;color:var(--accent)"><span id="semester-g2-w0" class="w">less</span> <span id="semester-g2-w1" class="w">illness</span></div></div></div>
+    <div id="semester-t3" class="clip el" data-start="23.245" data-duration="3.726" data-track-index="14" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:15"><div id="semester-t3-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="semester-t3-w0" class="w">the</span> <span id="semester-t3-w1" class="w acc">relaxed</span> <span id="semester-t3-w2" class="w">ones</span></div></div></div>
+    <div id="semester-dl" class="clip el" data-start="27.571" data-duration="1.49" data-track-index="15" style="position:absolute;left:840px;top:0px;width:1080px;height:720px;z-index:16" data-layout-allow-overlap><div id="semester-dl-in" class="in"><div class="stamp" style="font-size:90px">DEADLINE</div></div></div>
+    <div id="semester-th" class="clip el" data-start="33.211" data-duration="3.769" data-track-index="16" style="position:absolute;left:1120px;top:0px;width:800px;height:940px;z-index:17" data-layout-allow-overlap><div id="semester-th-in" class="in"><div class="ico" style="width:130px;height:130px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M86 30 Q86 16 100 16 Q114 16 114 30 L114 128 Q132 140 130 160 Q126 186 100 186 Q74 186 70 160 Q68 140 86 128 Z"/><circle class="alm-f" cx="100" cy="158" r="17"/><path class="s acc-s" pathLength="1" d="M100 150 L100 60"/><path class="s thin" pathLength="1" d="M118 50 L130 50 M118 74 L130 74 M118 98 L130 98"/></svg></div></div></div>
+    <div id="semester-t4" class="clip el" data-start="32.35" data-duration="2.34" data-track-index="17" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:18"><div id="semester-t4-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="semester-t4-w0" class="w">the</span> <span id="semester-t4-w1" class="w">end</span> <span id="semester-t4-w2" class="w">of</span> <span id="semester-t4-w3" class="w">the</span> <span id="semester-t4-w4" class="w">semester</span></div></div></div>
+    <div id="semester-gp" class="clip el" data-start="34.95" data-duration="2.03" data-track-index="18" style="position:absolute;left:540px;top:0px;width:1380px;height:940px;z-index:19" data-layout-allow-overlap><div id="semester-gp-in" class="in"><div class="ico" style="width:120px;height:120px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M64 20 L150 20 L176 46 L176 168 L64 168 Z"/><path class="s" pathLength="1" d="M150 20 L150 46 L176 46"/><path class="s" pathLength="1" d="M44 40 L44 184 L156 184"/><path class="s" pathLength="1" d="M24 60 L24 198 L136 198"/><path class="s acc-s" pathLength="1" d="M88 76 L152 76 M88 104 L152 104 M88 132 L132 132"/></svg></div></div></div>
+    <div id="semester-gc" class="clip el" data-start="35.89" data-duration="1.09" data-track-index="19" style="position:absolute;left:540px;top:0px;width:1380px;height:940px;z-index:20"><div id="semester-gc-in" class="in"><div class="txt" style="font-size:70px;font-weight:800;color:var(--accent)"><span id="semester-gc-w0" class="w">C</span></div></div></div>
+    <div id="semester-t5" class="clip el" data-start="34.95" data-duration="2.08" data-track-index="20" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:21"><div id="semester-t5-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="semester-t5-w0" class="w">lower</span> <span id="semester-t5-w1" class="w acc">grades</span></div></div></div>
+    <div id="semester-x1" class="clip el" data-start="38.99" data-duration="4.55" data-track-index="21" style="position:absolute;left:380px;top:640px;width:1540px;height:440px;z-index:22"><div id="semester-x1-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:360px;background:var(--accent);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">put it off</div></div></div></div>
+    <div id="semester-x2" class="clip el" data-start="38.99" data-duration="4.55" data-track-index="22" style="position:absolute;left:1180px;top:640px;width:740px;height:440px;z-index:23"><div id="semester-x2-in" class="in"><div class="barw" style="height:440px"><div class="bar" style="width:170px;height:230px;background:var(--muted);bottom:50%;margin-left:-85px"></div><div class="bar-l" style="top:calc(50% + 14px)">everyone else</div></div></div></div>
+    <div id="semester-t6" class="clip el" data-start="36.93" data-duration="6.66" data-track-index="23" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:24"><div id="semester-t6-in" class="in"><div class="txt" style="font-size:58px;font-weight:800;color:var(--ink)"><span id="semester-t6-w0" class="w">all</span> <span id="semester-t6-w1" class="w">added</span> <span id="semester-t6-w2" class="w">up:</span> <span id="semester-t6-w3" class="w acc">more</span> <span id="semester-t6-w4" class="w">stress</span> <span id="semester-t6-w5" class="w">and</span> <span id="semester-t6-w6" class="w">illness</span></div></div></div>
+    <div id="semester-t7" class="clip el" data-start="43.49" data-duration="1.902" data-track-index="24" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:25"><div id="semester-t7-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="semester-t7-w0" class="w">the</span> <span id="semester-t7-w1" class="w">relief</span> <span id="semester-t7-w2" class="w">was</span> <span id="semester-t7-w3" class="w acc">real<span class="tail">…</span></span></div></div></div>
+    <div id="semester-my" class="clip el" data-start="45.752" data-duration="2.95" data-track-index="25" style="position:absolute;left:780px;top:40px;width:1140px;height:1040px;z-index:26" data-layout-allow-overlap><div id="semester-my-in" class="in"><div class="ico" style="width:200px;height:200px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M14 64 L186 64 L186 150 L14 150 Z"/><path class="s" pathLength="1" d="M24 160 L196 160 M34 172 L196 172"/><path class="s acc-s" pathLength="1" d="M118 86 Q100 76 86 86 Q76 98 100 107 Q124 115 114 128 Q100 138 80 128 M100 72 L100 142"/></svg></div></div></div>
+    <div id="semester-in" class="clip el" data-start="47.312" data-duration="1.44" data-track-index="26" style="position:absolute;left:780px;top:440px;width:1140px;height:640px;z-index:27"><div id="semester-in-in" class="in"><div class="txt" style="font-size:56px;font-weight:800;color:var(--accent)"><span id="semester-in-w0" class="w">+</span> <span id="semester-in-w1" class="w">interest</span></div></div></div>
+    <div id="semester-t8" class="clip el" data-start="45.752" data-duration="3" data-track-index="27" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:28"><div id="semester-t8-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="semester-t8-w0" class="w">…just</span> <span id="semester-t8-w1" class="w acc">borrowed</span></div></div></div>
+    <div id="semester-t9" class="clip el" data-start="48.652" data-duration="1.68" data-track-index="28" style="position:absolute;left:0px;top:0px;width:1920px;height:340px;z-index:29"><div id="semester-t9-in" class="in"><div class="txt" style="font-size:64px;font-weight:800;color:var(--ink)"><span id="semester-t9-w0" class="w">you've</span> <span id="semester-t9-w1" class="w">probably</span> <span id="semester-t9-w2" class="w acc">felt</span> <span id="semester-t9-w3" class="w">this</span></div></div></div>
+    <div id="semester-cw" class="clip el" data-start="50.792" data-duration="2.105" data-track-index="29" style="position:absolute;left:380px;top:0px;width:1540px;height:1040px;z-index:30" data-layout-allow-overlap><div id="semester-cw-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s acc-s" pathLength="1" d="M100 100 m-38 0 a38 38 0 1 0 76 0 a38 38 0 1 0 -76 0"/><path class="s" pathLength="1" d="M100 18 L100 40 M100 160 L100 182 M18 100 L40 100 M160 100 L182 100 M42 42 L58 58 M142 142 L158 158 M158 42 L142 58 M58 142 L42 158"/></svg></div></div></div>
+    <div id="semester-cwt" class="clip el" data-start="50.792" data-duration="2.18" data-track-index="30" style="position:absolute;left:380px;top:400px;width:1540px;height:680px;z-index:31"><div id="semester-cwt-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--muted)"><span id="semester-cwt-w0" class="w">the</span> <span id="semester-cwt-w1" class="w">calm</span> <span id="semester-cwt-w2" class="w">week</span></div></div></div>
+    <div id="semester-ln" class="clip el" data-start="52.632" data-duration="0.44" data-track-index="31" style="position:absolute;left:1240px;top:0px;width:680px;height:1040px;z-index:32" data-layout-allow-overlap><div id="semester-ln-in" class="in"><div class="ico" style="width:170px;height:170px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M128 26 A78 78 0 1 0 174 142 A62 62 0 1 1 128 26 Z"/><path class="s acc-s" pathLength="1" d="M150 50 L150 66 M142 58 L158 58"/></svg></div></div></div>
+    <div id="semester-lc" class="clip el" data-start="52.952" data-duration="0.12" data-track-index="32" style="position:absolute;left:1440px;top:200px;width:480px;height:880px;z-index:33" data-layout-allow-overlap><div id="semester-lc-in" class="in"><div class="ico" style="width:90px;height:90px;color:var(--ink)"><svg viewBox="0 0 200 200"><path class="s" pathLength="1" d="M40 72 L150 72 L140 172 Q138 182 128 182 L62 182 Q52 182 50 172 Z"/><path class="s" pathLength="1" d="M148 92 Q182 92 178 122 Q174 146 144 142"/><path class="s acc-s" pathLength="1" d="M78 54 Q66 38 78 22 M110 54 Q98 38 110 22"/></svg></div></div></div>
+    <div id="semester-lnt" class="clip el" data-start="51.007" data-duration="2.04" data-track-index="33" style="position:absolute;left:1240px;top:400px;width:680px;height:680px;z-index:34"><div id="semester-lnt-in" class="in"><div class="txt" style="font-size:38px;font-weight:800;color:var(--muted)"><span id="semester-lnt-w0" class="w">the</span> <span id="semester-lnt-w1" class="w">very</span> <span id="semester-lnt-w2" class="w">long</span> <span id="semester-lnt-w3" class="w">night</span></div></div></div>
+  </div>
+  <script>
+    (function () {
+      const ELS = [{"id":"semester-bg","t":"icon","from":"blur","exit":null,"in":0.2,"out":53.032,"outDur":0.25,"hold":false},{"id":"semester-h","t":"stick","from":"left","exit":null,"in":0.2,"out":53.032,"outDur":0.3,"hold":false,"poses":[["lean",0.86],["present",1.98],["explain",9.674],["presentL",14.325],["happy",23.245],["chin",26.871],["explainR",29.011],["shrug",34.95],["count",36.93],["explain",43.49],["handsHips",45.752],["happy",48.652],["lean",50.792]],"mouth":[["smile",0.2],["open",0.45],["smile",0.66],["open",0.75],["smile",0.85],["open",0.87],["smile",0.97],["open",1.01],["smile",1.11],["o",1.11],["smile",1.33],["open",2.23],["smile",2.31],["o",2.31],["smile",2.53],["o",2.809],["smile",3.029],["o",3.584],["smile",3.804],["o",4.204],["smile",4.424],["o",4.788],["smile",5.008],["open",5.204],["smile",5.344],["open",5.404],["smile",5.544],["o",5.604],["smile",5.824],["o",6.304],["smile",6.524],["open",6.764],["smile",6.89],["open",6.944],["smile",7.084],["open",7.144],["smile",7.298],["o",7.364],["smile",7.584],["o",7.684],["smile",7.904],["open",8.104],["smile",8.286],["open",8.364],["smile",8.49],["open",8.544],["smile",8.684],["o",8.744],["smile",8.964],["open",9.724],["smile",9.864],["o",9.924],["smile",10.144],["open",10.264],["smile",10.474],["o",10.564],["smile",10.784],["o",11.384],["smile",11.604],["open",11.804],["smile",11.93],["open",11.984],["smile",12.096],["open",12.144],["smile",12.354],["open",12.444],["smile",12.598],["o",12.664],["smile",12.884],["open",13.324],["smile",13.492],["open",13.564],["smile",13.746],["o",13.824],["smile",14.044],["open",14.575],["smile",14.785],["open",14.875],["smile",14.975],["open",15.015],["smile",15.095],["o",15.095],["smile",15.315],["open",15.875],["smile",15.935],["o",15.935],["smile",16.155],["open",16.655],["smile",16.865],["open",16.955],["smile",17.123],["open",17.195],["smile",17.335],["o",17.395],["smile",17.615],["open",18.215],["smile",18.315],["open",18.315],["smile",18.415],["open",18.435],["smile",18.631],["o",18.715],["smile",18.935],["open",19.075],["smile",19.257],["o",19.335],["smile",19.555],["open",19.675],["smile",19.885],["open",20.355],["smile",20.455],["o",20.475],["smile",20.695],["o",20.815],["smile",21.035],["o",21.215],["smile",21.435],["o",21.615],["smile",21.835],["open",21.975],["smile",22.143],["open",22.215],["smile",22.397],["open",23.075],["smile",23.175],["open",23.215],["smile",23.327],["open",23.375],["smile",23.475],["o",23.495],["smile",23.715],["o",23.895],["smile",24.115],["open",24.561],["smile",24.673],["o",24.721],["smile",24.941],["o",25.221],["smile",25.441],["open",25.561],["smile",25.701],["o",25.761],["smile",25.981],["o",26.241],["smile",26.461],["neutral",26.871],["o",27.121],["neutral",27.341],["o",27.461],["neutral",27.681],["o",27.821],["neutral",28.041],["o",28.261],["neutral",28.481],["open",29.261],["neutral",29.341],["open",29.341],["neutral",29.441],["open",29.461],["neutral",29.657],["open",29.741],["neutral",29.841],["open",29.861],["neutral",29.961],["o",29.981],["neutral",30.201],["open",30.761],["neutral",30.821],["o",30.821],["neutral",31.041],["open",31.561],["neutral",31.701],["o",31.761],["neutral",31.981],["o",32.101],["neutral",32.321],["o",32.461],["neutral",32.681],["open",33.001],["neutral",33.113],["open",33.161],["frown",33.211],["open",33.281],["frown",33.407],["o",33.461],["frown",33.681],["o",33.801],["frown",34.021],["o",34.121],["frown",34.341],["open",34.84],["frown",34.994],["open",35.06],["frown",35.16],["open",35.2],["frown",35.41],["open",35.5],["frown",35.64],["open",35.7],["frown",35.8],["o",35.8],["frown",36.02],["open",36.12],["frown",36.288],["o",36.36],["frown",36.58],["neutral",36.93],["open",37.18],["neutral",37.348],["open",37.42],["neutral",37.546],["open",37.6],["neutral",37.768],["open",37.84],["neutral",37.94],["open",37.98],["neutral",38.162],["o",38.24],["neutral",38.46],["open",39.18],["neutral",39.24],["o",39.24],["neutral",39.46],["o",39.94],["neutral",40.16],["open",40.5],["neutral",40.696],["open",40.78],["neutral",40.934],["open",41],["neutral",41.112],["o",41.16],["neutral",41.38],["o",41.52],["neutral",41.74],["o",41.92],["neutral",42.14],["o",42.5],["neutral",42.72],["open",42.84],["neutral",43.05],["smile",43.49],["open",43.74],["smile",43.84],["open",43.84],["smile",44.036],["o",44.12],["smile",44.34],["open",44.46],["smile",44.656],["o",44.74],["smile",44.96],["open",45.542],["smile",45.642],["open",45.662],["smile",45.762],["open",45.802],["smile",45.942],["o",46.002],["smile",46.222],["o",46.462],["smile",46.682],["open",47.042],["smile",47.122],["open",47.122],["smile",47.29],["open",47.362],["smile",47.558],["open",47.642],["smile",47.838],["o",47.922],["smile",48.142],["grin",48.652],["open",48.902],["grin",49.112],["o",49.202],["grin",49.422],["open",49.542],["grin",49.724],["open",49.802],["grin",49.928],["o",49.982],["grin",50.202],["o",50.482],["grin",50.702],["smile",50.792],["open",51.042],["smile",51.252],["o",51.342],["smile",51.562],["o",51.682],["smile",51.902],["open",52.162],["smile",52.274],["open",52.322],["smile",52.422],["o",52.462],["smile",52.682],["o",52.882],["smile",53.102]]},{"id":"semester-t0","t":"text","from":"top","exit":null,"in":0.2,"out":1.74,"outDur":0.3,"hold":false,"words":[0.62,0.76,0.86]},{"id":"semester-c1","t":"card","from":"top","exit":null,"in":2.06,"out":9.234,"outDur":0.3,"hold":false},{"id":"semester-s0","t":"stick","from":"bottom","exit":null,"in":6.694,"out":36.69,"outDur":0.3,"hold":false,"poses":[["headDown",9.674],["strain",25.991],["idle",29.011]],"mouth":[["neutral",6.694],["tight",25.991],["smile",34.59]]},{"id":"semester-s1","t":"stick","from":"bottom","exit":null,"in":6.694,"out":36.69,"outDur":0.3,"hold":false,"poses":[["idle",9.674],["lean",17.145],["happy",18.185],["holdHead",28.011],["sorry",33.211]],"mouth":[["smile",6.694],["grin",17.145],["o",28.011],["frown",33.211]]},{"id":"semester-s2","t":"stick","from":"bottom","exit":null,"in":6.694,"out":36.69,"outDur":0.3,"hold":false,"poses":[["headDown",9.674],["strain",25.991],["idle",29.011]],"mouth":[["neutral",6.694],["tight",25.991],["smile",34.59]]},{"id":"semester-bk0","t":"icon","from":"pop","exit":null,"in":25.991,"out":28.771,"outDur":0.25,"hold":false},{"id":"semester-bk2","t":"icon","from":"pop","exit":null,"in":25.991,"out":28.771,"outDur":0.25,"hold":false},{"id":"semester-t1","t":"text","from":"top","exit":null,"in":9.674,"out":14.084999999999999,"outDur":0.3,"hold":false,"words":[10.014,10.314,13.074,13.314,13.574]},{"id":"semester-t2","t":"text","from":"top","exit":null,"in":14.325,"out":17.725,"outDur":0.3,"hold":false,"words":[14.325,16.405,16.405,16.405,16.705,17.145]},{"id":"semester-g1","t":"text","from":"bottom","exit":null,"in":18.185,"out":22.585,"outDur":0.3,"hold":false,"words":[18.185,18.465]},{"id":"semester-g2","t":"text","from":"bottom","exit":null,"in":20.965,"out":22.585,"outDur":0.3,"hold":false,"words":[21.965,21.965]},{"id":"semester-t3","t":"text","from":"top","exit":null,"in":23.245,"out":26.631,"outDur":0.3,"hold":false,"words":[23.125,23.245,23.645]},{"id":"semester-dl","t":"stamp","from":"slam","exit":null,"in":27.571,"out":28.771,"outDur":0.25,"hold":false},{"id":"semester-th","t":"icon","from":"pop","exit":null,"in":33.211,"out":36.69,"outDur":0.25,"hold":false},{"id":"semester-t4","t":"text","from":"top","exit":null,"in":32.35,"out":34.35,"outDur":0.3,"hold":false,"words":[29.091,29.211,29.491,29.611,29.731]},{"id":"semester-gp","t":"icon","from":"pop","exit":null,"in":34.95,"out":36.69,"outDur":0.25,"hold":false},{"id":"semester-gc","t":"text","from":"slam","exit":null,"in":35.89,"out":36.69,"outDur":0.25,"hold":false,"words":[36.21]},{"id":"semester-t5","t":"text","from":"top","exit":null,"in":34.95,"out":36.69,"outDur":0.3,"hold":false,"words":[36.11,36.21]},{"id":"semester-x1","t":"bar","from":"draw","exit":null,"in":38.99,"out":43.25,"outDur":0.25,"hold":false},{"id":"semester-x2","t":"bar","from":"draw","exit":null,"in":38.99,"out":43.25,"outDur":0.25,"hold":false},{"id":"semester-t6","t":"text","from":"top","exit":null,"in":36.93,"out":43.25,"outDur":0.3,"hold":false,"words":[36.93,36.93,37.17,40.91,41.27,41.67,42.59]},{"id":"semester-t7","t":"text","from":"top","exit":null,"in":43.49,"out":45.052,"outDur":0.3,"hold":false,"words":[43.59,43.87,44.21,44.49]},{"id":"semester-my","t":"icon","from":"pop","exit":null,"in":45.752,"out":48.412,"outDur":0.25,"hold":false},{"id":"semester-in","t":"text","from":"bottom","exit":null,"in":47.312,"out":48.412,"outDur":0.3,"hold":false,"words":[47.672,47.672]},{"id":"semester-t8","t":"text","from":"top","exit":null,"in":45.752,"out":48.412,"outDur":0.3,"hold":false,"words":[45.552,45.752]},{"id":"semester-t9","t":"text","from":"top","exit":null,"in":48.652,"out":49.992,"outDur":0.3,"hold":false,"words":[48.652,48.952,49.292,49.552]},{"id":"semester-cw","t":"icon","from":"pop","exit":null,"in":50.792,"out":52.607,"outDur":0.25,"hold":false},{"id":"semester-cwt","t":"text","from":"bottom","exit":null,"in":50.792,"out":52.632,"outDur":0.3,"hold":false,"words":[50.232,50.792,51.092]},{"id":"semester-ln","t":"icon","from":"pop","exit":null,"in":52.632,"out":53.232,"outDur":0.25,"hold":false},{"id":"semester-lc","t":"icon","from":"pop","exit":null,"in":52.952,"out":53.552,"outDur":0.25,"hold":false},{"id":"semester-lnt","t":"text","from":"bottom","exit":null,"in":51.007,"out":52.707,"outDur":0.3,"hold":false,"words":[50.232,52.212,52.632,52.952]}];
+      const POSES = {"_org":{"aLu":"150 160","aLl":"150 255","aRu":"150 160","aRl":"150 255","hd":"150 140"},"idle":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4},"happy":{"aLu":28,"aLl":10,"aRu":-28,"aRl":-10,"hd":0},"headDown":{"aLu":6,"aLl":0,"aRu":-6,"aRl":0,"hd":0,"hy":16},"point":{"aLu":14,"aLl":-4,"aRu":-112,"aRl":-8},"strain":{"aLu":40,"aLl":-120,"aRu":-40,"aRl":120,"hy":6},"shrug":{"aLu":62,"aLl":-112,"aRu":-62,"aRl":112,"hd":8},"holdHead":{"aLu":150,"aLl":-128,"aRu":-150,"aRl":128,"hy":6},"armsCrossed":{"aLu":24,"aLl":-112,"aRu":-24,"aRl":112,"hd":-4},"victory":{"aLu":128,"aLl":22,"aRu":-128,"aRl":-22},"proud":{"aLu":44,"aLl":-84,"aRu":-44,"aRl":84,"hd":0},"sorry":{"aLu":8,"aLl":0,"aRu":-22,"aRl":128,"hy":12},"give":{"aLu":10,"aLl":0,"aRu":-78,"aRl":-10,"hd":4},"explain":{"aLu":40,"aLl":78,"aRu":-40,"aRl":-78,"hd":0},"explainR":{"aLu":12,"aLl":-4,"aRu":-40,"aRl":-72,"hd":-4},"present":{"aLu":14,"aLl":-4,"aRu":-96,"aRl":-34,"hd":-6},"presentL":{"aLu":96,"aLl":34,"aRu":-14,"aRl":4,"hd":6},"chin":{"aLu":24,"aLl":-104,"aRu":-70,"aRl":198,"hd":8},"ear":{"aLu":14,"aLl":-4,"aRu":-100,"aRl":246,"hd":10},"wave":{"aLu":14,"aLl":-4,"aRu":-150,"aRl":-20,"hd":-4},"count":{"aLu":14,"aLl":-4,"aRu":-60,"aRl":-100},"lean":{"aLu":20,"aLl":-10,"aRu":-20,"aRl":10,"hd":10,"hy":4},"tiltL":{"aLu":14,"aLl":-4,"aRu":-14,"aRl":4,"hd":-10},"handsHips":{"aLu":40,"aLl":-100,"aRu":-40,"aRl":100,"hd":0},"embarrassed":{"aLu":6,"aLl":0,"aRu":-30,"aRl":150,"hy":10,"hd":6},"search":{"aLu":30,"aLl":-30,"aRu":-30,"aRl":30,"hd":-12}};
+      const MOUTHS = ["neutral","smile","frown","o","tight","open","grin"];
+
+      const tl = gsap.timeline({ paused: true });
+      const OFF = { left: [-280, 0], right: [280, 0], top: [0, -220], bottom: [0, 220] };
+      const OPP = { left: "left", right: "right", top: "top", bottom: "bottom" };
+      const q = (s) => document.getElementById(s);
+      ELS.forEach((e) => {
+        const inner = "#" + e.id + "-in";
+        // ---- entrance ----
+        if (OFF[e.from]) {
+          const [x, y] = OFF[e.from];
+          tl.fromTo(inner, { x, y, opacity: 0, filter: "blur(14px)" },
+            { x: 0, y: 0, opacity: 1, filter: "blur(0px)", duration: 0.55, ease: "expo.out" }, e.in);
+        } else if (e.from === "slam") {
+          tl.fromTo(inner, { scale: 1.9, opacity: 0, filter: "blur(10px)", rotation: e.t === "stamp" ? -8 : 0 },
+            { scale: 1, opacity: 1, filter: "blur(0px)", rotation: e.t === "stamp" ? -8 : 0, duration: 0.36, ease: "power4.out" }, e.in);
+        } else if (e.from === "blur") {
+          tl.fromTo(inner, { opacity: 0, filter: "blur(18px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.5, ease: "power2.out" }, e.in);
+        } else if (e.from === "none") {
+          tl.set(inner, { opacity: 1 }, 0);
+        } else if (e.from === "draw") {
+          tl.fromTo(inner, { opacity: 0 }, { opacity: 1, duration: 0.12 }, e.in);
+        } else {
+          tl.fromTo(inner, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.45, ease: "back.out(1.7)" }, e.in);
+        }
+        // draw-on strokes / growing shapes
+        if (e.from === "draw") {
+          const paths = q(e.id).querySelectorAll("[pathLength]");
+          if (paths.length) tl.fromTo(paths, { strokeDasharray: 1, strokeDashoffset: 1 },
+            { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut", stagger: 0.08 }, e.in);
+        }
+        if (e.t === "bar") tl.fromTo("#" + e.id + " .bar", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+        if (e.t === "meter") {
+          tl.fromTo("#" + e.id + " .meter-fill", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "expo.out" }, e.in);
+          tl.fromTo("#" + e.id + " .meter-mark", { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.4, ease: "back.out(2)" }, e.in + 0.45);
+        }
+        if (e.t === "strike") tl.fromTo(inner + " .strike", { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power3.out" }, e.in);
+        if (e.t === "slot") {
+          tl.fromTo("#" + e.id + " rect", { strokeDasharray: 1, strokeDashoffset: 1 }, { strokeDasharray: 1, strokeDashoffset: 0, duration: 0.6, ease: "power2.inOut" }, e.in);
+          tl.fromTo("#" + e.id + " .slot-t", { opacity: 0, filter: "blur(8px)", y: 20 }, { opacity: 1, filter: "blur(0px)", y: 0, duration: 0.4, ease: "power4.out" }, e.fill);
+        }
+        // per-word reveal: each word lands on its own spoken word
+        if (e.words) e.words.forEach((t, i) => {
+          tl.fromTo("#" + e.id + "-w" + i, { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.16, ease: "power2.out" }, Math.max(e.in, t));
+        });
+        // ---- stickman acting ----
+        if (e.poses) {
+          const joints = ["aLu", "aLl", "aRu", "aRl", "hd"];
+          let prev = POSES[e.poses[0][0]];
+          joints.forEach((j) => tl.set("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] }, 0));
+          tl.set("#" + e.id + "-hd", { y: prev.hy || 0 }, 0);
+          e.poses.slice(1).forEach(([name, t]) => {
+            const p = POSES[name];
+            joints.forEach((j, k) => tl.fromTo("#" + e.id + "-" + j, { rotation: prev[j] || 0, svgOrigin: POSES._org[j] },
+              { rotation: p[j] || 0, svgOrigin: POSES._org[j], duration: 0.42, ease: "back.out(1.3)" }, t + (j === "hd" ? 0 : 0.04 + k * 0.025)));
+            tl.fromTo("#" + e.id + "-hd", { y: prev.hy || 0 }, { y: p.hy || 0, duration: 0.42, ease: "power3.out" }, t);
+            prev = p;
+          });
+          // a blink every ~3.1 s while on screen: life, not a loop on a title
+          for (let b = e.in + 1.3; b < e.out - 0.3; b += 3.1)
+            tl.fromTo("#" + e.id + " .eye", { scaleY: 1, svgOrigin: "150 80" }, { scaleY: 0.1, svgOrigin: "150 80", duration: 0.06, yoyo: true, repeat: 1 }, b);
+        }
+        if (e.mouth) {
+          let cur = null;
+          MOUTHS.forEach((m) => tl.set("#" + e.id + "-m-" + m, { opacity: m === (e.mouth[0] || [])[0] ? 1 : 0 }, 0));
+          e.mouth.forEach(([m, t], i) => {
+            if (i === 0) { cur = m; return; }
+            tl.fromTo("#" + e.id + "-m-" + cur, { opacity: 1 }, { opacity: 0, duration: 0.06 }, t);
+            tl.fromTo("#" + e.id + "-m-" + m, { opacity: 0 }, { opacity: 1, duration: 0.06 }, t);
+            cur = m;
+          });
+        }
+        if (e.tilt) {
+          let prev = e.tilt[0][0];
+          tl.set("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, 0);
+          tl.set("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, 0);
+          tl.set("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, 0);
+          e.tilt.slice(1).forEach(([d, t]) => {
+            tl.fromTo("#" + e.id + "-beam", { rotation: prev, svgOrigin: "300 120" }, { rotation: d, svgOrigin: "300 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panL", { rotation: -prev, svgOrigin: "90 120" }, { rotation: -d, svgOrigin: "90 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            tl.fromTo("#" + e.id + "-panR", { rotation: -prev, svgOrigin: "510 120" }, { rotation: -d, svgOrigin: "510 120", duration: 0.7, ease: "back.out(1.6)" }, t);
+            prev = d;
+          });
+        }
+        // ---- motion (on the outer box, so it never fights the entrance/exit on the inner one) ----
+        const outer = "#" + e.id;
+        if (e.move) {
+          let px = 0, py = 0;
+          e.move.forEach(([dx, dy, t, d]) => {
+            tl.fromTo(outer, { x: px, y: py }, { x: dx, y: dy, duration: d, ease: "power2.inOut", immediateRender: false }, t);
+            px = dx; py = dy;
+          });
+        }
+        if (e.sway) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { rotation: 0 }, { rotation: -e.sway, duration: half / 2, ease: "sine.out", immediateRender: false }, e.in);
+          tl.fromTo(outer, { rotation: -e.sway }, { rotation: e.sway, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in + half / 2);
+        }
+        if (e.bob) {
+          const half = e.period / 2, n = Math.max(1, Math.floor((e.out - e.in) / half));
+          tl.fromTo(outer, { y: 0 }, { y: -e.bob, duration: half, ease: "sine.inOut", repeat: n - 1, yoyo: true, immediateRender: false }, e.in);
+        }
+        if (e.pulse) {
+          for (let b = e.in + 0.5; b < e.out - 0.2; b += e.beat) {
+            tl.fromTo(outer, { scale: 1 }, { scale: e.pulse, duration: 0.11, ease: "power2.out", immediateRender: false }, b);
+            tl.fromTo(outer, { scale: e.pulse }, { scale: 1, duration: 0.24, ease: "power2.in", immediateRender: false }, b + 0.11);
+          }
+        }
+        // ---- exit: back out the way it came, faster than it arrived ----
+        const ex = e.exit || OPP[e.from];
+        if (e.hold) {
+        } else if (ex === "cut") {
+          tl.set(inner, { opacity: 0 }, e.out);
+        } else if (ex && OFF[ex]) {
+          const [x, y] = OFF[ex];
+          tl.fromTo(inner, { x: 0, y: 0, opacity: 1, filter: "blur(0px)" },
+            { x: x * 0.8, y: y * 0.8, opacity: 0, filter: "blur(12px)", duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        } else {
+          const r = e.t === "stamp" ? -8 : 0;
+          tl.fromTo(inner, { scale: 1, opacity: 1, filter: "blur(0px)", rotation: r },
+            { scale: 0.86, opacity: 0, filter: "blur(10px)", rotation: r, duration: e.outDur, ease: "power3.in", immediateRender: false }, e.out);
+        }
+      });
+      window.__timelines = window.__timelines || {};
+      window.__timelines["semester"] = tl;
+    })();
+  </script>
+</template>
