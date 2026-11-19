@@ -329,3 +329,81 @@ export function peekingBear() {
   <circle cx="120" cy="950" r="18" fill="${CARD}" stroke="${INK}" stroke-width="8"/>
 </svg>`;
 }
+
+// Video 13 · A: someone chatting with a tiny copy of themselves sitting on their shoulder
+export function shoulderTalk() {
+  const eye = (x, y, r, dx) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${INK}"/><circle cx="${x + dx}" cy="${y - r * 0.35}" r="${r * 0.32}" fill="${CARD}"/>`;
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <path d="M110 1000 C110 790 160 668 290 646 L660 646 C780 668 810 790 810 1000 Z" fill="${CARD}" stroke="${INK}" stroke-width="13" stroke-linejoin="round"/>
+  <path d="M410 646 C430 700 520 700 540 646" fill="none" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="480" cy="430" r="170" fill="${CARD}" stroke="${INK}" stroke-width="13"/>
+  <path d="M372 338 L428 322 M500 326 L556 336" stroke="${INK}" stroke-width="12" stroke-linecap="round"/>
+  ${eye(402, 392, 26, -9)}${eye(524, 394, 26, -9)}
+  <path d="M392 488 C410 470 470 470 486 488 C482 540 400 542 392 488 Z" fill="${INK}"/>
+  <path d="M408 516 C424 504 452 504 468 516 C452 530 424 530 408 516 Z" fill="${RED}"/>
+  <g transform="translate(216 652) scale(1.35) translate(-216 -652)">
+  <path d="M196 652 L182 744 M238 652 L250 744" stroke="${INK}" stroke-width="13" stroke-linecap="round"/>
+  <path d="M168 652 C168 590 182 562 216 560 C250 562 266 590 266 652 Z" fill="${CARD}" stroke="${INK}" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M252 590 C282 572 300 548 304 516" fill="none" stroke="${INK}" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="306" cy="508" r="13" fill="${CARD}" stroke="${INK}" stroke-width="8"/>
+  <path d="M180 596 C160 612 156 632 168 646" fill="none" stroke="${INK}" stroke-width="11" stroke-linecap="round"/>
+  <circle cx="216" cy="500" r="62" fill="${CARD}" stroke="${INK}" stroke-width="10"/>
+  <path d="M186 460 L210 456 M232 458 L254 466" stroke="${INK}" stroke-width="7" stroke-linecap="round"/>
+  ${eye(206, 486, 11, 4)}${eye(244, 490, 11, 4)}
+  <path d="M214 520 C226 512 246 514 252 524 C246 542 220 540 214 520 Z" fill="${INK}"/>
+</g>
+</svg>`;
+}
+
+// Video 13 · B: a head in profile opened up like a room: an empty armchair and a switched-off microphone
+export function quietRoomHead() {
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <path d="M560 1000 L560 790 C690 730 750 600 740 440 C728 240 585 110 400 110 C225 110 112 236 100 390 C96 448 86 482 62 528 C52 550 64 566 92 568 L108 570 C102 602 108 620 124 632 C108 648 114 668 130 676 C124 722 142 752 192 756 C244 760 292 752 300 796 L300 1000 Z" fill="${CARD}" stroke="${INK}" stroke-width="13" stroke-linejoin="round"/>
+  <path d="M168 408 C180 396 200 396 210 408" fill="none" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+  <path d="M148 386 L196 374" stroke="${INK}" stroke-width="9" stroke-linecap="round"/>
+  <rect x="252" y="214" width="440" height="350" rx="34" fill="#DCE6D8" stroke="${INK}" stroke-width="11"/>
+  <path d="M262 492 L682 492" stroke="${INK}" stroke-width="7"/>
+  <rect x="300" y="262" width="96" height="70" rx="6" fill="none" stroke="${INK}" stroke-width="6" opacity="0.55"/>
+  <path d="M318 316 L340 292 L356 306 L370 288 L384 316" fill="none" stroke="${INK}" stroke-width="5" opacity="0.55" stroke-linejoin="round"/>
+  <path d="M428 474 C424 400 430 360 470 356 L524 356 C564 360 570 400 566 474 Z" fill="${CARD}" stroke="${INK}" stroke-width="9" stroke-linejoin="round"/>
+  <rect x="412" y="442" width="170" height="40" rx="18" fill="${CARD}" stroke="${INK}" stroke-width="9"/>
+  <rect x="402" y="414" width="36" height="72" rx="18" fill="${CARD}" stroke="${INK}" stroke-width="9"/>
+  <rect x="556" y="414" width="36" height="72" rx="18" fill="${CARD}" stroke="${INK}" stroke-width="9"/>
+  <path d="M424 486 L418 506 M570 486 L576 506" stroke="${INK}" stroke-width="9" stroke-linecap="round"/>
+  <path d="M640 492 L640 352 M616 492 L664 492" stroke="${INK}" stroke-width="8" stroke-linecap="round"/>
+  <rect x="620" y="290" width="40" height="66" rx="20" fill="${CARD}" stroke="${INK}" stroke-width="8"/>
+  <path d="M626 312 L654 312 M626 328 L654 328" stroke="${INK}" stroke-width="4"/>
+  <path d="M600 284 L682 380" stroke="${RED}" stroke-width="13" stroke-linecap="round"/>
+  <path d="M640 492 C620 520 560 516 520 520" fill="none" stroke="${INK}" stroke-width="5"/>
+</svg>`;
+}
+
+// Video 13 · C: a nervous person pointing at a confident reflection in a mirror
+export function mirrorPep() {
+  const person = (s) => `
+    <path d="M${s.x - 190} 1000 C${s.x - 190} 800 ${s.x - 150} 700 ${s.x - 60} 680 L${s.x + 60} 680 C${s.x + 150} 700 ${s.x + 190} 800 ${s.x + 190} 1000 Z" fill="${CARD}" stroke="${INK}" stroke-width="12" stroke-linejoin="round"/>
+    <circle cx="${s.x}" cy="510" r="140" fill="${CARD}" stroke="${INK}" stroke-width="12"/>
+    ${s.face}
+    <path d="M${s.x - 120} 740 C${s.x - 190} 720 ${s.x - 240} 680 ${s.x - 290} 640" fill="none" stroke="${INK}" stroke-width="24" stroke-linecap="round"/>
+    <circle cx="${s.x - 300}" cy="632" r="24" fill="${CARD}" stroke="${INK}" stroke-width="10"/>
+    <path d="M${s.x - 314} 622 L${s.x - 366} 590" stroke="${INK}" stroke-width="13" stroke-linecap="round"/>`;
+  const nervous = `
+    <path d="M598 470 L640 454 M712 454 L752 470" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="624" cy="500" r="18" fill="${INK}"/><circle cx="726" cy="500" r="18" fill="${INK}"/>
+    <path d="M630 582 C650 570 664 590 680 578 C696 566 708 586 724 576" fill="none" stroke="${INK}" stroke-width="9" stroke-linecap="round"/>
+    <path d="M790 420 C778 448 776 466 790 474 C804 466 802 448 790 420 Z" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/>`;
+  const confident = `
+    <path d="M592 446 L640 432 M710 432 L758 446" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+    <path d="M604 498 C614 482 640 482 648 498 M702 498 C712 482 738 482 746 498" fill="none" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+    <path d="M614 556 C640 606 714 606 740 556 Z" fill="${INK}"/>`;
+  return `<svg viewBox="0 0 900 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs><clipPath id="mir"><ellipse cx="260" cy="470" rx="196" ry="300"/></clipPath></defs>
+  <path d="M150 760 L110 1000 M370 760 L410 1000" stroke="${INK}" stroke-width="16" stroke-linecap="round"/>
+  <ellipse cx="260" cy="470" rx="196" ry="300" fill="#C9D8C4"/>
+  <g clip-path="url(#mir)"><g transform="translate(260 120) scale(-0.62 0.62) translate(-680 0)">${person({ x: 680, face: confident })}</g>
+    <path d="M120 300 L230 190 M140 360 L280 220" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" opacity="0.6"/></g>
+  <ellipse cx="260" cy="470" rx="196" ry="300" fill="none" stroke="${INK}" stroke-width="30"/>
+  <ellipse cx="260" cy="470" rx="196" ry="300" fill="none" stroke="${CARD}" stroke-width="14"/>
+  ${person({ x: 680, face: nervous })}
+</svg>`;
+}
