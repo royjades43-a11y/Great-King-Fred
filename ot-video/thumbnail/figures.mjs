@@ -468,3 +468,66 @@ export function allMondays() {
   <path d="M330 690 L370 690 L330 730 L370 730 M390 640 L420 640 L390 670 L420 670" fill="none" stroke="${INK}" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
 }
+
+// Video 15 · A: someone alone on a chair, one finger hovering over a big red button
+export function buttonChair() {
+  const bolt = (x, y, s) => `<path d="M${x} ${y} l${-14 * s} ${34 * s} l${14 * s} 0 l${-10 * s} ${32 * s} l${30 * s} ${-44 * s} l${-14 * s} 0 l${10 * s} ${-22 * s} Z" fill="${RED}" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/>`;
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <path d="M150 560 L150 960 M150 700 L360 700 L360 960 M150 700 L150 560" fill="none" stroke="${INK}" stroke-width="16" stroke-linecap="round"/>
+  <path d="M190 700 C190 600 220 540 290 530 L330 530 C390 540 410 600 410 700 Z" fill="${CARD}" stroke="${INK}" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M230 700 L230 820 L190 960 M330 700 L380 820 L360 960" fill="none" stroke="${INK}" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="300" cy="400" r="120" fill="${CARD}" stroke="${INK}" stroke-width="12"/>
+  <path d="M250 362 L290 348 M330 348 L370 362" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+  <ellipse cx="282" cy="398" rx="15" ry="18" fill="${INK}"/><ellipse cx="350" cy="398" rx="15" ry="18" fill="${INK}"/>
+  <circle cx="290" cy="392" r="5" fill="${CARD}"/><circle cx="358" cy="392" r="5" fill="${CARD}"/>
+  <path d="M290 458 C302 450 320 450 334 458" fill="none" stroke="${INK}" stroke-width="9" stroke-linecap="round"/>
+  <path d="M190 320 C178 346 176 364 190 372 C204 364 202 346 190 320 Z" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/>
+  <path d="M390 600 C470 600 520 620 560 640" fill="none" stroke="${INK}" stroke-width="22" stroke-linecap="round"/>
+  <path d="M560 640 L600 628" stroke="${INK}" stroke-width="13" stroke-linecap="round"/>
+  <rect x="560" y="760" width="200" height="200" rx="10" fill="${CARD}" stroke="${INK}" stroke-width="12"/>
+  <rect x="580" y="720" width="160" height="44" rx="8" fill="${CARD}" stroke="${INK}" stroke-width="10"/>
+  <path d="M594 720 Q594 640 660 640 Q726 640 726 720 Z" fill="${RED}" stroke="${INK}" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M624 676 Q636 662 656 660" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+  ${bolt(560, 520, 1.6)}${bolt(760, 560, 1.3)}
+</svg>`;
+}
+
+// Video 15 · B: a steaming kettle, and a hand sneaking towards the phone beside it
+export function kettleWait() {
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <path d="M20 860 L800 860" stroke="${INK}" stroke-width="12" stroke-linecap="round"/>
+  <path d="M120 860 L380 860 Q410 860 402 820 L380 560 Q372 500 310 492 L190 492 Q128 500 120 560 L98 820 Q90 860 120 860 Z" fill="${CARD}" stroke="${INK}" stroke-width="13" stroke-linejoin="round"/>
+  <path d="M180 492 Q180 410 250 410 Q320 410 320 492" fill="none" stroke="${INK}" stroke-width="13"/>
+  <path d="M396 620 L480 540 L500 566 L410 680" fill="${CARD}" stroke="${INK}" stroke-width="12" stroke-linejoin="round"/>
+  <circle cx="250" cy="700" r="26" fill="${RED}" stroke="${INK}" stroke-width="8"/>
+  <path d="M470 500 C440 450 500 420 470 360 C440 300 500 270 480 210 M540 480 C515 440 565 410 540 360" fill="none" stroke="${INK}" stroke-width="9" stroke-linecap="round" opacity="0.55"/>
+  <g transform="rotate(-8 600 760)"><rect x="520" y="640" width="150" height="230" rx="20" fill="${INK}"/><rect x="534" y="662" width="122" height="180" rx="8" fill="#FFFFFF"/>
+  <rect x="548" y="690" width="94" height="30" rx="10" fill="${RED}"/><rect x="548" y="734" width="70" height="14" rx="6" fill="#CCCCCC"/></g>
+  <path d="M840 520 C780 540 740 580 716 620" fill="none" stroke="${INK}" stroke-width="56" stroke-linecap="round"/>
+  <path d="M840 520 C780 540 740 580 716 620" fill="none" stroke="${CARD}" stroke-width="36" stroke-linecap="round"/>
+  <circle cx="704" cy="640" r="34" fill="${CARD}" stroke="${INK}" stroke-width="11"/>
+  <path d="M684 660 L650 690 M700 672 L672 704" stroke="${INK}" stroke-width="12" stroke-linecap="round"/>
+  <text x="250" y="340" text-anchor="middle" font-family="M" font-weight="800" font-size="60" fill="${INK}">0:30</text>
+</svg>`;
+}
+
+// Video 15 · C: someone washing dishes, a bright idea glowing over their head
+export function dishIdea() {
+  let rays = "";
+  for (let a = -150; a <= -30; a += 30) { const r = (a * Math.PI) / 180; rays += `M${400 + Math.cos(r) * 150} ${200 + Math.sin(r) * 150} L${400 + Math.cos(r) * 195} ${200 + Math.sin(r) * 195} `; }
+  return `<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg">
+  <path d="${rays}" stroke="${RED}" stroke-width="12" stroke-linecap="round"/>
+  <path d="M340 290 Q300 250 300 200 Q300 110 400 110 Q500 110 500 200 Q500 250 460 290 L460 320 L340 320 Z" fill="#FFF6C9" stroke="${INK}" stroke-width="12" stroke-linejoin="round"/>
+  <path d="M370 250 Q385 212 400 250 Q415 212 430 250" fill="none" stroke="${RED}" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M350 338 L450 338 M360 360 L440 360" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+  <path d="M190 1000 C190 820 240 730 340 716 L460 716 C560 730 610 820 610 1000 Z" fill="${CARD}" stroke="${INK}" stroke-width="13" stroke-linejoin="round"/>
+  <circle cx="400" cy="560" r="130" fill="${CARD}" stroke="${INK}" stroke-width="13"/>
+  <path d="M344 548 C354 534 372 534 380 548 M420 548 C430 534 448 534 456 548" fill="none" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+  <path d="M356 606 C380 636 420 636 444 606" fill="none" stroke="${INK}" stroke-width="10" stroke-linecap="round"/>
+  <path d="M40 840 L760 840 L730 1000 L70 1000 Z" fill="#DCE6D8" stroke="${INK}" stroke-width="13" stroke-linejoin="round"/>
+  <ellipse cx="270" cy="822" rx="44" ry="14" fill="#FFFFFF" stroke="${INK}" stroke-width="8" transform="rotate(-18 270 822)"/>
+  <circle cx="160" cy="800" r="26" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/><circle cx="200" cy="770" r="16" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/>
+  <circle cx="620" cy="790" r="22" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/><circle cx="660" cy="760" r="14" fill="#FFFFFF" stroke="${INK}" stroke-width="6"/>
+  <ellipse cx="400" cy="846" rx="120" ry="22" fill="#FFFFFF" stroke="${INK}" stroke-width="9"/>
+</svg>`;
+}
