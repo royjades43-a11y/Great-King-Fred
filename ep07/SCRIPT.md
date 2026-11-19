@@ -155,7 +155,7 @@ So here's the truth. Shopping isn't the enemy. Shopping to fix a feeling is. You
 
 Check the feeling. Wait a day. Spend the fun money you planned. Shop the list.
 
-And speaking of other people... why do your friends decide how much you spend? That's the next video.
+And speaking of friends... why do they quietly decide how much you spend? That's the next video.
 
 ### How it's presented (Part 4)
 - **World:** Bean walks back home through the mall. Each move is a doorway he passes through on the way out (one continuous pan). The checklist in the corner fills up.
