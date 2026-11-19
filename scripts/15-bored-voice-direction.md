@@ -1,0 +1,202 @@
+# Voice direction: "The Psychology of People Who Can't Stand Being Bored"
+
+A line-by-line reading guide, in the same format as videos 5 to 14 (see `scripts/05-always-late-voice-direction.md`
+for the 12 rules and the full legend). It works for a human narrator, ElevenLabs or AI Studio (use each
+section's **Direction** line as the style prompt), and for our free AI voice through `voice/directed.py`.
+
+| Mark | Meaning |
+| --- | --- |
+| **word** | stress it |
+| `\|` / `\|\|` | short / long beat |
+| ↘ / ↗ | land down / lift (a genuine question) |
+| (brisk) (slower) (land it) (lean in) (warm) (smile) (light) (character) | how to deliver the line |
+
+**Written to be spoken, like one friend talking to another** (owner's rule from video 13). Use whole, natural
+sentences, and make every line speak to the listener. Pause naturally at full stops and lift genuine questions.
+
+Numbers are written the way they are spoken.
+
+## Energy map
+
+```
+energy  5 |
+        4 |  *  *     *  *  *              *        *  *
+        3 |        *           *  *  *  *     *  *        *  *
+        2 |                                                     *  *
+        1 |
+          +----------------------------------------------------------
+            hook   the shock   boredom   the phone   checking   good side  rules  twist end
+```
+
+- **Hook:** the kettle, light and knowing. Everyone recognises the reach for the phone.
+- **Promise:** by about 0:25.
+- **The shock:** the jaw-dropper. Tell it with a raised eyebrow, never spooky. "One hundred and ninety times" gets a
+  beat before it.
+- **Boredom:** clear and curious; hunger is the image.
+- **Phone:** playful (phantom vibrations), then fair and careful.
+- **Good side:** the payoff, warm and bright.
+- **Rules:** practical. **Ending:** soft and generous.
+
+---
+
+## 1 · Hook (0:00–1:10)
+**Direction:** light and knowing, like you've both done it today. The promise is clear and warm, spoken straight to the viewer. Then curious for the experiment. Energy 3, rising to 4 by the promise.
+
+You're waiting for the kettle to boil. ||
+It takes about two minutes. ||
+And before the first thirty seconds are up, your hand is already reaching for your phone. ||
+You weren't expecting a message. You just couldn't stand doing nothing. ||
+If that sounds like you, you're definitely not alone. ||
+So in this video, we're going to look at why sitting alone with your thoughts feels so hard. ||
+You'll find out why so many people chose an electric shock over a few quiet minutes. ||
+And by the end, you'll know why a little boredom might be one of the best things for your brain. ||
+Let's start with a simple experiment. ||
+In twenty fourteen, psychologist Timothy Wilson and his colleagues asked people to do something very easy. ||
+They had to sit alone in a plain room, for somewhere between six and fifteen minutes. ||
+No phone. No book. Nothing to write with. Just their own thoughts. ||
+They were asked to stay in their seat, and to stay awake. ||
+That sounds relaxing, doesn't it? ||
+For most people, it wasn't very enjoyable. ||
+Many said it was hard to concentrate, and their minds kept wandering. ||
+The researchers tried it with college students. Then they tried it with people of all ages. ||
+The results were much the same. ||
+Then they ran a version at home, where nobody was watching. ||
+About a third of the people admitted they had cheated. They checked their phones, or listened to music. ||
+Have you ever tried to just sit, with absolutely nothing to do? ||
+
+## 2 · The shock (1:10–2:20)
+**Direction:** a story you can hardly believe yourself. Calm, a raised eyebrow. A real beat before "one hundred and ninety times." The question is sincere. Energy 4.
+
+Here's where it gets strange. ||
+In another study, Wilson's team gave people a mild electric shock first. ||
+It was unpleasant, like a strong static zap. ||
+Almost everyone said they would pay money never to feel it again. ||
+Then they left each person alone for fifteen minutes, with a button. ||
+Pressing the button would give them that same shock. ||
+Nobody had to press it. They only had to sit and think. ||
+Two out of every three men pressed the button at least once. ||
+For women, it was about one in four. ||
+The researchers wondered if men are a little more drawn to new sensations, even unpleasant ones. ||
+And one man shocked himself one hundred and ninety times. ||
+That's roughly one shock every five seconds. ||
+These were people who had just said they'd pay to avoid that shock. ||
+So why would anyone choose pain over their own thoughts? ||
+Maybe because, for a lot of us, even a zap feels better than nothing at all. ||
+
+## 3 · What boredom is (2:20–3:30)
+**Direction:** clear and curious, like explaining something you just figured out. "Yes, the same Timothy Wilson" gets a smile. The hunger image is warm. Slow down for the last question: it's the re-hook. Energy 3.
+
+To understand that, it helps to know what boredom actually is. ||
+In twenty eighteen, psychologists Erin Westgate and Timothy Wilson put forward a simple idea. ||
+Yes, the same Timothy Wilson. ||
+They suggested that boredom shows up for two main reasons. ||
+The first is when your attention can't get a grip. The task is too easy, or too hard, so your mind drifts away. ||
+The second is when what you're doing doesn't feel meaningful to you. ||
+Think about it like hunger. ||
+Hunger tells you that your body needs food. ||
+Boredom tells you that your mind needs something to change. ||
+It's your mind saying, "This isn't working. Let's try something else." ||
+And like hunger, it's meant to be a little uncomfortable, so you'll actually do something about it. ||
+Here's the problem. ||
+Today, we can make that feeling disappear in about two seconds. ||
+You don't have to change anything. You just unlock your phone. ||
+So the signal goes off, and we switch it off, over and over, all day long. ||
+How many times a day do you think you reach for your phone without even deciding to? ||
+
+## 4 · The phone in your pocket (3:30–4:50)
+**Direction:** playful at first: the phantom buzz is a shared joke. Then fair and careful on the phone-on-the-desk study; "to be fair" is honest, not apologetic. Energy 3, rising.
+
+Your brain has noticed all of this, by the way. ||
+In twenty twelve, psychologist Michelle Drouin and her colleagues asked college students a strange question. ||
+Have you ever felt your phone vibrate, and then found out it hadn't? ||
+Eighty-nine percent of them said yes. ||
+Most of them weren't bothered by it. It had just become normal. ||
+Your brain is so used to waiting for that buzz, it sometimes invents one. ||
+If you've ever patted your pocket for a buzz that never came, now you know why. ||
+In twenty seventeen, Adrian Ward and his colleagues tried something else. ||
+They gave people tests of memory and focus. ||
+Some people left their phones in another room. Others kept them on the desk, face down and silent. ||
+The people whose phones were in the other room did better. ||
+Even a quiet phone seemed to pull on some of their attention. ||
+To be fair, later studies haven't always found an effect this strong. ||
+So here's the careful version. ||
+Having your phone close by can make it harder to give anything else your full attention. ||
+
+## 5 · Checking less (4:50–5:50)
+**Direction:** brisk and practical, like a fun experiment. The irony gets a knowing smile. Then a real pause before "But it wasn't over yet.", low and close. Energy 4.
+
+So what happens if you check less often? ||
+In twenty fifteen, psychologists Kostadin Kushlev and Elizabeth Dunn tested this with email. ||
+For one week, some people checked their email as often as they liked. ||
+Others could only check it three times a day. ||
+Then the two groups swapped. ||
+During the week with fewer checks, people felt less stressed from day to day. ||
+And they still got through their emails. They just did it in batches. ||
+Nobody gave up email completely. They just stopped letting it interrupt them all day. ||
+Here's the irony. ||
+Many of us check our phones to feel a little less anxious. ||
+And checking all the time seems to do the opposite. ||
+But it wasn't over yet. ||
+
+## 6 · The good side of boredom (5:50–7:20)
+**Direction:** the payoff of the promise, warm and bright. The phone book and the plastic cups are a smile. "They enjoyed it more than they had expected" is gentle and kind. Energy 4.
+
+Because boredom might actually be good for you. ||
+In twenty fourteen, psychologists Sandi Mann and Rebekah Cadman made people do something very dull. ||
+For fifteen minutes, they copied phone numbers out of a phone book. ||
+Then everyone was asked to think of as many uses as they could for a pair of plastic cups. ||
+The bored group came up with more ideas than people who hadn't been bored first. ||
+When the mind has nothing to grab onto, it starts to wander. ||
+And wandering is often where new ideas show up. ||
+Think about where your best ideas tend to arrive. ||
+In the shower, on a walk, or just before you fall asleep. ||
+Those are some of the few moments left when nothing is asking for your attention. ||
+There's a calmer benefit, too. ||
+In twenty eighteen, psychologists Thuy-vy Nguyen, Richard Ryan and Edward Deci asked people to sit alone for fifteen minutes. ||
+No phone, no music, and no one to talk to. ||
+Afterwards, people felt calmer and more relaxed. ||
+Strong feelings, both the good ones and the bad ones, settled down. ||
+And here's my favourite part. ||
+In twenty twenty-two, Aya Hatano, Kou Murayama and their colleagues tried a simple test. ||
+People guessed how much they would enjoy sitting alone with their thoughts for twenty minutes. ||
+Then they actually did it. ||
+They enjoyed it more than they had expected. ||
+So the hardest part of being alone with your thoughts might just be starting. ||
+
+## 7 · Five rules (7:20–8:30)
+**Direction:** friendly and practical, like a friend sharing what actually works. Each "Rule" is a small headline. Energy 3.
+
+So how can you use this in your own life? Here are five simple rules. ||
+Rule one. Let the kettle boil. ||
+The next time you're waiting for something small, leave your phone in your pocket. ||
+Just notice where your mind goes. ||
+It's only two minutes, and it's good practice. ||
+Rule two. When you need to focus, put your phone in another room. ||
+Not face down on the desk. Another room. ||
+Rule three. Check things in batches. ||
+Pick a few set times for email and messages, instead of checking every few minutes. ||
+Rule four. When you're stuck on a problem, do something a little boring. ||
+Go for a walk. Wash the dishes. Fold the laundry. Give your mind some room to wander. ||
+Plenty of good ideas have arrived over a sink full of dishes. ||
+Rule five. When you feel bored, ask what it's trying to tell you. ||
+Is this too easy, too hard, or does it just not matter to you? ||
+Then change that, instead of reaching for your phone. ||
+
+## 8 · Twist and ending (8:30–9:20)
+**Direction:** soft and generous, talking to one person. The kettle callback is warm and a little funny. The challenge is bright. The question is sincere. Energy 2.
+
+So here's the twist. ||
+Those people who pressed the button weren't strange, or broken. ||
+Most of us were simply never taught how to be alone with our own minds. ||
+And like any skill, it gets easier with practice. ||
+The first few minutes feel restless. Then, slowly, your mind starts to settle. ||
+When you stop scrolling, your brain doesn't switch off. It finally gets some room to work. ||
+So the next time you're standing by the kettle, let it boil. ||
+Stay with your thoughts for those two minutes. You might like where they go. ||
+Here's your challenge for this week. ||
+Once a day, spend ten minutes with no phone, no music and no screen. ||
+Just sit, or walk, and let your mind wander. ||
+Then notice how you feel afterwards. ||
+And I'd love to know something. What's the first thing you reach for when you're bored? ||
+Let me know in the comments. ||
+Which habit should we cover next? Drop it in the comments. ||
