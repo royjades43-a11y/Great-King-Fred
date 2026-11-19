@@ -31,3 +31,9 @@
 - **The ending returns to the playroom:** the four-year-old is back, a callback to the opening.
 - **Tone:** calm and warm. Expressions change with the meaning (smile, grin, neutral, "o", tight), never with
   big drama.
+
+## Render note
+
+At 4K a single worker runs about 0.6 s per frame (~2.7 h for 9 min), and multi-worker renders need ~136 GB of temporary frames. So the
+master is rendered in scene parts: `python3 tools/mkparts.py` writes one root file per scene on exact frame boundaries,
+`tools/render-parts.sh` renders them four at a time (about 50 min in total), and ffmpeg joins them with `assets/soundtrack.m4a` at CRF 19.
