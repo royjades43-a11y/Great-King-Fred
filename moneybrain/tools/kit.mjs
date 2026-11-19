@@ -60,6 +60,13 @@ const BEAN_FACE = {
   wince: { eyes: "x", brows: "", mouth: `<path d="M -20 -244 l 8 -6 l 8 6 l 8 -6 l 8 6 l 8 -6" fill="none" ${K3}/>`, sweat: true },
   determined: { eyes: "open", brows: `<path d="M -40 -326 L -12 -316 M 16 -316 L 44 -326" fill="none" ${K3}/>`, mouth: `<path d="M -16 -244 L 22 -244" fill="none" ${K3}/>` },
   sleep: { eyes: "closed", brows: "", mouth: `<ellipse cx="4" cy="-242" rx="8" ry="6" fill="${C.ink}"/>` },
+  // "talk" faces have no mouth: the episode builder draws a mouth that opens and closes with the voiceover
+  talk: { eyes: "open", brows: "", mouth: "" },
+  talkHappy: { eyes: "open", brows: "", mouth: "", blush: true },
+  talkSad: { eyes: "open", brows: `<path d="M -40 -314 L -12 -322 M 16 -322 L 44 -314" fill="none" ${K3}/>`, mouth: "" },
+  talkWorried: { eyes: "open", brows: `<path d="M -40 -318 L -12 -326 M 16 -326 L 44 -318" fill="none" ${K3}/>`, mouth: "", sweat: true },
+  talkSure: { eyes: "open", brows: `<path d="M -40 -326 L -12 -316 M 16 -316 L 44 -326" fill="none" ${K3}/>`, mouth: "" },
+  talkSmug: { eyes: "lids", brows: "", mouth: "" },
 };
 function beanEyes(kind, look = 0) {
   const L = [-22, -288], R = [28, -288];

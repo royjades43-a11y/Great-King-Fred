@@ -1,0 +1,21 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    #cl-card { position: absolute; right: 36px; top: 36px; width: 330px; background: #FFFDF7; border: 5px solid #231F1C; border-radius: 14px; padding: 16px 20px 12px;
+      box-shadow: 7px 7px 0 rgba(35,31,28,0.18); transform: rotate(1.5deg); font-family: "Archivo Black"; color: #231F1C; opacity: 0; }
+    #cl-card h4 { font-size: 22px; letter-spacing: 0.06em; margin-bottom: 8px; color: #B8704F; }
+    .ci { display: flex; align-items: center; gap: 12px; font-size: 21px; line-height: 1.15; margin: 7px 0; }
+    .box { flex: none; width: 30px; height: 30px; border: 4px solid #231F1C; border-radius: 6px; background: #F4EBD5; color: #231F1C; font-size: 20px; text-align: center; line-height: 22px; }
+  </style>
+  <div id="root" data-composition-id="overlay" data-width="1920" data-height="1080"><div id="cl-card"><h4>IN THIS VIDEO</h4><div class="ci"><span id="ck0" class="box"></span><span id="cl0">Why sadness spends</span></div><div class="ci"><span id="ck1" class="box"></span><span id="cl1">Why the joy fades</span></div><div class="ci"><span id="ck2" class="box"></span><span id="cl2">3 Black Friday tricks</span></div><div class="ci"><span id="ck3" class="box"></span><span id="cl3">4 moves</span></div></div></div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.set("#cl-card", { opacity: 0 }, 0); tl.fromTo("#cl-card", { opacity: 0, x: 60 }, { opacity: 1, x: 0, duration: 0.5, ease: "back.out(2)" }, 69.16); tl.to("#cl-card", { opacity: 0, duration: 0.3 }, 477.96);
+tl.set("#ck0", { backgroundColor: "#8E9B6A" }, 128.56); tl.set("#ck0", { innerHTML: "✓" }, 128.56); tl.set("#cl0", { opacity: 0.55, textDecoration: "line-through" }, 128.56); tl.fromTo("#ck0", { scale: 1.8 }, { scale: 1, duration: 0.35, ease: "back.out(3)" }, 128.56);
+tl.set("#ck1", { backgroundColor: "#8E9B6A" }, 209.86); tl.set("#ck1", { innerHTML: "✓" }, 209.86); tl.set("#cl1", { opacity: 0.55, textDecoration: "line-through" }, 209.86); tl.fromTo("#ck1", { scale: 1.8 }, { scale: 1, duration: 0.35, ease: "back.out(3)" }, 209.86);
+tl.set("#ck2", { backgroundColor: "#8E9B6A" }, 339.88); tl.set("#ck2", { innerHTML: "✓" }, 339.88); tl.set("#cl2", { opacity: 0.55, textDecoration: "line-through" }, 339.88); tl.fromTo("#ck2", { scale: 1.8 }, { scale: 1, duration: 0.35, ease: "back.out(3)" }, 339.88);
+tl.set("#ck3", { backgroundColor: "#8E9B6A" }, 421.64); tl.set("#ck3", { innerHTML: "✓" }, 421.64); tl.set("#cl3", { opacity: 0.55, textDecoration: "line-through" }, 421.64); tl.fromTo("#ck3", { scale: 1.8 }, { scale: 1, duration: 0.35, ease: "back.out(3)" }, 421.64);
+
+    window.__timelines["overlay"] = tl;
+  </script>
+</template>

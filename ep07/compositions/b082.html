@@ -1,0 +1,85 @@
+<template>
+  <style>
+    @font-face { font-family: "Patrick Hand"; src: url("assets/fonts/PatrickHand.woff2") format("woff2"); font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #b082-cam { position: absolute; inset: 0; }
+    #b082-cam > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .tag-wrap { position: absolute; left: 0; right: 0; text-align: center; }
+    .tag { display: inline-block; position: relative; font-family: "Archivo Black"; letter-spacing: 0.01em; line-height: 1;
+      padding: 20px 44px 20px 76px; border: 5px solid #231F1C; border-radius: 10px 18px 18px 10px;
+      box-shadow: 8px 8px 0 rgba(35,31,28,0.18); }
+    .tag::before { content: ""; position: absolute; left: 30px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: #F4EBD5; border: 4px solid #231F1C; }
+    .tag::after { content: ""; position: absolute; left: 36px; bottom: 50%; width: 4px; height: 90px; background: #231F1C; transform-origin: 50% 100%; transform: rotate(-28deg); margin-bottom: 8px; }
+    .rcpt-wrap { position: absolute; }
+    .rcpt-slot { height: 22px; background: #231F1C; border-radius: 11px; margin: 0 -18px; position: relative; z-index: 2; }
+    .rcpt-clip { overflow: hidden; margin-top: -8px; }
+    .rcpt { background: #FFFDF7; border: 4px solid #231F1C; border-top: none; padding: 26px 30px 40px; font-family: "Space Mono"; font-weight: 700; color: #231F1C;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 97%, 90% 100%, 85% 97%, 80% 100%, 75% 97%, 70% 100%, 65% 97%, 60% 100%, 55% 97%, 50% 100%, 45% 97%, 40% 100%, 35% 97%, 30% 100%, 25% 97%, 20% 100%, 15% 97%, 10% 100%, 5% 97%, 0 100%); }
+    .rt { text-align: center; font-family: "Archivo Black"; font-size: 34px; border-bottom: 3px dashed #231F1C; padding-bottom: 12px; margin-bottom: 14px; }
+    .rl { display: flex; justify-content: space-between; font-size: 30px; line-height: 1.5; }
+    .rtot { display: flex; justify-content: space-between; align-items: baseline; border-top: 3px dashed #231F1C; margin-top: 14px; padding-top: 14px; font-size: 34px; }
+    .rtot span:last-child { font-family: "Archivo Black"; font-size: 60px; color: #C4553F; }
+    .rf { text-align: center; font-size: 22px; margin-top: 12px; opacity: 0.7; }
+    .chap-wrap { position: absolute; left: 0; right: 0; top: 70px; text-align: center; }
+    .chap { display: inline-block; font-family: "Archivo Black"; font-size: 78px; line-height: 1.05; padding: 18px 46px 22px; border: 10px double; border-radius: 14px; background: rgba(244,235,213,0.6); }
+    .chap small { display: block; font-size: 34px; letter-spacing: 0.2em; }
+  </style>
+  <div id="root" data-composition-id="b082" data-width="1920" data-height="1080">
+    <!-- Planned fun is still fun -->
+    <div id="b082-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs><filter id="b082-rough" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence id="b082-turb" type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1"/>
+          <feDisplacementMap in="SourceGraphic" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+        <g id="b082-world" transform="translate(960 540) scale(1.025) translate(-3000 -600)"><g filter="url(#b082-rough)">
+<rect x="-800" y="-400" width="6800" height="1340" fill="#DCE6E2"/><circle cx="4600" cy="160" r="70" fill="#E9C25B" opacity="0.8"/>
+    <path d="M -300 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 1700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 2700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 3700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 4700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/>
+    <rect x="-800" y="940" width="6800" height="700" fill="#C9C3B6"/><path d="M -800 940 L 6000 940" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M -800 1000 L 6000 1000" stroke="#B5AE9F" stroke-width="4" stroke-dasharray="60 40"/><rect x="470" y="260" width="660" height="680" fill="#EBDFC2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><rect x="670" y="560" width="260" height="380" rx="10" fill="#5F7C90" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <circle cx="890" cy="760" r="12" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><rect x="550" y="300" width="500" height="120" rx="14" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="800" y="342" font-family="Archivo Black" font-size="40" fill="#5F7C90" text-anchor="middle" dominant-baseline="middle">MOVE 1</text><text x="800" y="392" font-family="Archivo Black" font-size="44" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">MOOD CHECK</text><rect x="1570" y="260" width="660" height="680" fill="#EBDFC2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><rect x="1770" y="560" width="260" height="380" rx="10" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <circle cx="1990" cy="760" r="12" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><rect x="1650" y="300" width="500" height="120" rx="14" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="1900" y="342" font-family="Archivo Black" font-size="40" fill="#B8704F" text-anchor="middle" dominant-baseline="middle">MOVE 2</text><text x="1900" y="392" font-family="Archivo Black" font-size="44" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">24-HOUR CART</text><rect x="2670" y="260" width="660" height="680" fill="#EBDFC2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><rect x="2870" y="560" width="260" height="380" rx="10" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <circle cx="3090" cy="760" r="12" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><rect x="2750" y="300" width="500" height="120" rx="14" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="3000" y="342" font-family="Archivo Black" font-size="40" fill="#8E9B6A" text-anchor="middle" dominant-baseline="middle">MOVE 3</text><text x="3000" y="392" font-family="Archivo Black" font-size="44" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">FUN MONEY</text><rect x="3770" y="260" width="660" height="680" fill="#EBDFC2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><rect x="3970" y="560" width="260" height="380" rx="10" fill="#D3A43F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <circle cx="4190" cy="760" r="12" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><rect x="3850" y="300" width="500" height="120" rx="14" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="4100" y="342" font-family="Archivo Black" font-size="40" fill="#D3A43F" text-anchor="middle" dominant-baseline="middle">MOVE 4</text><text x="4100" y="392" font-family="Archivo Black" font-size="44" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">SHOP THE LIST</text>
+<g transform="translate(3000 600) rotate(0) scale(1)"><g id="b082-e0"><g id="b082-e0-i"><rect x="-152" y="-391" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(0 -152 -391)"/><rect x="390" y="-308" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(37 390 -308)"/><rect x="142" y="-373" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(74 142 -373)"/><rect x="416" y="-285" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(111 416 -285)"/><rect x="-111" y="-259" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(148 -111 -259)"/><rect x="405" y="-140" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(5 405 -140)"/><rect x="-124" y="-183" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(42 -124 -183)"/><rect x="179" y="-492" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(79 179 -492)"/><rect x="359" y="-134" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(116 359 -134)"/><rect x="327" y="-419" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(153 327 -419)"/><rect x="-239" y="-340" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(10 -239 -340)"/><rect x="305" y="-188" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(47 305 -188)"/><rect x="271" y="-326" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(84 271 -326)"/><rect x="-165" y="-138" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(121 -165 -138)"/><rect x="-357" y="-135" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(158 -357 -135)"/><rect x="6" y="-238" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(15 6 -238)"/><rect x="-199" y="-218" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(52 -199 -218)"/><rect x="-428" y="-310" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(89 -428 -310)"/><rect x="-168" y="-488" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(126 -168 -488)"/><rect x="-42" y="-414" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(163 -42 -414)"/><rect x="393" y="-44" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(20 393 -44)"/><rect x="50" y="-409" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(57 50 -409)"/><rect x="-294" y="-59" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(94 -294 -59)"/><rect x="-294" y="-172" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(131 -294 -172)"/><rect x="60" y="-335" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(168 60 -335)"/><rect x="247" y="-486" width="18" height="30" rx="3" fill="#B8704F" transform="rotate(25 247 -486)"/><rect x="-390" y="-27" width="18" height="30" rx="3" fill="#D3A43F" transform="rotate(62 -390 -27)"/><rect x="162" y="-99" width="18" height="30" rx="3" fill="#8E9B6A" transform="rotate(99 162 -99)"/><rect x="79" y="-29" width="18" height="30" rx="3" fill="#8FA7B4" transform="rotate(136 79 -29)"/><rect x="406" y="-442" width="18" height="30" rx="3" fill="#C4553F" transform="rotate(173 406 -442)"/></g></g></g><g transform="translate(3000 940) rotate(0) scale(1)"><g id="b082-e1"><g id="b082-e1-i"><ellipse cx="0" cy="0" rx="100" ry="15" fill="#231F1C" opacity="0.12"/>
+  <path d="M -28 -78 L -32 -14 M 28 -78 L 32 -14" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M -62 -2 Q -64 -22 -36 -20 Q -18 -18 -18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 62 -2 Q 64 -22 36 -20 Q 18 -18 18 -2 Z" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  
+  <path d="M 6 -372 Q 2 -392 4 -408" fill="none" stroke="#6F7C52" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 4 -404 Q -26 -420 -34 -398 Q -12 -388 4 -404 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 4 -400 Q 30 -424 40 -402 Q 18 -388 4 -400 Z" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M -78 -250 C -80 -330 -40 -372 6 -372 C 56 -372 86 -330 82 -260 L 80 -150 C 82 -95 50 -70 0 -70 C -50 -70 -80 -95 -78 -150 Z" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <path d="M -56 -296 Q -50 -334 -18 -348" fill="none" stroke="#FFFDF7" stroke-width="7" stroke-linecap="round" opacity="0.75"/>
+  
+  
+  <path d="M -36 -288 Q -22 -276 -8 -288 M 14 -288 Q 28 -276 42 -288" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><path d="M -24 -254 Q 2 -218 28 -254 Z" fill="#231F1C" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <ellipse cx="-50" cy="-252" rx="12" ry="7" fill="#E7958C" opacity="0.7"/><ellipse cx="56" cy="-252" rx="12" ry="7" fill="#E7958C" opacity="0.7"/>
+  
+  <path d="M -74 -190 Q -140 -240 -128 -322" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M 78 -190 Q 144 -240 132 -322" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  
+  <circle cx="-128" cy="-322" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><circle cx="132" cy="-322" r="11" fill="#E2B04A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  </g></g></g>
+        </g></g>
+      </svg>
+      
+    </div>
+    <div class="tag-wrap" style="top:56px"><div id="b082-tag" class="tag" style="background:#8E9B6A; color:#231F1C; font-size:64px">NO REGRET</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    (() => { const w = document.querySelector("#b082-world"); const c = { x: 3000, y: 600, z: 1.025 };
+      const ap = () => w.setAttribute("transform", "translate(960 540) scale(" + c.z + ") translate(" + (-c.x) + " " + (-c.y) + ")");
+      tl.set(c, { x: 3000, y: 600, z: 1.025, onUpdate: ap }, 0);
+      tl.to(c, { x: 3000, y: 560, z: 1.05, duration: 0.90, ease: "power2.inOut", onUpdate: ap }, 0);
+      tl.to(c, { x: 3000, y: 560, z: 1.0762, duration: 2.94, ease: "none", onUpdate: ap }, 0.90); })();
+    tl.fromTo("#b082-tag", { opacity: 0, rotation: -16, transformOrigin: "34px 50%" }, { opacity: 1, rotation: 0, duration: 0.9, ease: "elastic.out(1, 0.45)" }, 0.04);
+    tl.fromTo("#b082-e0", { opacity: 0, y: -420 }, { opacity: 1, y: 0, duration: 0.6, ease: "bounce.out" }, 0.12);
+    tl.fromTo("#b082-e1", { opacity: 0, scale: 0.55, transformOrigin: "50% 100%" }, { opacity: 1, scale: 1, duration: 0.32, ease: "back.out(2.2)" }, 0.26);
+    tl.fromTo("#b082-e1-i", { y: 0 }, { y: -8, duration: 0.45, ease: "sine.inOut", yoyo: true, repeat: 3 }, 0.610);
+    [[0.000,1],[0.125,2],[0.250,3],[0.375,4],[0.500,1],[0.625,2],[0.750,3],[0.875,4],[1.000,1],[1.125,2],[1.250,3],[1.375,4],[1.500,1],[1.625,2],[1.750,3],[1.875,4],[2.000,1],[2.125,2],[2.250,3],[2.375,4],[2.500,1],[2.625,2],[2.750,3],[2.875,4],[3.000,1],[3.125,2],[3.250,3],[3.375,4],[3.500,1],[3.625,2],[3.750,3]].forEach(([t, s]) => tl.set("#b082-turb", { attr: { seed: s } }, t));
+    window.__timelines["b082"] = tl;
+  </script>
+</template>

@@ -1,0 +1,68 @@
+<template>
+  <style>
+    @font-face { font-family: "Patrick Hand"; src: url("assets/fonts/PatrickHand.woff2") format("woff2"); font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #b084-cam { position: absolute; inset: 0; }
+    #b084-cam > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .tag-wrap { position: absolute; left: 0; right: 0; text-align: center; }
+    .tag { display: inline-block; position: relative; font-family: "Archivo Black"; letter-spacing: 0.01em; line-height: 1;
+      padding: 20px 44px 20px 76px; border: 5px solid #231F1C; border-radius: 10px 18px 18px 10px;
+      box-shadow: 8px 8px 0 rgba(35,31,28,0.18); }
+    .tag::before { content: ""; position: absolute; left: 30px; top: 50%; width: 16px; height: 16px; margin-top: -8px; border-radius: 50%; background: #F4EBD5; border: 4px solid #231F1C; }
+    .tag::after { content: ""; position: absolute; left: 36px; bottom: 50%; width: 4px; height: 90px; background: #231F1C; transform-origin: 50% 100%; transform: rotate(-28deg); margin-bottom: 8px; }
+    .rcpt-wrap { position: absolute; }
+    .rcpt-slot { height: 22px; background: #231F1C; border-radius: 11px; margin: 0 -18px; position: relative; z-index: 2; }
+    .rcpt-clip { overflow: hidden; margin-top: -8px; }
+    .rcpt { background: #FFFDF7; border: 4px solid #231F1C; border-top: none; padding: 26px 30px 40px; font-family: "Space Mono"; font-weight: 700; color: #231F1C;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 95% 97%, 90% 100%, 85% 97%, 80% 100%, 75% 97%, 70% 100%, 65% 97%, 60% 100%, 55% 97%, 50% 100%, 45% 97%, 40% 100%, 35% 97%, 30% 100%, 25% 97%, 20% 100%, 15% 97%, 10% 100%, 5% 97%, 0 100%); }
+    .rt { text-align: center; font-family: "Archivo Black"; font-size: 34px; border-bottom: 3px dashed #231F1C; padding-bottom: 12px; margin-bottom: 14px; }
+    .rl { display: flex; justify-content: space-between; font-size: 30px; line-height: 1.5; }
+    .rtot { display: flex; justify-content: space-between; align-items: baseline; border-top: 3px dashed #231F1C; margin-top: 14px; padding-top: 14px; font-size: 34px; }
+    .rtot span:last-child { font-family: "Archivo Black"; font-size: 60px; color: #C4553F; }
+    .rf { text-align: center; font-size: 22px; margin-top: 12px; opacity: 0.7; }
+    .chap-wrap { position: absolute; left: 0; right: 0; top: 70px; text-align: center; }
+    .chap { display: inline-block; font-family: "Archivo Black"; font-size: 78px; line-height: 1.05; padding: 18px 46px 22px; border: 10px double; border-radius: 14px; background: rgba(244,235,213,0.6); }
+    .chap small { display: block; font-size: 34px; letter-spacing: 0.2em; }
+  </style>
+  <div id="root" data-composition-id="b084" data-width="1920" data-height="1080">
+    <!-- If it's on the list -->
+    <div id="b084-cam" data-layout-allow-overflow>
+      <svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs><filter id="b084-rough" x="-5%" y="-5%" width="110%" height="110%">
+          <feTurbulence id="b084-turb" type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="1"/>
+          <feDisplacementMap in="SourceGraphic" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter></defs>
+        <g id="b084-world" transform="translate(960 540) scale(1.025) translate(-4100 -600)"><g filter="url(#b084-rough)">
+<rect x="-800" y="-400" width="6800" height="1340" fill="#DCE6E2"/><circle cx="4600" cy="160" r="70" fill="#E9C25B" opacity="0.8"/>
+    <path d="M -300 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 1700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 2700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 3700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/><path d="M 4700 200 q 60 -50 120 0 q 60 -50 120 0" fill="none" stroke="#FFFDF7" stroke-width="14" stroke-linecap="round"/>
+    <rect x="-800" y="940" width="6800" height="700" fill="#C9C3B6"/><path d="M -800 940 L 6000 940" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/><path d="M -800 1000 L 6000 1000" stroke="#B5AE9F" stroke-width="4" stroke-dasharray="60 40"/><rect x="470" y="260" width="660" height="680" fill="#EBDFC2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><rect x="670" y="560" width="260" height="380" rx="10" fill="#5F7C90" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <circle cx="890" cy="760" r="12" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><rect x="550" y="300" width="500" height="120" rx="14" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="800" y="342" font-family="Archivo Black" font-size="40" fill="#5F7C90" text-anchor="middle" dominant-baseline="middle">MOVE 1</text><text x="800" y="392" font-family="Archivo Black" font-size="44" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">MOOD CHECK</text><rect x="1570" y="260" width="660" height="680" fill="#EBDFC2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><rect x="1770" y="560" width="260" height="380" rx="10" fill="#B8704F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <circle cx="1990" cy="760" r="12" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><rect x="1650" y="300" width="500" height="120" rx="14" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="1900" y="342" font-family="Archivo Black" font-size="40" fill="#B8704F" text-anchor="middle" dominant-baseline="middle">MOVE 2</text><text x="1900" y="392" font-family="Archivo Black" font-size="44" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">24-HOUR CART</text><rect x="2670" y="260" width="660" height="680" fill="#EBDFC2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><rect x="2870" y="560" width="260" height="380" rx="10" fill="#8E9B6A" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <circle cx="3090" cy="760" r="12" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><rect x="2750" y="300" width="500" height="120" rx="14" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="3000" y="342" font-family="Archivo Black" font-size="40" fill="#8E9B6A" text-anchor="middle" dominant-baseline="middle">MOVE 3</text><text x="3000" y="392" font-family="Archivo Black" font-size="44" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">FUN MONEY</text><rect x="3770" y="260" width="660" height="680" fill="#EBDFC2" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><rect x="3970" y="560" width="260" height="380" rx="10" fill="#D3A43F" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <circle cx="4190" cy="760" r="12" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><rect x="3850" y="300" width="500" height="120" rx="14" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+      <text x="4100" y="342" font-family="Archivo Black" font-size="40" fill="#D3A43F" text-anchor="middle" dominant-baseline="middle">MOVE 4</text><text x="4100" y="392" font-family="Archivo Black" font-size="44" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">SHOP THE LIST</text>
+<g transform="translate(3900 900) rotate(0) scale(1)"><g id="b084-e0"><g id="b084-e0-i"><rect x="-220" y="-260" width="440" height="260" fill="#FFFDF7" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/><text x="0" y="-204" font-family="Archivo Black" font-size="44" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">MY LIST</text><path d="M -180 -140 l 20 0" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/><text x="-140" y="-138" font-family="Patrick Hand" font-size="36" fill="#231F1C" text-anchor="start" dominant-baseline="middle">winter boots</text><path d="M -180 -70 l 20 0" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/><text x="-140" y="-68" font-family="Patrick Hand" font-size="36" fill="#231F1C" text-anchor="start" dominant-baseline="middle">phone charger</text></g></g></g><g transform="translate(4300 480) rotate(0) scale(1)"><g id="b084-e1"><g id="b084-e1-i"><path d="M 0 0 Q -10 -40 -30 -60" fill="none" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/>
+  <path d="M 0 0 L 30 -40 L 202 -40 L 202 40 L 30 40 Z" transform="rotate(-8)" fill="#E9C25B" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <g transform="rotate(-8)"><circle cx="26" cy="0" r="8" fill="#F4EBD5" stroke="#231F1C" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"/><text x="121" y="3" font-family="Archivo Black" font-size="60" fill="#231F1C" text-anchor="middle" dominant-baseline="middle">WIN</text></g></g></g></g>
+        </g></g>
+      </svg>
+      
+    </div>
+    <div class="tag-wrap" style="top:56px"><div id="b084-tag" class="tag" style="background:#8E9B6A; color:#231F1C; font-size:52px">ON THE LIST + ON SALE = WIN</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    (() => { const w = document.querySelector("#b084-world"); const c = { x: 4100, y: 600, z: 1.025 };
+      const ap = () => w.setAttribute("transform", "translate(960 540) scale(" + c.z + ") translate(" + (-c.x) + " " + (-c.y) + ")");
+      tl.set(c, { x: 4100, y: 600, z: 1.025, onUpdate: ap }, 0);
+      tl.to(c, { x: 4100, y: 560, z: 1.3, duration: 0.90, ease: "power2.inOut", onUpdate: ap }, 0);
+      tl.to(c, { x: 4100, y: 560, z: 1.3325, duration: 2.12, ease: "none", onUpdate: ap }, 0.90); })();
+    tl.fromTo("#b084-tag", { opacity: 0, rotation: -16, transformOrigin: "34px 50%" }, { opacity: 1, rotation: 0, duration: 0.9, ease: "elastic.out(1, 0.45)" }, 0.04);
+    
+    tl.fromTo("#b084-e1", { opacity: 0, scale: 2.4, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.22, ease: "power4.in" }, 2.5);
+    [[0.000,1],[0.125,2],[0.250,3],[0.375,4],[0.500,1],[0.625,2],[0.750,3],[0.875,4],[1.000,1],[1.125,2],[1.250,3],[1.375,4],[1.500,1],[1.625,2],[1.750,3],[1.875,4],[2.000,1],[2.125,2],[2.250,3],[2.375,4],[2.500,1],[2.625,2],[2.750,3],[2.875,4],[3.000,1]].forEach(([t, s]) => tl.set("#b084-turb", { attr: { seed: s } }, t));
+    window.__timelines["b084"] = tl;
+  </script>
+</template>
