@@ -38,6 +38,10 @@ export const THUMBS = [
   { file: "06-thumbnail-A-pay-1200-today", text: ["Could you", "pay [$1,200]", "today?"], char: K.worriedCar, x: 1380, y: 900, s: 0.95, size: 140, bubble: { t: "clunk.", x: 1640, y: 220, tail: "dl" } },
   { file: "06-thumbnail-B-1-in-3", text: ["[1 in 3]", "can't cover", "$400"], char: K.emptyWallet, x: 1470, s: 0.9, size: 140 },
   { file: "06-thumbnail-C-how-much-enough", text: ["How much", "is [enough]?"], char: K.umbrellaPiggy, x: 1400, y: 990, s: 0.74 },
+  // 07 — Why You Spend More When You're Sad (Black Friday Knows It)
+  { file: "07-thumbnail-A-sad-spend-more", text: ["Sad? You'll", "pay [more]"], char: K.cryingBag, x: 1400, y: 990, s: 0.9 },
+  { file: "07-thumbnail-B-30-plus-20", text: ["30% + 20%", "≠ [50%]"], char: K.splitTag, x: 1400, y: 1000, s: 0.95 },
+  { file: "07-thumbnail-C-fake-timer", text: ["That timer", "is [fake]"], char: K.smugTimer, x: 1360, y: 990, s: 0.9, bubble: { t: "Hurry!", x: 1660, y: 130, tail: "dl" } },
 ];
 
 function bubbleSvg({ t, x, y, tail = "d" }) {

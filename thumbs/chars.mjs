@@ -236,3 +236,27 @@ export function umbrellaPiggy() { // calm piggy under an umbrella while it pours
     <path d="M -480 -820 Q -480 -1080 0 -1100 Q 480 -1080 480 -820 Q 360 -860 240 -820 Q 120 -860 0 -820 Q -120 -860 -240 -820 Q -360 -860 -480 -820 Z" fill="${C.red}" ${I()}/>
     <path d="M 0 -1100 Q -160 -980 -240 -820 M 0 -1100 Q 160 -980 240 -820" fill="none" ${I(8)}/>`;
 }
+
+// ---------- EP07 ----------
+export function cryingBag() { // a shopping bag crying, but its smile says it can't wait to be bought
+  return shadow(300) + `
+    <path d="M -260 -620 L 260 -620 L 300 0 L -300 0 Z" fill="${C.terra}" ${I()}/>
+    <path d="M -120 -620 Q -120 -800 0 -800 Q 120 -800 120 -620" fill="none" ${I(22)}/>
+    <g transform="translate(0 -360)">${face("sad", 1.3)}</g>
+    <path d="M -76 -310 q -10 70 10 110 M 76 -310 q 10 70 -10 110" fill="none" stroke="#7FB2D1" stroke-width="16" stroke-linecap="round"/>
+    <g transform="translate(250 -660) rotate(18)"><path d="M 0 0 L 30 -40 L 230 -40 L 230 40 L 30 40 Z" fill="${C.gold}" ${I(9)}/><circle cx="28" cy="0" r="10" fill="${C.paper}" ${I(6)}/><text x="132" y="18" font-family="Archivo Black" font-size="52" text-anchor="middle" fill="${C.ink}">−70%</text></g>
+    <g transform="translate(-300 -880)"><g fill="${C.grey}" ${I(9)}><circle cx="-80" cy="0" r="62"/><circle cx="10" cy="-50" r="80"/><circle cx="100" cy="0" r="62"/><rect x="-140" y="0" width="300" height="58" rx="28"/></g>
+      <path d="M -140 6 L 160 6" stroke="${C.grey}" stroke-width="50"/>${[-90, -30, 30, 90].map((x) => `<path d="M ${x} 80 l -10 36" stroke="${C.slateDk}" stroke-width="10" stroke-linecap="round"/>`).join("")}</g>`;
+}
+export function smugTimer() { // a countdown clock with a sly grin and a reset button behind its back
+  return shadow(300) + `${legs([-90, 70], -120)}
+    <rect x="-330" y="-640" width="660" height="520" rx="60" fill="${C.ink}" ${I()}/><rect x="-290" y="-600" width="580" height="250" rx="20" fill="#2B1E1E"/>
+    <text x="0" y="-445" font-family="Space Mono" font-weight="700" font-size="140" fill="${C.red}" text-anchor="middle" dominant-baseline="middle">0:01</text>
+    <g transform="translate(0 -230) scale(0.85)"><ellipse cx="-46" cy="0" rx="28" ry="10" fill="${C.white}" ${I(6)}/><ellipse cx="46" cy="0" rx="28" ry="10" fill="${C.white}" ${I(6)}/><circle cx="-38" cy="2" r="8" fill="${C.ink}"/><circle cx="54" cy="2" r="8" fill="${C.ink}"/><path d="M -40 60 Q 20 100 60 50" fill="none" stroke="${C.white}" stroke-width="12" stroke-linecap="round"/></g>
+    <path d="M 330 -300 Q 430 -280 440 -180" fill="none" ${I(14)}/><circle cx="450" cy="-150" r="52" fill="${C.red}" ${I(9)}/><text x="450" y="-140" font-family="Archivo Black" font-size="26" text-anchor="middle" fill="${C.white}">RESET</text>`;
+}
+export function splitTag() { // a price tag split into two grinning pieces: 30% and 20%
+  const piece = (x, rot, t) => `<g transform="translate(${x} -500) rotate(${rot})"><path d="M -170 0 L -120 -150 L 190 -150 L 190 150 L -120 150 Z" fill="${C.gold}" ${I()}/><circle cx="-110" cy="0" r="20" fill="${C.paper}" ${I(7)}/>
+    <text x="40" y="-30" font-family="Archivo Black" font-size="110" text-anchor="middle" fill="${C.ink}">${t}</text><g transform="translate(40 80) scale(0.6)">${face("smug", 1)}</g></g>`;
+  return shadow(300) + piece(-240, -14, "30%") + piece(260, 12, "20%") + `<path d="M 10 -760 L -10 -640 L 30 -560 L 0 -460 L 20 -340" fill="none" stroke="${C.red}" stroke-width="12" stroke-dasharray="20 14"/>`;
+}
