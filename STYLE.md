@@ -72,6 +72,13 @@ The layout follows big psychology channels like KnowSense, but in our own brand.
     - Findings stay accurate and carefully worded ("most people", "on average", "later studies don't all agree").
     - Names, years and journals go only in the description's source list. On-screen study cards carry a short
       story title ("The semester study"), with no names or years.
+  - **Be bold (owner's rule, Nov 2026).** Make strong, clear statements that trigger the right emotion:
+    recognition ("that's me"), a little sting, surprise, relief.
+    - Use direct "you" lines and short punches: "Five words. Five times the trust." "Stop apologizing for
+      taking up space."
+    - Hedge only where the research really is mixed, and at most once per study. Don't soften every line.
+    - Bold framing never stretches a finding. The study details stay accurate; the punch comes from the wording.
+    - Still no "it isn't X, it's Y" formulas.
   - **Copyright-safe:**
     - Describe findings in our own words, and never read out or show passages from papers.
     - Use only our own drawings, our own music and Pixabay sound effects.

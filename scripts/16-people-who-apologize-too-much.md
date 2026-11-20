@@ -1,7 +1,7 @@
 # Video 16: The Psychology of People Who Apologize Too Much
 
 **Title:** The Psychology of People Who Apologize Too Much
-**Length:** 1,444 words. That's about 8:35 at Josh's pace (video 15 ran 8:36 from 1,465 words), so it's over 8:00
+**Length:** 1,497 words. That's about 8:50 at Josh's pace (video 15 ran 8:36 from 1,465 words), so it's over 8:00
 and mid-roll ads are possible.
 
 **First script under the storytelling rule (STYLE.md, Nov 2026):**

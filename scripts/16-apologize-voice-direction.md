@@ -47,10 +47,11 @@ You say sorry when someone else steps on your foot. ||
 You say sorry before you ask a question. ||
 And once, maybe, you said sorry to a chair. ||
 Some of us say it so often, we don't even hear ourselves anymore. ||
-If that sounds like you, you're in very good company. ||
+If that sounds like you, here's something nobody tells you. ||
+Every sorry you don't owe makes you a little smaller. ||
 So in this video, we're going to look at why some of us say sorry for almost everything. ||
 You'll find out about a strange little apology that made strangers hand over their phones. ||
-And by the end, you'll know what makes an apology actually work, and when to stop saying it. ||
+And by the end, you'll never apologize the same way again. ||
 Let's start with a simple question. Who says sorry the most? ||
 A pair of researchers in Canada asked people to keep a diary for twelve days. ||
 Every evening, they wrote down every time they had apologized that day. ||
@@ -63,7 +64,8 @@ They just thought fewer things needed an apology in the first place. ||
 Then they asked people to imagine small moments, like being a little rude to a friend by accident. ||
 The men tended to rate those moments as less serious. ||
 So the difference came down to where each person draws the line. ||
-Nobody here is doing it wrong. We just set the bar in different places. ||
+So if you say sorry all the time, it's often because you notice more than other people do. ||
+That's a gift. You just need to stop spending it on chairs. ||
 Have you ever wondered where your own line sits? ||
 
 ## 2 · The rain (1:15–2:30)
@@ -79,7 +81,7 @@ Before asking, he said, "I'm so sorry about the rain." ||
 He obviously didn't cause the rain. ||
 The rain had nothing to do with him. That's what makes it so strange. ||
 But suddenly, almost half of the strangers lent him their phone. ||
-That's around five times as many, from five extra words. ||
+Five words. Five times the trust. ||
 The researchers think that little apology showed he cared about how the other person was feeling. ||
 And people trust someone who seems to care. ||
 The same team found that people who made these small, extra apologies seemed warmer and easier to trust. ||
@@ -106,13 +108,13 @@ It keeps small bumps from turning into big fights. ||
 
 But then there are people who almost never apologize. ||
 You probably know at least one. ||
-The person who would rather argue for an hour than say two small words. ||
+The person who would rather lose a friendship than say two small words. ||
 So a team of psychologists asked people to remember a time they had hurt someone. ||
 Some of them wrote an apology. Others wrote a message refusing to apologize. ||
 And the people who refused actually felt more powerful afterwards. ||
 For a while, they even felt a little better about themselves. ||
 Refusing to say sorry can feel like protecting yourself. ||
-It feels strong in the moment. ||
+It feels strong in the moment. Now you know why they do it. ||
 But that good feeling doesn't fix anything for the other person. ||
 And it can quietly cost you the relationship. ||
 And most of us find it much easier to trust someone who can admit a mistake. ||
@@ -127,7 +129,8 @@ Saying you're sorry. Explaining what happened. Admitting it was your fault. ||
 Saying it won't happen again. Offering to fix it. And asking to be forgiven. ||
 Then they asked hundreds of people to rate apologies with different parts missing. ||
 The most important part, by far, was admitting it was your fault. ||
-Not "I'm sorry you feel that way." Just, "I got that wrong." ||
+"I'm sorry you feel that way" quietly tells the other person they're the problem. ||
+The real thing is four words. "I got that wrong." ||
 The second most important part was offering to fix it. ||
 And the part that mattered least? Asking to be forgiven. ||
 So the strongest apologies are about the other person, not about getting yourself off the hook. ||
@@ -146,6 +149,7 @@ The later apologies landed better. ||
 Waiting on its own didn't do the trick. ||
 What made the difference was that, by then, the person felt properly heard. ||
 A rushed "sorry" can feel like a way to close the conversation. ||
+A rushed sorry is about ending your own discomfort. ||
 Think about how it feels when someone apologizes while you're still in the middle of explaining. ||
 It can make you more annoyed, not less. ||
 A sorry that comes after listening feels like you actually understood. ||
@@ -169,7 +173,8 @@ Next time you replay a mistake at night, talk to yourself like a friend who made
 **Direction:** friendly and practical, like tips from a friend. Each "Rule" is a small headline. Energy 3.
 
 So how can you use this in your own life? Here are five simple rules. ||
-Rule one. Save "sorry" for when you've actually done something. ||
+Rule one. Stop apologizing for taking up space. ||
+Save "sorry" for when you've actually done something. ||
 If you're just asking a question, try "excuse me," or simply ask it. ||
 Rule two. Try swapping sorry for thank you. ||
 Instead of "Sorry I'm late," try "Thank you for waiting." ||
@@ -188,7 +193,7 @@ So here's the twist. ||
 People who say sorry a lot are usually people who care a lot about others. ||
 That's a good thing. The goal is to make your sorry mean something again. ||
 But say sorry forty times a day, and the one that really counts gets lost in the crowd. ||
-Save it for the moments that matter, and say it properly when they come. ||
+Your sorry is powerful. Save it for the moments that matter, and say it like you mean it. ||
 And the next time you bump into a chair, you have my permission to say nothing at all. ||
 Here's your challenge for this week. ||
 Every time you're about to say "sorry" for something small, swap it for "thank you." ||
